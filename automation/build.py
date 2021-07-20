@@ -155,7 +155,7 @@ def main():
     # file names. For example, the version in CentOS 7 replaces the '+' in the
     # version with a '-', so we need to try twice.
     print("Locating the tarball ...")
-    tar_dir = "./"
+    tar_dir = ""
     tar_base = "ovirt-engine-sdk-python"
     tar_version = pep440_version
     tar_name = "%s-%s.tar.gz" % (tar_base, tar_version)
