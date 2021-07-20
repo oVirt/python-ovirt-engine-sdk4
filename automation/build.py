@@ -141,15 +141,7 @@ def main():
         "tar",
         "-czvf",
         "ovirt-engine-sdk-python-%s.tar.gz" % pep440_version.replace('+', '-'),
-        "examples",
-        "ext",
-        "lib",
-        "LICENSE.txt",
-        "MANIFEST.in",
-        "PKG-INFO",
-        "README.adoc",
-        "setup.cfg",
-        "setup.py",
+        "*"
     ])
     # Locate the tarball. Different versions of distutils generate different
     # file names. For example, the version in CentOS 7 replaces the '+' in the
