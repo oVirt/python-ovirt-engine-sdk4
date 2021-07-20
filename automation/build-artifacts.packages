@@ -1,4 +1,6 @@
 git
+libxml2
+libxml2-devel
 python3
 python3-devel
 python3-entrypoints
