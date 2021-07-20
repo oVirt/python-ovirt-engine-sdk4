@@ -140,7 +140,7 @@ def main():
     result = run_command([
         "tar",
         "-czvf",
-        "ovirt-engine-sdk-python-%s" % pep440_version.replace('+', '-'),
+        "ovirt-engine-sdk-python-%s.tar.gz" % pep440_version.replace('+', '-'),
         "examples",
         "ext",
         "lib",
