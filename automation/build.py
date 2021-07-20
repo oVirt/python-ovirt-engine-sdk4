@@ -13,7 +13,6 @@ import sys
 
 def run_command(args):
     env = dict(os.environ)
-    env["JAVA_HOME"] = "/usr/lib/jvm/java-11"
     print("Running command %s ..." % args)
     proc = subprocess.Popen(
        args=args,
@@ -71,7 +70,7 @@ def main():
         print("Can't parse POM file \"%s\"." % pom_path)
         sys.exit(1)
     version_nodes = pom_doc.xpath(
-        "/p:project/p:version",
+        "/p:project/p:parent/p:version",
         namespaces={"p": "http://maven.apache.org/POM/4.0.0"},
     )
     if not version_nodes:
