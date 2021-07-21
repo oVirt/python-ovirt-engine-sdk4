@@ -273,6 +273,7 @@ def main():
         "--define=_sourcedir %s" % os.path.join(cwd, tar_dir),
         "--define=_srcrpmdir %s" % cwd,
         "--define=_rpmdir %s" % cwd,
+        "--define=_builddir %s" % cwd,
         spec_path,
     ])
     if result != 0:
