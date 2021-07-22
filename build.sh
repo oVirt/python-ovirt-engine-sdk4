@@ -23,7 +23,7 @@ dist() {
    -e "s|@PACKAGE_VERSION@|$PACKAGE_VERSION|g" \
    < python-ovirt-engine-sdk4.spec.in > python-ovirt-engine-sdk4.spec
 
-  find ./* -not -name '*.spec' -type f | tar --files-from /proc/self/fd/0 -czf "$TARBALL" python-ovirt-engine-sdk4.spec
+  find ./* -not -name '*.spec' -not -name 'mocker-*' -not -name 'ci_build_summary.html' -type f | tar --files-from /proc/self/fd/0 -czf "$TARBALL" python-ovirt-engine-sdk4.spec
   echo "tar archive '$TARBALL' created."
 }
 
