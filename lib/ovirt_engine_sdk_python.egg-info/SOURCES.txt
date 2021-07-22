@@ -1,6 +1,7 @@
 LICENSE.txt
 MANIFEST.in
 README.adoc
+README.md
 setup.cfg
 setup.py
 examples/add_affinity_label.py
