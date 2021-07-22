@@ -1,39 +1,36 @@
 #!/bin/bash -xe
 
-ROOT_PATH=$PWD
-
 # remove any previous artifacts
-rm -rf ./*tar.gz $ROOT_PATH/exported-artifacts $ROOT_PATH/rpmbuild
+rm -rf output
+rm -f ./*tar.gz
 
 # Create exported-artifacts
-[[ -d exported-artifacts ]] || mkdir -p $ROOT_PATH/exported-artifacts
+[[ -d exported-artifacts ]] || mkdir -p $PWD/exported-artifacts
 
 # Create build
 
-./build.sh build
+./build.sh dist
 
 # create the src.rpm
 rpmbuild \
-    -D "_srcrpmdir $ROOT_PATH/output" \
-    -D "_topmdir $ROOT_PATH/rpmbuild" \
-    -D "_builddir $ROOT_PATH/" \
+    -D "_srcrpmdir $PWD/output" \
+    -D "_topmdir $PWD/rpmbuild" \
+    -D "_builddir $PWD/" \
     -ts ./*.gz
 
 # install any build requirements
-yum-builddep $ROOT_PATH/output/*src.rpm
+yum-builddep output/*src.rpm
 
 # create the rpms
 rpmbuild \
-    -D "_rpmdir $ROOT_PATH/output" \
-    -D "_topmdir $ROOT_PATH/rpmbuild" \
-    -D "_builddir $ROOT_PATH/" \
-    --rebuild  $ROOT_PATH/output/*.src.rpm
+    -D "_rpmdir $PWD/output" \
+    -D "_topmdir $PWD/rpmbuild" \
+    -D "_builddir $PWD/" \
+    --rebuild  output/*.src.rpm
 
 # Store any relevant artifacts in exported-artifacts for the ci system to
 # archive
-find $ROOT_PATH/output -iname \*rpm -exec mv "{}" $ROOT_PATH/exported-artifacts/ \;
+find output -iname \*rpm -exec mv "{}" exported-artifacts/ \;
 
 # Export build to artifacts
-mv $ROOT_PATH/*tar.gz $ROOT_PATH/exported-artifacts/
-
-cd $ROOT_PATH
+mv ./*tar.gz exported-artifacts/

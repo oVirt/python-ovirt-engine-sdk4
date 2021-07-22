@@ -27,8 +27,4 @@ dist() {
   echo "tar archive '$TARBALL' created."
 }
 
-build() {
-    dist
-}
-
 $1
