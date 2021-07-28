@@ -15,6 +15,7 @@ rm -f ./*tar.gz
 rpmbuild \
     -D "_srcrpmdir $PWD/output" \
     -D "_topmdir $PWD/rpmbuild" \
+    -D "_builddir $PWD/" \
     -ts ./*.gz
 
 # install any build requirements
@@ -24,6 +25,7 @@ yum-builddep output/*src.rpm
 rpmbuild \
     -D "_rpmdir $PWD/output" \
     -D "_topmdir $PWD/rpmbuild" \
+    -D "_builddir $PWD/" \
     --rebuild  output/*.src.rpm
 
 # Store any relevant artifacts in exported-artifacts for the ci system to

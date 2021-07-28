@@ -29,6 +29,7 @@ API.
 
 %setup -q -n ovirt-engine-sdk-python-@PACKAGE_VERSION@
 
+%prep
 
 %build -n python3-ovirt-engine-sdk4
 %py3_build
