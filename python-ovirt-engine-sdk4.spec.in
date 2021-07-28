@@ -17,7 +17,7 @@ API.
 
 %package -n python3-ovirt-engine-sdk4
 Summary: oVirt Engine Software Development Kit (Python)
-BuildRequires: python3-devel
+BuildRequires: python38-devel
 Requires: libxml2
 Requires: python3
 Requires: python3-pycurl >= 7.43.0-6
