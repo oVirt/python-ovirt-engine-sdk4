@@ -27,9 +27,9 @@ Requires: python3-six
 This package contains the Python 3 SDK for version 4 of the oVirt Engine
 API.
 
-%setup -q -n ovirt-engine-sdk-python-@PACKAGE_VERSION@
-
+%global debug_package %{nil}
 %prep
+%setup -c -q -n ovirt-engine-sdk-python-@PACKAGE_VERSION@
 
 %build -n python3-ovirt-engine-sdk4
 %py3_build
