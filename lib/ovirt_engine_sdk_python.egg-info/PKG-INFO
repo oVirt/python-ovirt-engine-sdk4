@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: ovirt-engine-sdk-python
+Version: 4.4.15
+Summary: Python SDK for oVirt Engine API
+Home-page: UNKNOWN
+Author: Michael Pasternak, Juan Hernandez, Ondra Machacek, Ori Liel
+Author-email: mishka8520@yahoo.com, juan.hernandez@redhat.com, omachace@redhat.com, oliel@redhat.com
+License: ASL2
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
