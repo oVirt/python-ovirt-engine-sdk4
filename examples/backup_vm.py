@@ -79,6 +79,11 @@ def main():
         help="Download full backup disks should be skipped. If specified, VM backup will "
              "start and stop without downloading the disks.")
 
+    full_parser.add_argument(
+        "--description",
+        dest="description",
+        help="A description for the created backup/checkpoint to persist in the Engine DB.")
+
     incremental_parser = subparsers.add_parser(
         "incremental",
         help="Run incremental backup.")
@@ -110,6 +115,11 @@ def main():
         help="Download incremental backup disks should be skipped. If specified, VM backup will "
              "start and stop without downloading the disks.")
 
+    incremental_parser.add_argument(
+        "--description",
+        dest="description",
+        help="A description for the created backup/checkpoint to persist in the Engine DB.")
+
     start_parser = subparsers.add_parser(
         "start",
         help="Start VM backup.")
@@ -130,6 +140,11 @@ def main():
         "--from-checkpoint-uuid",
         help="Perform incremental backup since the specified checkpoint "
              "UUID.")
+
+    start_parser.add_argument(
+        "--description",
+        dest="description",
+        help="A description for the created backup/checkpoint to persist in the Engine DB.")
 
     download_parser = subparsers.add_parser(
         "download",
@@ -317,7 +332,8 @@ def start_backup(connection, args):
     backup = backups_service.add(
         types.Backup(
             disks=disks,
-            from_checkpoint_id=args.from_checkpoint_uuid
+            from_checkpoint_id=args.from_checkpoint_uuid,
+            description=args.description
         )
     )
 
@@ -345,8 +361,6 @@ def stop_backup(connection, backup_uuid, args):
     backup_service = get_backup_service(connection, args.vm_uuid, backup_uuid)
 
     backup_service.finalize()
-
-    progress("Waiting until backup is being finalized")
 
     # "get_backup()" invocation will raise if the backup failed.
     # So we just need to wait until the backup phase is SUCCEEDED.
@@ -376,18 +390,21 @@ def download_backup(connection, backup_uuid, args, incremental=False):
 
     timestamp = time.strftime("%Y%m%d%H%M")
     for disk in backup_disks:
-        download_incremental = incremental
+        # During incremental backup, incremental backup may not be available
+        # for some of the disks. We need to check the backup mode of the disk.
         backup_mode = get_disk_backup_mode(connection, disk)
-        if download_incremental and backup_mode != types.DiskBackupMode.INCREMENTAL:
-            # if the disk wasn't a part of the previous checkpoint a full backup is taken
-            progress("The backup that was taken for disk %r is %r" % (disk.id, backup_mode))
-            download_incremental = False
+        has_incremental = backup_mode == types.DiskBackupMode.INCREMENTAL
 
-        backup_type = "incremental" if download_incremental else "full"
-        file_name = "{}.{}.{}.qcow2".format(disk.id, timestamp, backup_type)
+        # If incremental backup is not available, warn about it, since full
+        # backup is much slower and takes much more storage.
+        if incremental and not has_incremental:
+            progress("Incremental backup not available for disk %r" % disk.id)
+
+        file_name = "{}.{}.{}.qcow2".format(disk.id, timestamp, backup_mode)
         disk_path = os.path.join(args.backup_dir, file_name)
         download_disk(
-            connection, backup_uuid, disk, disk_path, args, incremental=download_incremental)
+            connection, backup_uuid, disk, disk_path, args,
+            incremental=has_incremental)
 
 
 def get_backup_service(connection, vm_uuid, backup_uuid):
@@ -398,7 +415,8 @@ def get_backup_service(connection, vm_uuid, backup_uuid):
 
 
 def download_disk(connection, backup_uuid, disk, disk_path, args, incremental=False):
-    progress("Creating image transfer for disk %r" % disk.id)
+    progress("Downloading %s backup for disk %r" %
+             ("incremental" if incremental else "full", disk.id))
     transfer = imagetransfer.create_transfer(
         connection,
         disk,
@@ -435,6 +453,7 @@ def download_disk(connection, backup_uuid, disk, disk_path, args, incremental=Fa
     finally:
         progress("Finalizing image transfer")
         imagetransfer.finalize_transfer(connection, transfer, disk)
+        progress("Download completed successfully")
 
 
 # General helpers
@@ -490,14 +509,14 @@ def get_backup(connection, backup_service, backup_uuid):
     try:
         backup = backup_service.get()
     except sdk.NotFoundError:
-        failure_event = get_backup_events(connection, backup_uuid)[0]
-        raise RuntimeError(
-            "Backup {} does not exist: {}".format(backup_uuid, failure_event))
+        last_event = get_backup_events(connection, backup_uuid)[0]
+        raise RuntimeError("Backup {} does not exist, last reported event: {}"
+                           .format(backup_uuid, last_event))
 
     if backup.phase == types.BackupPhase.FAILED:
-        failure_event = get_backup_events(connection, backup_uuid)[0]
-        raise RuntimeError(
-            "Backup {} has failed: {}".format(backup_uuid, failure_event))
+        last_event = get_backup_events(connection, backup_uuid)[0]
+        raise RuntimeError("Backup {} has failed, last reported event: {}"
+                           .format(backup_uuid, last_event))
 
     return backup
 

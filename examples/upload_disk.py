@@ -28,6 +28,9 @@ import json
 import os
 import subprocess
 import time
+import uuid
+
+from contextlib import closing
 
 from ovirt_imageio import client
 
@@ -57,6 +60,12 @@ def parse_args():
         action="store_true",
         help="Create sparse disk. Cannot be used with raw format on "
              "block storage.")
+
+    parser.add_argument(
+        "--disk-id",
+        type=validate_uuid,
+        help="A UUID for the new disk. If not specified oVirt will "
+             "create a new UUID.")
 
     parser.add_argument(
         "--enable-backup",
@@ -101,6 +110,14 @@ def parse_args():
         help="The action to be made for a timed out transfer")
 
     return parser.parse_args()
+
+
+def validate_uuid(s):
+    """
+    Validate that the argument is a valid uuid and return a normalized UUID
+    string.
+    """
+    return str(uuid.UUID(s))
 
 
 def get_image_info(filename):
@@ -197,90 +214,96 @@ progress("Disk backup: %s" % args.enable_backup)
 # image to the newly created disk in server.
 
 progress("Connecting...")
+
 connection = common.create_connection(args)
+with closing(connection):
 
-progress("Creating disk...")
+    progress("Creating disk...")
 
-disks_service = connection.system_service().disks_service()
-disk = disks_service.add(
-    disk=types.Disk(
-        name=disk_info["name"],
-        content_type=disk_info["content_type"],
-        description='Uploaded disk',
-        format=disk_info["format"],
-        initial_size=disk_info["initial_size"],
-        provisioned_size=disk_info["provisioned_size"],
-        sparse=args.disk_sparse,
-        backup=types.DiskBackup.INCREMENTAL if args.enable_backup else None,
-        storage_domains=[
-            types.StorageDomain(
-                name=args.sd_name
-            )
-        ]
+    disks_service = connection.system_service().disks_service()
+    disk = disks_service.add(
+        disk=types.Disk(
+            id=args.disk_id,
+            name=disk_info["name"],
+            content_type=disk_info["content_type"],
+            description='Uploaded disk',
+            format=disk_info["format"],
+            initial_size=disk_info["initial_size"],
+            provisioned_size=disk_info["provisioned_size"],
+            sparse=args.disk_sparse,
+            backup=types.DiskBackup.INCREMENTAL if args.enable_backup else None,
+            storage_domains=[
+                types.StorageDomain(
+                    name=args.sd_name
+                )
+            ]
+        )
     )
-)
 
-# Wait till the disk is up, as the transfer can't start if the
-# disk is locked:
-disk_service = disks_service.disk_service(disk.id)
-while True:
-    time.sleep(1)
-    disk = disk_service.get()
-    if disk.status == types.DiskStatus.OK:
-        break
+    # Wait till the disk is up, as the transfer can't start if the disk is
+    # locked:
+    disk_service = disks_service.disk_service(disk.id)
+    while True:
+        time.sleep(1)
+        disk = disk_service.get()
+        if disk.status == types.DiskStatus.OK:
+            break
 
-progress("Disk ID: %s" % disk.id)
+    progress("Disk ID: %s" % disk.id)
 
-progress("Creating image transfer...")
+    progress("Creating image transfer...")
 
-# Find a host for this transfer. This is an optional step allowing optimizing
-# the transfer using unix socket when running this code on a oVirt hypervisor
-# in the same data center.
-host = imagetransfer.find_host(connection, args.sd_name)
+    # Find a host for this transfer. This is an optional step allowing
+    # optimizing the transfer using unix socket when running this code on a
+    # oVirt hypervisor in the same data center.
+    host = imagetransfer.find_host(connection, args.sd_name)
 
-transfer = imagetransfer.create_transfer(connection, disk,
-    types.ImageTransferDirection.UPLOAD, host=host,
-    timeout_policy=types.ImageTransferTimeoutPolicy(args.timeout_policy))
+    transfer = imagetransfer.create_transfer(connection, disk,
+        types.ImageTransferDirection.UPLOAD, host=host,
+        timeout_policy=types.ImageTransferTimeoutPolicy(args.timeout_policy))
+    try:
+        # oVirt started an image transfer for uploading the image data into the
+        # disk. Any error after this point must cancel the transfer, which will
+        # delete the disk with the partial data. If the data was uploaded
+        # successfuly, the transfer must be finalized.
 
-progress("Transfer ID: %s" % transfer.id)
-progress("Transfer host name: %s" % transfer.host.name)
+        progress("Transfer ID: %s" % transfer.id)
+        progress("Transfer host name: %s" % transfer.host.name)
 
-# At this stage, the SDK granted the permission to start transferring the disk, and the
-# user should choose its preferred tool for doing it. We use the recommended
-# way, ovirt-imageio client library.
+        extra_args = {}
 
-extra_args = {}
+        parameters = inspect.signature(client.download).parameters
 
-parameters = inspect.signature(client.download).parameters
+        # Use multiple workers to speed up the upload.
+        if "max_workers" in parameters:
+            extra_args["max_workers"] = args.max_workers
 
-# Use multiple workers to speed up the upload.
-if "max_workers" in parameters:
-        extra_args["max_workers"] = args.max_workers
+        if args.use_proxy:
+            upload_url = transfer.proxy_url
+        else:
+            upload_url = transfer.transfer_url
 
-if args.use_proxy:
-    upload_url = transfer.proxy_url
-else:
-    upload_url = transfer.transfer_url
+            # Use fallback to proxy_url if feature is available. Upload will
+            # use the proxy_url if transfer_url is not accessible.
+            if "proxy_url" in parameters:
+                extra_args["proxy_url"] = transfer.proxy_url
 
-    # Use fallback to proxy_url if feature is available. Upload will use the
-    # proxy_url if transfer_url is not accessible.
-    if "proxy_url" in parameters:
-        extra_args["proxy_url"] = transfer.proxy_url
+        progress("Uploading image...")
 
-progress("Uploading image...")
+        with client.ProgressBar() as pb:
+            client.upload(
+                args.filename,
+                upload_url,
+                args.cafile,
+                secure=args.secure,
+                buffer_size=args.buffer_size,
+                progress=pb,
+                **extra_args)
+    except:
+        progress("Canceling image transfer...")
+        imagetransfer.cancel_transfer(connection, transfer)
+        raise
 
-with client.ProgressBar() as pb:
-    client.upload(
-        args.filename,
-        upload_url,
-        args.cafile,
-        secure=args.secure,
-        buffer_size=args.buffer_size,
-        progress=pb,
-        **extra_args)
-
-progress("Finalizing image transfer...")
-imagetransfer.finalize_transfer(connection, transfer, disk)
-connection.close()
-
-progress("Upload completed successfully")
+    progress("Finalizing image transfer...")
+    imagetransfer.finalize_transfer(connection, transfer, disk)
+    progress("Upload completed successfully")
