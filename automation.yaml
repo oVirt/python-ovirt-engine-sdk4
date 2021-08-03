@@ -1,4 +1,4 @@
 distros:
   - el8
 release_branches:
-  master: [ "ovirt-master" ]
+  main: [ "ovirt-master" ]
