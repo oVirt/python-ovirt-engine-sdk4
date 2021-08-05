@@ -260,6 +260,8 @@ class AffinityGroupWriter(Writer):
             writer.write_attribute('href', href)
         if obj.id is not None:
             writer.write_attribute('id', obj.id)
+        if obj.broken is not None:
+            Writer.write_boolean(writer, 'broken', obj.broken)
         if obj.comment is not None:
             Writer.write_string(writer, 'comment', obj.comment)
         if obj.description is not None:
@@ -714,6 +716,8 @@ class BackupWriter(Writer):
             Writer.write_string(writer, 'description', obj.description)
         if obj.from_checkpoint_id is not None:
             Writer.write_string(writer, 'from_checkpoint_id', obj.from_checkpoint_id)
+        if obj.modification_date is not None:
+            Writer.write_date(writer, 'modification_date', obj.modification_date)
         if obj.name is not None:
             Writer.write_string(writer, 'name', obj.name)
         if obj.phase is not None:
@@ -2956,6 +2960,8 @@ class ExternalTemplateImportWriter(Writer):
         href = obj.href
         if href is not None:
             writer.write_attribute('href', href)
+        if obj.clone is not None:
+            Writer.write_boolean(writer, 'clone', obj.clone)
         if obj.url is not None:
             Writer.write_string(writer, 'url', obj.url)
         if obj.cluster is not None:
@@ -4842,6 +4848,8 @@ class InstanceTypeWriter(Writer):
             writer.write_attribute('href', href)
         if obj.id is not None:
             writer.write_attribute('id', obj.id)
+        if obj.auto_pinning_policy is not None:
+            Writer.write_string(writer, 'auto_pinning_policy', obj.auto_pinning_policy.value)
         if obj.bios is not None:
             BiosWriter.write_one(obj.bios, writer, 'bios')
         if obj.comment is not None:
@@ -4930,6 +4938,8 @@ class InstanceTypeWriter(Writer):
             TemplateVersionWriter.write_one(obj.version, writer, 'version')
         if obj.virtio_scsi is not None:
             VirtioScsiWriter.write_one(obj.virtio_scsi, writer, 'virtio_scsi')
+        if obj.virtio_scsi_multi_queues is not None:
+            Writer.write_integer(writer, 'virtio_scsi_multi_queues', obj.virtio_scsi_multi_queues)
         if obj.virtio_scsi_multi_queues_enabled is not None:
             Writer.write_boolean(writer, 'virtio_scsi_multi_queues_enabled', obj.virtio_scsi_multi_queues_enabled)
         if obj.vm is not None:
@@ -8519,6 +8529,8 @@ class SnapshotWriter(Writer):
             writer.write_attribute('href', href)
         if obj.id is not None:
             writer.write_attribute('id', obj.id)
+        if obj.auto_pinning_policy is not None:
+            Writer.write_string(writer, 'auto_pinning_policy', obj.auto_pinning_policy.value)
         if obj.bios is not None:
             BiosWriter.write_one(obj.bios, writer, 'bios')
         if obj.comment is not None:
@@ -8639,6 +8651,8 @@ class SnapshotWriter(Writer):
             Writer.write_boolean(writer, 'use_latest_template_version', obj.use_latest_template_version)
         if obj.virtio_scsi is not None:
             VirtioScsiWriter.write_one(obj.virtio_scsi, writer, 'virtio_scsi')
+        if obj.virtio_scsi_multi_queues is not None:
+            Writer.write_integer(writer, 'virtio_scsi_multi_queues', obj.virtio_scsi_multi_queues)
         if obj.virtio_scsi_multi_queues_enabled is not None:
             Writer.write_boolean(writer, 'virtio_scsi_multi_queues_enabled', obj.virtio_scsi_multi_queues_enabled)
         if obj.affinity_labels is not None:
@@ -9430,6 +9444,8 @@ class TemplateWriter(Writer):
             writer.write_attribute('href', href)
         if obj.id is not None:
             writer.write_attribute('id', obj.id)
+        if obj.auto_pinning_policy is not None:
+            Writer.write_string(writer, 'auto_pinning_policy', obj.auto_pinning_policy.value)
         if obj.bios is not None:
             BiosWriter.write_one(obj.bios, writer, 'bios')
         if obj.comment is not None:
@@ -9518,6 +9534,8 @@ class TemplateWriter(Writer):
             TemplateVersionWriter.write_one(obj.version, writer, 'version')
         if obj.virtio_scsi is not None:
             VirtioScsiWriter.write_one(obj.virtio_scsi, writer, 'virtio_scsi')
+        if obj.virtio_scsi_multi_queues is not None:
+            Writer.write_integer(writer, 'virtio_scsi_multi_queues', obj.virtio_scsi_multi_queues)
         if obj.virtio_scsi_multi_queues_enabled is not None:
             Writer.write_boolean(writer, 'virtio_scsi_multi_queues_enabled', obj.virtio_scsi_multi_queues_enabled)
         if obj.vm is not None:
@@ -10192,6 +10210,8 @@ class VmWriter(Writer):
             writer.write_attribute('href', href)
         if obj.id is not None:
             writer.write_attribute('id', obj.id)
+        if obj.auto_pinning_policy is not None:
+            Writer.write_string(writer, 'auto_pinning_policy', obj.auto_pinning_policy.value)
         if obj.bios is not None:
             BiosWriter.write_one(obj.bios, writer, 'bios')
         if obj.comment is not None:
@@ -10304,6 +10324,8 @@ class VmWriter(Writer):
             Writer.write_boolean(writer, 'use_latest_template_version', obj.use_latest_template_version)
         if obj.virtio_scsi is not None:
             VirtioScsiWriter.write_one(obj.virtio_scsi, writer, 'virtio_scsi')
+        if obj.virtio_scsi_multi_queues is not None:
+            Writer.write_integer(writer, 'virtio_scsi_multi_queues', obj.virtio_scsi_multi_queues)
         if obj.virtio_scsi_multi_queues_enabled is not None:
             Writer.write_boolean(writer, 'virtio_scsi_multi_queues_enabled', obj.virtio_scsi_multi_queues_enabled)
         if obj.affinity_labels is not None:
@@ -10393,6 +10415,8 @@ class VmBaseWriter(Writer):
             writer.write_attribute('href', href)
         if obj.id is not None:
             writer.write_attribute('id', obj.id)
+        if obj.auto_pinning_policy is not None:
+            Writer.write_string(writer, 'auto_pinning_policy', obj.auto_pinning_policy.value)
         if obj.bios is not None:
             BiosWriter.write_one(obj.bios, writer, 'bios')
         if obj.comment is not None:
@@ -10477,6 +10501,8 @@ class VmBaseWriter(Writer):
             UsbWriter.write_one(obj.usb, writer, 'usb')
         if obj.virtio_scsi is not None:
             VirtioScsiWriter.write_one(obj.virtio_scsi, writer, 'virtio_scsi')
+        if obj.virtio_scsi_multi_queues is not None:
+            Writer.write_integer(writer, 'virtio_scsi_multi_queues', obj.virtio_scsi_multi_queues)
         if obj.virtio_scsi_multi_queues_enabled is not None:
             Writer.write_boolean(writer, 'virtio_scsi_multi_queues_enabled', obj.virtio_scsi_multi_queues_enabled)
         if obj.cluster is not None:

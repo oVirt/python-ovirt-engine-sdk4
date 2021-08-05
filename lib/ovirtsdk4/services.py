@@ -7578,6 +7578,7 @@ class DiskSnapshotsService(Service):
         self,
         follow=None,
         include_active=None,
+        include_template=None,
         max=None,
         headers=None,
         query=None,
@@ -7595,6 +7596,8 @@ class DiskSnapshotsService(Service):
 
         `include_active`:: If true return also active snapshots. If not specified active snapshots are not returned.
 
+        `include_template`:: If true return also template snapshots. If not specified template snapshots are not returned.
+
         `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
@@ -7608,6 +7611,7 @@ class DiskSnapshotsService(Service):
         Service._check_types([
             ('follow', follow, str),
             ('include_active', include_active, bool),
+            ('include_template', include_template, bool),
             ('max', max, int),
         ])
 
@@ -7618,6 +7622,9 @@ class DiskSnapshotsService(Service):
         if include_active is not None:
             include_active = Writer.render_boolean(include_active)
             query['include_active'] = include_active
+        if include_template is not None:
+            include_template = Writer.render_boolean(include_template)
+            query['include_template'] = include_template
         if max is not None:
             max = Writer.render_integer(max)
             query['max'] = max
@@ -23123,6 +23130,11 @@ class SshPublicKeyService(Service):
         **kwargs
     ):
         """
+        Replaces the key with a new resource.
+        IMPORTANT: Since version 4.4.8 of the engine this operation is deprecated, and preserved only for backwards
+        compatibility. It will be removed in the future. Instead please use DELETE followed by <<services/ssh_public_keys/methods/add, add operation>>.
+
+
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -40981,6 +40993,9 @@ class HostService(MeasurableService):
           </iscsi_details>
         </discovered_targets>
         ----
+        IMPORTANT: When using this method to discover iscsi targets, you can use an FQDN or an 
+        IP address, but you must use the iscsi details from the discovered targets results to log in 
+        using the  iscsilogin method.
 
 
         This method supports the following parameters:
@@ -41436,6 +41451,8 @@ class HostService(MeasurableService):
     ):
         """
         Login to iSCSI targets on the host, using the target details.
+        IMPORTANT: When using this method to log in, you must use the iscsi details from the 
+        discovered targets results in the discoveriscsi method.
 
 
         This method supports the following parameters:

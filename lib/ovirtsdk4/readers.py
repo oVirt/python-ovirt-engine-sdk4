@@ -304,7 +304,9 @@ class AffinityGroupReader(Reader):
         links = []
         while reader.forward():
             tag = reader.node_name()
-            if tag == 'cluster':
+            if tag == 'broken':
+                obj.broken = Reader.read_boolean(reader)
+            elif tag == 'cluster':
                 obj.cluster = ClusterReader.read_one(reader)
             elif tag == 'comment':
                 obj.comment = Reader.read_string(reader)
@@ -1137,6 +1139,8 @@ class BackupReader(Reader):
                 obj.from_checkpoint_id = Reader.read_string(reader)
             elif tag == 'host':
                 obj.host = HostReader.read_one(reader)
+            elif tag == 'modification_date':
+                obj.modification_date = Reader.read_date(reader)
             elif tag == 'name':
                 obj.name = Reader.read_string(reader)
             elif tag == 'phase':
@@ -5190,7 +5194,9 @@ class ExternalTemplateImportReader(Reader):
         links = []
         while reader.forward():
             tag = reader.node_name()
-            if tag == 'cluster':
+            if tag == 'clone':
+                obj.clone = Reader.read_boolean(reader)
+            elif tag == 'cluster':
                 obj.cluster = ClusterReader.read_one(reader)
             elif tag == 'cpu_profile':
                 obj.cpu_profile = CpuProfileReader.read_one(reader)
@@ -8457,7 +8463,9 @@ class InstanceTypeReader(Reader):
         links = []
         while reader.forward():
             tag = reader.node_name()
-            if tag == 'bios':
+            if tag == 'auto_pinning_policy':
+                obj.auto_pinning_policy = Reader.read_enum(types.AutoPinningPolicy, reader)
+            elif tag == 'bios':
                 obj.bios = BiosReader.read_one(reader)
             elif tag == 'cdroms':
                 obj.cdroms = CdromReader.read_many(reader)
@@ -8565,6 +8573,8 @@ class InstanceTypeReader(Reader):
                 obj.version = TemplateVersionReader.read_one(reader)
             elif tag == 'virtio_scsi':
                 obj.virtio_scsi = VirtioScsiReader.read_one(reader)
+            elif tag == 'virtio_scsi_multi_queues':
+                obj.virtio_scsi_multi_queues = Reader.read_integer(reader)
             elif tag == 'virtio_scsi_multi_queues_enabled':
                 obj.virtio_scsi_multi_queues_enabled = Reader.read_boolean(reader)
             elif tag == 'vm':
@@ -15068,6 +15078,8 @@ class SnapshotReader(Reader):
                 obj.affinity_labels = AffinityLabelReader.read_many(reader)
             elif tag == 'applications':
                 obj.applications = ApplicationReader.read_many(reader)
+            elif tag == 'auto_pinning_policy':
+                obj.auto_pinning_policy = Reader.read_enum(types.AutoPinningPolicy, reader)
             elif tag == 'bios':
                 obj.bios = BiosReader.read_one(reader)
             elif tag == 'cdroms':
@@ -15236,6 +15248,8 @@ class SnapshotReader(Reader):
                 obj.use_latest_template_version = Reader.read_boolean(reader)
             elif tag == 'virtio_scsi':
                 obj.virtio_scsi = VirtioScsiReader.read_one(reader)
+            elif tag == 'virtio_scsi_multi_queues':
+                obj.virtio_scsi_multi_queues = Reader.read_integer(reader)
             elif tag == 'virtio_scsi_multi_queues_enabled':
                 obj.virtio_scsi_multi_queues_enabled = Reader.read_boolean(reader)
             elif tag == 'vm':
@@ -16640,7 +16654,9 @@ class TemplateReader(Reader):
         links = []
         while reader.forward():
             tag = reader.node_name()
-            if tag == 'bios':
+            if tag == 'auto_pinning_policy':
+                obj.auto_pinning_policy = Reader.read_enum(types.AutoPinningPolicy, reader)
+            elif tag == 'bios':
                 obj.bios = BiosReader.read_one(reader)
             elif tag == 'cdroms':
                 obj.cdroms = CdromReader.read_many(reader)
@@ -16748,6 +16764,8 @@ class TemplateReader(Reader):
                 obj.version = TemplateVersionReader.read_one(reader)
             elif tag == 'virtio_scsi':
                 obj.virtio_scsi = VirtioScsiReader.read_one(reader)
+            elif tag == 'virtio_scsi_multi_queues':
+                obj.virtio_scsi_multi_queues = Reader.read_integer(reader)
             elif tag == 'virtio_scsi_multi_queues_enabled':
                 obj.virtio_scsi_multi_queues_enabled = Reader.read_boolean(reader)
             elif tag == 'vm':
@@ -18020,6 +18038,8 @@ class VmReader(Reader):
                 obj.affinity_labels = AffinityLabelReader.read_many(reader)
             elif tag == 'applications':
                 obj.applications = ApplicationReader.read_many(reader)
+            elif tag == 'auto_pinning_policy':
+                obj.auto_pinning_policy = Reader.read_enum(types.AutoPinningPolicy, reader)
             elif tag == 'bios':
                 obj.bios = BiosReader.read_one(reader)
             elif tag == 'cdroms':
@@ -18178,6 +18198,8 @@ class VmReader(Reader):
                 obj.use_latest_template_version = Reader.read_boolean(reader)
             elif tag == 'virtio_scsi':
                 obj.virtio_scsi = VirtioScsiReader.read_one(reader)
+            elif tag == 'virtio_scsi_multi_queues':
+                obj.virtio_scsi_multi_queues = Reader.read_integer(reader)
             elif tag == 'virtio_scsi_multi_queues_enabled':
                 obj.virtio_scsi_multi_queues_enabled = Reader.read_boolean(reader)
             elif tag == 'vm_pool':
@@ -18345,7 +18367,9 @@ class VmBaseReader(Reader):
         links = []
         while reader.forward():
             tag = reader.node_name()
-            if tag == 'bios':
+            if tag == 'auto_pinning_policy':
+                obj.auto_pinning_policy = Reader.read_enum(types.AutoPinningPolicy, reader)
+            elif tag == 'bios':
                 obj.bios = BiosReader.read_one(reader)
             elif tag == 'cluster':
                 obj.cluster = ClusterReader.read_one(reader)
@@ -18437,6 +18461,8 @@ class VmBaseReader(Reader):
                 obj.usb = UsbReader.read_one(reader)
             elif tag == 'virtio_scsi':
                 obj.virtio_scsi = VirtioScsiReader.read_one(reader)
+            elif tag == 'virtio_scsi_multi_queues':
+                obj.virtio_scsi_multi_queues = Reader.read_integer(reader)
             elif tag == 'virtio_scsi_multi_queues_enabled':
                 obj.virtio_scsi_multi_queues_enabled = Reader.read_boolean(reader)
             else:

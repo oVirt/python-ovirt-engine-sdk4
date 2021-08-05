@@ -1546,6 +1546,7 @@ class ExternalTemplateImport(Struct):
 
     def __init__(
         self,
+        clone=None,
         cluster=None,
         cpu_profile=None,
         host=None,
@@ -1556,6 +1557,7 @@ class ExternalTemplateImport(Struct):
     ):
         super(ExternalTemplateImport, self).__init__(
         )
+        self.clone = clone
         self.cluster = cluster
         self.cpu_profile = cpu_profile
         self.host = host
@@ -1638,6 +1640,20 @@ class ExternalTemplateImport(Struct):
         """
         Struct._check_type('quota', value, Quota)
         self._quota = value
+
+    @property
+    def clone(self):
+        """
+        Returns the value of the `clone` property.
+        """
+        return self._clone
+
+    @clone.setter
+    def clone(self, value):
+        """
+        Sets the value of the `clone` property.
+        """
+        self._clone = value
 
     @property
     def url(self):
@@ -12138,6 +12154,7 @@ class VmBase(Identified):
 
     def __init__(
         self,
+        auto_pinning_policy=None,
         bios=None,
         cluster=None,
         comment=None,
@@ -12185,6 +12202,7 @@ class VmBase(Identified):
         type=None,
         usb=None,
         virtio_scsi=None,
+        virtio_scsi_multi_queues=None,
         virtio_scsi_multi_queues_enabled=None,
     ):
         super(VmBase, self).__init__(
@@ -12193,6 +12211,7 @@ class VmBase(Identified):
             id=id,
             name=name,
         )
+        self.auto_pinning_policy = auto_pinning_policy
         self.bios = bios
         self.cluster = cluster
         self.console = console
@@ -12236,6 +12255,7 @@ class VmBase(Identified):
         self.type = type
         self.usb = usb
         self.virtio_scsi = virtio_scsi
+        self.virtio_scsi_multi_queues = virtio_scsi_multi_queues
         self.virtio_scsi_multi_queues_enabled = virtio_scsi_multi_queues_enabled
 
     @property
@@ -12504,6 +12524,21 @@ class VmBase(Identified):
         self._tunnel_migration = value
 
     @property
+    def auto_pinning_policy(self):
+        """
+        Returns the value of the `auto_pinning_policy` property.
+        """
+        return self._auto_pinning_policy
+
+    @auto_pinning_policy.setter
+    def auto_pinning_policy(self, value):
+        """
+        Sets the value of the `auto_pinning_policy` property.
+        """
+        Struct._check_type('auto_pinning_policy', value, AutoPinningPolicy)
+        self._auto_pinning_policy = value
+
+    @property
     def large_icon(self):
         """
         Returns the value of the `large_icon` property.
@@ -12764,6 +12799,20 @@ class VmBase(Identified):
         """
         Struct._check_type('sso', value, Sso)
         self._sso = value
+
+    @property
+    def virtio_scsi_multi_queues(self):
+        """
+        Returns the value of the `virtio_scsi_multi_queues` property.
+        """
+        return self._virtio_scsi_multi_queues
+
+    @virtio_scsi_multi_queues.setter
+    def virtio_scsi_multi_queues(self, value):
+        """
+        Sets the value of the `virtio_scsi_multi_queues` property.
+        """
+        self._virtio_scsi_multi_queues = value
 
     @property
     def tpm_enabled(self):
@@ -15128,6 +15177,7 @@ class AffinityGroup(Identified):
 
     def __init__(
         self,
+        broken=None,
         cluster=None,
         comment=None,
         description=None,
@@ -15149,6 +15199,7 @@ class AffinityGroup(Identified):
             id=id,
             name=name,
         )
+        self.broken = broken
         self.cluster = cluster
         self.enforcing = enforcing
         self.host_labels = host_labels
@@ -15159,6 +15210,20 @@ class AffinityGroup(Identified):
         self.vm_labels = vm_labels
         self.vms = vms
         self.vms_rule = vms_rule
+
+    @property
+    def broken(self):
+        """
+        Returns the value of the `broken` property.
+        """
+        return self._broken
+
+    @broken.setter
+    def broken(self, value):
+        """
+        Sets the value of the `broken` property.
+        """
+        self._broken = value
 
     @property
     def cluster(self):
@@ -15658,6 +15723,7 @@ class Backup(Identified):
         from_checkpoint_id=None,
         host=None,
         id=None,
+        modification_date=None,
         name=None,
         phase=None,
         to_checkpoint_id=None,
@@ -15673,6 +15739,7 @@ class Backup(Identified):
         self.disks = disks
         self.from_checkpoint_id = from_checkpoint_id
         self.host = host
+        self.modification_date = modification_date
         self.phase = phase
         self.to_checkpoint_id = to_checkpoint_id
         self.vm = vm
@@ -15705,6 +15772,20 @@ class Backup(Identified):
         Sets the value of the `to_checkpoint_id` property.
         """
         self._to_checkpoint_id = value
+
+    @property
+    def modification_date(self):
+        """
+        Returns the value of the `modification_date` property.
+        """
+        return self._modification_date
+
+    @modification_date.setter
+    def modification_date(self, value):
+        """
+        Sets the value of the `modification_date` property.
+        """
+        self._modification_date = value
 
     @property
     def vm(self):
@@ -22746,6 +22827,7 @@ class Template(VmBase):
 
     def __init__(
         self,
+        auto_pinning_policy=None,
         bios=None,
         cdroms=None,
         cluster=None,
@@ -22801,11 +22883,13 @@ class Template(VmBase):
         usb=None,
         version=None,
         virtio_scsi=None,
+        virtio_scsi_multi_queues=None,
         virtio_scsi_multi_queues_enabled=None,
         vm=None,
         watchdogs=None,
     ):
         super(Template, self).__init__(
+            auto_pinning_policy=auto_pinning_policy,
             bios=bios,
             cluster=cluster,
             comment=comment,
@@ -22853,6 +22937,7 @@ class Template(VmBase):
             type=type,
             usb=usb,
             virtio_scsi=virtio_scsi,
+            virtio_scsi_multi_queues=virtio_scsi_multi_queues,
             virtio_scsi_multi_queues_enabled=virtio_scsi_multi_queues_enabled,
         )
         self.cdroms = cdroms
@@ -23016,6 +23101,7 @@ class Vm(VmBase):
         self,
         affinity_labels=None,
         applications=None,
+        auto_pinning_policy=None,
         bios=None,
         cdroms=None,
         cluster=None,
@@ -23096,11 +23182,13 @@ class Vm(VmBase):
         usb=None,
         use_latest_template_version=None,
         virtio_scsi=None,
+        virtio_scsi_multi_queues=None,
         virtio_scsi_multi_queues_enabled=None,
         vm_pool=None,
         watchdogs=None,
     ):
         super(Vm, self).__init__(
+            auto_pinning_policy=auto_pinning_policy,
             bios=bios,
             cluster=cluster,
             comment=comment,
@@ -23148,6 +23236,7 @@ class Vm(VmBase):
             type=type,
             usb=usb,
             virtio_scsi=virtio_scsi,
+            virtio_scsi_multi_queues=virtio_scsi_multi_queues,
             virtio_scsi_multi_queues_enabled=virtio_scsi_multi_queues_enabled,
         )
         self.affinity_labels = affinity_labels
@@ -24052,6 +24141,7 @@ class InstanceType(Template):
 
     def __init__(
         self,
+        auto_pinning_policy=None,
         bios=None,
         cdroms=None,
         cluster=None,
@@ -24107,11 +24197,13 @@ class InstanceType(Template):
         usb=None,
         version=None,
         virtio_scsi=None,
+        virtio_scsi_multi_queues=None,
         virtio_scsi_multi_queues_enabled=None,
         vm=None,
         watchdogs=None,
     ):
         super(InstanceType, self).__init__(
+            auto_pinning_policy=auto_pinning_policy,
             bios=bios,
             cdroms=cdroms,
             cluster=cluster,
@@ -24167,6 +24259,7 @@ class InstanceType(Template):
             usb=usb,
             version=version,
             virtio_scsi=virtio_scsi,
+            virtio_scsi_multi_queues=virtio_scsi_multi_queues,
             virtio_scsi_multi_queues_enabled=virtio_scsi_multi_queues_enabled,
             vm=vm,
             watchdogs=watchdogs,
@@ -24485,6 +24578,7 @@ class Snapshot(Vm):
         self,
         affinity_labels=None,
         applications=None,
+        auto_pinning_policy=None,
         bios=None,
         cdroms=None,
         cluster=None,
@@ -24570,6 +24664,7 @@ class Snapshot(Vm):
         usb=None,
         use_latest_template_version=None,
         virtio_scsi=None,
+        virtio_scsi_multi_queues=None,
         virtio_scsi_multi_queues_enabled=None,
         vm=None,
         vm_pool=None,
@@ -24578,6 +24673,7 @@ class Snapshot(Vm):
         super(Snapshot, self).__init__(
             affinity_labels=affinity_labels,
             applications=applications,
+            auto_pinning_policy=auto_pinning_policy,
             bios=bios,
             cdroms=cdroms,
             cluster=cluster,
@@ -24658,6 +24754,7 @@ class Snapshot(Vm):
             usb=usb,
             use_latest_template_version=use_latest_template_version,
             virtio_scsi=virtio_scsi,
+            virtio_scsi_multi_queues=virtio_scsi_multi_queues,
             virtio_scsi_multi_queues_enabled=virtio_scsi_multi_queues_enabled,
             vm_pool=vm_pool,
             watchdogs=watchdogs,
@@ -25638,6 +25735,7 @@ class NotifiableEvent(Enum):
     ENGINE_CERTIFICATION_HAS_EXPIRED = 'engine_certification_has_expired'
     ENGINE_CERTIFICATION_IS_ABOUT_TO_EXPIRE = 'engine_certification_is_about_to_expire'
     ENGINE_STOP = 'engine_stop'
+    FAULTY_MULTIPATHS_ON_HOST = 'faulty_multipaths_on_host'
     GLUSTER_BRICK_STATUS_CHANGED = 'gluster_brick_status_changed'
     GLUSTER_HOOK_ADD_FAILED = 'gluster_hook_add_failed'
     GLUSTER_HOOK_ADDED = 'gluster_hook_added'
@@ -25745,8 +25843,10 @@ class NotifiableEvent(Enum):
     IRS_DISK_SPACE_LOW_ERROR = 'irs_disk_space_low_error'
     IRS_FAILURE = 'irs_failure'
     MAC_ADDRESS_IS_EXTERNAL = 'mac_address_is_external'
+    MULTIPATH_DEVICES_WITHOUT_VALID_PATHS_ON_HOST = 'multipath_devices_without_valid_paths_on_host'
     NETWORK_UPDATE_DISPLAY_FOR_CLUSTER_WITH_ACTIVE_VM = 'network_update_display_for_cluster_with_active_vm'
     NETWORK_UPDATE_DISPLAY_FOR_HOST_WITH_ACTIVE_VM = 'network_update_display_for_host_with_active_vm'
+    NO_FAULTY_MULTIPATHS_ON_HOST = 'no_faulty_multipaths_on_host'
     NUMBER_OF_LVS_ON_STORAGE_DOMAIN_EXCEEDED_THRESHOLD = 'number_of_lvs_on_storage_domain_exceeded_threshold'
     REMOVE_GLUSTER_VOLUME_BRICKS_NOT_FOUND_FROM_CLI = 'remove_gluster_volume_bricks_not_found_from_cli'
     START_REMOVING_GLUSTER_VOLUME_BRICKS = 'start_removing_gluster_volume_bricks'
