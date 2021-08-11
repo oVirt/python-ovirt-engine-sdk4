@@ -13,3 +13,4 @@ python3-nose
 python3-pycurl
 python3-six
 python3-wheel
+python38-devel
