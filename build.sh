@@ -22,6 +22,12 @@ dist() {
    -e "s|@PACKAGE_NAME@|$PACKAGE_NAME|g" \
    -e "s|@PACKAGE_VERSION@|$PACKAGE_VERSION|g" \
    < python-ovirt-engine-sdk4.spec.in > python-ovirt-engine-sdk4.spec
+  sed \
+   -e "s|@RPM_VERSION@|$RPM_VERSION|g" \
+   -e "s|@RPM_RELEASE@|$RPM_RELEASE|g" \
+   -e "s|@PACKAGE_NAME@|$PACKAGE_NAME|g" \
+   -e "s|@PACKAGE_VERSION@|$PACKAGE_VERSION|g" \
+   < python38-ovirt-engine-sdk4.spec.in > python38-ovirt-engine-sdk4.spec
 
   find ./* -not -name '*.spec' -not -name 'mocker-*' -not -name 'ci_build_summary.html' -type f | tar --files-from /proc/self/fd/0 -czf "$TARBALL" python-ovirt-engine-sdk4.spec
   echo "tar archive '$TARBALL' created."
