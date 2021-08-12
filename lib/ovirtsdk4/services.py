@@ -40993,8 +40993,8 @@ class HostService(MeasurableService):
           </iscsi_details>
         </discovered_targets>
         ----
-        IMPORTANT: When using this method to discover iscsi targets, you can use an FQDN or an 
-        IP address, but you must use the iscsi details from the discovered targets results to log in 
+        IMPORTANT: When using this method to discover iscsi targets, you can use an FQDN or an
+        IP address, but you must use the iscsi details from the discovered targets results to log in
         using the  iscsilogin method.
 
 
@@ -41451,7 +41451,7 @@ class HostService(MeasurableService):
     ):
         """
         Login to iSCSI targets on the host, using the target details.
-        IMPORTANT: When using this method to log in, you must use the iscsi details from the 
+        IMPORTANT: When using this method to log in, you must use the iscsi details from the
         discovered targets results in the discoveriscsi method.
 
 
