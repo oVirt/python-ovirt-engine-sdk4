@@ -14,8 +14,9 @@ rm -f ./*tar.gz
 # create the src.rpm
 rpmbuild \
     -D "_srcrpmdir $PWD/output" \
+    -D "_sourcedir $PWD/" \
     -D "_topmdir $PWD/rpmbuild" \
-    -ts ./*.gz
+    -ba ./*.spec
 
 # install any build requirements
 yum-builddep output/*src.rpm
