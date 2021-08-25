@@ -19,7 +19,7 @@ rpmbuild \
     -bs ./*.spec
 
 # install any build requirements
-yum-builddep output/*src.rpm
+dnf builddep output/*src.rpm
 
 # create the rpms
 rpmbuild \
