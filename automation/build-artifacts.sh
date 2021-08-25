@@ -18,6 +18,11 @@ rpmbuild \
     -D "_topmdir $PWD/rpmbuild" \
     -bs ./*.spec
 
+if [[ "$(rpm --eval "%dist")" == ".el9" ]]; then
+  # python38 is not available on el9!
+  rm -vf output/python38*
+fi
+
 # install any build requirements
 dnf builddep output/*src.rpm
 
