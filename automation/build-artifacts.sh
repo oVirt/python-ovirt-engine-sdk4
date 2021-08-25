@@ -16,7 +16,7 @@ rpmbuild \
     -D "_srcrpmdir $PWD/output" \
     -D "_sourcedir $PWD/" \
     -D "_topmdir $PWD/rpmbuild" \
-    -ba ./*.spec
+    -bs ./*.spec
 
 # install any build requirements
 yum-builddep output/*src.rpm
