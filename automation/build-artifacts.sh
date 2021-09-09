@@ -18,14 +18,13 @@ rpmbuild \
     -D "_topmdir $PWD/rpmbuild" \
     -bs ./python-ovirt-engine-sdk4.spec
 
-if [[ "$(rpm --eval "%dist")" != ".el9" ]]; then
+if [[ "$(rpm --eval "%dist")" == ".el8" ]]; then
 # create the src.rpm
 rpmbuild \
     -D "_srcrpmdir $PWD/output" \
     -D "_sourcedir $PWD/" \
     -D "_topmdir $PWD/rpmbuild" \
     -bs ./python38-ovirt-engine-sdk4.spec
-
 fi
 
 # install any build requirements
