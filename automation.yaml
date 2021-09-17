@@ -8,6 +8,7 @@ archs:
               host_distro: newer
   - ppc64le:
       distro: [el8]
+
 release_branches:
-  main:
-    - ovirt-master
+  sdk_4.4:
+    - ovirt-4.4
