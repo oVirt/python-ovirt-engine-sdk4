@@ -45,28 +45,13 @@ with closing(connection):
     # Find the disk.
     disks_service = connection.system_service().disks_service()
     disk_service = disks_service.disk_service(args.disk_id)
-
-    try:
-        disk = disk_service.get()
-    except sdk.NotFoundError:
-        raise RuntimeError("No such disk: {}".format(args.disk_id)) from None
-
-    # Find the storage domain service.
-    sd_id = disk.storage_domains[0].id
-    sds_service = connection.system_service().storage_domains_service()
-    sd_service = sds_service.storage_domain_service(sd_id)
-
-    # Find the disk snapshots using the disk snapshots service.
-    # TODO: Use disk's snapshots service to get filter the snapshot on the
-    # server side.
-    disk_snapshots_service = sd_service.disk_snapshots_service()
+    disk_snapshots_service = disk_service.disk_snapshots_service()
 
     # Create mapping from snapshot parent to snapshot, used to reconstruct the
     # snapshot chain.
     snapshots = {}
-    for s in disk_snapshots_service.list(include_active=True):
-        if s.disk.id != disk.id:
-            continue
+
+    for s in disk_snapshots_service.list(include_active=True, include_template=True):
         parent = s.parent.id if s.parent else None
         child = {
             "actual_size": s.actual_size,
