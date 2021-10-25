@@ -20556,6 +20556,7 @@ class Host(Identified):
         numa_supported=None,
         os=None,
         override_iptables=None,
+        ovn_configured=None,
         permissions=None,
         port=None,
         power_management=None,
@@ -20615,6 +20616,7 @@ class Host(Identified):
         self.numa_supported = numa_supported
         self.os = os
         self.override_iptables = override_iptables
+        self.ovn_configured = ovn_configured
         self.permissions = permissions
         self.port = port
         self.power_management = power_management
@@ -20925,6 +20927,20 @@ class Host(Identified):
         Sets the value of the `update_available` property.
         """
         self._update_available = value
+
+    @property
+    def ovn_configured(self):
+        """
+        Returns the value of the `ovn_configured` property.
+        """
+        return self._ovn_configured
+
+    @ovn_configured.setter
+    def ovn_configured(self, value):
+        """
+        Sets the value of the `ovn_configured` property.
+        """
+        self._ovn_configured = value
 
     @property
     def external_network_provider_configurations(self):

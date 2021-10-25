@@ -4140,6 +4140,8 @@ class HostWriter(Writer):
             OperatingSystemWriter.write_one(obj.os, writer, 'os')
         if obj.override_iptables is not None:
             Writer.write_boolean(writer, 'override_iptables', obj.override_iptables)
+        if obj.ovn_configured is not None:
+            Writer.write_boolean(writer, 'ovn_configured', obj.ovn_configured)
         if obj.port is not None:
             Writer.write_integer(writer, 'port', obj.port)
         if obj.power_management is not None:

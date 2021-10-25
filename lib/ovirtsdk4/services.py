@@ -7675,8 +7675,8 @@ class DisksService(Service):
     ):
         """
         Adds a new floating disk.
-        There are three types of disks that can be added - disk image, direct LUN and
-         https://wiki.openstack.org/wiki/Cinder[Cinder] disk.
+        There are three types of disks that can be added - disk image, direct LUN and Managed Block disk.
+        https://wiki.openstack.org/wiki/Cinder[Cinder] integration has been replaced by Managed Block Storage.
         *Adding a new image disk:*
         When creating a new floating image <<types/disk,Disk>>, the API requires the `storage_domain`, `provisioned_size`
         and `format` attributes.
@@ -7734,28 +7734,8 @@ class DisksService(Service):
         ----
         To create a new floating direct LUN disk without using a host, remove the `host` element.
         *Adding a new Cinder disk:*
-        To create a new floating Cinder disk, send a request as follows:
-        [source]
-        ----
-        POST /ovirt-engine/api/disks
-        ----
-        With a request body as follows:
-        [source,xml]
-        ----
-        <disk>
-          <openstack_volume_type>
-            <name>myceph</name>
-          </openstack_volume_type>
-          <storage_domains>
-            <storage_domain>
-              <name>cinderDomain</name>
-            </storage_domain>
-          </storage_domains>
-          <provisioned_size>1073741824</provisioned_size>
-          <interface>virtio</interface>
-          <format>raw</format>
-        </disk>
-        ----
+        Cinder integration has been replaced by Managed Block Storage.
+        //TODO: Add an example for adding an MBS disk
         *Adding a floating disks in order to upload disk snapshots:*
         Since version 4.2 of the engine it is possible to upload disks with
         snapshots. This request should be used to create the base image of the
@@ -19300,6 +19280,8 @@ class OpenstackSubnetsService(Service):
 
 class OpenstackVolumeAuthenticationKeyService(Service):
     """
+    Openstack Volume (Cinder) integration has been replaced by Managed Block Storage.
+
     """
 
     def __init__(self, connection, path):
@@ -19413,6 +19395,8 @@ class OpenstackVolumeAuthenticationKeyService(Service):
 
 class OpenstackVolumeAuthenticationKeysService(Service):
     """
+    Openstack Volume (Cinder) integration has been replaced by Managed Block Storage.
+
     """
 
     def __init__(self, connection, path):
@@ -19512,6 +19496,8 @@ class OpenstackVolumeAuthenticationKeysService(Service):
 
 class OpenstackVolumeProviderService(ExternalProviderService):
     """
+    Openstack Volume (Cinder) integration has been replaced by Managed Block Storage.
+
     """
 
     def __init__(self, connection, path):
@@ -19745,6 +19731,8 @@ class OpenstackVolumeProviderService(ExternalProviderService):
 
 class OpenstackVolumeProvidersService(Service):
     """
+    Openstack Volume (Cinder) integration has been replaced by Managed Block Storage.
+
     """
 
     def __init__(self, connection, path):
@@ -19870,6 +19858,8 @@ class OpenstackVolumeProvidersService(Service):
 
 class OpenstackVolumeTypeService(Service):
     """
+    Openstack Volume (Cinder) integration has been replaced by Managed Block Storage.
+
     """
 
     def __init__(self, connection, path):
@@ -19922,6 +19912,8 @@ class OpenstackVolumeTypeService(Service):
 
 class OpenstackVolumeTypesService(Service):
     """
+    Openstack Volume (Cinder) integration has been replaced by Managed Block Storage.
+
     """
 
     def __init__(self, connection, path):
@@ -39352,7 +39344,8 @@ class DiskService(MeasurableService):
         This operation allows updating the following floating disk properties:
         * For Image disks: `provisioned_size`, `alias`, `description`, `wipe_after_delete`, `shareable`, `backup` and `disk_profile`.
         * For LUN disks: `alias`, `description` and `shareable`.
-        * For Cinder and Managed Block disks: `provisioned_size`, `alias` and `description`.
+        * Cinder integration has been replaced by Managed Block Storage.
+        * For Managed Block disks: `provisioned_size`, `alias` and `description`.
         * For VM attached disks, the `qcow_version` can also be updated.
         For example, a disk's update can be done by using the following request:
         [source]

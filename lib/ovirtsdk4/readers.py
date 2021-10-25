@@ -7280,6 +7280,8 @@ class HostReader(Reader):
                 obj.os = OperatingSystemReader.read_one(reader)
             elif tag == 'override_iptables':
                 obj.override_iptables = Reader.read_boolean(reader)
+            elif tag == 'ovn_configured':
+                obj.ovn_configured = Reader.read_boolean(reader)
             elif tag == 'permissions':
                 obj.permissions = PermissionReader.read_many(reader)
             elif tag == 'port':
