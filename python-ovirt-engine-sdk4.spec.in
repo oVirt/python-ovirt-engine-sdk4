@@ -45,6 +45,9 @@ API.
 %{python3_sitearch}/*
 
 %changelog
+* Tue Oct 26 2021 Ori Liel <oliel@redhat.com> - 4.5.0
+- Update model to 4.5.0
+
 * Thu Aug 5 2021 Martin Necas <mnecas@redhat.com> - 4.4.15-1
 - Update to model 4.4.34
 - Improve examples upload_disk, download_disk, backup_vm
