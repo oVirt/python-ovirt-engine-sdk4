@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
 Name: ovirt-engine-sdk-python
-Version: 4.4.15
+Version: 4.5.0
 Summary: Python SDK for oVirt Engine API
 Home-page: UNKNOWN
 Author: Michael Pasternak, Juan Hernandez, Ondra Machacek, Ori Liel, Martin Necas
