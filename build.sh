@@ -1,8 +1,8 @@
 #!/bin/bash
 
-VERSION="4.4.16"
-MILESTONE=master
-RPM_RELEASE="0.1.$MILESTONE.$(date -u +%Y%m%d%H%M%S)"
+VERSION="4.5.0"
+MILESTONE=
+RPM_RELEASE="1"
 
 PACKAGE_NAME="python-ovirt-engine-sdk4"
 
