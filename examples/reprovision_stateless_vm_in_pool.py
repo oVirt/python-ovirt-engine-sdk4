@@ -17,7 +17,7 @@
 
 
 """
-Show how to recreate VM while maintaining VM permissions
+Show how to re-provision stateless VM in VM pool while maintaining VM permissions
 
 vm_name - VM to recreate
 """
@@ -34,8 +34,8 @@ from helpers import jobs
 
 vm_name = 'vm'
 TIMEOUT = 100
-# Create the connection to the server:
 
+# Create the connection to the server:
 connection = sdk.Connection(
     url='https://engine40.example.com/ovirt-engine/api',
     username='admin@internal',
@@ -64,6 +64,7 @@ if vm.use_latest_template_version:
     print('VM should not use latest template version')
     sys.exit(0)
 
+# Stop the VM in case it is running
 
 vm_service = vms_service.vm_service(vm.id)
 if vm.status != types.VmStatus.DOWN:
