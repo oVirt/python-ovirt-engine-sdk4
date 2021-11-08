@@ -18,6 +18,9 @@ dist() {
   echo "Creating tar archive '$TARBALL' ... "
   sed \
    -e "s|@RPM_VERSION@|$RPM_VERSION|g" \
+   < lib/ovirtsdk4/version.py > lib/ovirtsdk4/version.py
+  sed \
+   -e "s|@RPM_VERSION@|$RPM_VERSION|g" \
    -e "s|@RPM_RELEASE@|$RPM_RELEASE|g" \
    -e "s|@PACKAGE_NAME@|$PACKAGE_NAME|g" \
    -e "s|@PACKAGE_VERSION@|$PACKAGE_VERSION|g" \
