@@ -16,7 +16,9 @@ TARBALL="ovirt-engine-sdk-python-$PACKAGE_VERSION.tar.gz"
 
 dist() {
   echo "Creating tar archive '$TARBALL' ... "
-  sed -i "s|@RPM_VERSION@|${RPM_VERSION}|g" lib/ovirtsdk4/version.py
+  sed -e "s|@RPM_VERSION@|${RPM_VERSION}|g" < lib/ovirtsdk4/version.py.in > lib/ovirtsdk4/version.py
+  sed -e "s|@RPM_VERSION@|${RPM_VERSION}|g" < setup.py.in > setup.py
+  sed -e "s|@RPM_VERSION@|${RPM_VERSION}|g" < PKG-INFO.in > PKG-INFO
   sed \
    -e "s|@RPM_VERSION@|$RPM_VERSION|g" \
    -e "s|@RPM_RELEASE@|$RPM_RELEASE|g" \
