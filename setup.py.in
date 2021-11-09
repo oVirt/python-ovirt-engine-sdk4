@@ -24,13 +24,6 @@ import os
 import setuptools
 import sys
 
-# Load the version from the 'version.py' file:
-root_dir = os.path.abspath(os.path.dirname(__file__))
-version_file = os.path.join(root_dir, 'lib', 'ovirtsdk4', 'version.py')
-with open(version_file) as version_fd:
-    # This sets the VERSION variable that will be used subsequently:
-    exec(version_fd.read())
-
 # Required packages:
 requires = [
     'pycurl >= 7.19.0',
@@ -45,7 +38,7 @@ if sys.version_info < (3, 4):
 # Setup the package:
 setuptools.setup(
     name='ovirt-engine-sdk-python',
-    version=VERSION,  # noqa: F821
+    version='@RPM_VERSION@',
     description='Python SDK for oVirt Engine API',
     author='Michael Pasternak, Juan Hernandez, Ondra Machacek, Ori Liel, Martin Necas',
     author_email=(
