@@ -54,6 +54,7 @@ def main():
     parser = common.ArgumentParser(description="Backup VM disks")
     subparsers = parser.add_subparsers(title="commands")
 
+    # Full backup flow parser
     full_parser = subparsers.add_parser(
         "full",
         help="Run full backup.")
@@ -61,29 +62,9 @@ def main():
     full_parser.set_defaults(command=cmd_full)
 
     add_download_args(full_parser)
+    add_start_backup_args(full_parser)
 
-    full_parser.add_argument(
-        "vm_uuid",
-        help="UUID of the VM to backup.")
-
-    full_parser.add_argument(
-        "--disk-uuid",
-        action="append",
-        help="Disk UUID to backup. May be used multiple times to backup "
-             "multiple disks. If not specified, backup all VM disks."),
-
-    full_parser.add_argument(
-        "--skip-download",
-        dest="download_backup",
-        action="store_false",
-        help="Download full backup disks should be skipped. If specified, VM backup will "
-             "start and stop without downloading the disks.")
-
-    full_parser.add_argument(
-        "--description",
-        dest="description",
-        help="A description for the created backup/checkpoint to persist in the Engine DB.")
-
+    # Incremental backup flow parser
     incremental_parser = subparsers.add_parser(
         "incremental",
         help="Run incremental backup.")
@@ -91,10 +72,7 @@ def main():
     incremental_parser.set_defaults(command=cmd_incremental)
 
     add_download_args(incremental_parser)
-
-    incremental_parser.add_argument(
-        "vm_uuid",
-        help="UUID of the VM to backup.")
+    add_start_backup_args(incremental_parser)
 
     incremental_parser.add_argument(
         "--from-checkpoint-uuid",
@@ -102,50 +80,21 @@ def main():
         help="Perform incremental backup since the specified checkpoint "
              "UUID.")
 
-    incremental_parser.add_argument(
-        "--disk-uuid",
-        action="append",
-        help="Disk UUID to backup. May be used multiple times to backup "
-             "multiple disks. If not specified, backup all VM disks.")
-
-    incremental_parser.add_argument(
-        "--skip-download",
-        dest="download_backup",
-        action="store_false",
-        help="Download incremental backup disks should be skipped. If specified, VM backup will "
-             "start and stop without downloading the disks.")
-
-    incremental_parser.add_argument(
-        "--description",
-        dest="description",
-        help="A description for the created backup/checkpoint to persist in the Engine DB.")
-
+    # Start backup flow parser
     start_parser = subparsers.add_parser(
         "start",
         help="Start VM backup.")
 
     start_parser.set_defaults(command=cmd_start)
 
-    start_parser.add_argument(
-        "vm_uuid",
-        help="UUID of the VM to backup.")
-
-    start_parser.add_argument(
-        "--disk-uuid",
-        action="append",
-        help="Disk UUID to backup. May be used multiple times to backup "
-             "multiple disks. If not specified, backup all VM disks.")
+    add_start_backup_args(start_parser)
 
     start_parser.add_argument(
         "--from-checkpoint-uuid",
         help="Perform incremental backup since the specified checkpoint "
              "UUID.")
 
-    start_parser.add_argument(
-        "--description",
-        dest="description",
-        help="A description for the created backup/checkpoint to persist in the Engine DB.")
-
+    # Download flow parser
     download_parser = subparsers.add_parser(
         "download",
         help="Download VM backup disk.")
@@ -171,6 +120,7 @@ def main():
              "to restore the disk contents. Can be used only if the "
              "backup was started with --from-checkpoint-uuid.")
 
+    # Stop backup flow parser
     stop_parser = subparsers.add_parser(
         "stop",
         help="Stop VM backup.")
@@ -312,6 +262,30 @@ def add_download_args(parser):
         choices=('legacy', 'pause', 'cancel'),
         default='cancel',
         help="The action to be made for a timed out transfer.")
+
+
+def add_start_backup_args(parser):
+    parser.add_argument(
+        "vm_uuid",
+        help="UUID of the VM to backup.")
+
+    parser.add_argument(
+        "--disk-uuid",
+        action="append",
+        help="Disk UUID to backup. May be used multiple times to backup "
+             "multiple disks. If not specified, backup all VM disks.")
+
+    parser.add_argument(
+        "--skip-download",
+        dest="download_backup",
+        action="store_false",
+        help="Download full backup disks should be skipped. If specified, VM backup will "
+             "start and stop without downloading the disks.")
+
+    parser.add_argument(
+        "--description",
+        dest="description",
+        help="A description for the created backup/checkpoint to persist in the Engine DB.")
 
 
 # Backup helpers
