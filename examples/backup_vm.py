@@ -270,6 +270,10 @@ def add_start_backup_args(parser):
         help="UUID of the VM to backup.")
 
     parser.add_argument(
+        "--backup_uuid",
+        help="UUID of the created VM backup.")
+
+    parser.add_argument(
         "--disk-uuid",
         action="append",
         help="Disk UUID to backup. May be used multiple times to backup "
@@ -305,6 +309,7 @@ def start_backup(connection, args):
 
     backup = backups_service.add(
         types.Backup(
+            id=args.backup_uuid,
             disks=disks,
             from_checkpoint_id=args.from_checkpoint_uuid,
             description=args.description
