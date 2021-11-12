@@ -46,11 +46,11 @@ jobs:
         with:
           repository: '${{ secrets.TARGET_REPO }}'
           ssh-key: '${{ secrets.DEPLOY_KEY }}'
-          path: ovirt-engine-sdk4
+          path: ovirt-engine-sdk
           ref: 'gh-pages'
 
       - name: Create python documentation
-        run: pdoc -t gh-pages -o ./html ovirtsdk4
+        run: pdoc -t ovirt-engine-sdk -o ./html ovirtsdk4
 
       - name: Set FOLDER variable according to pushed branch
         run: |
@@ -71,14 +71,14 @@ jobs:
       - name: Move created documentation to gh-pages
         run: |
           mmv './html/ovirtsdk4/*.html' './html/ovirtsdk4/#1.m.html'
-          mkdir -p ./ovirt-engine-sdk4/${{env.FOLDER}}/
-          cp ./html/ovirtsdk4.html ./ovirt-engine-sdk4/${{env.FOLDER}}/index.html
-          cp ./html/ovirtsdk4/* ./ovirt-engine-sdk4/${{env.FOLDER}}/
+          mkdir -p ./ovirt-engine-sdk/${{env.FOLDER}}/
+          cp ./html/ovirtsdk4.html ./ovirt-engine-sdk/${{env.FOLDER}}/index.html
+          cp ./html/ovirtsdk4/* ./ovirt-engine-sdk/${{env.FOLDER}}/
           rm -rf ./html
 
       - name: Push changes to gh-pages
         run: |
-          cd ovirt-engine-sdk4
+          cd ovirt-engine-sdk
           commit=$(git log --format="%H" -n 1)
           description=$(git describe --always)
           if git status --porcelain 2>/dev/null| grep -E "^??|^M"
