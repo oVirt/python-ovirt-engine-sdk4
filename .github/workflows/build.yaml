@@ -57,7 +57,7 @@ jobs:
           IFS="/" read _ type value <<<  ${GITHUB_REF}
           if [[ ${type} == "heads" ]];
           then
-            if [[ ${value} == "master" ]]
+            if [[ ${value} == "main" ]]
             then
               echo "FOLDER='master'" >> $GITHUB_ENV;
             else
