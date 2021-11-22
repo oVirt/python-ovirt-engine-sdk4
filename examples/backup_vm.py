@@ -64,6 +64,13 @@ def main():
     add_download_args(full_parser)
     add_start_backup_args(full_parser)
 
+    full_parser.add_argument(
+        "--skip-download",
+        dest="download_backup",
+        action="store_false",
+        help="Download full backup disks should be skipped. If specified, VM backup will "
+             "start and stop without downloading the disks.")
+
     # Incremental backup flow parser
     incremental_parser = subparsers.add_parser(
         "incremental",
@@ -79,6 +86,13 @@ def main():
         required=True,
         help="Perform incremental backup since the specified checkpoint "
              "UUID.")
+
+    incremental_parser.add_argument(
+        "--skip-download",
+        dest="download_backup",
+        action="store_false",
+        help="Download full backup disks should be skipped. If specified, VM backup will "
+             "start and stop without downloading the disks.")
 
     # Start backup flow parser
     start_parser = subparsers.add_parser(
@@ -278,13 +292,6 @@ def add_start_backup_args(parser):
         action="append",
         help="Disk UUID to backup. May be used multiple times to backup "
              "multiple disks. If not specified, backup all VM disks.")
-
-    parser.add_argument(
-        "--skip-download",
-        dest="download_backup",
-        action="store_false",
-        help="Download full backup disks should be skipped. If specified, VM backup will "
-             "start and stop without downloading the disks.")
 
     parser.add_argument(
         "--description",
