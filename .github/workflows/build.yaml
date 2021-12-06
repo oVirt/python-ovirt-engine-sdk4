@@ -10,15 +10,18 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    container:
+      image: quay.io/centos/centos:stream8
     steps:
       - uses: actions/checkout@v2
 
       - name: Update packages
-        run: sudo apt-get update
+        run: sudo yum update -y
         
       - name: Install package dependencies
-        run: sudo apt-get install mmv libssl-dev libcurl4-openssl-dev python-dev
+        run: sudo yum install openssl-devel rpm-build yum-utils git -y
+      - name: test
+        run: git rev-parse --short HEAD
 
       - name: Install pypi dependencies
         run: |
@@ -70,7 +73,7 @@ jobs:
 
       - name: Move created documentation to gh-pages
         run: |
-          mmv './html/ovirtsdk4/*.html' './html/ovirtsdk4/#1.m.html'
+          rename .m.html .html ./html/ovirtsdk4/*.m.html
           mkdir -p ./ovirt-engine-sdk/${{env.FOLDER}}/
           cp ./html/ovirtsdk4.html ./ovirt-engine-sdk/${{env.FOLDER}}/index.html
           cp ./html/ovirtsdk4/* ./ovirt-engine-sdk/${{env.FOLDER}}/
