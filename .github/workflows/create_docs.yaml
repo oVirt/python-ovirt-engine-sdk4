@@ -4,7 +4,7 @@ name: ovirt-engine-sdk GitHub Actions
 on:
   push:
     branches:
-      - master
+      - main
       - sdk_4.4
     tags:
   workflow_dispatch:
