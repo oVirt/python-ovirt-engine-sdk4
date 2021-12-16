@@ -104,6 +104,13 @@ def parse_args():
              .format(client.BUFFER_SIZE))
 
     parser.add_argument(
+        "--inactivity-timeout",
+        type=int,
+        help="Number of seconds to wait before aborting an inactive "
+             "transfer. May be needed when uploading an image from "
+             "a very slow remote file system.")
+
+    parser.add_argument(
         "--timeout-policy",
         choices=('legacy', 'pause', 'cancel'),
         default='cancel',
@@ -258,8 +265,12 @@ with closing(connection):
     # oVirt hypervisor in the same data center.
     host = imagetransfer.find_host(connection, args.sd_name)
 
-    transfer = imagetransfer.create_transfer(connection, disk,
-        types.ImageTransferDirection.UPLOAD, host=host,
+    transfer = imagetransfer.create_transfer(
+        connection,
+        disk,
+        types.ImageTransferDirection.UPLOAD,
+        host=host,
+        inactivity_timeout=args.inactivity_timeout,
         timeout_policy=types.ImageTransferTimeoutPolicy(args.timeout_policy))
     try:
         # oVirt started an image transfer for uploading the image data into the
