@@ -63,13 +63,7 @@ def main():
 
     add_download_args(full_parser)
     add_start_backup_args(full_parser)
-
-    full_parser.add_argument(
-        "--skip-download",
-        dest="download_backup",
-        action="store_false",
-        help="Download full backup disks should be skipped. If specified, VM backup will "
-             "start and stop without downloading the disks.")
+    add_testing_args(full_parser)
 
     # Incremental backup flow parser
     incremental_parser = subparsers.add_parser(
@@ -87,12 +81,7 @@ def main():
         help="Perform incremental backup since the specified checkpoint "
              "UUID.")
 
-    incremental_parser.add_argument(
-        "--skip-download",
-        dest="download_backup",
-        action="store_false",
-        help="Download full backup disks should be skipped. If specified, VM backup will "
-             "start and stop without downloading the disks.")
+    add_testing_args(incremental_parser)
 
     # Start backup flow parser
     start_parser = subparsers.add_parser(
@@ -297,6 +286,18 @@ def add_start_backup_args(parser):
         "--description",
         dest="description",
         help="A description for the created backup/checkpoint to persist in the Engine DB.")
+
+
+def add_testing_args(parser):
+    """
+    Testing options for full and incremental backup.
+    """
+    parser.add_argument(
+        "--skip-download",
+        dest="download_backup",
+        action="store_false",
+        help="If specified, start and stop a backup without downloading "
+             "the disks.")
 
 
 # Backup helpers
