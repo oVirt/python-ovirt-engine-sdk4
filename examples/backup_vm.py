@@ -284,7 +284,7 @@ def add_start_backup_args(parser):
         help="UUID of the VM to backup.")
 
     parser.add_argument(
-        "--backup_uuid",
+        "--backup-uuid",
         help="UUID of the created VM backup.")
 
     parser.add_argument(
