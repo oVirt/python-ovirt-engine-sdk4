@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 #
-# Copyright (c) 2020 Red Hat, Inc.
+# Copyright (c) 2021 Red Hat, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@
 #
 
 """
-This example show how to manage VM checkpoints.
+This example shows how to manage VM checkpoints.
 
 To remove a single checkpoint, use:
 
@@ -65,8 +65,8 @@ def main():
         "--days",
         type=int,
         default=7,
-        help="Remove checkpoint older than specified days. If not "
-             "specified, remove all checkpoint created 7 days ago.")
+        help="Remove checkpoints older than specified days. If not "
+             "specified, remove checkpoints older than 7 days.")
     purge.add_argument(
         "vm_uuid",
         help="VM UUID for removing checkpoint.")
@@ -119,7 +119,7 @@ def cmd_purge(args):
             checkpoint_age = now - checkpoint.creation_date
 
             if checkpoint_age.days > args.days:
-                progress(f"Removing checkpoint {checkpoint.id}, created {checkpoint_age.days} ago")
+                progress(f"Removing checkpoint {checkpoint.id}, created {checkpoint_age.days} days ago")
                 checkpoint_service = checkpoints_service.checkpoint_service(checkpoint.id)
 
                 # Removing the checkpoint
