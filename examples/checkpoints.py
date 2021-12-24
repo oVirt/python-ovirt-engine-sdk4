@@ -94,13 +94,8 @@ def cmd_remove(args):
         except sdk.NotFoundError:
             raise RuntimeError(f"VM {args.vm_uuid} has no checkpoint {args.checkpoint_uuid}")
 
-        # Removing the checkpoint
-        checkpoint_service.remove()
-        try:
-            while checkpoint_service.get():
-                time.sleep(1)
-        except sdk.NotFoundError:
-            progress(f"Checkpoint {args.checkpoint_uuid} removed successfully")
+        remove_checkpoint(checkpoint_service)
+        progress(f"Checkpoint {args.checkpoint_uuid} removed successfully")
 
 
 def cmd_purge(args):
@@ -121,14 +116,24 @@ def cmd_purge(args):
             if checkpoint_age.days > args.days:
                 progress(f"Removing checkpoint {checkpoint.id}, created {checkpoint_age.days} days ago")
                 checkpoint_service = checkpoints_service.checkpoint_service(checkpoint.id)
+                remove_checkpoint(checkpoint_service)
+                progress(f"Checkpoint {checkpoint.id} removed successfully")
 
-                # Removing the checkpoint
-                checkpoint_service.remove()
-                try:
-                    while checkpoint_service.get():
-                        time.sleep(1)
-                except sdk.NotFoundError:
-                    progress(f"Checkpoint {checkpoint.id} removed successfully")
+
+def remove_checkpoint(checkpoint_service, timeout=60):
+    checkpoint_service.remove()
+
+    dedaline = time.monotonic() + timeout
+    while True:
+        try:
+            checkpoint_service.get()
+        except sdk.NotFoundError:
+            break
+
+        if time.monotonic() > deadline:
+            raise RuntimeError("Timeout waiting for checkpoint removal")
+
+        time.sleep(1)
 
 
 if __name__ == "__main__":
