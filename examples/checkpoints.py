@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 #
-# Copyright (c) 2020 Red Hat, Inc.
+# Copyright (c) 2021 Red Hat, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@
 #
 
 """
-This example show how to manage VM checkpoints.
+This example shows how to manage VM checkpoints.
 
 To remove a single checkpoint, use:
 
@@ -65,8 +65,8 @@ def main():
         "--days",
         type=int,
         default=7,
-        help="Remove checkpoint older than specified days. If not "
-             "specified, remove all checkpoint created 7 days ago.")
+        help="Remove checkpoints older than specified days. If not "
+             "specified, remove checkpoints older than 7 days.")
     purge.add_argument(
         "vm_uuid",
         help="VM UUID for removing checkpoint.")
@@ -94,13 +94,8 @@ def cmd_remove(args):
         except sdk.NotFoundError:
             raise RuntimeError(f"VM {args.vm_uuid} has no checkpoint {args.checkpoint_uuid}")
 
-        # Removing the checkpoint
-        checkpoint_service.remove()
-        try:
-            while checkpoint_service.get():
-                time.sleep(1)
-        except sdk.NotFoundError:
-            progress(f"Checkpoint {args.checkpoint_uuid} removed successfully")
+        remove_checkpoint(checkpoint_service)
+        progress(f"Checkpoint {args.checkpoint_uuid} removed successfully")
 
 
 def cmd_purge(args):
@@ -119,16 +114,26 @@ def cmd_purge(args):
             checkpoint_age = now - checkpoint.creation_date
 
             if checkpoint_age.days > args.days:
-                progress(f"Removing checkpoint {checkpoint.id}, created {checkpoint_age.days} ago")
+                progress(f"Removing checkpoint {checkpoint.id}, created {checkpoint_age.days} days ago")
                 checkpoint_service = checkpoints_service.checkpoint_service(checkpoint.id)
+                remove_checkpoint(checkpoint_service)
+                progress(f"Checkpoint {checkpoint.id} removed successfully")
 
-                # Removing the checkpoint
-                checkpoint_service.remove()
-                try:
-                    while checkpoint_service.get():
-                        time.sleep(1)
-                except sdk.NotFoundError:
-                    progress(f"Checkpoint {checkpoint.id} removed successfully")
+
+def remove_checkpoint(checkpoint_service, timeout=60):
+    checkpoint_service.remove()
+
+    dedaline = time.monotonic() + timeout
+    while True:
+        try:
+            checkpoint_service.get()
+        except sdk.NotFoundError:
+            break
+
+        if time.monotonic() > deadline:
+            raise RuntimeError("Timeout waiting for checkpoint removal")
+
+        time.sleep(1)
 
 
 if __name__ == "__main__":
