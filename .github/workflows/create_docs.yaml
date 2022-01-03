@@ -70,7 +70,7 @@ jobs:
 
       - name: Move created documentation to gh-pages
         run: |
-          rename .m.html .html ./html/ovirtsdk4/*.m.html
+          rename .m.html .html ./html/*.m.html
           mkdir -p ./ovirt-engine-sdk/${{env.FOLDER}}/
           cp ./html/ovirtsdk4.html ./ovirt-engine-sdk/${{env.FOLDER}}/index.html
           cp ./html/ovirtsdk4/* ./ovirt-engine-sdk/${{env.FOLDER}}/
