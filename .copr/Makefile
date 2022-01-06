@@ -1,13 +1,8 @@
 .PHONY: installdeps srpm
 
 installdeps:
-	dnf -y install git python3-devel
+	dnf -y install git gzip python3-devel rpm-build sed
 
 srpm: installdeps
-	mkdir -p tmp.repos/SOURCES
-	./build.sh dist
-	cp *.tar.gz ./tmp.repos/SOURCES/
-	rpmbuild \
-		-D "_topdir tmp.repos" \
-		-bs ./python-ovirt-engine-sdk4.spec
-	cp tmp.repos/SRPMS/*.src.rpm $(outdir)
+	./.automation/build-srpm.sh
+	cp rpmbuild/SRPMS/*.src.rpm $(outdir)
