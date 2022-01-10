@@ -8,6 +8,7 @@ on:
       - sdk_4.4
     tags:
   workflow_dispatch:
+    branches: [ master,sdk_4.4 ]
 
 env:
   LD_LIBRARY_PATH: /usr/local/opt/curl/lib:$LD_LIBRARY_PATH
@@ -50,7 +51,9 @@ jobs:
           ref: 'gh-pages'
 
       - name: Create python documentation
-        run: pdoc -t ovirt-engine-sdk -o ./html ovirtsdk4
+        run: |
+          cd ovirt-engine-sdk/docs
+          make html
 
       - name: Set FOLDER variable according to pushed branch
         run: |
@@ -72,13 +75,13 @@ jobs:
         run: |
           rename .m.html .html ./html/*.m.html
           mkdir -p ./ovirt-engine-sdk/${{env.FOLDER}}/
-          cp ./html/ovirtsdk4.html ./ovirt-engine-sdk/${{env.FOLDER}}/index.html
-          cp ./html/ovirtsdk4/* ./ovirt-engine-sdk/${{env.FOLDER}}/
-          rm -rf ./html
+          cp ./build/html/ovirtsdk4.html ./ovirt-engine-sdk/${{env.FOLDER}}/index.html
+          cp ./build/html/ovirtsdk4/* ./ovirt-engine-sdk/${{env.FOLDER}}/
+          rm -rf ./build
 
       - name: Push changes to gh-pages
         run: |
-          cd ovirt-engine-sdk
+          cd ..
           commit=$(git log --format="%H" -n 1)
           description=$(git describe --always)
           if git status --porcelain 2>/dev/null| grep -E "^??|^M"
