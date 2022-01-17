@@ -35,12 +35,6 @@ jobs:
       image: quay.io/centos/centos:${{ matrix.container-name }}
 
     steps:
-      - uses: actions/cache@v2
-        id: generated-doc
-        with:
-          path: ${{ env.GEN_DOC_DIR }}
-          key: generated-doc-${{ github.run_id }}
-
       - name: Install DNF core plugins
         if: ${{ matrix.shortcut == 'cs9' }}
         run: |
@@ -89,7 +83,7 @@ jobs:
         run: |
           createrepo_c $ARTIFACTS_DIR
 
-      - name: Upload artifacts
+      - name: Upload RPM artifacts
         uses: actions/upload-artifact@v2
         with:
           name: rpm-${{ matrix.shortcut }}
@@ -107,7 +101,7 @@ jobs:
         if: ${{ matrix.shortcut == 'cs9' }}
         run: pdoc -t ovirt-engine-sdk -o ${GEN_DOC_DIR} ovirtsdk4
 
-      - name: Upload artifacts
+      - name: Upload generated documentation artifacts
         if: ${{ matrix.shortcut == 'cs9' }}
         uses: actions/upload-artifact@v2
         with:
@@ -122,11 +116,11 @@ jobs:
     container:
       image: quay.io/centos/centos:stream9
     steps:
-      - uses: actions/cache@v2
-        id: generated-doc
+      - name: Download generated documentation artifacts
+        uses: actions/download-artifact@v2
         with:
+          name: generated-documentation
           path: ${{ env.GEN_DOC_DIR }}
-          key: generated-doc-${{ github.run_id }}
 
       - name: Install package dependencies
         run: |
