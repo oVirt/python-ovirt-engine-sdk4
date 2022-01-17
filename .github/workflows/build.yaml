@@ -97,6 +97,14 @@ jobs:
         if: ${{ matrix.shortcut == 'cs9' }}
         run: pip3 install . -U
 
+      - name: Checkout target repository
+        uses: actions/checkout@v2
+        with:
+          repository: '${{ secrets.TARGET_REPO }}'
+          ssh-key: '${{ secrets.DEPLOY_KEY }}'
+          path: ovirt-engine-sdk
+          ref: 'gh-pages'
+
       - name: Create python documentation
         if: ${{ matrix.shortcut == 'cs9' }}
         run: pdoc -t ovirt-engine-sdk -o ${GEN_DOC_DIR} ovirtsdk4
@@ -134,14 +142,6 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
-
-      - name: Checkout target repository
-        uses: actions/checkout@v2
-        with:
-          repository: '${{ secrets.TARGET_REPO }}'
-          ssh-key: '${{ secrets.DEPLOY_KEY }}'
-          path: ovirt-engine-sdk
-          ref: 'gh-pages'
 
       - name: Set FOLDER variable according to pushed branch
         run: |
