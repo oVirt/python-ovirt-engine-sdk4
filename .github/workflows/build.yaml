@@ -124,7 +124,6 @@ jobs:
 
       - name: Install package dependencies
         run: |
-          ls -al
           dnf install \
             git \
             python3-devel \
@@ -162,8 +161,6 @@ jobs:
 
       - name: Move created documentation to gh-pages
         run: |
-          ls -al
-          rename .m.html .html ./html/*.m.html
           mkdir -p ./ovirt-engine-sdk/${{env.FOLDER}}/
           cp ./html/ovirtsdk4.html ./ovirt-engine-sdk/${{env.FOLDER}}/index.html
           cp ./html/ovirtsdk4/* ./ovirt-engine-sdk/${{env.FOLDER}}/
