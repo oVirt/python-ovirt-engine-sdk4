@@ -10,6 +10,7 @@ on:
 env:
   LD_LIBRARY_PATH: /usr/local/opt/curl/lib:$LD_LIBRARY_PATH
   PYCURL_SSL_LIBRARY: openssl
+  GEN_DOC_DIR: html
 
 jobs:
   build:
@@ -29,7 +30,6 @@ jobs:
 
     env:
       ARTIFACTS_DIR: exported-artifacts
-      GEN_DOC_DIR: html
 
     container:
       image: quay.io/centos/centos:${{ matrix.container-name }}
