@@ -163,8 +163,7 @@ jobs:
         run: |
           mkdir -p ./ovirt-engine-sdk/${{env.FOLDER}}/
           cp ./html/ovirtsdk4.html ./ovirt-engine-sdk/${{env.FOLDER}}/index.html
-          cp ./html/ovirtsdk4/* ./ovirt-engine-sdk/${{env.FOLDER}}/
-          ls -al ./ovirt-engine-sdk/${{env.FOLDER}}/
+          cp -r ./html/ovirtsdk4/* ./ovirt-engine-sdk/${{env.FOLDER}}/
 
       - name: Push changes to gh-pages
         run: |
