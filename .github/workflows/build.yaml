@@ -150,7 +150,7 @@ jobs:
           then
             if [[ ${value} == "main" ]]
             then
-              echo "FOLDER='master'" >> $GITHUB_ENV;
+              echo "FOLDER=master" >> $GITHUB_ENV;
             else
               echo "FOLDER=${value: -3}" >> $GITHUB_ENV;
             fi
@@ -164,7 +164,7 @@ jobs:
           mkdir -p ./ovirt-engine-sdk/${{env.FOLDER}}/
           cp ./html/ovirtsdk4.html ./ovirt-engine-sdk/${{env.FOLDER}}/index.html
           cp ./html/ovirtsdk4/* ./ovirt-engine-sdk/${{env.FOLDER}}/
-          rm -rf ./html
+          ls -al ./ovirt-engine-sdk/${{env.FOLDER}}/
 
       - name: Push changes to gh-pages
         run: |
