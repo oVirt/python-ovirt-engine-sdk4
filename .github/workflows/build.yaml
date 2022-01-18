@@ -98,6 +98,7 @@ jobs:
         run: pip3 install . -U
 
       - name: Checkout target repository
+        if: ${{ matrix.shortcut == 'cs9' }}
         uses: actions/checkout@v2
         with:
           repository: '${{ secrets.TARGET_REPO }}'
