@@ -97,6 +97,13 @@ jobs:
         if: ${{ matrix.shortcut == 'cs9' }}
         run: pip3 install . -U
 
+      - name: Checkout target repository
+        if: ${{ matrix.shortcut == 'cs9' }}
+        uses: actions/checkout@v2
+        with:
+          path: ovirt-engine-sdk
+          ref: 'gh-pages'
+
       - name: Create python documentation
         if: ${{ matrix.shortcut == 'cs9' }}
         run: pdoc -t ovirt-engine-sdk -o ${GEN_DOC_DIR} ovirtsdk4
@@ -138,8 +145,6 @@ jobs:
       - name: Checkout target repository
         uses: actions/checkout@v2
         with:
-          repository: '${{ secrets.TARGET_REPO }}'
-          ssh-key: '${{ secrets.DEPLOY_KEY }}'
           path: ovirt-engine-sdk
           ref: 'gh-pages'
 
