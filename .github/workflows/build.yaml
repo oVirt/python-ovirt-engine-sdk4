@@ -168,6 +168,8 @@ jobs:
             echo "FOLDER=${value:0:3}" >> $GITHUB_ENV;
           fi
 
+      - name: Get path
+        run: ls -l
       - name: Move created documentation to gh-pages
         run: |
           mkdir -p ./ovirt-engine-sdk/${{env.FOLDER}}/
