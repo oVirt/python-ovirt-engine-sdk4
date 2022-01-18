@@ -147,7 +147,7 @@ jobs:
         with:
           path: ovirt-engine-sdk
           ref: 'gh-pages'
-          token: ${{ secrets.GITHUB_TOKEN }}
+          ssh-key: '${{ secrets.DEPLOY_KEY }}'
 
       - name: Set FOLDER variable according to pushed branch
         run: |
