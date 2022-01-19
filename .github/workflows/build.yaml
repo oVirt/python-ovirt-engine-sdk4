@@ -7,9 +7,6 @@ on:
   workflow_dispatch:
     branches: [main]
 
-permissions:
-  contents: write
-
 env:
   LD_LIBRARY_PATH: /usr/local/opt/curl/lib:$LD_LIBRARY_PATH
   PYCURL_SSL_LIBRARY: openssl
@@ -120,6 +117,8 @@ jobs:
 
 
   publish-doc:
+    permissions:
+      contents: write
     needs: build
     if: ${{ github.event_name == 'push' }}
     runs-on: ubuntu-latest
