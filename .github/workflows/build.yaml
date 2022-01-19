@@ -117,6 +117,8 @@ jobs:
 
 
   publish-doc:
+    permissions:
+      contents: write
     needs: build
     if: ${{ github.event_name == 'push' }}
     runs-on: ubuntu-latest
@@ -147,7 +149,7 @@ jobs:
         with:
           path: ovirt-engine-sdk
           ref: 'gh-pages'
-          ssh-key: '${{ secrets.DEPLOY_KEY }}'
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set FOLDER variable according to pushed branch
         run: |
