@@ -7,6 +7,9 @@ on:
   workflow_dispatch:
     branches: [main]
 
+permissions:
+  contents: write
+
 env:
   LD_LIBRARY_PATH: /usr/local/opt/curl/lib:$LD_LIBRARY_PATH
   PYCURL_SSL_LIBRARY: openssl
@@ -147,7 +150,7 @@ jobs:
         with:
           path: ovirt-engine-sdk
           ref: 'gh-pages'
-          ssh-key: '${{ secrets.DEPLOY_KEY }}'
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set FOLDER variable according to pushed branch
         run: |
