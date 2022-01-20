@@ -10,7 +10,7 @@ on:
 env:
   LD_LIBRARY_PATH: /usr/local/opt/curl/lib:$LD_LIBRARY_PATH
   PYCURL_SSL_LIBRARY: openssl
-  GEN_DOC_DIR: html
+  GEN_DOC_DIR: docs/build/html
 
 jobs:
   build:
@@ -67,9 +67,11 @@ jobs:
             python3-pygments \
             python3-pyflakes \
             python3-six \
+            python3-sphinx \
             python3-wheel \
             rpm-build \
             tar \
+            tzdata \
             -y
 
       - name: Checkout sources
@@ -89,12 +91,7 @@ jobs:
           name: rpm-${{ matrix.shortcut }}
           path: ${{ env.ARTIFACTS_DIR }}
 
-      - name: Install documentation generation dependencies
-        if: ${{ matrix.shortcut == 'cs9' }}
-        run: pip3 install pdoc
-
       - name: Install created sdk
-        if: ${{ matrix.shortcut == 'cs9' }}
         run: pip3 install . -U
 
       - name: Checkout target repository
@@ -105,8 +102,9 @@ jobs:
           ref: 'gh-pages'
 
       - name: Create python documentation
-        if: ${{ matrix.shortcut == 'cs9' }}
-        run: pdoc -t ovirt-engine-sdk -o ${GEN_DOC_DIR} ovirtsdk4
+        run: |
+          cd docs
+          make html
 
       - name: Upload generated documentation artifacts
         if: ${{ matrix.shortcut == 'cs9' }}
