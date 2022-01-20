@@ -1,0 +1,5 @@
+==========
+README
+==========
+.. literalinclude:: ../../README.adoc
+
