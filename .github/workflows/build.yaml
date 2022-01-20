@@ -103,7 +103,8 @@ jobs:
 
       - name: Create python documentation
         run: |
-          pip3 install --user pytz
+          pip3 install pytz
+          pip3 install myst-parser
           cd docs
           make html
 
