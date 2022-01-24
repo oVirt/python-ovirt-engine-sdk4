@@ -22,6 +22,9 @@ jobs:
           - name: centos-stream-8
             shortcut: cs8
             container-name: stream8
+          - name: centos-stream-9
+            shortcut: cs9
+            container-name: stream9
 
     name: ${{ matrix.name }}
 
@@ -32,6 +35,11 @@ jobs:
       image: quay.io/centos/centos:${{ matrix.container-name }}
 
     steps:
+      - name: Install DNF core plugins
+        if: ${{ matrix.shortcut == 'cs9' }}
+        run: |
+          # DNF core plugins are installed in the official CS9 container image
+          dnf install -y dnf-plugins-core
 
       - name: Prepare build environment
         run: |
@@ -64,7 +72,6 @@ jobs:
             python3-wheel \
             rpm-build \
             tar \
-            tzdata \
             -y
 
       - name: Checkout sources
@@ -84,22 +91,15 @@ jobs:
           name: rpm-${{ matrix.shortcut }}
           path: ${{ env.ARTIFACTS_DIR }}
 
-      - name: Install created sdk
-        run: pip3 install . -U
-
-      - name: Checkout target repository
-        uses: actions/checkout@v2
-        with:
-          path: ovirt-engine-sdk
-          ref: 'gh-pages'
-
       - name: Create python documentation
+        if: ${{ matrix.shortcut == 'cs8' }}
         run: |
           date +"%Z %z"
           cd docs
           make html
 
       - name: Upload generated documentation artifacts
+        if: ${{ matrix.shortcut == 'cs8' }}
         uses: actions/upload-artifact@v2
         with:
           name: generated-documentation
@@ -113,7 +113,7 @@ jobs:
     if: ${{ github.event_name == 'push' }}
     runs-on: ubuntu-latest
     container:
-      image: quay.io/centos/centos:stream8
+      image: quay.io/centos/centos:stream9
     steps:
       - name: Download generated documentation artifacts
         uses: actions/download-artifact@v2
