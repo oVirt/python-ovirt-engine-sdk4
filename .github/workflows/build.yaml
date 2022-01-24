@@ -71,6 +71,7 @@ jobs:
             python3-wheel \
             rpm-build \
             tar \
+            tzdata \
             -y
 
       - name: Checkout sources
