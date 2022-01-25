@@ -92,7 +92,7 @@ jobs:
           path: ${{ env.ARTIFACTS_DIR }}
 
       - name: Install created sdk
-        if: ${{ matrix.shortcut == 'cs9' }}
+        if: ${{ matrix.shortcut == 'cs8' }}
         run: pip3 install . -U
 
       - name: Create python documentation
