@@ -91,6 +91,10 @@ jobs:
           name: rpm-${{ matrix.shortcut }}
           path: ${{ env.ARTIFACTS_DIR }}
 
+      - name: Install created sdk
+        if: ${{ matrix.shortcut == 'cs9' }}
+        run: pip3 install . -U
+
       - name: Create python documentation
         if: ${{ matrix.shortcut == 'cs8' }}
         run: |
