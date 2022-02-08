@@ -315,6 +315,9 @@ def start_backup(connection, args):
     else:
         disks = get_vm_disks(connection, args.vm_uuid)
 
+    if not disks:
+        raise RuntimeError("Cannot start a backup without disks")
+
     backup = backups_service.add(
         types.Backup(
             id=args.backup_uuid,
