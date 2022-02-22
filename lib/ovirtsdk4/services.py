@@ -25,9 +25,7 @@ from ovirtsdk4.writer import Writer
 
 class AffinityGroupService(Service):
     """
-    This service manages a single affinity group.
-    
-    \"\"\"
+    """    This service manages a single affinity group.
 
     def __init__(self, connection, path):
         super(AffinityGroupService, self).__init__(connection, path)
@@ -45,7 +43,7 @@ class AffinityGroupService(Service):
         **kwargs
     ):
         """
-        Retrieve the affinity group details.
+        """        Retrieve the affinity group details.
         
         ``` {.xml}
         <affinity_group id="00000000-0000-0000-0000-000000000000">
@@ -72,7 +70,7 @@ class AffinityGroupService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -95,7 +93,7 @@ class AffinityGroupService(Service):
         **kwargs
     ):
         """
-        Remove the affinity group.
+        """        Remove the affinity group.
         
         DELETE /ovirt-engine/api/clusters/000-000/affinitygroups/123-456\</programlisting\>
         
@@ -115,7 +113,7 @@ class AffinityGroupService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -144,7 +142,7 @@ class AffinityGroupService(Service):
         **kwargs
     ):
         """
-        Update the affinity group.
+        """        Update the affinity group.
         
         This method supports the following parameters:
         
@@ -162,7 +160,7 @@ class AffinityGroupService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('group', group, types.AffinityGroup),
@@ -184,35 +182,27 @@ class AffinityGroupService(Service):
 
     def host_labels_service(self):
         """
-        Returns a reference to the service that manages the list of all host labels attached to this affinity group.
-        
-        \"\"\"
+        """        Returns a reference to the service that manages the list of all host labels attached to this affinity group.
         return AffinityGroupHostLabelsService(self._connection, '%s/hostlabels' % self._path)
 
     def hosts_service(self):
         """
-        Returns a reference to the service that manages the list of all hosts attached to this affinity group.
-        
-        \"\"\"
+        """        Returns a reference to the service that manages the list of all hosts attached to this affinity group.
         return AffinityGroupHostsService(self._connection, '%s/hosts' % self._path)
 
     def vm_labels_service(self):
         """
-        Returns a reference to the service that manages the list of all virtual machine labels attached to this affinity group.
-        
-        \"\"\"
+        """        Returns a reference to the service that manages the list of all virtual machine labels attached to this affinity group.
         return AffinityGroupVmLabelsService(self._connection, '%s/vmlabels' % self._path)
 
     def vms_service(self):
         """
-        Returns a reference to the service that manages the list of all virtual machines attached to this affinity group.
-        
-        \"\"\"
+        """        Returns a reference to the service that manages the list of all virtual machines attached to this affinity group.
         return AffinityGroupVmsService(self._connection, '%s/vms' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'hostlabels':
@@ -239,9 +229,7 @@ class AffinityGroupService(Service):
 
 class AffinityGroupHostService(Service):
     """
-    This service manages a single host to affinity group assignment.
-    
-    \"\"\"
+    """    This service manages a single host to affinity group assignment.
 
     def __init__(self, connection, path):
         super(AffinityGroupHostService, self).__init__(connection, path)
@@ -255,7 +243,7 @@ class AffinityGroupHostService(Service):
         **kwargs
     ):
         """
-        Remove host from the affinity group.
+        """        Remove host from the affinity group.
         
         This method supports the following parameters:
         
@@ -273,7 +261,7 @@ class AffinityGroupHostService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -294,7 +282,7 @@ class AffinityGroupHostService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -305,9 +293,7 @@ class AffinityGroupHostService(Service):
 
 class AffinityGroupHostLabelService(Service):
     """
-    This service manages a single host label assigned to an affinity group.
-    
-    \"\"\"
+    """    This service manages a single host label assigned to an affinity group.
 
     def __init__(self, connection, path):
         super(AffinityGroupHostLabelService, self).__init__(connection, path)
@@ -321,7 +307,7 @@ class AffinityGroupHostLabelService(Service):
         **kwargs
     ):
         """
-        Remove this label from the affinity group.
+        """        Remove this label from the affinity group.
         
         This method supports the following parameters:
         
@@ -339,7 +325,7 @@ class AffinityGroupHostLabelService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -360,7 +346,7 @@ class AffinityGroupHostLabelService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -371,9 +357,7 @@ class AffinityGroupHostLabelService(Service):
 
 class AffinityGroupHostLabelsService(Service):
     """
-    This service manages a collection of all host labels assigned to an affinity group.
-    
-    \"\"\"
+    """    This service manages a collection of all host labels assigned to an affinity group.
 
     def __init__(self, connection, path):
         super(AffinityGroupHostLabelsService, self).__init__(connection, path)
@@ -388,7 +372,7 @@ class AffinityGroupHostLabelsService(Service):
         **kwargs
     ):
         """
-        Adds a host label to the affinity group. For example, to add the label `789` to the affinity group `456` of cluster `123`, send a request like this:
+        """        Adds a host label to the affinity group. For example, to add the label `789` to the affinity group `456` of cluster `123`, send a request like this:
         
             POST /ovirt-engine/api/clusters/123/affinitygroups/456/hostlabels
         
@@ -414,7 +398,7 @@ class AffinityGroupHostLabelsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('label', label, types.AffinityLabel),
@@ -436,7 +420,7 @@ class AffinityGroupHostLabelsService(Service):
         **kwargs
     ):
         """
-        List all host labels assigned to this affinity group. The order of the returned labels isn't guaranteed.
+        """        List all host labels assigned to this affinity group. The order of the returned labels isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -458,7 +442,7 @@ class AffinityGroupHostLabelsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -478,9 +462,7 @@ class AffinityGroupHostLabelsService(Service):
 
     def label_service(self, id):
         """
-        Access the service that manages the host label assignment to this affinity group.
-        
-        \"\"\"
+        """        Access the service that manages the host label assignment to this affinity group.
         Service._check_types([
             ('id', id, str),
         ])
@@ -488,7 +470,7 @@ class AffinityGroupHostLabelsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -502,9 +484,7 @@ class AffinityGroupHostLabelsService(Service):
 
 class AffinityGroupHostsService(Service):
     """
-    This service manages a collection of all hosts assigned to an affinity group.
-    
-    \"\"\"
+    """    This service manages a collection of all hosts assigned to an affinity group.
 
     def __init__(self, connection, path):
         super(AffinityGroupHostsService, self).__init__(connection, path)
@@ -519,7 +499,7 @@ class AffinityGroupHostsService(Service):
         **kwargs
     ):
         """
-        Adds a host to the affinity group. For example, to add the host `789` to the affinity group `456` of cluster `123`, send a request like this:
+        """        Adds a host to the affinity group. For example, to add the host `789` to the affinity group `456` of cluster `123`, send a request like this:
         
             POST /ovirt-engine/api/clusters/123/affinitygroups/456/hosts
         
@@ -545,7 +525,7 @@ class AffinityGroupHostsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('host', host, types.Host),
@@ -567,7 +547,7 @@ class AffinityGroupHostsService(Service):
         **kwargs
     ):
         """
-        List all hosts assigned to this affinity group. The order of the returned hosts isn't guaranteed.
+        """        List all hosts assigned to this affinity group. The order of the returned hosts isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -589,7 +569,7 @@ class AffinityGroupHostsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -609,9 +589,7 @@ class AffinityGroupHostsService(Service):
 
     def host_service(self, id):
         """
-        Access the service that manages the host assignment to this affinity group.
-        
-        \"\"\"
+        """        Access the service that manages the host assignment to this affinity group.
         Service._check_types([
             ('id', id, str),
         ])
@@ -619,7 +597,7 @@ class AffinityGroupHostsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -633,9 +611,7 @@ class AffinityGroupHostsService(Service):
 
 class AffinityGroupVmService(Service):
     """
-    This service manages a single virtual machine to affinity group assignment.
-    
-    \"\"\"
+    """    This service manages a single virtual machine to affinity group assignment.
 
     def __init__(self, connection, path):
         super(AffinityGroupVmService, self).__init__(connection, path)
@@ -649,7 +625,7 @@ class AffinityGroupVmService(Service):
         **kwargs
     ):
         """
-        Remove this virtual machine from the affinity group.
+        """        Remove this virtual machine from the affinity group.
         
         This method supports the following parameters:
         
@@ -667,7 +643,7 @@ class AffinityGroupVmService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -688,7 +664,7 @@ class AffinityGroupVmService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -699,9 +675,7 @@ class AffinityGroupVmService(Service):
 
 class AffinityGroupVmLabelService(Service):
     """
-    This service manages a single virtual machine label assigned to an affinity group.
-    
-    \"\"\"
+    """    This service manages a single virtual machine label assigned to an affinity group.
 
     def __init__(self, connection, path):
         super(AffinityGroupVmLabelService, self).__init__(connection, path)
@@ -715,7 +689,7 @@ class AffinityGroupVmLabelService(Service):
         **kwargs
     ):
         """
-        Remove this label from the affinity group.
+        """        Remove this label from the affinity group.
         
         This method supports the following parameters:
         
@@ -733,7 +707,7 @@ class AffinityGroupVmLabelService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -754,7 +728,7 @@ class AffinityGroupVmLabelService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -765,9 +739,7 @@ class AffinityGroupVmLabelService(Service):
 
 class AffinityGroupVmLabelsService(Service):
     """
-    This service manages a collection of all virtual machine labels assigned to an affinity group.
-    
-    \"\"\"
+    """    This service manages a collection of all virtual machine labels assigned to an affinity group.
 
     def __init__(self, connection, path):
         super(AffinityGroupVmLabelsService, self).__init__(connection, path)
@@ -782,7 +754,7 @@ class AffinityGroupVmLabelsService(Service):
         **kwargs
     ):
         """
-        Adds a virtual machine label to the affinity group. For example, to add the label `789` to the affinity group `456` of cluster `123`, send a request like this:
+        """        Adds a virtual machine label to the affinity group. For example, to add the label `789` to the affinity group `456` of cluster `123`, send a request like this:
         
             POST /ovirt-engine/api/clusters/123/affinitygroups/456/vmlabels
         
@@ -808,7 +780,7 @@ class AffinityGroupVmLabelsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('label', label, types.AffinityLabel),
@@ -830,7 +802,7 @@ class AffinityGroupVmLabelsService(Service):
         **kwargs
     ):
         """
-        List all virtual machine labels assigned to this affinity group. The order of the returned labels isn't guaranteed.
+        """        List all virtual machine labels assigned to this affinity group. The order of the returned labels isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -852,7 +824,7 @@ class AffinityGroupVmLabelsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -872,9 +844,7 @@ class AffinityGroupVmLabelsService(Service):
 
     def label_service(self, id):
         """
-        Access the service that manages the virtual machine label assignment to this affinity group.
-        
-        \"\"\"
+        """        Access the service that manages the virtual machine label assignment to this affinity group.
         Service._check_types([
             ('id', id, str),
         ])
@@ -882,7 +852,7 @@ class AffinityGroupVmLabelsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -896,9 +866,7 @@ class AffinityGroupVmLabelsService(Service):
 
 class AffinityGroupVmsService(Service):
     """
-    This service manages a collection of all the virtual machines assigned to an affinity group.
-    
-    \"\"\"
+    """    This service manages a collection of all the virtual machines assigned to an affinity group.
 
     def __init__(self, connection, path):
         super(AffinityGroupVmsService, self).__init__(connection, path)
@@ -913,7 +881,7 @@ class AffinityGroupVmsService(Service):
         **kwargs
     ):
         """
-        Adds a virtual machine to the affinity group. For example, to add the virtual machine `789` to the affinity group `456` of cluster `123`, send a request like this:
+        """        Adds a virtual machine to the affinity group. For example, to add the virtual machine `789` to the affinity group `456` of cluster `123`, send a request like this:
         
             POST /ovirt-engine/api/clusters/123/affinitygroups/456/vms
         
@@ -922,8 +890,6 @@ class AffinityGroupVmsService(Service):
         ``` {.xml}
         <vm id="789"/>
         ```
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('vm', vm, types.Vm),
@@ -945,7 +911,7 @@ class AffinityGroupVmsService(Service):
         **kwargs
     ):
         """
-        List all virtual machines assigned to this affinity group. The order of the returned virtual machines isn't guaranteed.
+        """        List all virtual machines assigned to this affinity group. The order of the returned virtual machines isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -967,7 +933,7 @@ class AffinityGroupVmsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -987,9 +953,7 @@ class AffinityGroupVmsService(Service):
 
     def vm_service(self, id):
         """
-        Access the service that manages the virtual machine assignment to this affinity group.
-        
-        \"\"\"
+        """        Access the service that manages the virtual machine assignment to this affinity group.
         Service._check_types([
             ('id', id, str),
         ])
@@ -997,7 +961,7 @@ class AffinityGroupVmsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -1011,9 +975,7 @@ class AffinityGroupVmsService(Service):
 
 class AffinityGroupsService(Service):
     """
-    The affinity groups service manages virtual machine relationships and dependencies.
-    
-    \"\"\"
+    """    The affinity groups service manages virtual machine relationships and dependencies.
 
     def __init__(self, connection, path):
         super(AffinityGroupsService, self).__init__(connection, path)
@@ -1028,7 +990,7 @@ class AffinityGroupsService(Service):
         **kwargs
     ):
         """
-        Create a new affinity group. Post a request like in the example below to create a new affinity group:
+        """        Create a new affinity group. Post a request like in the example below to create a new affinity group:
         
         POST /ovirt-engine/api/clusters/000-000/affinitygroups\</programlisting\>
         
@@ -1063,7 +1025,7 @@ class AffinityGroupsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('group', group, types.AffinityGroup),
@@ -1085,7 +1047,7 @@ class AffinityGroupsService(Service):
         **kwargs
     ):
         """
-        List existing affinity groups. The order of the affinity groups results isn't guaranteed.
+        """        List existing affinity groups. The order of the affinity groups results isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -1107,7 +1069,7 @@ class AffinityGroupsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -1127,9 +1089,7 @@ class AffinityGroupsService(Service):
 
     def group_service(self, id):
         """
-        Access the affinity group service that manages the affinity group specified by an ID.
-        
-        \"\"\"
+        """        Access the affinity group service that manages the affinity group specified by an ID.
         Service._check_types([
             ('id', id, str),
         ])
@@ -1137,7 +1097,7 @@ class AffinityGroupsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -1151,9 +1111,7 @@ class AffinityGroupsService(Service):
 
 class AffinityLabelService(Service):
     """
-    The details of a single affinity label.
-    
-    \"\"\"
+    """    The details of a single affinity label.
 
     def __init__(self, connection, path):
         super(AffinityLabelService, self).__init__(connection, path)
@@ -1169,7 +1127,7 @@ class AffinityLabelService(Service):
         **kwargs
     ):
         """
-        Retrieves the details of a label.
+        """        Retrieves the details of a label.
         
         This method supports the following parameters:
         
@@ -1187,7 +1145,7 @@ class AffinityLabelService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -1209,9 +1167,7 @@ class AffinityLabelService(Service):
         **kwargs
     ):
         """
-        Removes a label from the system and clears all assignments of the removed label.
-        
-        \"\"\"
+        """        Removes a label from the system and clears all assignments of the removed label.
         # Check the types of the parameters:
         Service._check_types([
         ])
@@ -1231,9 +1187,7 @@ class AffinityLabelService(Service):
         **kwargs
     ):
         """
-        Updates a label. This call will update all metadata, such as the name or description.
-        
-        \"\"\"
+        """        Updates a label. This call will update all metadata, such as the name or description.
         # Check the types of the parameters:
         Service._check_types([
             ('label', label, types.AffinityLabel),
@@ -1247,21 +1201,17 @@ class AffinityLabelService(Service):
 
     def hosts_service(self):
         """
-        List all hosts with this label.
-        
-        \"\"\"
+        """        List all hosts with this label.
         return AffinityLabelHostsService(self._connection, '%s/hosts' % self._path)
 
     def vms_service(self):
         """
-        List all virtual machines with this label.
-        
-        \"\"\"
+        """        List all virtual machines with this label.
         return AffinityLabelVmsService(self._connection, '%s/vms' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'hosts':
@@ -1280,9 +1230,7 @@ class AffinityLabelService(Service):
 
 class AffinityLabelHostService(Service):
     """
-    This service represents a host that has a specific label when accessed through the affinitylabels/hosts subcollection.
-    
-    \"\"\"
+    """    This service represents a host that has a specific label when accessed through the affinitylabels/hosts subcollection.
 
     def __init__(self, connection, path):
         super(AffinityLabelHostService, self).__init__(connection, path)
@@ -1296,7 +1244,7 @@ class AffinityLabelHostService(Service):
         **kwargs
     ):
         """
-        Retrieves details about a host that has this label assigned.
+        """        Retrieves details about a host that has this label assigned.
         
         This method supports the following parameters:
         
@@ -1314,7 +1262,7 @@ class AffinityLabelHostService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -1336,9 +1284,7 @@ class AffinityLabelHostService(Service):
         **kwargs
     ):
         """
-        Remove a label from a host.
-        
-        \"\"\"
+        """        Remove a label from a host.
         # Check the types of the parameters:
         Service._check_types([
         ])
@@ -1351,7 +1297,7 @@ class AffinityLabelHostService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -1362,9 +1308,7 @@ class AffinityLabelHostService(Service):
 
 class AffinityLabelHostsService(Service):
     """
-    This service represents list of hosts that have a specific label when accessed through the affinitylabels/hosts subcollection.
-    
-    \"\"\"
+    """    This service represents list of hosts that have a specific label when accessed through the affinitylabels/hosts subcollection.
 
     def __init__(self, connection, path):
         super(AffinityLabelHostsService, self).__init__(connection, path)
@@ -1379,9 +1323,7 @@ class AffinityLabelHostsService(Service):
         **kwargs
     ):
         """
-        Add a label to a host.
-        
-        \"\"\"
+        """        Add a label to a host.
         # Check the types of the parameters:
         Service._check_types([
             ('host', host, types.Host),
@@ -1402,7 +1344,7 @@ class AffinityLabelHostsService(Service):
         **kwargs
     ):
         """
-        List all hosts with the label. The order of the returned hosts isn't guaranteed.
+        """        List all hosts with the label. The order of the returned hosts isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -1420,7 +1362,7 @@ class AffinityLabelHostsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -1436,9 +1378,7 @@ class AffinityLabelHostsService(Service):
 
     def host_service(self, id):
         """
-        A link to the specific label-host assignment to allow label removal.
-        
-        \"\"\"
+        """        A link to the specific label-host assignment to allow label removal.
         Service._check_types([
             ('id', id, str),
         ])
@@ -1446,7 +1386,7 @@ class AffinityLabelHostsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -1460,9 +1400,7 @@ class AffinityLabelHostsService(Service):
 
 class AffinityLabelVmService(Service):
     """
-    This service represents a vm that has a specific label when accessed through the affinitylabels/vms subcollection.
-    
-    \"\"\"
+    """    This service represents a vm that has a specific label when accessed through the affinitylabels/vms subcollection.
 
     def __init__(self, connection, path):
         super(AffinityLabelVmService, self).__init__(connection, path)
@@ -1476,7 +1414,7 @@ class AffinityLabelVmService(Service):
         **kwargs
     ):
         """
-        Retrieves details about a vm that has this label assigned.
+        """        Retrieves details about a vm that has this label assigned.
         
         This method supports the following parameters:
         
@@ -1494,7 +1432,7 @@ class AffinityLabelVmService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -1516,9 +1454,7 @@ class AffinityLabelVmService(Service):
         **kwargs
     ):
         """
-        Remove a label from a vm.
-        
-        \"\"\"
+        """        Remove a label from a vm.
         # Check the types of the parameters:
         Service._check_types([
         ])
@@ -1531,7 +1467,7 @@ class AffinityLabelVmService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -1542,9 +1478,7 @@ class AffinityLabelVmService(Service):
 
 class AffinityLabelVmsService(Service):
     """
-    This service represents list of vms that have a specific label when accessed through the affinitylabels/vms subcollection.
-    
-    \"\"\"
+    """    This service represents list of vms that have a specific label when accessed through the affinitylabels/vms subcollection.
 
     def __init__(self, connection, path):
         super(AffinityLabelVmsService, self).__init__(connection, path)
@@ -1559,9 +1493,7 @@ class AffinityLabelVmsService(Service):
         **kwargs
     ):
         """
-        Add a label to a vm.
-        
-        \"\"\"
+        """        Add a label to a vm.
         # Check the types of the parameters:
         Service._check_types([
             ('vm', vm, types.Vm),
@@ -1582,7 +1514,7 @@ class AffinityLabelVmsService(Service):
         **kwargs
     ):
         """
-        List all virtual machines with the label. The order of the returned virtual machines isn't guaranteed.
+        """        List all virtual machines with the label. The order of the returned virtual machines isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -1600,7 +1532,7 @@ class AffinityLabelVmsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -1616,9 +1548,7 @@ class AffinityLabelVmsService(Service):
 
     def vm_service(self, id):
         """
-        A link to the specific label-vm assignment to allow label removal.
-        
-        \"\"\"
+        """        A link to the specific label-vm assignment to allow label removal.
         Service._check_types([
             ('id', id, str),
         ])
@@ -1626,7 +1556,7 @@ class AffinityLabelVmsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -1640,9 +1570,7 @@ class AffinityLabelVmsService(Service):
 
 class AffinityLabelsService(Service):
     """
-    Manages the affinity labels available in the system.
-    
-    \"\"\"
+    """    Manages the affinity labels available in the system.
 
     def __init__(self, connection, path):
         super(AffinityLabelsService, self).__init__(connection, path)
@@ -1657,9 +1585,7 @@ class AffinityLabelsService(Service):
         **kwargs
     ):
         """
-        Creates a new label. The label is automatically attached to all entities mentioned in the vms or hosts lists.
-        
-        \"\"\"
+        """        Creates a new label. The label is automatically attached to all entities mentioned in the vms or hosts lists.
         # Check the types of the parameters:
         Service._check_types([
             ('label', label, types.AffinityLabel),
@@ -1681,7 +1607,7 @@ class AffinityLabelsService(Service):
         **kwargs
     ):
         """
-        Lists all labels present in the system. The order of the returned labels isn't guaranteed.
+        """        Lists all labels present in the system. The order of the returned labels isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -1703,7 +1629,7 @@ class AffinityLabelsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -1723,9 +1649,7 @@ class AffinityLabelsService(Service):
 
     def label_service(self, id):
         """
-        Link to a single label details.
-        
-        \"\"\"
+        """        Link to a single label details.
         Service._check_types([
             ('id', id, str),
         ])
@@ -1733,7 +1657,7 @@ class AffinityLabelsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -1747,16 +1671,14 @@ class AffinityLabelsService(Service):
 
 class AreaService(Service):
     """
-    This annotation is intended to specify what oVirt area is the annotated concept related to. Currently the following areas are in use, and they are closely related to the oVirt teams, but not necessarily the same: - Infrastructure - Network - SLA - Storage - Virtualization A concept may be associated to more than one area, or to no area. The value of this annotation is intended for reporting only, and it doesn't affect at all the generated code or the validity of the model
-    
-    \"\"\"
+    """    This annotation is intended to specify what oVirt area is the annotated concept related to. Currently the following areas are in use, and they are closely related to the oVirt teams, but not necessarily the same: - Infrastructure - Network - SLA - Storage - Virtualization A concept may be associated to more than one area, or to no area. The value of this annotation is intended for reporting only, and it doesn't affect at all the generated code or the validity of the model
 
     def __init__(self, connection, path):
         super(AreaService, self).__init__(connection, path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -1767,9 +1689,7 @@ class AreaService(Service):
 
 class AssignedAffinityLabelService(Service):
     """
-    This service represents one label to entity assignment when accessed using the entities/affinitylabels subcollection.
-    
-    \"\"\"
+    """    This service represents one label to entity assignment when accessed using the entities/affinitylabels subcollection.
 
     def __init__(self, connection, path):
         super(AssignedAffinityLabelService, self).__init__(connection, path)
@@ -1783,7 +1703,7 @@ class AssignedAffinityLabelService(Service):
         **kwargs
     ):
         """
-        Retrieves details about the attached label.
+        """        Retrieves details about the attached label.
         
         This method supports the following parameters:
         
@@ -1801,7 +1721,7 @@ class AssignedAffinityLabelService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -1823,9 +1743,7 @@ class AssignedAffinityLabelService(Service):
         **kwargs
     ):
         """
-        Removes the label from an entity. Does not touch the label itself.
-        
-        \"\"\"
+        """        Removes the label from an entity. Does not touch the label itself.
         # Check the types of the parameters:
         Service._check_types([
         ])
@@ -1838,7 +1756,7 @@ class AssignedAffinityLabelService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -1849,9 +1767,7 @@ class AssignedAffinityLabelService(Service):
 
 class AssignedAffinityLabelsService(Service):
     """
-    This service is used to list and manipulate affinity labels that are assigned to supported entities when accessed using entities/affinitylabels.
-    
-    \"\"\"
+    """    This service is used to list and manipulate affinity labels that are assigned to supported entities when accessed using entities/affinitylabels.
 
     def __init__(self, connection, path):
         super(AssignedAffinityLabelsService, self).__init__(connection, path)
@@ -1866,9 +1782,7 @@ class AssignedAffinityLabelsService(Service):
         **kwargs
     ):
         """
-        Attaches a label to an entity.
-        
-        \"\"\"
+        """        Attaches a label to an entity.
         # Check the types of the parameters:
         Service._check_types([
             ('label', label, types.AffinityLabel),
@@ -1889,7 +1803,7 @@ class AssignedAffinityLabelsService(Service):
         **kwargs
     ):
         """
-        Lists all labels that are attached to an entity. The order of the returned entities isn't guaranteed.
+        """        Lists all labels that are attached to an entity. The order of the returned entities isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -1907,7 +1821,7 @@ class AssignedAffinityLabelsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -1923,9 +1837,7 @@ class AssignedAffinityLabelsService(Service):
 
     def label_service(self, id):
         """
-        Link to the specific entity-label assignment to allow removal.
-        
-        \"\"\"
+        """        Link to the specific entity-label assignment to allow removal.
         Service._check_types([
             ('id', id, str),
         ])
@@ -1933,7 +1845,7 @@ class AssignedAffinityLabelsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -1947,7 +1859,7 @@ class AssignedAffinityLabelsService(Service):
 
 class AssignedCpuProfileService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(AssignedCpuProfileService, self).__init__(connection, path)
@@ -1961,7 +1873,7 @@ class AssignedCpuProfileService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -1977,7 +1889,7 @@ class AssignedCpuProfileService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -2000,7 +1912,7 @@ class AssignedCpuProfileService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -2016,7 +1928,7 @@ class AssignedCpuProfileService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -2037,7 +1949,7 @@ class AssignedCpuProfileService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -2048,7 +1960,7 @@ class AssignedCpuProfileService(Service):
 
 class AssignedCpuProfilesService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(AssignedCpuProfilesService, self).__init__(connection, path)
@@ -2063,9 +1975,7 @@ class AssignedCpuProfilesService(Service):
         **kwargs
     ):
         """
-        Add a new cpu profile for the cluster.
-        
-        \"\"\"
+        """        Add a new cpu profile for the cluster.
         # Check the types of the parameters:
         Service._check_types([
             ('profile', profile, types.CpuProfile),
@@ -2087,7 +1997,7 @@ class AssignedCpuProfilesService(Service):
         **kwargs
     ):
         """
-        List the CPU profiles assigned to the cluster. The order of the returned CPU profiles isn't guaranteed.
+        """        List the CPU profiles assigned to the cluster. The order of the returned CPU profiles isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -2109,7 +2019,7 @@ class AssignedCpuProfilesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -2129,7 +2039,7 @@ class AssignedCpuProfilesService(Service):
 
     def profile_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -2137,7 +2047,7 @@ class AssignedCpuProfilesService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -2151,7 +2061,7 @@ class AssignedCpuProfilesService(Service):
 
 class AssignedDiskProfileService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(AssignedDiskProfileService, self).__init__(connection, path)
@@ -2165,7 +2075,7 @@ class AssignedDiskProfileService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -2181,7 +2091,7 @@ class AssignedDiskProfileService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -2204,7 +2114,7 @@ class AssignedDiskProfileService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -2220,7 +2130,7 @@ class AssignedDiskProfileService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -2241,7 +2151,7 @@ class AssignedDiskProfileService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -2252,7 +2162,7 @@ class AssignedDiskProfileService(Service):
 
 class AssignedDiskProfilesService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(AssignedDiskProfilesService, self).__init__(connection, path)
@@ -2267,9 +2177,7 @@ class AssignedDiskProfilesService(Service):
         **kwargs
     ):
         """
-        Add a new disk profile for the storage domain.
-        
-        \"\"\"
+        """        Add a new disk profile for the storage domain.
         # Check the types of the parameters:
         Service._check_types([
             ('profile', profile, types.DiskProfile),
@@ -2291,7 +2199,7 @@ class AssignedDiskProfilesService(Service):
         **kwargs
     ):
         """
-        Returns the list of disk profiles assigned to the storage domain. The order of the returned disk profiles isn't guaranteed.
+        """        Returns the list of disk profiles assigned to the storage domain. The order of the returned disk profiles isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -2313,7 +2221,7 @@ class AssignedDiskProfilesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -2333,7 +2241,7 @@ class AssignedDiskProfilesService(Service):
 
     def profile_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -2341,7 +2249,7 @@ class AssignedDiskProfilesService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -2355,9 +2263,7 @@ class AssignedDiskProfilesService(Service):
 
 class AssignedPermissionsService(Service):
     """
-    Represents a permission sub-collection, scoped by user, group or some entity type.
-    
-    \"\"\"
+    """    Represents a permission sub-collection, scoped by user, group or some entity type.
 
     def __init__(self, connection, path):
         super(AssignedPermissionsService, self).__init__(connection, path)
@@ -2372,7 +2278,7 @@ class AssignedPermissionsService(Service):
         **kwargs
     ):
         """
-        Assign a new permission to a user or group for specific entity. For example, to assign the `UserVmManager` role to the virtual machine with id `123` to the user with id `456` send a request like this:
+        """        Assign a new permission to a user or group for specific entity. For example, to assign the `UserVmManager` role to the virtual machine with id `123` to the user with id `456` send a request like this:
         
             POST /ovirt-engine/api/vms/123/permissions
         
@@ -2433,7 +2339,7 @@ class AssignedPermissionsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('permission', permission, types.Permission),
@@ -2454,7 +2360,7 @@ class AssignedPermissionsService(Service):
         **kwargs
     ):
         """
-        Add a new permission on the cluster to the group in the system.
+        """        Add a new permission on the cluster to the group in the system.
         
         This method supports the following parameters:
         
@@ -2472,7 +2378,7 @@ class AssignedPermissionsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('permission', permission, types.Permission),
@@ -2493,7 +2399,7 @@ class AssignedPermissionsService(Service):
         **kwargs
     ):
         """
-        Add a new permission on the data center to the group in the system.
+        """        Add a new permission on the data center to the group in the system.
         
         This method supports the following parameters:
         
@@ -2511,7 +2417,7 @@ class AssignedPermissionsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('permission', permission, types.Permission),
@@ -2532,7 +2438,7 @@ class AssignedPermissionsService(Service):
         **kwargs
     ):
         """
-        Add a new group level permission for a given virtual machine.
+        """        Add a new group level permission for a given virtual machine.
         
         This method supports the following parameters:
         
@@ -2550,7 +2456,7 @@ class AssignedPermissionsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('permission', permission, types.Permission),
@@ -2571,7 +2477,7 @@ class AssignedPermissionsService(Service):
         **kwargs
     ):
         """
-        Add a new permission on the host to the group in the system.
+        """        Add a new permission on the host to the group in the system.
         
         This method supports the following parameters:
         
@@ -2589,7 +2495,7 @@ class AssignedPermissionsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('permission', permission, types.Permission),
@@ -2610,7 +2516,7 @@ class AssignedPermissionsService(Service):
         **kwargs
     ):
         """
-        List all the permissions of the specific entity. For example to list all the permissions of the cluster with id `123` send a request like this:
+        """        List all the permissions of the specific entity. For example to list all the permissions of the cluster with id `123` send a request like this:
         
             GET /ovirt-engine/api/clusters/123/permissions
         
@@ -2647,7 +2553,7 @@ class AssignedPermissionsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -2670,7 +2576,7 @@ class AssignedPermissionsService(Service):
         **kwargs
     ):
         """
-        Add a new permission on the storage domain to the group in the system.
+        """        Add a new permission on the storage domain to the group in the system.
         
         This method supports the following parameters:
         
@@ -2688,7 +2594,7 @@ class AssignedPermissionsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('permission', permission, types.Permission),
@@ -2709,7 +2615,7 @@ class AssignedPermissionsService(Service):
         **kwargs
     ):
         """
-        Add a new permission on the template to the group in the system.
+        """        Add a new permission on the template to the group in the system.
         
         This method supports the following parameters:
         
@@ -2727,7 +2633,7 @@ class AssignedPermissionsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('permission', permission, types.Permission),
@@ -2748,7 +2654,7 @@ class AssignedPermissionsService(Service):
         **kwargs
     ):
         """
-        Add a new user level permission for a given virtual machine.
+        """        Add a new user level permission for a given virtual machine.
         
         This method supports the following parameters:
         
@@ -2766,7 +2672,7 @@ class AssignedPermissionsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('permission', permission, types.Permission),
@@ -2787,7 +2693,7 @@ class AssignedPermissionsService(Service):
         **kwargs
     ):
         """
-        Add a new permission on the vm to the group in the system.
+        """        Add a new permission on the vm to the group in the system.
         
         This method supports the following parameters:
         
@@ -2805,7 +2711,7 @@ class AssignedPermissionsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('permission', permission, types.Permission),
@@ -2826,7 +2732,7 @@ class AssignedPermissionsService(Service):
         **kwargs
     ):
         """
-        Add a new permission on the vm pool to the group in the system.
+        """        Add a new permission on the vm pool to the group in the system.
         
         This method supports the following parameters:
         
@@ -2844,7 +2750,7 @@ class AssignedPermissionsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('permission', permission, types.Permission),
@@ -2858,9 +2764,7 @@ class AssignedPermissionsService(Service):
 
     def permission_service(self, id):
         """
-        Sub-resource locator method, returns individual permission resource on which the remainder of the URI is dispatched.
-        
-        \"\"\"
+        """        Sub-resource locator method, returns individual permission resource on which the remainder of the URI is dispatched.
         Service._check_types([
             ('id', id, str),
         ])
@@ -2868,7 +2772,7 @@ class AssignedPermissionsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -2882,9 +2786,7 @@ class AssignedPermissionsService(Service):
 
 class AssignedRolesService(Service):
     """
-    Represents a roles sub-collection, for example scoped by user.
-    
-    \"\"\"
+    """    Represents a roles sub-collection, for example scoped by user.
 
     def __init__(self, connection, path):
         super(AssignedRolesService, self).__init__(connection, path)
@@ -2900,7 +2802,7 @@ class AssignedRolesService(Service):
         **kwargs
     ):
         """
-        Returns the roles assigned to the permission. The order of the returned roles isn't guaranteed.
+        """        Returns the roles assigned to the permission. The order of the returned roles isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -2922,7 +2824,7 @@ class AssignedRolesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -2942,9 +2844,7 @@ class AssignedRolesService(Service):
 
     def role_service(self, id):
         """
-        Sub-resource locator method, returns individual role resource on which the remainder of the URI is dispatched.
-        
-        \"\"\"
+        """        Sub-resource locator method, returns individual role resource on which the remainder of the URI is dispatched.
         Service._check_types([
             ('id', id, str),
         ])
@@ -2952,7 +2852,7 @@ class AssignedRolesService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -2966,9 +2866,7 @@ class AssignedRolesService(Service):
 
 class AssignedTagService(Service):
     """
-    A service to manage assignment of specific tag to specific entities in system.
-    
-    \"\"\"
+    """    A service to manage assignment of specific tag to specific entities in system.
 
     def __init__(self, connection, path):
         super(AssignedTagService, self).__init__(connection, path)
@@ -2982,7 +2880,7 @@ class AssignedTagService(Service):
         **kwargs
     ):
         """
-        Gets the information about the assigned tag. For example to retrieve the information about the tag with the id `456` which is assigned to virtual machine with id `123` send a request like this:
+        """        Gets the information about the assigned tag. For example to retrieve the information about the tag with the id `456` which is assigned to virtual machine with id `123` send a request like this:
         
             GET /ovirt-engine/api/vms/123/tags/456
         
@@ -3010,7 +2908,7 @@ class AssignedTagService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -3033,7 +2931,7 @@ class AssignedTagService(Service):
         **kwargs
     ):
         """
-        Unassign tag from specific entity in the system. For example to unassign the tag with id `456` from virtual machine with id `123` send a request like this:
+        """        Unassign tag from specific entity in the system. For example to unassign the tag with id `456` from virtual machine with id `123` send a request like this:
         
             DELETE /ovirt-engine/api/vms/123/tags/456
         
@@ -3053,7 +2951,7 @@ class AssignedTagService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -3074,7 +2972,7 @@ class AssignedTagService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -3085,9 +2983,7 @@ class AssignedTagService(Service):
 
 class AssignedTagsService(Service):
     """
-    A service to manage collection of assignment of tags to specific entities in system.
-    
-    \"\"\"
+    """    A service to manage collection of assignment of tags to specific entities in system.
 
     def __init__(self, connection, path):
         super(AssignedTagsService, self).__init__(connection, path)
@@ -3102,7 +2998,7 @@ class AssignedTagsService(Service):
         **kwargs
     ):
         """
-        Assign tag to specific entity in the system. For example to assign tag `mytag` to virtual machine with the id `123` send a request like this:
+        """        Assign tag to specific entity in the system. For example to assign tag `mytag` to virtual machine with the id `123` send a request like this:
         
             POST /ovirt-engine/api/vms/123/tags
         
@@ -3130,7 +3026,7 @@ class AssignedTagsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('tag', tag, types.Tag),
@@ -3152,7 +3048,7 @@ class AssignedTagsService(Service):
         **kwargs
     ):
         """
-        List all tags assigned to the specific entity. For example to list all the tags of the virtual machine with id `123` send a request like this:
+        """        List all tags assigned to the specific entity. For example to list all the tags of the virtual machine with id `123` send a request like this:
         
             GET /ovirt-engine/api/vms/123/tags
         
@@ -3188,7 +3084,7 @@ class AssignedTagsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -3208,9 +3104,7 @@ class AssignedTagsService(Service):
 
     def tag_service(self, id):
         """
-        Reference to the service that manages assignment of specific tag.
-        
-        \"\"\"
+        """        Reference to the service that manages assignment of specific tag.
         Service._check_types([
             ('id', id, str),
         ])
@@ -3218,7 +3112,7 @@ class AssignedTagsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -3232,7 +3126,7 @@ class AssignedTagsService(Service):
 
 class AssignedVnicProfileService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(AssignedVnicProfileService, self).__init__(connection, path)
@@ -3247,7 +3141,7 @@ class AssignedVnicProfileService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -3263,7 +3157,7 @@ class AssignedVnicProfileService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -3286,7 +3180,7 @@ class AssignedVnicProfileService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -3302,7 +3196,7 @@ class AssignedVnicProfileService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -3323,12 +3217,12 @@ class AssignedVnicProfileService(Service):
 
     def permissions_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return AssignedPermissionsService(self._connection, '%s/permissions' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'permissions':
@@ -3343,7 +3237,7 @@ class AssignedVnicProfileService(Service):
 
 class AssignedVnicProfilesService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(AssignedVnicProfilesService, self).__init__(connection, path)
@@ -3358,9 +3252,7 @@ class AssignedVnicProfilesService(Service):
         **kwargs
     ):
         """
-        Add a new virtual network interface card profile for the network.
-        
-        \"\"\"
+        """        Add a new virtual network interface card profile for the network.
         # Check the types of the parameters:
         Service._check_types([
             ('profile', profile, types.VnicProfile),
@@ -3382,7 +3274,7 @@ class AssignedVnicProfilesService(Service):
         **kwargs
     ):
         """
-        Returns the list of VNIC profiles assifned to the network. The order of the returned VNIC profiles isn't guaranteed.
+        """        Returns the list of VNIC profiles assifned to the network. The order of the returned VNIC profiles isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -3404,7 +3296,7 @@ class AssignedVnicProfilesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -3424,7 +3316,7 @@ class AssignedVnicProfilesService(Service):
 
     def profile_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -3432,7 +3324,7 @@ class AssignedVnicProfilesService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -3446,7 +3338,7 @@ class AssignedVnicProfilesService(Service):
 
 class AttachedStorageDomainService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(AttachedStorageDomainService, self).__init__(connection, path)
@@ -3461,7 +3353,7 @@ class AttachedStorageDomainService(Service):
         **kwargs
     ):
         """
-        This operation activates an attached storage domain. Once the storage domain is activated it is ready for use with the data center.
+        """        This operation activates an attached storage domain. Once the storage domain is activated it is ready for use with the data center.
         
         POST /ovirt-engine/api/datacenters/123/storagedomains/456/activate\</programlisting\>
         
@@ -3487,7 +3379,7 @@ class AttachedStorageDomainService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -3515,7 +3407,7 @@ class AttachedStorageDomainService(Service):
         **kwargs
     ):
         """
-        This operation deactivates an attached storage domain. Once the storage domain is deactivated it will not be used with the data center. For example, to deactivate storage domain `456`, send the following request:
+        """        This operation deactivates an attached storage domain. Once the storage domain is deactivated it will not be used with the data center. For example, to deactivate storage domain `456`, send the following request:
         
         POST /ovirt-engine/api/datacenters/123/storagedomains/456/deactivate\</programlisting\>
         
@@ -3559,7 +3451,7 @@ class AttachedStorageDomainService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -3588,7 +3480,7 @@ class AttachedStorageDomainService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -3604,7 +3496,7 @@ class AttachedStorageDomainService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -3627,7 +3519,7 @@ class AttachedStorageDomainService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -3643,7 +3535,7 @@ class AttachedStorageDomainService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -3664,12 +3556,12 @@ class AttachedStorageDomainService(Service):
 
     def disks_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return AttachedStorageDomainDisksService(self._connection, '%s/disks' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'disks':
@@ -3684,9 +3576,7 @@ class AttachedStorageDomainService(Service):
 
 class AttachedStorageDomainDisksService(Service):
     """
-    Manages the collection of disks available inside an storage domain that is attached to a data center.
-    
-    \"\"\"
+    """    Manages the collection of disks available inside an storage domain that is attached to a data center.
 
     def __init__(self, connection, path):
         super(AttachedStorageDomainDisksService, self).__init__(connection, path)
@@ -3702,7 +3592,7 @@ class AttachedStorageDomainDisksService(Service):
         **kwargs
     ):
         """
-        Adds or registers a disk. IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards compatibility. It will be removed in the future. To add a new disk use the [add](#services/disks/methods/add) operation of the service that manages the disks of the system. To register an unregistered disk use the [register](#services/attached_storage_domain_disk/methods/register) operation of the service that manages that disk.
+        """        Adds or registers a disk. IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards compatibility. It will be removed in the future. To add a new disk use the [add](#services/disks/methods/add) operation of the service that manages the disks of the system. To register an unregistered disk use the [register](#services/attached_storage_domain_disk/methods/register) operation of the service that manages that disk.
         
         This method supports the following parameters:
         
@@ -3720,7 +3610,7 @@ class AttachedStorageDomainDisksService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('disk', disk, types.Disk),
@@ -3746,7 +3636,7 @@ class AttachedStorageDomainDisksService(Service):
         **kwargs
     ):
         """
-        Retrieve the list of disks that are available in the storage domain.
+        """        Retrieve the list of disks that are available in the storage domain.
         
         This method supports the following parameters:
         
@@ -3768,7 +3658,7 @@ class AttachedStorageDomainDisksService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -3788,9 +3678,7 @@ class AttachedStorageDomainDisksService(Service):
 
     def disk_service(self, id):
         """
-        Reference to the service that manages a specific disk.
-        
-        \"\"\"
+        """        Reference to the service that manages a specific disk.
         Service._check_types([
             ('id', id, str),
         ])
@@ -3798,7 +3686,7 @@ class AttachedStorageDomainDisksService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -3812,9 +3700,7 @@ class AttachedStorageDomainDisksService(Service):
 
 class AttachedStorageDomainsService(Service):
     """
-    Manages the storage domains attached to a data center.
-    
-    \"\"\"
+    """    Manages the storage domains attached to a data center.
 
     def __init__(self, connection, path):
         super(AttachedStorageDomainsService, self).__init__(connection, path)
@@ -3829,7 +3715,7 @@ class AttachedStorageDomainsService(Service):
         **kwargs
     ):
         """
-        Attaches an existing storage domain to the data center.
+        """        Attaches an existing storage domain to the data center.
         
         This method supports the following parameters:
         
@@ -3847,7 +3733,7 @@ class AttachedStorageDomainsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('storage_domain', storage_domain, types.StorageDomain),
@@ -3869,7 +3755,7 @@ class AttachedStorageDomainsService(Service):
         **kwargs
     ):
         """
-        Returns the list of storage domains attached to the data center. The order of the returned storage domains isn't guaranteed.
+        """        Returns the list of storage domains attached to the data center. The order of the returned storage domains isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -3891,7 +3777,7 @@ class AttachedStorageDomainsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -3911,7 +3797,7 @@ class AttachedStorageDomainsService(Service):
 
     def storage_domain_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -3919,7 +3805,7 @@ class AttachedStorageDomainsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -3933,7 +3819,7 @@ class AttachedStorageDomainsService(Service):
 
 class BalanceService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(BalanceService, self).__init__(connection, path)
@@ -3948,7 +3834,7 @@ class BalanceService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `filter`
         
@@ -3968,7 +3854,7 @@ class BalanceService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('filter', filter, bool),
@@ -3995,7 +3881,7 @@ class BalanceService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -4011,7 +3897,7 @@ class BalanceService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -4032,7 +3918,7 @@ class BalanceService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -4043,7 +3929,7 @@ class BalanceService(Service):
 
 class BalancesService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(BalancesService, self).__init__(connection, path)
@@ -4058,9 +3944,7 @@ class BalancesService(Service):
         **kwargs
     ):
         """
-        Add a balance module to a specified user defined scheduling policy.
-        
-        \"\"\"
+        """        Add a balance module to a specified user defined scheduling policy.
         # Check the types of the parameters:
         Service._check_types([
             ('balance', balance, types.Balance),
@@ -4083,7 +3967,7 @@ class BalancesService(Service):
         **kwargs
     ):
         """
-        Returns the list of balance modules used by the scheduling policy. The order of the returned balance modules isn't guaranteed.
+        """        Returns the list of balance modules used by the scheduling policy. The order of the returned balance modules isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -4109,7 +3993,7 @@ class BalancesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('filter', filter, bool),
@@ -4133,7 +4017,7 @@ class BalancesService(Service):
 
     def balance_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -4141,7 +4025,7 @@ class BalancesService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -4155,9 +4039,7 @@ class BalancesService(Service):
 
 class BookmarkService(Service):
     """
-    A service to manage a bookmark.
-    
-    \"\"\"
+    """    A service to manage a bookmark.
 
     def __init__(self, connection, path):
         super(BookmarkService, self).__init__(connection, path)
@@ -4171,7 +4053,7 @@ class BookmarkService(Service):
         **kwargs
     ):
         """
-        Get a bookmark. An example for getting a bookmark:
+        """        Get a bookmark. An example for getting a bookmark:
         
         GET /ovirt-engine/api/bookmarks/123\</programlisting\>
         
@@ -4198,7 +4080,7 @@ class BookmarkService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -4221,7 +4103,7 @@ class BookmarkService(Service):
         **kwargs
     ):
         """
-        Remove a bookmark. An example for removing a bookmark:
+        """        Remove a bookmark. An example for removing a bookmark:
         
         DELETE /ovirt-engine/api/bookmarks/123\</programlisting\>
         
@@ -4241,7 +4123,7 @@ class BookmarkService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -4270,7 +4152,7 @@ class BookmarkService(Service):
         **kwargs
     ):
         """
-        Update a bookmark. An example for updating a bookmark:
+        """        Update a bookmark. An example for updating a bookmark:
         
         PUT /ovirt-engine/api/bookmarks/123\</programlisting\>
         
@@ -4299,7 +4181,7 @@ class BookmarkService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('bookmark', bookmark, types.Bookmark),
@@ -4321,7 +4203,7 @@ class BookmarkService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -4332,9 +4214,7 @@ class BookmarkService(Service):
 
 class BookmarksService(Service):
     """
-    A service to manage bookmarks.
-    
-    \"\"\"
+    """    A service to manage bookmarks.
 
     def __init__(self, connection, path):
         super(BookmarksService, self).__init__(connection, path)
@@ -4349,7 +4229,7 @@ class BookmarksService(Service):
         **kwargs
     ):
         """
-        Adding a new bookmark. Example of adding a bookmark:
+        """        Adding a new bookmark. Example of adding a bookmark:
         
         POST /ovirt-engine/api/bookmarks\</programlisting\>
         
@@ -4376,7 +4256,7 @@ class BookmarksService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('bookmark', bookmark, types.Bookmark),
@@ -4398,7 +4278,7 @@ class BookmarksService(Service):
         **kwargs
     ):
         """
-        Listing all the available bookmarks. Example of listing bookmarks:
+        """        Listing all the available bookmarks. Example of listing bookmarks:
         
         GET /ovirt-engine/api/bookmarks\</programlisting\>
         
@@ -4437,7 +4317,7 @@ class BookmarksService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -4457,9 +4337,7 @@ class BookmarksService(Service):
 
     def bookmark_service(self, id):
         """
-        A reference to the service managing a specific bookmark.
-        
-        \"\"\"
+        """        A reference to the service managing a specific bookmark.
         Service._check_types([
             ('id', id, str),
         ])
@@ -4467,7 +4345,7 @@ class BookmarksService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -4481,9 +4359,7 @@ class BookmarksService(Service):
 
 class ClusterService(Service):
     """
-    A service to manage a specific cluster.
-    
-    \"\"\"
+    """    A service to manage a specific cluster.
 
     def __init__(self, connection, path):
         super(ClusterService, self).__init__(connection, path)
@@ -4507,7 +4383,7 @@ class ClusterService(Service):
         **kwargs
     ):
         """
-        Gets information about the cluster. An example of getting a cluster:
+        """        Gets information about the cluster. An example of getting a cluster:
         
         GET /ovirt-engine/api/clusters/123\</programlisting\>
         
@@ -4599,7 +4475,7 @@ class ClusterService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('filter', filter, bool),
@@ -4625,11 +4501,9 @@ class ClusterService(Service):
         **kwargs
     ):
         """
-        Refresh the Gluster heal info for all volumes in cluster. For example, Cluster `123`, send a request like this:
+        """        Refresh the Gluster heal info for all volumes in cluster. For example, Cluster `123`, send a request like this:
         
         POST /ovirt-engine/api/clusters/123/refreshglusterhealstatus\</programlisting\>
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
         ])
@@ -4650,7 +4524,7 @@ class ClusterService(Service):
         **kwargs
     ):
         """
-        Removes the cluster from the system.
+        """        Removes the cluster from the system.
         
         DELETE /ovirt-engine/api/clusters/00000000-0000-0000-0000-000000000000\</programlisting\>
         
@@ -4670,7 +4544,7 @@ class ClusterService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -4698,7 +4572,7 @@ class ClusterService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -4714,7 +4588,7 @@ class ClusterService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -4741,7 +4615,7 @@ class ClusterService(Service):
         **kwargs
     ):
         """
-        Synchronizes all networks on the cluster.
+        """        Synchronizes all networks on the cluster.
         
         POST /ovirt-engine/api/clusters/123/syncallnetworks\</programlisting\>
         
@@ -4767,7 +4641,7 @@ class ClusterService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -4795,7 +4669,7 @@ class ClusterService(Service):
         **kwargs
     ):
         """
-        Updates information about the cluster. Only the specified fields are updated; others remain unchanged. For example, to update the cluster's CPU:
+        """        Updates information about the cluster. Only the specified fields are updated; others remain unchanged. For example, to update the cluster's CPU:
         
         PUT /ovirt-engine/api/clusters/123\</programlisting\>
         
@@ -4808,8 +4682,6 @@ class ClusterService(Service):
           </cpu>
         </cluster>
         ```
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('cluster', cluster, types.Cluster),
@@ -4839,7 +4711,7 @@ class ClusterService(Service):
         **kwargs
     ):
         """
-        Start or finish upgrade process for the cluster based on the action value. This action marks the cluster for upgrade or clears the upgrade running flag on the cluster based on the action value which takes values of start or stop.
+        """        Start or finish upgrade process for the cluster based on the action value. This action marks the cluster for upgrade or clears the upgrade running flag on the cluster based on the action value which takes values of start or stop.
         
         POST /ovirt-engine/api/clusters/123/upgrade\</programlisting\>
         
@@ -4873,7 +4745,7 @@ class ClusterService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -4895,70 +4767,52 @@ class ClusterService(Service):
 
     def affinity_groups_service(self):
         """
-        A reference to the service that manages affinity groups.
-        
-        \"\"\"
+        """        A reference to the service that manages affinity groups.
         return AffinityGroupsService(self._connection, '%s/affinitygroups' % self._path)
 
     def cpu_profiles_service(self):
         """
-        A reference to the service that manages assigned CPU profiles for the cluster.
-        
-        \"\"\"
+        """        A reference to the service that manages assigned CPU profiles for the cluster.
         return AssignedCpuProfilesService(self._connection, '%s/cpuprofiles' % self._path)
 
     def enabled_features_service(self):
         """
-        A reference to the service that manages the collection of enabled features for the cluster.
-        
-        \"\"\"
+        """        A reference to the service that manages the collection of enabled features for the cluster.
         return ClusterEnabledFeaturesService(self._connection, '%s/enabledfeatures' % self._path)
 
     def external_network_providers_service(self):
         """
-        A reference to the service that manages the collection of external network providers.
-        
-        \"\"\"
+        """        A reference to the service that manages the collection of external network providers.
         return ClusterExternalProvidersService(self._connection, '%s/externalnetworkproviders' % self._path)
 
     def gluster_hooks_service(self):
         """
-        A reference to the service that manages the Gluster hooks for the cluster.
-        
-        \"\"\"
+        """        A reference to the service that manages the Gluster hooks for the cluster.
         return GlusterHooksService(self._connection, '%s/glusterhooks' % self._path)
 
     def gluster_volumes_service(self):
         """
-        A reference to the service that manages Gluster volumes for the cluster.
-        
-        \"\"\"
+        """        A reference to the service that manages Gluster volumes for the cluster.
         return GlusterVolumesService(self._connection, '%s/glustervolumes' % self._path)
 
     def network_filters_service(self):
         """
-        A sub-collection with all the supported network filters for the cluster.
-        
-        \"\"\"
+        """        A sub-collection with all the supported network filters for the cluster.
         return NetworkFiltersService(self._connection, '%s/networkfilters' % self._path)
 
     def networks_service(self):
         """
-        A reference to the service that manages assigned networks for the cluster.
-        
-        \"\"\"
+        """        A reference to the service that manages assigned networks for the cluster.
         return ClusterNetworksService(self._connection, '%s/networks' % self._path)
 
     def permissions_service(self):
         """
-        A reference to permissions.
-        
-        \"\"\"
+        """        A reference to permissions.
         return AssignedPermissionsService(self._connection, '%s/permissions' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'affinitygroups':
@@ -5005,9 +4859,7 @@ class ClusterService(Service):
 
 class ClusterEnabledFeatureService(Service):
     """
-    Represents a feature enabled for the cluster.
-    
-    \"\"\"
+    """    Represents a feature enabled for the cluster.
 
     def __init__(self, connection, path):
         super(ClusterEnabledFeatureService, self).__init__(connection, path)
@@ -5021,7 +4873,7 @@ class ClusterEnabledFeatureService(Service):
         **kwargs
     ):
         """
-        Provides the information about the cluster feature enabled. For example, to find details of the enabled feature `456` for cluster `123`, send a request like this:
+        """        Provides the information about the cluster feature enabled. For example, to find details of the enabled feature `456` for cluster `123`, send a request like this:
         
         GET /ovirt-engine/api/clusters/123/enabledfeatures/456\</programlisting\>
         
@@ -5049,7 +4901,7 @@ class ClusterEnabledFeatureService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -5071,11 +4923,9 @@ class ClusterEnabledFeatureService(Service):
         **kwargs
     ):
         """
-        Disables a cluster feature. For example, to disable the feature `456` of cluster `123` send a request like this:
+        """        Disables a cluster feature. For example, to disable the feature `456` of cluster `123` send a request like this:
         
         DELETE /ovirt-engine/api/clusters/123/enabledfeatures/456\</programlisting\>
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
         ])
@@ -5088,7 +4938,7 @@ class ClusterEnabledFeatureService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -5099,9 +4949,7 @@ class ClusterEnabledFeatureService(Service):
 
 class ClusterEnabledFeaturesService(Service):
     """
-    Provides information about the additional features that are enabled for this cluster. The features that are enabled are the available features for the cluster level
-    
-    \"\"\"
+    """    Provides information about the additional features that are enabled for this cluster. The features that are enabled are the available features for the cluster level
 
     def __init__(self, connection, path):
         super(ClusterEnabledFeaturesService, self).__init__(connection, path)
@@ -5116,7 +4964,7 @@ class ClusterEnabledFeaturesService(Service):
         **kwargs
     ):
         """
-        Enable an additional feature for a cluster. For example, to enable a feature `456` on cluster `123`, send a request like this:
+        """        Enable an additional feature for a cluster. For example, to enable a feature `456` on cluster `123`, send a request like this:
         
         POST /ovirt-engine/api/clusters/123/enabledfeatures\</programlisting\>
         
@@ -5125,8 +4973,6 @@ class ClusterEnabledFeaturesService(Service):
         ``` {.xml}
         <cluster_feature id="456"/>
         ```
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('feature', feature, types.ClusterFeature),
@@ -5147,7 +4993,7 @@ class ClusterEnabledFeaturesService(Service):
         **kwargs
     ):
         """
-        Lists the additional features enabled for the cluster. For example, to get the features enabled for cluster `123` send a request like this:
+        """        Lists the additional features enabled for the cluster. For example, to get the features enabled for cluster `123` send a request like this:
         
         GET /ovirt-engine/api/clusters/123/enabledfeatures\</programlisting\>
         
@@ -5178,7 +5024,7 @@ class ClusterEnabledFeaturesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -5194,9 +5040,7 @@ class ClusterEnabledFeaturesService(Service):
 
     def feature_service(self, id):
         """
-        A reference to the service that provides information about a specific feature enabled for the cluster.
-        
-        \"\"\"
+        """        A reference to the service that provides information about a specific feature enabled for the cluster.
         Service._check_types([
             ('id', id, str),
         ])
@@ -5204,7 +5048,7 @@ class ClusterEnabledFeaturesService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -5218,9 +5062,7 @@ class ClusterEnabledFeaturesService(Service):
 
 class ClusterExternalProvidersService(Service):
     """
-    This service lists external providers.
-    
-    \"\"\"
+    """    This service lists external providers.
 
     def __init__(self, connection, path):
         super(ClusterExternalProvidersService, self).__init__(connection, path)
@@ -5234,7 +5076,7 @@ class ClusterExternalProvidersService(Service):
         **kwargs
     ):
         """
-        Returns the list of external providers. The order of the returned list of providers is not guaranteed.
+        """        Returns the list of external providers. The order of the returned list of providers is not guaranteed.
         
         This method supports the following parameters:
         
@@ -5252,7 +5094,7 @@ class ClusterExternalProvidersService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -5268,7 +5110,7 @@ class ClusterExternalProvidersService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -5279,9 +5121,7 @@ class ClusterExternalProvidersService(Service):
 
 class ClusterFeatureService(Service):
     """
-    Represents a feature enabled for the cluster level
-    
-    \"\"\"
+    """    Represents a feature enabled for the cluster level
 
     def __init__(self, connection, path):
         super(ClusterFeatureService, self).__init__(connection, path)
@@ -5295,7 +5135,7 @@ class ClusterFeatureService(Service):
         **kwargs
     ):
         """
-        Provides the information about the a cluster feature supported by a cluster level. For example, to find details of the cluster feature `456` for cluster level 4.1, send a request like this:
+        """        Provides the information about the a cluster feature supported by a cluster level. For example, to find details of the cluster feature `456` for cluster level 4.1, send a request like this:
         
         GET /ovirt-engine/api/clusterlevels/4.1/clusterfeatures/456\</programlisting\>
         
@@ -5323,7 +5163,7 @@ class ClusterFeatureService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -5339,7 +5179,7 @@ class ClusterFeatureService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -5350,9 +5190,7 @@ class ClusterFeatureService(Service):
 
 class ClusterFeaturesService(Service):
     """
-    Provides information about the cluster features that are supported by a cluster level.
-    
-    \"\"\"
+    """    Provides information about the cluster features that are supported by a cluster level.
 
     def __init__(self, connection, path):
         super(ClusterFeaturesService, self).__init__(connection, path)
@@ -5367,7 +5205,7 @@ class ClusterFeaturesService(Service):
         **kwargs
     ):
         """
-        Lists the cluster features supported by the cluster level.
+        """        Lists the cluster features supported by the cluster level.
         
         GET /ovirt-engine/api/clusterlevels/4.1/clusterfeatures\</programlisting\>
         
@@ -5398,7 +5236,7 @@ class ClusterFeaturesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -5414,9 +5252,7 @@ class ClusterFeaturesService(Service):
 
     def feature_service(self, id):
         """
-        Reference to the service that provides information about a specific feature.
-        
-        \"\"\"
+        """        Reference to the service that provides information about a specific feature.
         Service._check_types([
             ('id', id, str),
         ])
@@ -5424,7 +5260,7 @@ class ClusterFeaturesService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -5438,9 +5274,7 @@ class ClusterFeaturesService(Service):
 
 class ClusterLevelService(Service):
     """
-    Provides information about a specific cluster level. See the [ClusterLevels](#services/cluster_levels) service for more information.
-    
-    \"\"\"
+    """    Provides information about a specific cluster level. See the [ClusterLevels](#services/cluster_levels) service for more information.
 
     def __init__(self, connection, path):
         super(ClusterLevelService, self).__init__(connection, path)
@@ -5455,7 +5289,7 @@ class ClusterLevelService(Service):
         **kwargs
     ):
         """
-        Provides the information about the capabilities of the specific cluster level managed by this service. For example, to find what CPU types are supported by level 3.6 you can send a request like this:
+        """        Provides the information about the capabilities of the specific cluster level managed by this service. For example, to find what CPU types are supported by level 3.6 you can send a request like this:
         
         GET /ovirt-engine/api/clusterlevels/3.6\</programlisting\>
         
@@ -5497,7 +5331,7 @@ class ClusterLevelService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -5513,14 +5347,12 @@ class ClusterLevelService(Service):
 
     def cluster_features_service(self):
         """
-        Reference to the service that manages the collection of supported features for this cluster level.
-        
-        \"\"\"
+        """        Reference to the service that manages the collection of supported features for this cluster level.
         return ClusterFeaturesService(self._connection, '%s/clusterfeatures' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'clusterfeatures':
@@ -5535,9 +5367,7 @@ class ClusterLevelService(Service):
 
 class ClusterLevelsService(Service):
     """
-    Provides information about the capabilities of different cluster levels supported by the engine. Version 4.0 of the engine supports levels 4.0 and 3.6. Each of these levels support different sets of CPU types, for example. This service provides that information.
-    
-    \"\"\"
+    """    Provides information about the capabilities of different cluster levels supported by the engine. Version 4.0 of the engine supports levels 4.0 and 3.6. Each of these levels support different sets of CPU types, for example. This service provides that information.
 
     def __init__(self, connection, path):
         super(ClusterLevelsService, self).__init__(connection, path)
@@ -5552,7 +5382,7 @@ class ClusterLevelsService(Service):
         **kwargs
     ):
         """
-        Lists the cluster levels supported by the system.
+        """        Lists the cluster levels supported by the system.
         
         GET /ovirt-engine/api/clusterlevels\</programlisting\>
         
@@ -5585,7 +5415,7 @@ class ClusterLevelsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -5601,9 +5431,7 @@ class ClusterLevelsService(Service):
 
     def level_service(self, id):
         """
-        Reference to the service that provides information about an specific cluster level.
-        
-        \"\"\"
+        """        Reference to the service that provides information about an specific cluster level.
         Service._check_types([
             ('id', id, str),
         ])
@@ -5611,7 +5439,7 @@ class ClusterLevelsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -5625,9 +5453,7 @@ class ClusterLevelsService(Service):
 
 class ClusterNetworkService(Service):
     """
-    A service to manage a specific cluster network.
-    
-    \"\"\"
+    """    A service to manage a specific cluster network.
 
     def __init__(self, connection, path):
         super(ClusterNetworkService, self).__init__(connection, path)
@@ -5641,7 +5467,7 @@ class ClusterNetworkService(Service):
         **kwargs
     ):
         """
-        Retrieves the cluster network details.
+        """        Retrieves the cluster network details.
         
         This method supports the following parameters:
         
@@ -5659,7 +5485,7 @@ class ClusterNetworkService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -5681,9 +5507,7 @@ class ClusterNetworkService(Service):
         **kwargs
     ):
         """
-        Unassigns the network from a cluster.
-        
-        \"\"\"
+        """        Unassigns the network from a cluster.
         # Check the types of the parameters:
         Service._check_types([
         ])
@@ -5703,7 +5527,7 @@ class ClusterNetworkService(Service):
         **kwargs
     ):
         """
-        Updates the network in the cluster.
+        """        Updates the network in the cluster.
         
         This method supports the following parameters:
         
@@ -5721,7 +5545,7 @@ class ClusterNetworkService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('network', network, types.Network),
@@ -5735,7 +5559,7 @@ class ClusterNetworkService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -5746,9 +5570,7 @@ class ClusterNetworkService(Service):
 
 class ClusterNetworksService(Service):
     """
-    A service to manage cluster networks.
-    
-    \"\"\"
+    """    A service to manage cluster networks.
 
     def __init__(self, connection, path):
         super(ClusterNetworksService, self).__init__(connection, path)
@@ -5763,7 +5585,7 @@ class ClusterNetworksService(Service):
         **kwargs
     ):
         """
-        Assigns the network to a cluster. Post a request like in the example below to assign the network to a cluster:
+        """        Assigns the network to a cluster. Post a request like in the example below to assign the network to a cluster:
         
         POST /ovirt-engine/api/clusters/123/networks\</programlisting\>
         
@@ -5789,7 +5611,7 @@ class ClusterNetworksService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('network', network, types.Network),
@@ -5811,7 +5633,7 @@ class ClusterNetworksService(Service):
         **kwargs
     ):
         """
-        Lists the networks that are assigned to the cluster. The order of the returned clusters isn't guaranteed.
+        """        Lists the networks that are assigned to the cluster. The order of the returned clusters isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -5833,7 +5655,7 @@ class ClusterNetworksService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -5853,9 +5675,7 @@ class ClusterNetworksService(Service):
 
     def network_service(self, id):
         """
-        Access the cluster network service that manages the cluster network specified by an ID.
-        
-        \"\"\"
+        """        Access the cluster network service that manages the cluster network specified by an ID.
         Service._check_types([
             ('id', id, str),
         ])
@@ -5863,7 +5683,7 @@ class ClusterNetworksService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -5877,9 +5697,7 @@ class ClusterNetworksService(Service):
 
 class ClustersService(Service):
     """
-    A service to manage clusters.
-    
-    \"\"\"
+    """    A service to manage clusters.
 
     def __init__(self, connection, path):
         super(ClustersService, self).__init__(connection, path)
@@ -5894,7 +5712,7 @@ class ClustersService(Service):
         **kwargs
     ):
         """
-        Creates a new cluster. This requires the `name`, `cpu.type`, and `data_center` attributes. Identify the data center with either the `id` or `name` attribute.
+        """        Creates a new cluster. This requires the `name`, `cpu.type`, and `data_center` attributes. Identify the data center with either the `id` or `name` attribute.
         
         POST /ovirt-engine/api/clusters\</programlisting\>
         
@@ -5928,8 +5746,6 @@ class ClustersService(Service):
           </external_network_providers>
         </cluster>
         ```
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('cluster', cluster, types.Cluster),
@@ -5954,7 +5770,7 @@ class ClustersService(Service):
         **kwargs
     ):
         """
-        Returns the list of clusters of the system. The order of the returned clusters is guaranteed only if the `sortby` clause is included in the `search` parameter.
+        """        Returns the list of clusters of the system. The order of the returned clusters is guaranteed only if the `sortby` clause is included in the `search` parameter.
         
         This method supports the following parameters:
         
@@ -5988,7 +5804,7 @@ class ClustersService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('case_sensitive', case_sensitive, bool),
@@ -6019,9 +5835,7 @@ class ClustersService(Service):
 
     def cluster_service(self, id):
         """
-        A reference to the service that manages a specific cluster.
-        
-        \"\"\"
+        """        A reference to the service that manages a specific cluster.
         Service._check_types([
             ('id', id, str),
         ])
@@ -6029,7 +5843,7 @@ class ClustersService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -6043,7 +5857,7 @@ class ClustersService(Service):
 
 class CopyableService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(CopyableService, self).__init__(connection, path)
@@ -6057,7 +5871,7 @@ class CopyableService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -6073,7 +5887,7 @@ class CopyableService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -6093,7 +5907,7 @@ class CopyableService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -6104,7 +5918,7 @@ class CopyableService(Service):
 
 class CpuProfileService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(CpuProfileService, self).__init__(connection, path)
@@ -6119,7 +5933,7 @@ class CpuProfileService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -6135,7 +5949,7 @@ class CpuProfileService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -6158,7 +5972,7 @@ class CpuProfileService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -6174,7 +5988,7 @@ class CpuProfileService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -6203,9 +6017,7 @@ class CpuProfileService(Service):
         **kwargs
     ):
         """
-        Update the specified cpu profile in the system.
-        
-        \"\"\"
+        """        Update the specified cpu profile in the system.
         # Check the types of the parameters:
         Service._check_types([
             ('profile', profile, types.CpuProfile),
@@ -6227,12 +6039,12 @@ class CpuProfileService(Service):
 
     def permissions_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return AssignedPermissionsService(self._connection, '%s/permissions' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'permissions':
@@ -6247,7 +6059,7 @@ class CpuProfileService(Service):
 
 class CpuProfilesService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(CpuProfilesService, self).__init__(connection, path)
@@ -6262,9 +6074,7 @@ class CpuProfilesService(Service):
         **kwargs
     ):
         """
-        Add a new cpu profile to the system.
-        
-        \"\"\"
+        """        Add a new cpu profile to the system.
         # Check the types of the parameters:
         Service._check_types([
             ('profile', profile, types.CpuProfile),
@@ -6286,7 +6096,7 @@ class CpuProfilesService(Service):
         **kwargs
     ):
         """
-        Returns the list of CPU profiles of the system. The order of the returned list of CPU profiles is random.
+        """        Returns the list of CPU profiles of the system. The order of the returned list of CPU profiles is random.
         
         This method supports the following parameters:
         
@@ -6308,7 +6118,7 @@ class CpuProfilesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -6328,7 +6138,7 @@ class CpuProfilesService(Service):
 
     def profile_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -6336,7 +6146,7 @@ class CpuProfilesService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -6350,9 +6160,7 @@ class CpuProfilesService(Service):
 
 class DataCenterService(Service):
     """
-    A service to manage a data center.
-    
-    \"\"\"
+    """    A service to manage a data center.
 
     def __init__(self, connection, path):
         super(DataCenterService, self).__init__(connection, path)
@@ -6373,7 +6181,7 @@ class DataCenterService(Service):
         **kwargs
     ):
         """
-        Currently, the storage pool manager (SPM) fails to switch to another host if the SPM has uncleared tasks. Clearing all finished tasks enables the SPM switching. For example, to clean all the finished tasks on a data center with ID `123` send a request like this:
+        """        Currently, the storage pool manager (SPM) fails to switch to another host if the SPM has uncleared tasks. Clearing all finished tasks enables the SPM switching. For example, to clean all the finished tasks on a data center with ID `123` send a request like this:
         
         POST /ovirt-engine/api/datacenters/123/cleanfinishedtasks\</programlisting\>
         
@@ -6399,7 +6207,7 @@ class DataCenterService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -6427,7 +6235,7 @@ class DataCenterService(Service):
         **kwargs
     ):
         """
-        Get a data center. An example of getting a data center:
+        """        Get a data center. An example of getting a data center:
         
         GET /ovirt-engine/api/datacenters/123\</programlisting\>
         
@@ -6480,7 +6288,7 @@ class DataCenterService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('filter', filter, bool),
@@ -6508,7 +6316,7 @@ class DataCenterService(Service):
         **kwargs
     ):
         """
-        Removes the data center.
+        """        Removes the data center.
         
         DELETE /ovirt-engine/api/datacenters/123\</programlisting\>
         
@@ -6534,7 +6342,7 @@ class DataCenterService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('force', force, bool),
@@ -6567,7 +6375,7 @@ class DataCenterService(Service):
         **kwargs
     ):
         """
-        Used for manually setting a storage domain in the data center as a master. For example, for setting a storage domain with ID *456* as a master on a data center with ID *123*, send a request like this:
+        """        Used for manually setting a storage domain in the data center as a master. For example, for setting a storage domain with ID *456* as a master on a data center with ID *123*, send a request like this:
         
         POST /ovirt-engine/api/datacenters/123/setmaster\</programlisting\>
         
@@ -6601,7 +6409,7 @@ class DataCenterService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -6631,7 +6439,7 @@ class DataCenterService(Service):
         **kwargs
     ):
         """
-        Updates the data center. The `name`, `description`, `storage_type`, `version`, `storage_format` and `mac_pool` elements are updatable post-creation. For example, to change the name and description of data center `123` send a request like this:
+        """        Updates the data center. The `name`, `description`, `storage_type`, `version`, `storage_format` and `mac_pool` elements are updatable post-creation. For example, to change the name and description of data center `123` send a request like this:
         
         PUT /ovirt-engine/api/datacenters/123\</programlisting\>
         
@@ -6660,7 +6468,7 @@ class DataCenterService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('data_center', data_center, types.DataCenter),
@@ -6682,47 +6490,37 @@ class DataCenterService(Service):
 
     def clusters_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return ClustersService(self._connection, '%s/clusters' % self._path)
 
     def iscsi_bonds_service(self):
         """
-        Reference to the iSCSI bonds service.
-        
-        \"\"\"
+        """        Reference to the iSCSI bonds service.
         return IscsiBondsService(self._connection, '%s/iscsibonds' % self._path)
 
     def networks_service(self):
         """
-        Returns a reference to the service, that manages the networks, that are associated with the data center.
-        
-        \"\"\"
+        """        Returns a reference to the service, that manages the networks, that are associated with the data center.
         return DataCenterNetworksService(self._connection, '%s/networks' % self._path)
 
     def permissions_service(self):
         """
-        Reference to the permissions service.
-        
-        \"\"\"
+        """        Reference to the permissions service.
         return AssignedPermissionsService(self._connection, '%s/permissions' % self._path)
 
     def qoss_service(self):
         """
-        Reference to the QOSs service.
-        
-        \"\"\"
+        """        Reference to the QOSs service.
         return QossService(self._connection, '%s/qoss' % self._path)
 
     def quotas_service(self):
         """
-        Reference to the quotas service.
-        
-        \"\"\"
+        """        Reference to the quotas service.
         return QuotasService(self._connection, '%s/quotas' % self._path)
 
     def storage_domains_service(self):
         """
-        Attach and detach storage domains to and from a data center. For attaching a single storage domain we should use the following POST request:
+        """        Attach and detach storage domains to and from a data center. For attaching a single storage domain we should use the following POST request:
         
         POST /ovirt-engine/api/datacenters/123/storagedomains\</programlisting\>
         
@@ -6737,13 +6535,11 @@ class DataCenterService(Service):
         For detaching a single storage domain we should use the following DELETE request:
         
         DELETE /ovirt-engine/api/datacenters/123/storagedomains/123\</programlisting\>
-        
-        \"\"\"
         return AttachedStorageDomainsService(self._connection, '%s/storagedomains' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'clusters':
@@ -6782,9 +6578,7 @@ class DataCenterService(Service):
 
 class DataCenterNetworkService(Service):
     """
-    A service to manage a specific data center network.
-    
-    \"\"\"
+    """    A service to manage a specific data center network.
 
     def __init__(self, connection, path):
         super(DataCenterNetworkService, self).__init__(connection, path)
@@ -6798,7 +6592,7 @@ class DataCenterNetworkService(Service):
         **kwargs
     ):
         """
-        Retrieves the data center network details.
+        """        Retrieves the data center network details.
         
         This method supports the following parameters:
         
@@ -6816,7 +6610,7 @@ class DataCenterNetworkService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -6838,9 +6632,7 @@ class DataCenterNetworkService(Service):
         **kwargs
     ):
         """
-        Removes the network.
-        
-        \"\"\"
+        """        Removes the network.
         # Check the types of the parameters:
         Service._check_types([
         ])
@@ -6860,7 +6652,7 @@ class DataCenterNetworkService(Service):
         **kwargs
     ):
         """
-        Updates the network in the data center.
+        """        Updates the network in the data center.
         
         This method supports the following parameters:
         
@@ -6878,7 +6670,7 @@ class DataCenterNetworkService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('network', network, types.Network),
@@ -6892,7 +6684,7 @@ class DataCenterNetworkService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -6903,9 +6695,7 @@ class DataCenterNetworkService(Service):
 
 class DataCenterNetworksService(Service):
     """
-    A service to manage data center networks.
-    
-    \"\"\"
+    """    A service to manage data center networks.
 
     def __init__(self, connection, path):
         super(DataCenterNetworksService, self).__init__(connection, path)
@@ -6920,7 +6710,7 @@ class DataCenterNetworksService(Service):
         **kwargs
     ):
         """
-        Create a new network in a data center. Post a request like in the example below to create a new network in a data center with an ID of `123`.
+        """        Create a new network in a data center. Post a request like in the example below to create a new network in a data center with an ID of `123`.
         
         POST /ovirt-engine/api/datacenters/123/networks\</programlisting\>
         
@@ -6948,7 +6738,7 @@ class DataCenterNetworksService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('network', network, types.Network),
@@ -6970,7 +6760,7 @@ class DataCenterNetworksService(Service):
         **kwargs
     ):
         """
-        Lists networks in the data center. The order of the returned list of networks isn't guaranteed.
+        """        Lists networks in the data center. The order of the returned list of networks isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -6992,7 +6782,7 @@ class DataCenterNetworksService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -7012,9 +6802,7 @@ class DataCenterNetworksService(Service):
 
     def network_service(self, id):
         """
-        Access the data center network service that manages the data center network specified by an ID.
-        
-        \"\"\"
+        """        Access the data center network service that manages the data center network specified by an ID.
         Service._check_types([
             ('id', id, str),
         ])
@@ -7022,7 +6810,7 @@ class DataCenterNetworksService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -7036,9 +6824,7 @@ class DataCenterNetworksService(Service):
 
 class DataCentersService(Service):
     """
-    A service to manage data centers.
-    
-    \"\"\"
+    """    A service to manage data centers.
 
     def __init__(self, connection, path):
         super(DataCentersService, self).__init__(connection, path)
@@ -7053,7 +6839,7 @@ class DataCentersService(Service):
         **kwargs
     ):
         """
-        Creates a new data center. Creation of a new data center requires the `name` and `local` elements. For example, to create a data center named `mydc` that uses shared storage (NFS, iSCSI or fibre channel) send a request like this:
+        """        Creates a new data center. Creation of a new data center requires the `name` and `local` elements. For example, to create a data center named `mydc` that uses shared storage (NFS, iSCSI or fibre channel) send a request like this:
         
         POST /ovirt-engine/api/datacenters\</programlisting\>
         
@@ -7082,7 +6868,7 @@ class DataCentersService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('data_center', data_center, types.DataCenter),
@@ -7107,7 +6893,7 @@ class DataCentersService(Service):
         **kwargs
     ):
         """
-        Lists the data centers. The following request retrieves a representation of the data centers:
+        """        Lists the data centers. The following request retrieves a representation of the data centers:
         
         GET /ovirt-engine/api/datacenters\</programlisting\>
         
@@ -7186,7 +6972,7 @@ class DataCentersService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('case_sensitive', case_sensitive, bool),
@@ -7217,9 +7003,7 @@ class DataCentersService(Service):
 
     def data_center_service(self, id):
         """
-        Reference to the service that manages a specific data center.
-        
-        \"\"\"
+        """        Reference to the service that manages a specific data center.
         Service._check_types([
             ('id', id, str),
         ])
@@ -7227,7 +7011,7 @@ class DataCentersService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -7241,9 +7025,7 @@ class DataCentersService(Service):
 
 class DiskAttachmentService(Service):
     """
-    This service manages the attachment of a disk to a virtual machine.
-    
-    \"\"\"
+    """    This service manages the attachment of a disk to a virtual machine.
 
     def __init__(self, connection, path):
         super(DiskAttachmentService, self).__init__(connection, path)
@@ -7257,7 +7039,7 @@ class DiskAttachmentService(Service):
         **kwargs
     ):
         """
-        Returns the details of the attachment, including the bootable flag and link to the disk. An example of getting a disk attachment:
+        """        Returns the details of the attachment, including the bootable flag and link to the disk. An example of getting a disk attachment:
         
         GET /ovirt-engine/api/vms/123/diskattachments/456\</programlisting\>
         
@@ -7287,7 +7069,7 @@ class DiskAttachmentService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -7310,7 +7092,7 @@ class DiskAttachmentService(Service):
         **kwargs
     ):
         """
-        Removes the disk attachment. This will only detach the disk from the virtual machine, but won't remove it from the system, unless the `detach_only` parameter is `false`. An example of removing a disk attachment:
+        """        Removes the disk attachment. This will only detach the disk from the virtual machine, but won't remove it from the system, unless the `detach_only` parameter is `false`. An example of removing a disk attachment:
         
         DELETE /ovirt-engine/api/vms/123/diskattachments/456?detach\_only=true\</programlisting\>
         
@@ -7330,7 +7112,7 @@ class DiskAttachmentService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('detach_only', detach_only, bool),
@@ -7354,11 +7136,9 @@ class DiskAttachmentService(Service):
         **kwargs
     ):
         """
-        Update the disk attachment and the disk properties within it.
+        """        Update the disk attachment and the disk properties within it.
         
         PUT /vms/{vm:id}/disksattachments/{attachment:id} \<disk\_attachment\> \<bootable\>true\</bootable\> \<interface\>ide\</interface\> \<active\>true\</active\> \<disk\> \<name\>mydisk\</name\> \<provisioned\_size\>1024\</provisioned\_size\> \... \</disk\> \</disk\_attachment\>\</programlisting\>
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('disk_attachment', disk_attachment, types.DiskAttachment),
@@ -7372,7 +7152,7 @@ class DiskAttachmentService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -7383,9 +7163,7 @@ class DiskAttachmentService(Service):
 
 class DiskAttachmentsService(Service):
     """
-    This service manages the set of disks attached to a virtual machine. Each attached disk is represented by a [DiskAttachment](#types/disk_attachment), containing the bootable flag, the disk interface and the reference to the disk.
-    
-    \"\"\"
+    """    This service manages the set of disks attached to a virtual machine. Each attached disk is represented by a [DiskAttachment](#types/disk_attachment), containing the bootable flag, the disk interface and the reference to the disk.
 
     def __init__(self, connection, path):
         super(DiskAttachmentsService, self).__init__(connection, path)
@@ -7400,7 +7178,7 @@ class DiskAttachmentsService(Service):
         **kwargs
     ):
         """
-        Adds a new disk attachment to the virtual machine. The `attachment` parameter can contain just a reference, if the disk already exists:
+        """        Adds a new disk attachment to the virtual machine. The `attachment` parameter can contain just a reference, if the disk already exists:
         
         ``` {.xml}
         <disk_attachment>
@@ -7452,7 +7230,7 @@ class DiskAttachmentsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('attachment', attachment, types.DiskAttachment),
@@ -7473,7 +7251,7 @@ class DiskAttachmentsService(Service):
         **kwargs
     ):
         """
-        List the disk that are attached to the virtual machine. The order of the returned list of disks attachments isn't guaranteed.
+        """        List the disk that are attached to the virtual machine. The order of the returned list of disks attachments isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -7491,7 +7269,7 @@ class DiskAttachmentsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -7514,7 +7292,7 @@ class DiskAttachmentsService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `attachment`
         
@@ -7530,7 +7308,7 @@ class DiskAttachmentsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('attachment', attachment, types.DiskAttachment),
@@ -7551,7 +7329,7 @@ class DiskAttachmentsService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `attachment`
         
@@ -7567,7 +7345,7 @@ class DiskAttachmentsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('attachment', attachment, types.DiskAttachment),
@@ -7581,9 +7359,7 @@ class DiskAttachmentsService(Service):
 
     def attachment_service(self, id):
         """
-        Reference to the service that manages a specific attachment.
-        
-        \"\"\"
+        """        Reference to the service that manages a specific attachment.
         Service._check_types([
             ('id', id, str),
         ])
@@ -7591,7 +7367,7 @@ class DiskAttachmentsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -7605,7 +7381,7 @@ class DiskAttachmentsService(Service):
 
 class DiskProfileService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(DiskProfileService, self).__init__(connection, path)
@@ -7620,7 +7396,7 @@ class DiskProfileService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -7636,7 +7412,7 @@ class DiskProfileService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -7659,7 +7435,7 @@ class DiskProfileService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -7675,7 +7451,7 @@ class DiskProfileService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -7704,9 +7480,7 @@ class DiskProfileService(Service):
         **kwargs
     ):
         """
-        Update the specified disk profile in the system.
-        
-        \"\"\"
+        """        Update the specified disk profile in the system.
         # Check the types of the parameters:
         Service._check_types([
             ('profile', profile, types.DiskProfile),
@@ -7728,12 +7502,12 @@ class DiskProfileService(Service):
 
     def permissions_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return AssignedPermissionsService(self._connection, '%s/permissions' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'permissions':
@@ -7748,7 +7522,7 @@ class DiskProfileService(Service):
 
 class DiskProfilesService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(DiskProfilesService, self).__init__(connection, path)
@@ -7763,9 +7537,7 @@ class DiskProfilesService(Service):
         **kwargs
     ):
         """
-        Add a new disk profile to the system.
-        
-        \"\"\"
+        """        Add a new disk profile to the system.
         # Check the types of the parameters:
         Service._check_types([
             ('profile', profile, types.DiskProfile),
@@ -7787,7 +7559,7 @@ class DiskProfilesService(Service):
         **kwargs
     ):
         """
-        Returns the list of disk profiles of the system. The order of the returned list of disk profiles isn't guaranteed.
+        """        Returns the list of disk profiles of the system. The order of the returned list of disk profiles isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -7809,7 +7581,7 @@ class DiskProfilesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -7829,7 +7601,7 @@ class DiskProfilesService(Service):
 
     def disk_profile_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -7837,7 +7609,7 @@ class DiskProfilesService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -7851,7 +7623,7 @@ class DiskProfilesService(Service):
 
 class DiskSnapshotService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(DiskSnapshotService, self).__init__(connection, path)
@@ -7865,7 +7637,7 @@ class DiskSnapshotService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -7881,7 +7653,7 @@ class DiskSnapshotService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -7904,7 +7676,7 @@ class DiskSnapshotService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -7920,7 +7692,7 @@ class DiskSnapshotService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -7941,7 +7713,7 @@ class DiskSnapshotService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -7952,9 +7724,7 @@ class DiskSnapshotService(Service):
 
 class DiskSnapshotsService(Service):
     """
-    Manages the collection of disk snapshots available in an storage domain.
-    
-    \"\"\"
+    """    Manages the collection of disk snapshots available in an storage domain.
 
     def __init__(self, connection, path):
         super(DiskSnapshotsService, self).__init__(connection, path)
@@ -7972,7 +7742,7 @@ class DiskSnapshotsService(Service):
         **kwargs
     ):
         """
-        Returns the list of disk snapshots of the storage domain. The order of the returned list of disk snapshots isn't guaranteed.
+        """        Returns the list of disk snapshots of the storage domain. The order of the returned list of disk snapshots isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -8002,7 +7772,7 @@ class DiskSnapshotsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -8030,7 +7800,7 @@ class DiskSnapshotsService(Service):
 
     def snapshot_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -8038,7 +7808,7 @@ class DiskSnapshotsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -8052,9 +7822,7 @@ class DiskSnapshotsService(Service):
 
 class DisksService(Service):
     """
-    Manages the collection of disks available in the system.
-    
-    \"\"\"
+    """    Manages the collection of disks available in the system.
 
     def __init__(self, connection, path):
         super(DisksService, self).__init__(connection, path)
@@ -8069,7 +7837,7 @@ class DisksService(Service):
         **kwargs
     ):
         """
-        Adds a new floating disk. There are three types of disks that can be added - disk image, direct LUN and Managed Block disk. [Cinder](https://wiki.openstack.org/wiki/Cinder) integration has been replaced by Managed Block Storage. **Adding a new image disk:** When creating a new floating image [Disk](#types/disk), the API requires the `storage_domain`, `provisioned_size` and `format` attributes. Note that block storage domains (i.e., storage domains with the [storage type](#types/storage_type) of iSCSI or FCP) don't support the combination of the raw `format` with `sparse=true`, so `sparse=false` must be stated explicitly. To create a new floating image disk with specified `provisioned_size`, `format` and `name` on a storage domain with an id `123`, send a request as follows:
+        """        Adds a new floating disk. There are three types of disks that can be added - disk image, direct LUN and Managed Block disk. [Cinder](https://wiki.openstack.org/wiki/Cinder) integration has been replaced by Managed Block Storage. **Adding a new image disk:** When creating a new floating image [Disk](#types/disk), the API requires the `storage_domain`, `provisioned_size` and `format` attributes. Note that block storage domains (i.e., storage domains with the [storage type](#types/storage_type) of iSCSI or FCP) don't support the combination of the raw `format` with `sparse=true`, so `sparse=false` must be stated explicitly. To create a new floating image disk with specified `provisioned_size`, `format` and `name` on a storage domain with an id `123`, send a request as follows:
         
         POST /ovirt-engine/api/disks\</programlisting\>
         
@@ -8156,7 +7924,7 @@ class DisksService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('disk', disk, types.Disk),
@@ -8180,7 +7948,7 @@ class DisksService(Service):
         **kwargs
     ):
         """
-        Get list of disks.
+        """        Get list of disks.
         
         GET /ovirt-engine/api/disks\</programlisting\>
         
@@ -8238,7 +8006,7 @@ class DisksService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('case_sensitive', case_sensitive, bool),
@@ -8272,7 +8040,7 @@ class DisksService(Service):
         **kwargs
     ):
         """
-        Add a new lun disk to the storage domain.
+        """        Add a new lun disk to the storage domain.
         
         This method supports the following parameters:
         
@@ -8290,7 +8058,7 @@ class DisksService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('disk', disk, types.Disk),
@@ -8311,7 +8079,7 @@ class DisksService(Service):
         **kwargs
     ):
         """
-        Add a new disk to the storage domain with the specified size allocating space from the storage domain.
+        """        Add a new disk to the storage domain with the specified size allocating space from the storage domain.
         
         This method supports the following parameters:
         
@@ -8329,7 +8097,7 @@ class DisksService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('disk', disk, types.Disk),
@@ -8343,9 +8111,7 @@ class DisksService(Service):
 
     def disk_service(self, id):
         """
-        Reference to a service managing a specific disk.
-        
-        \"\"\"
+        """        Reference to a service managing a specific disk.
         Service._check_types([
             ('id', id, str),
         ])
@@ -8353,7 +8119,7 @@ class DisksService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -8367,9 +8133,7 @@ class DisksService(Service):
 
 class DomainService(Service):
     """
-    A service to view details of an authentication domain in the system.
-    
-    \"\"\"
+    """    A service to view details of an authentication domain in the system.
 
     def __init__(self, connection, path):
         super(DomainService, self).__init__(connection, path)
@@ -8385,7 +8149,7 @@ class DomainService(Service):
         **kwargs
     ):
         """
-        Gets the authentication domain information. Usage:
+        """        Gets the authentication domain information. Usage:
         
             GET /ovirt-engine/api/domains/5678
         
@@ -8417,7 +8181,7 @@ class DomainService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -8433,21 +8197,17 @@ class DomainService(Service):
 
     def groups_service(self):
         """
-        Reference to a service to manage domain groups.
-        
-        \"\"\"
+        """        Reference to a service to manage domain groups.
         return DomainGroupsService(self._connection, '%s/groups' % self._path)
 
     def users_service(self):
         """
-        Reference to a service to manage domain users.
-        
-        \"\"\"
+        """        Reference to a service to manage domain users.
         return DomainUsersService(self._connection, '%s/users' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'groups':
@@ -8466,7 +8226,7 @@ class DomainService(Service):
 
 class DomainGroupService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(DomainGroupService, self).__init__(connection, path)
@@ -8480,7 +8240,7 @@ class DomainGroupService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -8496,7 +8256,7 @@ class DomainGroupService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -8512,7 +8272,7 @@ class DomainGroupService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -8523,7 +8283,7 @@ class DomainGroupService(Service):
 
 class DomainGroupsService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(DomainGroupsService, self).__init__(connection, path)
@@ -8541,7 +8301,7 @@ class DomainGroupsService(Service):
         **kwargs
     ):
         """
-        Returns the list of groups. The order of the returned list of groups isn't guaranteed.
+        """        Returns the list of groups. The order of the returned list of groups isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -8571,7 +8331,7 @@ class DomainGroupsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('case_sensitive', case_sensitive, bool),
@@ -8598,7 +8358,7 @@ class DomainGroupsService(Service):
 
     def group_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -8606,7 +8366,7 @@ class DomainGroupsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -8620,9 +8380,7 @@ class DomainGroupsService(Service):
 
 class DomainUserService(Service):
     """
-    A service to view a domain user in the system.
-    
-    \"\"\"
+    """    A service to view a domain user in the system.
 
     def __init__(self, connection, path):
         super(DomainUserService, self).__init__(connection, path)
@@ -8636,7 +8394,7 @@ class DomainUserService(Service):
         **kwargs
     ):
         """
-        Gets the domain user information. Usage:
+        """        Gets the domain user information. Usage:
         
             GET /ovirt-engine/api/domains/5678/users/1234
         
@@ -8671,7 +8429,7 @@ class DomainUserService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -8687,7 +8445,7 @@ class DomainUserService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -8698,9 +8456,7 @@ class DomainUserService(Service):
 
 class DomainUserGroupsService(Service):
     """
-    A service that shows a user's group membership in the AAA extension.
-    
-    \"\"\"
+    """    A service that shows a user's group membership in the AAA extension.
 
     def __init__(self, connection, path):
         super(DomainUserGroupsService, self).__init__(connection, path)
@@ -8714,7 +8470,7 @@ class DomainUserGroupsService(Service):
         **kwargs
     ):
         """
-        Returns the list of groups that the user is a member of.
+        """        Returns the list of groups that the user is a member of.
         
         This method supports the following parameters:
         
@@ -8732,7 +8488,7 @@ class DomainUserGroupsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -8748,7 +8504,7 @@ class DomainUserGroupsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -8759,9 +8515,7 @@ class DomainUserGroupsService(Service):
 
 class DomainUsersService(Service):
     """
-    A service to list all domain users in the system.
-    
-    \"\"\"
+    """    A service to list all domain users in the system.
 
     def __init__(self, connection, path):
         super(DomainUsersService, self).__init__(connection, path)
@@ -8779,7 +8533,7 @@ class DomainUsersService(Service):
         **kwargs
     ):
         """
-        List all the users in the domain. Usage:
+        """        List all the users in the domain. Usage:
         
             GET /ovirt-engine/api/domains/5678/users
         
@@ -8830,7 +8584,7 @@ class DomainUsersService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('case_sensitive', case_sensitive, bool),
@@ -8857,9 +8611,7 @@ class DomainUsersService(Service):
 
     def user_service(self, id):
         """
-        Reference to a service to view details of a domain user.
-        
-        \"\"\"
+        """        Reference to a service to view details of a domain user.
         Service._check_types([
             ('id', id, str),
         ])
@@ -8867,7 +8619,7 @@ class DomainUsersService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -8881,9 +8633,7 @@ class DomainUsersService(Service):
 
 class DomainsService(Service):
     """
-    A service to list all authentication domains in the system.
-    
-    \"\"\"
+    """    A service to list all authentication domains in the system.
 
     def __init__(self, connection, path):
         super(DomainsService, self).__init__(connection, path)
@@ -8899,7 +8649,7 @@ class DomainsService(Service):
         **kwargs
     ):
         """
-        List all the authentication domains in the system. Usage:
+        """        List all the authentication domains in the system. Usage:
         
             GET /ovirt-engine/api/domains
         
@@ -8939,7 +8689,7 @@ class DomainsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -8959,9 +8709,7 @@ class DomainsService(Service):
 
     def domain_service(self, id):
         """
-        Reference to a service to view details of a domain.
-        
-        \"\"\"
+        """        Reference to a service to view details of a domain.
         Service._check_types([
             ('id', id, str),
         ])
@@ -8969,7 +8717,7 @@ class DomainsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -8983,9 +8731,7 @@ class DomainsService(Service):
 
 class EventService(Service):
     """
-    A service to manage an event in the system.
-    
-    \"\"\"
+    """    A service to manage an event in the system.
 
     def __init__(self, connection, path):
         super(EventService, self).__init__(connection, path)
@@ -8999,7 +8745,7 @@ class EventService(Service):
         **kwargs
     ):
         """
-        Get an event. An example of getting an event:
+        """        Get an event. An example of getting an event:
         
         GET /ovirt-engine/api/events/123\</programlisting\>
         
@@ -9037,7 +8783,7 @@ class EventService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -9060,7 +8806,7 @@ class EventService(Service):
         **kwargs
     ):
         """
-        Removes an event from internal audit log. An event can be removed by sending following request
+        """        Removes an event from internal audit log. An event can be removed by sending following request
         
         DELETE /ovirt-engine/api/events/123\</programlisting\>
         
@@ -9080,7 +8826,7 @@ class EventService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -9101,7 +8847,7 @@ class EventService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -9112,9 +8858,7 @@ class EventService(Service):
 
 class EventSubscriptionService(Service):
     """
-    A service to manage a specific event-subscription in the system.
-    
-    \"\"\"
+    """    A service to manage a specific event-subscription in the system.
 
     def __init__(self, connection, path):
         super(EventSubscriptionService, self).__init__(connection, path)
@@ -9127,7 +8871,7 @@ class EventSubscriptionService(Service):
         **kwargs
     ):
         """
-        Gets the information about the event-subscription. For example to retrieve the information about the subscription of user *123* to the event *vm\_console\_detected*:
+        """        Gets the information about the event-subscription. For example to retrieve the information about the subscription of user *123* to the event *vm\_console\_detected*:
         
             GET /ovirt-engine/api/users/123/vm_console_detected
         
@@ -9139,8 +8883,6 @@ class EventSubscriptionService(Service):
           <address>a@b.com</address>
         </event-subscription>
         ```
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
         ])
@@ -9160,7 +8902,7 @@ class EventSubscriptionService(Service):
         **kwargs
     ):
         """
-        Removes the event-subscription from the system. For example to remove user 123's subscription to `vm_console_detected` event:
+        """        Removes the event-subscription from the system. For example to remove user 123's subscription to `vm_console_detected` event:
         
             DELETE /ovirt-engine/api/users/123/vm_console_detected
         
@@ -9180,7 +8922,7 @@ class EventSubscriptionService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -9201,7 +8943,7 @@ class EventSubscriptionService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -9212,9 +8954,7 @@ class EventSubscriptionService(Service):
 
 class EventSubscriptionsService(Service):
     """
-    Represents a service to manage collection of event-subscription of a user.
-    
-    \"\"\"
+    """    Represents a service to manage collection of event-subscription of a user.
 
     def __init__(self, connection, path):
         super(EventSubscriptionsService, self).__init__(connection, path)
@@ -9229,7 +8969,7 @@ class EventSubscriptionsService(Service):
         **kwargs
     ):
         """
-        Add a new event-subscription to the system. An event-subscription is always added in the context of a user. For example, to add new event-subscription for `host_high_cpu_use` for user `123`, and have the notification sent to the e-mail address: `a@b.com`, send a request like this:
+        """        Add a new event-subscription to the system. An event-subscription is always added in the context of a user. For example, to add new event-subscription for `host_high_cpu_use` for user `123`, and have the notification sent to the e-mail address: `a@b.com`, send a request like this:
         
             POST /ovirt-engine/api/users/123/eventsubscriptions
         
@@ -9260,7 +9000,7 @@ class EventSubscriptionsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('event_subscription', event_subscription, types.EventSubscription),
@@ -9282,7 +9022,7 @@ class EventSubscriptionsService(Service):
         **kwargs
     ):
         """
-        List the event-subscriptions for the provided user. For example to list event-subscriptions for user `123`:
+        """        List the event-subscriptions for the provided user. For example to list event-subscriptions for user `123`:
         
             GET /ovirt-engine/api/users/123/event-subscriptions
         
@@ -9323,7 +9063,7 @@ class EventSubscriptionsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -9343,9 +9083,7 @@ class EventSubscriptionsService(Service):
 
     def event_subscription_service(self, id):
         """
-        Reference to the service that manages a specific event-subscription.
-        
-        \"\"\"
+        """        Reference to the service that manages a specific event-subscription.
         Service._check_types([
             ('id', id, str),
         ])
@@ -9353,7 +9091,7 @@ class EventSubscriptionsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -9367,9 +9105,7 @@ class EventSubscriptionsService(Service):
 
 class EventsService(Service):
     """
-    A service to manage events in the system.
-    
-    \"\"\"
+    """    A service to manage events in the system.
 
     def __init__(self, connection, path):
         super(EventsService, self).__init__(connection, path)
@@ -9384,7 +9120,7 @@ class EventsService(Service):
         **kwargs
     ):
         """
-        Adds an external event to the internal audit log. This is intended for integration with external systems that detect or produce events relevant for the administrator of the system. For example, an external monitoring tool may be able to detect that a file system is full inside the guest operating system of a virtual machine. This event can be added to the internal audit log sending a request like this:
+        """        Adds an external event to the internal audit log. This is intended for integration with external systems that detect or produce events relevant for the administrator of the system. For example, an external monitoring tool may be able to detect that a file system is full inside the guest operating system of a virtual machine. This event can be added to the internal audit log sending a request like this:
         
         POST /ovirt-engine/api/events \<event\> \<description\>File system /home is full\</description\> \<severity\>alert\</severity\> \<origin\>mymonitor\</origin\> \<custom\_id\>1467879754\</custom\_id\> \</event\>\</programlisting\>
         
@@ -9395,8 +9131,6 @@ class EventsService(Service):
         > **Note**
         >
         > When using links, like the `vm` in the previous example, only the `id` attribute is accepted. The `name` attribute, if provided, is simply ignored.
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('event', event, types.Event),
@@ -9421,7 +9155,7 @@ class EventsService(Service):
         **kwargs
     ):
         """
-        Get list of events.
+        """        Get list of events.
         
         GET /ovirt-engine/api/events\</programlisting\>
         
@@ -9535,7 +9269,7 @@ class EventsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('case_sensitive', case_sensitive, bool),
@@ -9573,7 +9307,7 @@ class EventsService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -9589,7 +9323,7 @@ class EventsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -9609,9 +9343,7 @@ class EventsService(Service):
 
     def event_service(self, id):
         """
-        Reference to the service that manages a specific event.
-        
-        \"\"\"
+        """        Reference to the service that manages a specific event.
         Service._check_types([
             ('id', id, str),
         ])
@@ -9619,7 +9351,7 @@ class EventsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -9633,9 +9365,7 @@ class EventsService(Service):
 
 class ExternalComputeResourceService(Service):
     """
-    Manages a single external compute resource. Compute resource is a term of host external provider. The external provider also needs to know to where the provisioned host needs to register. The login details of the engine are saved as a compute resource in the external provider side.
-    
-    \"\"\"
+    """    Manages a single external compute resource. Compute resource is a term of host external provider. The external provider also needs to know to where the provisioned host needs to register. The login details of the engine are saved as a compute resource in the external provider side.
 
     def __init__(self, connection, path):
         super(ExternalComputeResourceService, self).__init__(connection, path)
@@ -9649,7 +9379,7 @@ class ExternalComputeResourceService(Service):
         **kwargs
     ):
         """
-        Retrieves external compute resource details. For example, to get the details of compute resource `234` of provider `123`, send a request like this:
+        """        Retrieves external compute resource details. For example, to get the details of compute resource `234` of provider `123`, send a request like this:
         
             GET /ovirt-engine/api/externalhostproviders/123/computeresources/234
         
@@ -9681,7 +9411,7 @@ class ExternalComputeResourceService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -9697,7 +9427,7 @@ class ExternalComputeResourceService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -9708,9 +9438,7 @@ class ExternalComputeResourceService(Service):
 
 class ExternalComputeResourcesService(Service):
     """
-    Manages a collection of external compute resources. Compute resource is a term of host external provider. The external provider also needs to know to where the provisioned host needs to register. The login details of the engine is saved as a compute resource in the external provider side.
-    
-    \"\"\"
+    """    Manages a collection of external compute resources. Compute resource is a term of host external provider. The external provider also needs to know to where the provisioned host needs to register. The login details of the engine is saved as a compute resource in the external provider side.
 
     def __init__(self, connection, path):
         super(ExternalComputeResourcesService, self).__init__(connection, path)
@@ -9726,7 +9454,7 @@ class ExternalComputeResourcesService(Service):
         **kwargs
     ):
         """
-        Retrieves a list of external compute resources. For example, to retrieve the compute resources of external host provider `123`, send a request like this:
+        """        Retrieves a list of external compute resources. For example, to retrieve the compute resources of external host provider `123`, send a request like this:
         
             GET /ovirt-engine/api/externalhostproviders/123/computeresources
         
@@ -9767,7 +9495,7 @@ class ExternalComputeResourcesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -9787,9 +9515,7 @@ class ExternalComputeResourcesService(Service):
 
     def resource_service(self, id):
         """
-        This service manages compute resource instance
-        
-        \"\"\"
+        """        This service manages compute resource instance
         Service._check_types([
             ('id', id, str),
         ])
@@ -9797,7 +9523,7 @@ class ExternalComputeResourcesService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -9811,9 +9537,7 @@ class ExternalComputeResourcesService(Service):
 
 class ExternalDiscoveredHostService(Service):
     """
-    This service manages a single discovered host.
-    
-    \"\"\"
+    """    This service manages a single discovered host.
 
     def __init__(self, connection, path):
         super(ExternalDiscoveredHostService, self).__init__(connection, path)
@@ -9827,7 +9551,7 @@ class ExternalDiscoveredHostService(Service):
         **kwargs
     ):
         """
-        Get discovered host info. Retrieves information about an host that is managed in external provider management system, such as Foreman. The information includes hostname, address, subnet, base image and more. For example, to get the details of host `234` from provider `123`, send a request like this:
+        """        Get discovered host info. Retrieves information about an host that is managed in external provider management system, such as Foreman. The information includes hostname, address, subnet, base image and more. For example, to get the details of host `234` from provider `123`, send a request like this:
         
             GET /ovirt-engine/api/externalhostproviders/123/discoveredhosts/234
         
@@ -9860,7 +9584,7 @@ class ExternalDiscoveredHostService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -9876,7 +9600,7 @@ class ExternalDiscoveredHostService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -9887,9 +9611,7 @@ class ExternalDiscoveredHostService(Service):
 
 class ExternalDiscoveredHostsService(Service):
     """
-    This service manages external discovered hosts.
-    
-    \"\"\"
+    """    This service manages external discovered hosts.
 
     def __init__(self, connection, path):
         super(ExternalDiscoveredHostsService, self).__init__(connection, path)
@@ -9905,7 +9627,7 @@ class ExternalDiscoveredHostsService(Service):
         **kwargs
     ):
         """
-        Get list of discovered hosts\' information. Discovered hosts are fetched from third-party providers such as Foreman. To list all discovered hosts for provider `123` send the following:
+        """        Get list of discovered hosts\' information. Discovered hosts are fetched from third-party providers such as Foreman. To list all discovered hosts for provider `123` send the following:
         
         GET /ovirt-engine/api/externalhostproviders/123/discoveredhost\</programlisting\>
         
@@ -9953,7 +9675,7 @@ class ExternalDiscoveredHostsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -9973,7 +9695,7 @@ class ExternalDiscoveredHostsService(Service):
 
     def host_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -9981,7 +9703,7 @@ class ExternalDiscoveredHostsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -9995,7 +9717,7 @@ class ExternalDiscoveredHostsService(Service):
 
 class ExternalHostService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(ExternalHostService, self).__init__(connection, path)
@@ -10009,7 +9731,7 @@ class ExternalHostService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -10025,7 +9747,7 @@ class ExternalHostService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -10041,7 +9763,7 @@ class ExternalHostService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -10052,9 +9774,7 @@ class ExternalHostService(Service):
 
 class ExternalHostGroupService(Service):
     """
-    This service manages a single host group information. Host group is a term of host provider - the host group includes provision details that are applied to new discovered host. Information such as subnet, operating system, domain, etc.
-    
-    \"\"\"
+    """    This service manages a single host group information. Host group is a term of host provider - the host group includes provision details that are applied to new discovered host. Information such as subnet, operating system, domain, etc.
 
     def __init__(self, connection, path):
         super(ExternalHostGroupService, self).__init__(connection, path)
@@ -10068,7 +9788,7 @@ class ExternalHostGroupService(Service):
         **kwargs
     ):
         """
-        Get host group information. For example, to get the details of hostgroup `234` of provider `123`, send a request like this:
+        """        Get host group information. For example, to get the details of hostgroup `234` of provider `123`, send a request like this:
         
             GET /ovirt-engine/api/externalhostproviders/123/hostgroups/234
         
@@ -10101,7 +9821,7 @@ class ExternalHostGroupService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -10117,7 +9837,7 @@ class ExternalHostGroupService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -10128,9 +9848,7 @@ class ExternalHostGroupService(Service):
 
 class ExternalHostGroupsService(Service):
     """
-    This service manages hostgroups.
-    
-    \"\"\"
+    """    This service manages hostgroups.
 
     def __init__(self, connection, path):
         super(ExternalHostGroupsService, self).__init__(connection, path)
@@ -10146,7 +9864,7 @@ class ExternalHostGroupsService(Service):
         **kwargs
     ):
         """
-        Get host groups list from external host provider. Host group is a term of host providers - the host group includes provision details. This API returns all possible hostgroups exposed by the external provider. For example, to get the details of all host groups of provider `123`, send a request like this:
+        """        Get host groups list from external host provider. Host group is a term of host providers - the host group includes provision details. This API returns all possible hostgroups exposed by the external provider. For example, to get the details of all host groups of provider `123`, send a request like this:
         
             GET /ovirt-engine/api/externalhostproviders/123/hostgroups
         
@@ -10188,7 +9906,7 @@ class ExternalHostGroupsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -10208,9 +9926,7 @@ class ExternalHostGroupsService(Service):
 
     def group_service(self, id):
         """
-        This service manages hostgroup instance.
-        
-        \"\"\"
+        """        This service manages hostgroup instance.
         Service._check_types([
             ('id', id, str),
         ])
@@ -10218,7 +9934,7 @@ class ExternalHostGroupsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -10232,7 +9948,7 @@ class ExternalHostGroupsService(Service):
 
 class ExternalHostProvidersService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(ExternalHostProvidersService, self).__init__(connection, path)
@@ -10247,9 +9963,7 @@ class ExternalHostProvidersService(Service):
         **kwargs
     ):
         """
-        Add a new external host provider to the system.
-        
-        \"\"\"
+        """        Add a new external host provider to the system.
         # Check the types of the parameters:
         Service._check_types([
             ('provider', provider, types.ExternalHostProvider),
@@ -10272,7 +9986,7 @@ class ExternalHostProvidersService(Service):
         **kwargs
     ):
         """
-        Returns the list of external host providers. The order of the returned list of host providers isn't guaranteed.
+        """        Returns the list of external host providers. The order of the returned list of host providers isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -10298,7 +10012,7 @@ class ExternalHostProvidersService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -10321,7 +10035,7 @@ class ExternalHostProvidersService(Service):
 
     def provider_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -10329,7 +10043,7 @@ class ExternalHostProvidersService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -10343,7 +10057,7 @@ class ExternalHostProvidersService(Service):
 
 class ExternalHostsService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(ExternalHostsService, self).__init__(connection, path)
@@ -10359,7 +10073,7 @@ class ExternalHostsService(Service):
         **kwargs
     ):
         """
-        Return the list of external hosts. The order of the returned list of hosts isn't guaranteed.
+        """        Return the list of external hosts. The order of the returned list of hosts isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -10381,7 +10095,7 @@ class ExternalHostsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -10401,7 +10115,7 @@ class ExternalHostsService(Service):
 
     def host_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -10409,7 +10123,7 @@ class ExternalHostsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -10423,9 +10137,7 @@ class ExternalHostsService(Service):
 
 class ExternalNetworkProviderConfigurationService(Service):
     """
-    Describes how an external network provider is provisioned by the system on the host.
-    
-    \"\"\"
+    """    Describes how an external network provider is provisioned by the system on the host.
 
     def __init__(self, connection, path):
         super(ExternalNetworkProviderConfigurationService, self).__init__(connection, path)
@@ -10439,7 +10151,7 @@ class ExternalNetworkProviderConfigurationService(Service):
         **kwargs
     ):
         """
-        Returns the information about an external network provider on the host.
+        """        Returns the information about an external network provider on the host.
         
         This method supports the following parameters:
         
@@ -10457,7 +10169,7 @@ class ExternalNetworkProviderConfigurationService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -10473,7 +10185,7 @@ class ExternalNetworkProviderConfigurationService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -10484,9 +10196,7 @@ class ExternalNetworkProviderConfigurationService(Service):
 
 class ExternalNetworkProviderConfigurationsService(Service):
     """
-    A service to list all external network providers provisioned by the system on the host.
-    
-    \"\"\"
+    """    A service to list all external network providers provisioned by the system on the host.
 
     def __init__(self, connection, path):
         super(ExternalNetworkProviderConfigurationsService, self).__init__(connection, path)
@@ -10501,7 +10211,7 @@ class ExternalNetworkProviderConfigurationsService(Service):
         **kwargs
     ):
         """
-        Returns the list of all external network providers on the host. The order of the returned list of networks is not guaranteed.
+        """        Returns the list of all external network providers on the host. The order of the returned list of networks is not guaranteed.
         
         This method supports the following parameters:
         
@@ -10519,7 +10229,7 @@ class ExternalNetworkProviderConfigurationsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -10535,7 +10245,7 @@ class ExternalNetworkProviderConfigurationsService(Service):
 
     def configuration_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -10543,7 +10253,7 @@ class ExternalNetworkProviderConfigurationsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -10557,9 +10267,7 @@ class ExternalNetworkProviderConfigurationsService(Service):
 
 class ExternalProviderService(Service):
     """
-    Provides capability to manage external providers.
-    
-    \"\"\"
+    """    Provides capability to manage external providers.
 
     def __init__(self, connection, path):
         super(ExternalProviderService, self).__init__(connection, path)
@@ -10574,9 +10282,7 @@ class ExternalProviderService(Service):
         **kwargs
     ):
         """
-        Import the SSL certificates of the external host provider.
-        
-        \"\"\"
+        """        Import the SSL certificates of the external host provider.
         # Check the types of the parameters:
         Service._check_types([
             ('certificates', certificates, list),
@@ -10599,7 +10305,7 @@ class ExternalProviderService(Service):
         **kwargs
     ):
         """
-        In order to test connectivity for external provider we need to run following request where 123 is an id of a provider.
+        """        In order to test connectivity for external provider we need to run following request where 123 is an id of a provider.
         
         POST /ovirt-engine/api/externalhostproviders/123/testconnectivity\</programlisting\>
         
@@ -10619,7 +10325,7 @@ class ExternalProviderService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -10639,14 +10345,12 @@ class ExternalProviderService(Service):
 
     def certificates_service(self):
         """
-        A service to view certificates for this external provider.
-        
-        \"\"\"
+        """        A service to view certificates for this external provider.
         return ExternalProviderCertificatesService(self._connection, '%s/certificates' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'certificates':
@@ -10661,9 +10365,7 @@ class ExternalProviderService(Service):
 
 class ExternalProviderCertificateService(Service):
     """
-    A service to view specific certificate for external provider.
-    
-    \"\"\"
+    """    A service to view specific certificate for external provider.
 
     def __init__(self, connection, path):
         super(ExternalProviderCertificateService, self).__init__(connection, path)
@@ -10677,7 +10379,7 @@ class ExternalProviderCertificateService(Service):
         **kwargs
     ):
         """
-        Get specific certificate.
+        """        Get specific certificate.
         
         GET /ovirt-engine/api/externalhostproviders/123/certificate/0\</programlisting\>
         
@@ -10707,7 +10409,7 @@ class ExternalProviderCertificateService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -10723,7 +10425,7 @@ class ExternalProviderCertificateService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -10734,9 +10436,7 @@ class ExternalProviderCertificateService(Service):
 
 class ExternalProviderCertificatesService(Service):
     """
-    A service to view certificates for external provider.
-    
-    \"\"\"
+    """    A service to view certificates for external provider.
 
     def __init__(self, connection, path):
         super(ExternalProviderCertificatesService, self).__init__(connection, path)
@@ -10752,7 +10452,7 @@ class ExternalProviderCertificatesService(Service):
         **kwargs
     ):
         """
-        Returns the chain of certificates presented by the external provider.
+        """        Returns the chain of certificates presented by the external provider.
         
         GET /ovirt-engine/api/externalhostproviders/123/certificates\</programlisting\>
         
@@ -10787,7 +10487,7 @@ class ExternalProviderCertificatesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -10807,9 +10507,7 @@ class ExternalProviderCertificatesService(Service):
 
     def certificate_service(self, id):
         """
-        Reference to service that manages a specific certificate for this external provider.
-        
-        \"\"\"
+        """        Reference to service that manages a specific certificate for this external provider.
         Service._check_types([
             ('id', id, str),
         ])
@@ -10817,7 +10515,7 @@ class ExternalProviderCertificatesService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -10831,9 +10529,7 @@ class ExternalProviderCertificatesService(Service):
 
 class ExternalTemplateImportsService(Service):
     """
-    Provides capability to import external templates. Currently supports OVA only.
-    
-    \"\"\"
+    """    Provides capability to import external templates. Currently supports OVA only.
 
     def __init__(self, connection, path):
         super(ExternalTemplateImportsService, self).__init__(connection, path)
@@ -10847,7 +10543,7 @@ class ExternalTemplateImportsService(Service):
         **kwargs
     ):
         """
-        This operation is used to import a template from external hypervisor. For example import of a template OVA can be facilitated using the following request:
+        """        This operation is used to import a template from external hypervisor. For example import of a template OVA can be facilitated using the following request:
         
         POST /externaltemplateimports\</programlisting\>
         
@@ -10864,8 +10560,6 @@ class ExternalTemplateImportsService(Service):
           <host id="8bb5ade5-e988-4000-8b93-dbfc6717fe50" />
         </external_template_import>
         ```
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('import_', import_, types.ExternalTemplateImport),
@@ -10879,7 +10573,7 @@ class ExternalTemplateImportsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -10890,9 +10584,7 @@ class ExternalTemplateImportsService(Service):
 
 class ExternalVmImportsService(Service):
     """
-    Provides capability to import external virtual machines.
-    
-    \"\"\"
+    """    Provides capability to import external virtual machines.
 
     def __init__(self, connection, path):
         super(ExternalVmImportsService, self).__init__(connection, path)
@@ -10906,7 +10598,7 @@ class ExternalVmImportsService(Service):
         **kwargs
     ):
         """
-        This operation is used to import a virtual machine from external hypervisor, such as KVM, XEN or VMware. For example import of a virtual machine from VMware can be facilitated using the following request:
+        """        This operation is used to import a virtual machine from external hypervisor, such as KVM, XEN or VMware. For example import of a virtual machine from VMware can be facilitated using the following request:
         
         POST /externalvmimports\</programlisting\>
         
@@ -10928,8 +10620,6 @@ class ExternalVmImportsService(Service):
           <drivers_iso id="virtio-win-1.6.7.iso" />
         </external_vm_import>
         ```
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('import_', import_, types.ExternalVmImport),
@@ -10943,7 +10633,7 @@ class ExternalVmImportsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -10954,9 +10644,7 @@ class ExternalVmImportsService(Service):
 
 class FenceAgentService(Service):
     """
-    A service to manage fence agent for a specific host.
-    
-    \"\"\"
+    """    A service to manage fence agent for a specific host.
 
     def __init__(self, connection, path):
         super(FenceAgentService, self).__init__(connection, path)
@@ -10970,7 +10658,7 @@ class FenceAgentService(Service):
         **kwargs
     ):
         """
-        Gets details of this fence agent.
+        """        Gets details of this fence agent.
         
         GET /ovirt-engine/api/hosts/123/fenceagents/0\</programlisting\>
         
@@ -11004,7 +10692,7 @@ class FenceAgentService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -11027,7 +10715,7 @@ class FenceAgentService(Service):
         **kwargs
     ):
         """
-        Removes a fence agent for a specific host.
+        """        Removes a fence agent for a specific host.
         
         DELETE /ovirt-engine/api/hosts/123/fenceagents/0\</programlisting\>
         
@@ -11047,7 +10735,7 @@ class FenceAgentService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -11076,7 +10764,7 @@ class FenceAgentService(Service):
         **kwargs
     ):
         """
-        Update a fencing-agent.
+        """        Update a fencing-agent.
         
         This method supports the following parameters:
         
@@ -11094,7 +10782,7 @@ class FenceAgentService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('agent', agent, types.Agent),
@@ -11116,7 +10804,7 @@ class FenceAgentService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -11127,9 +10815,7 @@ class FenceAgentService(Service):
 
 class FenceAgentsService(Service):
     """
-    A service to manage fence agents for a specific host.
-    
-    \"\"\"
+    """    A service to manage fence agents for a specific host.
 
     def __init__(self, connection, path):
         super(FenceAgentsService, self).__init__(connection, path)
@@ -11144,7 +10830,7 @@ class FenceAgentsService(Service):
         **kwargs
     ):
         """
-        Add a new fencing-agent to the host.
+        """        Add a new fencing-agent to the host.
         
         POST /ovirt-engine/api/hosts/123/fenceagents You should consult the /usr/sbin/fence\_\<agent\_name\> manual page for the legal parameters to \[name1=value1, name2=value2,\...\] in the options field. If any parameter in options appears by name that means that it is mandatory. For example in \<options\>slot=7\[,name1=value1, name2=value2,\...\]\</options\> slot is mandatory.\</programlisting\>
         
@@ -11198,8 +10884,6 @@ class FenceAgentsService(Service):
           <options>[name1=value1, name2=value2,...]</options>
         </agent>
         ```
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('agent', agent, types.Agent),
@@ -11221,7 +10905,7 @@ class FenceAgentsService(Service):
         **kwargs
     ):
         """
-        Returns the list of fencing agents configured for the host.
+        """        Returns the list of fencing agents configured for the host.
         
         GET /ovirt-engine/api/hosts/123/fenceagents\</programlisting\>
         
@@ -11263,7 +10947,7 @@ class FenceAgentsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -11283,9 +10967,7 @@ class FenceAgentsService(Service):
 
     def agent_service(self, id):
         """
-        Reference to service that manages a specific fence agent for this host.
-        
-        \"\"\"
+        """        Reference to service that manages a specific fence agent for this host.
         Service._check_types([
             ('id', id, str),
         ])
@@ -11293,7 +10975,7 @@ class FenceAgentsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -11307,7 +10989,7 @@ class FenceAgentsService(Service):
 
 class FileService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(FileService, self).__init__(connection, path)
@@ -11321,7 +11003,7 @@ class FileService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -11337,7 +11019,7 @@ class FileService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -11353,7 +11035,7 @@ class FileService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -11364,9 +11046,7 @@ class FileService(Service):
 
 class FilesService(Service):
     """
-    Provides a way for clients to list available files. This service is specifically targeted to ISO storage domains, which contain ISO images and virtual floppy disks (VFDs) that an administrator uploads. The addition of a CD-ROM device to a virtual machine requires an ISO image from the files of an ISO storage domain.
-    
-    \"\"\"
+    """    Provides a way for clients to list available files. This service is specifically targeted to ISO storage domains, which contain ISO images and virtual floppy disks (VFDs) that an administrator uploads. The addition of a CD-ROM device to a virtual machine requires an ISO image from the files of an ISO storage domain.
 
     def __init__(self, connection, path):
         super(FilesService, self).__init__(connection, path)
@@ -11385,7 +11065,7 @@ class FilesService(Service):
         **kwargs
     ):
         """
-        Returns the list of ISO images and virtual floppy disks available in the storage domain. The order of the returned list is not guaranteed. If the `refresh` parameter is `false`, the returned list may not reflect recent changes to the storage domain; for example, it may not contain a new ISO file that was recently added. This is because the server caches the list of files to improve performance. To get the very latest results, set the `refresh` parameter to `true`. The default value of the `refresh` parameter is `true`, but it can be changed using the configuration value `ForceRefreshDomainFilesByDefault`:
+        """        Returns the list of ISO images and virtual floppy disks available in the storage domain. The order of the returned list is not guaranteed. If the `refresh` parameter is `false`, the returned list may not reflect recent changes to the storage domain; for example, it may not contain a new ISO file that was recently added. This is because the server caches the list of files to improve performance. To get the very latest results, set the `refresh` parameter to `true`. The default value of the `refresh` parameter is `true`, but it can be changed using the configuration value `ForceRefreshDomainFilesByDefault`:
         
         \# engine-config -s ForceRefreshDomainFilesByDefault=false\</programlisting\>
         
@@ -11425,7 +11105,7 @@ class FilesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('case_sensitive', case_sensitive, bool),
@@ -11456,7 +11136,7 @@ class FilesService(Service):
 
     def file_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -11464,7 +11144,7 @@ class FilesService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -11478,7 +11158,7 @@ class FilesService(Service):
 
 class FilterService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(FilterService, self).__init__(connection, path)
@@ -11493,7 +11173,7 @@ class FilterService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `filter`
         
@@ -11513,7 +11193,7 @@ class FilterService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('filter', filter, bool),
@@ -11540,7 +11220,7 @@ class FilterService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -11556,7 +11236,7 @@ class FilterService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -11577,7 +11257,7 @@ class FilterService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -11588,9 +11268,7 @@ class FilterService(Service):
 
 class FiltersService(Service):
     """
-    Manages the filters used by an scheduling policy.
-    
-    \"\"\"
+    """    Manages the filters used by an scheduling policy.
 
     def __init__(self, connection, path):
         super(FiltersService, self).__init__(connection, path)
@@ -11605,9 +11283,7 @@ class FiltersService(Service):
         **kwargs
     ):
         """
-        Add a filter to a specified user defined scheduling policy.
-        
-        \"\"\"
+        """        Add a filter to a specified user defined scheduling policy.
         # Check the types of the parameters:
         Service._check_types([
             ('filter', filter, types.Filter),
@@ -11630,7 +11306,7 @@ class FiltersService(Service):
         **kwargs
     ):
         """
-        Returns the list of filters used by the scheduling policy. The order of the returned list of filters isn't guaranteed.
+        """        Returns the list of filters used by the scheduling policy. The order of the returned list of filters isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -11656,7 +11332,7 @@ class FiltersService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('filter', filter, bool),
@@ -11680,7 +11356,7 @@ class FiltersService(Service):
 
     def filter_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -11688,7 +11364,7 @@ class FiltersService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -11702,14 +11378,14 @@ class FiltersService(Service):
 
 class FollowService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(FollowService, self).__init__(connection, path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -11720,9 +11396,7 @@ class FollowService(Service):
 
 class GlusterBricksService(Service):
     """
-    This service manages the gluster bricks in a gluster volume
-    
-    \"\"\"
+    """    This service manages the gluster bricks in a gluster volume
 
     def __init__(self, connection, path):
         super(GlusterBricksService, self).__init__(connection, path)
@@ -11738,7 +11412,7 @@ class GlusterBricksService(Service):
         **kwargs
     ):
         """
-        Activate the bricks post data migration of remove brick operation. Used to activate brick(s) once the data migration from bricks is complete but user no longer wishes to remove bricks. The bricks that were previously marked for removal will now be used as normal bricks. For example, to retain the bricks that on glustervolume `123` from which data was migrated, send a request like this:
+        """        Activate the bricks post data migration of remove brick operation. Used to activate brick(s) once the data migration from bricks is complete but user no longer wishes to remove bricks. The bricks that were previously marked for removal will now be used as normal bricks. For example, to retain the bricks that on glustervolume `123` from which data was migrated, send a request like this:
         
         POST /ovirt-engine/api/clusters/567/glustervolumes/123/glusterbricks/activate\</programlisting\>
         
@@ -11774,7 +11448,7 @@ class GlusterBricksService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -11805,7 +11479,7 @@ class GlusterBricksService(Service):
         **kwargs
     ):
         """
-        Adds a list of bricks to gluster volume. Used to expand a gluster volume by adding bricks. For replicated volume types, the parameter `replica_count` needs to be passed. In case the replica count is being increased, then the number of bricks needs to be equivalent to the number of replica sets. For example, to add bricks to gluster volume `123`, send a request like this:
+        """        Adds a list of bricks to gluster volume. Used to expand a gluster volume by adding bricks. For replicated volume types, the parameter `replica_count` needs to be passed. In case the replica count is being increased, then the number of bricks needs to be equivalent to the number of replica sets. For example, to add bricks to gluster volume `123`, send a request like this:
         
         POST /ovirt-engine/api/clusters/567/glustervolumes/123/glusterbricks\</programlisting\>
         
@@ -11836,7 +11510,7 @@ class GlusterBricksService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('bricks', bricks, list),
@@ -11866,7 +11540,7 @@ class GlusterBricksService(Service):
         **kwargs
     ):
         """
-        Lists the bricks of a gluster volume. For example, to list bricks of gluster volume `123`, send a request like this:
+        """        Lists the bricks of a gluster volume. For example, to list bricks of gluster volume `123`, send a request like this:
         
         GET /ovirt-engine/api/clusters/567/glustervolumes/123/glusterbricks\</programlisting\>
         
@@ -11911,7 +11585,7 @@ class GlusterBricksService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -11939,7 +11613,7 @@ class GlusterBricksService(Service):
         **kwargs
     ):
         """
-        Start migration of data prior to removing bricks. Removing bricks is a two-step process, where the data on bricks to be removed, is first migrated to remaining bricks. Once migration is completed the removal of bricks is confirmed via the API [remove](#services/gluster_bricks/methods/remove). If at any point, the action needs to be cancelled [stopmigrate](#services/gluster_bricks/methods/stop_migrate) has to be called. For instance, to delete a brick from a gluster volume with id `123`, send a request:
+        """        Start migration of data prior to removing bricks. Removing bricks is a two-step process, where the data on bricks to be removed, is first migrated to remaining bricks. Once migration is completed the removal of bricks is confirmed via the API [remove](#services/gluster_bricks/methods/remove). If at any point, the action needs to be cancelled [stopmigrate](#services/gluster_bricks/methods/stop_migrate) has to be called. For instance, to delete a brick from a gluster volume with id `123`, send a request:
         
         POST /ovirt-engine/api/clusters/567/glustervolumes/123/glusterbricks/migrate\</programlisting\>
         
@@ -11977,7 +11651,7 @@ class GlusterBricksService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -12008,7 +11682,7 @@ class GlusterBricksService(Service):
         **kwargs
     ):
         """
-        Removes bricks from gluster volume. The recommended way to remove bricks without data loss is to first migrate the data using [stopmigrate](#services/gluster_bricks/methods/stop_migrate) and then removing them. If migrate was not called on bricks prior to remove, the bricks are removed without data migration which may lead to data loss. For example, to delete the bricks from gluster volume `123`, send a request like this:
+        """        Removes bricks from gluster volume. The recommended way to remove bricks without data loss is to first migrate the data using [stopmigrate](#services/gluster_bricks/methods/stop_migrate) and then removing them. If migrate was not called on bricks prior to remove, the bricks are removed without data migration which may lead to data loss. For example, to delete the bricks from gluster volume `123`, send a request like this:
         
         DELETE /ovirt-engine/api/clusters/567/glustervolumes/123/glusterbricks\</programlisting\>
         
@@ -12046,7 +11720,7 @@ class GlusterBricksService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('bricks', bricks, list),
@@ -12082,7 +11756,7 @@ class GlusterBricksService(Service):
         **kwargs
     ):
         """
-        Stops migration of data from bricks for a remove brick operation. To cancel data migration that was started as part of the 2-step remove brick process in case the user wishes to continue using the bricks. The bricks that were marked for removal will function as normal bricks post this operation. For example, to stop migration of data from the bricks of gluster volume `123`, send a request like this:
+        """        Stops migration of data from bricks for a remove brick operation. To cancel data migration that was started as part of the 2-step remove brick process in case the user wishes to continue using the bricks. The bricks that were marked for removal will function as normal bricks post this operation. For example, to stop migration of data from the bricks of gluster volume `123`, send a request like this:
         
         POST /ovirt-engine/api/clusters/567/glustervolumes/123/glusterbricks/stopmigrate\</programlisting\>
         
@@ -12116,7 +11790,7 @@ class GlusterBricksService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -12138,9 +11812,7 @@ class GlusterBricksService(Service):
 
     def brick_service(self, id):
         """
-        Returns a reference to the service managing a single gluster brick.
-        
-        \"\"\"
+        """        Returns a reference to the service managing a single gluster brick.
         Service._check_types([
             ('id', id, str),
         ])
@@ -12148,7 +11820,7 @@ class GlusterBricksService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -12162,7 +11834,7 @@ class GlusterBricksService(Service):
 
 class GlusterHookService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(GlusterHookService, self).__init__(connection, path)
@@ -12176,7 +11848,7 @@ class GlusterHookService(Service):
         **kwargs
     ):
         """
-        Resolves status conflict of hook among servers in cluster by disabling Gluster hook in all servers of the cluster. This updates the hook status to `DISABLED` in database.
+        """        Resolves status conflict of hook among servers in cluster by disabling Gluster hook in all servers of the cluster. This updates the hook status to `DISABLED` in database.
         
         This method supports the following parameters:
         
@@ -12194,7 +11866,7 @@ class GlusterHookService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -12221,7 +11893,7 @@ class GlusterHookService(Service):
         **kwargs
     ):
         """
-        Resolves status conflict of hook among servers in cluster by disabling Gluster hook in all servers of the cluster. This updates the hook status to `DISABLED` in database.
+        """        Resolves status conflict of hook among servers in cluster by disabling Gluster hook in all servers of the cluster. This updates the hook status to `DISABLED` in database.
         
         This method supports the following parameters:
         
@@ -12239,7 +11911,7 @@ class GlusterHookService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -12266,7 +11938,7 @@ class GlusterHookService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -12282,7 +11954,7 @@ class GlusterHookService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -12305,7 +11977,7 @@ class GlusterHookService(Service):
         **kwargs
     ):
         """
-        Removes the this Gluster hook from all servers in cluster and deletes it from the database.
+        """        Removes the this Gluster hook from all servers in cluster and deletes it from the database.
         
         This method supports the following parameters:
         
@@ -12323,7 +11995,7 @@ class GlusterHookService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -12353,7 +12025,7 @@ class GlusterHookService(Service):
         **kwargs
     ):
         """
-        Resolves missing hook conflict depending on the resolution type. For `ADD` resolves by copying hook stored in engine database to all servers where the hook is missing. The engine maintains a list of all servers where hook is missing. For `COPY` resolves conflict in hook content by copying hook stored in engine database to all servers where the hook is missing. The engine maintains a list of all servers where the content is conflicting. If a host id is passed as parameter, the hook content from the server is used as the master to copy to other servers in cluster.
+        """        Resolves missing hook conflict depending on the resolution type. For `ADD` resolves by copying hook stored in engine database to all servers where the hook is missing. The engine maintains a list of all servers where hook is missing. For `COPY` resolves conflict in hook content by copying hook stored in engine database to all servers where the hook is missing. The engine maintains a list of all servers where the content is conflicting. If a host id is passed as parameter, the hook content from the server is used as the master to copy to other servers in cluster.
         
         This method supports the following parameters:
         
@@ -12371,7 +12043,7 @@ class GlusterHookService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -12395,7 +12067,7 @@ class GlusterHookService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -12406,7 +12078,7 @@ class GlusterHookService(Service):
 
 class GlusterHooksService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(GlusterHooksService, self).__init__(connection, path)
@@ -12422,7 +12094,7 @@ class GlusterHooksService(Service):
         **kwargs
     ):
         """
-        Returns the list of hooks. The order of the returned list of hooks isn't guaranteed.
+        """        Returns the list of hooks. The order of the returned list of hooks isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -12444,7 +12116,7 @@ class GlusterHooksService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -12464,7 +12136,7 @@ class GlusterHooksService(Service):
 
     def hook_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -12472,7 +12144,7 @@ class GlusterHooksService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -12486,9 +12158,7 @@ class GlusterHooksService(Service):
 
 class GlusterVolumesService(Service):
     """
-    This service manages a collection of gluster volumes available in a cluster.
-    
-    \"\"\"
+    """    This service manages a collection of gluster volumes available in a cluster.
 
     def __init__(self, connection, path):
         super(GlusterVolumesService, self).__init__(connection, path)
@@ -12503,7 +12173,7 @@ class GlusterVolumesService(Service):
         **kwargs
     ):
         """
-        Creates a new gluster volume. The volume is created based on properties of the `volume` parameter. The properties `name`, `volume_type` and `bricks` are required. For example, to add a volume with name `myvolume` to the cluster `123`, send the following request:
+        """        Creates a new gluster volume. The volume is created based on properties of the `volume` parameter. The properties `name`, `volume_type` and `bricks` are required. For example, to add a volume with name `myvolume` to the cluster `123`, send the following request:
         
         POST /ovirt-engine/api/clusters/123/glustervolumes\</programlisting\>
         
@@ -12547,7 +12217,7 @@ class GlusterVolumesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('volume', volume, types.GlusterVolume),
@@ -12571,7 +12241,7 @@ class GlusterVolumesService(Service):
         **kwargs
     ):
         """
-        Lists all gluster volumes in the cluster. For example, to list all Gluster Volumes in cluster `456`, send a request like this:
+        """        Lists all gluster volumes in the cluster. For example, to list all Gluster Volumes in cluster `456`, send a request like this:
         
         GET /ovirt-engine/api/clusters/456/glustervolumes\</programlisting\>
         
@@ -12605,7 +12275,7 @@ class GlusterVolumesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('case_sensitive', case_sensitive, bool),
@@ -12632,9 +12302,7 @@ class GlusterVolumesService(Service):
 
     def volume_service(self, id):
         """
-        Reference to a service managing gluster volume.
-        
-        \"\"\"
+        """        Reference to a service managing gluster volume.
         Service._check_types([
             ('id', id, str),
         ])
@@ -12642,7 +12310,7 @@ class GlusterVolumesService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -12656,9 +12324,7 @@ class GlusterVolumesService(Service):
 
 class GroupService(Service):
     """
-    Manages a group of users. Use this service to either get groups details or remove groups. In order to add new groups please use [service](#services/groups) that manages the collection of groups.
-    
-    \"\"\"
+    """    Manages a group of users. Use this service to either get groups details or remove groups. In order to add new groups please use [service](#services/groups) that manages the collection of groups.
 
     def __init__(self, connection, path):
         super(GroupService, self).__init__(connection, path)
@@ -12675,7 +12341,7 @@ class GroupService(Service):
         **kwargs
     ):
         """
-        Gets the system group information. Usage:
+        """        Gets the system group information. Usage:
         
             GET /ovirt-engine/api/groups/123
         
@@ -12711,7 +12377,7 @@ class GroupService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -12734,7 +12400,7 @@ class GroupService(Service):
         **kwargs
     ):
         """
-        Removes the system group. Usage:
+        """        Removes the system group. Usage:
         
             DELETE /ovirt-engine/api/groups/123
         
@@ -12754,7 +12420,7 @@ class GroupService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -12775,28 +12441,22 @@ class GroupService(Service):
 
     def permissions_service(self):
         """
-        Reference to the service that manages the collection of permissions assigned to this system group.
-        
-        \"\"\"
+        """        Reference to the service that manages the collection of permissions assigned to this system group.
         return AssignedPermissionsService(self._connection, '%s/permissions' % self._path)
 
     def roles_service(self):
         """
-        Reference to the service that manages the collection of roles assigned to this system group.
-        
-        \"\"\"
+        """        Reference to the service that manages the collection of roles assigned to this system group.
         return AssignedRolesService(self._connection, '%s/roles' % self._path)
 
     def tags_service(self):
         """
-        Reference to the service that manages the collection of tags assigned to this system group.
-        
-        \"\"\"
+        """        Reference to the service that manages the collection of tags assigned to this system group.
         return AssignedTagsService(self._connection, '%s/tags' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'permissions':
@@ -12819,9 +12479,7 @@ class GroupService(Service):
 
 class GroupsService(Service):
     """
-    Manages the collection of groups of users.
-    
-    \"\"\"
+    """    Manages the collection of groups of users.
 
     def __init__(self, connection, path):
         super(GroupsService, self).__init__(connection, path)
@@ -12836,7 +12494,7 @@ class GroupsService(Service):
         **kwargs
     ):
         """
-        Add group from a directory service. Please note that domain name is name of the authorization provider. For example, to add the `Developers` group from the `internal-authz` authorization provider send a request like this:
+        """        Add group from a directory service. Please note that domain name is name of the authorization provider. For example, to add the `Developers` group from the `internal-authz` authorization provider send a request like this:
         
         POST /ovirt-engine/api/groups\</programlisting\>
         
@@ -12867,7 +12525,7 @@ class GroupsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('group', group, types.Group),
@@ -12891,7 +12549,7 @@ class GroupsService(Service):
         **kwargs
     ):
         """
-        List all the groups in the system. Usage:
+        """        List all the groups in the system. Usage:
         
             GET /ovirt-engine/api/groups
         
@@ -12944,7 +12602,7 @@ class GroupsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('case_sensitive', case_sensitive, bool),
@@ -12971,9 +12629,7 @@ class GroupsService(Service):
 
     def group_service(self, id):
         """
-        Reference to the service that manages a specific group.
-        
-        \"\"\"
+        """        Reference to the service that manages a specific group.
         Service._check_types([
             ('id', id, str),
         ])
@@ -12981,7 +12637,7 @@ class GroupsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -12995,9 +12651,7 @@ class GroupsService(Service):
 
 class HostDeviceService(Service):
     """
-    A service to access a particular device of a host.
-    
-    \"\"\"
+    """    A service to access a particular device of a host.
 
     def __init__(self, connection, path):
         super(HostDeviceService, self).__init__(connection, path)
@@ -13011,7 +12665,7 @@ class HostDeviceService(Service):
         **kwargs
     ):
         """
-        Retrieve information about a particular host's device. An example of getting a host device:
+        """        Retrieve information about a particular host's device. An example of getting a host device:
         
         GET /ovirt-engine/api/hosts/123/devices/456\</programlisting\>
         
@@ -13042,7 +12696,7 @@ class HostDeviceService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -13058,7 +12712,7 @@ class HostDeviceService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -13069,9 +12723,7 @@ class HostDeviceService(Service):
 
 class HostDevicesService(Service):
     """
-    A service to access host devices.
-    
-    \"\"\"
+    """    A service to access host devices.
 
     def __init__(self, connection, path):
         super(HostDevicesService, self).__init__(connection, path)
@@ -13087,7 +12739,7 @@ class HostDevicesService(Service):
         **kwargs
     ):
         """
-        List the devices of a host. The order of the returned list of devices isn't guaranteed.
+        """        List the devices of a host. The order of the returned list of devices isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -13109,7 +12761,7 @@ class HostDevicesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -13129,9 +12781,7 @@ class HostDevicesService(Service):
 
     def device_service(self, id):
         """
-        Reference to the service that can be used to access a specific host device.
-        
-        \"\"\"
+        """        Reference to the service that can be used to access a specific host device.
         Service._check_types([
             ('id', id, str),
         ])
@@ -13139,7 +12789,7 @@ class HostDevicesService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -13153,7 +12803,7 @@ class HostDevicesService(Service):
 
 class HostHookService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(HostHookService, self).__init__(connection, path)
@@ -13167,7 +12817,7 @@ class HostHookService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -13183,7 +12833,7 @@ class HostHookService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -13199,7 +12849,7 @@ class HostHookService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -13210,7 +12860,7 @@ class HostHookService(Service):
 
 class HostHooksService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(HostHooksService, self).__init__(connection, path)
@@ -13226,7 +12876,7 @@ class HostHooksService(Service):
         **kwargs
     ):
         """
-        Returns the list of hooks configured for the host. The order of the returned list of hooks is random.
+        """        Returns the list of hooks configured for the host. The order of the returned list of hooks is random.
         
         This method supports the following parameters:
         
@@ -13248,7 +12898,7 @@ class HostHooksService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -13268,7 +12918,7 @@ class HostHooksService(Service):
 
     def hook_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -13276,7 +12926,7 @@ class HostHooksService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -13290,9 +12940,7 @@ class HostHooksService(Service):
 
 class HostNicsService(Service):
     """
-    A service to manage the network interfaces of a host.
-    
-    \"\"\"
+    """    A service to manage the network interfaces of a host.
 
     def __init__(self, connection, path):
         super(HostNicsService, self).__init__(connection, path)
@@ -13309,7 +12957,7 @@ class HostNicsService(Service):
         **kwargs
     ):
         """
-        Returns the list of network interfaces of the host. The order of the returned list of network interfaces isn't guaranteed.
+        """        Returns the list of network interfaces of the host. The order of the returned list of network interfaces isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -13345,7 +12993,7 @@ class HostNicsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('all_content', all_content, bool),
@@ -13369,9 +13017,7 @@ class HostNicsService(Service):
 
     def nic_service(self, id):
         """
-        Reference to the service that manages a single network interface.
-        
-        \"\"\"
+        """        Reference to the service that manages a single network interface.
         Service._check_types([
             ('id', id, str),
         ])
@@ -13379,7 +13025,7 @@ class HostNicsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -13393,7 +13039,7 @@ class HostNicsService(Service):
 
 class HostNumaNodesService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(HostNumaNodesService, self).__init__(connection, path)
@@ -13409,7 +13055,7 @@ class HostNumaNodesService(Service):
         **kwargs
     ):
         """
-        Returns the list of NUMA nodes of the host. The order of the returned list of NUMA nodes isn't guaranteed.
+        """        Returns the list of NUMA nodes of the host. The order of the returned list of NUMA nodes isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -13431,7 +13077,7 @@ class HostNumaNodesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -13451,7 +13097,7 @@ class HostNumaNodesService(Service):
 
     def node_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -13459,7 +13105,7 @@ class HostNumaNodesService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -13473,9 +13119,7 @@ class HostNumaNodesService(Service):
 
 class HostStorageService(Service):
     """
-    A service to manage host storages.
-    
-    \"\"\"
+    """    A service to manage host storages.
 
     def __init__(self, connection, path):
         super(HostStorageService, self).__init__(connection, path)
@@ -13491,7 +13135,7 @@ class HostStorageService(Service):
         **kwargs
     ):
         """
-        Get list of storages.
+        """        Get list of storages.
         
         GET /ovirt-engine/api/hosts/123/storage\</programlisting\>
         
@@ -13567,7 +13211,7 @@ class HostStorageService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -13587,9 +13231,7 @@ class HostStorageService(Service):
 
     def storage_service(self, id):
         """
-        Reference to a service managing the storage.
-        
-        \"\"\"
+        """        Reference to a service managing the storage.
         Service._check_types([
             ('id', id, str),
         ])
@@ -13597,7 +13239,7 @@ class HostStorageService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -13611,9 +13253,7 @@ class HostStorageService(Service):
 
 class HostsService(Service):
     """
-    A service that manages hosts.
-    
-    \"\"\"
+    """    A service that manages hosts.
 
     def __init__(self, connection, path):
         super(HostsService, self).__init__(connection, path)
@@ -13632,7 +13272,7 @@ class HostsService(Service):
         **kwargs
     ):
         """
-        Creates a new host. The host is created based on the attributes of the `host` parameter. The `name`, `address`, and `root_password` properties are required. For example, to add a host, send the following request:
+        """        Creates a new host. The host is created based on the attributes of the `host` parameter. The `name`, `address`, and `root_password` properties are required. For example, to add a host, send the following request:
         
         POST /ovirt-engine/api/hosts\</programlisting\>
         
@@ -13687,7 +13327,7 @@ class HostsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('host', host, types.Host),
@@ -13731,7 +13371,7 @@ class HostsService(Service):
         **kwargs
     ):
         """
-        Get a list of all available hosts. For example, to list the hosts send the following request:
+        """        Get a list of all available hosts. For example, to list the hosts send the following request:
         
             GET /ovirt-engine/api/hosts
         
@@ -13813,7 +13453,7 @@ class HostsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('all_content', all_content, bool),
@@ -13866,7 +13506,7 @@ class HostsService(Service):
         **kwargs
     ):
         """
-        Add a new host to the system providing the host root password. This has been deprecated and provided for backwards compatibility.
+        """        Add a new host to the system providing the host root password. This has been deprecated and provided for backwards compatibility.
         
         This method supports the following parameters:
         
@@ -13884,7 +13524,7 @@ class HostsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('host', host, types.Host),
@@ -13925,7 +13565,7 @@ class HostsService(Service):
         **kwargs
     ):
         """
-        Add a new host to the system providing the ssh password, fingerprint or public key.
+        """        Add a new host to the system providing the ssh password, fingerprint or public key.
         
         This method supports the following parameters:
         
@@ -13943,7 +13583,7 @@ class HostsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('host', host, types.Host),
@@ -13973,9 +13613,7 @@ class HostsService(Service):
 
     def host_service(self, id):
         """
-        A Reference to service managing a specific host.
-        
-        \"\"\"
+        """        A Reference to service managing a specific host.
         Service._check_types([
             ('id', id, str),
         ])
@@ -13983,7 +13621,7 @@ class HostsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -13997,9 +13635,7 @@ class HostsService(Service):
 
 class IconService(Service):
     """
-    A service to manage an icon (read-only).
-    
-    \"\"\"
+    """    A service to manage an icon (read-only).
 
     def __init__(self, connection, path):
         super(IconService, self).__init__(connection, path)
@@ -14013,7 +13649,7 @@ class IconService(Service):
         **kwargs
     ):
         """
-        Get an icon.
+        """        Get an icon.
         
         GET /ovirt-engine/api/icons/123\</programlisting\>
         
@@ -14042,7 +13678,7 @@ class IconService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -14058,7 +13694,7 @@ class IconService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -14069,9 +13705,7 @@ class IconService(Service):
 
 class IconsService(Service):
     """
-    A service to manage icons.
-    
-    \"\"\"
+    """    A service to manage icons.
 
     def __init__(self, connection, path):
         super(IconsService, self).__init__(connection, path)
@@ -14087,7 +13721,7 @@ class IconsService(Service):
         **kwargs
     ):
         """
-        Get a list of icons.
+        """        Get a list of icons.
         
         GET /ovirt-engine/api/icons\</programlisting\>
         
@@ -14125,7 +13759,7 @@ class IconsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -14145,9 +13779,7 @@ class IconsService(Service):
 
     def icon_service(self, id):
         """
-        Reference to the service that manages an specific icon.
-        
-        \"\"\"
+        """        Reference to the service that manages an specific icon.
         Service._check_types([
             ('id', id, str),
         ])
@@ -14155,7 +13787,7 @@ class IconsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -14169,7 +13801,7 @@ class IconsService(Service):
 
 class ImageService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(ImageService, self).__init__(connection, path)
@@ -14183,7 +13815,7 @@ class ImageService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -14199,7 +13831,7 @@ class ImageService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -14227,7 +13859,7 @@ class ImageService(Service):
         **kwargs
     ):
         """
-        Imports an image. If the `import_as_template` parameter is `true` then the image will be imported as a template, otherwise it will be imported as a disk. When imported as a template, the name of the template can be specified by the optional `template.name` parameter. If that parameter is not specified, then the name of the template will be automatically assigned by the engine as `GlanceTemplate-x` (where `x` will be seven random hexadecimal characters). When imported as a disk, the name of the disk can be specified by the optional `disk.name` parameter. If that parameter is not specified, then the name of the disk will be automatically assigned by the engine as `GlanceDisk-x` (where `x` will be the seven hexadecimal characters of the image identifier). It is recommended to always explicitly specify the template or disk name, to avoid these automatic names generated by the engine.
+        """        Imports an image. If the `import_as_template` parameter is `true` then the image will be imported as a template, otherwise it will be imported as a disk. When imported as a template, the name of the template can be specified by the optional `template.name` parameter. If that parameter is not specified, then the name of the template will be automatically assigned by the engine as `GlanceTemplate-x` (where `x` will be seven random hexadecimal characters). When imported as a disk, the name of the disk can be specified by the optional `disk.name` parameter. If that parameter is not specified, then the name of the disk will be automatically assigned by the engine as `GlanceDisk-x` (where `x` will be the seven hexadecimal characters of the image identifier). It is recommended to always explicitly specify the template or disk name, to avoid these automatic names generated by the engine.
         
         This method supports the following parameters:
         
@@ -14265,7 +13897,7 @@ class ImageService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -14295,7 +13927,7 @@ class ImageService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -14306,7 +13938,7 @@ class ImageService(Service):
 
 class ImageTransferService(Service):
     """
-    This service provides a mechanism to control an image transfer. The client will have to create a transfer by using [add](#services/image_transfers/methods/add) of the [???](#services/image_transfers) service, stating the image to transfer data to/from. After doing that, the transfer is managed by this service. **Using oVirt's Python's SDK:** Uploading a `disk` with id `123` (on a random host in the data center):
+    """    This service provides a mechanism to control an image transfer. The client will have to create a transfer by using [add](#services/image_transfers/methods/add) of the [???](#services/image_transfers) service, stating the image to transfer data to/from. After doing that, the transfer is managed by this service. **Using oVirt's Python's SDK:** Uploading a `disk` with id `123` (on a random host in the data center):
     
     ``` {.python}
     transfers_service = system_service.image_transfers_service()
@@ -14438,8 +14070,6 @@ class ImageTransferService(Service):
     ``` {.xml}
     <action />
     ```
-    
-    \"\"\"
 
     def __init__(self, connection, path):
         super(ImageTransferService, self).__init__(connection, path)
@@ -14452,9 +14082,7 @@ class ImageTransferService(Service):
         **kwargs
     ):
         """
-        Cancel the image transfer session. This terminates the transfer operation and removes the partial image.
-        
-        \"\"\"
+        """        Cancel the image transfer session. This terminates the transfer operation and removes the partial image.
         # Check the types of the parameters:
         Service._check_types([
         ])
@@ -14474,9 +14102,7 @@ class ImageTransferService(Service):
         **kwargs
     ):
         """
-        Extend the image transfer session.
-        
-        \"\"\"
+        """        Extend the image transfer session.
         # Check the types of the parameters:
         Service._check_types([
         ])
@@ -14496,9 +14122,7 @@ class ImageTransferService(Service):
         **kwargs
     ):
         """
-        After finishing to transfer the data, finalize the transfer. This will make sure that the data being transferred is valid and fits the image entity that was targeted in the transfer. Specifically, will verify that if the image entity is a QCOW disk, the data uploaded is indeed a QCOW file, and that the image doesn't have a backing file.
-        
-        \"\"\"
+        """        After finishing to transfer the data, finalize the transfer. This will make sure that the data being transferred is valid and fits the image entity that was targeted in the transfer. Specifically, will verify that if the image entity is a QCOW disk, the data uploaded is indeed a QCOW file, and that the image doesn't have a backing file.
         # Check the types of the parameters:
         Service._check_types([
         ])
@@ -14519,7 +14143,7 @@ class ImageTransferService(Service):
         **kwargs
     ):
         """
-        Get the image transfer entity.
+        """        Get the image transfer entity.
         
         This method supports the following parameters:
         
@@ -14537,7 +14161,7 @@ class ImageTransferService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -14559,9 +14183,7 @@ class ImageTransferService(Service):
         **kwargs
     ):
         """
-        Pause the image transfer session.
-        
-        \"\"\"
+        """        Pause the image transfer session.
         # Check the types of the parameters:
         Service._check_types([
         ])
@@ -14581,7 +14203,7 @@ class ImageTransferService(Service):
         **kwargs
     ):
         """
-        Resume the image transfer session. The client will need to poll the transfer's phase until it is different than `resuming`. For example:
+        """        Resume the image transfer session. The client will need to poll the transfer's phase until it is different than `resuming`. For example:
         
         ``` {.python}
         transfer_service = transfers_service.image_transfer_service(transfer.id)
@@ -14591,8 +14213,6 @@ class ImageTransferService(Service):
            time.sleep(1)
            transfer = transfer_service.get()
         ```
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
         ])
@@ -14606,7 +14226,7 @@ class ImageTransferService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -14617,9 +14237,7 @@ class ImageTransferService(Service):
 
 class ImageTransfersService(Service):
     """
-    Please refer to [image transfer](#services/image_transfer) for further documentation.
-    
-    \"\"\"
+    """    Please refer to [image transfer](#services/image_transfer) for further documentation.
 
     def __init__(self, connection, path):
         super(ImageTransfersService, self).__init__(connection, path)
@@ -14634,7 +14252,7 @@ class ImageTransfersService(Service):
         **kwargs
     ):
         """
-        Add a new image transfer. An image, disk or disk snapshot needs to be specified in order to make a new transfer. IMPORTANT: The `image` attribute is deprecated since version 4.2 of the engine. Use the `disk` or `snapshot` attributes instead. **Creating a new image transfer for downloading or uploading a `disk`:** To create an image transfer to download or upload a disk with id `123`, send the following request:
+        """        Add a new image transfer. An image, disk or disk snapshot needs to be specified in order to make a new transfer. IMPORTANT: The `image` attribute is deprecated since version 4.2 of the engine. Use the `disk` or `snapshot` attributes instead. **Creating a new image transfer for downloading or uploading a `disk`:** To create an image transfer to download or upload a disk with id `123`, send the following request:
         
         POST /ovirt-engine/api/imagetransfers\</programlisting\>
         
@@ -14676,7 +14294,7 @@ class ImageTransfersService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('image_transfer', image_transfer, types.ImageTransfer),
@@ -14697,7 +14315,7 @@ class ImageTransfersService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `image_transfer`
         
@@ -14713,7 +14331,7 @@ class ImageTransfersService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('image_transfer', image_transfer, types.ImageTransfer),
@@ -14734,7 +14352,7 @@ class ImageTransfersService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `image_transfer`
         
@@ -14750,7 +14368,7 @@ class ImageTransfersService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('image_transfer', image_transfer, types.ImageTransfer),
@@ -14771,7 +14389,7 @@ class ImageTransfersService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `image_transfer`
         
@@ -14787,7 +14405,7 @@ class ImageTransfersService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('image_transfer', image_transfer, types.ImageTransfer),
@@ -14808,7 +14426,7 @@ class ImageTransfersService(Service):
         **kwargs
     ):
         """
-        Retrieves the list of image transfers that are currently being performed. The order of the returned list of image transfers is not guaranteed.
+        """        Retrieves the list of image transfers that are currently being performed. The order of the returned list of image transfers is not guaranteed.
         
         This method supports the following parameters:
         
@@ -14826,7 +14444,7 @@ class ImageTransfersService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -14842,9 +14460,7 @@ class ImageTransfersService(Service):
 
     def image_transfer_service(self, id):
         """
-        Returns a reference to the service that manages an specific image transfer.
-        
-        \"\"\"
+        """        Returns a reference to the service that manages an specific image transfer.
         Service._check_types([
             ('id', id, str),
         ])
@@ -14852,7 +14468,7 @@ class ImageTransfersService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -14866,9 +14482,7 @@ class ImageTransfersService(Service):
 
 class ImagesService(Service):
     """
-    Manages the set of images available in an storage domain or in an OpenStack image provider.
-    
-    \"\"\"
+    """    Manages the set of images available in an storage domain or in an OpenStack image provider.
 
     def __init__(self, connection, path):
         super(ImagesService, self).__init__(connection, path)
@@ -14884,7 +14498,7 @@ class ImagesService(Service):
         **kwargs
     ):
         """
-        Returns the list of images available in the storage domain or provider. The order of the returned list of images isn't guaranteed.
+        """        Returns the list of images available in the storage domain or provider. The order of the returned list of images isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -14906,7 +14520,7 @@ class ImagesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -14926,7 +14540,7 @@ class ImagesService(Service):
 
     def image_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -14934,7 +14548,7 @@ class ImagesService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -14948,7 +14562,7 @@ class ImagesService(Service):
 
 class InstanceTypeService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(InstanceTypeService, self).__init__(connection, path)
@@ -14965,7 +14579,7 @@ class InstanceTypeService(Service):
         **kwargs
     ):
         """
-        Get a specific instance type and it's attributes.
+        """        Get a specific instance type and it's attributes.
         
         GET /ovirt-engine/api/instancetypes/123\</programlisting\>
         
@@ -14985,7 +14599,7 @@ class InstanceTypeService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -15008,7 +14622,7 @@ class InstanceTypeService(Service):
         **kwargs
     ):
         """
-        Removes a specific instance type from the system. If a virtual machine was created using an instance type X after removal of the instance type the virtual machine's instance type will be set to `custom`.
+        """        Removes a specific instance type from the system. If a virtual machine was created using an instance type X after removal of the instance type the virtual machine's instance type will be set to `custom`.
         
         DELETE /ovirt-engine/api/instancetypes/123\</programlisting\>
         
@@ -15028,7 +14642,7 @@ class InstanceTypeService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -15057,7 +14671,7 @@ class InstanceTypeService(Service):
         **kwargs
     ):
         """
-        Update a specific instance type and it's attributes. All the attributes are editable after creation. If a virtual machine was created using an instance type X and some configuration in instance type X was updated, the virtual machine's configuration will be updated automatically by the engine.
+        """        Update a specific instance type and it's attributes. All the attributes are editable after creation. If a virtual machine was created using an instance type X and some configuration in instance type X was updated, the virtual machine's configuration will be updated automatically by the engine.
         
         PUT /ovirt-engine/api/instancetypes/123\</programlisting\>
         
@@ -15075,8 +14689,6 @@ class InstanceTypeService(Service):
           </cpu>
         </instance_type>
         ```
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('instance_type', instance_type, types.InstanceType),
@@ -15098,28 +14710,22 @@ class InstanceTypeService(Service):
 
     def graphics_consoles_service(self):
         """
-        Reference to the service that manages the graphic consoles that are attached to this instance type.
-        
-        \"\"\"
+        """        Reference to the service that manages the graphic consoles that are attached to this instance type.
         return InstanceTypeGraphicsConsolesService(self._connection, '%s/graphicsconsoles' % self._path)
 
     def nics_service(self):
         """
-        Reference to the service that manages the NICs that are attached to this instance type.
-        
-        \"\"\"
+        """        Reference to the service that manages the NICs that are attached to this instance type.
         return InstanceTypeNicsService(self._connection, '%s/nics' % self._path)
 
     def watchdogs_service(self):
         """
-        Reference to the service that manages the watchdogs that are attached to this instance type.
-        
-        \"\"\"
+        """        Reference to the service that manages the watchdogs that are attached to this instance type.
         return InstanceTypeWatchdogsService(self._connection, '%s/watchdogs' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'graphicsconsoles':
@@ -15142,7 +14748,7 @@ class InstanceTypeService(Service):
 
 class InstanceTypeGraphicsConsoleService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(InstanceTypeGraphicsConsoleService, self).__init__(connection, path)
@@ -15156,7 +14762,7 @@ class InstanceTypeGraphicsConsoleService(Service):
         **kwargs
     ):
         """
-        Gets graphics console configuration of the instance type.
+        """        Gets graphics console configuration of the instance type.
         
         This method supports the following parameters:
         
@@ -15174,7 +14780,7 @@ class InstanceTypeGraphicsConsoleService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -15197,7 +14803,7 @@ class InstanceTypeGraphicsConsoleService(Service):
         **kwargs
     ):
         """
-        Remove the graphics console from the instance type.
+        """        Remove the graphics console from the instance type.
         
         This method supports the following parameters:
         
@@ -15215,7 +14821,7 @@ class InstanceTypeGraphicsConsoleService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -15236,7 +14842,7 @@ class InstanceTypeGraphicsConsoleService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -15247,7 +14853,7 @@ class InstanceTypeGraphicsConsoleService(Service):
 
 class InstanceTypeGraphicsConsolesService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(InstanceTypeGraphicsConsolesService, self).__init__(connection, path)
@@ -15262,9 +14868,7 @@ class InstanceTypeGraphicsConsolesService(Service):
         **kwargs
     ):
         """
-        Add new graphics console to the instance type.
-        
-        \"\"\"
+        """        Add new graphics console to the instance type.
         # Check the types of the parameters:
         Service._check_types([
             ('console', console, types.GraphicsConsole),
@@ -15286,7 +14890,7 @@ class InstanceTypeGraphicsConsolesService(Service):
         **kwargs
     ):
         """
-        Lists all the configured graphics consoles of the instance type. The order of the returned list of graphics consoles isn't guaranteed.
+        """        Lists all the configured graphics consoles of the instance type. The order of the returned list of graphics consoles isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -15308,7 +14912,7 @@ class InstanceTypeGraphicsConsolesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -15328,9 +14932,7 @@ class InstanceTypeGraphicsConsolesService(Service):
 
     def console_service(self, id):
         """
-        Returns a reference to the service that manages a specific instance type graphics console.
-        
-        \"\"\"
+        """        Returns a reference to the service that manages a specific instance type graphics console.
         Service._check_types([
             ('id', id, str),
         ])
@@ -15338,7 +14940,7 @@ class InstanceTypeGraphicsConsolesService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -15352,7 +14954,7 @@ class InstanceTypeGraphicsConsolesService(Service):
 
 class InstanceTypeNicService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(InstanceTypeNicService, self).__init__(connection, path)
@@ -15366,7 +14968,7 @@ class InstanceTypeNicService(Service):
         **kwargs
     ):
         """
-        Gets network interface configuration of the instance type.
+        """        Gets network interface configuration of the instance type.
         
         This method supports the following parameters:
         
@@ -15384,7 +14986,7 @@ class InstanceTypeNicService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -15407,7 +15009,7 @@ class InstanceTypeNicService(Service):
         **kwargs
     ):
         """
-        Remove the network interface from the instance type.
+        """        Remove the network interface from the instance type.
         
         This method supports the following parameters:
         
@@ -15425,7 +15027,7 @@ class InstanceTypeNicService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -15454,9 +15056,7 @@ class InstanceTypeNicService(Service):
         **kwargs
     ):
         """
-        Updates the network interface configuration of the instance type.
-        
-        \"\"\"
+        """        Updates the network interface configuration of the instance type.
         # Check the types of the parameters:
         Service._check_types([
             ('nic', nic, types.Nic),
@@ -15478,7 +15078,7 @@ class InstanceTypeNicService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -15489,7 +15089,7 @@ class InstanceTypeNicService(Service):
 
 class InstanceTypeNicsService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(InstanceTypeNicsService, self).__init__(connection, path)
@@ -15504,9 +15104,7 @@ class InstanceTypeNicsService(Service):
         **kwargs
     ):
         """
-        Add new network interface to the instance type.
-        
-        \"\"\"
+        """        Add new network interface to the instance type.
         # Check the types of the parameters:
         Service._check_types([
             ('nic', nic, types.Nic),
@@ -15529,7 +15127,7 @@ class InstanceTypeNicsService(Service):
         **kwargs
     ):
         """
-        Lists all the configured network interface of the instance type. The order of the returned list of network interfaces isn't guaranteed.
+        """        Lists all the configured network interface of the instance type. The order of the returned list of network interfaces isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -15555,7 +15153,7 @@ class InstanceTypeNicsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -15578,7 +15176,7 @@ class InstanceTypeNicsService(Service):
 
     def nic_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -15586,7 +15184,7 @@ class InstanceTypeNicsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -15600,7 +15198,7 @@ class InstanceTypeNicsService(Service):
 
 class InstanceTypeWatchdogService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(InstanceTypeWatchdogService, self).__init__(connection, path)
@@ -15614,7 +15212,7 @@ class InstanceTypeWatchdogService(Service):
         **kwargs
     ):
         """
-        Gets watchdog configuration of the instance type.
+        """        Gets watchdog configuration of the instance type.
         
         This method supports the following parameters:
         
@@ -15632,7 +15230,7 @@ class InstanceTypeWatchdogService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -15655,7 +15253,7 @@ class InstanceTypeWatchdogService(Service):
         **kwargs
     ):
         """
-        Remove a watchdog from the instance type.
+        """        Remove a watchdog from the instance type.
         
         This method supports the following parameters:
         
@@ -15673,7 +15271,7 @@ class InstanceTypeWatchdogService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -15702,9 +15300,7 @@ class InstanceTypeWatchdogService(Service):
         **kwargs
     ):
         """
-        Updates the watchdog configuration of the instance type.
-        
-        \"\"\"
+        """        Updates the watchdog configuration of the instance type.
         # Check the types of the parameters:
         Service._check_types([
             ('watchdog', watchdog, types.Watchdog),
@@ -15726,7 +15322,7 @@ class InstanceTypeWatchdogService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -15737,7 +15333,7 @@ class InstanceTypeWatchdogService(Service):
 
 class InstanceTypeWatchdogsService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(InstanceTypeWatchdogsService, self).__init__(connection, path)
@@ -15752,9 +15348,7 @@ class InstanceTypeWatchdogsService(Service):
         **kwargs
     ):
         """
-        Add new watchdog to the instance type.
-        
-        \"\"\"
+        """        Add new watchdog to the instance type.
         # Check the types of the parameters:
         Service._check_types([
             ('watchdog', watchdog, types.Watchdog),
@@ -15777,7 +15371,7 @@ class InstanceTypeWatchdogsService(Service):
         **kwargs
     ):
         """
-        Lists all the configured watchdogs of the instance type. The order of the returned list of watchdogs isn't guaranteed.
+        """        Lists all the configured watchdogs of the instance type. The order of the returned list of watchdogs isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -15803,7 +15397,7 @@ class InstanceTypeWatchdogsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -15826,7 +15420,7 @@ class InstanceTypeWatchdogsService(Service):
 
     def watchdog_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -15834,7 +15428,7 @@ class InstanceTypeWatchdogsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -15848,7 +15442,7 @@ class InstanceTypeWatchdogsService(Service):
 
 class InstanceTypesService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(InstanceTypesService, self).__init__(connection, path)
@@ -15863,7 +15457,7 @@ class InstanceTypesService(Service):
         **kwargs
     ):
         """
-        Creates a new instance type. This requires only a name attribute and can include all hardware configurations of the virtual machine.
+        """        Creates a new instance type. This requires only a name attribute and can include all hardware configurations of the virtual machine.
         
         POST /ovirt-engine/api/instancetypes\</programlisting\>
         
@@ -15940,8 +15534,6 @@ class InstanceTypesService(Service):
           </virtio_scsi>
         </instance_type>
         ```
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('instance_type', instance_type, types.InstanceType),
@@ -15965,7 +15557,7 @@ class InstanceTypesService(Service):
         **kwargs
     ):
         """
-        Lists all existing instance types in the system. The order of the returned list of instance types isn't guaranteed.
+        """        Lists all existing instance types in the system. The order of the returned list of instance types isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -15995,7 +15587,7 @@ class InstanceTypesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('case_sensitive', case_sensitive, bool),
@@ -16022,7 +15614,7 @@ class InstanceTypesService(Service):
 
     def instance_type_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -16030,7 +15622,7 @@ class InstanceTypesService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -16044,7 +15636,7 @@ class InstanceTypesService(Service):
 
 class IscsiBondService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(IscsiBondService, self).__init__(connection, path)
@@ -16060,7 +15652,7 @@ class IscsiBondService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -16076,7 +15668,7 @@ class IscsiBondService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -16099,7 +15691,7 @@ class IscsiBondService(Service):
         **kwargs
     ):
         """
-        Removes of an existing iSCSI bond. For example, to remove the iSCSI bond `456` send a request like this:
+        """        Removes of an existing iSCSI bond. For example, to remove the iSCSI bond `456` send a request like this:
         
         DELETE /ovirt-engine/api/datacenters/123/iscsibonds/456\</programlisting\>
         
@@ -16119,7 +15711,7 @@ class IscsiBondService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -16148,7 +15740,7 @@ class IscsiBondService(Service):
         **kwargs
     ):
         """
-        Updates an iSCSI bond. Updating of an iSCSI bond can be done on the `name` and the `description` attributes only. For example, to update the iSCSI bond `456` of data center `123`, send a request like this:
+        """        Updates an iSCSI bond. Updating of an iSCSI bond can be done on the `name` and the `description` attributes only. For example, to update the iSCSI bond `456` of data center `123`, send a request like this:
         
         PUT /ovirt-engine/api/datacenters/123/iscsibonds/1234\</programlisting\>
         
@@ -16177,7 +15769,7 @@ class IscsiBondService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('bond', bond, types.IscsiBond),
@@ -16199,17 +15791,17 @@ class IscsiBondService(Service):
 
     def networks_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return NetworksService(self._connection, '%s/networks' % self._path)
 
     def storage_server_connections_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return StorageServerConnectionsService(self._connection, '%s/storageserverconnections' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'networks':
@@ -16228,7 +15820,7 @@ class IscsiBondService(Service):
 
 class IscsiBondsService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(IscsiBondsService, self).__init__(connection, path)
@@ -16243,7 +15835,7 @@ class IscsiBondsService(Service):
         **kwargs
     ):
         """
-        Create a new iSCSI bond on a data center. For example, to create a new iSCSI bond on data center `123` using storage connections `456` and `789`, send a request like this:
+        """        Create a new iSCSI bond on a data center. For example, to create a new iSCSI bond on data center `123` using storage connections `456` and `789`, send a request like this:
         
         POST /ovirt-engine/api/datacenters/123/iscsibonds\</programlisting\>
         
@@ -16261,8 +15853,6 @@ class IscsiBondsService(Service):
           </networks>
         </iscsi_bond>
         ```
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('bond', bond, types.IscsiBond),
@@ -16284,7 +15874,7 @@ class IscsiBondsService(Service):
         **kwargs
     ):
         """
-        Returns the list of iSCSI bonds configured in the data center. The order of the returned list of iSCSI bonds isn't guaranteed.
+        """        Returns the list of iSCSI bonds configured in the data center. The order of the returned list of iSCSI bonds isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -16306,7 +15896,7 @@ class IscsiBondsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -16326,7 +15916,7 @@ class IscsiBondsService(Service):
 
     def iscsi_bond_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -16334,7 +15924,7 @@ class IscsiBondsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -16348,9 +15938,7 @@ class IscsiBondsService(Service):
 
 class JobService(Service):
     """
-    A service to manage a job.
-    
-    \"\"\"
+    """    A service to manage a job.
 
     def __init__(self, connection, path):
         super(JobService, self).__init__(connection, path)
@@ -16365,7 +15953,7 @@ class JobService(Service):
         **kwargs
     ):
         """
-        Set an external job execution to be cleared by the system. For example, to set a job with identifier `123` send the following request:
+        """        Set an external job execution to be cleared by the system. For example, to set a job with identifier `123` send the following request:
         
         POST /ovirt-engine/api/jobs/clear\</programlisting\>
         
@@ -16391,7 +15979,7 @@ class JobService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -16420,7 +16008,7 @@ class JobService(Service):
         **kwargs
     ):
         """
-        Marks an external job execution as ended. For example, to terminate a job with identifier `123` send the following request:
+        """        Marks an external job execution as ended. For example, to terminate a job with identifier `123` send the following request:
         
         POST /ovirt-engine/api/jobs/end\</programlisting\>
         
@@ -16457,7 +16045,7 @@ class JobService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -16488,7 +16076,7 @@ class JobService(Service):
         **kwargs
     ):
         """
-        Retrieves a job.
+        """        Retrieves a job.
         
         GET /ovirt-engine/api/jobs/123\</programlisting\>
         
@@ -16528,7 +16116,7 @@ class JobService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -16544,14 +16132,12 @@ class JobService(Service):
 
     def steps_service(self):
         """
-        List all the steps of the job. The order of the returned list of steps isn't guaranteed.
-        
-        \"\"\"
+        """        List all the steps of the job. The order of the returned list of steps isn't guaranteed.
         return StepsService(self._connection, '%s/steps' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'steps':
@@ -16566,9 +16152,7 @@ class JobService(Service):
 
 class JobsService(Service):
     """
-    A service to manage jobs.
-    
-    \"\"\"
+    """    A service to manage jobs.
 
     def __init__(self, connection, path):
         super(JobsService, self).__init__(connection, path)
@@ -16583,7 +16167,7 @@ class JobsService(Service):
         **kwargs
     ):
         """
-        Add an external job. For example, to add a job with the following request:
+        """        Add an external job. For example, to add a job with the following request:
         
         POST /ovirt-engine/api/jobs\</programlisting\>
         
@@ -16631,7 +16215,7 @@ class JobsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('job', job, types.Job),
@@ -16655,7 +16239,7 @@ class JobsService(Service):
         **kwargs
     ):
         """
-        Retrieves the representation of the jobs.
+        """        Retrieves the representation of the jobs.
         
         GET /ovirt-engine/api/jobs\</programlisting\>
         
@@ -16712,7 +16296,7 @@ class JobsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('case_sensitive', case_sensitive, bool),
@@ -16739,9 +16323,7 @@ class JobsService(Service):
 
     def job_service(self, id):
         """
-        Reference to the job service.
-        
-        \"\"\"
+        """        Reference to the job service.
         Service._check_types([
             ('id', id, str),
         ])
@@ -16749,7 +16331,7 @@ class JobsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -16763,9 +16345,7 @@ class JobsService(Service):
 
 class KatelloErrataService(Service):
     """
-    A service to manage Katello errata. The information is retrieved from Katello.
-    
-    \"\"\"
+    """    A service to manage Katello errata. The information is retrieved from Katello.
 
     def __init__(self, connection, path):
         super(KatelloErrataService, self).__init__(connection, path)
@@ -16781,7 +16361,7 @@ class KatelloErrataService(Service):
         **kwargs
     ):
         """
-        Retrieves the representation of the Katello errata.
+        """        Retrieves the representation of the Katello errata.
         
         GET /ovirt-engine/api/katelloerrata\</programlisting\>
         
@@ -16830,7 +16410,7 @@ class KatelloErrataService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -16850,9 +16430,7 @@ class KatelloErrataService(Service):
 
     def katello_erratum_service(self, id):
         """
-        Reference to the Katello erratum service. Use this service to view the erratum by its id.
-        
-        \"\"\"
+        """        Reference to the Katello erratum service. Use this service to view the erratum by its id.
         Service._check_types([
             ('id', id, str),
         ])
@@ -16860,7 +16438,7 @@ class KatelloErrataService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -16874,9 +16452,7 @@ class KatelloErrataService(Service):
 
 class KatelloErratumService(Service):
     """
-    A service to manage a Katello erratum.
-    
-    \"\"\"
+    """    A service to manage a Katello erratum.
 
     def __init__(self, connection, path):
         super(KatelloErratumService, self).__init__(connection, path)
@@ -16890,7 +16466,7 @@ class KatelloErratumService(Service):
         **kwargs
     ):
         """
-        Retrieves a Katello erratum.
+        """        Retrieves a Katello erratum.
         
         GET /ovirt-engine/api/katelloerrata/123\</programlisting\>
         
@@ -16930,7 +16506,7 @@ class KatelloErratumService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -16946,7 +16522,7 @@ class KatelloErratumService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -16957,9 +16533,7 @@ class KatelloErratumService(Service):
 
 class LinkLayerDiscoveryProtocolService(Service):
     """
-    A service to fetch information elements received by Link Layer Discovery Protocol (LLDP).
-    
-    \"\"\"
+    """    A service to fetch information elements received by Link Layer Discovery Protocol (LLDP).
 
     def __init__(self, connection, path):
         super(LinkLayerDiscoveryProtocolService, self).__init__(connection, path)
@@ -16973,7 +16547,7 @@ class LinkLayerDiscoveryProtocolService(Service):
         **kwargs
     ):
         """
-        Fetches information elements received by LLDP.
+        """        Fetches information elements received by LLDP.
         
         This method supports the following parameters:
         
@@ -16991,7 +16565,7 @@ class LinkLayerDiscoveryProtocolService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -17007,7 +16581,7 @@ class LinkLayerDiscoveryProtocolService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -17018,7 +16592,7 @@ class LinkLayerDiscoveryProtocolService(Service):
 
 class MacPoolService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(MacPoolService, self).__init__(connection, path)
@@ -17033,7 +16607,7 @@ class MacPoolService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -17049,7 +16623,7 @@ class MacPoolService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -17072,7 +16646,7 @@ class MacPoolService(Service):
         **kwargs
     ):
         """
-        Removes a MAC address pool. For example, to remove the MAC address pool having id `123` send a request like this:
+        """        Removes a MAC address pool. For example, to remove the MAC address pool having id `123` send a request like this:
         
         DELETE /ovirt-engine/api/macpools/123\</programlisting\>
         
@@ -17092,7 +16666,7 @@ class MacPoolService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -17121,7 +16695,7 @@ class MacPoolService(Service):
         **kwargs
     ):
         """
-        Updates a MAC address pool. The `name`, `description`, `allow_duplicates`, and `ranges` attributes can be updated. For example, to update the MAC address pool of id `123` send a request like this:
+        """        Updates a MAC address pool. The `name`, `description`, `allow_duplicates`, and `ranges` attributes can be updated. For example, to update the MAC address pool of id `123` send a request like this:
         
         PUT /ovirt-engine/api/macpools/123\</programlisting\>
         
@@ -17144,8 +16718,6 @@ class MacPoolService(Service):
           </ranges>
         </mac_pool>
         ```
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('pool', pool, types.MacPool),
@@ -17167,14 +16739,12 @@ class MacPoolService(Service):
 
     def permissions_service(self):
         """
-        Returns a reference to the service that manages the permissions that are associated with the MacPool.
-        
-        \"\"\"
+        """        Returns a reference to the service that manages the permissions that are associated with the MacPool.
         return AssignedPermissionsService(self._connection, '%s/permissions' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'permissions':
@@ -17189,7 +16759,7 @@ class MacPoolService(Service):
 
 class MacPoolsService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(MacPoolsService, self).__init__(connection, path)
@@ -17204,7 +16774,7 @@ class MacPoolsService(Service):
         **kwargs
     ):
         """
-        Creates a new MAC address pool. Creation of a MAC address pool requires values for the `name` and `ranges` attributes. For example, to create MAC address pool send a request like this:
+        """        Creates a new MAC address pool. Creation of a MAC address pool requires values for the `name` and `ranges` attributes. For example, to create MAC address pool send a request like this:
         
         POST /ovirt-engine/api/macpools\</programlisting\>
         
@@ -17224,8 +16794,6 @@ class MacPoolsService(Service):
           </ranges>
         </mac_pool>
         ```
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('pool', pool, types.MacPool),
@@ -17247,7 +16815,7 @@ class MacPoolsService(Service):
         **kwargs
     ):
         """
-        Return the list of MAC address pools of the system. The returned list of MAC address pools isn't guaranteed.
+        """        Return the list of MAC address pools of the system. The returned list of MAC address pools isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -17269,7 +16837,7 @@ class MacPoolsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -17289,7 +16857,7 @@ class MacPoolsService(Service):
 
     def mac_pool_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -17297,7 +16865,7 @@ class MacPoolsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -17311,7 +16879,7 @@ class MacPoolsService(Service):
 
 class MeasurableService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(MeasurableService, self).__init__(connection, path)
@@ -17319,12 +16887,12 @@ class MeasurableService(Service):
 
     def statistics_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return StatisticsService(self._connection, '%s/statistics' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'statistics':
@@ -17339,7 +16907,7 @@ class MeasurableService(Service):
 
 class MoveableService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(MoveableService, self).__init__(connection, path)
@@ -17353,7 +16921,7 @@ class MoveableService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -17369,7 +16937,7 @@ class MoveableService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -17389,7 +16957,7 @@ class MoveableService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -17400,9 +16968,7 @@ class MoveableService(Service):
 
 class NetworkService(Service):
     """
-    A service managing a network
-    
-    \"\"\"
+    """    A service managing a network
 
     def __init__(self, connection, path):
         super(NetworkService, self).__init__(connection, path)
@@ -17419,7 +16985,7 @@ class NetworkService(Service):
         **kwargs
     ):
         """
-        Gets a logical network. For example:
+        """        Gets a logical network. For example:
         
         GET /ovirt-engine/api/networks/123\</programlisting\>
         
@@ -17457,7 +17023,7 @@ class NetworkService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -17480,7 +17046,7 @@ class NetworkService(Service):
         **kwargs
     ):
         """
-        Removes a logical network, or the association of a logical network to a data center. For example, to remove the logical network `123` send a request like this:
+        """        Removes a logical network, or the association of a logical network to a data center. For example, to remove the logical network `123` send a request like this:
         
         DELETE /ovirt-engine/api/networks/123\</programlisting\>
         
@@ -17508,7 +17074,7 @@ class NetworkService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -17537,7 +17103,7 @@ class NetworkService(Service):
         **kwargs
     ):
         """
-        Updates a logical network. The `name`, `description`, `ip`, `vlan`, `stp` and `display` attributes can be updated. For example, to update the description of the logical network `123` send a request like this:
+        """        Updates a logical network. The `name`, `description`, `ip`, `vlan`, `stp` and `display` attributes can be updated. For example, to update the description of the logical network `123` send a request like this:
         
         PUT /ovirt-engine/api/networks/123\</programlisting\>
         
@@ -17564,8 +17130,6 @@ class NetworkService(Service):
         > **Note**
         >
         > Updating external networks is not propagated to the provider.
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('network', network, types.Network),
@@ -17587,28 +17151,22 @@ class NetworkService(Service):
 
     def network_labels_service(self):
         """
-        Reference to the service that manages the network labels assigned to this network.
-        
-        \"\"\"
+        """        Reference to the service that manages the network labels assigned to this network.
         return NetworkLabelsService(self._connection, '%s/networklabels' % self._path)
 
     def permissions_service(self):
         """
-        Reference to the service that manages the permissions assigned to this network.
-        
-        \"\"\"
+        """        Reference to the service that manages the permissions assigned to this network.
         return AssignedPermissionsService(self._connection, '%s/permissions' % self._path)
 
     def vnic_profiles_service(self):
         """
-        Reference to the service that manages the vNIC profiles assigned to this network.
-        
-        \"\"\"
+        """        Reference to the service that manages the vNIC profiles assigned to this network.
         return AssignedVnicProfilesService(self._connection, '%s/vnicprofiles' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'networklabels':
@@ -17631,7 +17189,7 @@ class NetworkService(Service):
 
 class NetworkAttachmentService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(NetworkAttachmentService, self).__init__(connection, path)
@@ -17645,7 +17203,7 @@ class NetworkAttachmentService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -17661,7 +17219,7 @@ class NetworkAttachmentService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -17684,7 +17242,7 @@ class NetworkAttachmentService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -17700,7 +17258,7 @@ class NetworkAttachmentService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -17729,9 +17287,7 @@ class NetworkAttachmentService(Service):
         **kwargs
     ):
         """
-        Update the specified network attachment on the host.
-        
-        \"\"\"
+        """        Update the specified network attachment on the host.
         # Check the types of the parameters:
         Service._check_types([
             ('attachment', attachment, types.NetworkAttachment),
@@ -17753,7 +17309,7 @@ class NetworkAttachmentService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -17764,9 +17320,7 @@ class NetworkAttachmentService(Service):
 
 class NetworkAttachmentsService(Service):
     """
-    Manages the set of network attachments of a host or host NIC.
-    
-    \"\"\"
+    """    Manages the set of network attachments of a host or host NIC.
 
     def __init__(self, connection, path):
         super(NetworkAttachmentsService, self).__init__(connection, path)
@@ -17781,9 +17335,7 @@ class NetworkAttachmentsService(Service):
         **kwargs
     ):
         """
-        Add a new network attachment to the network interface.
-        
-        \"\"\"
+        """        Add a new network attachment to the network interface.
         # Check the types of the parameters:
         Service._check_types([
             ('attachment', attachment, types.NetworkAttachment),
@@ -17805,7 +17357,7 @@ class NetworkAttachmentsService(Service):
         **kwargs
     ):
         """
-        Returns the list of network attachments of the host or host NIC. The order of the returned list of network attachments isn't guaranteed.
+        """        Returns the list of network attachments of the host or host NIC. The order of the returned list of network attachments isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -17827,7 +17379,7 @@ class NetworkAttachmentsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -17847,7 +17399,7 @@ class NetworkAttachmentsService(Service):
 
     def attachment_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -17855,7 +17407,7 @@ class NetworkAttachmentsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -17869,7 +17421,7 @@ class NetworkAttachmentsService(Service):
 
 class NetworkFilterService(Service):
     """
-    Manages a network filter.
+    """    Manages a network filter.
     
     ``` {.xml}
     <network_filter id="00000019-0019-0019-0019-00000000026b">
@@ -17884,8 +17436,6 @@ class NetworkFilterService(Service):
     ```
     
     Please note that version is referring to the minimal support version for the specific filter.
-    
-    \"\"\"
 
     def __init__(self, connection, path):
         super(NetworkFilterService, self).__init__(connection, path)
@@ -17899,7 +17449,7 @@ class NetworkFilterService(Service):
         **kwargs
     ):
         """
-        Retrieves a representation of the network filter.
+        """        Retrieves a representation of the network filter.
         
         This method supports the following parameters:
         
@@ -17917,7 +17467,7 @@ class NetworkFilterService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -17933,7 +17483,7 @@ class NetworkFilterService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -17944,7 +17494,7 @@ class NetworkFilterService(Service):
 
 class NetworkFiltersService(Service):
     """
-    Represents a readonly network filters sub-collection. The network filter enables to filter packets send to/from the VM's nic according to defined rules. For more information please refer to [NetworkFilter](#services/network_filter) service documentation Network filters are supported in different versions, starting from version 3.0. A network filter is defined for each vnic profile. A vnic profile is defined for a specific network. A network can be assigned to several different clusters. In the future, each network will be defined in cluster level. Currently, each network is being defined at data center level. Potential network filters for each network are determined by the network's data center compatibility version V. V must be \>= the network filter version in order to configure this network filter for a specific network. Please note, that if a network is assigned to cluster with a version supporting a network filter, the filter may not be available due to the data center version being smaller then the network filter's version. Example of listing all of the supported network filters for a specific cluster:
+    """    Represents a readonly network filters sub-collection. The network filter enables to filter packets send to/from the VM's nic according to defined rules. For more information please refer to [NetworkFilter](#services/network_filter) service documentation Network filters are supported in different versions, starting from version 3.0. A network filter is defined for each vnic profile. A vnic profile is defined for a specific network. A network can be assigned to several different clusters. In the future, each network will be defined in cluster level. Currently, each network is being defined at data center level. Potential network filters for each network are determined by the network's data center compatibility version V. V must be \>= the network filter version in order to configure this network filter for a specific network. Please note, that if a network is assigned to cluster with a version supporting a network filter, the filter may not be available due to the data center version being smaller then the network filter's version. Example of listing all of the supported network filters for a specific cluster:
     
     GET http://localhost:8080/ovirt-engine/api/clusters/{cluster:id}/networkfilters\</programlisting\>
     
@@ -17981,8 +17531,6 @@ class NetworkFiltersService(Service):
       </network_filter>
     </network_filters>
     ```
-    
-    \"\"\"
 
     def __init__(self, connection, path):
         super(NetworkFiltersService, self).__init__(connection, path)
@@ -17997,7 +17545,7 @@ class NetworkFiltersService(Service):
         **kwargs
     ):
         """
-        Retrieves the representations of the network filters. The order of the returned list of network filters isn't guaranteed.
+        """        Retrieves the representations of the network filters. The order of the returned list of network filters isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -18015,7 +17563,7 @@ class NetworkFiltersService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -18031,7 +17579,7 @@ class NetworkFiltersService(Service):
 
     def network_filter_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -18039,7 +17587,7 @@ class NetworkFiltersService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -18053,7 +17601,7 @@ class NetworkFiltersService(Service):
 
 class NetworkLabelService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(NetworkLabelService, self).__init__(connection, path)
@@ -18067,7 +17615,7 @@ class NetworkLabelService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -18083,7 +17631,7 @@ class NetworkLabelService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -18106,7 +17654,7 @@ class NetworkLabelService(Service):
         **kwargs
     ):
         """
-        Removes a label from a logical network. For example, to remove the label `exemplary` from a logical network having id `123` send the following request:
+        """        Removes a label from a logical network. For example, to remove the label `exemplary` from a logical network having id `123` send the following request:
         
         DELETE /ovirt-engine/api/networks/123/networklabels/exemplary\</programlisting\>
         
@@ -18126,7 +17674,7 @@ class NetworkLabelService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -18147,7 +17695,7 @@ class NetworkLabelService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -18158,9 +17706,7 @@ class NetworkLabelService(Service):
 
 class NetworkLabelsService(Service):
     """
-    Manages the ser of labels attached to a network or to a host NIC.
-    
-    \"\"\"
+    """    Manages the ser of labels attached to a network or to a host NIC.
 
     def __init__(self, connection, path):
         super(NetworkLabelsService, self).__init__(connection, path)
@@ -18175,7 +17721,7 @@ class NetworkLabelsService(Service):
         **kwargs
     ):
         """
-        Attaches label to logical network. You can attach labels to a logical network to automate the association of that logical network with physical host network interfaces to which the same label has been attached. For example, to attach the label `mylabel` to a logical network having id `123` send a request like this:
+        """        Attaches label to logical network. You can attach labels to a logical network to automate the association of that logical network with physical host network interfaces to which the same label has been attached. For example, to attach the label `mylabel` to a logical network having id `123` send a request like this:
         
         POST /ovirt-engine/api/networks/123/networklabels\</programlisting\>
         
@@ -18184,8 +17730,6 @@ class NetworkLabelsService(Service):
         ``` {.xml}
         <network_label id="mylabel"/>
         ```
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('label', label, types.NetworkLabel),
@@ -18207,7 +17751,7 @@ class NetworkLabelsService(Service):
         **kwargs
     ):
         """
-        Returns the list of labels attached to the network or host NIC. The order of the returned list of labels isn't guaranteed.
+        """        Returns the list of labels attached to the network or host NIC. The order of the returned list of labels isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -18229,7 +17773,7 @@ class NetworkLabelsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -18249,7 +17793,7 @@ class NetworkLabelsService(Service):
 
     def label_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -18257,7 +17801,7 @@ class NetworkLabelsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -18271,9 +17815,7 @@ class NetworkLabelsService(Service):
 
 class NetworksService(Service):
     """
-    Manages logical networks. The engine creates a default `ovirtmgmt` network on installation. This network acts as the management network for access to hypervisor hosts. This network is associated with the `Default` cluster and is a member of the `Default` data center.
-    
-    \"\"\"
+    """    Manages logical networks. The engine creates a default `ovirtmgmt` network on installation. This network acts as the management network for access to hypervisor hosts. This network is associated with the `Default` cluster and is a member of the `Default` data center.
 
     def __init__(self, connection, path):
         super(NetworksService, self).__init__(connection, path)
@@ -18288,7 +17830,7 @@ class NetworksService(Service):
         **kwargs
     ):
         """
-        Creates a new logical network, or associates an existing network with a data center. Creation of a new network requires the `name` and `data_center` elements. For example, to create a network named `mynetwork` for data center `123` send a request like this:
+        """        Creates a new logical network, or associates an existing network with a data center. Creation of a new network requires the `name` and `data_center` elements. For example, to create a network named `mynetwork` for data center `123` send a request like this:
         
         POST /ovirt-engine/api/networks\</programlisting\>
         
@@ -18324,8 +17866,6 @@ class NetworksService(Service):
           <data_center id="123"/>
         </network>
         ```
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('network', network, types.Network),
@@ -18349,7 +17889,7 @@ class NetworksService(Service):
         **kwargs
     ):
         """
-        List logical networks. For example:
+        """        List logical networks. For example:
         
         GET /ovirt-engine/api/networks\</programlisting\>
         
@@ -18404,7 +17944,7 @@ class NetworksService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('case_sensitive', case_sensitive, bool),
@@ -18431,9 +17971,7 @@ class NetworksService(Service):
 
     def network_service(self, id):
         """
-        Reference to the service that manages a specific network.
-        
-        \"\"\"
+        """        Reference to the service that manages a specific network.
         Service._check_types([
             ('id', id, str),
         ])
@@ -18441,7 +17979,7 @@ class NetworksService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -18455,9 +17993,7 @@ class NetworksService(Service):
 
 class NicNetworkFilterParameterService(Service):
     """
-    This service manages a parameter for a network filter.
-    
-    \"\"\"
+    """    This service manages a parameter for a network filter.
 
     def __init__(self, connection, path):
         super(NicNetworkFilterParameterService, self).__init__(connection, path)
@@ -18471,7 +18007,7 @@ class NicNetworkFilterParameterService(Service):
         **kwargs
     ):
         """
-        Retrieves a representation of the network filter parameter.
+        """        Retrieves a representation of the network filter parameter.
         
         This method supports the following parameters:
         
@@ -18489,7 +18025,7 @@ class NicNetworkFilterParameterService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -18511,11 +18047,9 @@ class NicNetworkFilterParameterService(Service):
         **kwargs
     ):
         """
-        Removes the filter parameter. For example, to remove the filter parameter with id `123` on NIC `456` of virtual machine `789` send a request like this:
+        """        Removes the filter parameter. For example, to remove the filter parameter with id `123` on NIC `456` of virtual machine `789` send a request like this:
         
         DELETE /ovirt-engine/api/vms/789/nics/456/networkfilterparameters/123\</programlisting\>
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
         ])
@@ -18535,7 +18069,7 @@ class NicNetworkFilterParameterService(Service):
         **kwargs
     ):
         """
-        Updates the network filter parameter. For example, to update the network filter parameter having with with id `123` on NIC `456` of virtual machine `789` send a request like this:
+        """        Updates the network filter parameter. For example, to update the network filter parameter having with with id `123` on NIC `456` of virtual machine `789` send a request like this:
         
         PUT /ovirt-engine/api/vms/789/nics/456/networkfilterparameters/123\</programlisting\>
         
@@ -18564,7 +18098,7 @@ class NicNetworkFilterParameterService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('parameter', parameter, types.NetworkFilterParameter),
@@ -18578,7 +18112,7 @@ class NicNetworkFilterParameterService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -18589,9 +18123,7 @@ class NicNetworkFilterParameterService(Service):
 
 class NicNetworkFilterParametersService(Service):
     """
-    This service manages a collection of parameters for network filters.
-    
-    \"\"\"
+    """    This service manages a collection of parameters for network filters.
 
     def __init__(self, connection, path):
         super(NicNetworkFilterParametersService, self).__init__(connection, path)
@@ -18606,7 +18138,7 @@ class NicNetworkFilterParametersService(Service):
         **kwargs
     ):
         """
-        Add a network filter parameter. For example, to add the parameter for the network filter on NIC `456` of virtual machine `789` send a request like this:
+        """        Add a network filter parameter. For example, to add the parameter for the network filter on NIC `456` of virtual machine `789` send a request like this:
         
         POST /ovirt-engine/api/vms/789/nics/456/networkfilterparameters\</programlisting\>
         
@@ -18635,7 +18167,7 @@ class NicNetworkFilterParametersService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('parameter', parameter, types.NetworkFilterParameter),
@@ -18656,7 +18188,7 @@ class NicNetworkFilterParametersService(Service):
         **kwargs
     ):
         """
-        Retrieves the representations of the network filter parameters. The order of the returned list of network filters isn't guaranteed.
+        """        Retrieves the representations of the network filter parameters. The order of the returned list of network filters isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -18674,7 +18206,7 @@ class NicNetworkFilterParametersService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -18690,9 +18222,7 @@ class NicNetworkFilterParametersService(Service):
 
     def parameter_service(self, id):
         """
-        Reference to the service that manages a specific network filter parameter.
-        
-        \"\"\"
+        """        Reference to the service that manages a specific network filter parameter.
         Service._check_types([
             ('id', id, str),
         ])
@@ -18700,7 +18230,7 @@ class NicNetworkFilterParametersService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -18714,7 +18244,7 @@ class NicNetworkFilterParametersService(Service):
 
 class OpenstackImageService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(OpenstackImageService, self).__init__(connection, path)
@@ -18728,7 +18258,7 @@ class OpenstackImageService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -18744,7 +18274,7 @@ class OpenstackImageService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -18772,7 +18302,7 @@ class OpenstackImageService(Service):
         **kwargs
     ):
         """
-        Imports a virtual machine from a Glance image storage domain. For example, to import the image with identifier `456` from the storage domain with identifier `123` send a request like this:
+        """        Imports a virtual machine from a Glance image storage domain. For example, to import the image with identifier `456` from the storage domain with identifier `123` send a request like this:
         
         POST /ovirt-engine/api/openstackimageproviders/123/images/456/import\</programlisting\>
         
@@ -18813,7 +18343,7 @@ class OpenstackImageService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -18843,7 +18373,7 @@ class OpenstackImageService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -18854,7 +18384,7 @@ class OpenstackImageService(Service):
 
 class OpenstackImageProviderService(ExternalProviderService):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(OpenstackImageProviderService, self).__init__(connection, path)
@@ -18870,7 +18400,7 @@ class OpenstackImageProviderService(ExternalProviderService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -18886,7 +18416,7 @@ class OpenstackImageProviderService(ExternalProviderService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -18909,9 +18439,7 @@ class OpenstackImageProviderService(ExternalProviderService):
         **kwargs
     ):
         """
-        Import the SSL certificates of the external host provider.
-        
-        \"\"\"
+        """        Import the SSL certificates of the external host provider.
         # Check the types of the parameters:
         Service._check_types([
             ('certificates', certificates, list),
@@ -18934,7 +18462,7 @@ class OpenstackImageProviderService(ExternalProviderService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -18950,7 +18478,7 @@ class OpenstackImageProviderService(ExternalProviderService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -18978,7 +18506,7 @@ class OpenstackImageProviderService(ExternalProviderService):
         **kwargs
     ):
         """
-        In order to test connectivity for external provider we need to run following request where 123 is an id of a provider.
+        """        In order to test connectivity for external provider we need to run following request where 123 is an id of a provider.
         
         POST /ovirt-engine/api/externalhostproviders/123/testconnectivity\</programlisting\>
         
@@ -18998,7 +18526,7 @@ class OpenstackImageProviderService(ExternalProviderService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -19026,9 +18554,7 @@ class OpenstackImageProviderService(ExternalProviderService):
         **kwargs
     ):
         """
-        Update the specified OpenStack image provider in the system.
-        
-        \"\"\"
+        """        Update the specified OpenStack image provider in the system.
         # Check the types of the parameters:
         Service._check_types([
             ('provider', provider, types.OpenStackImageProvider),
@@ -19050,19 +18576,17 @@ class OpenstackImageProviderService(ExternalProviderService):
 
     def certificates_service(self):
         """
-        A service to view certificates for this external provider.
-        
-        \"\"\"
+        """        A service to view certificates for this external provider.
         return ExternalProviderCertificatesService(self._connection, '%s/certificates' % self._path)
 
     def images_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return OpenstackImagesService(self._connection, '%s/images' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'certificates':
@@ -19081,7 +18605,7 @@ class OpenstackImageProviderService(ExternalProviderService):
 
 class OpenstackImageProvidersService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(OpenstackImageProvidersService, self).__init__(connection, path)
@@ -19096,9 +18620,7 @@ class OpenstackImageProvidersService(Service):
         **kwargs
     ):
         """
-        Add a new OpenStack image provider to the system.
-        
-        \"\"\"
+        """        Add a new OpenStack image provider to the system.
         # Check the types of the parameters:
         Service._check_types([
             ('provider', provider, types.OpenStackImageProvider),
@@ -19121,7 +18643,7 @@ class OpenstackImageProvidersService(Service):
         **kwargs
     ):
         """
-        Returns the list of providers. The order of the returned list of providers isn't guaranteed.
+        """        Returns the list of providers. The order of the returned list of providers isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -19147,7 +18669,7 @@ class OpenstackImageProvidersService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -19170,7 +18692,7 @@ class OpenstackImageProvidersService(Service):
 
     def provider_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -19178,7 +18700,7 @@ class OpenstackImageProvidersService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -19192,7 +18714,7 @@ class OpenstackImageProvidersService(Service):
 
 class OpenstackImagesService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(OpenstackImagesService, self).__init__(connection, path)
@@ -19208,7 +18730,7 @@ class OpenstackImagesService(Service):
         **kwargs
     ):
         """
-        Lists the images of a Glance image storage domain. The order of the returned list of images isn't guaranteed.
+        """        Lists the images of a Glance image storage domain. The order of the returned list of images isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -19230,7 +18752,7 @@ class OpenstackImagesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -19250,9 +18772,7 @@ class OpenstackImagesService(Service):
 
     def image_service(self, id):
         """
-        Returns a reference to the service that manages a specific image.
-        
-        \"\"\"
+        """        Returns a reference to the service that manages a specific image.
         Service._check_types([
             ('id', id, str),
         ])
@@ -19260,7 +18780,7 @@ class OpenstackImagesService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -19274,7 +18794,7 @@ class OpenstackImagesService(Service):
 
 class OpenstackNetworkService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(OpenstackNetworkService, self).__init__(connection, path)
@@ -19289,7 +18809,7 @@ class OpenstackNetworkService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -19305,7 +18825,7 @@ class OpenstackNetworkService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -19329,7 +18849,7 @@ class OpenstackNetworkService(Service):
         **kwargs
     ):
         """
-        The network will be added to the specified data center.
+        """        The network will be added to the specified data center.
         
         This method supports the following parameters:
         
@@ -19351,7 +18871,7 @@ class OpenstackNetworkService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -19373,12 +18893,12 @@ class OpenstackNetworkService(Service):
 
     def subnets_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return OpenstackSubnetsService(self._connection, '%s/subnets' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'subnets':
@@ -19393,9 +18913,7 @@ class OpenstackNetworkService(Service):
 
 class OpenstackNetworkProviderService(ExternalProviderService):
     """
-    This service manages the OpenStack network provider.
-    
-    \"\"\"
+    """    This service manages the OpenStack network provider.
 
     def __init__(self, connection, path):
         super(OpenstackNetworkProviderService, self).__init__(connection, path)
@@ -19411,7 +18929,7 @@ class OpenstackNetworkProviderService(ExternalProviderService):
         **kwargs
     ):
         """
-        Returns the representation of the object managed by this service. For example, to get the OpenStack network provider with identifier `1234`, send a request like this:
+        """        Returns the representation of the object managed by this service. For example, to get the OpenStack network provider with identifier `1234`, send a request like this:
         
         GET /ovirt-engine/api/openstacknetworkproviders/1234\</programlisting\>
         
@@ -19431,7 +18949,7 @@ class OpenstackNetworkProviderService(ExternalProviderService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -19454,9 +18972,7 @@ class OpenstackNetworkProviderService(ExternalProviderService):
         **kwargs
     ):
         """
-        Import the SSL certificates of the external host provider.
-        
-        \"\"\"
+        """        Import the SSL certificates of the external host provider.
         # Check the types of the parameters:
         Service._check_types([
             ('certificates', certificates, list),
@@ -19479,7 +18995,7 @@ class OpenstackNetworkProviderService(ExternalProviderService):
         **kwargs
     ):
         """
-        Removes the provider. For example, to remove the OpenStack network provider with identifier `1234`, send a request like this:
+        """        Removes the provider. For example, to remove the OpenStack network provider with identifier `1234`, send a request like this:
         
         DELETE /ovirt-engine/api/openstacknetworkproviders/1234\</programlisting\>
         
@@ -19499,7 +19015,7 @@ class OpenstackNetworkProviderService(ExternalProviderService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -19527,7 +19043,7 @@ class OpenstackNetworkProviderService(ExternalProviderService):
         **kwargs
     ):
         """
-        In order to test connectivity for external provider we need to run following request where 123 is an id of a provider.
+        """        In order to test connectivity for external provider we need to run following request where 123 is an id of a provider.
         
         POST /ovirt-engine/api/externalhostproviders/123/testconnectivity\</programlisting\>
         
@@ -19547,7 +19063,7 @@ class OpenstackNetworkProviderService(ExternalProviderService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -19575,7 +19091,7 @@ class OpenstackNetworkProviderService(ExternalProviderService):
         **kwargs
     ):
         """
-        Updates the provider. For example, to update `provider_name`, `requires_authentication`, `url`, `tenant_name` and `type` properties, for the OpenStack network provider with identifier `1234`, send a request like this:
+        """        Updates the provider. For example, to update `provider_name`, `requires_authentication`, `url`, `tenant_name` and `type` properties, for the OpenStack network provider with identifier `1234`, send a request like this:
         
         PUT /ovirt-engine/api/openstacknetworkproviders/1234\</programlisting\>
         
@@ -19607,7 +19123,7 @@ class OpenstackNetworkProviderService(ExternalProviderService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('provider', provider, types.OpenStackNetworkProvider),
@@ -19629,21 +19145,17 @@ class OpenstackNetworkProviderService(ExternalProviderService):
 
     def certificates_service(self):
         """
-        A service to view certificates for this external provider.
-        
-        \"\"\"
+        """        A service to view certificates for this external provider.
         return ExternalProviderCertificatesService(self._connection, '%s/certificates' % self._path)
 
     def networks_service(self):
         """
-        Reference to OpenStack networks service.
-        
-        \"\"\"
+        """        Reference to OpenStack networks service.
         return OpenstackNetworksService(self._connection, '%s/networks' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'certificates':
@@ -19662,9 +19174,7 @@ class OpenstackNetworkProviderService(ExternalProviderService):
 
 class OpenstackNetworkProvidersService(Service):
     """
-    This service manages OpenStack network providers.
-    
-    \"\"\"
+    """    This service manages OpenStack network providers.
 
     def __init__(self, connection, path):
         super(OpenstackNetworkProvidersService, self).__init__(connection, path)
@@ -19679,9 +19189,7 @@ class OpenstackNetworkProvidersService(Service):
         **kwargs
     ):
         """
-        The operation adds a new network provider to the system. If the `type` property is not present, a default value of `NEUTRON` will be used.
-        
-        \"\"\"
+        """        The operation adds a new network provider to the system. If the `type` property is not present, a default value of `NEUTRON` will be used.
         # Check the types of the parameters:
         Service._check_types([
             ('provider', provider, types.OpenStackNetworkProvider),
@@ -19704,7 +19212,7 @@ class OpenstackNetworkProvidersService(Service):
         **kwargs
     ):
         """
-        Returns the list of providers. The order of the returned list of providers isn't guaranteed.
+        """        Returns the list of providers. The order of the returned list of providers isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -19730,7 +19238,7 @@ class OpenstackNetworkProvidersService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -19753,9 +19261,7 @@ class OpenstackNetworkProvidersService(Service):
 
     def provider_service(self, id):
         """
-        Reference to OpenStack network provider service.
-        
-        \"\"\"
+        """        Reference to OpenStack network provider service.
         Service._check_types([
             ('id', id, str),
         ])
@@ -19763,7 +19269,7 @@ class OpenstackNetworkProvidersService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -19777,7 +19283,7 @@ class OpenstackNetworkProvidersService(Service):
 
 class OpenstackNetworksService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(OpenstackNetworksService, self).__init__(connection, path)
@@ -19793,7 +19299,7 @@ class OpenstackNetworksService(Service):
         **kwargs
     ):
         """
-        Returns the list of networks. The order of the returned list of networks isn't guaranteed.
+        """        Returns the list of networks. The order of the returned list of networks isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -19815,7 +19321,7 @@ class OpenstackNetworksService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -19835,7 +19341,7 @@ class OpenstackNetworksService(Service):
 
     def network_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -19843,7 +19349,7 @@ class OpenstackNetworksService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -19857,7 +19363,7 @@ class OpenstackNetworksService(Service):
 
 class OpenstackSubnetService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(OpenstackSubnetService, self).__init__(connection, path)
@@ -19871,7 +19377,7 @@ class OpenstackSubnetService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -19887,7 +19393,7 @@ class OpenstackSubnetService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -19910,7 +19416,7 @@ class OpenstackSubnetService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -19926,7 +19432,7 @@ class OpenstackSubnetService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -19947,7 +19453,7 @@ class OpenstackSubnetService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -19958,7 +19464,7 @@ class OpenstackSubnetService(Service):
 
 class OpenstackSubnetsService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(OpenstackSubnetsService, self).__init__(connection, path)
@@ -19973,7 +19479,7 @@ class OpenstackSubnetsService(Service):
         **kwargs
     ):
         """
-        \"\"\"
+        """        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('subnet', subnet, types.OpenStackSubnet),
@@ -19995,7 +19501,7 @@ class OpenstackSubnetsService(Service):
         **kwargs
     ):
         """
-        Returns the list of sub-networks. The order of the returned list of sub-networks isn't guaranteed.
+        """        Returns the list of sub-networks. The order of the returned list of sub-networks isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -20017,7 +19523,7 @@ class OpenstackSubnetsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -20037,7 +19543,7 @@ class OpenstackSubnetsService(Service):
 
     def subnet_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -20045,7 +19551,7 @@ class OpenstackSubnetsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -20059,9 +19565,7 @@ class OpenstackSubnetsService(Service):
 
 class OpenstackVolumeAuthenticationKeyService(Service):
     """
-    Openstack Volume (Cinder) integration has been replaced by Managed Block Storage.
-    
-    \"\"\"
+    """    Openstack Volume (Cinder) integration has been replaced by Managed Block Storage.
 
     def __init__(self, connection, path):
         super(OpenstackVolumeAuthenticationKeyService, self).__init__(connection, path)
@@ -20075,7 +19579,7 @@ class OpenstackVolumeAuthenticationKeyService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -20091,7 +19595,7 @@ class OpenstackVolumeAuthenticationKeyService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -20114,7 +19618,7 @@ class OpenstackVolumeAuthenticationKeyService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -20130,7 +19634,7 @@ class OpenstackVolumeAuthenticationKeyService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -20158,9 +19662,7 @@ class OpenstackVolumeAuthenticationKeyService(Service):
         **kwargs
     ):
         """
-        Update the specified authentication key.
-        
-        \"\"\"
+        """        Update the specified authentication key.
         # Check the types of the parameters:
         Service._check_types([
             ('key', key, types.OpenstackVolumeAuthenticationKey),
@@ -20174,7 +19676,7 @@ class OpenstackVolumeAuthenticationKeyService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -20185,9 +19687,7 @@ class OpenstackVolumeAuthenticationKeyService(Service):
 
 class OpenstackVolumeAuthenticationKeysService(Service):
     """
-    Openstack Volume (Cinder) integration has been replaced by Managed Block Storage.
-    
-    \"\"\"
+    """    Openstack Volume (Cinder) integration has been replaced by Managed Block Storage.
 
     def __init__(self, connection, path):
         super(OpenstackVolumeAuthenticationKeysService, self).__init__(connection, path)
@@ -20202,9 +19702,7 @@ class OpenstackVolumeAuthenticationKeysService(Service):
         **kwargs
     ):
         """
-        Add a new authentication key to the OpenStack volume provider.
-        
-        \"\"\"
+        """        Add a new authentication key to the OpenStack volume provider.
         # Check the types of the parameters:
         Service._check_types([
             ('key', key, types.OpenstackVolumeAuthenticationKey),
@@ -20226,7 +19724,7 @@ class OpenstackVolumeAuthenticationKeysService(Service):
         **kwargs
     ):
         """
-        Returns the list of authentication keys. The order of the returned list of authentication keys isn't guaranteed.
+        """        Returns the list of authentication keys. The order of the returned list of authentication keys isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -20248,7 +19746,7 @@ class OpenstackVolumeAuthenticationKeysService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -20268,7 +19766,7 @@ class OpenstackVolumeAuthenticationKeysService(Service):
 
     def key_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -20276,7 +19774,7 @@ class OpenstackVolumeAuthenticationKeysService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -20290,9 +19788,7 @@ class OpenstackVolumeAuthenticationKeysService(Service):
 
 class OpenstackVolumeProviderService(ExternalProviderService):
     """
-    Openstack Volume (Cinder) integration has been replaced by Managed Block Storage.
-    
-    \"\"\"
+    """    Openstack Volume (Cinder) integration has been replaced by Managed Block Storage.
 
     def __init__(self, connection, path):
         super(OpenstackVolumeProviderService, self).__init__(connection, path)
@@ -20309,7 +19805,7 @@ class OpenstackVolumeProviderService(ExternalProviderService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -20325,7 +19821,7 @@ class OpenstackVolumeProviderService(ExternalProviderService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -20348,9 +19844,7 @@ class OpenstackVolumeProviderService(ExternalProviderService):
         **kwargs
     ):
         """
-        Import the SSL certificates of the external host provider.
-        
-        \"\"\"
+        """        Import the SSL certificates of the external host provider.
         # Check the types of the parameters:
         Service._check_types([
             ('certificates', certificates, list),
@@ -20374,7 +19868,7 @@ class OpenstackVolumeProviderService(ExternalProviderService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -20394,7 +19888,7 @@ class OpenstackVolumeProviderService(ExternalProviderService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -20426,7 +19920,7 @@ class OpenstackVolumeProviderService(ExternalProviderService):
         **kwargs
     ):
         """
-        In order to test connectivity for external provider we need to run following request where 123 is an id of a provider.
+        """        In order to test connectivity for external provider we need to run following request where 123 is an id of a provider.
         
         POST /ovirt-engine/api/externalhostproviders/123/testconnectivity\</programlisting\>
         
@@ -20446,7 +19940,7 @@ class OpenstackVolumeProviderService(ExternalProviderService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -20474,9 +19968,7 @@ class OpenstackVolumeProviderService(ExternalProviderService):
         **kwargs
     ):
         """
-        Update the specified OpenStack volume provider in the system.
-        
-        \"\"\"
+        """        Update the specified OpenStack volume provider in the system.
         # Check the types of the parameters:
         Service._check_types([
             ('provider', provider, types.OpenStackVolumeProvider),
@@ -20498,24 +19990,22 @@ class OpenstackVolumeProviderService(ExternalProviderService):
 
     def authentication_keys_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return OpenstackVolumeAuthenticationKeysService(self._connection, '%s/authenticationkeys' % self._path)
 
     def certificates_service(self):
         """
-        A service to view certificates for this external provider.
-        
-        \"\"\"
+        """        A service to view certificates for this external provider.
         return ExternalProviderCertificatesService(self._connection, '%s/certificates' % self._path)
 
     def volume_types_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return OpenstackVolumeTypesService(self._connection, '%s/volumetypes' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'authenticationkeys':
@@ -20538,9 +20028,7 @@ class OpenstackVolumeProviderService(ExternalProviderService):
 
 class OpenstackVolumeProvidersService(Service):
     """
-    Openstack Volume (Cinder) integration has been replaced by Managed Block Storage.
-    
-    \"\"\"
+    """    Openstack Volume (Cinder) integration has been replaced by Managed Block Storage.
 
     def __init__(self, connection, path):
         super(OpenstackVolumeProvidersService, self).__init__(connection, path)
@@ -20555,7 +20043,7 @@ class OpenstackVolumeProvidersService(Service):
         **kwargs
     ):
         """
-        Adds a new volume provider. For example:
+        """        Adds a new volume provider. For example:
         
         POST /ovirt-engine/api/openstackvolumeproviders\</programlisting\>
         
@@ -20574,8 +20062,6 @@ class OpenstackVolumeProvidersService(Service):
           <tenant_name>mytenant</tenant_name>
         </openstack_volume_provider>
         ```
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('provider', provider, types.OpenStackVolumeProvider),
@@ -20598,7 +20084,7 @@ class OpenstackVolumeProvidersService(Service):
         **kwargs
     ):
         """
-        Retrieves the list of volume providers. The order of the returned list of volume providers isn't guaranteed.
+        """        Retrieves the list of volume providers. The order of the returned list of volume providers isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -20624,7 +20110,7 @@ class OpenstackVolumeProvidersService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -20647,7 +20133,7 @@ class OpenstackVolumeProvidersService(Service):
 
     def provider_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -20655,7 +20141,7 @@ class OpenstackVolumeProvidersService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -20669,9 +20155,7 @@ class OpenstackVolumeProvidersService(Service):
 
 class OpenstackVolumeTypeService(Service):
     """
-    Openstack Volume (Cinder) integration has been replaced by Managed Block Storage.
-    
-    \"\"\"
+    """    Openstack Volume (Cinder) integration has been replaced by Managed Block Storage.
 
     def __init__(self, connection, path):
         super(OpenstackVolumeTypeService, self).__init__(connection, path)
@@ -20685,7 +20169,7 @@ class OpenstackVolumeTypeService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -20701,7 +20185,7 @@ class OpenstackVolumeTypeService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -20717,7 +20201,7 @@ class OpenstackVolumeTypeService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -20728,9 +20212,7 @@ class OpenstackVolumeTypeService(Service):
 
 class OpenstackVolumeTypesService(Service):
     """
-    Openstack Volume (Cinder) integration has been replaced by Managed Block Storage.
-    
-    \"\"\"
+    """    Openstack Volume (Cinder) integration has been replaced by Managed Block Storage.
 
     def __init__(self, connection, path):
         super(OpenstackVolumeTypesService, self).__init__(connection, path)
@@ -20746,7 +20228,7 @@ class OpenstackVolumeTypesService(Service):
         **kwargs
     ):
         """
-        Returns the list of volume types. The order of the returned list of volume types isn't guaranteed.
+        """        Returns the list of volume types. The order of the returned list of volume types isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -20768,7 +20250,7 @@ class OpenstackVolumeTypesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -20788,7 +20270,7 @@ class OpenstackVolumeTypesService(Service):
 
     def type_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -20796,7 +20278,7 @@ class OpenstackVolumeTypesService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -20810,7 +20292,7 @@ class OpenstackVolumeTypesService(Service):
 
 class OperatingSystemService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(OperatingSystemService, self).__init__(connection, path)
@@ -20824,7 +20306,7 @@ class OperatingSystemService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -20840,7 +20322,7 @@ class OperatingSystemService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -20856,7 +20338,7 @@ class OperatingSystemService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -20867,9 +20349,7 @@ class OperatingSystemService(Service):
 
 class OperatingSystemsService(Service):
     """
-    Manages the set of types of operating systems available in the system.
-    
-    \"\"\"
+    """    Manages the set of types of operating systems available in the system.
 
     def __init__(self, connection, path):
         super(OperatingSystemsService, self).__init__(connection, path)
@@ -20885,7 +20365,7 @@ class OperatingSystemsService(Service):
         **kwargs
     ):
         """
-        Returns the list of types of operating system available in the system. The order of the returned list of operating systems isn't guaranteed.
+        """        Returns the list of types of operating system available in the system. The order of the returned list of operating systems isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -20907,7 +20387,7 @@ class OperatingSystemsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -20927,7 +20407,7 @@ class OperatingSystemsService(Service):
 
     def operating_system_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -20935,7 +20415,7 @@ class OperatingSystemsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -20949,7 +20429,7 @@ class OperatingSystemsService(Service):
 
 class PermissionService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(PermissionService, self).__init__(connection, path)
@@ -20963,7 +20443,7 @@ class PermissionService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -20979,7 +20459,7 @@ class PermissionService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -21002,7 +20482,7 @@ class PermissionService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -21018,7 +20498,7 @@ class PermissionService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -21039,7 +20519,7 @@ class PermissionService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -21050,9 +20530,7 @@ class PermissionService(Service):
 
 class PermitService(Service):
     """
-    A service to manage a specific permit of the role.
-    
-    \"\"\"
+    """    A service to manage a specific permit of the role.
 
     def __init__(self, connection, path):
         super(PermitService, self).__init__(connection, path)
@@ -21066,7 +20544,7 @@ class PermitService(Service):
         **kwargs
     ):
         """
-        Gets the information about the permit of the role. For example to retrieve the information about the permit with the id `456` of the role with the id `123` send a request like this:
+        """        Gets the information about the permit of the role. For example to retrieve the information about the permit with the id `456` of the role with the id `123` send a request like this:
         
             GET /ovirt-engine/api/roles/123/permits/456
         
@@ -21094,7 +20572,7 @@ class PermitService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -21117,7 +20595,7 @@ class PermitService(Service):
         **kwargs
     ):
         """
-        Removes the permit from the role. For example to remove the permit with id `456` from the role with id `123` send a request like this:
+        """        Removes the permit from the role. For example to remove the permit with id `456` from the role with id `123` send a request like this:
         
             DELETE /ovirt-engine/api/roles/123/permits/456
         
@@ -21137,7 +20615,7 @@ class PermitService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -21158,7 +20636,7 @@ class PermitService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -21169,9 +20647,7 @@ class PermitService(Service):
 
 class PermitsService(Service):
     """
-    Represents a permits sub-collection of the specific role.
-    
-    \"\"\"
+    """    Represents a permits sub-collection of the specific role.
 
     def __init__(self, connection, path):
         super(PermitsService, self).__init__(connection, path)
@@ -21186,7 +20662,7 @@ class PermitsService(Service):
         **kwargs
     ):
         """
-        Adds a permit to the role. The permit name can be retrieved from the [???](#services/cluster_levels) service. For example to assign a permit `create_vm` to the role with id `123` send a request like this:
+        """        Adds a permit to the role. The permit name can be retrieved from the [???](#services/cluster_levels) service. For example to assign a permit `create_vm` to the role with id `123` send a request like this:
         
             POST /ovirt-engine/api/roles/123/permits
         
@@ -21214,7 +20690,7 @@ class PermitsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('permit', permit, types.Permit),
@@ -21236,7 +20712,7 @@ class PermitsService(Service):
         **kwargs
     ):
         """
-        List the permits of the role. For example to list the permits of the role with the id `123` send a request like this:
+        """        List the permits of the role. For example to list the permits of the role with the id `123` send a request like this:
         
             GET /ovirt-engine/api/roles/123/permits
         
@@ -21277,7 +20753,7 @@ class PermitsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -21297,9 +20773,7 @@ class PermitsService(Service):
 
     def permit_service(self, id):
         """
-        Sub-resource locator method, returns individual permit resource on which the remainder of the URI is dispatched.
-        
-        \"\"\"
+        """        Sub-resource locator method, returns individual permit resource on which the remainder of the URI is dispatched.
         Service._check_types([
             ('id', id, str),
         ])
@@ -21307,7 +20781,7 @@ class PermitsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -21321,7 +20795,7 @@ class PermitsService(Service):
 
 class QosService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(QosService, self).__init__(connection, path)
@@ -21335,7 +20809,7 @@ class QosService(Service):
         **kwargs
     ):
         """
-        Get specified QoS in the data center.
+        """        Get specified QoS in the data center.
         
         GET /ovirt-engine/api/datacenters/123/qoss/123\</programlisting\>
         
@@ -21368,7 +20842,7 @@ class QosService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -21391,7 +20865,7 @@ class QosService(Service):
         **kwargs
     ):
         """
-        Remove specified QoS from datacenter.
+        """        Remove specified QoS from datacenter.
         
         DELETE /ovirt-engine/api/datacenters/123/qoss/123\</programlisting\>
         
@@ -21411,7 +20885,7 @@ class QosService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -21440,7 +20914,7 @@ class QosService(Service):
         **kwargs
     ):
         """
-        Update the specified QoS in the dataCenter.
+        """        Update the specified QoS in the dataCenter.
         
         PUT /ovirt-engine/api/datacenters/123/qoss/123\</programlisting\>
         
@@ -21477,7 +20951,7 @@ class QosService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('qos', qos, types.Qos),
@@ -21499,7 +20973,7 @@ class QosService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -21510,9 +20984,7 @@ class QosService(Service):
 
 class QossService(Service):
     """
-    Manages the set of *quality of service* configurations available in a data center.
-    
-    \"\"\"
+    """    Manages the set of *quality of service* configurations available in a data center.
 
     def __init__(self, connection, path):
         super(QossService, self).__init__(connection, path)
@@ -21527,7 +20999,7 @@ class QossService(Service):
         **kwargs
     ):
         """
-        Add a new QoS to the dataCenter.
+        """        Add a new QoS to the dataCenter.
         
         POST /ovirt-engine/api/datacenters/123/qoss\</programlisting\>
         
@@ -21559,7 +21031,7 @@ class QossService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('qos', qos, types.Qos),
@@ -21581,7 +21053,7 @@ class QossService(Service):
         **kwargs
     ):
         """
-        Returns the list of *quality of service* configurations available in the data center.
+        """        Returns the list of *quality of service* configurations available in the data center.
         
         GET /ovirt-engine/api/datacenter/123/qoss\</programlisting\>
         
@@ -21617,7 +21089,7 @@ class QossService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -21637,9 +21109,7 @@ class QossService(Service):
 
     def qos_service(self, id):
         """
-        A reference to a service managing a specific QoS.
-        
-        \"\"\"
+        """        A reference to a service managing a specific QoS.
         Service._check_types([
             ('id', id, str),
         ])
@@ -21647,7 +21117,7 @@ class QossService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -21661,7 +21131,7 @@ class QossService(Service):
 
 class QuotaService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(QuotaService, self).__init__(connection, path)
@@ -21678,7 +21148,7 @@ class QuotaService(Service):
         **kwargs
     ):
         """
-        Retrieves a quota. An example of retrieving a quota:
+        """        Retrieves a quota. An example of retrieving a quota:
         
         GET /ovirt-engine/api/datacenters/123/quotas/456\</programlisting\>
         
@@ -21709,7 +21179,7 @@ class QuotaService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -21732,7 +21202,7 @@ class QuotaService(Service):
         **kwargs
     ):
         """
-        Delete a quota. An example of deleting a quota:
+        """        Delete a quota. An example of deleting a quota:
         
         DELETE /ovirt-engine/api/datacenters/123-456/quotas/654-321 -0472718ab224 HTTP/1.1 Accept: application/xml Content-type: application/xml\</programlisting\>
         
@@ -21752,7 +21222,7 @@ class QuotaService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -21781,7 +21251,7 @@ class QuotaService(Service):
         **kwargs
     ):
         """
-        Updates a quota. An example of updating a quota:
+        """        Updates a quota. An example of updating a quota:
         
         PUT /ovirt-engine/api/datacenters/123/quotas/456\</programlisting\>
         
@@ -21793,8 +21263,6 @@ class QuotaService(Service):
           <storage_soft_limit_pct>80</storage_soft_limit_pct>
         </quota>
         ```
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('quota', quota, types.Quota),
@@ -21816,22 +21284,22 @@ class QuotaService(Service):
 
     def permissions_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return AssignedPermissionsService(self._connection, '%s/permissions' % self._path)
 
     def quota_cluster_limits_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return QuotaClusterLimitsService(self._connection, '%s/quotaclusterlimits' % self._path)
 
     def quota_storage_limits_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return QuotaStorageLimitsService(self._connection, '%s/quotastoragelimits' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'permissions':
@@ -21854,7 +21322,7 @@ class QuotaService(Service):
 
 class QuotaClusterLimitService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(QuotaClusterLimitService, self).__init__(connection, path)
@@ -21868,7 +21336,7 @@ class QuotaClusterLimitService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -21884,7 +21352,7 @@ class QuotaClusterLimitService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -21907,7 +21375,7 @@ class QuotaClusterLimitService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -21923,7 +21391,7 @@ class QuotaClusterLimitService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -21944,7 +21412,7 @@ class QuotaClusterLimitService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -21955,9 +21423,7 @@ class QuotaClusterLimitService(Service):
 
 class QuotaClusterLimitsService(Service):
     """
-    Manages the set of quota limits configured for a cluster.
-    
-    \"\"\"
+    """    Manages the set of quota limits configured for a cluster.
 
     def __init__(self, connection, path):
         super(QuotaClusterLimitsService, self).__init__(connection, path)
@@ -21972,9 +21438,7 @@ class QuotaClusterLimitsService(Service):
         **kwargs
     ):
         """
-        Add a cluster limit to a specified Quota.
-        
-        \"\"\"
+        """        Add a cluster limit to a specified Quota.
         # Check the types of the parameters:
         Service._check_types([
             ('limit', limit, types.QuotaClusterLimit),
@@ -21996,7 +21460,7 @@ class QuotaClusterLimitsService(Service):
         **kwargs
     ):
         """
-        Returns the set of quota limits configured for the cluster. The returned list of quota limits isn't guaranteed.
+        """        Returns the set of quota limits configured for the cluster. The returned list of quota limits isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -22018,7 +21482,7 @@ class QuotaClusterLimitsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -22038,7 +21502,7 @@ class QuotaClusterLimitsService(Service):
 
     def limit_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -22046,7 +21510,7 @@ class QuotaClusterLimitsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -22060,7 +21524,7 @@ class QuotaClusterLimitsService(Service):
 
 class QuotaStorageLimitService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(QuotaStorageLimitService, self).__init__(connection, path)
@@ -22074,7 +21538,7 @@ class QuotaStorageLimitService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -22090,7 +21554,7 @@ class QuotaStorageLimitService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -22113,7 +21577,7 @@ class QuotaStorageLimitService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -22129,7 +21593,7 @@ class QuotaStorageLimitService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -22150,7 +21614,7 @@ class QuotaStorageLimitService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -22161,9 +21625,7 @@ class QuotaStorageLimitService(Service):
 
 class QuotaStorageLimitsService(Service):
     """
-    Manages the set of storage limits configured for a quota.
-    
-    \"\"\"
+    """    Manages the set of storage limits configured for a quota.
 
     def __init__(self, connection, path):
         super(QuotaStorageLimitsService, self).__init__(connection, path)
@@ -22178,7 +21640,7 @@ class QuotaStorageLimitsService(Service):
         **kwargs
     ):
         """
-        Adds a storage limit to a specified quota. To create a 100GiB storage limit for all storage domains in a data center, send a request like this:
+        """        Adds a storage limit to a specified quota. To create a 100GiB storage limit for all storage domains in a data center, send a request like this:
         
         POST /ovirt-engine/api/datacenters/123/quotas/456/quotastoragelimits\</programlisting\>
         
@@ -22202,8 +21664,6 @@ class QuotaStorageLimitsService(Service):
           <storage_domain id="000"/>
         </quota_storage_limit>
         ```
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('limit', limit, types.QuotaStorageLimit),
@@ -22225,7 +21685,7 @@ class QuotaStorageLimitsService(Service):
         **kwargs
     ):
         """
-        Returns the list of storage limits configured for the quota. The order of the returned list of storage limits is not guaranteed.
+        """        Returns the list of storage limits configured for the quota. The order of the returned list of storage limits is not guaranteed.
         
         This method supports the following parameters:
         
@@ -22247,7 +21707,7 @@ class QuotaStorageLimitsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -22267,7 +21727,7 @@ class QuotaStorageLimitsService(Service):
 
     def limit_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -22275,7 +21735,7 @@ class QuotaStorageLimitsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -22289,9 +21749,7 @@ class QuotaStorageLimitsService(Service):
 
 class QuotasService(Service):
     """
-    Manages the set of quotas configured for a data center.
-    
-    \"\"\"
+    """    Manages the set of quotas configured for a data center.
 
     def __init__(self, connection, path):
         super(QuotasService, self).__init__(connection, path)
@@ -22306,7 +21764,7 @@ class QuotasService(Service):
         **kwargs
     ):
         """
-        Creates a new quota. An example of creating a new quota:
+        """        Creates a new quota. An example of creating a new quota:
         
         POST /ovirt-engine/api/datacenters/123/quotas\</programlisting\>
         
@@ -22316,8 +21774,6 @@ class QuotasService(Service):
           <description>My new quota for virtual machines</description>
         </quota>
         ```
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('quota', quota, types.Quota),
@@ -22339,7 +21795,7 @@ class QuotasService(Service):
         **kwargs
     ):
         """
-        Lists quotas of a data center. The order of the returned list of quotas isn't guaranteed.
+        """        Lists quotas of a data center. The order of the returned list of quotas isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -22361,7 +21817,7 @@ class QuotasService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -22381,7 +21837,7 @@ class QuotasService(Service):
 
     def quota_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -22389,7 +21845,7 @@ class QuotasService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -22403,7 +21859,7 @@ class QuotasService(Service):
 
 class RoleService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(RoleService, self).__init__(connection, path)
@@ -22418,7 +21874,7 @@ class RoleService(Service):
         **kwargs
     ):
         """
-        Get the role.
+        """        Get the role.
         
         GET /ovirt-engine/api/roles/123\</programlisting\>
         
@@ -22450,7 +21906,7 @@ class RoleService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -22473,7 +21929,7 @@ class RoleService(Service):
         **kwargs
     ):
         """
-        Removes the role. To remove the role you need to know its id, then send request like this:
+        """        Removes the role. To remove the role you need to know its id, then send request like this:
         
         DELETE /ovirt-engine/api/roles/{role\_id}\</programlisting\>
         
@@ -22493,7 +21949,7 @@ class RoleService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -22522,7 +21978,7 @@ class RoleService(Service):
         **kwargs
     ):
         """
-        Updates a role. You are allowed to update `name`, `description` and `administrative` attributes after role is created. Within this endpoint you can't add or remove roles permits you need to use [service](#services/permits) that manages permits of role. For example to update role's `name`, `description` and `administrative` attributes send a request like this:
+        """        Updates a role. You are allowed to update `name`, `description` and `administrative` attributes after role is created. Within this endpoint you can't add or remove roles permits you need to use [service](#services/permits) that manages permits of role. For example to update role's `name`, `description` and `administrative` attributes send a request like this:
         
         PUT /ovirt-engine/api/roles/123\</programlisting\>
         
@@ -22552,7 +22008,7 @@ class RoleService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('role', role, types.Role),
@@ -22574,14 +22030,12 @@ class RoleService(Service):
 
     def permits_service(self):
         """
-        Sub-resource locator method, returns permits service.
-        
-        \"\"\"
+        """        Sub-resource locator method, returns permits service.
         return PermitsService(self._connection, '%s/permits' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'permits':
@@ -22596,9 +22050,7 @@ class RoleService(Service):
 
 class RolesService(Service):
     """
-    Provides read-only access to the global set of roles
-    
-    \"\"\"
+    """    Provides read-only access to the global set of roles
 
     def __init__(self, connection, path):
         super(RolesService, self).__init__(connection, path)
@@ -22613,7 +22065,7 @@ class RolesService(Service):
         **kwargs
     ):
         """
-        Create a new role. The role can be administrative or non-administrative and can have different permits. For example, to add the `MyRole` non-administrative role with permits to login and create virtual machines send a request like this (note that you have to pass permit id):
+        """        Create a new role. The role can be administrative or non-administrative and can have different permits. For example, to add the `MyRole` non-administrative role with permits to login and create virtual machines send a request like this (note that you have to pass permit id):
         
         POST /ovirt-engine/api/roles\</programlisting\>
         
@@ -22647,7 +22099,7 @@ class RolesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('role', role, types.Role),
@@ -22669,7 +22121,7 @@ class RolesService(Service):
         **kwargs
     ):
         """
-        List roles.
+        """        List roles.
         
         GET /ovirt-engine/api/roles\</programlisting\>
         
@@ -22710,7 +22162,7 @@ class RolesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -22730,9 +22182,7 @@ class RolesService(Service):
 
     def role_service(self, id):
         """
-        Sub-resource locator method, returns individual role resource on which the remainder of the URI is dispatched.
-        
-        \"\"\"
+        """        Sub-resource locator method, returns individual role resource on which the remainder of the URI is dispatched.
         Service._check_types([
             ('id', id, str),
         ])
@@ -22740,7 +22190,7 @@ class RolesService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -22754,9 +22204,7 @@ class RolesService(Service):
 
 class SchedulingPoliciesService(Service):
     """
-    Manages the set of scheduling policies available in the system.
-    
-    \"\"\"
+    """    Manages the set of scheduling policies available in the system.
 
     def __init__(self, connection, path):
         super(SchedulingPoliciesService, self).__init__(connection, path)
@@ -22771,9 +22219,7 @@ class SchedulingPoliciesService(Service):
         **kwargs
     ):
         """
-        Add a new scheduling policy to the system.
-        
-        \"\"\"
+        """        Add a new scheduling policy to the system.
         # Check the types of the parameters:
         Service._check_types([
             ('policy', policy, types.SchedulingPolicy),
@@ -22796,7 +22242,7 @@ class SchedulingPoliciesService(Service):
         **kwargs
     ):
         """
-        Returns the list of scheduling policies available in the system. The order of the returned list of scheduling policies isn't guaranteed.
+        """        Returns the list of scheduling policies available in the system. The order of the returned list of scheduling policies isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -22822,7 +22268,7 @@ class SchedulingPoliciesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('filter', filter, bool),
@@ -22846,7 +22292,7 @@ class SchedulingPoliciesService(Service):
 
     def policy_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -22854,7 +22300,7 @@ class SchedulingPoliciesService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -22868,7 +22314,7 @@ class SchedulingPoliciesService(Service):
 
 class SchedulingPolicyService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(SchedulingPolicyService, self).__init__(connection, path)
@@ -22886,7 +22332,7 @@ class SchedulingPolicyService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `filter`
         
@@ -22906,7 +22352,7 @@ class SchedulingPolicyService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('filter', filter, bool),
@@ -22933,7 +22379,7 @@ class SchedulingPolicyService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -22949,7 +22395,7 @@ class SchedulingPolicyService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -22978,9 +22424,7 @@ class SchedulingPolicyService(Service):
         **kwargs
     ):
         """
-        Update the specified user defined scheduling policy in the system.
-        
-        \"\"\"
+        """        Update the specified user defined scheduling policy in the system.
         # Check the types of the parameters:
         Service._check_types([
             ('policy', policy, types.SchedulingPolicy),
@@ -23002,22 +22446,22 @@ class SchedulingPolicyService(Service):
 
     def balances_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return BalancesService(self._connection, '%s/balances' % self._path)
 
     def filters_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return FiltersService(self._connection, '%s/filters' % self._path)
 
     def weights_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return WeightsService(self._connection, '%s/weights' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'balances':
@@ -23040,7 +22484,7 @@ class SchedulingPolicyService(Service):
 
 class SchedulingPolicyUnitService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(SchedulingPolicyUnitService, self).__init__(connection, path)
@@ -23055,7 +22499,7 @@ class SchedulingPolicyUnitService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `filter`
         
@@ -23075,7 +22519,7 @@ class SchedulingPolicyUnitService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('filter', filter, bool),
@@ -23102,7 +22546,7 @@ class SchedulingPolicyUnitService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -23118,7 +22562,7 @@ class SchedulingPolicyUnitService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -23139,7 +22583,7 @@ class SchedulingPolicyUnitService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -23150,9 +22594,7 @@ class SchedulingPolicyUnitService(Service):
 
 class SchedulingPolicyUnitsService(Service):
     """
-    Manages the set of scheduling policy units available in the system.
-    
-    \"\"\"
+    """    Manages the set of scheduling policy units available in the system.
 
     def __init__(self, connection, path):
         super(SchedulingPolicyUnitsService, self).__init__(connection, path)
@@ -23169,7 +22611,7 @@ class SchedulingPolicyUnitsService(Service):
         **kwargs
     ):
         """
-        Returns the list of scheduling policy units available in the system. The order of the returned list of scheduling policy units isn't guaranteed.
+        """        Returns the list of scheduling policy units available in the system. The order of the returned list of scheduling policy units isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -23195,7 +22637,7 @@ class SchedulingPolicyUnitsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('filter', filter, bool),
@@ -23219,7 +22661,7 @@ class SchedulingPolicyUnitsService(Service):
 
     def unit_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -23227,7 +22669,7 @@ class SchedulingPolicyUnitsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -23241,7 +22683,7 @@ class SchedulingPolicyUnitsService(Service):
 
 class SnapshotService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(SnapshotService, self).__init__(connection, path)
@@ -23258,7 +22700,7 @@ class SnapshotService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -23274,7 +22716,7 @@ class SnapshotService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -23298,7 +22740,7 @@ class SnapshotService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -23322,7 +22764,7 @@ class SnapshotService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -23356,7 +22798,7 @@ class SnapshotService(Service):
         **kwargs
     ):
         """
-        Restores a virtual machine snapshot. For example, to restore the snapshot with identifier `456` of virtual machine with identifier `123` send a request like this:
+        """        Restores a virtual machine snapshot. For example, to restore the snapshot with identifier `456` of virtual machine with identifier `123` send a request like this:
         
         POST /ovirt-engine/api/vms/123/snapshots/456/restore\</programlisting\>
         
@@ -23404,7 +22846,7 @@ class SnapshotService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -23428,22 +22870,22 @@ class SnapshotService(Service):
 
     def cdroms_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return SnapshotCdromsService(self._connection, '%s/cdroms' % self._path)
 
     def disks_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return SnapshotDisksService(self._connection, '%s/disks' % self._path)
 
     def nics_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return SnapshotNicsService(self._connection, '%s/nics' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'cdroms':
@@ -23466,7 +22908,7 @@ class SnapshotService(Service):
 
 class SnapshotCdromService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(SnapshotCdromService, self).__init__(connection, path)
@@ -23480,7 +22922,7 @@ class SnapshotCdromService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -23496,7 +22938,7 @@ class SnapshotCdromService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -23512,7 +22954,7 @@ class SnapshotCdromService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -23523,9 +22965,7 @@ class SnapshotCdromService(Service):
 
 class SnapshotCdromsService(Service):
     """
-    Manages the set of CD-ROM devices of a virtual machine snapshot.
-    
-    \"\"\"
+    """    Manages the set of CD-ROM devices of a virtual machine snapshot.
 
     def __init__(self, connection, path):
         super(SnapshotCdromsService, self).__init__(connection, path)
@@ -23541,7 +22981,7 @@ class SnapshotCdromsService(Service):
         **kwargs
     ):
         """
-        Returns the list of CD-ROM devices of the snapshot. The order of the returned list of CD-ROM devices isn't guaranteed.
+        """        Returns the list of CD-ROM devices of the snapshot. The order of the returned list of CD-ROM devices isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -23563,7 +23003,7 @@ class SnapshotCdromsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -23583,7 +23023,7 @@ class SnapshotCdromsService(Service):
 
     def cdrom_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -23591,7 +23031,7 @@ class SnapshotCdromsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -23605,7 +23045,7 @@ class SnapshotCdromsService(Service):
 
 class SnapshotDiskService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(SnapshotDiskService, self).__init__(connection, path)
@@ -23619,7 +23059,7 @@ class SnapshotDiskService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -23635,7 +23075,7 @@ class SnapshotDiskService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -23651,7 +23091,7 @@ class SnapshotDiskService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -23662,9 +23102,7 @@ class SnapshotDiskService(Service):
 
 class SnapshotDisksService(Service):
     """
-    Manages the set of disks of an snapshot.
-    
-    \"\"\"
+    """    Manages the set of disks of an snapshot.
 
     def __init__(self, connection, path):
         super(SnapshotDisksService, self).__init__(connection, path)
@@ -23680,7 +23118,7 @@ class SnapshotDisksService(Service):
         **kwargs
     ):
         """
-        Returns the list of disks of the snapshot. The order of the returned list of disks isn't guaranteed.
+        """        Returns the list of disks of the snapshot. The order of the returned list of disks isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -23702,7 +23140,7 @@ class SnapshotDisksService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -23722,7 +23160,7 @@ class SnapshotDisksService(Service):
 
     def disk_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -23730,7 +23168,7 @@ class SnapshotDisksService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -23744,7 +23182,7 @@ class SnapshotDisksService(Service):
 
 class SnapshotNicService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(SnapshotNicService, self).__init__(connection, path)
@@ -23758,7 +23196,7 @@ class SnapshotNicService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -23774,7 +23212,7 @@ class SnapshotNicService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -23790,7 +23228,7 @@ class SnapshotNicService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -23801,9 +23239,7 @@ class SnapshotNicService(Service):
 
 class SnapshotNicsService(Service):
     """
-    Manages the set of NICs of an snapshot.
-    
-    \"\"\"
+    """    Manages the set of NICs of an snapshot.
 
     def __init__(self, connection, path):
         super(SnapshotNicsService, self).__init__(connection, path)
@@ -23819,7 +23255,7 @@ class SnapshotNicsService(Service):
         **kwargs
     ):
         """
-        Returns the list of NICs of the snapshot. The order of the returned list of NICs isn't guaranteed.
+        """        Returns the list of NICs of the snapshot. The order of the returned list of NICs isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -23841,7 +23277,7 @@ class SnapshotNicsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -23861,7 +23297,7 @@ class SnapshotNicsService(Service):
 
     def nic_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -23869,7 +23305,7 @@ class SnapshotNicsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -23883,9 +23319,7 @@ class SnapshotNicsService(Service):
 
 class SnapshotsService(Service):
     """
-    Manages the set of snapshots of a storage domain or virtual machine.
-    
-    \"\"\"
+    """    Manages the set of snapshots of a storage domain or virtual machine.
 
     def __init__(self, connection, path):
         super(SnapshotsService, self).__init__(connection, path)
@@ -23900,7 +23334,7 @@ class SnapshotsService(Service):
         **kwargs
     ):
         """
-        Creates a virtual machine snapshot. For example, to create a new snapshot for virtual machine `123` send a request like this:
+        """        Creates a virtual machine snapshot. For example, to create a new snapshot for virtual machine `123` send a request like this:
         
         POST /ovirt-engine/api/vms/123/snapshots\</programlisting\>
         
@@ -23937,8 +23371,6 @@ class SnapshotsService(Service):
         >   <persist_memorystate>false</persist_memorystate>
         > </snapshot>
         > ```
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('snapshot', snapshot, types.Snapshot),
@@ -23961,7 +23393,7 @@ class SnapshotsService(Service):
         **kwargs
     ):
         """
-        Returns the list of snapshots of the storage domain or virtual machine. The order of the returned list of snapshots isn't guaranteed.
+        """        Returns the list of snapshots of the storage domain or virtual machine. The order of the returned list of snapshots isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -23991,7 +23423,7 @@ class SnapshotsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('all_content', all_content, bool),
@@ -24015,7 +23447,7 @@ class SnapshotsService(Service):
 
     def snapshot_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -24023,7 +23455,7 @@ class SnapshotsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -24037,7 +23469,7 @@ class SnapshotsService(Service):
 
 class SshPublicKeyService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(SshPublicKeyService, self).__init__(connection, path)
@@ -24051,7 +23483,7 @@ class SshPublicKeyService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -24067,7 +23499,7 @@ class SshPublicKeyService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -24090,7 +23522,7 @@ class SshPublicKeyService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -24106,7 +23538,7 @@ class SshPublicKeyService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -24135,9 +23567,7 @@ class SshPublicKeyService(Service):
         **kwargs
     ):
         """
-        Replaces the key with a new resource. IMPORTANT: Since version 4.4.8 of the engine this operation is deprecated, and preserved only for backwards compatibility. It will be removed in the future. Instead please use DELETE followed by [add operation](#services/ssh_public_keys/methods/add).
-        
-        \"\"\"
+        """        Replaces the key with a new resource. IMPORTANT: Since version 4.4.8 of the engine this operation is deprecated, and preserved only for backwards compatibility. It will be removed in the future. Instead please use DELETE followed by [add operation](#services/ssh_public_keys/methods/add).
         # Check the types of the parameters:
         Service._check_types([
             ('key', key, types.SshPublicKey),
@@ -24159,7 +23589,7 @@ class SshPublicKeyService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -24170,7 +23600,7 @@ class SshPublicKeyService(Service):
 
 class SshPublicKeysService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(SshPublicKeysService, self).__init__(connection, path)
@@ -24185,7 +23615,7 @@ class SshPublicKeysService(Service):
         **kwargs
     ):
         """
-        \"\"\"
+        """        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('key', key, types.SshPublicKey),
@@ -24207,7 +23637,7 @@ class SshPublicKeysService(Service):
         **kwargs
     ):
         """
-        Returns a list of SSH public keys of the user. For example, to retrieve the list of SSH keys of user with identifier `123`, send a request like this:
+        """        Returns a list of SSH public keys of the user. For example, to retrieve the list of SSH keys of user with identifier `123`, send a request like this:
         
         GET /ovirt-engine/api/users/123/sshpublickeys\</programlisting\>
         
@@ -24262,7 +23692,7 @@ class SshPublicKeysService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -24282,7 +23712,7 @@ class SshPublicKeysService(Service):
 
     def key_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -24290,7 +23720,7 @@ class SshPublicKeysService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -24304,7 +23734,7 @@ class SshPublicKeysService(Service):
 
 class StatisticService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(StatisticService, self).__init__(connection, path)
@@ -24318,7 +23748,7 @@ class StatisticService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -24334,7 +23764,7 @@ class StatisticService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -24350,7 +23780,7 @@ class StatisticService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -24361,7 +23791,7 @@ class StatisticService(Service):
 
 class StatisticsService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(StatisticsService, self).__init__(connection, path)
@@ -24377,7 +23807,7 @@ class StatisticsService(Service):
         **kwargs
     ):
         """
-        Retrieves a list of statistics. For example, to retrieve the statistics for virtual machine `123` send a request like this:
+        """        Retrieves a list of statistics. For example, to retrieve the statistics for virtual machine `123` send a request like this:
         
         GET /ovirt-engine/api/vms/123/statistics\</programlisting\>
         
@@ -24446,7 +23876,7 @@ class StatisticsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -24466,7 +23896,7 @@ class StatisticsService(Service):
 
     def statistic_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -24474,7 +23904,7 @@ class StatisticsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -24488,9 +23918,7 @@ class StatisticsService(Service):
 
 class StepService(MeasurableService):
     """
-    A service to manage a step.
-    
-    \"\"\"
+    """    A service to manage a step.
 
     def __init__(self, connection, path):
         super(StepService, self).__init__(connection, path)
@@ -24507,7 +23935,7 @@ class StepService(MeasurableService):
         **kwargs
     ):
         """
-        Marks an external step execution as ended. For example, to terminate a step with identifier `456` which belongs to a `job` with identifier `123` send the following request:
+        """        Marks an external step execution as ended. For example, to terminate a step with identifier `456` which belongs to a `job` with identifier `123` send the following request:
         
         POST /ovirt-engine/api/jobs/123/steps/456/end\</programlisting\>
         
@@ -24544,7 +23972,7 @@ class StepService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -24575,7 +24003,7 @@ class StepService(MeasurableService):
         **kwargs
     ):
         """
-        Retrieves a step.
+        """        Retrieves a step.
         
         GET /ovirt-engine/api/jobs/123/steps/456\</programlisting\>
         
@@ -24613,7 +24041,7 @@ class StepService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -24629,12 +24057,12 @@ class StepService(MeasurableService):
 
     def statistics_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return StatisticsService(self._connection, '%s/statistics' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'statistics':
@@ -24649,9 +24077,7 @@ class StepService(MeasurableService):
 
 class StepsService(Service):
     """
-    A service to manage steps.
-    
-    \"\"\"
+    """    A service to manage steps.
 
     def __init__(self, connection, path):
         super(StepsService, self).__init__(connection, path)
@@ -24666,7 +24092,7 @@ class StepsService(Service):
         **kwargs
     ):
         """
-        Add an external step to an existing job or to an existing step. For example, to add a step to `job` with identifier `123` send the following request:
+        """        Add an external step to an existing job or to an existing step. For example, to add a step to `job` with identifier `123` send the following request:
         
         POST /ovirt-engine/api/jobs/123/steps\</programlisting\>
         
@@ -24715,7 +24141,7 @@ class StepsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('step', step, types.Step),
@@ -24737,7 +24163,7 @@ class StepsService(Service):
         **kwargs
     ):
         """
-        Retrieves the representation of the steps.
+        """        Retrieves the representation of the steps.
         
         GET /ovirt-engine/api/job/123/steps\</programlisting\>
         
@@ -24784,7 +24210,7 @@ class StepsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -24804,9 +24230,7 @@ class StepsService(Service):
 
     def step_service(self, id):
         """
-        Reference to the step service.
-        
-        \"\"\"
+        """        Reference to the step service.
         Service._check_types([
             ('id', id, str),
         ])
@@ -24814,7 +24238,7 @@ class StepsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -24828,7 +24252,7 @@ class StepsService(Service):
 
 class StorageService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(StorageService, self).__init__(connection, path)
@@ -24843,7 +24267,7 @@ class StorageService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `report_status`
         
@@ -24902,7 +24326,7 @@ class StorageService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -24922,7 +24346,7 @@ class StorageService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -24933,7 +24357,7 @@ class StorageService(Service):
 
 class StorageDomainService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(StorageDomainService, self).__init__(connection, path)
@@ -24957,7 +24381,7 @@ class StorageDomainService(Service):
         **kwargs
     ):
         """
-        Retrieves the description of the storage domain.
+        """        Retrieves the description of the storage domain.
         
         This method supports the following parameters:
         
@@ -24979,7 +24403,7 @@ class StorageDomainService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('filter', filter, bool),
@@ -25007,7 +24431,7 @@ class StorageDomainService(Service):
         **kwargs
     ):
         """
-        Used for querying if the storage domain is already attached to a data center using the is\_attached boolean field, which is part of the storage server. IMPORTANT: Executing this API will cause the host to disconnect from the storage domain.
+        """        Used for querying if the storage domain is already attached to a data center using the is\_attached boolean field, which is part of the storage server. IMPORTANT: Executing this API will cause the host to disconnect from the storage domain.
         
         This method supports the following parameters:
         
@@ -25029,7 +24453,7 @@ class StorageDomainService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -25058,7 +24482,7 @@ class StorageDomainService(Service):
         **kwargs
     ):
         """
-        This operation reduces logical units from the storage domain. In order to do so the data stored on the provided logical units will be moved to other logical units of the storage domain and only then they will be reduced from the storage domain. For example, in order to reduce two logical units from a storage domain send a request like this:
+        """        This operation reduces logical units from the storage domain. In order to do so the data stored on the provided logical units will be moved to other logical units of the storage domain and only then they will be reduced from the storage domain. For example, in order to reduce two logical units from a storage domain send a request like this:
         
         POST /ovirt-engine/api/storageDomains/123/reduceluns\</programlisting\>
         
@@ -25092,7 +24516,7 @@ class StorageDomainService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('logical_units', logical_units, list),
@@ -25116,7 +24540,7 @@ class StorageDomainService(Service):
         **kwargs
     ):
         """
-        This operation refreshes the LUN size. After increasing the size of the underlying LUN on the storage server, the user can refresh the LUN size. This action forces a rescan of the provided LUNs and updates the database with the new size, if required. For example, in order to refresh the size of two LUNs send a request like this:
+        """        This operation refreshes the LUN size. After increasing the size of the underlying LUN on the storage server, the user can refresh the LUN size. This action forces a rescan of the provided LUNs and updates the database with the new size, if required. For example, in order to refresh the size of two LUNs send a request like this:
         
         POST /ovirt-engine/api/storageDomains/262b056b-aede-40f1-9666-b883eff59d40/refreshluns\</programlisting\>
         
@@ -25151,7 +24575,7 @@ class StorageDomainService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -25183,7 +24607,7 @@ class StorageDomainService(Service):
         **kwargs
     ):
         """
-        Removes the storage domain. Without any special parameters, the storage domain is detached from the system and removed from the database. The storage domain can then be imported to the same or to a different setup, with all the data on it. If the storage is not accessible the operation will fail. If the `destroy` parameter is `true` then the operation will always succeed, even if the storage is not accessible, the failure is just ignored and the storage domain is removed from the database anyway. If the `format` parameter is `true` then the actual storage is formatted, and the metadata is removed from the LUN or directory, so it can no longer be imported to the same or to a different setup.
+        """        Removes the storage domain. Without any special parameters, the storage domain is detached from the system and removed from the database. The storage domain can then be imported to the same or to a different setup, with all the data on it. If the storage is not accessible the operation will fail. If the `destroy` parameter is `true` then the operation will always succeed, even if the storage is not accessible, the failure is just ignored and the storage domain is removed from the database anyway. If the `format` parameter is `true` then the actual storage is formatted, and the metadata is removed from the LUN or directory, so it can no longer be imported to the same or to a different setup.
         
         This method supports the following parameters:
         
@@ -25223,7 +24647,7 @@ class StorageDomainService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('host', host, str),
@@ -25263,7 +24687,7 @@ class StorageDomainService(Service):
         **kwargs
     ):
         """
-        Updates a storage domain. Not all of the [StorageDomain](#types/storage_domain)\'s attributes are updatable after creation. Those that can be updated are: `name`, `description`, `comment`, `warning_low_space_indicator`, `critical_space_action_blocker` and `wipe_after_delete.` (Note that changing the `wipe_after_delete` attribute will not change the wipe after delete property of disks that already exist). To update the `name` and `wipe_after_delete` attributes of a storage domain with an identifier `123`, send a request as follows:
+        """        Updates a storage domain. Not all of the [StorageDomain](#types/storage_domain)\'s attributes are updatable after creation. Those that can be updated are: `name`, `description`, `comment`, `warning_low_space_indicator`, `critical_space_action_blocker` and `wipe_after_delete.` (Note that changing the `wipe_after_delete` attribute will not change the wipe after delete property of disks that already exist). To update the `name` and `wipe_after_delete` attributes of a storage domain with an identifier `123`, send a request as follows:
         
         PUT /ovirt-engine/api/storageDomains/123\</programlisting\>
         
@@ -25292,7 +24716,7 @@ class StorageDomainService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('storage_domain', storage_domain, types.StorageDomain),
@@ -25321,7 +24745,7 @@ class StorageDomainService(Service):
         **kwargs
     ):
         """
-        This operation forces the update of the `OVF_STORE` of this storage domain. The `OVF_STORE` is a disk image that contains the metadata of virtual machines and disks that reside in the storage domain. This metadata is used in case the domain is imported or exported to or from a different data center or a different installation. By default the `OVF_STORE` is updated periodically (set by default to 60 minutes) but users might want to force an update after an important change, or when the they believe the `OVF_STORE` is corrupt. When initiated by the user, `OVF_STORE` update will be performed whether an update is needed or not.
+        """        This operation forces the update of the `OVF_STORE` of this storage domain. The `OVF_STORE` is a disk image that contains the metadata of virtual machines and disks that reside in the storage domain. This metadata is used in case the domain is imported or exported to or from a different data center or a different installation. By default the `OVF_STORE` is updated periodically (set by default to 60 minutes) but users might want to force an update after an important change, or when the they believe the `OVF_STORE` is corrupt. When initiated by the user, `OVF_STORE` update will be performed whether an update is needed or not.
         
         This method supports the following parameters:
         
@@ -25339,7 +24763,7 @@ class StorageDomainService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -25359,58 +24783,52 @@ class StorageDomainService(Service):
 
     def disk_profiles_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return AssignedDiskProfilesService(self._connection, '%s/diskprofiles' % self._path)
 
     def disk_snapshots_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return DiskSnapshotsService(self._connection, '%s/disksnapshots' % self._path)
 
     def disks_service(self):
         """
-        Reference to the service that manages the disks available in the storage domain.
-        
-        \"\"\"
+        """        Reference to the service that manages the disks available in the storage domain.
         return StorageDomainDisksService(self._connection, '%s/disks' % self._path)
 
     def files_service(self):
         """
-        Returns a reference to the service that manages the files available in the storage domain.
-        
-        \"\"\"
+        """        Returns a reference to the service that manages the files available in the storage domain.
         return FilesService(self._connection, '%s/files' % self._path)
 
     def images_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return ImagesService(self._connection, '%s/images' % self._path)
 
     def permissions_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return AssignedPermissionsService(self._connection, '%s/permissions' % self._path)
 
     def storage_connections_service(self):
         """
-        Returns a reference to the service that manages the storage connections.
-        
-        \"\"\"
+        """        Returns a reference to the service that manages the storage connections.
         return StorageDomainServerConnectionsService(self._connection, '%s/storageconnections' % self._path)
 
     def templates_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return StorageDomainTemplatesService(self._connection, '%s/templates' % self._path)
 
     def vms_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return StorageDomainVmsService(self._connection, '%s/vms' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'diskprofiles':
@@ -25457,7 +24875,7 @@ class StorageDomainService(Service):
 
 class StorageDomainContentDiskService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(StorageDomainContentDiskService, self).__init__(connection, path)
@@ -25472,7 +24890,7 @@ class StorageDomainContentDiskService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `filter`
         
@@ -25492,7 +24910,7 @@ class StorageDomainContentDiskService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('filter', filter, bool),
@@ -25512,7 +24930,7 @@ class StorageDomainContentDiskService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -25523,9 +24941,7 @@ class StorageDomainContentDiskService(Service):
 
 class StorageDomainContentDisksService(Service):
     """
-    Manages the set of disks available in a storage domain.
-    
-    \"\"\"
+    """    Manages the set of disks available in a storage domain.
 
     def __init__(self, connection, path):
         super(StorageDomainContentDisksService, self).__init__(connection, path)
@@ -25543,7 +24959,7 @@ class StorageDomainContentDisksService(Service):
         **kwargs
     ):
         """
-        Returns the list of disks available in the storage domain. The order of the returned list of disks is guaranteed only if the `sortby` clause is included in the `search` parameter.
+        """        Returns the list of disks available in the storage domain. The order of the returned list of disks is guaranteed only if the `sortby` clause is included in the `search` parameter.
         
         This method supports the following parameters:
         
@@ -25573,7 +24989,7 @@ class StorageDomainContentDisksService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('case_sensitive', case_sensitive, bool),
@@ -25600,7 +25016,7 @@ class StorageDomainContentDisksService(Service):
 
     def disk_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -25608,7 +25024,7 @@ class StorageDomainContentDisksService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -25622,9 +25038,7 @@ class StorageDomainContentDisksService(Service):
 
 class StorageDomainDiskService(MeasurableService):
     """
-    Manages a single disk available in a storage domain. IMPORTANT: Since version 4.2 of the engine this service is intended only to list disks available in the storage domain, and to register unregistered disks. All the other operations, like copying a disk, moving a disk, etc, have been deprecated and will be removed in the future. To perform those operations use the [service that manages all the disks of the system](#services/disks), or the [service that manages an specific disk](#services/disk).
-    
-    \"\"\"
+    """    Manages a single disk available in a storage domain. IMPORTANT: Since version 4.2 of the engine this service is intended only to list disks available in the storage domain, and to register unregistered disks. All the other operations, like copying a disk, moving a disk, etc, have been deprecated and will be removed in the future. To perform those operations use the [service that manages all the disks of the system](#services/disks), or the [service that manages an specific disk](#services/disk).
 
     def __init__(self, connection, path):
         super(StorageDomainDiskService, self).__init__(connection, path)
@@ -25641,7 +25055,7 @@ class StorageDomainDiskService(MeasurableService):
         **kwargs
     ):
         """
-        Copies a disk to the specified storage domain. IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards compatibility. It will be removed in the future. To copy a disk use the [copy](#services/disk/methods/copy) operation of the service that manages that disk.
+        """        Copies a disk to the specified storage domain. IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards compatibility. It will be removed in the future. To copy a disk use the [copy](#services/disk/methods/copy) operation of the service that manages that disk.
         
         This method supports the following parameters:
         
@@ -25663,7 +25077,7 @@ class StorageDomainDiskService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('disk', disk, types.Disk),
@@ -25688,7 +25102,7 @@ class StorageDomainDiskService(MeasurableService):
         **kwargs
     ):
         """
-        Exports a disk to an export storage domain. IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards compatibility. It will be removed in the future. To export a disk use the [export](#services/disk/methods/export) operation of the service that manages that disk.
+        """        Exports a disk to an export storage domain. IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards compatibility. It will be removed in the future. To export a disk use the [export](#services/disk/methods/export) operation of the service that manages that disk.
         
         This method supports the following parameters:
         
@@ -25706,7 +25120,7 @@ class StorageDomainDiskService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('storage_domain', storage_domain, types.StorageDomain),
@@ -25729,7 +25143,7 @@ class StorageDomainDiskService(MeasurableService):
         **kwargs
     ):
         """
-        Retrieves the description of the disk.
+        """        Retrieves the description of the disk.
         
         This method supports the following parameters:
         
@@ -25747,7 +25161,7 @@ class StorageDomainDiskService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -25772,7 +25186,7 @@ class StorageDomainDiskService(MeasurableService):
         **kwargs
     ):
         """
-        Moves a disk to another storage domain. IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards compatibility. It will be removed in the future. To move a disk use the [move](#services/disk/methods/move) operation of the service that manages that disk.
+        """        Moves a disk to another storage domain. IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards compatibility. It will be removed in the future. To move a disk use the [move](#services/disk/methods/move) operation of the service that manages that disk.
         
         This method supports the following parameters:
         
@@ -25798,7 +25212,7 @@ class StorageDomainDiskService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -25829,7 +25243,7 @@ class StorageDomainDiskService(MeasurableService):
         **kwargs
     ):
         """
-        Reduces the size of the disk image. Invokes *reduce* on the logical volume (i.e. this is only applicable for block storage domains). This is applicable for floating disks and disks attached to non-running virtual machines. There is no need to specify the size as the optimal size is calculated automatically.
+        """        Reduces the size of the disk image. Invokes *reduce* on the logical volume (i.e. this is only applicable for block storage domains). This is applicable for floating disks and disks attached to non-running virtual machines. There is no need to specify the size as the optimal size is calculated automatically.
         
         This method supports the following parameters:
         
@@ -25847,7 +25261,7 @@ class StorageDomainDiskService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -25873,9 +25287,7 @@ class StorageDomainDiskService(MeasurableService):
         **kwargs
     ):
         """
-        Removes a disk. IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards compatibility. It will be removed in the future. To remove a disk use the [remove](#services/disk/methods/remove) operation of the service that manages that disk.
-        
-        \"\"\"
+        """        Removes a disk. IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards compatibility. It will be removed in the future. To remove a disk use the [remove](#services/disk/methods/remove) operation of the service that manages that disk.
         # Check the types of the parameters:
         Service._check_types([
         ])
@@ -25894,9 +25306,7 @@ class StorageDomainDiskService(MeasurableService):
         **kwargs
     ):
         """
-        Sparsify the disk. IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards compatibility. It will be removed in the future. To remove a disk use the [remove](#services/disk/methods/remove) operation of the service that manages that disk.
-        
-        \"\"\"
+        """        Sparsify the disk. IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards compatibility. It will be removed in the future. To remove a disk use the [remove](#services/disk/methods/remove) operation of the service that manages that disk.
         # Check the types of the parameters:
         Service._check_types([
         ])
@@ -25917,7 +25327,7 @@ class StorageDomainDiskService(MeasurableService):
         **kwargs
     ):
         """
-        Updates the disk. IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards compatibility. It will be removed in the future. To update a disk use the [update](#services/disk/methods/update) operation of the service that manages that disk.
+        """        Updates the disk. IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards compatibility. It will be removed in the future. To update a disk use the [update](#services/disk/methods/update) operation of the service that manages that disk.
         
         This method supports the following parameters:
         
@@ -25935,7 +25345,7 @@ class StorageDomainDiskService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('disk', disk, types.Disk),
@@ -25949,19 +25359,17 @@ class StorageDomainDiskService(MeasurableService):
 
     def permissions_service(self):
         """
-        Reference to the service that manages the permissions assigned to the disk.
-        
-        \"\"\"
+        """        Reference to the service that manages the permissions assigned to the disk.
         return AssignedPermissionsService(self._connection, '%s/permissions' % self._path)
 
     def statistics_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return StatisticsService(self._connection, '%s/statistics' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'permissions':
@@ -25980,9 +25388,7 @@ class StorageDomainDiskService(MeasurableService):
 
 class StorageDomainDisksService(Service):
     """
-    Manages the collection of disks available inside a specific storage domain.
-    
-    \"\"\"
+    """    Manages the collection of disks available inside a specific storage domain.
 
     def __init__(self, connection, path):
         super(StorageDomainDisksService, self).__init__(connection, path)
@@ -25998,7 +25404,7 @@ class StorageDomainDisksService(Service):
         **kwargs
     ):
         """
-        Adds or registers a disk. compatibility. It will be removed in the future. To add a new disk use the [add](#services/disks/methods/add) operation of the service that manages the disks of the system. To register an unregistered disk use the [register](#services/attached_storage_domain_disk/methods/register) operation of the service that manages that disk.
+        """        Adds or registers a disk. compatibility. It will be removed in the future. To add a new disk use the [add](#services/disks/methods/add) operation of the service that manages the disks of the system. To register an unregistered disk use the [register](#services/attached_storage_domain_disk/methods/register) operation of the service that manages that disk.
         
         This method supports the following parameters:
         
@@ -26016,7 +25422,7 @@ class StorageDomainDisksService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('disk', disk, types.Disk),
@@ -26043,7 +25449,7 @@ class StorageDomainDisksService(Service):
         **kwargs
     ):
         """
-        Retrieves the list of disks that are available in the storage domain. The order of the returned list of disks is not guaranteed.
+        """        Retrieves the list of disks that are available in the storage domain. The order of the returned list of disks is not guaranteed.
         
         This method supports the following parameters:
         
@@ -26075,7 +25481,7 @@ class StorageDomainDisksService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -26099,9 +25505,7 @@ class StorageDomainDisksService(Service):
 
     def disk_service(self, id):
         """
-        A reference to the service that manages a specific disk.
-        
-        \"\"\"
+        """        A reference to the service that manages a specific disk.
         Service._check_types([
             ('id', id, str),
         ])
@@ -26109,7 +25513,7 @@ class StorageDomainDisksService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -26123,7 +25527,7 @@ class StorageDomainDisksService(Service):
 
 class StorageDomainServerConnectionService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(StorageDomainServerConnectionService, self).__init__(connection, path)
@@ -26137,7 +25541,7 @@ class StorageDomainServerConnectionService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -26153,7 +25557,7 @@ class StorageDomainServerConnectionService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -26176,7 +25580,7 @@ class StorageDomainServerConnectionService(Service):
         **kwargs
     ):
         """
-        Detaches a storage connection from storage.
+        """        Detaches a storage connection from storage.
         
         This method supports the following parameters:
         
@@ -26194,7 +25598,7 @@ class StorageDomainServerConnectionService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -26215,7 +25619,7 @@ class StorageDomainServerConnectionService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -26226,9 +25630,7 @@ class StorageDomainServerConnectionService(Service):
 
 class StorageDomainServerConnectionsService(Service):
     """
-    Manages the set of connections to storage servers that exist in a storage domain.
-    
-    \"\"\"
+    """    Manages the set of connections to storage servers that exist in a storage domain.
 
     def __init__(self, connection, path):
         super(StorageDomainServerConnectionsService, self).__init__(connection, path)
@@ -26243,7 +25645,7 @@ class StorageDomainServerConnectionsService(Service):
         **kwargs
     ):
         """
-        \"\"\"
+        """        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('connection', connection, types.StorageConnection),
@@ -26265,7 +25667,7 @@ class StorageDomainServerConnectionsService(Service):
         **kwargs
     ):
         """
-        Returns the list of connections to storage servers that existin the storage domain. The order of the returned list of connections isn't guaranteed.
+        """        Returns the list of connections to storage servers that existin the storage domain. The order of the returned list of connections isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -26287,7 +25689,7 @@ class StorageDomainServerConnectionsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -26307,7 +25709,7 @@ class StorageDomainServerConnectionsService(Service):
 
     def connection_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -26315,7 +25717,7 @@ class StorageDomainServerConnectionsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -26329,7 +25731,7 @@ class StorageDomainServerConnectionsService(Service):
 
 class StorageDomainTemplateService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(StorageDomainTemplateService, self).__init__(connection, path)
@@ -26344,7 +25746,7 @@ class StorageDomainTemplateService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -26360,7 +25762,7 @@ class StorageDomainTemplateService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -26389,7 +25791,7 @@ class StorageDomainTemplateService(Service):
         **kwargs
     ):
         """
-        Action to import a template from an export storage domain. For example, to import the template `456` from the storage domain `123` send the following request:
+        """        Action to import a template from an export storage domain. For example, to import the template `456` from the storage domain `123` send the following request:
         
         POST /ovirt-engine/api/storagedomains/123/templates/456/import\</programlisting\>
         
@@ -26428,7 +25830,7 @@ class StorageDomainTemplateService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -26474,7 +25876,7 @@ class StorageDomainTemplateService(Service):
         **kwargs
     ):
         """
-        Register the Template means importing the Template from the data domain by inserting the configuration of the Template and disks into the database without the copy process.
+        """        Register the Template means importing the Template from the data domain by inserting the configuration of the Template and disks into the database without the copy process.
         
         This method supports the following parameters:
         
@@ -26504,7 +25906,7 @@ class StorageDomainTemplateService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('allow_partial_import', allow_partial_import, bool),
@@ -26545,7 +25947,7 @@ class StorageDomainTemplateService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -26561,7 +25963,7 @@ class StorageDomainTemplateService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -26582,12 +25984,12 @@ class StorageDomainTemplateService(Service):
 
     def disks_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return StorageDomainContentDisksService(self._connection, '%s/disks' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'disks':
@@ -26602,9 +26004,7 @@ class StorageDomainTemplateService(Service):
 
 class StorageDomainTemplatesService(Service):
     """
-    Manages the set of templates available in a storage domain.
-    
-    \"\"\"
+    """    Manages the set of templates available in a storage domain.
 
     def __init__(self, connection, path):
         super(StorageDomainTemplatesService, self).__init__(connection, path)
@@ -26621,7 +26021,7 @@ class StorageDomainTemplatesService(Service):
         **kwargs
     ):
         """
-        Returns the list of templates availalbe in the storage domain. The order of the returned list of templates isn't guaranteed.
+        """        Returns the list of templates availalbe in the storage domain. The order of the returned list of templates isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -26653,7 +26053,7 @@ class StorageDomainTemplatesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -26677,7 +26077,7 @@ class StorageDomainTemplatesService(Service):
 
     def template_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -26685,7 +26085,7 @@ class StorageDomainTemplatesService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -26699,7 +26099,7 @@ class StorageDomainTemplatesService(Service):
 
 class StorageDomainVmService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(StorageDomainVmService, self).__init__(connection, path)
@@ -26715,7 +26115,7 @@ class StorageDomainVmService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -26731,7 +26131,7 @@ class StorageDomainVmService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -26760,7 +26160,7 @@ class StorageDomainVmService(Service):
         **kwargs
     ):
         """
-        Imports a virtual machine from an export storage domain. For example, send a request like this:
+        """        Imports a virtual machine from an export storage domain. For example, send a request like this:
         
         POST /ovirt-engine/api/storagedomains/123/vms/456/import\</programlisting\>
         
@@ -26837,7 +26237,7 @@ class StorageDomainVmService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -26883,7 +26283,7 @@ class StorageDomainVmService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `allow_partial_import`
         
@@ -26919,7 +26319,7 @@ class StorageDomainVmService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('allow_partial_import', allow_partial_import, bool),
@@ -26960,7 +26360,7 @@ class StorageDomainVmService(Service):
         **kwargs
     ):
         """
-        Deletes a virtual machine from an export storage domain. For example, to delete the virtual machine `456` from the storage domain `123`, send a request like this:
+        """        Deletes a virtual machine from an export storage domain. For example, to delete the virtual machine `456` from the storage domain `123`, send a request like this:
         
         DELETE /ovirt-engine/api/storagedomains/123/vms/456\</programlisting\>
         
@@ -26980,7 +26380,7 @@ class StorageDomainVmService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -27001,19 +26401,17 @@ class StorageDomainVmService(Service):
 
     def disk_attachments_service(self):
         """
-        Returns a reference to the service that manages the disk attachments of the virtual machine.
-        
-        \"\"\"
+        """        Returns a reference to the service that manages the disk attachments of the virtual machine.
         return StorageDomainVmDiskAttachmentsService(self._connection, '%s/diskattachments' % self._path)
 
     def disks_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return StorageDomainContentDisksService(self._connection, '%s/disks' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'diskattachments':
@@ -27032,9 +26430,7 @@ class StorageDomainVmService(Service):
 
 class StorageDomainVmDiskAttachmentService(Service):
     """
-    Returns the details of the disks attached to a virtual machine in the export domain.
-    
-    \"\"\"
+    """    Returns the details of the disks attached to a virtual machine in the export domain.
 
     def __init__(self, connection, path):
         super(StorageDomainVmDiskAttachmentService, self).__init__(connection, path)
@@ -27048,7 +26444,7 @@ class StorageDomainVmDiskAttachmentService(Service):
         **kwargs
     ):
         """
-        Returns the details of the attachment with all its properties and a link to the disk.
+        """        Returns the details of the attachment with all its properties and a link to the disk.
         
         This method supports the following parameters:
         
@@ -27066,7 +26462,7 @@ class StorageDomainVmDiskAttachmentService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -27082,7 +26478,7 @@ class StorageDomainVmDiskAttachmentService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -27093,9 +26489,7 @@ class StorageDomainVmDiskAttachmentService(Service):
 
 class StorageDomainVmDiskAttachmentsService(Service):
     """
-    Returns the details of a disk attached to a virtual machine in the export domain.
-    
-    \"\"\"
+    """    Returns the details of a disk attached to a virtual machine in the export domain.
 
     def __init__(self, connection, path):
         super(StorageDomainVmDiskAttachmentsService, self).__init__(connection, path)
@@ -27110,7 +26504,7 @@ class StorageDomainVmDiskAttachmentsService(Service):
         **kwargs
     ):
         """
-        List the disks that are attached to the virtual machine. The order of the returned list of disk attachments isn't guaranteed.
+        """        List the disks that are attached to the virtual machine. The order of the returned list of disk attachments isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -27128,7 +26522,7 @@ class StorageDomainVmDiskAttachmentsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -27144,9 +26538,7 @@ class StorageDomainVmDiskAttachmentsService(Service):
 
     def attachment_service(self, id):
         """
-        Reference to the service that manages a specific attachment.
-        
-        \"\"\"
+        """        Reference to the service that manages a specific attachment.
         Service._check_types([
             ('id', id, str),
         ])
@@ -27154,7 +26546,7 @@ class StorageDomainVmDiskAttachmentsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -27168,7 +26560,7 @@ class StorageDomainVmDiskAttachmentsService(Service):
 
 class StorageDomainVmsService(Service):
     """
-    Lists the virtual machines of an export storage domain. For example, to retrieve the virtual machines that are available in the storage domain with identifier `123` send the following request:
+    """    Lists the virtual machines of an export storage domain. For example, to retrieve the virtual machines that are available in the storage domain with identifier `123` send the following request:
     
     GET /ovirt-engine/api/storagedomains/123/vms\</programlisting\>
     
@@ -27188,8 +26580,6 @@ class StorageDomainVmsService(Service):
     ```
     
     Virtual machines and templates in these collections have a similar representation to their counterparts in the top-level [Vm](#types/vm) and [Template](#types/template) collections, except they also contain a [StorageDomain](#types/storage_domain) reference and an [import](#services/storage_domain_vm/methods/import) action.
-    
-    \"\"\"
 
     def __init__(self, connection, path):
         super(StorageDomainVmsService, self).__init__(connection, path)
@@ -27206,7 +26596,7 @@ class StorageDomainVmsService(Service):
         **kwargs
     ):
         """
-        Returns the list of virtual machines of the export storage domain. The order of the returned list of virtual machines isn't guaranteed.
+        """        Returns the list of virtual machines of the export storage domain. The order of the returned list of virtual machines isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -27238,7 +26628,7 @@ class StorageDomainVmsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -27262,7 +26652,7 @@ class StorageDomainVmsService(Service):
 
     def vm_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -27270,7 +26660,7 @@ class StorageDomainVmsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -27284,9 +26674,7 @@ class StorageDomainVmsService(Service):
 
 class StorageDomainsService(Service):
     """
-    Manages the set of storage domains in the system.
-    
-    \"\"\"
+    """    Manages the set of storage domains in the system.
 
     def __init__(self, connection, path):
         super(StorageDomainsService, self).__init__(connection, path)
@@ -27301,7 +26689,7 @@ class StorageDomainsService(Service):
         **kwargs
     ):
         """
-        Adds a new storage domain. Creation of a new [StorageDomain](#types/storage_domain) requires the `name`, `type`, `host`, and `storage` later you can enable the wipe after delete option by default on the storage domain. To configure this, specify `wipe_after_delete` in the POST request. This option can be edited after the domain is created, but doing so will not change the wipe after delete property of disks that already exist. To add a new storage domain with specified `name`, `type`, `storage.type`, `storage.address`, and `storage.path`, and using a host with an id `123`, send a request like this:
+        """        Adds a new storage domain. Creation of a new [StorageDomain](#types/storage_domain) requires the `name`, `type`, `host`, and `storage` later you can enable the wipe after delete option by default on the storage domain. To configure this, specify `wipe_after_delete` in the POST request. This option can be edited after the domain is created, but doing so will not change the wipe after delete property of disks that already exist. To add a new storage domain with specified `name`, `type`, `storage.type`, `storage.address`, and `storage.path`, and using a host with an id `123`, send a request like this:
         
         POST /ovirt-engine/api/storageDomains\</programlisting\>
         
@@ -27374,7 +26762,7 @@ class StorageDomainsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('storage_domain', storage_domain, types.StorageDomain),
@@ -27395,7 +26783,7 @@ class StorageDomainsService(Service):
         **kwargs
     ):
         """
-        Import an existing block storage domain to the system using the targets already connected to the host.
+        """        Import an existing block storage domain to the system using the targets already connected to the host.
         
         This method supports the following parameters:
         
@@ -27413,7 +26801,7 @@ class StorageDomainsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('storage_domain', storage_domain, types.StorageDomain),
@@ -27434,7 +26822,7 @@ class StorageDomainsService(Service):
         **kwargs
     ):
         """
-        Add a new storage domain to the system using the storage on the given host and path.
+        """        Add a new storage domain to the system using the storage on the given host and path.
         
         This method supports the following parameters:
         
@@ -27452,7 +26840,7 @@ class StorageDomainsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('storage_domain', storage_domain, types.StorageDomain),
@@ -27473,7 +26861,7 @@ class StorageDomainsService(Service):
         **kwargs
     ):
         """
-        Add a new storage domain to the system using a direct LUN.
+        """        Add a new storage domain to the system using a direct LUN.
         
         This method supports the following parameters:
         
@@ -27491,7 +26879,7 @@ class StorageDomainsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('storage_domain', storage_domain, types.StorageDomain),
@@ -27512,7 +26900,7 @@ class StorageDomainsService(Service):
         **kwargs
     ):
         """
-        Add a new storage domain to the system using Gluster or POSIX FS storage.
+        """        Add a new storage domain to the system using Gluster or POSIX FS storage.
         
         This method supports the following parameters:
         
@@ -27530,7 +26918,7 @@ class StorageDomainsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('storage_domain', storage_domain, types.StorageDomain),
@@ -27555,7 +26943,7 @@ class StorageDomainsService(Service):
         **kwargs
     ):
         """
-        Returns the list of storage domains in the system. The order of the returned list of storage domains is guaranteed only if the `sortby` clause is included in the `search` parameter.
+        """        Returns the list of storage domains in the system. The order of the returned list of storage domains is guaranteed only if the `sortby` clause is included in the `search` parameter.
         
         This method supports the following parameters:
         
@@ -27589,7 +26977,7 @@ class StorageDomainsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('case_sensitive', case_sensitive, bool),
@@ -27627,7 +27015,7 @@ class StorageDomainsService(Service):
         **kwargs
     ):
         """
-        Add a new storage domain to the system using the storage on the local host at the given path.
+        """        Add a new storage domain to the system using the storage on the local host at the given path.
         
         This method supports the following parameters:
         
@@ -27645,7 +27033,7 @@ class StorageDomainsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('storage_domain', storage_domain, types.StorageDomain),
@@ -27659,7 +27047,7 @@ class StorageDomainsService(Service):
 
     def storage_domain_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -27667,7 +27055,7 @@ class StorageDomainsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -27681,7 +27069,7 @@ class StorageDomainsService(Service):
 
 class StorageServerConnectionService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(StorageServerConnectionService, self).__init__(connection, path)
@@ -27695,7 +27083,7 @@ class StorageServerConnectionService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -27711,7 +27099,7 @@ class StorageServerConnectionService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -27736,9 +27124,7 @@ class StorageServerConnectionService(Service):
         **kwargs
     ):
         """
-        Update the specified Glusterfs storage connection in the system.
-        
-        \"\"\"
+        """        Update the specified Glusterfs storage connection in the system.
         # Check the types of the parameters:
         Service._check_types([
             ('connection', connection, types.StorageConnection),
@@ -27773,9 +27159,7 @@ class StorageServerConnectionService(Service):
         **kwargs
     ):
         """
-        Update the specified iSCSI storage connection in the system.
-        
-        \"\"\"
+        """        Update the specified iSCSI storage connection in the system.
         # Check the types of the parameters:
         Service._check_types([
             ('connection', connection, types.StorageConnection),
@@ -27810,9 +27194,7 @@ class StorageServerConnectionService(Service):
         **kwargs
     ):
         """
-        Update the specified local storage connection in the system.
-        
-        \"\"\"
+        """        Update the specified local storage connection in the system.
         # Check the types of the parameters:
         Service._check_types([
             ('connection', connection, types.StorageConnection),
@@ -27847,9 +27229,7 @@ class StorageServerConnectionService(Service):
         **kwargs
     ):
         """
-        Update the specified NFS storage connection in the system.
-        
-        \"\"\"
+        """        Update the specified NFS storage connection in the system.
         # Check the types of the parameters:
         Service._check_types([
             ('connection', connection, types.StorageConnection),
@@ -27883,7 +27263,7 @@ class StorageServerConnectionService(Service):
         **kwargs
     ):
         """
-        Removes a storage connection. A storage connection can only be deleted if neither storage domain nor LUN disks reference it. The host name or id is optional; providing it disconnects (unmounts) the connection from that host.
+        """        Removes a storage connection. A storage connection can only be deleted if neither storage domain nor LUN disks reference it. The host name or id is optional; providing it disconnects (unmounts) the connection from that host.
         
         This method supports the following parameters:
         
@@ -27907,7 +27287,7 @@ class StorageServerConnectionService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('host', host, str),
@@ -27940,7 +27320,7 @@ class StorageServerConnectionService(Service):
         **kwargs
     ):
         """
-        Updates the storage connection. For example, to change the address of an NFS storage server, send a request like this:
+        """        Updates the storage connection. For example, to change the address of an NFS storage server, send a request like this:
         
         ``` {.xml}
         PUT /ovirt-engine/api/storageconnections/123
@@ -27968,8 +27348,6 @@ class StorageServerConnectionService(Service):
           <target>iqn.2017-01.com.myhost:444</target>
         </storage_connection>
         ```
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('connection', connection, types.StorageConnection),
@@ -28004,9 +27382,7 @@ class StorageServerConnectionService(Service):
         **kwargs
     ):
         """
-        Update the specified VFS storage connection in the system.
-        
-        \"\"\"
+        """        Update the specified VFS storage connection in the system.
         # Check the types of the parameters:
         Service._check_types([
             ('connection', connection, types.StorageConnection),
@@ -28032,7 +27408,7 @@ class StorageServerConnectionService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -28043,7 +27419,7 @@ class StorageServerConnectionService(Service):
 
 class StorageServerConnectionExtensionService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(StorageServerConnectionExtensionService, self).__init__(connection, path)
@@ -28057,7 +27433,7 @@ class StorageServerConnectionExtensionService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -28073,7 +27449,7 @@ class StorageServerConnectionExtensionService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -28096,7 +27472,7 @@ class StorageServerConnectionExtensionService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -28112,7 +27488,7 @@ class StorageServerConnectionExtensionService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -28141,7 +27517,7 @@ class StorageServerConnectionExtensionService(Service):
         **kwargs
     ):
         """
-        Update a storage server connection extension for the given host. To update the storage connection `456` of host `123` send a request like this:
+        """        Update a storage server connection extension for the given host. To update the storage connection `456` of host `123` send a request like this:
         
         PUT /ovirt-engine/api/hosts/123/storageconnectionextensions/456\</programlisting\>
         
@@ -28154,8 +27530,6 @@ class StorageServerConnectionExtensionService(Service):
           <password>mypassword</password>
         </storage_connection_extension>
         ```
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('extension', extension, types.StorageConnectionExtension),
@@ -28177,7 +27551,7 @@ class StorageServerConnectionExtensionService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -28188,7 +27562,7 @@ class StorageServerConnectionExtensionService(Service):
 
 class StorageServerConnectionExtensionsService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(StorageServerConnectionExtensionsService, self).__init__(connection, path)
@@ -28203,7 +27577,7 @@ class StorageServerConnectionExtensionsService(Service):
         **kwargs
     ):
         """
-        Creates a new storage server connection extension for the given host. The extension lets the user define credentials for an iSCSI target for a specific host. For example to use `myuser` and `mypassword` as the credentials when connecting to the iSCSI target from host `123` send a request like this:
+        """        Creates a new storage server connection extension for the given host. The extension lets the user define credentials for an iSCSI target for a specific host. For example to use `myuser` and `mypassword` as the credentials when connecting to the iSCSI target from host `123` send a request like this:
         
         POST /ovirt-engine/api/hosts/123/storageconnectionextensions\</programlisting\>
         
@@ -28216,8 +27590,6 @@ class StorageServerConnectionExtensionsService(Service):
           <password>mypassword</password>
         </storage_connection_extension>
         ```
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('extension', extension, types.StorageConnectionExtension),
@@ -28239,7 +27611,7 @@ class StorageServerConnectionExtensionsService(Service):
         **kwargs
     ):
         """
-        Returns the list os storage connection extensions. The order of the returned list of storage connections isn't guaranteed.
+        """        Returns the list os storage connection extensions. The order of the returned list of storage connections isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -28261,7 +27633,7 @@ class StorageServerConnectionExtensionsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -28281,7 +27653,7 @@ class StorageServerConnectionExtensionsService(Service):
 
     def storage_connection_extension_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -28289,7 +27661,7 @@ class StorageServerConnectionExtensionsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -28303,7 +27675,7 @@ class StorageServerConnectionExtensionsService(Service):
 
 class StorageServerConnectionsService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(StorageServerConnectionsService, self).__init__(connection, path)
@@ -28318,7 +27690,7 @@ class StorageServerConnectionsService(Service):
         **kwargs
     ):
         """
-        Creates a new storage connection. For example, to create a new storage connection for the NFS server `mynfs.example.com` and NFS share `/export/mydata` send a request like this:
+        """        Creates a new storage connection. For example, to create a new storage connection for the NFS server `mynfs.example.com` and NFS share `/export/mydata` send a request like this:
         
         POST /ovirt-engine/api/storageconnections\</programlisting\>
         
@@ -28334,8 +27706,6 @@ class StorageServerConnectionsService(Service):
           </host>
         </storage_connection>
         ```
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('connection', connection, types.StorageConnection),
@@ -28356,9 +27726,7 @@ class StorageServerConnectionsService(Service):
         **kwargs
     ):
         """
-        Add a Glusterfs storage connection to the system.
-        
-        \"\"\"
+        """        Add a Glusterfs storage connection to the system.
         # Check the types of the parameters:
         Service._check_types([
             ('connection', connection, types.StorageConnection),
@@ -28379,9 +27747,7 @@ class StorageServerConnectionsService(Service):
         **kwargs
     ):
         """
-        Add a iSCSI storage connection to the system.
-        
-        \"\"\"
+        """        Add a iSCSI storage connection to the system.
         # Check the types of the parameters:
         Service._check_types([
             ('connection', connection, types.StorageConnection),
@@ -28403,7 +27769,7 @@ class StorageServerConnectionsService(Service):
         **kwargs
     ):
         """
-        Returns the list of storage connections. The order of the returned list of connections isn't guaranteed.
+        """        Returns the list of storage connections. The order of the returned list of connections isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -28425,7 +27791,7 @@ class StorageServerConnectionsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -28452,9 +27818,7 @@ class StorageServerConnectionsService(Service):
         **kwargs
     ):
         """
-        Add a local storage connection to the system.
-        
-        \"\"\"
+        """        Add a local storage connection to the system.
         # Check the types of the parameters:
         Service._check_types([
             ('connection', connection, types.StorageConnection),
@@ -28475,9 +27839,7 @@ class StorageServerConnectionsService(Service):
         **kwargs
     ):
         """
-        Add a nfs storage connection to the system.
-        
-        \"\"\"
+        """        Add a nfs storage connection to the system.
         # Check the types of the parameters:
         Service._check_types([
             ('connection', connection, types.StorageConnection),
@@ -28498,9 +27860,7 @@ class StorageServerConnectionsService(Service):
         **kwargs
     ):
         """
-        Add a vfs storage connection to the system.
-        
-        \"\"\"
+        """        Add a vfs storage connection to the system.
         # Check the types of the parameters:
         Service._check_types([
             ('connection', connection, types.StorageConnection),
@@ -28514,7 +27874,7 @@ class StorageServerConnectionsService(Service):
 
     def storage_connection_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -28522,7 +27882,7 @@ class StorageServerConnectionsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -28536,7 +27896,7 @@ class StorageServerConnectionsService(Service):
 
 class SystemService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(SystemService, self).__init__(connection, path)
@@ -28590,7 +27950,7 @@ class SystemService(Service):
         **kwargs
     ):
         """
-        Returns basic information describing the API, like the product name, the version number and a summary of the number of relevant objects.
+        """        Returns basic information describing the API, like the product name, the version number and a summary of the number of relevant objects.
         
         GET /ovirt-engine/api\</programlisting\>
         
@@ -28676,7 +28036,7 @@ class SystemService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -28699,7 +28059,7 @@ class SystemService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -28715,7 +28075,7 @@ class SystemService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -28735,225 +28095,207 @@ class SystemService(Service):
 
     def affinity_labels_service(self):
         """
-        List all known affinity labels.
-        
-        \"\"\"
+        """        List all known affinity labels.
         return AffinityLabelsService(self._connection, '%s/affinitylabels' % self._path)
 
     def bookmarks_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return BookmarksService(self._connection, '%s/bookmarks' % self._path)
 
     def cluster_levels_service(self):
         """
-        Reference to the service that provides information about the cluster levels supported by the system.
-        
-        \"\"\"
+        """        Reference to the service that provides information about the cluster levels supported by the system.
         return ClusterLevelsService(self._connection, '%s/clusterlevels' % self._path)
 
     def clusters_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return ClustersService(self._connection, '%s/clusters' % self._path)
 
     def cpu_profiles_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return CpuProfilesService(self._connection, '%s/cpuprofiles' % self._path)
 
     def data_centers_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return DataCentersService(self._connection, '%s/datacenters' % self._path)
 
     def disk_profiles_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return DiskProfilesService(self._connection, '%s/diskprofiles' % self._path)
 
     def disks_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return DisksService(self._connection, '%s/disks' % self._path)
 
     def domains_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return DomainsService(self._connection, '%s/domains' % self._path)
 
     def events_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return EventsService(self._connection, '%s/events' % self._path)
 
     def external_host_providers_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return ExternalHostProvidersService(self._connection, '%s/externalhostproviders' % self._path)
 
     def external_template_imports_service(self):
         """
-        Reference to service facilitating import of external templates.
-        
-        \"\"\"
+        """        Reference to service facilitating import of external templates.
         return ExternalTemplateImportsService(self._connection, '%s/externaltemplateimports' % self._path)
 
     def external_vm_imports_service(self):
         """
-        Reference to service facilitating import of external virtual machines.
-        
-        \"\"\"
+        """        Reference to service facilitating import of external virtual machines.
         return ExternalVmImportsService(self._connection, '%s/externalvmimports' % self._path)
 
     def groups_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return GroupsService(self._connection, '%s/groups' % self._path)
 
     def hosts_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return HostsService(self._connection, '%s/hosts' % self._path)
 
     def icons_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return IconsService(self._connection, '%s/icons' % self._path)
 
     def image_transfers_service(self):
         """
-        List of all image transfers being performed for image I/O in oVirt.
-        
-        \"\"\"
+        """        List of all image transfers being performed for image I/O in oVirt.
         return ImageTransfersService(self._connection, '%s/imagetransfers' % self._path)
 
     def instance_types_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return InstanceTypesService(self._connection, '%s/instancetypes' % self._path)
 
     def jobs_service(self):
         """
-        List all the jobs monitored by the engine.
-        
-        \"\"\"
+        """        List all the jobs monitored by the engine.
         return JobsService(self._connection, '%s/jobs' % self._path)
 
     def katello_errata_service(self):
         """
-        List the available Katello errata assigned to the engine.
-        
-        \"\"\"
+        """        List the available Katello errata assigned to the engine.
         return EngineKatelloErrataService(self._connection, '%s/katelloerrata' % self._path)
 
     def mac_pools_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return MacPoolsService(self._connection, '%s/macpools' % self._path)
 
     def network_filters_service(self):
         """
-        Network filters will enhance the admin ability to manage the network packets traffic from/to the participated VMs.
-        
-        \"\"\"
+        """        Network filters will enhance the admin ability to manage the network packets traffic from/to the participated VMs.
         return NetworkFiltersService(self._connection, '%s/networkfilters' % self._path)
 
     def networks_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return NetworksService(self._connection, '%s/networks' % self._path)
 
     def openstack_image_providers_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return OpenstackImageProvidersService(self._connection, '%s/openstackimageproviders' % self._path)
 
     def openstack_network_providers_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return OpenstackNetworkProvidersService(self._connection, '%s/openstacknetworkproviders' % self._path)
 
     def openstack_volume_providers_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return OpenstackVolumeProvidersService(self._connection, '%s/openstackvolumeproviders' % self._path)
 
     def operating_systems_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return OperatingSystemsService(self._connection, '%s/operatingsystems' % self._path)
 
     def options_service(self):
         """
-        Reference to the service that provides values of configuration options of the system.
-        
-        \"\"\"
+        """        Reference to the service that provides values of configuration options of the system.
         return SystemOptionsService(self._connection, '%s/options' % self._path)
 
     def permissions_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return SystemPermissionsService(self._connection, '%s/permissions' % self._path)
 
     def roles_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return RolesService(self._connection, '%s/roles' % self._path)
 
     def scheduling_policies_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return SchedulingPoliciesService(self._connection, '%s/schedulingpolicies' % self._path)
 
     def scheduling_policy_units_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return SchedulingPolicyUnitsService(self._connection, '%s/schedulingpolicyunits' % self._path)
 
     def storage_connections_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return StorageServerConnectionsService(self._connection, '%s/storageconnections' % self._path)
 
     def storage_domains_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return StorageDomainsService(self._connection, '%s/storagedomains' % self._path)
 
     def tags_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return TagsService(self._connection, '%s/tags' % self._path)
 
     def templates_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return TemplatesService(self._connection, '%s/templates' % self._path)
 
     def users_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return UsersService(self._connection, '%s/users' % self._path)
 
     def vm_pools_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return VmPoolsService(self._connection, '%s/vmpools' % self._path)
 
     def vms_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return VmsService(self._connection, '%s/vms' % self._path)
 
     def vnic_profiles_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return VnicProfilesService(self._connection, '%s/vnicprofiles' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'affinitylabels':
@@ -29124,9 +28466,7 @@ class SystemService(Service):
 
 class SystemOptionService(Service):
     """
-    A service that provides values of specific configuration option of the system.
-    
-    \"\"\"
+    """    A service that provides values of specific configuration option of the system.
 
     def __init__(self, connection, path):
         super(SystemOptionService, self).__init__(connection, path)
@@ -29140,7 +28480,7 @@ class SystemOptionService(Service):
         **kwargs
     ):
         """
-        Get the values of specific configuration option. For example to retrieve the values of configuration option `MigrationPoliciesSupported` send a request like this:
+        """        Get the values of specific configuration option. For example to retrieve the values of configuration option `MigrationPoliciesSupported` send a request like this:
         
         GET /ovirt-engine/api/options/MigrationPoliciesSupported\</programlisting\>
         
@@ -29210,7 +28550,7 @@ class SystemOptionService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('version', version, str),
@@ -29226,7 +28566,7 @@ class SystemOptionService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -29237,9 +28577,7 @@ class SystemOptionService(Service):
 
 class SystemOptionsService(Service):
     """
-    Service that provides values of configuration options of the system.
-    
-    \"\"\"
+    """    Service that provides values of configuration options of the system.
 
     def __init__(self, connection, path):
         super(SystemOptionsService, self).__init__(connection, path)
@@ -29247,9 +28585,7 @@ class SystemOptionsService(Service):
 
     def option_service(self, id):
         """
-        Returns a reference to the service that provides values of specific configuration option.
-        
-        \"\"\"
+        """        Returns a reference to the service that provides values of specific configuration option.
         Service._check_types([
             ('id', id, str),
         ])
@@ -29257,7 +28593,7 @@ class SystemOptionsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -29271,9 +28607,7 @@ class SystemOptionsService(Service):
 
 class SystemPermissionsService(AssignedPermissionsService):
     """
-    This service doesn't add any new methods, it is just a placeholder for the annotation that specifies the path of the resource that manages the permissions assigned to the system object.
-    
-    \"\"\"
+    """    This service doesn't add any new methods, it is just a placeholder for the annotation that specifies the path of the resource that manages the permissions assigned to the system object.
 
     def __init__(self, connection, path):
         super(SystemPermissionsService, self).__init__(connection, path)
@@ -29288,7 +28622,7 @@ class SystemPermissionsService(AssignedPermissionsService):
         **kwargs
     ):
         """
-        Assign a new permission to a user or group for specific entity. For example, to assign the `UserVmManager` role to the virtual machine with id `123` to the user with id `456` send a request like this:
+        """        Assign a new permission to a user or group for specific entity. For example, to assign the `UserVmManager` role to the virtual machine with id `123` to the user with id `456` send a request like this:
         
             POST /ovirt-engine/api/vms/123/permissions
         
@@ -29349,7 +28683,7 @@ class SystemPermissionsService(AssignedPermissionsService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('permission', permission, types.Permission),
@@ -29370,7 +28704,7 @@ class SystemPermissionsService(AssignedPermissionsService):
         **kwargs
     ):
         """
-        Add a new permission on the cluster to the group in the system.
+        """        Add a new permission on the cluster to the group in the system.
         
         This method supports the following parameters:
         
@@ -29388,7 +28722,7 @@ class SystemPermissionsService(AssignedPermissionsService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('permission', permission, types.Permission),
@@ -29409,7 +28743,7 @@ class SystemPermissionsService(AssignedPermissionsService):
         **kwargs
     ):
         """
-        Add a new permission on the data center to the group in the system.
+        """        Add a new permission on the data center to the group in the system.
         
         This method supports the following parameters:
         
@@ -29427,7 +28761,7 @@ class SystemPermissionsService(AssignedPermissionsService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('permission', permission, types.Permission),
@@ -29448,7 +28782,7 @@ class SystemPermissionsService(AssignedPermissionsService):
         **kwargs
     ):
         """
-        Add a new group level permission for a given virtual machine.
+        """        Add a new group level permission for a given virtual machine.
         
         This method supports the following parameters:
         
@@ -29466,7 +28800,7 @@ class SystemPermissionsService(AssignedPermissionsService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('permission', permission, types.Permission),
@@ -29487,7 +28821,7 @@ class SystemPermissionsService(AssignedPermissionsService):
         **kwargs
     ):
         """
-        Add a new permission on the host to the group in the system.
+        """        Add a new permission on the host to the group in the system.
         
         This method supports the following parameters:
         
@@ -29505,7 +28839,7 @@ class SystemPermissionsService(AssignedPermissionsService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('permission', permission, types.Permission),
@@ -29526,7 +28860,7 @@ class SystemPermissionsService(AssignedPermissionsService):
         **kwargs
     ):
         """
-        List all the permissions of the specific entity. For example to list all the permissions of the cluster with id `123` send a request like this:
+        """        List all the permissions of the specific entity. For example to list all the permissions of the cluster with id `123` send a request like this:
         
             GET /ovirt-engine/api/clusters/123/permissions
         
@@ -29563,7 +28897,7 @@ class SystemPermissionsService(AssignedPermissionsService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -29586,7 +28920,7 @@ class SystemPermissionsService(AssignedPermissionsService):
         **kwargs
     ):
         """
-        Add a new permission on the storage domain to the group in the system.
+        """        Add a new permission on the storage domain to the group in the system.
         
         This method supports the following parameters:
         
@@ -29604,7 +28938,7 @@ class SystemPermissionsService(AssignedPermissionsService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('permission', permission, types.Permission),
@@ -29625,7 +28959,7 @@ class SystemPermissionsService(AssignedPermissionsService):
         **kwargs
     ):
         """
-        Add a new permission on the template to the group in the system.
+        """        Add a new permission on the template to the group in the system.
         
         This method supports the following parameters:
         
@@ -29643,7 +28977,7 @@ class SystemPermissionsService(AssignedPermissionsService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('permission', permission, types.Permission),
@@ -29664,7 +28998,7 @@ class SystemPermissionsService(AssignedPermissionsService):
         **kwargs
     ):
         """
-        Add a new user level permission for a given virtual machine.
+        """        Add a new user level permission for a given virtual machine.
         
         This method supports the following parameters:
         
@@ -29682,7 +29016,7 @@ class SystemPermissionsService(AssignedPermissionsService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('permission', permission, types.Permission),
@@ -29703,7 +29037,7 @@ class SystemPermissionsService(AssignedPermissionsService):
         **kwargs
     ):
         """
-        Add a new permission on the vm to the group in the system.
+        """        Add a new permission on the vm to the group in the system.
         
         This method supports the following parameters:
         
@@ -29721,7 +29055,7 @@ class SystemPermissionsService(AssignedPermissionsService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('permission', permission, types.Permission),
@@ -29742,7 +29076,7 @@ class SystemPermissionsService(AssignedPermissionsService):
         **kwargs
     ):
         """
-        Add a new permission on the vm pool to the group in the system.
+        """        Add a new permission on the vm pool to the group in the system.
         
         This method supports the following parameters:
         
@@ -29760,7 +29094,7 @@ class SystemPermissionsService(AssignedPermissionsService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('permission', permission, types.Permission),
@@ -29774,9 +29108,7 @@ class SystemPermissionsService(AssignedPermissionsService):
 
     def permission_service(self, id):
         """
-        Sub-resource locator method, returns individual permission resource on which the remainder of the URI is dispatched.
-        
-        \"\"\"
+        """        Sub-resource locator method, returns individual permission resource on which the remainder of the URI is dispatched.
         Service._check_types([
             ('id', id, str),
         ])
@@ -29784,7 +29116,7 @@ class SystemPermissionsService(AssignedPermissionsService):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -29798,9 +29130,7 @@ class SystemPermissionsService(AssignedPermissionsService):
 
 class TagService(Service):
     """
-    A service to manage a specific tag in the system.
-    
-    \"\"\"
+    """    A service to manage a specific tag in the system.
 
     def __init__(self, connection, path):
         super(TagService, self).__init__(connection, path)
@@ -29814,7 +29144,7 @@ class TagService(Service):
         **kwargs
     ):
         """
-        Gets the information about the tag. For example to retrieve the information about the tag with the id `123` send a request like this:
+        """        Gets the information about the tag. For example to retrieve the information about the tag with the id `123` send a request like this:
         
             GET /ovirt-engine/api/tags/123
         
@@ -29841,7 +29171,7 @@ class TagService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -29864,7 +29194,7 @@ class TagService(Service):
         **kwargs
     ):
         """
-        Removes the tag from the system. For example to remove the tag with id `123` send a request like this:
+        """        Removes the tag from the system. For example to remove the tag with id `123` send a request like this:
         
             DELETE /ovirt-engine/api/tags/123
         
@@ -29884,7 +29214,7 @@ class TagService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -29913,7 +29243,7 @@ class TagService(Service):
         **kwargs
     ):
         """
-        Updates the tag entity. For example to update parent tag to tag with id `456` of the tag with id `123` send a request like this:
+        """        Updates the tag entity. For example to update parent tag to tag with id `456` of the tag with id `123` send a request like this:
         
             PUT /ovirt-engine/api/tags/123
         
@@ -29951,7 +29281,7 @@ class TagService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('tag', tag, types.Tag),
@@ -29973,7 +29303,7 @@ class TagService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -29984,9 +29314,7 @@ class TagService(Service):
 
 class TagsService(Service):
     """
-    Represents a service to manage collection of the tags in the system.
-    
-    \"\"\"
+    """    Represents a service to manage collection of the tags in the system.
 
     def __init__(self, connection, path):
         super(TagsService, self).__init__(connection, path)
@@ -30001,7 +29329,7 @@ class TagsService(Service):
         **kwargs
     ):
         """
-        Add a new tag to the system. For example, to add new tag with name `mytag` to the system send a request like this:
+        """        Add a new tag to the system. For example, to add new tag with name `mytag` to the system send a request like this:
         
             POST /ovirt-engine/api/tags
         
@@ -30042,7 +29370,7 @@ class TagsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('tag', tag, types.Tag),
@@ -30064,7 +29392,7 @@ class TagsService(Service):
         **kwargs
     ):
         """
-        List the tags in the system. For example to list the full hierarchy of the tags in the system send a request like this:
+        """        List the tags in the system. For example to list the full hierarchy of the tags in the system send a request like this:
         
             GET /ovirt-engine/api/tags
         
@@ -30115,7 +29443,7 @@ class TagsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -30135,9 +29463,7 @@ class TagsService(Service):
 
     def tag_service(self, id):
         """
-        Reference to the service that manages a specific tag.
-        
-        \"\"\"
+        """        Reference to the service that manages a specific tag.
         Service._check_types([
             ('id', id, str),
         ])
@@ -30145,7 +29471,7 @@ class TagsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -30159,9 +29485,7 @@ class TagsService(Service):
 
 class TemplateService(Service):
     """
-    Manages the virtual machine template and template versions.
-    
-    \"\"\"
+    """    Manages the virtual machine template and template versions.
 
     def __init__(self, connection, path):
         super(TemplateService, self).__init__(connection, path)
@@ -30183,7 +29507,7 @@ class TemplateService(Service):
         **kwargs
     ):
         """
-        Exports a template to the data center export domain. For example, send the following request:
+        """        Exports a template to the data center export domain. For example, send the following request:
         
         POST /ovirt-engine/api/templates/123/export\</programlisting\>
         
@@ -30216,7 +29540,7 @@ class TemplateService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('exclusive', exclusive, bool),
@@ -30242,7 +29566,7 @@ class TemplateService(Service):
         **kwargs
     ):
         """
-        Returns the information about this template or template version.
+        """        Returns the information about this template or template version.
         
         This method supports the following parameters:
         
@@ -30264,7 +29588,7 @@ class TemplateService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('filter', filter, bool),
@@ -30291,7 +29615,7 @@ class TemplateService(Service):
         **kwargs
     ):
         """
-        Removes a virtual machine template.
+        """        Removes a virtual machine template.
         
         DELETE /ovirt-engine/api/templates/123\</programlisting\>
         
@@ -30311,7 +29635,7 @@ class TemplateService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -30340,7 +29664,7 @@ class TemplateService(Service):
         **kwargs
     ):
         """
-        Exports a template to an export domain.
+        """        Exports a template to an export domain.
         
         This method supports the following parameters:
         
@@ -30362,7 +29686,7 @@ class TemplateService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('exclusive', exclusive, bool),
@@ -30391,7 +29715,7 @@ class TemplateService(Service):
         **kwargs
     ):
         """
-        Exports a template as an OVA file to a given path on a specified host.
+        """        Exports a template as an OVA file to a given path on a specified host.
         
         This method supports the following parameters:
         
@@ -30425,7 +29749,7 @@ class TemplateService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('directory', directory, str),
@@ -30457,7 +29781,7 @@ class TemplateService(Service):
         **kwargs
     ):
         """
-        Updates the template. The `name`, `description`, `type`, `memory`, `cpu`, `topology`, `os`, `high_availability`, `display`, `stateless`, `usb`, and `timezone` elements can be updated after a template has been created. For example, to update a template so that it has 1 GiB of memory send a request like this:
+        """        Updates the template. The `name`, `description`, `type`, `memory`, `cpu`, `topology`, `os`, `high_availability`, `display`, `stateless`, `usb`, and `timezone` elements can be updated after a template has been created. For example, to update a template so that it has 1 GiB of memory send a request like this:
         
         PUT /ovirt-engine/api/templates/123\</programlisting\>
         
@@ -30478,8 +29802,6 @@ class TemplateService(Service):
           </version>
         </template>
         ```
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('template', template, types.Template),
@@ -30501,56 +29823,42 @@ class TemplateService(Service):
 
     def cdroms_service(self):
         """
-        Returns a reference to the service that manages the CD-ROMs that are associated with the template.
-        
-        \"\"\"
+        """        Returns a reference to the service that manages the CD-ROMs that are associated with the template.
         return TemplateCdromsService(self._connection, '%s/cdroms' % self._path)
 
     def disk_attachments_service(self):
         """
-        Returns a reference to the service that manages a specific disk attachment of the template.
-        
-        \"\"\"
+        """        Returns a reference to the service that manages a specific disk attachment of the template.
         return TemplateDiskAttachmentsService(self._connection, '%s/diskattachments' % self._path)
 
     def graphics_consoles_service(self):
         """
-        Returns a reference to the service that manages the graphical consoles that are associated with the template.
-        
-        \"\"\"
+        """        Returns a reference to the service that manages the graphical consoles that are associated with the template.
         return TemplateGraphicsConsolesService(self._connection, '%s/graphicsconsoles' % self._path)
 
     def nics_service(self):
         """
-        Returns a reference to the service that manages the NICs that are associated with the template.
-        
-        \"\"\"
+        """        Returns a reference to the service that manages the NICs that are associated with the template.
         return TemplateNicsService(self._connection, '%s/nics' % self._path)
 
     def permissions_service(self):
         """
-        Returns a reference to the service that manages the permissions that are associated with the template.
-        
-        \"\"\"
+        """        Returns a reference to the service that manages the permissions that are associated with the template.
         return AssignedPermissionsService(self._connection, '%s/permissions' % self._path)
 
     def tags_service(self):
         """
-        Returns a reference to the service that manages the tags that are associated with the template.
-        
-        \"\"\"
+        """        Returns a reference to the service that manages the tags that are associated with the template.
         return AssignedTagsService(self._connection, '%s/tags' % self._path)
 
     def watchdogs_service(self):
         """
-        Returns a reference to the service that manages the *watchdogs* that are associated with the template.
-        
-        \"\"\"
+        """        Returns a reference to the service that manages the *watchdogs* that are associated with the template.
         return TemplateWatchdogsService(self._connection, '%s/watchdogs' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'cdroms':
@@ -30589,9 +29897,7 @@ class TemplateService(Service):
 
 class TemplateCdromService(Service):
     """
-    A service managing a CD-ROM device on templates.
-    
-    \"\"\"
+    """    A service managing a CD-ROM device on templates.
 
     def __init__(self, connection, path):
         super(TemplateCdromService, self).__init__(connection, path)
@@ -30605,7 +29911,7 @@ class TemplateCdromService(Service):
         **kwargs
     ):
         """
-        Returns the information about this CD-ROM device. For example, to get information about the CD-ROM device of template `123` send a request like:
+        """        Returns the information about this CD-ROM device. For example, to get information about the CD-ROM device of template `123` send a request like:
         
         GET /ovirt-engine/api/templates/123/cdroms/\</programlisting\>
         
@@ -30625,7 +29931,7 @@ class TemplateCdromService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -30641,7 +29947,7 @@ class TemplateCdromService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -30652,9 +29958,7 @@ class TemplateCdromService(Service):
 
 class TemplateCdromsService(Service):
     """
-    Lists the CD-ROM devices of a template.
-    
-    \"\"\"
+    """    Lists the CD-ROM devices of a template.
 
     def __init__(self, connection, path):
         super(TemplateCdromsService, self).__init__(connection, path)
@@ -30670,7 +29974,7 @@ class TemplateCdromsService(Service):
         **kwargs
     ):
         """
-        Returns the list of CD-ROM devices of the template. The order of the returned list of CD-ROM devices isn't guaranteed.
+        """        Returns the list of CD-ROM devices of the template. The order of the returned list of CD-ROM devices isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -30692,7 +29996,7 @@ class TemplateCdromsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -30712,9 +30016,7 @@ class TemplateCdromsService(Service):
 
     def cdrom_service(self, id):
         """
-        Returns a reference to the service that manages a specific CD-ROM device.
-        
-        \"\"\"
+        """        Returns a reference to the service that manages a specific CD-ROM device.
         Service._check_types([
             ('id', id, str),
         ])
@@ -30722,7 +30024,7 @@ class TemplateCdromsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -30736,7 +30038,7 @@ class TemplateCdromsService(Service):
 
 class TemplateDiskService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(TemplateDiskService, self).__init__(connection, path)
@@ -30752,7 +30054,7 @@ class TemplateDiskService(Service):
         **kwargs
     ):
         """
-        Copy the specified disk attached to the template to a specific storage domain.
+        """        Copy the specified disk attached to the template to a specific storage domain.
         
         This method supports the following parameters:
         
@@ -30774,7 +30076,7 @@ class TemplateDiskService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -30807,7 +30109,7 @@ class TemplateDiskService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -30827,7 +30129,7 @@ class TemplateDiskService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -30858,7 +30160,7 @@ class TemplateDiskService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -30874,7 +30176,7 @@ class TemplateDiskService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -30897,7 +30199,7 @@ class TemplateDiskService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -30913,7 +30215,7 @@ class TemplateDiskService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -30934,7 +30236,7 @@ class TemplateDiskService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -30945,9 +30247,7 @@ class TemplateDiskService(Service):
 
 class TemplateDiskAttachmentService(Service):
     """
-    This service manages the attachment of a disk to a template.
-    
-    \"\"\"
+    """    This service manages the attachment of a disk to a template.
 
     def __init__(self, connection, path):
         super(TemplateDiskAttachmentService, self).__init__(connection, path)
@@ -30961,7 +30261,7 @@ class TemplateDiskAttachmentService(Service):
         **kwargs
     ):
         """
-        Returns the details of the attachment.
+        """        Returns the details of the attachment.
         
         This method supports the following parameters:
         
@@ -30979,7 +30279,7 @@ class TemplateDiskAttachmentService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -31003,7 +30303,7 @@ class TemplateDiskAttachmentService(Service):
         **kwargs
     ):
         """
-        Removes the disk from the template. The disk will only be removed if there are other existing copies of the disk on other storage domains. A storage domain has to be specified to determine which of the copies should be removed (template disks can have copies on multiple storage domains).
+        """        Removes the disk from the template. The disk will only be removed if there are other existing copies of the disk on other storage domains. A storage domain has to be specified to determine which of the copies should be removed (template disks can have copies on multiple storage domains).
         
         DELETE /ovirt-engine/api/templates/{template:id}/diskattachments/{attachment:id}?storage\_domain=072fbaa1-08f3-4a40-9f34-a5ca22dd1d74\</programlisting\>
         
@@ -31023,7 +30323,7 @@ class TemplateDiskAttachmentService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('storage_domain', storage_domain, str),
@@ -31043,7 +30343,7 @@ class TemplateDiskAttachmentService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -31054,9 +30354,7 @@ class TemplateDiskAttachmentService(Service):
 
 class TemplateDiskAttachmentsService(Service):
     """
-    This service manages the set of disks attached to a template. Each attached disk is represented by a [DiskAttachment](#types/disk_attachment).
-    
-    \"\"\"
+    """    This service manages the set of disks attached to a template. Each attached disk is represented by a [DiskAttachment](#types/disk_attachment).
 
     def __init__(self, connection, path):
         super(TemplateDiskAttachmentsService, self).__init__(connection, path)
@@ -31071,7 +30369,7 @@ class TemplateDiskAttachmentsService(Service):
         **kwargs
     ):
         """
-        List the disks that are attached to the template. The order of the returned list of attachments isn't guaranteed.
+        """        List the disks that are attached to the template. The order of the returned list of attachments isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -31089,7 +30387,7 @@ class TemplateDiskAttachmentsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -31105,9 +30403,7 @@ class TemplateDiskAttachmentsService(Service):
 
     def attachment_service(self, id):
         """
-        Reference to the service that manages a specific attachment.
-        
-        \"\"\"
+        """        Reference to the service that manages a specific attachment.
         Service._check_types([
             ('id', id, str),
         ])
@@ -31115,7 +30411,7 @@ class TemplateDiskAttachmentsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -31129,7 +30425,7 @@ class TemplateDiskAttachmentsService(Service):
 
 class TemplateDisksService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(TemplateDisksService, self).__init__(connection, path)
@@ -31145,7 +30441,7 @@ class TemplateDisksService(Service):
         **kwargs
     ):
         """
-        Returns the list of disks of the template. The order of the returned list of disks isn't guaranteed.
+        """        Returns the list of disks of the template. The order of the returned list of disks isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -31167,7 +30463,7 @@ class TemplateDisksService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -31187,7 +30483,7 @@ class TemplateDisksService(Service):
 
     def disk_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -31195,7 +30491,7 @@ class TemplateDisksService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -31209,7 +30505,7 @@ class TemplateDisksService(Service):
 
 class TemplateGraphicsConsoleService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(TemplateGraphicsConsoleService, self).__init__(connection, path)
@@ -31223,7 +30519,7 @@ class TemplateGraphicsConsoleService(Service):
         **kwargs
     ):
         """
-        Gets graphics console configuration of the template.
+        """        Gets graphics console configuration of the template.
         
         This method supports the following parameters:
         
@@ -31241,7 +30537,7 @@ class TemplateGraphicsConsoleService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -31264,7 +30560,7 @@ class TemplateGraphicsConsoleService(Service):
         **kwargs
     ):
         """
-        Remove the graphics console from the template.
+        """        Remove the graphics console from the template.
         
         This method supports the following parameters:
         
@@ -31282,7 +30578,7 @@ class TemplateGraphicsConsoleService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -31303,7 +30599,7 @@ class TemplateGraphicsConsoleService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -31314,7 +30610,7 @@ class TemplateGraphicsConsoleService(Service):
 
 class TemplateGraphicsConsolesService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(TemplateGraphicsConsolesService, self).__init__(connection, path)
@@ -31329,9 +30625,7 @@ class TemplateGraphicsConsolesService(Service):
         **kwargs
     ):
         """
-        Add new graphics console to the template.
-        
-        \"\"\"
+        """        Add new graphics console to the template.
         # Check the types of the parameters:
         Service._check_types([
             ('console', console, types.GraphicsConsole),
@@ -31353,7 +30647,7 @@ class TemplateGraphicsConsolesService(Service):
         **kwargs
     ):
         """
-        Lists all the configured graphics consoles of the template. The order of the returned list of graphics consoles isn't guaranteed.
+        """        Lists all the configured graphics consoles of the template. The order of the returned list of graphics consoles isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -31375,7 +30669,7 @@ class TemplateGraphicsConsolesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -31395,9 +30689,7 @@ class TemplateGraphicsConsolesService(Service):
 
     def console_service(self, id):
         """
-        Returns a reference to the service that manages a specific template graphics console.
-        
-        \"\"\"
+        """        Returns a reference to the service that manages a specific template graphics console.
         Service._check_types([
             ('id', id, str),
         ])
@@ -31405,7 +30697,7 @@ class TemplateGraphicsConsolesService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -31419,7 +30711,7 @@ class TemplateGraphicsConsolesService(Service):
 
 class TemplateNicService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(TemplateNicService, self).__init__(connection, path)
@@ -31433,7 +30725,7 @@ class TemplateNicService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -31449,7 +30741,7 @@ class TemplateNicService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -31472,7 +30764,7 @@ class TemplateNicService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -31488,7 +30780,7 @@ class TemplateNicService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -31517,9 +30809,7 @@ class TemplateNicService(Service):
         **kwargs
     ):
         """
-        Update the specified network interface card attached to the template.
-        
-        \"\"\"
+        """        Update the specified network interface card attached to the template.
         # Check the types of the parameters:
         Service._check_types([
             ('nic', nic, types.Nic),
@@ -31541,7 +30831,7 @@ class TemplateNicService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -31552,7 +30842,7 @@ class TemplateNicService(Service):
 
 class TemplateNicsService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(TemplateNicsService, self).__init__(connection, path)
@@ -31567,9 +30857,7 @@ class TemplateNicsService(Service):
         **kwargs
     ):
         """
-        Add a new network interface card to the template.
-        
-        \"\"\"
+        """        Add a new network interface card to the template.
         # Check the types of the parameters:
         Service._check_types([
             ('nic', nic, types.Nic),
@@ -31591,7 +30879,7 @@ class TemplateNicsService(Service):
         **kwargs
     ):
         """
-        Returns the list of NICs of the template. The order of the returned list of NICs isn't guaranteed.
+        """        Returns the list of NICs of the template. The order of the returned list of NICs isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -31613,7 +30901,7 @@ class TemplateNicsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -31633,7 +30921,7 @@ class TemplateNicsService(Service):
 
     def nic_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -31641,7 +30929,7 @@ class TemplateNicsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -31655,7 +30943,7 @@ class TemplateNicsService(Service):
 
 class TemplateWatchdogService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(TemplateWatchdogService, self).__init__(connection, path)
@@ -31669,7 +30957,7 @@ class TemplateWatchdogService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -31685,7 +30973,7 @@ class TemplateWatchdogService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -31708,7 +30996,7 @@ class TemplateWatchdogService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -31724,7 +31012,7 @@ class TemplateWatchdogService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -31753,9 +31041,7 @@ class TemplateWatchdogService(Service):
         **kwargs
     ):
         """
-        Update the watchdog for the template identified by the given id.
-        
-        \"\"\"
+        """        Update the watchdog for the template identified by the given id.
         # Check the types of the parameters:
         Service._check_types([
             ('watchdog', watchdog, types.Watchdog),
@@ -31777,7 +31063,7 @@ class TemplateWatchdogService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -31788,7 +31074,7 @@ class TemplateWatchdogService(Service):
 
 class TemplateWatchdogsService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(TemplateWatchdogsService, self).__init__(connection, path)
@@ -31803,9 +31089,7 @@ class TemplateWatchdogsService(Service):
         **kwargs
     ):
         """
-        Add a watchdog to the template identified by the given id.
-        
-        \"\"\"
+        """        Add a watchdog to the template identified by the given id.
         # Check the types of the parameters:
         Service._check_types([
             ('watchdog', watchdog, types.Watchdog),
@@ -31827,7 +31111,7 @@ class TemplateWatchdogsService(Service):
         **kwargs
     ):
         """
-        Returns the list of watchdogs. The order of the returned list of watchdogs isn't guaranteed.
+        """        Returns the list of watchdogs. The order of the returned list of watchdogs isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -31849,7 +31133,7 @@ class TemplateWatchdogsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -31869,7 +31153,7 @@ class TemplateWatchdogsService(Service):
 
     def watchdog_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -31877,7 +31161,7 @@ class TemplateWatchdogsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -31891,9 +31175,7 @@ class TemplateWatchdogsService(Service):
 
 class TemplatesService(Service):
     """
-    This service manages the virtual machine templates available in the system.
-    
-    \"\"\"
+    """    This service manages the virtual machine templates available in the system.
 
     def __init__(self, connection, path):
         super(TemplatesService, self).__init__(connection, path)
@@ -31910,7 +31192,7 @@ class TemplatesService(Service):
         **kwargs
     ):
         """
-        Creates a new template. This requires the `name` and `vm` elements. To identify the virtual machine use the `vm.id` or `vm.name` attributes. For example, to create a template from a virtual machine with the identifier `123` send a request like this:
+        """        Creates a new template. This requires the `name` and `vm` elements. To identify the virtual machine use the `vm.id` or `vm.name` attributes. For example, to create a template from a virtual machine with the identifier `123` send a request like this:
         
         POST /ovirt-engine/api/templates\</programlisting\>
         
@@ -32026,7 +31308,7 @@ class TemplatesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('template', template, types.Template),
@@ -32057,7 +31339,7 @@ class TemplatesService(Service):
         **kwargs
     ):
         """
-        Add a virtual machine template to the system from a configuration. Requires the configuration type, the configuration data, and the target cluster.
+        """        Add a virtual machine template to the system from a configuration. Requires the configuration type, the configuration data, and the target cluster.
         
         This method supports the following parameters:
         
@@ -32075,7 +31357,7 @@ class TemplatesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('template', template, types.Template),
@@ -32106,7 +31388,7 @@ class TemplatesService(Service):
         **kwargs
     ):
         """
-        Add a virtual machine template to the system from an existing virtual machine.
+        """        Add a virtual machine template to the system from an existing virtual machine.
         
         This method supports the following parameters:
         
@@ -32124,7 +31406,7 @@ class TemplatesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('template', template, types.Template),
@@ -32155,7 +31437,7 @@ class TemplatesService(Service):
         **kwargs
     ):
         """
-        Add a virtual machine template to the system from a snapshot.
+        """        Add a virtual machine template to the system from a snapshot.
         
         This method supports the following parameters:
         
@@ -32173,7 +31455,7 @@ class TemplatesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('template', template, types.Template),
@@ -32206,7 +31488,7 @@ class TemplatesService(Service):
         **kwargs
     ):
         """
-        Returns the list of virtual machine templates. For example:
+        """        Returns the list of virtual machine templates. For example:
         
         GET /ovirt-engine/api/templates\</programlisting\>
         
@@ -32244,7 +31526,7 @@ class TemplatesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('case_sensitive', case_sensitive, bool),
@@ -32275,9 +31557,7 @@ class TemplatesService(Service):
 
     def template_service(self, id):
         """
-        Returns a reference to the service that manages a specific virtual machine template.
-        
-        \"\"\"
+        """        Returns a reference to the service that manages a specific virtual machine template.
         Service._check_types([
             ('id', id, str),
         ])
@@ -32285,7 +31565,7 @@ class TemplatesService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -32299,7 +31579,7 @@ class TemplatesService(Service):
 
 class UnmanagedNetworkService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(UnmanagedNetworkService, self).__init__(connection, path)
@@ -32313,7 +31593,7 @@ class UnmanagedNetworkService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -32329,7 +31609,7 @@ class UnmanagedNetworkService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -32352,7 +31632,7 @@ class UnmanagedNetworkService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -32368,7 +31648,7 @@ class UnmanagedNetworkService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -32389,7 +31669,7 @@ class UnmanagedNetworkService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -32400,7 +31680,7 @@ class UnmanagedNetworkService(Service):
 
 class UnmanagedNetworksService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(UnmanagedNetworksService, self).__init__(connection, path)
@@ -32416,7 +31696,7 @@ class UnmanagedNetworksService(Service):
         **kwargs
     ):
         """
-        Returns the list of unmanaged networks of the host. The order of the returned list of networks isn't guaranteed.
+        """        Returns the list of unmanaged networks of the host. The order of the returned list of networks isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -32438,7 +31718,7 @@ class UnmanagedNetworksService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -32458,7 +31738,7 @@ class UnmanagedNetworksService(Service):
 
     def unmanaged_network_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -32466,7 +31746,7 @@ class UnmanagedNetworksService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -32480,9 +31760,7 @@ class UnmanagedNetworksService(Service):
 
 class UserService(Service):
     """
-    A service to manage a user in the system. Use this service to either get users details or remove users. In order to add new users please use [???](#services/users).
-    
-    \"\"\"
+    """    A service to manage a user in the system. Use this service to either get users details or remove users. In order to add new users please use [???](#services/users).
 
     def __init__(self, connection, path):
         super(UserService, self).__init__(connection, path)
@@ -32503,7 +31781,7 @@ class UserService(Service):
         **kwargs
     ):
         """
-        Gets the system user information. Usage:
+        """        Gets the system user information. Usage:
         
             GET /ovirt-engine/api/users/1234
         
@@ -32545,7 +31823,7 @@ class UserService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -32568,7 +31846,7 @@ class UserService(Service):
         **kwargs
     ):
         """
-        Removes the system user. Usage:
+        """        Removes the system user. Usage:
         
             DELETE /ovirt-engine/api/users/1234
         
@@ -32588,7 +31866,7 @@ class UserService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -32616,7 +31894,7 @@ class UserService(Service):
         **kwargs
     ):
         """
-        Updates information about the user. Only the `user_options` field can be updated. For example, to update user options:
+        """        Updates information about the user. Only the `user_options` field can be updated. For example, to update user options:
         
         PUT /ovirt-engine/api/users/123\</programlisting\>
         
@@ -32636,8 +31914,6 @@ class UserService(Service):
         > **Important**
         >
         > Since version 4.4.5 of the engine this operation is deprecated, and preserved only for backwards compatibility. It will be removed in the future. Please use the [options](#services/user_option) endpoint instead.
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('user', user, types.User),
@@ -32651,44 +31927,42 @@ class UserService(Service):
 
     def event_subscriptions_service(self):
         """
-        List of event-subscriptions for this user.
-        
-        \"\"\"
+        """        List of event-subscriptions for this user.
         return EventSubscriptionsService(self._connection, '%s/eventsubscriptions' % self._path)
 
     def groups_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return DomainUserGroupsService(self._connection, '%s/groups' % self._path)
 
     def options_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return UserOptionsService(self._connection, '%s/options' % self._path)
 
     def permissions_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return AssignedPermissionsService(self._connection, '%s/permissions' % self._path)
 
     def roles_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return AssignedRolesService(self._connection, '%s/roles' % self._path)
 
     def ssh_public_keys_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return SshPublicKeysService(self._connection, '%s/sshpublickeys' % self._path)
 
     def tags_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return AssignedTagsService(self._connection, '%s/tags' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'eventsubscriptions':
@@ -32727,7 +32001,7 @@ class UserService(Service):
 
 class UserOptionService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(UserOptionService, self).__init__(connection, path)
@@ -32740,7 +32014,7 @@ class UserOptionService(Service):
         **kwargs
     ):
         """
-        Returns a user profile property of type JSON. Example request(for user with identifier `123` and option with identifier `456`):
+        """        Returns a user profile property of type JSON. Example request(for user with identifier `123` and option with identifier `456`):
         
         GET /ovirt-engine/api/users/123/options/456\</programlisting\>
         
@@ -32753,8 +32027,6 @@ class UserOptionService(Service):
             <user href="/ovirt-engine/api/users/123" id="123"/>
           </user_option>
         ```
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
         ])
@@ -32773,11 +32045,9 @@ class UserOptionService(Service):
         **kwargs
     ):
         """
-        Deletes an existing property of type JSON. Example request(for user with identifier `123` and option with identifier `456`):
+        """        Deletes an existing property of type JSON. Example request(for user with identifier `123` and option with identifier `456`):
         
         DELETE /ovirt-engine/api/users/123/options/456\</programlisting\>
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
         ])
@@ -32790,7 +32060,7 @@ class UserOptionService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -32801,7 +32071,7 @@ class UserOptionService(Service):
 
 class UserOptionsService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(UserOptionsService, self).__init__(connection, path)
@@ -32816,7 +32086,7 @@ class UserOptionsService(Service):
         **kwargs
     ):
         """
-        Adds a new user profile property of type JSON. Example request(for user with identifier `123`):
+        """        Adds a new user profile property of type JSON. Example request(for user with identifier `123`):
         
         POST /ovirt-engine/api/users/123/options\</programlisting\>
         
@@ -32828,8 +32098,6 @@ class UserOptionsService(Service):
             <content>["any", "JSON"]</content>
           </user_option>
         ```
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('option', option, types.UserOption),
@@ -32849,7 +32117,7 @@ class UserOptionsService(Service):
         **kwargs
     ):
         """
-        Returns a list of user profile properties of type JSON. Example request(for user with identifier `123`):
+        """        Returns a list of user profile properties of type JSON. Example request(for user with identifier `123`):
         
         GET /ovirt-engine/api/users/123/options\</programlisting\>
         
@@ -32864,8 +32132,6 @@ class UserOptionsService(Service):
           </user_option>
         </user_options>
         ```
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
         ])
@@ -32878,7 +32144,7 @@ class UserOptionsService(Service):
 
     def option_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -32886,7 +32152,7 @@ class UserOptionsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -32900,9 +32166,7 @@ class UserOptionsService(Service):
 
 class UsersService(Service):
     """
-    A service to manage the users in the system.
-    
-    \"\"\"
+    """    A service to manage the users in the system.
 
     def __init__(self, connection, path):
         super(UsersService, self).__init__(connection, path)
@@ -32917,7 +32181,7 @@ class UsersService(Service):
         **kwargs
     ):
         """
-        Add user from a directory service. For example, to add the `myuser` user from the `myextension-authz` authorization provider send a request like this:
+        """        Add user from a directory service. For example, to add the `myuser` user from the `myextension-authz` authorization provider send a request like this:
         
         POST /ovirt-engine/api/users\</programlisting\>
         
@@ -32943,8 +32207,6 @@ class UsersService(Service):
           </domain>
         </user>
         ```
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('user', user, types.User),
@@ -32968,7 +32230,7 @@ class UsersService(Service):
         **kwargs
     ):
         """
-        List all the users in the system. Usage:
+        """        List all the users in the system. Usage:
         
             GET /ovirt-engine/api/users
         
@@ -33023,7 +32285,7 @@ class UsersService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('case_sensitive', case_sensitive, bool),
@@ -33050,7 +32312,7 @@ class UsersService(Service):
 
     def user_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -33058,7 +32320,7 @@ class UsersService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -33072,7 +32334,7 @@ class UsersService(Service):
 
 class VirtualFunctionAllowedNetworkService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(VirtualFunctionAllowedNetworkService, self).__init__(connection, path)
@@ -33086,7 +32348,7 @@ class VirtualFunctionAllowedNetworkService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -33102,7 +32364,7 @@ class VirtualFunctionAllowedNetworkService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -33125,7 +32387,7 @@ class VirtualFunctionAllowedNetworkService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -33141,7 +32403,7 @@ class VirtualFunctionAllowedNetworkService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -33162,7 +32424,7 @@ class VirtualFunctionAllowedNetworkService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -33173,7 +32435,7 @@ class VirtualFunctionAllowedNetworkService(Service):
 
 class VirtualFunctionAllowedNetworksService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(VirtualFunctionAllowedNetworksService, self).__init__(connection, path)
@@ -33188,7 +32450,7 @@ class VirtualFunctionAllowedNetworksService(Service):
         **kwargs
     ):
         """
-        \"\"\"
+        """        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('network', network, types.Network),
@@ -33210,7 +32472,7 @@ class VirtualFunctionAllowedNetworksService(Service):
         **kwargs
     ):
         """
-        Returns the list of networks. The order of the returned list of networks isn't guaranteed.
+        """        Returns the list of networks. The order of the returned list of networks isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -33232,7 +32494,7 @@ class VirtualFunctionAllowedNetworksService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -33252,7 +32514,7 @@ class VirtualFunctionAllowedNetworksService(Service):
 
     def network_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -33260,7 +32522,7 @@ class VirtualFunctionAllowedNetworksService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -33274,7 +32536,7 @@ class VirtualFunctionAllowedNetworksService(Service):
 
 class VmService(MeasurableService):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(VmService, self).__init__(connection, path)
@@ -33307,7 +32569,7 @@ class VmService(MeasurableService):
         **kwargs
     ):
         """
-        Apply an automatic CPU and NUMA configuration on the VM. An example for a request:
+        """        Apply an automatic CPU and NUMA configuration on the VM. An example for a request:
         
         POST /ovirt-engine/api/vms/123/autopincpuandnumanodes\</programlisting\>
         
@@ -33339,7 +32601,7 @@ class VmService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -33368,7 +32630,7 @@ class VmService(MeasurableService):
         **kwargs
     ):
         """
-        This operation stops any migration of a virtual machine to another physical host.
+        """        This operation stops any migration of a virtual machine to another physical host.
         
         POST /ovirt-engine/api/vms/123/cancelmigration\</programlisting\>
         
@@ -33394,7 +32656,7 @@ class VmService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -33424,7 +32686,7 @@ class VmService(MeasurableService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -33448,7 +32710,7 @@ class VmService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -33481,7 +32743,7 @@ class VmService(MeasurableService):
         **kwargs
     ):
         """
-        Permanently restores the virtual machine to the state of the previewed snapshot. See the [preview\_snapshot](#services/vm/methods/preview_snapshot) operation for details.
+        """        Permanently restores the virtual machine to the state of the previewed snapshot. See the [preview\_snapshot](#services/vm/methods/preview_snapshot) operation for details.
         
         This method supports the following parameters:
         
@@ -33499,7 +32761,7 @@ class VmService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -33526,7 +32788,7 @@ class VmService(MeasurableService):
         **kwargs
     ):
         """
-        Detaches a virtual machine from a pool.
+        """        Detaches a virtual machine from a pool.
         
         POST /ovirt-engine/api/vms/123/detach\</programlisting\>
         
@@ -33552,7 +32814,7 @@ class VmService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -33582,7 +32844,7 @@ class VmService(MeasurableService):
         **kwargs
     ):
         """
-        Exports the virtual machine. A virtual machine can be exported to an export domain. For example, to export virtual machine `123` to the export domain `myexport`:
+        """        Exports the virtual machine. A virtual machine can be exported to an export domain. For example, to export virtual machine `123` to the export domain `myexport`:
         
         POST /ovirt-engine/api/vms/123/export\</programlisting\>
         
@@ -33646,7 +32908,7 @@ class VmService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -33679,7 +32941,7 @@ class VmService(MeasurableService):
         **kwargs
     ):
         """
-        Freezes virtual machine file systems. This operation freezes a virtual machine's file systems using the QEMU guest agent when taking a live snapshot of a running virtual machine. Normally, this is done automatically by the manager, but this must be executed manually with the API for virtual machines using OpenStack Volume (Cinder) disks. Example:
+        """        Freezes virtual machine file systems. This operation freezes a virtual machine's file systems using the QEMU guest agent when taking a live snapshot of a running virtual machine. Normally, this is done automatically by the manager, but this must be executed manually with the API for virtual machines using OpenStack Volume (Cinder) disks. Example:
         
         POST /ovirt-engine/api/vms/123/freezefilesystems\</programlisting\>
         
@@ -33703,7 +32965,7 @@ class VmService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -33734,7 +32996,7 @@ class VmService(MeasurableService):
         **kwargs
     ):
         """
-        Retrieves the description of the virtual machine.
+        """        Retrieves the description of the virtual machine.
         
         This method supports the following parameters:
         
@@ -33794,7 +33056,7 @@ class VmService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('all_content', all_content, bool),
@@ -33833,7 +33095,7 @@ class VmService(MeasurableService):
         **kwargs
     ):
         """
-        Initiates the automatic user logon to access a virtual machine from an external console. This action requires the `ovirt-guest-agent-gdm-plugin` and the `ovirt-guest-agent-pam-module` packages to be installed and the `ovirt-guest-agent` service to be running on the virtual machine. Users require the appropriate user permissions for the virtual machine in order to access the virtual machine from an external console. For example:
+        """        Initiates the automatic user logon to access a virtual machine from an external console. This action requires the `ovirt-guest-agent-gdm-plugin` and the `ovirt-guest-agent-pam-module` packages to be installed and the `ovirt-guest-agent` service to be running on the virtual machine. Users require the appropriate user permissions for the virtual machine in order to access the virtual machine from an external console. For example:
         
         POST /ovirt-engine/api/vms/123/logon\</programlisting\>
         
@@ -33859,7 +33121,7 @@ class VmService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -33887,7 +33149,7 @@ class VmService(MeasurableService):
         **kwargs
     ):
         """
-        Sets the global maintenance mode on the hosted engine virtual machine. This action has no effect on other virtual machines. Example:
+        """        Sets the global maintenance mode on the hosted engine virtual machine. This action has no effect on other virtual machines. Example:
         
         POST /ovirt-engine/api/vms/123/maintenance\</programlisting\>
         
@@ -33917,7 +33179,7 @@ class VmService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -33950,7 +33212,7 @@ class VmService(MeasurableService):
         **kwargs
     ):
         """
-        Migrates a virtual machine to another physical host. Example:
+        """        Migrates a virtual machine to another physical host. Example:
         
         POST /ovirt-engine/api/vms/123/migrate\</programlisting\>
         
@@ -33994,7 +33256,7 @@ class VmService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -34034,7 +33296,7 @@ class VmService(MeasurableService):
         **kwargs
     ):
         """
-        Temporarily restores the virtual machine to the state of a snapshot. The snapshot is indicated with the `snapshot.id` parameter. It is restored temporarily, so that the content can be inspected. Once that inspection is finished, the state of the virtual machine can be made permanent, using the [commit\_snapshot](#services/vm/methods/commit_snapshot) method, or discarded using the [undo\_snapshot](#services/vm/methods/undo_snapshot) method.
+        """        Temporarily restores the virtual machine to the state of a snapshot. The snapshot is indicated with the `snapshot.id` parameter. It is restored temporarily, so that the content can be inspected. Once that inspection is finished, the state of the virtual machine can be made permanent, using the [commit\_snapshot](#services/vm/methods/commit_snapshot) method, or discarded using the [undo\_snapshot](#services/vm/methods/undo_snapshot) method.
         
         This method supports the following parameters:
         
@@ -34075,7 +33337,7 @@ class VmService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -34113,7 +33375,7 @@ class VmService(MeasurableService):
         **kwargs
     ):
         """
-        Sends a reboot request to a virtual machine. For example:
+        """        Sends a reboot request to a virtual machine. For example:
         
         POST /ovirt-engine/api/vms/123/reboot\</programlisting\>
         
@@ -34153,7 +33415,7 @@ class VmService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -34184,7 +33446,7 @@ class VmService(MeasurableService):
         **kwargs
     ):
         """
-        Removes the virtual machine, including the virtual disks attached to it. For example, to remove the virtual machine with identifier `123`:
+        """        Removes the virtual machine, including the virtual disks attached to it. For example, to remove the virtual machine with identifier `123`:
         
         DELETE /ovirt-engine/api/vms/123\</programlisting\>
         
@@ -34212,7 +33474,7 @@ class VmService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -34248,7 +33510,7 @@ class VmService(MeasurableService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -34264,7 +33526,7 @@ class VmService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -34291,7 +33553,7 @@ class VmService(MeasurableService):
         **kwargs
     ):
         """
-        Sends a reset request to a virtual machine. For example:
+        """        Sends a reset request to a virtual machine. For example:
         
         POST /ovirt-engine/api/vms/123/reset\</programlisting\>
         
@@ -34317,7 +33579,7 @@ class VmService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -34346,7 +33608,7 @@ class VmService(MeasurableService):
         **kwargs
     ):
         """
-        This operation sends a shutdown request to a virtual machine. For example:
+        """        This operation sends a shutdown request to a virtual machine. For example:
         
         POST /ovirt-engine/api/vms/123/shutdown\</programlisting\>
         
@@ -34390,7 +33652,7 @@ class VmService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -34430,7 +33692,7 @@ class VmService(MeasurableService):
         **kwargs
     ):
         """
-        Starts the virtual machine. If the virtual environment is complete and the virtual machine contains all necessary components to function, it can be started. This example starts the virtual machine:
+        """        Starts the virtual machine. If the virtual environment is complete and the virtual machine contains all necessary components to function, it can be started. This example starts the virtual machine:
         
         POST /ovirt-engine/api/vms/123/start\</programlisting\>
         
@@ -34504,7 +33766,7 @@ class VmService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -34551,7 +33813,7 @@ class VmService(MeasurableService):
         **kwargs
     ):
         """
-        This operation forces a virtual machine to power-off. For example:
+        """        This operation forces a virtual machine to power-off. For example:
         
         POST /ovirt-engine/api/vms/123/stop\</programlisting\>
         
@@ -34595,7 +33857,7 @@ class VmService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -34626,7 +33888,7 @@ class VmService(MeasurableService):
         **kwargs
     ):
         """
-        This operation saves the virtual machine state to disk and stops it. Start a suspended virtual machine and restore the virtual machine state with the start action. For example:
+        """        This operation saves the virtual machine state to disk and stops it. Start a suspended virtual machine and restore the virtual machine state with the start action. For example:
         
         POST /ovirt-engine/api/vms/123/suspend\</programlisting\>
         
@@ -34652,7 +33914,7 @@ class VmService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -34679,7 +33941,7 @@ class VmService(MeasurableService):
         **kwargs
     ):
         """
-        Thaws virtual machine file systems. This operation thaws a virtual machine's file systems using the QEMU guest agent when taking a live snapshot of a running virtual machine. Normally, this is done automatically by the manager, but this must be executed manually with the API for virtual machines using OpenStack Volume (Cinder) disks. Example:
+        """        Thaws virtual machine file systems. This operation thaws a virtual machine's file systems using the QEMU guest agent when taking a live snapshot of a running virtual machine. Normally, this is done automatically by the manager, but this must be executed manually with the API for virtual machines using OpenStack Volume (Cinder) disks. Example:
         
         POST /api/vms/123/thawfilesystems\</programlisting\>
         
@@ -34703,7 +33965,7 @@ class VmService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -34731,7 +33993,7 @@ class VmService(MeasurableService):
         **kwargs
     ):
         """
-        Generates a time-sensitive authentication token for accessing a virtual machine's display. For example:
+        """        Generates a time-sensitive authentication token for accessing a virtual machine's display. For example:
         
         POST /ovirt-engine/api/vms/123/ticket\</programlisting\>
         
@@ -34768,7 +34030,7 @@ class VmService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -34800,7 +34062,7 @@ class VmService(MeasurableService):
         **kwargs
     ):
         """
-        Exports a virtual machine to an export domain.
+        """        Exports a virtual machine to an export domain.
         
         This method supports the following parameters:
         
@@ -34830,7 +34092,7 @@ class VmService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -34869,7 +34131,7 @@ class VmService(MeasurableService):
         **kwargs
     ):
         """
-        Exports a virtual machine as an OVA file to a given path on a specified host.
+        """        Exports a virtual machine as an OVA file to a given path on a specified host.
         
         This method supports the following parameters:
         
@@ -34911,7 +34173,7 @@ class VmService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -34950,7 +34212,7 @@ class VmService(MeasurableService):
         **kwargs
     ):
         """
-        Restores the virtual machine to the state it had before previewing the snapshot. See the [preview\_snapshot](#services/vm/methods/preview_snapshot) operation for details.
+        """        Restores the virtual machine to the state it had before previewing the snapshot. See the [preview\_snapshot](#services/vm/methods/preview_snapshot) operation for details.
         
         This method supports the following parameters:
         
@@ -34968,7 +34230,7 @@ class VmService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -34997,9 +34259,7 @@ class VmService(MeasurableService):
         **kwargs
     ):
         """
-        Update the virtual machine in the system for the given virtual machine id.
-        
-        \"\"\"
+        """        Update the virtual machine in the system for the given virtual machine id.
         # Check the types of the parameters:
         Service._check_types([
             ('vm', vm, types.Vm),
@@ -35025,109 +34285,97 @@ class VmService(MeasurableService):
 
     def affinity_labels_service(self):
         """
-        List of scheduling labels assigned to this virtual machine.
-        
-        \"\"\"
+        """        List of scheduling labels assigned to this virtual machine.
         return AssignedAffinityLabelsService(self._connection, '%s/affinitylabels' % self._path)
 
     def applications_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return VmApplicationsService(self._connection, '%s/applications' % self._path)
 
     def backups_service(self):
         """
-        List of backups of this virtual machine.
-        
-        \"\"\"
+        """        List of backups of this virtual machine.
         return VmBackupsService(self._connection, '%s/backups' % self._path)
 
     def cdroms_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return VmCdromsService(self._connection, '%s/cdroms' % self._path)
 
     def checkpoints_service(self):
         """
-        List of checkpoints of this virtual machine.
-        
-        \"\"\"
+        """        List of checkpoints of this virtual machine.
         return VmCheckpointsService(self._connection, '%s/checkpoints' % self._path)
 
     def disk_attachments_service(self):
         """
-        List of disks attached to this virtual machine.
-        
-        \"\"\"
+        """        List of disks attached to this virtual machine.
         return DiskAttachmentsService(self._connection, '%s/diskattachments' % self._path)
 
     def graphics_consoles_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return VmGraphicsConsolesService(self._connection, '%s/graphicsconsoles' % self._path)
 
     def host_devices_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return VmHostDevicesService(self._connection, '%s/hostdevices' % self._path)
 
     def katello_errata_service(self):
         """
-        Reference to the service that can show the applicable errata available on the virtual machine. This information is taken from Katello.
-        
-        \"\"\"
+        """        Reference to the service that can show the applicable errata available on the virtual machine. This information is taken from Katello.
         return KatelloErrataService(self._connection, '%s/katelloerrata' % self._path)
 
     def nics_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return VmNicsService(self._connection, '%s/nics' % self._path)
 
     def numa_nodes_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return VmNumaNodesService(self._connection, '%s/numanodes' % self._path)
 
     def permissions_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return AssignedPermissionsService(self._connection, '%s/permissions' % self._path)
 
     def reported_devices_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return VmReportedDevicesService(self._connection, '%s/reporteddevices' % self._path)
 
     def sessions_service(self):
         """
-        Reference to the service that provides information about virtual machine user sessions.
-        
-        \"\"\"
+        """        Reference to the service that provides information about virtual machine user sessions.
         return VmSessionsService(self._connection, '%s/sessions' % self._path)
 
     def snapshots_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return SnapshotsService(self._connection, '%s/snapshots' % self._path)
 
     def statistics_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return StatisticsService(self._connection, '%s/statistics' % self._path)
 
     def tags_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return AssignedTagsService(self._connection, '%s/tags' % self._path)
 
     def watchdogs_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return VmWatchdogsService(self._connection, '%s/watchdogs' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'affinitylabels':
@@ -35210,9 +34458,7 @@ class VmService(MeasurableService):
 
 class VmApplicationService(Service):
     """
-    A service that provides information about an application installed in a virtual machine.
-    
-    \"\"\"
+    """    A service that provides information about an application installed in a virtual machine.
 
     def __init__(self, connection, path):
         super(VmApplicationService, self).__init__(connection, path)
@@ -35227,7 +34473,7 @@ class VmApplicationService(Service):
         **kwargs
     ):
         """
-        Returns the information about the application.
+        """        Returns the information about the application.
         
         This method supports the following parameters:
         
@@ -35249,7 +34495,7 @@ class VmApplicationService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('filter', filter, bool),
@@ -35269,7 +34515,7 @@ class VmApplicationService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -35280,9 +34526,7 @@ class VmApplicationService(Service):
 
 class VmApplicationsService(Service):
     """
-    A service that provides information about applications installed in a virtual machine.
-    
-    \"\"\"
+    """    A service that provides information about applications installed in a virtual machine.
 
     def __init__(self, connection, path):
         super(VmApplicationsService, self).__init__(connection, path)
@@ -35299,7 +34543,7 @@ class VmApplicationsService(Service):
         **kwargs
     ):
         """
-        Returns a list of applications installed in the virtual machine. The order of the returned list of applications isn't guaranteed.
+        """        Returns a list of applications installed in the virtual machine. The order of the returned list of applications isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -35325,7 +34569,7 @@ class VmApplicationsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('filter', filter, bool),
@@ -35349,9 +34593,7 @@ class VmApplicationsService(Service):
 
     def application_service(self, id):
         """
-        Returns a reference to the service that provides information about a specific application.
-        
-        \"\"\"
+        """        Returns a reference to the service that provides information about a specific application.
         Service._check_types([
             ('id', id, str),
         ])
@@ -35359,7 +34601,7 @@ class VmApplicationsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -35373,9 +34615,7 @@ class VmApplicationsService(Service):
 
 class VmBackupService(Service):
     """
-    A service managing a backup of a virtual machines.
-    
-    \"\"\"
+    """    A service managing a backup of a virtual machines.
 
     def __init__(self, connection, path):
         super(VmBackupService, self).__init__(connection, path)
@@ -35389,9 +34629,7 @@ class VmBackupService(Service):
         **kwargs
     ):
         """
-        Finalize the virtual machine backup entity. End backup, unlock resources, and perform cleanups.
-        
-        \"\"\"
+        """        Finalize the virtual machine backup entity. End backup, unlock resources, and perform cleanups.
         # Check the types of the parameters:
         Service._check_types([
         ])
@@ -35412,7 +34650,7 @@ class VmBackupService(Service):
         **kwargs
     ):
         """
-        Returns information about the virtual machine backup.
+        """        Returns information about the virtual machine backup.
         
         This method supports the following parameters:
         
@@ -35430,7 +34668,7 @@ class VmBackupService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -35446,14 +34684,12 @@ class VmBackupService(Service):
 
     def disks_service(self):
         """
-        A reference to the service that lists the disks in backup.
-        
-        \"\"\"
+        """        A reference to the service that lists the disks in backup.
         return VmBackupDisksService(self._connection, '%s/disks' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'disks':
@@ -35468,7 +34704,7 @@ class VmBackupService(Service):
 
 class VmBackupDiskService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(VmBackupDiskService, self).__init__(connection, path)
@@ -35482,7 +34718,7 @@ class VmBackupDiskService(Service):
         **kwargs
     ):
         """
-        Retrieves the description of the disk.
+        """        Retrieves the description of the disk.
         
         This method supports the following parameters:
         
@@ -35500,7 +34736,7 @@ class VmBackupDiskService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -35516,7 +34752,7 @@ class VmBackupDiskService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -35527,7 +34763,7 @@ class VmBackupDiskService(Service):
 
 class VmBackupDisksService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(VmBackupDisksService, self).__init__(connection, path)
@@ -35543,7 +34779,7 @@ class VmBackupDisksService(Service):
         **kwargs
     ):
         """
-        Returns the list of disks in backup.
+        """        Returns the list of disks in backup.
         
         This method supports the following parameters:
         
@@ -35565,7 +34801,7 @@ class VmBackupDisksService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -35585,9 +34821,7 @@ class VmBackupDisksService(Service):
 
     def disk_service(self, id):
         """
-        A reference to the service that manages a specific disk.
-        
-        \"\"\"
+        """        A reference to the service that manages a specific disk.
         Service._check_types([
             ('id', id, str),
         ])
@@ -35595,7 +34829,7 @@ class VmBackupDisksService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -35609,9 +34843,7 @@ class VmBackupDisksService(Service):
 
 class VmBackupsService(Service):
     """
-    Lists the backups of a virtual machine.
-    
-    \"\"\"
+    """    Lists the backups of a virtual machine.
 
     def __init__(self, connection, path):
         super(VmBackupsService, self).__init__(connection, path)
@@ -35627,7 +34859,7 @@ class VmBackupsService(Service):
         **kwargs
     ):
         """
-        Adds a new backup entity to a virtual machine. For example, to start a new incremental backup of a virtual machine since checkpoint id `previous-checkpoint-uuid`, send a request like this:
+        """        Adds a new backup entity to a virtual machine. For example, to start a new incremental backup of a virtual machine since checkpoint id `previous-checkpoint-uuid`, send a request like this:
         
         POST /ovirt-engine/api/vms/123/backups\</programlisting\>
         
@@ -35675,7 +34907,7 @@ class VmBackupsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('backup', backup, types.Backup),
@@ -35701,7 +34933,7 @@ class VmBackupsService(Service):
         **kwargs
     ):
         """
-        The list of virtual machine backups.
+        """        The list of virtual machine backups.
         
         This method supports the following parameters:
         
@@ -35723,7 +34955,7 @@ class VmBackupsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -35743,9 +34975,7 @@ class VmBackupsService(Service):
 
     def backup_service(self, id):
         """
-        Returns a reference to the service that manages a specific VM backup.
-        
-        \"\"\"
+        """        Returns a reference to the service that manages a specific VM backup.
         Service._check_types([
             ('id', id, str),
         ])
@@ -35753,7 +34983,7 @@ class VmBackupsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -35767,9 +34997,7 @@ class VmBackupsService(Service):
 
 class VmCdromService(Service):
     """
-    Manages a CDROM device of a virtual machine. Changing and ejecting the disk is done using always the `update` method, to change the value of the `file` attribute.
-    
-    \"\"\"
+    """    Manages a CDROM device of a virtual machine. Changing and ejecting the disk is done using always the `update` method, to change the value of the `file` attribute.
 
     def __init__(self, connection, path):
         super(VmCdromService, self).__init__(connection, path)
@@ -35784,7 +35012,7 @@ class VmCdromService(Service):
         **kwargs
     ):
         """
-        Returns the information about this CDROM device. The information consists of `cdrom` attribute containing reference to the CDROM device, the virtual machine, and optionally the inserted disk. If there is a disk inserted then the `file` attribute will contain a reference to the ISO image:
+        """        Returns the information about this CDROM device. The information consists of `cdrom` attribute containing reference to the CDROM device, the virtual machine, and optionally the inserted disk. If there is a disk inserted then the `file` attribute will contain a reference to the ISO image:
         
         ``` {.xml}
         <cdrom href="..." id="00000000-0000-0000-0000-000000000000">
@@ -35821,7 +35049,7 @@ class VmCdromService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('current', current, bool),
@@ -35849,7 +35077,7 @@ class VmCdromService(Service):
         **kwargs
     ):
         """
-        Updates the information about this CDROM device. It allows to change or eject the disk by changing the value of the `file` attribute. For example, to insert or change the disk send a request like this:
+        """        Updates the information about this CDROM device. It allows to change or eject the disk by changing the value of the `file` attribute. For example, to insert or change the disk send a request like this:
         
         PUT /ovirt-engine/api/vms/123/cdroms/00000000-0000-0000-0000-000000000000\</programlisting\>
         
@@ -35901,7 +35129,7 @@ class VmCdromService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('cdrom', cdrom, types.Cdrom),
@@ -35919,7 +35147,7 @@ class VmCdromService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -35930,9 +35158,7 @@ class VmCdromService(Service):
 
 class VmCdromsService(Service):
     """
-    Manages the CDROM devices of a virtual machine. Currently virtual machines have exactly one CDROM device. No new devices can be added, and the existing one can't be removed, thus there are no `add` or `remove` methods. Changing and ejecting CDROM disks is done with the [update](#services/vm_cdrom/methods/update) method of the [service](#services/vm_cdrom) that manages the CDROM device.
-    
-    \"\"\"
+    """    Manages the CDROM devices of a virtual machine. Currently virtual machines have exactly one CDROM device. No new devices can be added, and the existing one can't be removed, thus there are no `add` or `remove` methods. Changing and ejecting CDROM disks is done with the [update](#services/vm_cdrom/methods/update) method of the [service](#services/vm_cdrom) that manages the CDROM device.
 
     def __init__(self, connection, path):
         super(VmCdromsService, self).__init__(connection, path)
@@ -35947,9 +35173,7 @@ class VmCdromsService(Service):
         **kwargs
     ):
         """
-        Add a cdrom to a virtual machine identified by the given id.
-        
-        \"\"\"
+        """        Add a cdrom to a virtual machine identified by the given id.
         # Check the types of the parameters:
         Service._check_types([
             ('cdrom', cdrom, types.Cdrom),
@@ -35971,7 +35195,7 @@ class VmCdromsService(Service):
         **kwargs
     ):
         """
-        Returns the list of CDROM devices of the virtual machine. The order of the returned list of CD-ROM devices isn't guaranteed.
+        """        Returns the list of CDROM devices of the virtual machine. The order of the returned list of CD-ROM devices isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -35993,7 +35217,7 @@ class VmCdromsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -36013,9 +35237,7 @@ class VmCdromsService(Service):
 
     def cdrom_service(self, id):
         """
-        Returns a reference to the service that manages a specific CDROM device.
-        
-        \"\"\"
+        """        Returns a reference to the service that manages a specific CDROM device.
         Service._check_types([
             ('id', id, str),
         ])
@@ -36023,7 +35245,7 @@ class VmCdromsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -36037,9 +35259,7 @@ class VmCdromsService(Service):
 
 class VmCheckpointService(Service):
     """
-    A service managing a checkpoint of a virtual machines.
-    
-    \"\"\"
+    """    A service managing a checkpoint of a virtual machines.
 
     def __init__(self, connection, path):
         super(VmCheckpointService, self).__init__(connection, path)
@@ -36054,7 +35274,7 @@ class VmCheckpointService(Service):
         **kwargs
     ):
         """
-        Returns information about the virtual machine checkpoint.
+        """        Returns information about the virtual machine checkpoint.
         
         This method supports the following parameters:
         
@@ -36072,7 +35292,7 @@ class VmCheckpointService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -36095,7 +35315,7 @@ class VmCheckpointService(Service):
         **kwargs
     ):
         """
-        Remove the virtual machine checkpoint entity. Remove the checkpoint from libvirt and the database.
+        """        Remove the virtual machine checkpoint entity. Remove the checkpoint from libvirt and the database.
         
         This method supports the following parameters:
         
@@ -36113,7 +35333,7 @@ class VmCheckpointService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -36134,14 +35354,12 @@ class VmCheckpointService(Service):
 
     def disks_service(self):
         """
-        A reference to the service that lists the disks in checkpoint.
-        
-        \"\"\"
+        """        A reference to the service that lists the disks in checkpoint.
         return VmCheckpointDisksService(self._connection, '%s/disks' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'disks':
@@ -36156,7 +35374,7 @@ class VmCheckpointService(Service):
 
 class VmCheckpointDiskService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(VmCheckpointDiskService, self).__init__(connection, path)
@@ -36170,7 +35388,7 @@ class VmCheckpointDiskService(Service):
         **kwargs
     ):
         """
-        Retrieves the description of the disk.
+        """        Retrieves the description of the disk.
         
         This method supports the following parameters:
         
@@ -36188,7 +35406,7 @@ class VmCheckpointDiskService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -36204,7 +35422,7 @@ class VmCheckpointDiskService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -36215,7 +35433,7 @@ class VmCheckpointDiskService(Service):
 
 class VmCheckpointDisksService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(VmCheckpointDisksService, self).__init__(connection, path)
@@ -36231,7 +35449,7 @@ class VmCheckpointDisksService(Service):
         **kwargs
     ):
         """
-        Returns the list of disks in checkpoint.
+        """        Returns the list of disks in checkpoint.
         
         This method supports the following parameters:
         
@@ -36253,7 +35471,7 @@ class VmCheckpointDisksService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -36273,9 +35491,7 @@ class VmCheckpointDisksService(Service):
 
     def disk_service(self, id):
         """
-        A reference to the service that manages a specific disk.
-        
-        \"\"\"
+        """        A reference to the service that manages a specific disk.
         Service._check_types([
             ('id', id, str),
         ])
@@ -36283,7 +35499,7 @@ class VmCheckpointDisksService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -36297,9 +35513,7 @@ class VmCheckpointDisksService(Service):
 
 class VmCheckpointsService(Service):
     """
-    Lists the checkpoints of a virtual machine.
-    
-    \"\"\"
+    """    Lists the checkpoints of a virtual machine.
 
     def __init__(self, connection, path):
         super(VmCheckpointsService, self).__init__(connection, path)
@@ -36315,7 +35529,7 @@ class VmCheckpointsService(Service):
         **kwargs
     ):
         """
-        The list of virtual machine checkpoints.
+        """        The list of virtual machine checkpoints.
         
         This method supports the following parameters:
         
@@ -36337,7 +35551,7 @@ class VmCheckpointsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -36357,9 +35571,7 @@ class VmCheckpointsService(Service):
 
     def checkpoint_service(self, id):
         """
-        Returns a reference to the service that manages a specific VM checkpoint.
-        
-        \"\"\"
+        """        Returns a reference to the service that manages a specific VM checkpoint.
         Service._check_types([
             ('id', id, str),
         ])
@@ -36367,7 +35579,7 @@ class VmCheckpointsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -36381,7 +35593,7 @@ class VmCheckpointsService(Service):
 
 class VmDiskService(MeasurableService):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(VmDiskService, self).__init__(connection, path)
@@ -36397,7 +35609,7 @@ class VmDiskService(MeasurableService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -36413,7 +35625,7 @@ class VmDiskService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -36440,7 +35652,7 @@ class VmDiskService(MeasurableService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -36456,7 +35668,7 @@ class VmDiskService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -36484,7 +35696,7 @@ class VmDiskService(MeasurableService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -36504,7 +35716,7 @@ class VmDiskService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -36533,7 +35745,7 @@ class VmDiskService(MeasurableService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -36549,7 +35761,7 @@ class VmDiskService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -36573,7 +35785,7 @@ class VmDiskService(MeasurableService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -36593,7 +35805,7 @@ class VmDiskService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -36622,7 +35834,7 @@ class VmDiskService(MeasurableService):
         **kwargs
     ):
         """
-        Reduces the size of the disk image. Invokes *reduce* on the logical volume (i.e. this is only applicable for block storage domains). This is applicable for floating disks and disks attached to non-running virtual machines. There is no need to specify the size as the optimal size is calculated automatically.
+        """        Reduces the size of the disk image. Invokes *reduce* on the logical volume (i.e. this is only applicable for block storage domains). This is applicable for floating disks and disks attached to non-running virtual machines. There is no need to specify the size as the optimal size is calculated automatically.
         
         This method supports the following parameters:
         
@@ -36640,7 +35852,7 @@ class VmDiskService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -36667,7 +35879,7 @@ class VmDiskService(MeasurableService):
         **kwargs
     ):
         """
-        Detach the disk from the virtual machine. NOTE: In version 3 of the API this used to also remove the disk completely from the system, but starting with version 4 it doesn't. If you need to remove it completely use the [remove method of the top level disk service](#services/disk/methods/remove).
+        """        Detach the disk from the virtual machine. NOTE: In version 3 of the API this used to also remove the disk completely from the system, but starting with version 4 it doesn't. If you need to remove it completely use the [remove method of the top level disk service](#services/disk/methods/remove).
         
         This method supports the following parameters:
         
@@ -36685,7 +35897,7 @@ class VmDiskService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -36714,7 +35926,7 @@ class VmDiskService(MeasurableService):
         **kwargs
     ):
         """
-        \"\"\"
+        """        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('disk', disk, types.Disk),
@@ -36736,17 +35948,17 @@ class VmDiskService(MeasurableService):
 
     def permissions_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return AssignedPermissionsService(self._connection, '%s/permissions' % self._path)
 
     def statistics_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return StatisticsService(self._connection, '%s/statistics' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'permissions':
@@ -36765,7 +35977,7 @@ class VmDiskService(MeasurableService):
 
 class VmDisksService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(VmDisksService, self).__init__(connection, path)
@@ -36780,7 +35992,7 @@ class VmDisksService(Service):
         **kwargs
     ):
         """
-        \"\"\"
+        """        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('disk', disk, types.Disk),
@@ -36802,7 +36014,7 @@ class VmDisksService(Service):
         **kwargs
     ):
         """
-        Returns the list of disks of the virtual machine. The order of the returned list of disks isn't guaranteed.
+        """        Returns the list of disks of the virtual machine. The order of the returned list of disks isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -36824,7 +36036,7 @@ class VmDisksService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -36844,7 +36056,7 @@ class VmDisksService(Service):
 
     def disk_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -36852,7 +36064,7 @@ class VmDisksService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -36866,7 +36078,7 @@ class VmDisksService(Service):
 
 class VmGraphicsConsoleService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(VmGraphicsConsoleService, self).__init__(connection, path)
@@ -36881,7 +36093,7 @@ class VmGraphicsConsoleService(Service):
         **kwargs
     ):
         """
-        Retrieves the graphics console configuration of the virtual machine. IMPORTANT: By default, when the `current` parameter is not specified, the data returned corresponds to the next execution of the virtual machine. In the current implementation of the system this means that the `address` and `port` attributes will not be populated because the system does not know what address and port will be used for the next execution. Since in most cases those attributes are needed, it is strongly advised to aways explicitly include the `current` parameter with the value `true`.
+        """        Retrieves the graphics console configuration of the virtual machine. IMPORTANT: By default, when the `current` parameter is not specified, the data returned corresponds to the next execution of the virtual machine. In the current implementation of the system this means that the `address` and `port` attributes will not be populated because the system does not know what address and port will be used for the next execution. Since in most cases those attributes are needed, it is strongly advised to aways explicitly include the `current` parameter with the value `true`.
         
         This method supports the following parameters:
         
@@ -36907,7 +36119,7 @@ class VmGraphicsConsoleService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('current', current, bool),
@@ -36934,7 +36146,7 @@ class VmGraphicsConsoleService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -36950,7 +36162,7 @@ class VmGraphicsConsoleService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -36976,7 +36188,7 @@ class VmGraphicsConsoleService(Service):
         **kwargs
     ):
         """
-        Generates the file which is compatible with `remote-viewer` client. Use the following request to generate remote viewer connection file of the graphics console. Note that this action generates the file only if virtual machine is running.
+        """        Generates the file which is compatible with `remote-viewer` client. Use the following request to generate remote viewer connection file of the graphics console. Note that this action generates the file only if virtual machine is running.
         
         POST /ovirt-engine/api/vms/123/graphicsconsoles/456/remoteviewerconnectionfile\</programlisting\>
         
@@ -37038,8 +36250,6 @@ class VmGraphicsConsoleService(Service):
         #!/bin/sh -ex
         remote-viewer --ovirt-ca-file=/etc/pki/ovirt-engine/ca.pem /tmp/remote_viewer_connection_file.vv
         ```
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
         ])
@@ -37060,7 +36270,7 @@ class VmGraphicsConsoleService(Service):
         **kwargs
     ):
         """
-        Remove the graphics console from the virtual machine.
+        """        Remove the graphics console from the virtual machine.
         
         This method supports the following parameters:
         
@@ -37078,7 +36288,7 @@ class VmGraphicsConsoleService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -37106,7 +36316,7 @@ class VmGraphicsConsoleService(Service):
         **kwargs
     ):
         """
-        Generates a time-sensitive authentication token for accessing this virtual machine's console.
+        """        Generates a time-sensitive authentication token for accessing this virtual machine's console.
         
         POST /ovirt-engine/api/vms/123/graphicsconsoles/456/ticket\</programlisting\>
         
@@ -37137,7 +36347,7 @@ class VmGraphicsConsoleService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('ticket', ticket, types.Ticket),
@@ -37153,7 +36363,7 @@ class VmGraphicsConsoleService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -37164,7 +36374,7 @@ class VmGraphicsConsoleService(Service):
 
 class VmGraphicsConsolesService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(VmGraphicsConsolesService, self).__init__(connection, path)
@@ -37179,9 +36389,7 @@ class VmGraphicsConsolesService(Service):
         **kwargs
     ):
         """
-        Add new graphics console to the virtual machine.
-        
-        \"\"\"
+        """        Add new graphics console to the virtual machine.
         # Check the types of the parameters:
         Service._check_types([
             ('console', console, types.GraphicsConsole),
@@ -37204,7 +36412,7 @@ class VmGraphicsConsolesService(Service):
         **kwargs
     ):
         """
-        Lists all the configured graphics consoles of the virtual machine. IMPORTANT: By default, when the `current` parameter is not specified, the data returned corresponds to the next execution of the virtual machine. In the current implementation of the system this means that the `address` and `port` attributes will not be populated because the system does not know what address and port will be used for the next execution. Since in most cases those attributes are needed, it is strongly advised to aways explicitly include the `current` parameter with the value `true`. The order of the returned list of graphics consoles is not guaranteed.
+        """        Lists all the configured graphics consoles of the virtual machine. IMPORTANT: By default, when the `current` parameter is not specified, the data returned corresponds to the next execution of the virtual machine. In the current implementation of the system this means that the `address` and `port` attributes will not be populated because the system does not know what address and port will be used for the next execution. Since in most cases those attributes are needed, it is strongly advised to aways explicitly include the `current` parameter with the value `true`. The order of the returned list of graphics consoles is not guaranteed.
         
         This method supports the following parameters:
         
@@ -37234,7 +36442,7 @@ class VmGraphicsConsolesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('current', current, bool),
@@ -37258,9 +36466,7 @@ class VmGraphicsConsolesService(Service):
 
     def console_service(self, id):
         """
-        Returns a reference to the service that manages a specific virtual machine graphics console.
-        
-        \"\"\"
+        """        Returns a reference to the service that manages a specific virtual machine graphics console.
         Service._check_types([
             ('id', id, str),
         ])
@@ -37268,7 +36474,7 @@ class VmGraphicsConsolesService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -37282,9 +36488,7 @@ class VmGraphicsConsolesService(Service):
 
 class VmHostDeviceService(Service):
     """
-    A service to manage individual host device attached to a virtual machine.
-    
-    \"\"\"
+    """    A service to manage individual host device attached to a virtual machine.
 
     def __init__(self, connection, path):
         super(VmHostDeviceService, self).__init__(connection, path)
@@ -37298,7 +36502,7 @@ class VmHostDeviceService(Service):
         **kwargs
     ):
         """
-        Retrieve information about particular host device attached to given virtual machine. Example:
+        """        Retrieve information about particular host device attached to given virtual machine. Example:
         
         GET /ovirt-engine/api/vms/123/hostdevices/456\</programlisting\>
         
@@ -37338,7 +36542,7 @@ class VmHostDeviceService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -37361,7 +36565,7 @@ class VmHostDeviceService(Service):
         **kwargs
     ):
         """
-        Remove the attachment of this host device from given virtual machine. NOTE: In case this device serves as an IOMMU placeholder, it cannot be removed (remove will result only in setting its `placeholder` flag to `true`). Note that all IOMMU placeholder devices will be removed automatically as soon as there will be no more non-placeholder devices (all devices from given IOMMU group are detached).
+        """        Remove the attachment of this host device from given virtual machine. NOTE: In case this device serves as an IOMMU placeholder, it cannot be removed (remove will result only in setting its `placeholder` flag to `true`). Note that all IOMMU placeholder devices will be removed automatically as soon as there will be no more non-placeholder devices (all devices from given IOMMU group are detached).
         
         DELETE /ovirt-engine/api/vms/123/hostdevices/456\</programlisting\>
         
@@ -37381,7 +36585,7 @@ class VmHostDeviceService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -37402,7 +36606,7 @@ class VmHostDeviceService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -37413,9 +36617,7 @@ class VmHostDeviceService(Service):
 
 class VmHostDevicesService(Service):
     """
-    A service to manage host devices attached to a virtual machine.
-    
-    \"\"\"
+    """    A service to manage host devices attached to a virtual machine.
 
     def __init__(self, connection, path):
         super(VmHostDevicesService, self).__init__(connection, path)
@@ -37430,7 +36632,7 @@ class VmHostDevicesService(Service):
         **kwargs
     ):
         """
-        Attach target device to given virtual machine. Example:
+        """        Attach target device to given virtual machine. Example:
         
         POST /ovirt-engine/api/vms/123/hostdevices\</programlisting\>
         
@@ -37460,7 +36662,7 @@ class VmHostDevicesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('device', device, types.HostDevice),
@@ -37482,7 +36684,7 @@ class VmHostDevicesService(Service):
         **kwargs
     ):
         """
-        List the host devices assigned to given virtual machine. The order of the returned list of devices isn't guaranteed.
+        """        List the host devices assigned to given virtual machine. The order of the returned list of devices isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -37504,7 +36706,7 @@ class VmHostDevicesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -37524,9 +36726,7 @@ class VmHostDevicesService(Service):
 
     def device_service(self, id):
         """
-        Returns a reference to the service that manages a specific host device attached to given virtual machine.
-        
-        \"\"\"
+        """        Returns a reference to the service that manages a specific host device attached to given virtual machine.
         Service._check_types([
             ('id', id, str),
         ])
@@ -37534,7 +36734,7 @@ class VmHostDevicesService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -37548,7 +36748,7 @@ class VmHostDevicesService(Service):
 
 class VmNicService(MeasurableService):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(VmNicService, self).__init__(connection, path)
@@ -37565,7 +36765,7 @@ class VmNicService(MeasurableService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -37581,7 +36781,7 @@ class VmNicService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -37608,7 +36808,7 @@ class VmNicService(MeasurableService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -37624,7 +36824,7 @@ class VmNicService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -37651,7 +36851,7 @@ class VmNicService(MeasurableService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -37667,7 +36867,7 @@ class VmNicService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -37690,7 +36890,7 @@ class VmNicService(MeasurableService):
         **kwargs
     ):
         """
-        Removes the NIC. For example, to remove the NIC with id `456` from the virtual machine with id `123` send a request like this:
+        """        Removes the NIC. For example, to remove the NIC with id `456` from the virtual machine with id `123` send a request like this:
         
         DELETE /ovirt-engine/api/vms/123/nics/456\</programlisting\>
         
@@ -37714,7 +36914,7 @@ class VmNicService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -37743,7 +36943,7 @@ class VmNicService(MeasurableService):
         **kwargs
     ):
         """
-        Updates the NIC. For example, to update the NIC having with `456` belonging to virtual the machine with id `123` send a request like this:
+        """        Updates the NIC. For example, to update the NIC having with `456` belonging to virtual the machine with id `123` send a request like this:
         
         PUT /ovirt-engine/api/vms/123/nics/456\</programlisting\>
         
@@ -37760,8 +36960,6 @@ class VmNicService(MeasurableService):
         > **Important**
         >
         > The hotplugging feature only supports virtual machine operating systems with hotplugging operations. Example operating systems include: - Red Hat Enterprise Linux 6 - Red Hat Enterprise Linux 5 - Windows Server 2008 and - Windows Server 2003
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('nic', nic, types.Nic),
@@ -37783,24 +36981,22 @@ class VmNicService(MeasurableService):
 
     def network_filter_parameters_service(self):
         """
-        Reference to the service that manages the network filter parameters of the NIC. A single top-level network filter may assigned to the NIC by the NIC's [vNIC Profile](#types/vnic_profile).
-        
-        \"\"\"
+        """        Reference to the service that manages the network filter parameters of the NIC. A single top-level network filter may assigned to the NIC by the NIC's [vNIC Profile](#types/vnic_profile).
         return NicNetworkFilterParametersService(self._connection, '%s/networkfilterparameters' % self._path)
 
     def reported_devices_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return VmReportedDevicesService(self._connection, '%s/reporteddevices' % self._path)
 
     def statistics_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return StatisticsService(self._connection, '%s/statistics' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'networkfilterparameters':
@@ -37823,7 +37019,7 @@ class VmNicService(MeasurableService):
 
 class VmNicsService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(VmNicsService, self).__init__(connection, path)
@@ -37838,7 +37034,7 @@ class VmNicsService(Service):
         **kwargs
     ):
         """
-        Adds a NIC to the virtual machine. The following example adds to the virtual machine `123` a network interface named `mynic` using `virtio` and the NIC profile `456`.
+        """        Adds a NIC to the virtual machine. The following example adds to the virtual machine `123` a network interface named `mynic` using `virtio` and the NIC profile `456`.
         
         POST /ovirt-engine/api/vms/123/nics\</programlisting\>
         
@@ -37873,8 +37069,6 @@ class VmNicsService(Service):
         > **Important**
         >
         > The hotplugging feature only supports virtual machine operating systems with hotplugging operations. Example operating systems include: - Red Hat Enterprise Linux 6 - Red Hat Enterprise Linux 5 - Windows Server 2008 and - Windows Server 2003
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('nic', nic, types.Nic),
@@ -37896,7 +37090,7 @@ class VmNicsService(Service):
         **kwargs
     ):
         """
-        Returns the list of NICs of the virtual machine. The order of the returned list of NICs isn't guaranteed.
+        """        Returns the list of NICs of the virtual machine. The order of the returned list of NICs isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -37918,7 +37112,7 @@ class VmNicsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -37938,7 +37132,7 @@ class VmNicsService(Service):
 
     def nic_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -37946,7 +37140,7 @@ class VmNicsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -37960,7 +37154,7 @@ class VmNicsService(Service):
 
 class VmNumaNodeService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(VmNumaNodeService, self).__init__(connection, path)
@@ -37974,7 +37168,7 @@ class VmNumaNodeService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -37990,7 +37184,7 @@ class VmNumaNodeService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -38013,7 +37207,7 @@ class VmNumaNodeService(Service):
         **kwargs
     ):
         """
-        Removes a virtual NUMA node. An example of removing a virtual NUMA node:
+        """        Removes a virtual NUMA node. An example of removing a virtual NUMA node:
         
         DELETE /ovirt-engine/api/vms/123/numanodes/456\</programlisting\>
         
@@ -38037,7 +37231,7 @@ class VmNumaNodeService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -38066,7 +37260,7 @@ class VmNumaNodeService(Service):
         **kwargs
     ):
         """
-        Updates a virtual NUMA node. An example of pinning a virtual NUMA node to a physical NUMA node on the host:
+        """        Updates a virtual NUMA node. An example of pinning a virtual NUMA node to a physical NUMA node on the host:
         
         PUT /ovirt-engine/api/vms/123/numanodes/456\</programlisting\>
         
@@ -38081,8 +37275,6 @@ class VmNumaNodeService(Service):
           </numa_node_pins>
         </vm_numa_node>
         ```
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('node', node, types.VirtualNumaNode),
@@ -38104,7 +37296,7 @@ class VmNumaNodeService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -38115,7 +37307,7 @@ class VmNumaNodeService(Service):
 
 class VmNumaNodesService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(VmNumaNodesService, self).__init__(connection, path)
@@ -38130,7 +37322,7 @@ class VmNumaNodesService(Service):
         **kwargs
     ):
         """
-        Creates a new virtual NUMA node for the virtual machine. An example of creating a NUMA node:
+        """        Creates a new virtual NUMA node for the virtual machine. An example of creating a NUMA node:
         
         POST /ovirt-engine/api/vms/c7ecd2dc/numanodes Accept: application/xml Content-type: application/xml\</programlisting\>
         
@@ -38150,8 +37342,6 @@ class VmNumaNodesService(Service):
           <numa_tune_mode>strict</numa_tune_mode>
         </vm_numa_node>
         ```
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('node', node, types.VirtualNumaNode),
@@ -38173,7 +37363,7 @@ class VmNumaNodesService(Service):
         **kwargs
     ):
         """
-        Lists virtual NUMA nodes of a virtual machine. The order of the returned list of NUMA nodes isn't guaranteed.
+        """        Lists virtual NUMA nodes of a virtual machine. The order of the returned list of NUMA nodes isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -38195,7 +37385,7 @@ class VmNumaNodesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -38215,7 +37405,7 @@ class VmNumaNodesService(Service):
 
     def node_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -38223,7 +37413,7 @@ class VmNumaNodesService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -38237,9 +37427,7 @@ class VmNumaNodesService(Service):
 
 class VmPoolService(Service):
     """
-    A service to manage a virtual machines pool.
-    
-    \"\"\"
+    """    A service to manage a virtual machines pool.
 
     def __init__(self, connection, path):
         super(VmPoolService, self).__init__(connection, path)
@@ -38254,7 +37442,7 @@ class VmPoolService(Service):
         **kwargs
     ):
         """
-        This operation allocates a virtual machine in the virtual machine pool.
+        """        This operation allocates a virtual machine in the virtual machine pool.
         
         POST /ovirt-engine/api/vmpools/123/allocatevm\</programlisting\>
         
@@ -38280,7 +37468,7 @@ class VmPoolService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -38308,7 +37496,7 @@ class VmPoolService(Service):
         **kwargs
     ):
         """
-        Get the virtual machine pool.
+        """        Get the virtual machine pool.
         
         GET /ovirt-engine/api/vmpools/123\</programlisting\>
         
@@ -38353,7 +37541,7 @@ class VmPoolService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('filter', filter, bool),
@@ -38380,7 +37568,7 @@ class VmPoolService(Service):
         **kwargs
     ):
         """
-        Removes a virtual machine pool.
+        """        Removes a virtual machine pool.
         
         DELETE /ovirt-engine/api/vmpools/123\</programlisting\>
         
@@ -38400,7 +37588,7 @@ class VmPoolService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -38429,7 +37617,7 @@ class VmPoolService(Service):
         **kwargs
     ):
         """
-        Update the virtual machine pool.
+        """        Update the virtual machine pool.
         
         PUT /ovirt-engine/api/vmpools/123\</programlisting\>
         
@@ -38461,7 +37649,7 @@ class VmPoolService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('pool', pool, types.VmPool),
@@ -38483,14 +37671,12 @@ class VmPoolService(Service):
 
     def permissions_service(self):
         """
-        Reference to a service managing the virtual machine pool assigned permissions.
-        
-        \"\"\"
+        """        Reference to a service managing the virtual machine pool assigned permissions.
         return AssignedPermissionsService(self._connection, '%s/permissions' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'permissions':
@@ -38505,9 +37691,7 @@ class VmPoolService(Service):
 
 class VmPoolsService(Service):
     """
-    Provides read-write access to virtual machines pools.
-    
-    \"\"\"
+    """    Provides read-write access to virtual machines pools.
 
     def __init__(self, connection, path):
         super(VmPoolsService, self).__init__(connection, path)
@@ -38522,7 +37706,7 @@ class VmPoolsService(Service):
         **kwargs
     ):
         """
-        Creates a new virtual machine pool. A new pool requires the `name`, `cluster` and `template` attributes. Identify the cluster and template with the `id` or `name` nested attributes:
+        """        Creates a new virtual machine pool. A new pool requires the `name`, `cluster` and `template` attributes. Identify the cluster and template with the `id` or `name` nested attributes:
         
         POST /ovirt-engine/api/vmpools\</programlisting\>
         
@@ -38552,7 +37736,7 @@ class VmPoolsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('pool', pool, types.VmPool),
@@ -38577,7 +37761,7 @@ class VmPoolsService(Service):
         **kwargs
     ):
         """
-        Get a list of available virtual machines pools.
+        """        Get a list of available virtual machines pools.
         
         GET /ovirt-engine/api/vmpools\</programlisting\>
         
@@ -38626,7 +37810,7 @@ class VmPoolsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('case_sensitive', case_sensitive, bool),
@@ -38657,9 +37841,7 @@ class VmPoolsService(Service):
 
     def pool_service(self, id):
         """
-        Reference to the service that manages a specific virtual machine pool.
-        
-        \"\"\"
+        """        Reference to the service that manages a specific virtual machine pool.
         Service._check_types([
             ('id', id, str),
         ])
@@ -38667,7 +37849,7 @@ class VmPoolsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -38681,7 +37863,7 @@ class VmPoolsService(Service):
 
 class VmReportedDeviceService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(VmReportedDeviceService, self).__init__(connection, path)
@@ -38695,7 +37877,7 @@ class VmReportedDeviceService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -38711,7 +37893,7 @@ class VmReportedDeviceService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -38727,7 +37909,7 @@ class VmReportedDeviceService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -38738,7 +37920,7 @@ class VmReportedDeviceService(Service):
 
 class VmReportedDevicesService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(VmReportedDevicesService, self).__init__(connection, path)
@@ -38754,7 +37936,7 @@ class VmReportedDevicesService(Service):
         **kwargs
     ):
         """
-        Returns the list of reported devices of the virtual machine. The order of the returned list of devices isn't guaranteed.
+        """        Returns the list of reported devices of the virtual machine. The order of the returned list of devices isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -38776,7 +37958,7 @@ class VmReportedDevicesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -38796,7 +37978,7 @@ class VmReportedDevicesService(Service):
 
     def reported_device_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -38804,7 +37986,7 @@ class VmReportedDevicesService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -38818,7 +38000,7 @@ class VmReportedDevicesService(Service):
 
 class VmSessionService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(VmSessionService, self).__init__(connection, path)
@@ -38832,7 +38014,7 @@ class VmSessionService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -38848,7 +38030,7 @@ class VmSessionService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -38864,7 +38046,7 @@ class VmSessionService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -38875,9 +38057,7 @@ class VmSessionService(Service):
 
 class VmSessionsService(Service):
     """
-    Provides information about virtual machine user sessions.
-    
-    \"\"\"
+    """    Provides information about virtual machine user sessions.
 
     def __init__(self, connection, path):
         super(VmSessionsService, self).__init__(connection, path)
@@ -38893,7 +38073,7 @@ class VmSessionsService(Service):
         **kwargs
     ):
         """
-        Lists all user sessions for this virtual machine. For example, to retrieve the session information for virtual machine `123` send a request like this:
+        """        Lists all user sessions for this virtual machine. For example, to retrieve the session information for virtual machine `123` send a request like this:
         
         GET /ovirt-engine/api/vms/123/sessions\</programlisting\>
         
@@ -38935,7 +38115,7 @@ class VmSessionsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -38955,9 +38135,7 @@ class VmSessionsService(Service):
 
     def session_service(self, id):
         """
-        Reference to the service that manages a specific session.
-        
-        \"\"\"
+        """        Reference to the service that manages a specific session.
         Service._check_types([
             ('id', id, str),
         ])
@@ -38965,7 +38143,7 @@ class VmSessionsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -38979,9 +38157,7 @@ class VmSessionsService(Service):
 
 class VmWatchdogService(Service):
     """
-    A service managing a watchdog on virtual machines.
-    
-    \"\"\"
+    """    A service managing a watchdog on virtual machines.
 
     def __init__(self, connection, path):
         super(VmWatchdogService, self).__init__(connection, path)
@@ -38995,7 +38171,7 @@ class VmWatchdogService(Service):
         **kwargs
     ):
         """
-        Returns the information about the watchdog.
+        """        Returns the information about the watchdog.
         
         This method supports the following parameters:
         
@@ -39013,7 +38189,7 @@ class VmWatchdogService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -39036,7 +38212,7 @@ class VmWatchdogService(Service):
         **kwargs
     ):
         """
-        Removes the watchdog from the virtual machine. For example, to remove a watchdog from a virtual machine, send a request like this:
+        """        Removes the watchdog from the virtual machine. For example, to remove a watchdog from a virtual machine, send a request like this:
         
         DELETE /ovirt-engine/api/vms/123/watchdogs/00000000-0000-0000-0000-000000000000\</programlisting\>
         
@@ -39056,7 +38232,7 @@ class VmWatchdogService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -39085,7 +38261,7 @@ class VmWatchdogService(Service):
         **kwargs
     ):
         """
-        Updates the information about the watchdog. You can update the information using `action` and `model` elements. For example, to update a watchdog, send a request like this:
+        """        Updates the information about the watchdog. You can update the information using `action` and `model` elements. For example, to update a watchdog, send a request like this:
         
         PUT /ovirt-engine/api/vms/123/watchdogs \<watchdog\> \<action\>reset\</action\> \</watchdog\>\</programlisting\>
         
@@ -39115,7 +38291,7 @@ class VmWatchdogService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('watchdog', watchdog, types.Watchdog),
@@ -39137,7 +38313,7 @@ class VmWatchdogService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -39148,9 +38324,7 @@ class VmWatchdogService(Service):
 
 class VmWatchdogsService(Service):
     """
-    Lists the watchdogs of a virtual machine.
-    
-    \"\"\"
+    """    Lists the watchdogs of a virtual machine.
 
     def __init__(self, connection, path):
         super(VmWatchdogsService, self).__init__(connection, path)
@@ -39165,7 +38339,7 @@ class VmWatchdogsService(Service):
         **kwargs
     ):
         """
-        Adds new watchdog to the virtual machine. For example, to add a watchdog to a virtual machine, send a request like this:
+        """        Adds new watchdog to the virtual machine. For example, to add a watchdog to a virtual machine, send a request like this:
         
         POST /ovirt-engine/api/vms/123/watchdogs \<watchdog\> \<action\>poweroff\</action\> \<model\>i6300esb\</model\> \</watchdog\>\</programlisting\>
         
@@ -39195,7 +38369,7 @@ class VmWatchdogsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('watchdog', watchdog, types.Watchdog),
@@ -39217,7 +38391,7 @@ class VmWatchdogsService(Service):
         **kwargs
     ):
         """
-        The list of watchdogs of the virtual machine. The order of the returned list of watchdogs isn't guaranteed.
+        """        The list of watchdogs of the virtual machine. The order of the returned list of watchdogs isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -39239,7 +38413,7 @@ class VmWatchdogsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -39259,9 +38433,7 @@ class VmWatchdogsService(Service):
 
     def watchdog_service(self, id):
         """
-        Returns a reference to the service that manages a specific watchdog.
-        
-        \"\"\"
+        """        Returns a reference to the service that manages a specific watchdog.
         Service._check_types([
             ('id', id, str),
         ])
@@ -39269,7 +38441,7 @@ class VmWatchdogsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -39283,7 +38455,7 @@ class VmWatchdogsService(Service):
 
 class VmsService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(VmsService, self).__init__(connection, path)
@@ -39302,7 +38474,7 @@ class VmsService(Service):
         **kwargs
     ):
         """
-        Creates a new virtual machine. The virtual machine can be created in different ways: - From a template. In this case the identifier or name of the template must be provided. For example, using a plain shell script and XML:
+        """        Creates a new virtual machine. The virtual machine can be created in different ways: - From a template. In this case the identifier or name of the template must be provided. For example, using a plain shell script and XML:
         
         ``` {.bash}
         #!/bin/sh -ex
@@ -39433,8 +38605,6 @@ class VmsService(Service):
         ```
         
         In all cases the name or identifier of the cluster where the virtual machine will be created is mandatory.
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('vm', vm, types.Vm),
@@ -39474,9 +38644,7 @@ class VmsService(Service):
         **kwargs
     ):
         """
-        add a virtual machine to the system from a configuration - requires the configuration type and the configuration data
-        
-        \"\"\"
+        """        add a virtual machine to the system from a configuration - requires the configuration type and the configuration data
         # Check the types of the parameters:
         Service._check_types([
             ('vm', vm, types.Vm),
@@ -39516,9 +38684,7 @@ class VmsService(Service):
         **kwargs
     ):
         """
-        add a virtual machine to the system from scratch
-        
-        \"\"\"
+        """        add a virtual machine to the system from scratch
         # Check the types of the parameters:
         Service._check_types([
             ('vm', vm, types.Vm),
@@ -39558,9 +38724,7 @@ class VmsService(Service):
         **kwargs
     ):
         """
-        add a virtual machine to the system by cloning from a snapshot
-        
-        \"\"\"
+        """        add a virtual machine to the system by cloning from a snapshot
         # Check the types of the parameters:
         Service._check_types([
             ('vm', vm, types.Vm),
@@ -39602,7 +38766,7 @@ class VmsService(Service):
         **kwargs
     ):
         """
-        Returns the list of virtual machines of the system. The order of the returned list of virtual machines is guaranteed only if the `sortby` clause is included in the `search` parameter.
+        """        Returns the list of virtual machines of the system. The order of the returned list of virtual machines is guaranteed only if the `sortby` clause is included in the `search` parameter.
         
         This method supports the following parameters:
         
@@ -39664,7 +38828,7 @@ class VmsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('all_content', all_content, bool),
@@ -39703,7 +38867,7 @@ class VmsService(Service):
 
     def vm_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -39711,7 +38875,7 @@ class VmsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -39725,9 +38889,7 @@ class VmsService(Service):
 
 class VnicProfileService(Service):
     """
-    This service manages a vNIC profile.
-    
-    \"\"\"
+    """    This service manages a vNIC profile.
 
     def __init__(self, connection, path):
         super(VnicProfileService, self).__init__(connection, path)
@@ -39742,7 +38904,7 @@ class VnicProfileService(Service):
         **kwargs
     ):
         """
-        Retrieves details about a vNIC profile.
+        """        Retrieves details about a vNIC profile.
         
         This method supports the following parameters:
         
@@ -39760,7 +38922,7 @@ class VnicProfileService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -39783,7 +38945,7 @@ class VnicProfileService(Service):
         **kwargs
     ):
         """
-        Removes the vNIC profile.
+        """        Removes the vNIC profile.
         
         This method supports the following parameters:
         
@@ -39801,7 +38963,7 @@ class VnicProfileService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -39830,7 +38992,7 @@ class VnicProfileService(Service):
         **kwargs
     ):
         """
-        Updates details of a vNIC profile.
+        """        Updates details of a vNIC profile.
         
         This method supports the following parameters:
         
@@ -39848,7 +39010,7 @@ class VnicProfileService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('profile', profile, types.VnicProfile),
@@ -39870,12 +39032,12 @@ class VnicProfileService(Service):
 
     def permissions_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return AssignedPermissionsService(self._connection, '%s/permissions' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'permissions':
@@ -39890,9 +39052,7 @@ class VnicProfileService(Service):
 
 class VnicProfilesService(Service):
     """
-    This service manages the collection of all vNIC profiles.
-    
-    \"\"\"
+    """    This service manages the collection of all vNIC profiles.
 
     def __init__(self, connection, path):
         super(VnicProfilesService, self).__init__(connection, path)
@@ -39907,7 +39067,7 @@ class VnicProfilesService(Service):
         **kwargs
     ):
         """
-        Add a vNIC profile. For example to add vNIC profile `123` to network `456` send a request to:
+        """        Add a vNIC profile. For example to add vNIC profile `123` to network `456` send a request to:
         
         POST /ovirt-engine/api/networks/456/vnicprofiles\</programlisting\>
         
@@ -39972,7 +39132,7 @@ class VnicProfilesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('profile', profile, types.VnicProfile),
@@ -39994,7 +39154,7 @@ class VnicProfilesService(Service):
         **kwargs
     ):
         """
-        List all vNIC profiles. The order of the returned list of vNIC profiles isn't guaranteed.
+        """        List all vNIC profiles. The order of the returned list of vNIC profiles isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -40016,7 +39176,7 @@ class VnicProfilesService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -40036,7 +39196,7 @@ class VnicProfilesService(Service):
 
     def profile_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -40044,7 +39204,7 @@ class VnicProfilesService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -40058,7 +39218,7 @@ class VnicProfilesService(Service):
 
 class WeightService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(WeightService, self).__init__(connection, path)
@@ -40073,7 +39233,7 @@ class WeightService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `filter`
         
@@ -40093,7 +39253,7 @@ class WeightService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('filter', filter, bool),
@@ -40120,7 +39280,7 @@ class WeightService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -40136,7 +39296,7 @@ class WeightService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -40157,7 +39317,7 @@ class WeightService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
@@ -40168,7 +39328,7 @@ class WeightService(Service):
 
 class WeightsService(Service):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(WeightsService, self).__init__(connection, path)
@@ -40183,9 +39343,7 @@ class WeightsService(Service):
         **kwargs
     ):
         """
-        Add a weight to a specified user defined scheduling policy.
-        
-        \"\"\"
+        """        Add a weight to a specified user defined scheduling policy.
         # Check the types of the parameters:
         Service._check_types([
             ('weight', weight, types.Weight),
@@ -40208,7 +39366,7 @@ class WeightsService(Service):
         **kwargs
     ):
         """
-        Returns the list of weights. The order of the returned list of weights isn't guaranteed.
+        """        Returns the list of weights. The order of the returned list of weights isn't guaranteed.
         
         This method supports the following parameters:
         
@@ -40234,7 +39392,7 @@ class WeightsService(Service):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('filter', filter, bool),
@@ -40258,7 +39416,7 @@ class WeightsService(Service):
 
     def weight_service(self, id):
         """
-        \"\"\"
+        """        \"\"\"
         Service._check_types([
             ('id', id, str),
         ])
@@ -40266,7 +39424,7 @@ class WeightsService(Service):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -40280,9 +39438,7 @@ class WeightsService(Service):
 
 class AttachedStorageDomainDiskService(MeasurableService):
     """
-    Manages a single disk available in a storage domain attached to a data center. IMPORTANT: Since version 4.2 of the engine this service is intended only to list disks available in the storage domain, and to register unregistered disks. All the other operations, like copying a disk, moving a disk, etc, have been deprecated and will be removed in the future. To perform those operations use the [service that manages all the disks of the system](#services/disks), or the [service that manages an specific disk](#services/disk).
-    
-    \"\"\"
+    """    Manages a single disk available in a storage domain attached to a data center. IMPORTANT: Since version 4.2 of the engine this service is intended only to list disks available in the storage domain, and to register unregistered disks. All the other operations, like copying a disk, moving a disk, etc, have been deprecated and will be removed in the future. To perform those operations use the [service that manages all the disks of the system](#services/disks), or the [service that manages an specific disk](#services/disk).
 
     def __init__(self, connection, path):
         super(AttachedStorageDomainDiskService, self).__init__(connection, path)
@@ -40299,7 +39455,7 @@ class AttachedStorageDomainDiskService(MeasurableService):
         **kwargs
     ):
         """
-        Copies a disk to the specified storage domain. IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards compatibility. It will be removed in the future. To copy a disk use the [copy](#services/disk/methods/copy) operation of the service that manages that disk.
+        """        Copies a disk to the specified storage domain. IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards compatibility. It will be removed in the future. To copy a disk use the [copy](#services/disk/methods/copy) operation of the service that manages that disk.
         
         This method supports the following parameters:
         
@@ -40321,7 +39477,7 @@ class AttachedStorageDomainDiskService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('disk', disk, types.Disk),
@@ -40346,7 +39502,7 @@ class AttachedStorageDomainDiskService(MeasurableService):
         **kwargs
     ):
         """
-        Exports a disk to an export storage domain. IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards compatibility. It will be removed in the future. To export a disk use the [export](#services/disk/methods/export) operation of the service that manages that disk.
+        """        Exports a disk to an export storage domain. IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards compatibility. It will be removed in the future. To export a disk use the [export](#services/disk/methods/export) operation of the service that manages that disk.
         
         This method supports the following parameters:
         
@@ -40364,7 +39520,7 @@ class AttachedStorageDomainDiskService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('storage_domain', storage_domain, types.StorageDomain),
@@ -40387,7 +39543,7 @@ class AttachedStorageDomainDiskService(MeasurableService):
         **kwargs
     ):
         """
-        Retrieves the description of the disk.
+        """        Retrieves the description of the disk.
         
         This method supports the following parameters:
         
@@ -40405,7 +39561,7 @@ class AttachedStorageDomainDiskService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -40430,7 +39586,7 @@ class AttachedStorageDomainDiskService(MeasurableService):
         **kwargs
     ):
         """
-        Moves a disk to another storage domain. IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards compatibility. It will be removed in the future. To move a disk use the [move](#services/disk/methods/move) operation of the service that manages that disk.
+        """        Moves a disk to another storage domain. IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards compatibility. It will be removed in the future. To move a disk use the [move](#services/disk/methods/move) operation of the service that manages that disk.
         
         This method supports the following parameters:
         
@@ -40456,7 +39612,7 @@ class AttachedStorageDomainDiskService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -40486,9 +39642,7 @@ class AttachedStorageDomainDiskService(MeasurableService):
         **kwargs
     ):
         """
-        Registers an unregistered disk.
-        
-        \"\"\"
+        """        Registers an unregistered disk.
         # Check the types of the parameters:
         Service._check_types([
         ])
@@ -40508,9 +39662,7 @@ class AttachedStorageDomainDiskService(MeasurableService):
         **kwargs
     ):
         """
-        Removes a disk. IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards compatibility. It will be removed in the future. To remove a disk use the [remove](#services/disk/methods/remove) operation of the service that manages that disk.
-        
-        \"\"\"
+        """        Removes a disk. IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards compatibility. It will be removed in the future. To remove a disk use the [remove](#services/disk/methods/remove) operation of the service that manages that disk.
         # Check the types of the parameters:
         Service._check_types([
         ])
@@ -40529,9 +39681,7 @@ class AttachedStorageDomainDiskService(MeasurableService):
         **kwargs
     ):
         """
-        Sparsify the disk. IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards compatibility. It will be removed in the future. To remove a disk use the [remove](#services/disk/methods/remove) operation of the service that manages that disk.
-        
-        \"\"\"
+        """        Sparsify the disk. IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards compatibility. It will be removed in the future. To remove a disk use the [remove](#services/disk/methods/remove) operation of the service that manages that disk.
         # Check the types of the parameters:
         Service._check_types([
         ])
@@ -40552,7 +39702,7 @@ class AttachedStorageDomainDiskService(MeasurableService):
         **kwargs
     ):
         """
-        Updates the disk. IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards compatibility. It will be removed in the future. To update a disk use the [update](#services/disk/methods/update) operation of the service that manages that disk.
+        """        Updates the disk. IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards compatibility. It will be removed in the future. To update a disk use the [update](#services/disk/methods/update) operation of the service that manages that disk.
         
         This method supports the following parameters:
         
@@ -40570,7 +39720,7 @@ class AttachedStorageDomainDiskService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('disk', disk, types.Disk),
@@ -40584,19 +39734,17 @@ class AttachedStorageDomainDiskService(MeasurableService):
 
     def permissions_service(self):
         """
-        Reference to the service that manages the permissions assigned to the disk.
-        
-        \"\"\"
+        """        Reference to the service that manages the permissions assigned to the disk.
         return AssignedPermissionsService(self._connection, '%s/permissions' % self._path)
 
     def statistics_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return StatisticsService(self._connection, '%s/statistics' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'permissions':
@@ -40615,9 +39763,7 @@ class AttachedStorageDomainDiskService(MeasurableService):
 
 class DiskService(MeasurableService):
     """
-    Manages a single disk.
-    
-    \"\"\"
+    """    Manages a single disk.
 
     def __init__(self, connection, path):
         super(DiskService, self).__init__(connection, path)
@@ -40639,7 +39785,7 @@ class DiskService(MeasurableService):
         **kwargs
     ):
         """
-        This operation copies a disk to the specified storage domain. For example, a disk can be copied using the following request:
+        """        This operation copies a disk to the specified storage domain. For example, a disk can be copied using the following request:
         
         POST /ovirt-engine/api/disks/123/copy\</programlisting\>
         
@@ -40710,7 +39856,7 @@ class DiskService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -40749,7 +39895,7 @@ class DiskService(MeasurableService):
         **kwargs
     ):
         """
-        Exports a disk to an export storage domain.
+        """        Exports a disk to an export storage domain.
         
         This method supports the following parameters:
         
@@ -40775,7 +39921,7 @@ class DiskService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -40807,7 +39953,7 @@ class DiskService(MeasurableService):
         **kwargs
     ):
         """
-        Retrieves the description of the disk.
+        """        Retrieves the description of the disk.
         
         This method supports the following parameters:
         
@@ -40835,7 +39981,7 @@ class DiskService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('all_content', all_content, bool),
@@ -40866,7 +40012,7 @@ class DiskService(MeasurableService):
         **kwargs
     ):
         """
-        Moves a disk to another storage domain. For example, to move the disk with identifier `123` to a storage domain with identifier `456` send the following request:
+        """        Moves a disk to another storage domain. For example, to move the disk with identifier `123` to a storage domain with identifier `456` send the following request:
         
         POST /ovirt-engine/api/disks/123/move\</programlisting\>
         
@@ -40920,7 +40066,7 @@ class DiskService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -40955,7 +40101,7 @@ class DiskService(MeasurableService):
         **kwargs
     ):
         """
-        Reduces the size of the disk image. Invokes *reduce* on the logical volume (i.e. this is only applicable for block storage domains). This is applicable for floating disks and disks attached to non-running virtual machines. There is no need to specify the size as the optimal size is calculated automatically.
+        """        Reduces the size of the disk image. Invokes *reduce* on the logical volume (i.e. this is only applicable for block storage domains). This is applicable for floating disks and disks attached to non-running virtual machines. There is no need to specify the size as the optimal size is calculated automatically.
         
         This method supports the following parameters:
         
@@ -40973,7 +40119,7 @@ class DiskService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -41000,7 +40146,7 @@ class DiskService(MeasurableService):
         **kwargs
     ):
         """
-        Refreshes a direct LUN disk with up-to-date information from the storage. Refreshing a direct LUN disk is useful when: - The LUN was added using the API without the host parameter, and therefore does not contain any information from the storage (see [DisksService::add](#services/disks/methods/add)). - New information about the LUN is available on the storage and you want to update the LUN with it. To refresh direct LUN disk `123` using host `456`, send the following request:
+        """        Refreshes a direct LUN disk with up-to-date information from the storage. Refreshing a direct LUN disk is useful when: - The LUN was added using the API without the host parameter, and therefore does not contain any information from the storage (see [DisksService::add](#services/disks/methods/add)). - New information about the LUN is available on the storage and you want to update the LUN with it. To refresh direct LUN disk `123` using host `456`, send the following request:
         
         POST /ovirt-engine/api/disks/123/refreshlun\</programlisting\>
         
@@ -41028,7 +40174,7 @@ class DiskService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('host', host, types.Host),
@@ -41051,7 +40197,7 @@ class DiskService(MeasurableService):
         **kwargs
     ):
         """
-        Removes a disk.
+        """        Removes a disk.
         
         This method supports the following parameters:
         
@@ -41069,7 +40215,7 @@ class DiskService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -41096,9 +40242,7 @@ class DiskService(MeasurableService):
         **kwargs
     ):
         """
-        Sparsify the disk. Sparsification frees space in the disk image that is not used by its filesystem. As a result, the image will occupy less space on the storage. Currently sparsification works only on disks without snapshots. Disks having derived disks are also not allowed.
-        
-        \"\"\"
+        """        Sparsify the disk. Sparsification frees space in the disk image that is not used by its filesystem. As a result, the image will occupy less space on the storage. Currently sparsification works only on disks without snapshots. Disks having derived disks are also not allowed.
         # Check the types of the parameters:
         Service._check_types([
         ])
@@ -41119,7 +40263,7 @@ class DiskService(MeasurableService):
         **kwargs
     ):
         """
-        Updates the parameters of the specified disk. This operation allows updating the following floating disk properties: \* For Image disks: `provisioned_size`, `alias`, `description`, `wipe_after_delete`, `shareable`, `backup` and `disk_profile`. \* For LUN disks: `alias`, `description` and `shareable`. \* Cinder integration has been replaced by Managed Block Storage. \* For Managed Block disks: `provisioned_size`, `alias` and `description`. \* For VM attached disks, the `qcow_version` can also be updated. For example, a disk's update can be done by using the following request:
+        """        Updates the parameters of the specified disk. This operation allows updating the following floating disk properties: \* For Image disks: `provisioned_size`, `alias`, `description`, `wipe_after_delete`, `shareable`, `backup` and `disk_profile`. \* For LUN disks: `alias`, `description` and `shareable`. \* Cinder integration has been replaced by Managed Block Storage. \* For Managed Block disks: `provisioned_size`, `alias` and `description`. \* For VM attached disks, the `qcow_version` can also be updated. For example, a disk's update can be done by using the following request:
         
         PUT /ovirt-engine/api/disks/123\</programlisting\>
         
@@ -41151,7 +40295,7 @@ class DiskService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('disk', disk, types.Disk),
@@ -41165,32 +40309,28 @@ class DiskService(MeasurableService):
 
     def disk_snapshots_service(self):
         """
-        Reference to the service that manages the DiskSnapshots. For example, to list all disk snapshots under the disks resource *123*:
+        """        Reference to the service that manages the DiskSnapshots. For example, to list all disk snapshots under the disks resource *123*:
         
             GET /ovirt-engine/api/disks/123/disksnapshots
         
         For example, to retrieve a specific disk snapshot *789* under the disk resource *123*:
         
             GET /ovirt-engine/api/disks/123/disksnapshots/789
-        
-        \"\"\"
         return DiskSnapshotsService(self._connection, '%s/disksnapshots' % self._path)
 
     def permissions_service(self):
         """
-        Reference to the service that manages the permissions assigned to the disk.
-        
-        \"\"\"
+        """        Reference to the service that manages the permissions assigned to the disk.
         return AssignedPermissionsService(self._connection, '%s/permissions' % self._path)
 
     def statistics_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return StatisticsService(self._connection, '%s/statistics' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'disksnapshots':
@@ -41213,9 +40353,7 @@ class DiskService(MeasurableService):
 
 class EngineKatelloErrataService(KatelloErrataService):
     """
-    A service to manage Katello errata assigned to the engine. The information is retrieved from Katello.
-    
-    \"\"\"
+    """    A service to manage Katello errata assigned to the engine. The information is retrieved from Katello.
 
     def __init__(self, connection, path):
         super(EngineKatelloErrataService, self).__init__(connection, path)
@@ -41231,7 +40369,7 @@ class EngineKatelloErrataService(KatelloErrataService):
         **kwargs
     ):
         """
-        Retrieves the representation of the Katello errata.
+        """        Retrieves the representation of the Katello errata.
         
         GET /ovirt-engine/api/katelloerrata\</programlisting\>
         
@@ -41280,7 +40418,7 @@ class EngineKatelloErrataService(KatelloErrataService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -41300,9 +40438,7 @@ class EngineKatelloErrataService(KatelloErrataService):
 
     def katello_erratum_service(self, id):
         """
-        Reference to the Katello erratum service. Use this service to view the erratum by its id.
-        
-        \"\"\"
+        """        Reference to the Katello erratum service. Use this service to view the erratum by its id.
         Service._check_types([
             ('id', id, str),
         ])
@@ -41310,7 +40446,7 @@ class EngineKatelloErrataService(KatelloErrataService):
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         index = path.find('/')
@@ -41324,9 +40460,7 @@ class EngineKatelloErrataService(KatelloErrataService):
 
 class ExternalHostProviderService(ExternalProviderService):
     """
-    Represents an external host provider, such as Foreman or Satellite. See <https://www.theforeman.org/> for more details on Foreman. See <https://access.redhat.com/products/red-hat-satellite> for more details on Red Hat Satellite.
-    
-    \"\"\"
+    """    Represents an external host provider, such as Foreman or Satellite. See <https://www.theforeman.org/> for more details on Foreman. See <https://access.redhat.com/products/red-hat-satellite> for more details on Red Hat Satellite.
 
     def __init__(self, connection, path):
         super(ExternalHostProviderService, self).__init__(connection, path)
@@ -41345,7 +40479,7 @@ class ExternalHostProviderService(ExternalProviderService):
         **kwargs
     ):
         """
-        Get external host provider information Host provider, Foreman or Satellite, can be set as an external provider in ovirt. To see details about specific host providers attached to ovirt use this API. For example, to get the details of host provider `123`, send a request like this:
+        """        Get external host provider information Host provider, Foreman or Satellite, can be set as an external provider in ovirt. To see details about specific host providers attached to ovirt use this API. For example, to get the details of host provider `123`, send a request like this:
         
             GET /ovirt-engine/api/externalhostproviders/123
         
@@ -41376,7 +40510,7 @@ class ExternalHostProviderService(ExternalProviderService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -41399,9 +40533,7 @@ class ExternalHostProviderService(ExternalProviderService):
         **kwargs
     ):
         """
-        Import the SSL certificates of the external host provider.
-        
-        \"\"\"
+        """        Import the SSL certificates of the external host provider.
         # Check the types of the parameters:
         Service._check_types([
             ('certificates', certificates, list),
@@ -41424,7 +40556,7 @@ class ExternalHostProviderService(ExternalProviderService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `async_`
         
@@ -41440,7 +40572,7 @@ class ExternalHostProviderService(ExternalProviderService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -41468,7 +40600,7 @@ class ExternalHostProviderService(ExternalProviderService):
         **kwargs
     ):
         """
-        In order to test connectivity for external provider we need to run following request where 123 is an id of a provider.
+        """        In order to test connectivity for external provider we need to run following request where 123 is an id of a provider.
         
         POST /ovirt-engine/api/externalhostproviders/123/testconnectivity\</programlisting\>
         
@@ -41488,7 +40620,7 @@ class ExternalHostProviderService(ExternalProviderService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -41516,9 +40648,7 @@ class ExternalHostProviderService(ExternalProviderService):
         **kwargs
     ):
         """
-        Update the specified external host provider in the system.
-        
-        \"\"\"
+        """        Update the specified external host provider in the system.
         # Check the types of the parameters:
         Service._check_types([
             ('provider', provider, types.ExternalHostProvider),
@@ -41540,34 +40670,32 @@ class ExternalHostProviderService(ExternalProviderService):
 
     def certificates_service(self):
         """
-        A service to view certificates for this external provider.
-        
-        \"\"\"
+        """        A service to view certificates for this external provider.
         return ExternalProviderCertificatesService(self._connection, '%s/certificates' % self._path)
 
     def compute_resources_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return ExternalComputeResourcesService(self._connection, '%s/computeresources' % self._path)
 
     def discovered_hosts_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return ExternalDiscoveredHostsService(self._connection, '%s/discoveredhosts' % self._path)
 
     def host_groups_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return ExternalHostGroupsService(self._connection, '%s/hostgroups' % self._path)
 
     def hosts_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return ExternalHostsService(self._connection, '%s/hosts' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'certificates':
@@ -41598,9 +40726,7 @@ class ExternalHostProviderService(ExternalProviderService):
 
 class GlusterBrickService(MeasurableService):
     """
-    This service manages a single gluster brick.
-    
-    \"\"\"
+    """    This service manages a single gluster brick.
 
     def __init__(self, connection, path):
         super(GlusterBrickService, self).__init__(connection, path)
@@ -41615,7 +40741,7 @@ class GlusterBrickService(MeasurableService):
         **kwargs
     ):
         """
-        Get details of a brick. Retrieves status details of brick from underlying gluster volume with header `All-Content` set to `true`. This is the equivalent of running `gluster volume status <volumename> <brickname> detail`. For example, to get the details of brick `234` of gluster volume `123`, send a request like this:
+        """        Get details of a brick. Retrieves status details of brick from underlying gluster volume with header `All-Content` set to `true`. This is the equivalent of running `gluster volume status <volumename> <brickname> detail`. For example, to get the details of brick `234` of gluster volume `123`, send a request like this:
         
         GET /ovirt-engine/api/clusters/567/glustervolumes/123/glusterbricks/234\</programlisting\>
         
@@ -41671,7 +40797,7 @@ class GlusterBrickService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -41694,7 +40820,7 @@ class GlusterBrickService(MeasurableService):
         **kwargs
     ):
         """
-        Removes a brick. Removes a brick from the underlying gluster volume and deletes entries from database. This can be used only when removing a single brick without data migration. To remove multiple bricks and with data migration, use [migrate](#services/gluster_bricks/methods/migrate) instead. For example, to delete brick `234` from gluster volume `123`, send a request like this:
+        """        Removes a brick. Removes a brick from the underlying gluster volume and deletes entries from database. This can be used only when removing a single brick without data migration. To remove multiple bricks and with data migration, use [migrate](#services/gluster_bricks/methods/migrate) instead. For example, to delete brick `234` from gluster volume `123`, send a request like this:
         
         DELETE /ovirt-engine/api/clusters/567/glustervolumes/123/glusterbricks/234\</programlisting\>
         
@@ -41714,7 +40840,7 @@ class GlusterBrickService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -41743,7 +40869,7 @@ class GlusterBrickService(MeasurableService):
         **kwargs
     ):
         """
-        Replaces this brick with a new one. IMPORTANT: This operation has been deprecated since version 3.5 of the engine and will be removed in the future. Use [add brick(s)](#services/gluster_bricks/methods/add) and [migrate brick(s)](#services/gluster_bricks/methods/migrate) instead.
+        """        Replaces this brick with a new one. IMPORTANT: This operation has been deprecated since version 3.5 of the engine and will be removed in the future. Use [add brick(s)](#services/gluster_bricks/methods/add) and [migrate brick(s)](#services/gluster_bricks/methods/migrate) instead.
         
         This method supports the following parameters:
         
@@ -41761,7 +40887,7 @@ class GlusterBrickService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -41783,12 +40909,12 @@ class GlusterBrickService(MeasurableService):
 
     def statistics_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return StatisticsService(self._connection, '%s/statistics' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'statistics':
@@ -41803,9 +40929,7 @@ class GlusterBrickService(MeasurableService):
 
 class GlusterVolumeService(MeasurableService):
     """
-    This service manages a single gluster volume.
-    
-    \"\"\"
+    """    This service manages a single gluster volume.
 
     def __init__(self, connection, path):
         super(GlusterVolumeService, self).__init__(connection, path)
@@ -41821,7 +40945,7 @@ class GlusterVolumeService(MeasurableService):
         **kwargs
     ):
         """
-        Get the gluster volume details. For example, to get details of a gluster volume with identifier `123` in cluster `456`, send a request like this:
+        """        Get the gluster volume details. For example, to get details of a gluster volume with identifier `123` in cluster `456`, send a request like this:
         
         GET /ovirt-engine/api/clusters/456/glustervolumes/123\</programlisting\>
         
@@ -41873,7 +40997,7 @@ class GlusterVolumeService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -41895,11 +41019,9 @@ class GlusterVolumeService(MeasurableService):
         **kwargs
     ):
         """
-        Get gluster volume profile statistics. For example, to get profile statistics for a gluster volume with identifier `123` in cluster `456`, send a request like this:
+        """        Get gluster volume profile statistics. For example, to get profile statistics for a gluster volume with identifier `123` in cluster `456`, send a request like this:
         
         POST /ovirt-engine/api/clusters/456/glustervolumes/123/getprofilestatistics\</programlisting\>
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
         ])
@@ -41922,7 +41044,7 @@ class GlusterVolumeService(MeasurableService):
         **kwargs
     ):
         """
-        Rebalance the gluster volume. Rebalancing a gluster volume helps to distribute the data evenly across all the bricks. After expanding or shrinking a gluster volume (without migrating data), we need to rebalance the data among the bricks. In a non-replicated volume, all bricks should be online to perform the rebalance operation. In a replicated volume, at least one of the bricks in the replica should be online. For example, to rebalance a gluster volume with identifier `123` in cluster `456`, send a request like this:
+        """        Rebalance the gluster volume. Rebalancing a gluster volume helps to distribute the data evenly across all the bricks. After expanding or shrinking a gluster volume (without migrating data), we need to rebalance the data among the bricks. In a non-replicated volume, all bricks should be online to perform the rebalance operation. In a replicated volume, at least one of the bricks in the replica should be online. For example, to rebalance a gluster volume with identifier `123` in cluster `456`, send a request like this:
         
         POST /ovirt-engine/api/clusters/456/glustervolumes/123/rebalance\</programlisting\>
         
@@ -41950,7 +41072,7 @@ class GlusterVolumeService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -41981,7 +41103,7 @@ class GlusterVolumeService(MeasurableService):
         **kwargs
     ):
         """
-        Removes the gluster volume. For example, to remove a volume with identifier `123` in cluster `456`, send a request like this:
+        """        Removes the gluster volume. For example, to remove a volume with identifier `123` in cluster `456`, send a request like this:
         
         DELETE /ovirt-engine/api/clusters/456/glustervolumes/123\</programlisting\>
         
@@ -42001,7 +41123,7 @@ class GlusterVolumeService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -42029,7 +41151,7 @@ class GlusterVolumeService(MeasurableService):
         **kwargs
     ):
         """
-        Resets all the options set in the gluster volume. For example, to reset all options in a gluster volume with identifier `123` in cluster `456`, send a request like this:
+        """        Resets all the options set in the gluster volume. For example, to reset all options in a gluster volume with identifier `123` in cluster `456`, send a request like this:
         
         POST /ovirt-engine/api/clusters/456/glustervolumes/123/resetalloptions\</programlisting\>
         
@@ -42049,7 +41171,7 @@ class GlusterVolumeService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -42078,7 +41200,7 @@ class GlusterVolumeService(MeasurableService):
         **kwargs
     ):
         """
-        Resets a particular option in the gluster volume. For example, to reset a particular option `option1` in a gluster volume with identifier `123` in cluster `456`, send a request like this:
+        """        Resets a particular option in the gluster volume. For example, to reset a particular option `option1` in a gluster volume with identifier `123` in cluster `456`, send a request like this:
         
         POST /ovirt-engine/api/clusters/456/glustervolumes/123/resetoption\</programlisting\>
         
@@ -42110,7 +41232,7 @@ class GlusterVolumeService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -42142,7 +41264,7 @@ class GlusterVolumeService(MeasurableService):
         **kwargs
     ):
         """
-        Sets a particular option in the gluster volume. For example, to set `option1` with value `value1` in a gluster volume with identifier `123` in cluster `456`, send a request like this:
+        """        Sets a particular option in the gluster volume. For example, to set `option1` with value `value1` in a gluster volume with identifier `123` in cluster `456`, send a request like this:
         
         POST /ovirt-engine/api/clusters/456/glustervolumes/123/setoption\</programlisting\>
         
@@ -42174,7 +41296,7 @@ class GlusterVolumeService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -42204,7 +41326,7 @@ class GlusterVolumeService(MeasurableService):
         **kwargs
     ):
         """
-        Starts the gluster volume. A Gluster Volume should be started to read/write data. For example, to start a gluster volume with identifier `123` in cluster `456`, send a request like this:
+        """        Starts the gluster volume. A Gluster Volume should be started to read/write data. For example, to start a gluster volume with identifier `123` in cluster `456`, send a request like this:
         
         POST /ovirt-engine/api/clusters/456/glustervolumes/123/start\</programlisting\>
         
@@ -42228,7 +41350,7 @@ class GlusterVolumeService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -42257,7 +41379,7 @@ class GlusterVolumeService(MeasurableService):
         **kwargs
     ):
         """
-        Start profiling the gluster volume. For example, to start profiling a gluster volume with identifier `123` in cluster `456`, send a request like this:
+        """        Start profiling the gluster volume. For example, to start profiling a gluster volume with identifier `123` in cluster `456`, send a request like this:
         
         POST /ovirt-engine/api/clusters/456/glustervolumes/123/startprofile\</programlisting\>
         
@@ -42277,7 +41399,7 @@ class GlusterVolumeService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -42305,7 +41427,7 @@ class GlusterVolumeService(MeasurableService):
         **kwargs
     ):
         """
-        Stops the gluster volume. Stopping a volume will make its data inaccessible. For example, to stop a gluster volume with identifier `123` in cluster `456`, send a request like this:
+        """        Stops the gluster volume. Stopping a volume will make its data inaccessible. For example, to stop a gluster volume with identifier `123` in cluster `456`, send a request like this:
         
         POST /ovirt-engine/api/clusters/456/glustervolumes/123/stop\</programlisting\>
         
@@ -42325,7 +41447,7 @@ class GlusterVolumeService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -42354,7 +41476,7 @@ class GlusterVolumeService(MeasurableService):
         **kwargs
     ):
         """
-        Stop profiling the gluster volume. For example, to stop profiling a gluster volume with identifier `123` in cluster `456`, send a request like this:
+        """        Stop profiling the gluster volume. For example, to stop profiling a gluster volume with identifier `123` in cluster `456`, send a request like this:
         
         POST /ovirt-engine/api/clusters/456/glustervolumes/123/stopprofile\</programlisting\>
         
@@ -42374,7 +41496,7 @@ class GlusterVolumeService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -42401,7 +41523,7 @@ class GlusterVolumeService(MeasurableService):
         **kwargs
     ):
         """
-        Stop rebalancing the gluster volume. For example, to stop rebalancing a gluster volume with identifier `123` in cluster `456`, send a request like this:
+        """        Stop rebalancing the gluster volume. For example, to stop rebalancing a gluster volume with identifier `123` in cluster `456`, send a request like this:
         
         POST /ovirt-engine/api/clusters/456/glustervolumes/123/stoprebalance\</programlisting\>
         
@@ -42421,7 +41543,7 @@ class GlusterVolumeService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -42441,19 +41563,17 @@ class GlusterVolumeService(MeasurableService):
 
     def gluster_bricks_service(self):
         """
-        Reference to a service managing gluster bricks.
-        
-        \"\"\"
+        """        Reference to a service managing gluster bricks.
         return GlusterBricksService(self._connection, '%s/glusterbricks' % self._path)
 
     def statistics_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return StatisticsService(self._connection, '%s/statistics' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'glusterbricks':
@@ -42472,9 +41592,7 @@ class GlusterVolumeService(MeasurableService):
 
 class HostService(MeasurableService):
     """
-    A service to manage a host.
-    
-    \"\"\"
+    """    A service to manage a host.
 
     def __init__(self, connection, path):
         super(HostService, self).__init__(connection, path)
@@ -42503,7 +41621,7 @@ class HostService(MeasurableService):
         **kwargs
     ):
         """
-        Activates the host for use, for example to run virtual machines.
+        """        Activates the host for use, for example to run virtual machines.
         
         This method supports the following parameters:
         
@@ -42521,7 +41639,7 @@ class HostService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -42552,7 +41670,7 @@ class HostService(MeasurableService):
         **kwargs
     ):
         """
-        Approve a pre-installed Hypervisor host for usage in the virtualization environment. This action also accepts an optional cluster element to define the target cluster for this host.
+        """        Approve a pre-installed Hypervisor host for usage in the virtualization environment. This action also accepts an optional cluster element to define the target cluster for this host.
         
         This method supports the following parameters:
         
@@ -42586,7 +41704,7 @@ class HostService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('activate', activate, bool),
@@ -42621,7 +41739,7 @@ class HostService(MeasurableService):
         **kwargs
     ):
         """
-        Marks the network configuration as good and persists it inside the host. An API user commits the network configuration to persist a host network interface attachment or detachment, or persist the creation and deletion of a bonded interface. IMPORTANT: Networking configuration is only committed after the engine has established that host connectivity is not lost as a result of the configuration changes. If host connectivity is lost, the host requires a reboot and automatically reverts to the previous networking configuration. For example, to commit the network configuration of host with id `123` send a request like this:
+        """        Marks the network configuration as good and persists it inside the host. An API user commits the network configuration to persist a host network interface attachment or detachment, or persist the creation and deletion of a bonded interface. IMPORTANT: Networking configuration is only committed after the engine has established that host connectivity is not lost as a result of the configuration changes. If host connectivity is lost, the host requires a reboot and automatically reverts to the previous networking configuration. For example, to commit the network configuration of host with id `123` send a request like this:
         
         POST /ovirt-engine/api/hosts/123/commitnetconfig\</programlisting\>
         
@@ -42651,7 +41769,7 @@ class HostService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -42679,7 +41797,7 @@ class HostService(MeasurableService):
         **kwargs
     ):
         """
-        Copy the network configuration of the specified host to current host. IMPORTANT: Any network attachments that are not present on the source host will be erased from the target host by the copy operation. To copy networks from another host, send a request like this:
+        """        Copy the network configuration of the specified host to current host. IMPORTANT: Any network attachments that are not present on the source host will be erased from the target host by the copy operation. To copy networks from another host, send a request like this:
         
         POST /ovirt-engine/api/hosts/123/copyhostnetworks\</programlisting\>
         
@@ -42711,7 +41829,7 @@ class HostService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -42742,7 +41860,7 @@ class HostService(MeasurableService):
         **kwargs
     ):
         """
-        Deactivates the host to perform maintenance tasks.
+        """        Deactivates the host to perform maintenance tasks.
         
         This method supports the following parameters:
         
@@ -42764,7 +41882,7 @@ class HostService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -42796,7 +41914,7 @@ class HostService(MeasurableService):
         **kwargs
     ):
         """
-        Discovers iSCSI targets on the host, using the initiator details. Returns a list of IscsiDetails objects containing the discovered data. For example, to discover iSCSI targets available in `myiscsi.example.com`, from host `123`, send a request like this:
+        """        Discovers iSCSI targets on the host, using the initiator details. Returns a list of IscsiDetails objects containing the discovered data. For example, to discover iSCSI targets available in `myiscsi.example.com`, from host `123`, send a request like this:
         
         POST /ovirt-engine/api/hosts/123/discoveriscsi\</programlisting\>
         
@@ -42847,7 +41965,7 @@ class HostService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -42876,7 +41994,7 @@ class HostService(MeasurableService):
         **kwargs
     ):
         """
-        Enrolls the certificate of the host. Useful in case you get a warning that it is about to expire or has already expired.
+        """        Enrolls the certificate of the host. Useful in case you get a warning that it is about to expire or has already expired.
         
         This method supports the following parameters:
         
@@ -42894,7 +42012,7 @@ class HostService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -42923,7 +42041,7 @@ class HostService(MeasurableService):
         **kwargs
     ):
         """
-        Controls the host's power management device. For example, to start the host. This can be done via:
+        """        Controls the host's power management device. For example, to start the host. This can be done via:
         
         \#!/bin/sh -ex url=\"https://engine.example.com/ovirt-engine/api\" user=\"admin@internal\" password=\"\...\" curl \\ \--verbose \\ \--cacert /etc/pki/ovirt-engine/ca.pem \\ \--user \"\${user}:\${password}\" \\ \--request POST \\ \--header \"Version: 4\" \\ \--header \"Content-Type: application/xml\" \\ \--header \"Accept: application/xml\" \\ \--data \' \<action\> \<fence\_type\>start\</fence\_type\> \</action\> \' \\ \"\${url}/hosts/123/fence\"\</programlisting\>
         
@@ -42947,7 +42065,7 @@ class HostService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -42978,7 +42096,7 @@ class HostService(MeasurableService):
         **kwargs
     ):
         """
-        To manually set a host as the storage pool manager (SPM).
+        """        To manually set a host as the storage pool manager (SPM).
         
         POST /ovirt-engine/api/hosts/123/forceselectspm\</programlisting\>
         
@@ -43004,7 +42122,7 @@ class HostService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -43033,7 +42151,7 @@ class HostService(MeasurableService):
         **kwargs
     ):
         """
-        Gets the host details.
+        """        Gets the host details.
         
         GET /ovirt-engine/api/hosts/123\</programlisting\>
         
@@ -43071,7 +42189,7 @@ class HostService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('all_content', all_content, bool),
@@ -43110,7 +42228,7 @@ class HostService(MeasurableService):
         **kwargs
     ):
         """
-        Installs the latest version of VDSM and related software on the host. The action also performs every configuration steps on the host which is done during adding host to the engine: kdump configuration, hosted-engine deploy, kernel options changes, etc. The host type defines additional parameters for the action. Example of installing a host, using `curl` and JSON, plain:
+        """        Installs the latest version of VDSM and related software on the host. The action also performs every configuration steps on the host which is done during adding host to the engine: kdump configuration, hosted-engine deploy, kernel options changes, etc. The host type defines additional parameters for the action. Example of installing a host, using `curl` and JSON, plain:
         
         ``` {.bash}
         curl \
@@ -43202,7 +42320,7 @@ class HostService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('activate', activate, bool),
@@ -43246,7 +42364,7 @@ class HostService(MeasurableService):
         **kwargs
     ):
         """
-        This method has been deprecated since Engine version 4.4.6. DiscoverIscsi should be used instead. Discovers iSCSI targets on the host, using the initiator details. Returns an array of strings containing the discovered data. For example, to discover iSCSI targets available in `myiscsi.example.com`, from host `123`, send a request like this:
+        """        This method has been deprecated since Engine version 4.4.6. DiscoverIscsi should be used instead. Discovers iSCSI targets on the host, using the initiator details. Returns an array of strings containing the discovered data. For example, to discover iSCSI targets available in `myiscsi.example.com`, from host `123`, send a request like this:
         
         POST /ovirt-engine/api/hosts/123/iscsidiscover\</programlisting\>
         
@@ -43280,7 +42398,7 @@ class HostService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -43310,7 +42428,7 @@ class HostService(MeasurableService):
         **kwargs
     ):
         """
-        Login to iSCSI targets on the host, using the target details. IMPORTANT: When using this method to log in, you must use the iscsi details from the discovered targets results in the discoveriscsi method.
+        """        Login to iSCSI targets on the host, using the target details. IMPORTANT: When using this method to log in, you must use the iscsi details from the discovered targets results in the discoveriscsi method.
         
         This method supports the following parameters:
         
@@ -43332,7 +42450,7 @@ class HostService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -43361,7 +42479,7 @@ class HostService(MeasurableService):
         **kwargs
     ):
         """
-        Refresh the host devices and capabilities.
+        """        Refresh the host devices and capabilities.
         
         This method supports the following parameters:
         
@@ -43379,7 +42497,7 @@ class HostService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -43407,7 +42525,7 @@ class HostService(MeasurableService):
         **kwargs
     ):
         """
-        Remove the host from the system.
+        """        Remove the host from the system.
         
         \#!/bin/sh -ex url=\"https://engine.example.com/ovirt-engine/api\" user=\"admin@internal\" password=\"\...\" curl \\ \--verbose \\ \--cacert /etc/pki/ovirt-engine/ca.pem \\ \--user \"\${user}:\${password}\" \\ \--request DELETE \\ \--header \"Version: 4\" \\ \"\${url}/hosts/1ff7a191-2f3b-4eff-812b-9f91a30c3acc\"\</programlisting\>
         
@@ -43431,7 +42549,7 @@ class HostService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('force', force, bool),
@@ -43473,7 +42591,7 @@ class HostService(MeasurableService):
         **kwargs
     ):
         """
-        This method is used to change the configuration of the network interfaces of a host. For example, if you have a host with three network interfaces `eth0`, `eth1` and `eth2` and you want to configure a new bond using `eth0` and `eth1`, and put a VLAN on top of it. Using a simple shell script and the `curl` command line HTTP client that can be done as follows:
+        """        This method is used to change the configuration of the network interfaces of a host. For example, if you have a host with three network interfaces `eth0`, `eth1` and `eth2` and you want to configure a new bond using `eth0` and `eth1`, and put a VLAN on top of it. Using a simple shell script and the `curl` command line HTTP client that can be done as follows:
         
         \#!/bin/sh -ex url=\"https://engine.example.com/ovirt-engine/api\" user=\"admin@internal\" password=\"\...\" curl \\ \--verbose \\ \--cacert /etc/pki/ovirt-engine/ca.pem \\ \--user \"\${user}:\${password}\" \\ \--request POST \\ \--header \"Version: 4\" \\ \--header \"Content-Type: application/xml\" \\ \--header \"Accept: application/xml\" \\ \--data \' \<action\> \<modified\_bonds\> \<host\_nic\> \<name\>bond0\</name\> \<bonding\> \<options\> \<option\> \<name\>mode\</name\> \<value\>4\</value\> \</option\> \<option\> \<name\>miimon\</name\> \<value\>100\</value\> \</option\> \</options\> \<slaves\> \<host\_nic\> \<name\>eth1\</name\> \</host\_nic\> \<host\_nic\> \<name\>eth2\</name\> \</host\_nic\> \</slaves\> \</bonding\> \</host\_nic\> \</modified\_bonds\> \<modified\_network\_attachments\> \<network\_attachment\> \<network\> \<name\>myvlan\</name\> \</network\> \<host\_nic\> \<name\>bond0\</name\> \</host\_nic\> \<ip\_address\_assignments\> \<ip\_address\_assignment\> \<assignment\_method\>static\</assignment\_method\> \<ip\> \<address\>192.168.122.10\</address\> \<netmask\>255.255.255.0\</netmask\> \</ip\> \</ip\_address\_assignment\> \</ip\_address\_assignments\> \<dns\_resolver\_configuration\> \<name\_servers\> \<name\_server\>1.1.1.1\</name\_server\> \<name\_server\>2.2.2.2\</name\_server\> \</name\_servers\> \</dns\_resolver\_configuration\> \</network\_attachment\> \</modified\_network\_attachments\> \</action\> \' \\ \"\${url}/hosts/1ff7a191-2f3b-4eff-812b-9f91a30c3acc/setupnetworks\"\</programlisting\>
         
@@ -43583,7 +42701,7 @@ class HostService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -43630,7 +42748,7 @@ class HostService(MeasurableService):
         **kwargs
     ):
         """
-        To synchronize all networks on the host, send a request like this:
+        """        To synchronize all networks on the host, send a request like this:
         
         POST /ovirt-engine/api/hosts/123/syncallnetworks\</programlisting\>
         
@@ -43656,7 +42774,7 @@ class HostService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -43684,7 +42802,7 @@ class HostService(MeasurableService):
         **kwargs
     ):
         """
-        Discovers the block Storage Domains which are candidates to be imported to the setup. For FCP no arguments are required.
+        """        Discovers the block Storage Domains which are candidates to be imported to the setup. For FCP no arguments are required.
         
         This method supports the following parameters:
         
@@ -43702,7 +42820,7 @@ class HostService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -43732,7 +42850,7 @@ class HostService(MeasurableService):
         **kwargs
     ):
         """
-        Update the host properties. For example, to update a the kernel command line of a host send a request like this:
+        """        Update the host properties. For example, to update a the kernel command line of a host send a request like this:
         
         PUT /ovirt-engine/api/hosts/123\</programlisting\>
         
@@ -43745,8 +42863,6 @@ class HostService(MeasurableService):
           </os>
         </host>
         ```
-        
-        \"\"\"
         # Check the types of the parameters:
         Service._check_types([
             ('host', host, types.Host),
@@ -43778,7 +42894,7 @@ class HostService(MeasurableService):
         **kwargs
     ):
         """
-        Upgrades VDSM and selected software on the host.
+        """        Upgrades VDSM and selected software on the host.
         
         This method supports the following parameters:
         
@@ -43808,7 +42924,7 @@ class HostService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -43840,9 +42956,7 @@ class HostService(MeasurableService):
         **kwargs
     ):
         """
-        Check if there are upgrades available for the host. If there are upgrades available an icon will be displayed next to host status icon in the Administration Portal. Audit log messages are also added to indicate the availability of upgrades. The upgrade can be started from the webadmin or by using the [upgrade](#services/host/methods/upgrade) host action.
-        
-        \"\"\"
+        """        Check if there are upgrades available for the host. If there are upgrades available an icon will be displayed next to host status icon in the Administration Portal. Audit log messages are also added to indicate the availability of upgrades. The upgrade can be started from the webadmin or by using the [upgrade](#services/host/methods/upgrade) host action.
         # Check the types of the parameters:
         Service._check_types([
         ])
@@ -43867,7 +42981,7 @@ class HostService(MeasurableService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `host`
         
@@ -43899,7 +43013,7 @@ class HostService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('activate', activate, bool),
@@ -43942,7 +43056,7 @@ class HostService(MeasurableService):
         **kwargs
     ):
         """
-        Install VDSM and other packages required to get the host ready to be used in the engine providing the root password. This has been deprecated.
+        """        Install VDSM and other packages required to get the host ready to be used in the engine providing the root password. This has been deprecated.
         
         This method supports the following parameters:
         
@@ -43992,7 +43106,7 @@ class HostService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('activate', activate, bool),
@@ -44036,9 +43150,7 @@ class HostService(MeasurableService):
         **kwargs
     ):
         """
-        Update the specified host in the system. This is deprecated and is provided only for backwards compatibility.
-        
-        \"\"\"
+        """        Update the specified host in the system. This is deprecated and is provided only for backwards compatibility.
         # Check the types of the parameters:
         Service._check_types([
             ('host', host, types.Host),
@@ -44071,7 +43183,7 @@ class HostService(MeasurableService):
         **kwargs
     ):
         """
-        Approve the specified host to be added to the engine by using ssh authentication. This occurs when the host registers itself with the engine.
+        """        Approve the specified host to be added to the engine by using ssh authentication. This occurs when the host registers itself with the engine.
         
         This method supports the following parameters:
         
@@ -44105,7 +43217,7 @@ class HostService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('activate', activate, bool),
@@ -44148,7 +43260,7 @@ class HostService(MeasurableService):
         **kwargs
     ):
         """
-        Install VDSM and other packages required to get the host ready to be used in the engine providing the SSH password.
+        """        Install VDSM and other packages required to get the host ready to be used in the engine providing the SSH password.
         
         This method supports the following parameters:
         
@@ -44198,7 +43310,7 @@ class HostService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('activate', activate, bool),
@@ -44242,9 +43354,7 @@ class HostService(MeasurableService):
         **kwargs
     ):
         """
-        Updates the specified host in the system.
-        
-        \"\"\"
+        """        Updates the specified host in the system.
         # Check the types of the parameters:
         Service._check_types([
             ('host', host, types.Host),
@@ -44266,110 +43376,82 @@ class HostService(MeasurableService):
 
     def affinity_labels_service(self):
         """
-        List of scheduling labels assigned to this host.
-        
-        \"\"\"
+        """        List of scheduling labels assigned to this host.
         return AssignedAffinityLabelsService(self._connection, '%s/affinitylabels' % self._path)
 
     def devices_service(self):
         """
-        A reference to the host devices service. Use this service to view the devices of the host object.
-        
-        \"\"\"
+        """        A reference to the host devices service. Use this service to view the devices of the host object.
         return HostDevicesService(self._connection, '%s/devices' % self._path)
 
     def external_network_provider_configurations_service(self):
         """
-        External network providers provisioned by the system on the host.
-        
-        \"\"\"
+        """        External network providers provisioned by the system on the host.
         return ExternalNetworkProviderConfigurationsService(self._connection, '%s/externalnetworkproviderconfigurations' % self._path)
 
     def fence_agents_service(self):
         """
-        A reference to the fence agents service. Use this service to manage fence and power management agents on the host object.
-        
-        \"\"\"
+        """        A reference to the fence agents service. Use this service to manage fence and power management agents on the host object.
         return FenceAgentsService(self._connection, '%s/fenceagents' % self._path)
 
     def hooks_service(self):
         """
-        A reference to the host hooks service. Use this service to view the hooks available in the host object.
-        
-        \"\"\"
+        """        A reference to the host hooks service. Use this service to view the hooks available in the host object.
         return HostHooksService(self._connection, '%s/hooks' % self._path)
 
     def katello_errata_service(self):
         """
-        A reference to the service that can show the applicable errata available on the host. This information is taken from Katello.
-        
-        \"\"\"
+        """        A reference to the service that can show the applicable errata available on the host. This information is taken from Katello.
         return KatelloErrataService(self._connection, '%s/katelloerrata' % self._path)
 
     def network_attachments_service(self):
         """
-        A reference to the network attachments service. You can use this service to attach Logical networks to host interfaces.
-        
-        \"\"\"
+        """        A reference to the network attachments service. You can use this service to attach Logical networks to host interfaces.
         return NetworkAttachmentsService(self._connection, '%s/networkattachments' % self._path)
 
     def nics_service(self):
         """
-        A reference to the service that manages the network interface devices on the host.
-        
-        \"\"\"
+        """        A reference to the service that manages the network interface devices on the host.
         return HostNicsService(self._connection, '%s/nics' % self._path)
 
     def numa_nodes_service(self):
         """
-        A reference to the service that manage NUMA nodes for the host.
-        
-        \"\"\"
+        """        A reference to the service that manage NUMA nodes for the host.
         return HostNumaNodesService(self._connection, '%s/numanodes' % self._path)
 
     def permissions_service(self):
         """
-        A reference to the host permission service. Use this service to manage permissions on the host object.
-        
-        \"\"\"
+        """        A reference to the host permission service. Use this service to manage permissions on the host object.
         return AssignedPermissionsService(self._connection, '%s/permissions' % self._path)
 
     def statistics_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return StatisticsService(self._connection, '%s/statistics' % self._path)
 
     def storage_service(self):
         """
-        A reference to the service that manages the host's storage.
-        
-        \"\"\"
+        """        A reference to the service that manages the host's storage.
         return HostStorageService(self._connection, '%s/storage' % self._path)
 
     def storage_connection_extensions_service(self):
         """
-        A reference to storage connection extensions.
-        
-        \"\"\"
+        """        A reference to storage connection extensions.
         return StorageServerConnectionExtensionsService(self._connection, '%s/storageconnectionextensions' % self._path)
 
     def tags_service(self):
         """
-        A reference to the host tags service. Use this service to manage tags on the host object.
-        
-        \"\"\"
+        """        A reference to the host tags service. Use this service to manage tags on the host object.
         return AssignedTagsService(self._connection, '%s/tags' % self._path)
 
     def unmanaged_networks_service(self):
         """
-        A reference to unmanaged networks.
-        
-        \"\"\"
+        """        A reference to unmanaged networks.
         return UnmanagedNetworksService(self._connection, '%s/unmanagednetworks' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'affinitylabels':
@@ -44440,9 +43522,7 @@ class HostService(MeasurableService):
 
 class HostNicService(MeasurableService):
     """
-    A service to manage a network interface of a host.
-    
-    \"\"\"
+    """    A service to manage a network interface of a host.
 
     def __init__(self, connection, path):
         super(HostNicService, self).__init__(connection, path)
@@ -44463,7 +43543,7 @@ class HostNicService(MeasurableService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `all_content`
         
@@ -44493,7 +43573,7 @@ class HostNicService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('all_content', all_content, bool),
@@ -44521,7 +43601,7 @@ class HostNicService(MeasurableService):
         **kwargs
     ):
         """
-        The action updates virtual function configuration in case the current resource represents an SR-IOV enabled NIC. The input should be consisted of at least one of the following properties: - `allNetworksAllowed` - `numberOfVirtualFunctions` Please see the `HostNicVirtualFunctionsConfiguration` type for the meaning of the properties.
+        """        The action updates virtual function configuration in case the current resource represents an SR-IOV enabled NIC. The input should be consisted of at least one of the following properties: - `allNetworksAllowed` - `numberOfVirtualFunctions` Please see the `HostNicVirtualFunctionsConfiguration` type for the meaning of the properties.
         
         This method supports the following parameters:
         
@@ -44539,7 +43619,7 @@ class HostNicService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
@@ -44561,47 +43641,37 @@ class HostNicService(MeasurableService):
 
     def link_layer_discovery_protocol_elements_service(self):
         """
-        A reference to information elements received by LLDP on the NIC.
-        
-        \"\"\"
+        """        A reference to information elements received by LLDP on the NIC.
         return LinkLayerDiscoveryProtocolService(self._connection, '%s/linklayerdiscoveryprotocolelements' % self._path)
 
     def network_attachments_service(self):
         """
-        Reference to the service that manages the network attachments assigned to this network interface.
-        
-        \"\"\"
+        """        Reference to the service that manages the network attachments assigned to this network interface.
         return NetworkAttachmentsService(self._connection, '%s/networkattachments' % self._path)
 
     def network_labels_service(self):
         """
-        Reference to the service that manages the network labels assigned to this network interface.
-        
-        \"\"\"
+        """        Reference to the service that manages the network labels assigned to this network interface.
         return NetworkLabelsService(self._connection, '%s/networklabels' % self._path)
 
     def statistics_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return StatisticsService(self._connection, '%s/statistics' % self._path)
 
     def virtual_function_allowed_labels_service(self):
         """
-        Retrieves sub-collection resource of network labels that are allowed on an the virtual functions in case that the current resource represents an SR-IOV physical function NIC.
-        
-        \"\"\"
+        """        Retrieves sub-collection resource of network labels that are allowed on an the virtual functions in case that the current resource represents an SR-IOV physical function NIC.
         return NetworkLabelsService(self._connection, '%s/virtualfunctionallowedlabels' % self._path)
 
     def virtual_function_allowed_networks_service(self):
         """
-        Retrieves sub-collection resource of networks that are allowed on an the virtual functions in case that the current resource represents an SR-IOV physical function NIC.
-        
-        \"\"\"
+        """        Retrieves sub-collection resource of networks that are allowed on an the virtual functions in case that the current resource represents an SR-IOV physical function NIC.
         return VirtualFunctionAllowedNetworksService(self._connection, '%s/virtualfunctionallowednetworks' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'linklayerdiscoveryprotocolelements':
@@ -44636,7 +43706,7 @@ class HostNicService(MeasurableService):
 
 class HostNumaNodeService(MeasurableService):
     """
-    \"\"\"
+    """    \"\"\"
 
     def __init__(self, connection, path):
         super(HostNumaNodeService, self).__init__(connection, path)
@@ -44651,7 +43721,7 @@ class HostNumaNodeService(MeasurableService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
+        """        This method supports the following parameters:
         
         `follow`
         
@@ -44667,7 +43737,7 @@ class HostNumaNodeService(MeasurableService):
         
         `wait`
         
-        :   If `True` wait for the response. \"\"\"
+        :   If `True` wait for the response.
         # Check the types of the parameters:
         Service._check_types([
             ('follow', follow, str),
@@ -44683,12 +43753,12 @@ class HostNumaNodeService(MeasurableService):
 
     def statistics_service(self):
         """
-        \"\"\"
+        """        \"\"\"
         return StatisticsService(self._connection, '%s/statistics' % self._path)
 
     def service(self, path):
         """
-        Service locator method, returns individual service on which the URI is dispatched. \"\"\"
+        """        Service locator method, returns individual service on which the URI is dispatched.
         if not path:
             return self
         if path == 'statistics':
