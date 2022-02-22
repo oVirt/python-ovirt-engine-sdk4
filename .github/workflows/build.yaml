@@ -59,6 +59,7 @@ jobs:
             libcurl-devel \
             libxml2-devel \
             libxslt-devel \
+            make \
             python3-devel \
             python3-nose \
             python3-pip \
@@ -71,7 +72,6 @@ jobs:
             python3-wheel \
             rpm-build \
             tar \
-            tzdata \
             -y
 
       - name: Checkout sources
@@ -92,24 +92,19 @@ jobs:
           path: ${{ env.ARTIFACTS_DIR }}
 
       - name: Install created sdk
+        if: ${{ matrix.shortcut == 'cs8' }}
         run: pip3 install . -U
 
-      - name: Checkout target repository
-        if: ${{ matrix.shortcut == 'cs9' }}
-        uses: actions/checkout@v2
-        with:
-          path: ovirt-engine-sdk
-          ref: 'gh-pages'
-
       - name: Create python documentation
+        if: ${{ matrix.shortcut == 'cs8' }}
         run: |
-          pip3 install pytz
           pip3 install myst-parser
+          date +"%Z %z"
           cd docs
           make html
 
       - name: Upload generated documentation artifacts
-        if: ${{ matrix.shortcut == 'cs9' }}
+        if: ${{ matrix.shortcut == 'cs8' }}
         uses: actions/upload-artifact@v2
         with:
           name: generated-documentation
