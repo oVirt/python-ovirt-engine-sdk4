@@ -40,6 +40,7 @@ release = ''
 extensions = [
     'sphinx.ext.napoleon',
     'sphinx.ext.autodoc',
+    'myst_parser',
 ]
 
 napoleon_google_docstring = False
@@ -53,8 +54,7 @@ templates_path = ['_templates']
 # source_suffix = ['.rst', '.md']
 source_suffix = {
     '.rst': 'restructuredtext',
-    '.txt': 'restructuredtext',
-    '.adoc': 'txt',
+    '.txt': 'markdown',
     '.md': 'markdown',
 }
 
