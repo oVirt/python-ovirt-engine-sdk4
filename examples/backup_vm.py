@@ -324,7 +324,8 @@ def start_backup(connection, args):
             disks=disks,
             from_checkpoint_id=args.from_checkpoint_uuid,
             description=args.description
-        )
+        ),
+        query={'with_snapshot': 'true'},
     )
 
     progress("Waiting until backup %r is ready" % backup.id)
