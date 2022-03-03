@@ -337,9 +337,7 @@ def start_backup(connection, args):
         backup = get_backup(connection, backup_service, backup.id)
 
     if backup.to_checkpoint_id is not None:
-        progress(
-            "Created checkpoint %r (to use in --from-checkpoint-uuid "
-            "for the next incremental backup)" % backup.to_checkpoint_id)
+        progress("Created checkpoint %r" % backup.to_checkpoint_id)
 
     return backup
 
