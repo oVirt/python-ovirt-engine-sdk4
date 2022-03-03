@@ -32,6 +32,7 @@ incremental backup.
 Requires the ovirt-imageio-client package.
 """
 
+import glob
 import inspect
 import os
 import sys
@@ -391,9 +392,20 @@ def download_backup(connection, backup, args, incremental=False):
         file_name = "{}.{}.{}.{}.qcow2".format(
             timestamp, backup.to_checkpoint_id, disk.id, disk.backup_mode)
         disk_path = os.path.join(args.backup_dir, file_name)
+
+        # When downloading incremental backup, try to use the previous backup
+        # file as a backing file. This creates a chain that can be used later
+        # to restore the disk.
+        if has_incremental:
+            backing_file = find_backing_file(
+                args.backup_dir, backup.from_checkpoint_id, disk.id)
+        else:
+            backing_file = None
+
         download_disk(
             connection, backup.id, disk, disk_path, args,
-            incremental=has_incremental)
+            incremental=has_incremental,
+            backing_file=backing_file)
 
 
 def get_backup_service(connection, vm_uuid, backup_uuid):
@@ -403,9 +415,14 @@ def get_backup_service(connection, vm_uuid, backup_uuid):
     return backups_service.backup_service(id=backup_uuid)
 
 
-def download_disk(connection, backup_uuid, disk, disk_path, args, incremental=False):
+def download_disk(connection, backup_uuid, disk, disk_path, args,
+                  incremental=False, backing_file=None):
     progress("Downloading %s backup for disk %r" %
              ("incremental" if incremental else "full", disk.id))
+    progress("Creating backup file %r" % disk_path)
+    if backing_file:
+        progress("Using backing file %r" % backing_file)
+
     transfer = imagetransfer.create_transfer(
         connection,
         disk,
@@ -438,6 +455,8 @@ def download_disk(connection, backup_uuid, disk, disk_path, args, incremental=Fa
                 secure=args.secure,
                 buffer_size=args.buffer_size,
                 progress=pb,
+                backing_file=backing_file,
+                backing_format="qcow2",
                 **extra_args)
     finally:
         progress("Finalizing image transfer")
@@ -497,6 +516,25 @@ def get_backup(connection, backup_service, backup_uuid):
                            .format(backup_uuid, last_event))
 
     return backup
+
+
+def find_backing_file(backup_dir, checkpoint_uuid, disk_uuid):
+    """
+    Return the name of the backing file for checkpoint, or None if the file was
+    not found.
+
+    Assumes backup filename:
+
+        {timestamp}.{checkpoint-uuid}.{disk-uuid}.{backup-mode}.qcow2
+    """
+    pattern = os.path.join(backup_dir, f"*.{checkpoint_uuid}.{disk_uuid}.*")
+    matches = glob.glob(pattern)
+    if not matches:
+        return None
+
+    # The backing file can be an absolute path or a relative path from the
+    # image directory. Using a relative path make is easier to manage.
+    return os.path.relpath(matches[0], backup_dir)
 
 
 if __name__ == "__main__":
