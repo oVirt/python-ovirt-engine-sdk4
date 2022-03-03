@@ -157,7 +157,7 @@ def cmd_full(args):
         args.from_checkpoint_uuid = None
         backup = start_backup(connection, args)
         try:
-            download_backup(connection, backup.id, args)
+            download_backup(connection, backup, args)
         finally:
             progress("Finalizing backup")
             stop_backup(connection, backup.id, args)
@@ -175,7 +175,7 @@ def cmd_incremental(args):
     with closing(connection):
         backup = start_backup(connection, args)
         try:
-            download_backup(connection, backup.id, args, incremental=True)
+            download_backup(connection, backup, args, incremental=True)
         finally:
             progress("Finalizing backup")
             stop_backup(connection, backup.id, args)
@@ -214,8 +214,15 @@ def cmd_download(args):
 
     connection = common.create_connection(args)
     with closing(connection):
-        download_backup(
-            connection, args.backup_uuid, args, incremental=args.incremental)
+        verify_vm_exists(connection, args.vm_uuid)
+        backup_service = get_backup_service(
+            connection, args.vm_uuid, args.backup_uuid)
+
+        backup = get_backup(connection, backup_service, args.backup_uuid)
+        if backup.phase != types.BackupPhase.READY:
+            raise RuntimeError("Backup {} is not ready".format(backup_uuid))
+
+        download_backup(connection, backup, args, incremental=args.incremental)
 
     progress("Finished downloading disks")
 
@@ -358,22 +365,12 @@ def stop_backup(connection, backup_uuid, args):
         backup = get_backup(connection, backup_service, backup_uuid)
 
 
-def download_backup(connection, backup_uuid, args, incremental=False):
-    verify_vm_exists(connection, args.vm_uuid)
-    verify_backup_exists(connection, args.vm_uuid, backup_uuid)
-
+def download_backup(connection, backup, args, incremental=False):
     if not args.download_backup:
         progress("Skipping download")
         return
 
-    backup_service = get_backup_service(connection, args.vm_uuid, backup_uuid)
-
-    # "get_backup()" invocation will raise if the backup failed.
-    # So we just need to verify that the backup phase is READY.
-    backup = get_backup(connection, backup_service, backup_uuid)
-    if backup.phase != types.BackupPhase.READY:
-        raise RuntimeError("Backup {} is not ready".format(backup_uuid))
-
+    backup_service = get_backup_service(connection, backup.vm.id, backup.id)
     backup_disks = backup_service.disks_service().list()
 
     timestamp = time.strftime("%Y%m%d%H%M%S")
@@ -391,7 +388,7 @@ def download_backup(connection, backup_uuid, args, incremental=False):
         file_name = "{}.{}.{}.qcow2".format(disk.id, timestamp, backup_mode)
         disk_path = os.path.join(args.backup_dir, file_name)
         download_disk(
-            connection, backup_uuid, disk, disk_path, args,
+            connection, backup.id, disk, disk_path, args,
             incremental=has_incremental)
 
 
