@@ -389,7 +389,8 @@ def download_backup(connection, backup, args, incremental=False):
         if incremental and not has_incremental:
             progress("Incremental backup not available for disk %r" % disk.id)
 
-        file_name = "{}.{}.{}.qcow2".format(disk.id, timestamp, backup_mode)
+        file_name = "{}.{}.{}.{}.qcow2".format(
+            timestamp, backup.to_checkpoint_id, disk.id, backup_mode)
         disk_path = os.path.join(args.backup_dir, file_name)
         download_disk(
             connection, backup.id, disk, disk_path, args,
