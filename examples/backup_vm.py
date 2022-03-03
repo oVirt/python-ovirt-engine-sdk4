@@ -378,7 +378,7 @@ def download_backup(connection, backup_uuid, args, incremental=False):
 
     backup_disks = backup_service.disks_service().list()
 
-    timestamp = time.strftime("%Y%m%d%H%M")
+    timestamp = time.strftime("%Y%m%d%H%M%S")
     for disk in backup_disks:
         # During incremental backup, incremental backup may not be available
         # for some of the disks. We need to check the backup mode of the disk.
