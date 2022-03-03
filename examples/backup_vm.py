@@ -460,12 +460,15 @@ def get_vm_disks(connection, vm_id):
     return disks
 
 
-def get_backup_events(connection, search_id):
+def get_last_backup_event(connection, search_id):
     events_service = connection.system_service().events_service()
+    backup_events = events_service.list(search=str(search_id))
+    if not backup_events:
+        return None
 
-    # Get the backup events arranged from the most recent event to the oldest
-    return [dict(code=event.code, description=event.description)
-            for event in events_service.list(search=str(search_id))]
+    # The first item is the most recent event.
+    last_event = backup_events[0]
+    return dict(code=event.code, description=event.description)
 
 
 def get_disk_backup_mode(connection, disk):
@@ -497,12 +500,12 @@ def get_backup(connection, backup_service, backup_uuid):
     try:
         backup = backup_service.get()
     except sdk.NotFoundError:
-        last_event = get_backup_events(connection, backup_uuid)[0]
+        last_event = get_last_backup_event(connection, backup_uuid)
         raise RuntimeError("Backup {} does not exist, last reported event: {}"
                            .format(backup_uuid, last_event))
 
     if backup.phase == types.BackupPhase.FAILED:
-        last_event = get_backup_events(connection, backup_uuid)[0]
+        last_event = get_last_backup_event(connection, backup_uuid)
         raise RuntimeError("Backup {} has failed, last reported event: {}"
                            .format(backup_uuid, last_event))
 
