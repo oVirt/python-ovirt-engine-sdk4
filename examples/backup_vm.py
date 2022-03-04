@@ -160,7 +160,7 @@ def cmd_full(args):
             download_backup(connection, backup, args)
         finally:
             progress("Finalizing backup")
-            stop_backup(connection, backup.id, args)
+            stop_backup(connection, backup, args)
 
     progress("Full backup %r completed successfully" % backup.id)
 
@@ -178,7 +178,7 @@ def cmd_incremental(args):
             download_backup(connection, backup, args, incremental=True)
         finally:
             progress("Finalizing backup")
-            stop_backup(connection, backup.id, args)
+            stop_backup(connection, backup, args)
 
     progress("Incremental backup %r completed successfully" % backup.id)
 
@@ -235,7 +235,15 @@ def cmd_stop(args):
 
     connection = common.create_connection(args)
     with closing(connection):
-        stop_backup(connection, args.backup_uuid, args)
+        verify_vm_exists(connection, args.vm_uuid)
+        backup_service = get_backup_service(
+            connection, args.vm_uuid, args.backup_uuid)
+
+        # In a real application it will be a good idea to check if the backup
+        # has succeeded, but it is useful to be able to stop more than once
+        # for testing purposes.
+        backup = get_backup(connection, backup_service, args.backup_uuid)
+        stop_backup(connection, backup, args)
 
     progress("Backup %r completed successfully" % args.backup_uuid)
 
@@ -349,20 +357,16 @@ def start_backup(connection, args):
     return backup
 
 
-def stop_backup(connection, backup_uuid, args):
-    verify_vm_exists(connection, args.vm_uuid)
-    verify_backup_exists(connection, args.vm_uuid, backup_uuid)
-
-    backup_service = get_backup_service(connection, args.vm_uuid, backup_uuid)
+def stop_backup(connection, backup, args):
+    backup_service = get_backup_service(connection, backup.vm.id, backup.id)
 
     backup_service.finalize()
 
     # "get_backup()" invocation will raise if the backup failed.
     # So we just need to wait until the backup phase is SUCCEEDED.
-    backup = get_backup(connection, backup_service, backup_uuid)
     while backup.phase != types.BackupPhase.SUCCEEDED:
         time.sleep(1)
-        backup = get_backup(connection, backup_service, backup_uuid)
+        backup = get_backup(connection, backup_service, backup.id)
 
 
 def download_backup(connection, backup, args, incremental=False):
@@ -482,15 +486,6 @@ def verify_vm_exists(connection, vm_uuid):
         vm_service.get()
     except sdk.NotFoundError:
         progress("VM %r does not exist" % vm_uuid)
-        sys.exit(1)
-
-
-def verify_backup_exists(connection, vm_uuid, backup_uuid):
-    backup_service = get_backup_service(connection, vm_uuid, backup_uuid)
-    try:
-        backup_service.get()
-    except sdk.NotFoundError:
-        progress("Backup %r not found" % backup_uuid)
         sys.exit(1)
 
 
