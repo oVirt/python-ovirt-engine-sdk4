@@ -111,10 +111,9 @@ def cmd_purge(args):
         now = datetime.datetime.now(datetime.timezone.utc)
 
         for checkpoint in checkpoints_service.list():
-            checkpoint_age = now - checkpoint.creation_date
-
-            if checkpoint_age.days > args.days:
-                progress(f"Removing checkpoint {checkpoint.id}, created {checkpoint_age.days} days ago")
+            days = age(checkpoint, now)
+            if days > args.days:
+                progress(f"Removing checkpoint {checkpoint.id}, created {days} days ago")
                 checkpoint_service = checkpoints_service.checkpoint_service(checkpoint.id)
                 remove_checkpoint(checkpoint_service)
                 progress(f"Checkpoint {checkpoint.id} removed successfully")
@@ -134,6 +133,11 @@ def remove_checkpoint(checkpoint_service, timeout=60):
             raise RuntimeError("Timeout waiting for checkpoint removal")
 
         time.sleep(1)
+
+
+def age(checkpoint, now):
+    delta = now - checkpoint.creation_date
+    return delta.days
 
 
 if __name__ == "__main__":
