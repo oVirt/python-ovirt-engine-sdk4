@@ -441,7 +441,8 @@ def download_disk(connection, backup_uuid, disk, disk_path, args, incremental=Fa
     finally:
         progress("Finalizing image transfer")
         imagetransfer.finalize_transfer(connection, transfer, disk)
-        progress("Download completed successfully")
+
+    progress("Download completed successfully")
 
 
 # General helpers
