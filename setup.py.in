@@ -68,6 +68,9 @@ setuptools.setup(
             include_dirs=[
                 '/usr/include/libxml2',
             ],
+            extra_compile_args=[
+                '-fcf-protection=full'
+            ],
             libraries=[
                 'xml2',
             ],
