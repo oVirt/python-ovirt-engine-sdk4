@@ -381,8 +381,7 @@ def download_backup(connection, backup, args, incremental=False):
     for disk in backup_disks:
         # During incremental backup, incremental backup may not be available
         # for some of the disks. We need to check the backup mode of the disk.
-        backup_mode = get_disk_backup_mode(connection, disk)
-        has_incremental = backup_mode == types.DiskBackupMode.INCREMENTAL
+        has_incremental = disk.backup_mode == types.DiskBackupMode.INCREMENTAL
 
         # If incremental backup is not available, warn about it, since full
         # backup is much slower and takes much more storage.
@@ -390,7 +389,7 @@ def download_backup(connection, backup, args, incremental=False):
             progress("Incremental backup not available for disk %r" % disk.id)
 
         file_name = "{}.{}.{}.{}.qcow2".format(
-            timestamp, backup.to_checkpoint_id, disk.id, backup_mode)
+            timestamp, backup.to_checkpoint_id, disk.id, disk.backup_mode)
         disk_path = os.path.join(args.backup_dir, file_name)
         download_disk(
             connection, backup.id, disk, disk_path, args,
@@ -472,12 +471,6 @@ def get_last_backup_event(connection, search_id):
     # The first item is the most recent event.
     last_event = backup_events[0]
     return dict(code=event.code, description=event.description)
-
-
-def get_disk_backup_mode(connection, disk):
-    system_service = connection.system_service()
-    disk_info = system_service.disks_service().disk_service(disk.id).get()
-    return disk_info.backup_mode
 
 
 def verify_vm_exists(connection, vm_uuid):
