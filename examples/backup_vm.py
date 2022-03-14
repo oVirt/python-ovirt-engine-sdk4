@@ -32,6 +32,7 @@ incremental backup.
 Requires the ovirt-imageio-client package.
 """
 
+import glob
 import inspect
 import os
 import sys
@@ -157,10 +158,10 @@ def cmd_full(args):
         args.from_checkpoint_uuid = None
         backup = start_backup(connection, args)
         try:
-            download_backup(connection, backup.id, args)
+            download_backup(connection, backup, args)
         finally:
             progress("Finalizing backup")
-            stop_backup(connection, backup.id, args)
+            stop_backup(connection, backup, args)
 
     progress("Full backup %r completed successfully" % backup.id)
 
@@ -175,10 +176,10 @@ def cmd_incremental(args):
     with closing(connection):
         backup = start_backup(connection, args)
         try:
-            download_backup(connection, backup.id, args, incremental=True)
+            download_backup(connection, backup, args, incremental=True)
         finally:
             progress("Finalizing backup")
-            stop_backup(connection, backup.id, args)
+            stop_backup(connection, backup, args)
 
     progress("Incremental backup %r completed successfully" % backup.id)
 
@@ -214,8 +215,15 @@ def cmd_download(args):
 
     connection = common.create_connection(args)
     with closing(connection):
-        download_backup(
-            connection, args.backup_uuid, args, incremental=args.incremental)
+        verify_vm_exists(connection, args.vm_uuid)
+        backup_service = get_backup_service(
+            connection, args.vm_uuid, args.backup_uuid)
+
+        backup = get_backup(connection, backup_service, args.backup_uuid)
+        if backup.phase != types.BackupPhase.READY:
+            raise RuntimeError("Backup {} is not ready".format(backup_uuid))
+
+        download_backup(connection, backup, args, incremental=args.incremental)
 
     progress("Finished downloading disks")
 
@@ -228,7 +236,15 @@ def cmd_stop(args):
 
     connection = common.create_connection(args)
     with closing(connection):
-        stop_backup(connection, args.backup_uuid, args)
+        verify_vm_exists(connection, args.vm_uuid)
+        backup_service = get_backup_service(
+            connection, args.vm_uuid, args.backup_uuid)
+
+        # In a real application it will be a good idea to check if the backup
+        # has succeeded, but it is useful to be able to stop more than once
+        # for testing purposes.
+        backup = get_backup(connection, backup_service, args.backup_uuid)
+        stop_backup(connection, backup, args)
 
     progress("Backup %r completed successfully" % args.backup_uuid)
 
@@ -337,64 +353,59 @@ def start_backup(connection, args):
         backup = get_backup(connection, backup_service, backup.id)
 
     if backup.to_checkpoint_id is not None:
-        progress(
-            "Created checkpoint %r (to use in --from-checkpoint-uuid "
-            "for the next incremental backup)" % backup.to_checkpoint_id)
+        progress("Created checkpoint %r" % backup.to_checkpoint_id)
 
     return backup
 
 
-def stop_backup(connection, backup_uuid, args):
-    verify_vm_exists(connection, args.vm_uuid)
-    verify_backup_exists(connection, args.vm_uuid, backup_uuid)
-
-    backup_service = get_backup_service(connection, args.vm_uuid, backup_uuid)
+def stop_backup(connection, backup, args):
+    backup_service = get_backup_service(connection, backup.vm.id, backup.id)
 
     backup_service.finalize()
 
     # "get_backup()" invocation will raise if the backup failed.
     # So we just need to wait until the backup phase is SUCCEEDED.
-    backup = get_backup(connection, backup_service, backup_uuid)
     while backup.phase != types.BackupPhase.SUCCEEDED:
         time.sleep(1)
-        backup = get_backup(connection, backup_service, backup_uuid)
+        backup = get_backup(connection, backup_service, backup.id)
 
 
-def download_backup(connection, backup_uuid, args, incremental=False):
-    verify_vm_exists(connection, args.vm_uuid)
-    verify_backup_exists(connection, args.vm_uuid, backup_uuid)
-
+def download_backup(connection, backup, args, incremental=False):
     if not args.download_backup:
         progress("Skipping download")
         return
 
-    backup_service = get_backup_service(connection, args.vm_uuid, backup_uuid)
-
-    # "get_backup()" invocation will raise if the backup failed.
-    # So we just need to verify that the backup phase is READY.
-    backup = get_backup(connection, backup_service, backup_uuid)
-    if backup.phase != types.BackupPhase.READY:
-        raise RuntimeError("Backup {} is not ready".format(backup_uuid))
-
+    backup_service = get_backup_service(connection, backup.vm.id, backup.id)
     backup_disks = backup_service.disks_service().list()
 
-    timestamp = time.strftime("%Y%m%d%H%M")
+    timestamp = time.strftime("%Y%m%d%H%M%S")
     for disk in backup_disks:
         # During incremental backup, incremental backup may not be available
         # for some of the disks. We need to check the backup mode of the disk.
-        backup_mode = get_disk_backup_mode(connection, disk)
-        has_incremental = backup_mode == types.DiskBackupMode.INCREMENTAL
+        has_incremental = disk.backup_mode == types.DiskBackupMode.INCREMENTAL
 
         # If incremental backup is not available, warn about it, since full
         # backup is much slower and takes much more storage.
         if incremental and not has_incremental:
             progress("Incremental backup not available for disk %r" % disk.id)
 
-        file_name = "{}.{}.{}.qcow2".format(disk.id, timestamp, backup_mode)
+        file_name = "{}.{}.{}.{}.qcow2".format(
+            timestamp, backup.to_checkpoint_id, disk.id, disk.backup_mode)
         disk_path = os.path.join(args.backup_dir, file_name)
+
+        # When downloading incremental backup, try to use the previous backup
+        # file as a backing file. This creates a chain that can be used later
+        # to restore the disk.
+        if has_incremental:
+            backing_file = find_backing_file(
+                args.backup_dir, backup.from_checkpoint_id, disk.id)
+        else:
+            backing_file = None
+
         download_disk(
-            connection, backup_uuid, disk, disk_path, args,
-            incremental=has_incremental)
+            connection, backup.id, disk, disk_path, args,
+            incremental=has_incremental,
+            backing_file=backing_file)
 
 
 def get_backup_service(connection, vm_uuid, backup_uuid):
@@ -404,9 +415,14 @@ def get_backup_service(connection, vm_uuid, backup_uuid):
     return backups_service.backup_service(id=backup_uuid)
 
 
-def download_disk(connection, backup_uuid, disk, disk_path, args, incremental=False):
+def download_disk(connection, backup_uuid, disk, disk_path, args,
+                  incremental=False, backing_file=None):
     progress("Downloading %s backup for disk %r" %
              ("incremental" if incremental else "full", disk.id))
+    progress("Creating backup file %r" % disk_path)
+    if backing_file:
+        progress("Using backing file %r" % backing_file)
+
     transfer = imagetransfer.create_transfer(
         connection,
         disk,
@@ -439,11 +455,14 @@ def download_disk(connection, backup_uuid, disk, disk_path, args, incremental=Fa
                 secure=args.secure,
                 buffer_size=args.buffer_size,
                 progress=pb,
+                backing_file=backing_file,
+                backing_format="qcow2",
                 **extra_args)
     finally:
         progress("Finalizing image transfer")
         imagetransfer.finalize_transfer(connection, transfer, disk)
-        progress("Download completed successfully")
+
+    progress("Download completed successfully")
 
 
 # General helpers
@@ -462,18 +481,15 @@ def get_vm_disks(connection, vm_id):
     return disks
 
 
-def get_backup_events(connection, search_id):
+def get_last_backup_event(connection, search_id):
     events_service = connection.system_service().events_service()
+    backup_events = events_service.list(search=str(search_id))
+    if not backup_events:
+        return None
 
-    # Get the backup events arranged from the most recent event to the oldest
-    return [dict(code=event.code, description=event.description)
-            for event in events_service.list(search=str(search_id))]
-
-
-def get_disk_backup_mode(connection, disk):
-    system_service = connection.system_service()
-    disk_info = system_service.disks_service().disk_service(disk.id).get()
-    return disk_info.backup_mode
+    # The first item is the most recent event.
+    last_event = backup_events[0]
+    return dict(code=event.code, description=event.description)
 
 
 def verify_vm_exists(connection, vm_uuid):
@@ -486,29 +502,39 @@ def verify_vm_exists(connection, vm_uuid):
         sys.exit(1)
 
 
-def verify_backup_exists(connection, vm_uuid, backup_uuid):
-    backup_service = get_backup_service(connection, vm_uuid, backup_uuid)
-    try:
-        backup_service.get()
-    except sdk.NotFoundError:
-        progress("Backup %r not found" % backup_uuid)
-        sys.exit(1)
-
-
 def get_backup(connection, backup_service, backup_uuid):
     try:
         backup = backup_service.get()
     except sdk.NotFoundError:
-        last_event = get_backup_events(connection, backup_uuid)[0]
+        last_event = get_last_backup_event(connection, backup_uuid)
         raise RuntimeError("Backup {} does not exist, last reported event: {}"
                            .format(backup_uuid, last_event))
 
     if backup.phase == types.BackupPhase.FAILED:
-        last_event = get_backup_events(connection, backup_uuid)[0]
+        last_event = get_last_backup_event(connection, backup_uuid)
         raise RuntimeError("Backup {} has failed, last reported event: {}"
                            .format(backup_uuid, last_event))
 
     return backup
+
+
+def find_backing_file(backup_dir, checkpoint_uuid, disk_uuid):
+    """
+    Return the name of the backing file for checkpoint, or None if the file was
+    not found.
+
+    Assumes backup filename:
+
+        {timestamp}.{checkpoint-uuid}.{disk-uuid}.{backup-mode}.qcow2
+    """
+    pattern = os.path.join(backup_dir, f"*.{checkpoint_uuid}.{disk_uuid}.*")
+    matches = glob.glob(pattern)
+    if not matches:
+        return None
+
+    # The backing file can be an absolute path or a relative path from the
+    # image directory. Using a relative path make is easier to manage.
+    return os.path.relpath(matches[0], backup_dir)
 
 
 if __name__ == "__main__":
