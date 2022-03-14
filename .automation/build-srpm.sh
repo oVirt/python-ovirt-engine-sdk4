@@ -19,6 +19,7 @@ GENERATED_FILES="
  PKG-INFO
  lib/ovirt_engine_sdk_python.egg-info/PKG-INFO
  python-ovirt-engine-sdk4.spec
+ python38-ovirt-engine-sdk4.spec
 "
 
 for gen_file in ${GENERATED_FILES} ; do
