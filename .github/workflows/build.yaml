@@ -41,6 +41,11 @@ jobs:
           # DNF core plugins are installed in the official CS9 container image
           dnf install -y dnf-plugins-core
 
+      - name: Update crypto policies
+        if: ${{ matrix.shortcut == 'cs9' }}
+        run: |
+          update-crypto-policies --set LEGACY
+
       - name: Prepare build environment
         run: |
           # Install oVirt repositories
