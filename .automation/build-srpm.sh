@@ -31,7 +31,7 @@ for gen_file in ${GENERATED_FILES} ; do
     < ${gen_file}.in > ${gen_file}
 done
 
-find . -not -name '*.spec' -not -name '*.in' -type f | tar --files-from /proc/self/fd/0 -czf "${TARBALL}" python-ovirt-engine-sdk4.spec
+find . -not -name '*.spec' -not -name '*.in' -type f | tar --files-from /proc/self/fd/0 -czf "${TARBALL}" python-ovirt-engine-sdk4.spec python38-ovirt-engine-sdk4.spec
 
 # Directory, where build artifacts will be stored, should be passed as the 1st parameter
 ARTIFACTS_DIR=${1:-exported-artifacts}
