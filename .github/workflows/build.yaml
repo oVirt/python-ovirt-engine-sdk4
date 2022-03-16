@@ -21,10 +21,10 @@ jobs:
         include:
           - name: centos-stream-8
             shortcut: cs8
-            container-name: stream8
+            container-name: el8stream
           - name: centos-stream-9
             shortcut: cs9
-            container-name: stream9
+            container-name: el9stream
 
     name: ${{ matrix.name }}
 
@@ -32,7 +32,7 @@ jobs:
       ARTIFACTS_DIR: exported-artifacts
 
     container:
-      image: quay.io/centos/centos:${{ matrix.container-name }}
+      image: quay.io/ovirt/buildcontainer:${{ matrix.container-name }}
 
     steps:
       - name: Install DNF core plugins
