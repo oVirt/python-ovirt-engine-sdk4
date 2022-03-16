@@ -32,9 +32,9 @@ API.
 Summary: oVirt Engine Software Development Kit (Python)
 BuildRequires: python38-devel
 Requires: libxml2
-Requires: python3
-Requires: python3-pycurl >= 7.43.0-6
-Requires: python3-six
+Requires: python38
+Requires: python38-pycurl >= 7.43.0-6
+Requires: python38-six
 
 %description -n python38-ovirt-engine-sdk4
 This package contains the Python 3 SDK for version 4 of the oVirt Engine
