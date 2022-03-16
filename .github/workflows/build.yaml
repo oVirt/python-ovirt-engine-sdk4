@@ -32,7 +32,7 @@ jobs:
       ARTIFACTS_DIR: exported-artifacts
 
     container:
-      image: quay.io/ovirt/buildcontainer::${{ matrix.container-name }}
+      image: quay.io/ovirt/buildcontainer:${{ matrix.container-name }}
 
     steps:
       - name: Install DNF core plugins
