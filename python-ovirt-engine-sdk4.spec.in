@@ -55,6 +55,8 @@ API.
 %endif
 
 %install
+%define python3_pkgversion 3
+%define __python3 /usr/bin/python3
 %py3_install
 %if 0%{?rhel} < 9
 %define python3_pkgversion 38
