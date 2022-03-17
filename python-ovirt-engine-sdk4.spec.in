@@ -59,6 +59,8 @@ API.
 %doc README.adoc
 %doc examples
 %license LICENSE.txt
+%define python3_pkgversion 3
+%define __python3 /usr/bin/python3
 %{python3_sitearch}/*
 
 %if 0%{?rhel} < 9
