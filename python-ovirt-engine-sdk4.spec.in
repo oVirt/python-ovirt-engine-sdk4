@@ -37,7 +37,7 @@ Requires: python38-pycurl >= 7.43.0-6
 Requires: python38-six
 
 %description -n python38-ovirt-engine-sdk4
-This package contains the Python 3 SDK for version 4 of the oVirt Engine
+This package contains the Python 3.8 SDK for version 4 of the oVirt Engine
 API.
 %endif
 
@@ -45,7 +45,14 @@ API.
 %setup -c -q -n ovirt-engine-sdk-python-@PACKAGE_VERSION@
 
 %build
+%define python3_pkgversion 3
+%define __python3 /usr/bin/python3
 %py3_build
+%if 0%{?rhel} < 9
+%define python3_pkgversion 38
+%define __python3 /usr/bin/python3.8
+%py3_build
+%endif
 
 %install
 %py3_install
