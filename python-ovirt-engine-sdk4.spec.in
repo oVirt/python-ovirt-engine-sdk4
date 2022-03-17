@@ -39,15 +39,6 @@ Requires: python38-six
 %description -n python38-ovirt-engine-sdk4
 This package contains the Python 3 SDK for version 4 of the oVirt Engine
 API.
-
-%files -n python38-ovirt-engine-sdk4
-%doc README.adoc
-%doc examples
-%license LICENSE.txt
-%define python3_pkgversion 38
-%define __python3 /usr/bin/python3.8
-%{python3_sitearch}/*
-
 %endif
 
 %prep
@@ -55,11 +46,6 @@ API.
 
 %build
 %py3_build
-%if %{rhel} < 9
-%define python3_pkgversion 38
-%define __python3 /usr/bin/python3.8
-%py3_build
-%endif
 
 %install
 %py3_install
@@ -74,6 +60,16 @@ API.
 %doc examples
 %license LICENSE.txt
 %{python3_sitearch}/*
+
+%if %{rhel} < 9
+%files -n python38-ovirt-engine-sdk4
+%doc README.adoc
+%doc examples
+%license LICENSE.txt
+%define python3_pkgversion 38
+%define __python3 /usr/bin/python3.8
+%{python3_sitearch}/*
+%endif
 
 %changelog
 * Wed Oct 27 2021 Martin Necas <mnecas@redhat.com> - 4.5.0-1
