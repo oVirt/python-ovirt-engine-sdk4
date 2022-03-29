@@ -574,15 +574,15 @@ class AffinityGroupHostsService(Service):
         # Send the request and wait for the response:
         return self._internal_get(headers, query, wait)
 
-    def host_service(self, id):
+    def host_service(self, id_or_name):
         """
-        Access the service that manages the host assignment to this affinity group.
+        Access the service that manages the host assignment to this affinity group by host id or name.
 
         """
         Service._check_types([
-            ('id', id, str),
+            ('id_or_name', id_or_name, str),
         ])
-        return AffinityGroupHostService(self._connection, '%s/%s' % (self._path, id))
+        return AffinityGroupHostService(self._connection, '%s/%s' % (self._path, id_or_name))
 
     def service(self, path):
         """
@@ -4568,16 +4568,18 @@ class ClusterService(Service):
     def upgrade(
         self,
         async_=None,
+        correlation_id=None,
         upgrade_action=None,
+        upgrade_percent_complete=None,
         headers=None,
         query=None,
         wait=True,
         **kwargs
     ):
         """
-        Start or finish upgrade process for the cluster based on the action value. This action marks the cluster for
-        upgrade or clears the upgrade running flag on the cluster based on the action value which takes values of
-        start or stop.
+        Start, update or finish upgrade process for the cluster based on the action value. This action marks the
+        cluster for upgrade, updates the progress, or clears the upgrade running flag on the cluster based on the
+        action value which takes values of `start`, `stop` or `update_progress`.
         [source]
         ----
         POST /ovirt-engine/api/clusters/123/upgrade
@@ -4591,11 +4593,29 @@ class ClusterService(Service):
             </upgrade_action>
         </action>
         ----
+        After starting the upgrade, use a request body like this to update the progress to 15%:
+        [source,xml]
+        ----
+        <action>
+            <upgrade_action>
+                update_progress
+            </upgrade_action>
+            <upgrade_percent_complete>
+                15
+            </upgrade_percent_complete>
+        </action>
+        ----
 
 
         This method supports the following parameters:
 
         `upgrade_action`:: The action to be performed.
+
+        `correlation_id`:: Explicitly set the upgrade correlation identifier.  Use to correlate events
+        detailing the cluster upgrade to the upgrade itself.  If not specificed, the
+        correlation id from `Correlation-Id` http header will be used.
+
+        `upgrade_percent_complete`:: Update the upgrade's progress as a percent complete of the total process.
 
         `async_`:: Indicates if the action should be performed asynchronously.
 
@@ -4608,7 +4628,9 @@ class ClusterService(Service):
         # Check the types of the parameters:
         Service._check_types([
             ('async_', async_, bool),
+            ('correlation_id', correlation_id, str),
             ('upgrade_action', upgrade_action, types.ClusterUpgradeAction),
+            ('upgrade_percent_complete', upgrade_percent_complete, int),
         ])
 
         # Since Python 3.7 async is reserved keyword, support backward compatibility
@@ -4618,7 +4640,9 @@ class ClusterService(Service):
         # Populate the action:
         action = types.Action(
             async_=async_,
+            correlation_id=correlation_id,
             upgrade_action=upgrade_action,
+            upgrade_percent_complete=upgrade_percent_complete,
         )
 
         # Send the request and wait for the response:
@@ -7684,7 +7708,7 @@ class DisksService(Service):
         FCP) don't support the combination of the raw `format` with `sparse=true`, so `sparse=false` must be stated
         explicitly.
         To create a new floating image disk with specified `provisioned_size`, `format` and `name` on a storage domain
-        with an id `123`, send a request as follows:
+        with an id `123` and enabled for incremental backup, send a request as follows:
         [source]
         ----
         POST /ovirt-engine/api/disks
@@ -7699,6 +7723,7 @@ class DisksService(Service):
           <name>mydisk</name>
           <provisioned_size>1048576</provisioned_size>
           <format>cow</format>
+          <backup>incremental</backup>
         </disk>
         ----
         *Adding a new direct LUN disk:*
@@ -12444,6 +12469,63 @@ class GroupsService(Service):
 
     def __str__(self):
         return 'GroupsService:%s' % self._path
+
+
+class HostCpuUnitsService(Service):
+    """
+    """
+
+    def __init__(self, connection, path):
+        super(HostCpuUnitsService, self).__init__(connection, path)
+
+    def list(
+        self,
+        follow=None,
+        headers=None,
+        query=None,
+        wait=True,
+        **kwargs
+    ):
+        """
+        Returns the List of all host's CPUs with detailed information
+        about the topology (socket, core) and with information
+        about the current CPU pinning.
+
+
+        This method supports the following parameters:
+
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+
+        `headers`:: Additional HTTP headers.
+
+        `query`:: Additional URL query parameters.
+
+        `wait`:: If `True` wait for the response.
+        """
+        # Check the types of the parameters:
+        Service._check_types([
+            ('follow', follow, str),
+        ])
+
+        # Build the URL:
+        query = query or {}
+        if follow is not None:
+            query['follow'] = follow
+
+        # Send the request and wait for the response:
+        return self._internal_get(headers, query, wait)
+
+    def service(self, path):
+        """
+        Service locator method, returns individual service on which the URI is dispatched.
+        """
+        if not path:
+            return self
+        raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
+
+    def __str__(self):
+        return 'HostCpuUnitsService:%s' % self._path
 
 
 class HostDeviceService(Service):
@@ -28905,6 +28987,7 @@ class TemplateService(Service):
         self._cdroms_service = None
         self._disk_attachments_service = None
         self._graphics_consoles_service = None
+        self._mediated_devices_service = None
         self._nics_service = None
         self._permissions_service = None
         self._tags_service = None
@@ -29232,6 +29315,13 @@ class TemplateService(Service):
         """
         return TemplateGraphicsConsolesService(self._connection, '%s/graphicsconsoles' % self._path)
 
+    def mediated_devices_service(self):
+        """
+        Reference to the service that manages mediated devices associated with the template.
+
+        """
+        return TemplateMediatedDevicesService(self._connection, '%s/mediateddevices' % self._path)
+
     def nics_service(self):
         """
         Returns a reference to the service that manages the NICs that are associated with the template.
@@ -29278,6 +29368,10 @@ class TemplateService(Service):
             return self.graphics_consoles_service()
         if path.startswith('graphicsconsoles/'):
             return self.graphics_consoles_service().service(path[17:])
+        if path == 'mediateddevices':
+            return self.mediated_devices_service()
+        if path.startswith('mediateddevices/'):
+            return self.mediated_devices_service().service(path[16:])
         if path == 'nics':
             return self.nics_service()
         if path.startswith('nics/'):
@@ -30067,6 +30161,277 @@ class TemplateGraphicsConsolesService(Service):
 
     def __str__(self):
         return 'TemplateGraphicsConsolesService:%s' % self._path
+
+
+class TemplateMediatedDeviceService(Service):
+    """
+    """
+
+    def __init__(self, connection, path):
+        super(TemplateMediatedDeviceService, self).__init__(connection, path)
+
+    def get(
+        self,
+        follow=None,
+        headers=None,
+        query=None,
+        wait=True,
+        **kwargs
+    ):
+        """
+        Gets mediated device configuration of the template.
+
+
+        This method supports the following parameters:
+
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+
+        `headers`:: Additional HTTP headers.
+
+        `query`:: Additional URL query parameters.
+
+        `wait`:: If `True` wait for the response.
+        """
+        # Check the types of the parameters:
+        Service._check_types([
+            ('follow', follow, str),
+        ])
+
+        # Build the URL:
+        query = query or {}
+        if follow is not None:
+            query['follow'] = follow
+
+        # Send the request and wait for the response:
+        return self._internal_get(headers, query, wait)
+
+    def remove(
+        self,
+        async_=None,
+        headers=None,
+        query=None,
+        wait=True,
+        **kwargs
+    ):
+        """
+        Remove the mediated device from the template.
+
+
+        This method supports the following parameters:
+
+        `async_`:: Indicates if the remove should be performed asynchronously.
+
+        `headers`:: Additional HTTP headers.
+
+        `query`:: Additional URL query parameters.
+
+        `wait`:: If `True` wait for the response.
+        """
+        # Check the types of the parameters:
+        Service._check_types([
+            ('async_', async_, bool),
+        ])
+
+        # Since Python 3.7 async is reserved keyword, support backward compatibility
+        if 'async' in kwargs:
+            async_ = kwargs.get('async')
+
+        # Build the URL:
+        query = query or {}
+        if async_ is not None:
+            async_ = Writer.render_boolean(async_)
+            query['async'] = async_
+
+        # Send the request and wait for the response:
+        self._internal_remove(headers, query, wait)
+
+    def update(
+        self,
+        devices,
+        async_=None,
+        headers=None,
+        query=None,
+        wait=True,
+        **kwargs
+    ):
+        """
+        Updates the information about the mediated device.
+        You can update the information using `specParams` element.
+        For example, to update a mediated device, send a request like this:
+        [source]
+        ----
+        PUT /ovirt-engine/api/templates/123/mediateddevices/00000000-0000-0000-0000-000000000000
+        <vm_mediated_device>
+          <spec_params>
+            <property>
+              <name>mdevType</name>
+              <value>nvidia-11</value>
+            </property>
+          </spec_params>
+        </vm_mediated_device>
+        ----
+        with response body:
+        [source,xml]
+        ----
+        <vm_mediated_device href="/ovirt-engine/api/templates/123/mediateddevices/00000000-0000-0000-0000-000000000000" id="00000000-0000-0000-0000-000000000000">
+          <template href="/ovirt-engine/api/templates/123" id="123"/>
+          <spec_params>
+            <property>
+              <name>mdevType</name>
+              <value>nvidia-11</value>
+            </property>
+          </spec_params>
+        </vm_mediated_device>
+        ----
+
+
+        This method supports the following parameters:
+
+        `devices`:: The information about the mediated device.
+        The request data must contain `specParams` properties.
+        The response data contains complete information about the
+        updated mediated device.
+
+        `headers`:: Additional HTTP headers.
+
+        `query`:: Additional URL query parameters.
+
+        `wait`:: If `True` wait for the response.
+        """
+        # Check the types of the parameters:
+        Service._check_types([
+            ('devices', devices, types.VmMediatedDevice),
+            ('async_', async_, bool),
+        ])
+
+        # Since Python 3.7 async is reserved keyword, support backward compatibility
+        if 'async' in kwargs:
+            async_ = kwargs.get('async')
+
+        # Build the URL:
+        query = query or {}
+        if async_ is not None:
+            async_ = Writer.render_boolean(async_)
+            query['async'] = async_
+
+        # Send the request and wait for the response:
+        return self._internal_update(devices, headers, query, wait)
+
+    def service(self, path):
+        """
+        Service locator method, returns individual service on which the URI is dispatched.
+        """
+        if not path:
+            return self
+        raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
+
+    def __str__(self):
+        return 'TemplateMediatedDeviceService:%s' % self._path
+
+
+class TemplateMediatedDevicesService(Service):
+    """
+    A service that manages mediated devices of a template.
+
+    """
+
+    def __init__(self, connection, path):
+        super(TemplateMediatedDevicesService, self).__init__(connection, path)
+        self._device_service = None
+
+    def add(
+        self,
+        device,
+        headers=None,
+        query=None,
+        wait=True,
+        **kwargs
+    ):
+        """
+        Add new mediated device to the template.
+
+
+        """
+        # Check the types of the parameters:
+        Service._check_types([
+            ('device', device, types.VmMediatedDevice),
+        ])
+
+        # Build the URL:
+        query = query or {}
+
+        # Send the request and wait for the response:
+        return self._internal_add(device, headers, query, wait)
+
+    def list(
+        self,
+        follow=None,
+        max=None,
+        headers=None,
+        query=None,
+        wait=True,
+        **kwargs
+    ):
+        """
+        Lists all the configured mediated devices of the template.
+        The order of the returned list of mediated devices isn't guaranteed.
+
+
+        This method supports the following parameters:
+
+        `max`:: Sets the maximum number of mediated devices to return.
+        If not specified all the mediated devices are returned.
+
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+
+        `headers`:: Additional HTTP headers.
+
+        `query`:: Additional URL query parameters.
+
+        `wait`:: If `True` wait for the response.
+        """
+        # Check the types of the parameters:
+        Service._check_types([
+            ('follow', follow, str),
+            ('max', max, int),
+        ])
+
+        # Build the URL:
+        query = query or {}
+        if follow is not None:
+            query['follow'] = follow
+        if max is not None:
+            max = Writer.render_integer(max)
+            query['max'] = max
+
+        # Send the request and wait for the response:
+        return self._internal_get(headers, query, wait)
+
+    def device_service(self, id):
+        """
+        Returns a reference to the service that manages a mediated device of a template.
+
+        """
+        Service._check_types([
+            ('id', id, str),
+        ])
+        return TemplateMediatedDeviceService(self._connection, '%s/%s' % (self._path, id))
+
+    def service(self, path):
+        """
+        Service locator method, returns individual service on which the URI is dispatched.
+        """
+        if not path:
+            return self
+        index = path.find('/')
+        if index == -1:
+            return self.device_service(path)
+        return self.device_service(path[:index]).service(path[index + 1:])
+
+    def __str__(self):
+        return 'TemplateMediatedDevicesService:%s' % self._path
 
 
 class TemplateNicService(Service):
@@ -31867,6 +32232,7 @@ class VmService(MeasurableService):
         self._graphics_consoles_service = None
         self._host_devices_service = None
         self._katello_errata_service = None
+        self._mediated_devices_service = None
         self._nics_service = None
         self._numa_nodes_service = None
         self._permissions_service = None
@@ -31888,6 +32254,8 @@ class VmService(MeasurableService):
     ):
         """
         Apply an automatic CPU and NUMA configuration on the VM.
+        IMPORTANT: Since version 4.5 of the engine this operation is deprecated, and preserved only for backwards
+        compatibility. It will be removed in the future. Instead please use PUT followed by <<services/vm/methods/update, update operation>>.
         An example for a request:
         [source]
         ----
@@ -32851,6 +33219,40 @@ class VmService(MeasurableService):
         # Send the request and wait for the response:
         return self._internal_action(action, 'reset', None, headers, query, wait)
 
+    def screenshot(
+        self,
+        headers=None,
+        query=None,
+        wait=True,
+        **kwargs
+    ):
+        """
+        Captures screenshot of the current state of the VM.
+        For example:
+        [source]
+        ----
+        POST /ovirt-engine/api/vms/123/screenshot
+        ----
+        The screenshot action does not take any action specific parameters; therefore, the request body should contain an
+        empty `action`:
+        [source,xml]
+        ----
+        <action/>
+        ----
+
+
+        """
+        # Check the types of the parameters:
+        Service._check_types([
+        ])
+
+        # Populate the action:
+        action = types.Action(
+        )
+
+        # Send the request and wait for the response:
+        return self._internal_action(action, 'screenshot', None, headers, query, wait)
+
     def shutdown(
         self,
         async_=None,
@@ -33557,6 +33959,13 @@ class VmService(MeasurableService):
         """
         return KatelloErrataService(self._connection, '%s/katelloerrata' % self._path)
 
+    def mediated_devices_service(self):
+        """
+        Reference to the service that manages mediated devices associated with the VM.
+
+        """
+        return VmMediatedDevicesService(self._connection, '%s/mediateddevices' % self._path)
+
     def nics_service(self):
         """
         """
@@ -33646,6 +34055,10 @@ class VmService(MeasurableService):
             return self.katello_errata_service()
         if path.startswith('katelloerrata/'):
             return self.katello_errata_service().service(path[14:])
+        if path == 'mediateddevices':
+            return self.mediated_devices_service()
+        if path.startswith('mediateddevices/'):
+            return self.mediated_devices_service().service(path[16:])
         if path == 'nics':
             return self.nics_service()
         if path.startswith('nics/'):
@@ -33858,6 +34271,17 @@ class VmBackupService(Service):
         """
         Finalize the virtual machine backup entity.
         End backup, unlock resources, and perform cleanups.
+        To finalize a virtual machine with an id '123' and a backup with an id '456'
+        send a request as follows:
+        [source]
+        ----
+        POST /ovirt-engine/api/vms/123/backups/456/finalize
+        ----
+        With a request body as follows:
+        [source,xml]
+        ----
+        <action />
+        ----
 
 
         """
@@ -34076,6 +34500,7 @@ class VmBackupsService(Service):
         self,
         backup,
         require_consistency=None,
+        use_active=None,
         headers=None,
         query=None,
         wait=True,
@@ -34115,6 +34540,22 @@ class VmBackupsService(Service):
             <creation_date>
         </backup>
         ----
+        To provide the ID of the created backup, send a request like this:
+        [source]
+        ----
+        POST /ovirt-engine/api/vms/123/backups
+        ----
+        With a request body like this:
+        [source,xml]
+        ----
+        <backup id="backup-uuid">
+          <from_checkpoint_id>previous-checkpoint-uuid</from_checkpoint_id>
+          <disks>
+              <disk id="disk-uuid" />
+              ...
+          </disks>
+        </backup>
+        ----
 
 
         This method supports the following parameters:
@@ -34131,6 +34572,7 @@ class VmBackupsService(Service):
         Service._check_types([
             ('backup', backup, types.Backup),
             ('require_consistency', require_consistency, bool),
+            ('use_active', use_active, bool),
         ])
 
         # Build the URL:
@@ -34138,6 +34580,9 @@ class VmBackupsService(Service):
         if require_consistency is not None:
             require_consistency = Writer.render_boolean(require_consistency)
             query['require_consistency'] = require_consistency
+        if use_active is not None:
+            use_active = Writer.render_boolean(use_active)
+            query['use_active'] = use_active
 
         # Send the request and wait for the response:
         return self._internal_add(backup, headers, query, wait)
@@ -34740,6 +35185,11 @@ class VmCheckpointsService(Service):
     ):
         """
         The list of virtual machine checkpoints.
+        To get a list of checkpoints for a virtual machine with an id '123', send a request as follows:
+        [source]
+        ----
+        GET /ovirt-engine/api/vms/123/checkpoints
+        ----
 
 
         This method supports the following parameters:
@@ -35909,6 +36359,277 @@ class VmHostDevicesService(Service):
         return 'VmHostDevicesService:%s' % self._path
 
 
+class VmMediatedDeviceService(Service):
+    """
+    """
+
+    def __init__(self, connection, path):
+        super(VmMediatedDeviceService, self).__init__(connection, path)
+
+    def get(
+        self,
+        follow=None,
+        headers=None,
+        query=None,
+        wait=True,
+        **kwargs
+    ):
+        """
+        Retrieves the configuration of mediated devices in the virtual machine.
+
+
+        This method supports the following parameters:
+
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+
+        `headers`:: Additional HTTP headers.
+
+        `query`:: Additional URL query parameters.
+
+        `wait`:: If `True` wait for the response.
+        """
+        # Check the types of the parameters:
+        Service._check_types([
+            ('follow', follow, str),
+        ])
+
+        # Build the URL:
+        query = query or {}
+        if follow is not None:
+            query['follow'] = follow
+
+        # Send the request and wait for the response:
+        return self._internal_get(headers, query, wait)
+
+    def remove(
+        self,
+        async_=None,
+        headers=None,
+        query=None,
+        wait=True,
+        **kwargs
+    ):
+        """
+        Remove the mediated device from the virtual machine.
+
+
+        This method supports the following parameters:
+
+        `async_`:: Indicates if the remove should be performed asynchronously.
+
+        `headers`:: Additional HTTP headers.
+
+        `query`:: Additional URL query parameters.
+
+        `wait`:: If `True` wait for the response.
+        """
+        # Check the types of the parameters:
+        Service._check_types([
+            ('async_', async_, bool),
+        ])
+
+        # Since Python 3.7 async is reserved keyword, support backward compatibility
+        if 'async' in kwargs:
+            async_ = kwargs.get('async')
+
+        # Build the URL:
+        query = query or {}
+        if async_ is not None:
+            async_ = Writer.render_boolean(async_)
+            query['async'] = async_
+
+        # Send the request and wait for the response:
+        self._internal_remove(headers, query, wait)
+
+    def update(
+        self,
+        device,
+        async_=None,
+        headers=None,
+        query=None,
+        wait=True,
+        **kwargs
+    ):
+        """
+        Updates the information about the mediated device.
+        You can update the information using `specParams` element.
+        For example, to update a mediated device, send a request like this:
+        [source]
+        ----
+        PUT /ovirt-engine/api/vms/123/mediateddevices/00000000-0000-0000-0000-000000000000
+        <vm_mediated_device>
+          <spec_params>
+            <property>
+              <name>mdevType</name>
+              <value>nvidia-11</value>
+            </property>
+          </spec_params>
+        </vm_mediated_device>
+        ----
+        with response body:
+        [source,xml]
+        ----
+        <vm_mediated_device href="/ovirt-engine/api/vms/123/mediateddevices/00000000-0000-0000-0000-000000000000" id="00000000-0000-0000-0000-000000000000">
+          <vm href="/ovirt-engine/api/vms/123" id="123"/>
+          <spec_params>
+            <property>
+              <name>mdevType</name>
+              <value>nvidia-11</value>
+            </property>
+          </spec_params>
+        </vm_mediated_device>
+        ----
+
+
+        This method supports the following parameters:
+
+        `device`:: The information about the mediated device.
+        The request data must contain `specParams` properties.
+        The response data contains complete information about the
+        updated mediated device.
+
+        `headers`:: Additional HTTP headers.
+
+        `query`:: Additional URL query parameters.
+
+        `wait`:: If `True` wait for the response.
+        """
+        # Check the types of the parameters:
+        Service._check_types([
+            ('device', device, types.VmMediatedDevice),
+            ('async_', async_, bool),
+        ])
+
+        # Since Python 3.7 async is reserved keyword, support backward compatibility
+        if 'async' in kwargs:
+            async_ = kwargs.get('async')
+
+        # Build the URL:
+        query = query or {}
+        if async_ is not None:
+            async_ = Writer.render_boolean(async_)
+            query['async'] = async_
+
+        # Send the request and wait for the response:
+        return self._internal_update(device, headers, query, wait)
+
+    def service(self, path):
+        """
+        Service locator method, returns individual service on which the URI is dispatched.
+        """
+        if not path:
+            return self
+        raise Error('The path \"%s\" doesn\'t correspond to any service' % path)
+
+    def __str__(self):
+        return 'VmMediatedDeviceService:%s' % self._path
+
+
+class VmMediatedDevicesService(Service):
+    """
+    A service that manages mediated devices of a VM.
+
+    """
+
+    def __init__(self, connection, path):
+        super(VmMediatedDevicesService, self).__init__(connection, path)
+        self._device_service = None
+
+    def add(
+        self,
+        device,
+        headers=None,
+        query=None,
+        wait=True,
+        **kwargs
+    ):
+        """
+        Add a new mediated device to the virtual machine.
+
+
+        """
+        # Check the types of the parameters:
+        Service._check_types([
+            ('device', device, types.VmMediatedDevice),
+        ])
+
+        # Build the URL:
+        query = query or {}
+
+        # Send the request and wait for the response:
+        return self._internal_add(device, headers, query, wait)
+
+    def list(
+        self,
+        follow=None,
+        max=None,
+        headers=None,
+        query=None,
+        wait=True,
+        **kwargs
+    ):
+        """
+        Lists all the configured mediated devices of the virtual machine.
+        The order of the returned list of mediated devices is not guaranteed.
+
+
+        This method supports the following parameters:
+
+        `max`:: Sets the maximum number of mediated devices to return.
+        If not specified all the mediated devices are returned.
+
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+
+        `headers`:: Additional HTTP headers.
+
+        `query`:: Additional URL query parameters.
+
+        `wait`:: If `True` wait for the response.
+        """
+        # Check the types of the parameters:
+        Service._check_types([
+            ('follow', follow, str),
+            ('max', max, int),
+        ])
+
+        # Build the URL:
+        query = query or {}
+        if follow is not None:
+            query['follow'] = follow
+        if max is not None:
+            max = Writer.render_integer(max)
+            query['max'] = max
+
+        # Send the request and wait for the response:
+        return self._internal_get(headers, query, wait)
+
+    def device_service(self, id):
+        """
+        Returns a reference to the service that manages a mediated device of a virtual machine.
+
+        """
+        Service._check_types([
+            ('id', id, str),
+        ])
+        return VmMediatedDeviceService(self._connection, '%s/%s' % (self._path, id))
+
+    def service(self, path):
+        """
+        Service locator method, returns individual service on which the URI is dispatched.
+        """
+        if not path:
+            return self
+        index = path.find('/')
+        if index == -1:
+            return self.device_service(path)
+        return self.device_service(path[:index]).service(path[index + 1:])
+
+    def __str__(self):
+        return 'VmMediatedDevicesService:%s' % self._path
+
+
 class VmNicService(MeasurableService):
     """
     """
@@ -36762,6 +37483,7 @@ class VmPoolService(Service):
         self,
         pool,
         async_=None,
+        seal=None,
         headers=None,
         query=None,
         wait=True,
@@ -36802,6 +37524,7 @@ class VmPoolService(Service):
         Service._check_types([
             ('pool', pool, types.VmPool),
             ('async_', async_, bool),
+            ('seal', seal, bool),
         ])
 
         # Since Python 3.7 async is reserved keyword, support backward compatibility
@@ -36813,6 +37536,9 @@ class VmPoolService(Service):
         if async_ is not None:
             async_ = Writer.render_boolean(async_)
             query['async'] = async_
+        if seal is not None:
+            seal = Writer.render_boolean(seal)
+            query['seal'] = seal
 
         # Send the request and wait for the response:
         return self._internal_update(pool, headers, query, wait)
@@ -36853,6 +37579,7 @@ class VmPoolsService(Service):
     def add(
         self,
         pool,
+        seal=None,
         headers=None,
         query=None,
         wait=True,
@@ -36890,10 +37617,14 @@ class VmPoolsService(Service):
         # Check the types of the parameters:
         Service._check_types([
             ('pool', pool, types.VmPool),
+            ('seal', seal, bool),
         ])
 
         # Build the URL:
         query = query or {}
+        if seal is not None:
+            seal = Writer.render_boolean(seal)
+            query['seal'] = seal
 
         # Send the request and wait for the response:
         return self._internal_add(pool, headers, query, wait)
@@ -37595,6 +38326,7 @@ class VmsService(Service):
         clone=None,
         clone_permissions=None,
         filter=None,
+        seal=None,
         headers=None,
         query=None,
         wait=True,
@@ -37746,6 +38478,7 @@ class VmsService(Service):
             ('clone', clone, bool),
             ('clone_permissions', clone_permissions, bool),
             ('filter', filter, bool),
+            ('seal', seal, bool),
         ])
 
         # Build the URL:
@@ -37761,6 +38494,9 @@ class VmsService(Service):
         if filter is not None:
             filter = Writer.render_boolean(filter)
             query['filter'] = filter
+        if seal is not None:
+            seal = Writer.render_boolean(seal)
+            query['seal'] = seal
 
         # Send the request and wait for the response:
         return self._internal_add(vm, headers, query, wait)
@@ -37772,6 +38508,7 @@ class VmsService(Service):
         clone=None,
         clone_permissions=None,
         filter=None,
+        seal=None,
         headers=None,
         query=None,
         wait=True,
@@ -37789,6 +38526,7 @@ class VmsService(Service):
             ('clone', clone, bool),
             ('clone_permissions', clone_permissions, bool),
             ('filter', filter, bool),
+            ('seal', seal, bool),
         ])
 
         # Build the URL:
@@ -37804,6 +38542,9 @@ class VmsService(Service):
         if filter is not None:
             filter = Writer.render_boolean(filter)
             query['filter'] = filter
+        if seal is not None:
+            seal = Writer.render_boolean(seal)
+            query['seal'] = seal
 
         # Send the request and wait for the response:
         return self._internal_add(vm, headers, query, wait)
@@ -37815,6 +38556,7 @@ class VmsService(Service):
         clone=None,
         clone_permissions=None,
         filter=None,
+        seal=None,
         headers=None,
         query=None,
         wait=True,
@@ -37832,6 +38574,7 @@ class VmsService(Service):
             ('clone', clone, bool),
             ('clone_permissions', clone_permissions, bool),
             ('filter', filter, bool),
+            ('seal', seal, bool),
         ])
 
         # Build the URL:
@@ -37847,6 +38590,9 @@ class VmsService(Service):
         if filter is not None:
             filter = Writer.render_boolean(filter)
             query['filter'] = filter
+        if seal is not None:
+            seal = Writer.render_boolean(seal)
+            query['seal'] = seal
 
         # Send the request and wait for the response:
         return self._internal_add(vm, headers, query, wait)
@@ -37858,6 +38604,7 @@ class VmsService(Service):
         clone=None,
         clone_permissions=None,
         filter=None,
+        seal=None,
         headers=None,
         query=None,
         wait=True,
@@ -37875,6 +38622,7 @@ class VmsService(Service):
             ('clone', clone, bool),
             ('clone_permissions', clone_permissions, bool),
             ('filter', filter, bool),
+            ('seal', seal, bool),
         ])
 
         # Build the URL:
@@ -37890,6 +38638,9 @@ class VmsService(Service):
         if filter is not None:
             filter = Writer.render_boolean(filter)
             query['filter'] = filter
+        if seal is not None:
+            seal = Writer.render_boolean(seal)
+            query['seal'] = seal
 
         # Send the request and wait for the response:
         return self._internal_add(vm, headers, query, wait)
@@ -38868,6 +39619,63 @@ class DiskService(MeasurableService):
         self._disk_snapshots_service = None
         self._permissions_service = None
         self._statistics_service = None
+
+    def convert(
+        self,
+        disk=None,
+        follow=None,
+        headers=None,
+        query=None,
+        wait=True,
+        **kwargs
+    ):
+        """
+        Converts disk format and/or preallocation mode.
+        For example, to convert the disk format from preallocated-cow to a sparse-raw image,
+        send a request like the following:
+        [source]
+        ----
+        POST /ovirt-engine/api/disks/123/convert
+        ----
+        With the following request body:
+        [source,xml]
+        ----
+         <action>
+           <disk>
+             <sparse>true</sparse>
+             <format>raw</format>
+           </disk>
+         </action>
+        ----
+
+
+        This method supports the following parameters:
+
+        `disk`:: The description of the disk.
+
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+
+        `headers`:: Additional HTTP headers.
+
+        `query`:: Additional URL query parameters.
+
+        `wait`:: If `True` wait for the response.
+        """
+        # Check the types of the parameters:
+        Service._check_types([
+            ('disk', disk, types.Disk),
+            ('follow', follow, str),
+        ])
+
+        # Populate the action:
+        action = types.Action(
+            disk=disk,
+            follow=follow,
+        )
+
+        # Send the request and wait for the response:
+        return self._internal_action(action, 'convert', None, headers, query, wait)
 
     def copy(
         self,
@@ -40666,6 +41474,7 @@ class HostService(MeasurableService):
     def __init__(self, connection, path):
         super(HostService, self).__init__(connection, path)
         self._affinity_labels_service = None
+        self._cpu_units_service = None
         self._devices_service = None
         self._external_network_provider_configurations_service = None
         self._fence_agents_service = None
@@ -42402,6 +43211,15 @@ class HostService(MeasurableService):
         """
         return AssignedAffinityLabelsService(self._connection, '%s/affinitylabels' % self._path)
 
+    def cpu_units_service(self):
+        """
+        A reference to the list of all host's CPUs with detailed information
+        about the topology (socket, core) and with information
+        about the current CPU pinning.
+
+        """
+        return HostCpuUnitsService(self._connection, '%s/cpuunits' % self._path)
+
     def devices_service(self):
         """
         A reference to the host devices service. Use this service to view the devices of the host object.
@@ -42512,6 +43330,10 @@ class HostService(MeasurableService):
             return self.affinity_labels_service()
         if path.startswith('affinitylabels/'):
             return self.affinity_labels_service().service(path[15:])
+        if path == 'cpuunits':
+            return self.cpu_units_service()
+        if path.startswith('cpuunits/'):
+            return self.cpu_units_service().service(path[9:])
         if path == 'devices':
             return self.devices_service()
         if path.startswith('devices/'):

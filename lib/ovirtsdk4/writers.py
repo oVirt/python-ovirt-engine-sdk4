@@ -71,6 +71,8 @@ class ActionWriter(Writer):
             StorageConnectionWriter.write_one(obj.connection, writer, 'connection')
         if obj.connectivity_timeout is not None:
             Writer.write_integer(writer, 'connectivity_timeout', obj.connectivity_timeout)
+        if obj.correlation_id is not None:
+            Writer.write_string(writer, 'correlation_id', obj.correlation_id)
         if obj.data_center is not None:
             DataCenterWriter.write_one(obj.data_center, writer, 'data_center')
         if obj.deploy_hosted_engine is not None:
@@ -103,6 +105,8 @@ class ActionWriter(Writer):
             Writer.write_boolean(writer, 'filter', obj.filter)
         if obj.fix_layout is not None:
             Writer.write_boolean(writer, 'fix_layout', obj.fix_layout)
+        if obj.follow is not None:
+            Writer.write_string(writer, 'follow', obj.follow)
         if obj.force is not None:
             Writer.write_boolean(writer, 'force', obj.force)
         if obj.grace_period is not None:
@@ -211,6 +215,8 @@ class ActionWriter(Writer):
             Writer.write_boolean(writer, 'undeploy_hosted_engine', obj.undeploy_hosted_engine)
         if obj.upgrade_action is not None:
             Writer.write_string(writer, 'upgrade_action', obj.upgrade_action.value)
+        if obj.upgrade_percent_complete is not None:
+            Writer.write_integer(writer, 'upgrade_percent_complete', obj.upgrade_percent_complete)
         if obj.use_cloud_init is not None:
             Writer.write_boolean(writer, 'use_cloud_init', obj.use_cloud_init)
         if obj.use_ignition is not None:
@@ -728,6 +734,8 @@ class BackupWriter(Writer):
             DiskWriter.write_many(obj.disks, writer, 'disk', 'disks')
         if obj.host is not None:
             HostWriter.write_one(obj.host, writer, 'host')
+        if obj.snapshot is not None:
+            SnapshotWriter.write_one(obj.snapshot, writer, 'snapshot')
         if obj.vm is not None:
             VmWriter.write_one(obj.vm, writer, 'vm')
         writer.write_end()
@@ -1309,6 +1317,12 @@ class ClusterWriter(Writer):
             Writer.write_boolean(writer, 'trusted_service', obj.trusted_service)
         if obj.tunnel_migration is not None:
             Writer.write_boolean(writer, 'tunnel_migration', obj.tunnel_migration)
+        if obj.upgrade_correlation_id is not None:
+            Writer.write_string(writer, 'upgrade_correlation_id', obj.upgrade_correlation_id)
+        if obj.upgrade_in_progress is not None:
+            Writer.write_boolean(writer, 'upgrade_in_progress', obj.upgrade_in_progress)
+        if obj.upgrade_percent_complete is not None:
+            Writer.write_integer(writer, 'upgrade_percent_complete', obj.upgrade_percent_complete)
         if obj.version is not None:
             VersionWriter.write_one(obj.version, writer, 'version')
         if obj.virt_service is not None:
@@ -2265,6 +2279,8 @@ class DisplayWriter(Writer):
             Writer.write_boolean(writer, 'copy_paste_enabled', obj.copy_paste_enabled)
         if obj.disconnect_action is not None:
             Writer.write_string(writer, 'disconnect_action', obj.disconnect_action)
+        if obj.disconnect_action_delay is not None:
+            Writer.write_integer(writer, 'disconnect_action_delay', obj.disconnect_action_delay)
         if obj.file_transfer_enabled is not None:
             Writer.write_boolean(writer, 'file_transfer_enabled', obj.file_transfer_enabled)
         if obj.keyboard_layout is not None:
@@ -2415,6 +2431,41 @@ class DomainWriter(Writer):
                 writer.write_attribute('href', href)
         for obj in objs:
             DomainWriter.write_one(obj, writer, singular)
+        writer.write_end()
+
+
+class DynamicCpuWriter(Writer):
+
+    def __init__(self):
+        super(DynamicCpuWriter, self).__init__()
+
+    @staticmethod
+    def write_one(obj, writer, singular=None):
+        if singular is None:
+            singular = 'dynamic_cpu'
+        writer.write_start(singular)
+        href = obj.href
+        if href is not None:
+            writer.write_attribute('href', href)
+        if obj.cpu_tune is not None:
+            CpuTuneWriter.write_one(obj.cpu_tune, writer, 'cpu_tune')
+        if obj.topology is not None:
+            CpuTopologyWriter.write_one(obj.topology, writer, 'topology')
+        writer.write_end()
+
+    @staticmethod
+    def write_many(objs, writer, singular=None, plural=None):
+        if singular is None:
+            singular = 'dynamic_cpu'
+        if plural is None:
+            plural = 'dynamic_cpus'
+        writer.write_start(plural)
+        if type(objs) == List:
+            href = objs.href
+            if href is not None:
+                writer.write_attribute('href', href)
+        for obj in objs:
+            DynamicCpuWriter.write_one(obj, writer, singular)
         writer.write_end()
 
 
@@ -4180,6 +4231,8 @@ class HostWriter(Writer):
             AgentWriter.write_many(obj.agents, writer, 'agent', 'agents')
         if obj.cluster is not None:
             ClusterWriter.write_one(obj.cluster, writer, 'cluster')
+        if obj.cpu_units is not None:
+            HostCpuUnitWriter.write_many(obj.cpu_units, writer, 'host_cpu_unit', 'cpu_units')
         if obj.devices is not None:
             HostDeviceWriter.write_many(obj.devices, writer, 'host_device', 'devices')
         if obj.external_host_provider is not None:
@@ -4223,6 +4276,55 @@ class HostWriter(Writer):
                 writer.write_attribute('href', href)
         for obj in objs:
             HostWriter.write_one(obj, writer, singular)
+        writer.write_end()
+
+
+class HostCpuUnitWriter(Writer):
+
+    def __init__(self):
+        super(HostCpuUnitWriter, self).__init__()
+
+    @staticmethod
+    def write_one(obj, writer, singular=None):
+        if singular is None:
+            singular = 'host_cpu_unit'
+        writer.write_start(singular)
+        href = obj.href
+        if href is not None:
+            writer.write_attribute('href', href)
+        if obj.id is not None:
+            writer.write_attribute('id', obj.id)
+        if obj.comment is not None:
+            Writer.write_string(writer, 'comment', obj.comment)
+        if obj.core_id is not None:
+            Writer.write_integer(writer, 'core_id', obj.core_id)
+        if obj.cpu_id is not None:
+            Writer.write_integer(writer, 'cpu_id', obj.cpu_id)
+        if obj.description is not None:
+            Writer.write_string(writer, 'description', obj.description)
+        if obj.name is not None:
+            Writer.write_string(writer, 'name', obj.name)
+        if obj.runs_vdsm is not None:
+            Writer.write_boolean(writer, 'runs_vdsm', obj.runs_vdsm)
+        if obj.socket_id is not None:
+            Writer.write_integer(writer, 'socket_id', obj.socket_id)
+        if obj.vms is not None:
+            VmWriter.write_many(obj.vms, writer, 'vm', 'vms')
+        writer.write_end()
+
+    @staticmethod
+    def write_many(objs, writer, singular=None, plural=None):
+        if singular is None:
+            singular = 'host_cpu_unit'
+        if plural is None:
+            plural = 'host_cpu_units'
+        writer.write_start(plural)
+        if type(objs) == List:
+            href = objs.href
+            if href is not None:
+                writer.write_attribute('href', href)
+        for obj in objs:
+            HostCpuUnitWriter.write_one(obj, writer, singular)
         writer.write_end()
 
 
@@ -4860,6 +4962,8 @@ class InstanceTypeWriter(Writer):
             ConsoleWriter.write_one(obj.console, writer, 'console')
         if obj.cpu is not None:
             CpuWriter.write_one(obj.cpu, writer, 'cpu')
+        if obj.cpu_pinning_policy is not None:
+            Writer.write_string(writer, 'cpu_pinning_policy', obj.cpu_pinning_policy.value)
         if obj.cpu_shares is not None:
             Writer.write_integer(writer, 'cpu_shares', obj.cpu_shares)
         if obj.creation_time is not None:
@@ -4956,6 +5060,8 @@ class InstanceTypeWriter(Writer):
             DiskAttachmentWriter.write_many(obj.disk_attachments, writer, 'disk_attachment', 'disk_attachments')
         if obj.graphics_consoles is not None:
             GraphicsConsoleWriter.write_many(obj.graphics_consoles, writer, 'graphics_console', 'graphics_consoles')
+        if obj.mediated_devices is not None:
+            VmMediatedDeviceWriter.write_many(obj.mediated_devices, writer, 'vm_mediated_device', 'mediated_devices')
         if obj.nics is not None:
             NicWriter.write_many(obj.nics, writer, 'nic', 'nics')
         if obj.permissions is not None:
@@ -8541,6 +8647,8 @@ class SnapshotWriter(Writer):
             ConsoleWriter.write_one(obj.console, writer, 'console')
         if obj.cpu is not None:
             CpuWriter.write_one(obj.cpu, writer, 'cpu')
+        if obj.cpu_pinning_policy is not None:
+            Writer.write_string(writer, 'cpu_pinning_policy', obj.cpu_pinning_policy.value)
         if obj.cpu_shares is not None:
             Writer.write_integer(writer, 'cpu_shares', obj.cpu_shares)
         if obj.creation_time is not None:
@@ -8671,6 +8779,8 @@ class SnapshotWriter(Writer):
             DiskAttachmentWriter.write_many(obj.disk_attachments, writer, 'disk_attachment', 'disk_attachments')
         if obj.disks is not None:
             DiskWriter.write_many(obj.disks, writer, 'disk', 'disks')
+        if obj.dynamic_cpu is not None:
+            DynamicCpuWriter.write_one(obj.dynamic_cpu, writer, 'dynamic_cpu')
         if obj.external_host_provider is not None:
             ExternalHostProviderWriter.write_one(obj.external_host_provider, writer, 'external_host_provider')
         if obj.floppies is not None:
@@ -8685,6 +8795,8 @@ class SnapshotWriter(Writer):
             InstanceTypeWriter.write_one(obj.instance_type, writer, 'instance_type')
         if obj.katello_errata is not None:
             KatelloErratumWriter.write_many(obj.katello_errata, writer, 'katello_erratum', 'katello_errata')
+        if obj.mediated_devices is not None:
+            VmMediatedDeviceWriter.write_many(obj.mediated_devices, writer, 'vm_mediated_device', 'mediated_devices')
         if obj.nics is not None:
             NicWriter.write_many(obj.nics, writer, 'nic', 'nics')
         if obj.numa_nodes is not None:
@@ -9456,6 +9568,8 @@ class TemplateWriter(Writer):
             ConsoleWriter.write_one(obj.console, writer, 'console')
         if obj.cpu is not None:
             CpuWriter.write_one(obj.cpu, writer, 'cpu')
+        if obj.cpu_pinning_policy is not None:
+            Writer.write_string(writer, 'cpu_pinning_policy', obj.cpu_pinning_policy.value)
         if obj.cpu_shares is not None:
             Writer.write_integer(writer, 'cpu_shares', obj.cpu_shares)
         if obj.creation_time is not None:
@@ -9552,6 +9666,8 @@ class TemplateWriter(Writer):
             DiskAttachmentWriter.write_many(obj.disk_attachments, writer, 'disk_attachment', 'disk_attachments')
         if obj.graphics_consoles is not None:
             GraphicsConsoleWriter.write_many(obj.graphics_consoles, writer, 'graphics_console', 'graphics_consoles')
+        if obj.mediated_devices is not None:
+            VmMediatedDeviceWriter.write_many(obj.mediated_devices, writer, 'vm_mediated_device', 'mediated_devices')
         if obj.nics is not None:
             NicWriter.write_many(obj.nics, writer, 'nic', 'nics')
         if obj.permissions is not None:
@@ -10222,6 +10338,8 @@ class VmWriter(Writer):
             ConsoleWriter.write_one(obj.console, writer, 'console')
         if obj.cpu is not None:
             CpuWriter.write_one(obj.cpu, writer, 'cpu')
+        if obj.cpu_pinning_policy is not None:
+            Writer.write_string(writer, 'cpu_pinning_policy', obj.cpu_pinning_policy.value)
         if obj.cpu_shares is not None:
             Writer.write_integer(writer, 'cpu_shares', obj.cpu_shares)
         if obj.creation_time is not None:
@@ -10342,6 +10460,8 @@ class VmWriter(Writer):
             CpuProfileWriter.write_one(obj.cpu_profile, writer, 'cpu_profile')
         if obj.disk_attachments is not None:
             DiskAttachmentWriter.write_many(obj.disk_attachments, writer, 'disk_attachment', 'disk_attachments')
+        if obj.dynamic_cpu is not None:
+            DynamicCpuWriter.write_one(obj.dynamic_cpu, writer, 'dynamic_cpu')
         if obj.external_host_provider is not None:
             ExternalHostProviderWriter.write_one(obj.external_host_provider, writer, 'external_host_provider')
         if obj.floppies is not None:
@@ -10356,6 +10476,8 @@ class VmWriter(Writer):
             InstanceTypeWriter.write_one(obj.instance_type, writer, 'instance_type')
         if obj.katello_errata is not None:
             KatelloErratumWriter.write_many(obj.katello_errata, writer, 'katello_erratum', 'katello_errata')
+        if obj.mediated_devices is not None:
+            VmMediatedDeviceWriter.write_many(obj.mediated_devices, writer, 'vm_mediated_device', 'mediated_devices')
         if obj.nics is not None:
             NicWriter.write_many(obj.nics, writer, 'nic', 'nics')
         if obj.numa_nodes is not None:
@@ -10427,6 +10549,8 @@ class VmBaseWriter(Writer):
             ConsoleWriter.write_one(obj.console, writer, 'console')
         if obj.cpu is not None:
             CpuWriter.write_one(obj.cpu, writer, 'cpu')
+        if obj.cpu_pinning_policy is not None:
+            Writer.write_string(writer, 'cpu_pinning_policy', obj.cpu_pinning_policy.value)
         if obj.cpu_shares is not None:
             Writer.write_integer(writer, 'cpu_shares', obj.cpu_shares)
         if obj.creation_time is not None:
@@ -10530,6 +10654,55 @@ class VmBaseWriter(Writer):
                 writer.write_attribute('href', href)
         for obj in objs:
             VmBaseWriter.write_one(obj, writer, singular)
+        writer.write_end()
+
+
+class VmMediatedDeviceWriter(Writer):
+
+    def __init__(self):
+        super(VmMediatedDeviceWriter, self).__init__()
+
+    @staticmethod
+    def write_one(obj, writer, singular=None):
+        if singular is None:
+            singular = 'vm_mediated_device'
+        writer.write_start(singular)
+        href = obj.href
+        if href is not None:
+            writer.write_attribute('href', href)
+        if obj.id is not None:
+            writer.write_attribute('id', obj.id)
+        if obj.comment is not None:
+            Writer.write_string(writer, 'comment', obj.comment)
+        if obj.description is not None:
+            Writer.write_string(writer, 'description', obj.description)
+        if obj.name is not None:
+            Writer.write_string(writer, 'name', obj.name)
+        if obj.spec_params is not None:
+            PropertyWriter.write_many(obj.spec_params, writer, 'property', 'spec_params')
+        if obj.instance_type is not None:
+            InstanceTypeWriter.write_one(obj.instance_type, writer, 'instance_type')
+        if obj.template is not None:
+            TemplateWriter.write_one(obj.template, writer, 'template')
+        if obj.vm is not None:
+            VmWriter.write_one(obj.vm, writer, 'vm')
+        if obj.vms is not None:
+            VmWriter.write_many(obj.vms, writer, 'vm', 'vms')
+        writer.write_end()
+
+    @staticmethod
+    def write_many(objs, writer, singular=None, plural=None):
+        if singular is None:
+            singular = 'vm_mediated_device'
+        if plural is None:
+            plural = 'vm_mediated_devices'
+        writer.write_start(plural)
+        if type(objs) == List:
+            href = objs.href
+            if href is not None:
+                writer.write_attribute('href', href)
+        for obj in objs:
+            VmMediatedDeviceWriter.write_one(obj, writer, singular)
         writer.write_end()
 
 
@@ -10982,6 +11155,7 @@ Writer.register(types.Display, DisplayWriter.write_one)
 Writer.register(types.Dns, DnsWriter.write_one)
 Writer.register(types.DnsResolverConfiguration, DnsResolverConfigurationWriter.write_one)
 Writer.register(types.Domain, DomainWriter.write_one)
+Writer.register(types.DynamicCpu, DynamicCpuWriter.write_one)
 Writer.register(types.EntityProfileDetail, EntityProfileDetailWriter.write_one)
 Writer.register(types.ErrorHandling, ErrorHandlingWriter.write_one)
 Writer.register(types.Event, EventWriter.write_one)
@@ -11018,6 +11192,7 @@ Writer.register(types.HardwareInformation, HardwareInformationWriter.write_one)
 Writer.register(types.HighAvailability, HighAvailabilityWriter.write_one)
 Writer.register(types.Hook, HookWriter.write_one)
 Writer.register(types.Host, HostWriter.write_one)
+Writer.register(types.HostCpuUnit, HostCpuUnitWriter.write_one)
 Writer.register(types.HostDevice, HostDeviceWriter.write_one)
 Writer.register(types.HostDevicePassthrough, HostDevicePassthroughWriter.write_one)
 Writer.register(types.HostNic, HostNicWriter.write_one)
@@ -11143,6 +11318,7 @@ Writer.register(types.VirtualNumaNode, VirtualNumaNodeWriter.write_one)
 Writer.register(types.Vlan, VlanWriter.write_one)
 Writer.register(types.Vm, VmWriter.write_one)
 Writer.register(types.VmBase, VmBaseWriter.write_one)
+Writer.register(types.VmMediatedDevice, VmMediatedDeviceWriter.write_one)
 Writer.register(types.VmPlacementPolicy, VmPlacementPolicyWriter.write_one)
 Writer.register(types.VmPool, VmPoolWriter.write_one)
 Writer.register(types.VmSummary, VmSummaryWriter.write_one)

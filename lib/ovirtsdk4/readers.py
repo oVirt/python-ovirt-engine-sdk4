@@ -86,6 +86,8 @@ class ActionReader(Reader):
                 obj.connection = StorageConnectionReader.read_one(reader)
             elif tag == 'connectivity_timeout':
                 obj.connectivity_timeout = Reader.read_integer(reader)
+            elif tag == 'correlation_id':
+                obj.correlation_id = Reader.read_string(reader)
             elif tag == 'data_center':
                 obj.data_center = DataCenterReader.read_one(reader)
             elif tag == 'deploy_hosted_engine':
@@ -118,6 +120,8 @@ class ActionReader(Reader):
                 obj.filter = Reader.read_boolean(reader)
             elif tag == 'fix_layout':
                 obj.fix_layout = Reader.read_boolean(reader)
+            elif tag == 'follow':
+                obj.follow = Reader.read_string(reader)
             elif tag == 'force':
                 obj.force = Reader.read_boolean(reader)
             elif tag == 'grace_period':
@@ -222,6 +226,8 @@ class ActionReader(Reader):
                 obj.undeploy_hosted_engine = Reader.read_boolean(reader)
             elif tag == 'upgrade_action':
                 obj.upgrade_action = Reader.read_enum(types.ClusterUpgradeAction, reader)
+            elif tag == 'upgrade_percent_complete':
+                obj.upgrade_percent_complete = Reader.read_integer(reader)
             elif tag == 'use_cloud_init':
                 obj.use_cloud_init = Reader.read_boolean(reader)
             elif tag == 'use_ignition':
@@ -1145,6 +1151,8 @@ class BackupReader(Reader):
                 obj.name = Reader.read_string(reader)
             elif tag == 'phase':
                 obj.phase = Reader.read_enum(types.BackupPhase, reader)
+            elif tag == 'snapshot':
+                obj.snapshot = SnapshotReader.read_one(reader)
             elif tag == 'to_checkpoint_id':
                 obj.to_checkpoint_id = Reader.read_string(reader)
             elif tag == 'vm':
@@ -2213,6 +2221,12 @@ class ClusterReader(Reader):
                 obj.trusted_service = Reader.read_boolean(reader)
             elif tag == 'tunnel_migration':
                 obj.tunnel_migration = Reader.read_boolean(reader)
+            elif tag == 'upgrade_correlation_id':
+                obj.upgrade_correlation_id = Reader.read_string(reader)
+            elif tag == 'upgrade_in_progress':
+                obj.upgrade_in_progress = Reader.read_boolean(reader)
+            elif tag == 'upgrade_percent_complete':
+                obj.upgrade_percent_complete = Reader.read_integer(reader)
             elif tag == 'version':
                 obj.version = VersionReader.read_one(reader)
             elif tag == 'virt_service':
@@ -3958,6 +3972,8 @@ class DisplayReader(Reader):
                 obj.copy_paste_enabled = Reader.read_boolean(reader)
             elif tag == 'disconnect_action':
                 obj.disconnect_action = Reader.read_string(reader)
+            elif tag == 'disconnect_action_delay':
+                obj.disconnect_action_delay = Reader.read_integer(reader)
             elif tag == 'file_transfer_enabled':
                 obj.file_transfer_enabled = Reader.read_boolean(reader)
             elif tag == 'keyboard_layout':
@@ -4240,6 +4256,73 @@ class DomainReader(Reader):
                     obj.users.href = href
                 else:
                     obj.users = List(href)
+
+
+class DynamicCpuReader(Reader):
+
+    def __init__(self):
+        super(DynamicCpuReader, self).__init__()
+
+    @staticmethod
+    def read_one(reader):
+        # Do nothing if there aren't more tags:
+        if not reader.forward():
+            return None
+
+        # Create the object:
+        obj = types.DynamicCpu()
+
+        # Process the attributes:
+        obj.href = reader.get_attribute('href')
+
+        # Discard the start tag:
+        empty = reader.empty_element()
+        reader.read()
+        if empty:
+            return obj
+
+        # Process the inner elements:
+        links = []
+        while reader.forward():
+            tag = reader.node_name()
+            if tag == 'cpu_tune':
+                obj.cpu_tune = CpuTuneReader.read_one(reader)
+            elif tag == 'topology':
+                obj.topology = CpuTopologyReader.read_one(reader)
+            else:
+                reader.next_element()
+        for link in links:
+            DynamicCpuReader._process_link(link, obj)
+
+        # Discard the end tag:
+        reader.read()
+
+        return obj
+
+    @staticmethod
+    def read_many(reader):
+        # Do nothing if there aren't more tags:
+        objs = List()
+        if not reader.forward():
+            return objs
+
+        # Process the attributes:
+        objs.href = reader.get_attribute('href')
+
+        # Discard the start tag:
+        empty = reader.empty_element()
+        reader.read()
+        if empty:
+            return objs
+
+        # Process the inner elements:
+        while reader.forward():
+            objs.append(DynamicCpuReader.read_one(reader))
+
+        # Discard the end tag:
+        reader.read()
+
+        return objs
 
 
 class EntityProfileDetailReader(Reader):
@@ -7230,6 +7313,8 @@ class HostReader(Reader):
                 obj.comment = Reader.read_string(reader)
             elif tag == 'cpu':
                 obj.cpu = CpuReader.read_one(reader)
+            elif tag == 'cpu_units':
+                obj.cpu_units = HostCpuUnitReader.read_many(reader)
             elif tag == 'description':
                 obj.description = Reader.read_string(reader)
             elif tag == 'device_passthrough':
@@ -7380,6 +7465,11 @@ class HostReader(Reader):
                     obj.agents.href = href
                 else:
                     obj.agents = List(href)
+            elif rel == "cpuunits":
+                if obj.cpu_units is not None:
+                    obj.cpu_units.href = href
+                else:
+                    obj.cpu_units = List(href)
             elif rel == "devices":
                 if obj.devices is not None:
                     obj.devices.href = href
@@ -7445,6 +7535,103 @@ class HostReader(Reader):
                     obj.unmanaged_networks.href = href
                 else:
                     obj.unmanaged_networks = List(href)
+
+
+class HostCpuUnitReader(Reader):
+
+    def __init__(self):
+        super(HostCpuUnitReader, self).__init__()
+
+    @staticmethod
+    def read_one(reader):
+        # Do nothing if there aren't more tags:
+        if not reader.forward():
+            return None
+
+        # Create the object:
+        obj = types.HostCpuUnit()
+
+        # Process the attributes:
+        obj.href = reader.get_attribute('href')
+        value = reader.get_attribute('id')
+        if value is not None:
+            obj.id = value
+
+        # Discard the start tag:
+        empty = reader.empty_element()
+        reader.read()
+        if empty:
+            return obj
+
+        # Process the inner elements:
+        links = []
+        while reader.forward():
+            tag = reader.node_name()
+            if tag == 'comment':
+                obj.comment = Reader.read_string(reader)
+            elif tag == 'core_id':
+                obj.core_id = Reader.read_integer(reader)
+            elif tag == 'cpu_id':
+                obj.cpu_id = Reader.read_integer(reader)
+            elif tag == 'description':
+                obj.description = Reader.read_string(reader)
+            elif tag == 'name':
+                obj.name = Reader.read_string(reader)
+            elif tag == 'runs_vdsm':
+                obj.runs_vdsm = Reader.read_boolean(reader)
+            elif tag == 'socket_id':
+                obj.socket_id = Reader.read_integer(reader)
+            elif tag == 'vms':
+                obj.vms = VmReader.read_many(reader)
+            elif tag == 'link':
+                links.append((reader.get_attribute('rel'), reader.get_attribute('href')))
+                reader.next_element()
+            else:
+                reader.next_element()
+        for link in links:
+            HostCpuUnitReader._process_link(link, obj)
+
+        # Discard the end tag:
+        reader.read()
+
+        return obj
+
+    @staticmethod
+    def read_many(reader):
+        # Do nothing if there aren't more tags:
+        objs = List()
+        if not reader.forward():
+            return objs
+
+        # Process the attributes:
+        objs.href = reader.get_attribute('href')
+
+        # Discard the start tag:
+        empty = reader.empty_element()
+        reader.read()
+        if empty:
+            return objs
+
+        # Process the inner elements:
+        while reader.forward():
+            objs.append(HostCpuUnitReader.read_one(reader))
+
+        # Discard the end tag:
+        reader.read()
+
+        return objs
+
+    @staticmethod
+    def _process_link(link, obj):
+        # Process the attributes:
+        rel = link[0]
+        href = link[1]
+        if href and rel:
+            if rel == "vms":
+                if obj.vms is not None:
+                    obj.vms.href = href
+                else:
+                    obj.vms = List(href)
 
 
 class HostDeviceReader(Reader):
@@ -8479,6 +8666,8 @@ class InstanceTypeReader(Reader):
                 obj.console = ConsoleReader.read_one(reader)
             elif tag == 'cpu':
                 obj.cpu = CpuReader.read_one(reader)
+            elif tag == 'cpu_pinning_policy':
+                obj.cpu_pinning_policy = Reader.read_enum(types.CpuPinningPolicy, reader)
             elif tag == 'cpu_profile':
                 obj.cpu_profile = CpuProfileReader.read_one(reader)
             elif tag == 'cpu_shares':
@@ -8515,6 +8704,8 @@ class InstanceTypeReader(Reader):
                 obj.large_icon = IconReader.read_one(reader)
             elif tag == 'lease':
                 obj.lease = StorageDomainLeaseReader.read_one(reader)
+            elif tag == 'mediated_devices':
+                obj.mediated_devices = VmMediatedDeviceReader.read_many(reader)
             elif tag == 'memory':
                 obj.memory = Reader.read_integer(reader)
             elif tag == 'memory_policy':
@@ -8642,6 +8833,11 @@ class InstanceTypeReader(Reader):
                     obj.graphics_consoles.href = href
                 else:
                     obj.graphics_consoles = List(href)
+            elif rel == "mediateddevices":
+                if obj.mediated_devices is not None:
+                    obj.mediated_devices.href = href
+                else:
+                    obj.mediated_devices = List(href)
             elif rel == "nics":
                 if obj.nics is not None:
                     obj.nics.href = href
@@ -15094,6 +15290,8 @@ class SnapshotReader(Reader):
                 obj.console = ConsoleReader.read_one(reader)
             elif tag == 'cpu':
                 obj.cpu = CpuReader.read_one(reader)
+            elif tag == 'cpu_pinning_policy':
+                obj.cpu_pinning_policy = Reader.read_enum(types.CpuPinningPolicy, reader)
             elif tag == 'cpu_profile':
                 obj.cpu_profile = CpuProfileReader.read_one(reader)
             elif tag == 'cpu_shares':
@@ -15122,6 +15320,8 @@ class SnapshotReader(Reader):
                 obj.display = DisplayReader.read_one(reader)
             elif tag == 'domain':
                 obj.domain = DomainReader.read_one(reader)
+            elif tag == 'dynamic_cpu':
+                obj.dynamic_cpu = DynamicCpuReader.read_one(reader)
             elif tag == 'external_host_provider':
                 obj.external_host_provider = ExternalHostProviderReader.read_one(reader)
             elif tag == 'floppies':
@@ -15154,6 +15354,8 @@ class SnapshotReader(Reader):
                 obj.large_icon = IconReader.read_one(reader)
             elif tag == 'lease':
                 obj.lease = StorageDomainLeaseReader.read_one(reader)
+            elif tag == 'mediated_devices':
+                obj.mediated_devices = VmMediatedDeviceReader.read_many(reader)
             elif tag == 'memory':
                 obj.memory = Reader.read_integer(reader)
             elif tag == 'memory_policy':
@@ -15349,6 +15551,11 @@ class SnapshotReader(Reader):
                     obj.katello_errata.href = href
                 else:
                     obj.katello_errata = List(href)
+            elif rel == "mediateddevices":
+                if obj.mediated_devices is not None:
+                    obj.mediated_devices.href = href
+                else:
+                    obj.mediated_devices = List(href)
             elif rel == "nics":
                 if obj.nics is not None:
                     obj.nics.href = href
@@ -16670,6 +16877,8 @@ class TemplateReader(Reader):
                 obj.console = ConsoleReader.read_one(reader)
             elif tag == 'cpu':
                 obj.cpu = CpuReader.read_one(reader)
+            elif tag == 'cpu_pinning_policy':
+                obj.cpu_pinning_policy = Reader.read_enum(types.CpuPinningPolicy, reader)
             elif tag == 'cpu_profile':
                 obj.cpu_profile = CpuProfileReader.read_one(reader)
             elif tag == 'cpu_shares':
@@ -16706,6 +16915,8 @@ class TemplateReader(Reader):
                 obj.large_icon = IconReader.read_one(reader)
             elif tag == 'lease':
                 obj.lease = StorageDomainLeaseReader.read_one(reader)
+            elif tag == 'mediated_devices':
+                obj.mediated_devices = VmMediatedDeviceReader.read_many(reader)
             elif tag == 'memory':
                 obj.memory = Reader.read_integer(reader)
             elif tag == 'memory_policy':
@@ -16833,6 +17044,11 @@ class TemplateReader(Reader):
                     obj.graphics_consoles.href = href
                 else:
                     obj.graphics_consoles = List(href)
+            elif rel == "mediateddevices":
+                if obj.mediated_devices is not None:
+                    obj.mediated_devices.href = href
+                else:
+                    obj.mediated_devices = List(href)
             elif rel == "nics":
                 if obj.nics is not None:
                     obj.nics.href = href
@@ -18054,6 +18270,8 @@ class VmReader(Reader):
                 obj.console = ConsoleReader.read_one(reader)
             elif tag == 'cpu':
                 obj.cpu = CpuReader.read_one(reader)
+            elif tag == 'cpu_pinning_policy':
+                obj.cpu_pinning_policy = Reader.read_enum(types.CpuPinningPolicy, reader)
             elif tag == 'cpu_profile':
                 obj.cpu_profile = CpuProfileReader.read_one(reader)
             elif tag == 'cpu_shares':
@@ -18078,6 +18296,8 @@ class VmReader(Reader):
                 obj.display = DisplayReader.read_one(reader)
             elif tag == 'domain':
                 obj.domain = DomainReader.read_one(reader)
+            elif tag == 'dynamic_cpu':
+                obj.dynamic_cpu = DynamicCpuReader.read_one(reader)
             elif tag == 'external_host_provider':
                 obj.external_host_provider = ExternalHostProviderReader.read_one(reader)
             elif tag == 'floppies':
@@ -18110,6 +18330,8 @@ class VmReader(Reader):
                 obj.large_icon = IconReader.read_one(reader)
             elif tag == 'lease':
                 obj.lease = StorageDomainLeaseReader.read_one(reader)
+            elif tag == 'mediated_devices':
+                obj.mediated_devices = VmMediatedDeviceReader.read_many(reader)
             elif tag == 'memory':
                 obj.memory = Reader.read_integer(reader)
             elif tag == 'memory_policy':
@@ -18292,6 +18514,11 @@ class VmReader(Reader):
                     obj.katello_errata.href = href
                 else:
                     obj.katello_errata = List(href)
+            elif rel == "mediateddevices":
+                if obj.mediated_devices is not None:
+                    obj.mediated_devices.href = href
+                else:
+                    obj.mediated_devices = List(href)
             elif rel == "nics":
                 if obj.nics is not None:
                     obj.nics.href = href
@@ -18381,6 +18608,8 @@ class VmBaseReader(Reader):
                 obj.console = ConsoleReader.read_one(reader)
             elif tag == 'cpu':
                 obj.cpu = CpuReader.read_one(reader)
+            elif tag == 'cpu_pinning_policy':
+                obj.cpu_pinning_policy = Reader.read_enum(types.CpuPinningPolicy, reader)
             elif tag == 'cpu_profile':
                 obj.cpu_profile = CpuProfileReader.read_one(reader)
             elif tag == 'cpu_shares':
@@ -18501,6 +18730,103 @@ class VmBaseReader(Reader):
         reader.read()
 
         return objs
+
+
+class VmMediatedDeviceReader(Reader):
+
+    def __init__(self):
+        super(VmMediatedDeviceReader, self).__init__()
+
+    @staticmethod
+    def read_one(reader):
+        # Do nothing if there aren't more tags:
+        if not reader.forward():
+            return None
+
+        # Create the object:
+        obj = types.VmMediatedDevice()
+
+        # Process the attributes:
+        obj.href = reader.get_attribute('href')
+        value = reader.get_attribute('id')
+        if value is not None:
+            obj.id = value
+
+        # Discard the start tag:
+        empty = reader.empty_element()
+        reader.read()
+        if empty:
+            return obj
+
+        # Process the inner elements:
+        links = []
+        while reader.forward():
+            tag = reader.node_name()
+            if tag == 'comment':
+                obj.comment = Reader.read_string(reader)
+            elif tag == 'description':
+                obj.description = Reader.read_string(reader)
+            elif tag == 'instance_type':
+                obj.instance_type = InstanceTypeReader.read_one(reader)
+            elif tag == 'name':
+                obj.name = Reader.read_string(reader)
+            elif tag == 'spec_params':
+                obj.spec_params = PropertyReader.read_many(reader)
+            elif tag == 'template':
+                obj.template = TemplateReader.read_one(reader)
+            elif tag == 'vm':
+                obj.vm = VmReader.read_one(reader)
+            elif tag == 'vms':
+                obj.vms = VmReader.read_many(reader)
+            elif tag == 'link':
+                links.append((reader.get_attribute('rel'), reader.get_attribute('href')))
+                reader.next_element()
+            else:
+                reader.next_element()
+        for link in links:
+            VmMediatedDeviceReader._process_link(link, obj)
+
+        # Discard the end tag:
+        reader.read()
+
+        return obj
+
+    @staticmethod
+    def read_many(reader):
+        # Do nothing if there aren't more tags:
+        objs = List()
+        if not reader.forward():
+            return objs
+
+        # Process the attributes:
+        objs.href = reader.get_attribute('href')
+
+        # Discard the start tag:
+        empty = reader.empty_element()
+        reader.read()
+        if empty:
+            return objs
+
+        # Process the inner elements:
+        while reader.forward():
+            objs.append(VmMediatedDeviceReader.read_one(reader))
+
+        # Discard the end tag:
+        reader.read()
+
+        return objs
+
+    @staticmethod
+    def _process_link(link, obj):
+        # Process the attributes:
+        rel = link[0]
+        href = link[1]
+        if href and rel:
+            if rel == "vms":
+                if obj.vms is not None:
+                    obj.vms.href = href
+                else:
+                    obj.vms = List(href)
 
 
 class VmPlacementPolicyReader(Reader):
@@ -19351,6 +19677,8 @@ Reader.register('dns_resolver_configuration', DnsResolverConfigurationReader.rea
 Reader.register('dns_resolver_configurations', DnsResolverConfigurationReader.read_many)
 Reader.register('domain', DomainReader.read_one)
 Reader.register('domains', DomainReader.read_many)
+Reader.register('dynamic_cpu', DynamicCpuReader.read_one)
+Reader.register('dynamic_cpus', DynamicCpuReader.read_many)
 Reader.register('entity_profile_detail', EntityProfileDetailReader.read_one)
 Reader.register('entity_profile_details', EntityProfileDetailReader.read_many)
 Reader.register('error_handling', ErrorHandlingReader.read_one)
@@ -19423,6 +19751,8 @@ Reader.register('hook', HookReader.read_one)
 Reader.register('hooks', HookReader.read_many)
 Reader.register('host', HostReader.read_one)
 Reader.register('hosts', HostReader.read_many)
+Reader.register('host_cpu_unit', HostCpuUnitReader.read_one)
+Reader.register('host_cpu_units', HostCpuUnitReader.read_many)
 Reader.register('host_device', HostDeviceReader.read_one)
 Reader.register('host_devices', HostDeviceReader.read_many)
 Reader.register('host_device_passthrough', HostDevicePassthroughReader.read_one)
@@ -19673,6 +20003,8 @@ Reader.register('vm', VmReader.read_one)
 Reader.register('vms', VmReader.read_many)
 Reader.register('vm_base', VmBaseReader.read_one)
 Reader.register('vm_bases', VmBaseReader.read_many)
+Reader.register('vm_mediated_device', VmMediatedDeviceReader.read_one)
+Reader.register('vm_mediated_devices', VmMediatedDeviceReader.read_many)
 Reader.register('vm_placement_policy', VmPlacementPolicyReader.read_one)
 Reader.register('vm_placement_policies', VmPlacementPolicyReader.read_many)
 Reader.register('vm_pool', VmPoolReader.read_one)

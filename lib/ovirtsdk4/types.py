@@ -1199,6 +1199,7 @@ class Display(Struct):
         certificate=None,
         copy_paste_enabled=None,
         disconnect_action=None,
+        disconnect_action_delay=None,
         file_transfer_enabled=None,
         keyboard_layout=None,
         monitors=None,
@@ -1216,6 +1217,7 @@ class Display(Struct):
         self.certificate = certificate
         self.copy_paste_enabled = copy_paste_enabled
         self.disconnect_action = disconnect_action
+        self.disconnect_action_delay = disconnect_action_delay
         self.file_transfer_enabled = file_transfer_enabled
         self.keyboard_layout = keyboard_layout
         self.monitors = monitors
@@ -1369,6 +1371,20 @@ class Display(Struct):
         self._proxy = value
 
     @property
+    def disconnect_action_delay(self):
+        """
+        Returns the value of the `disconnect_action_delay` property.
+        """
+        return self._disconnect_action_delay
+
+    @disconnect_action_delay.setter
+    def disconnect_action_delay(self, value):
+        """
+        Sets the value of the `disconnect_action_delay` property.
+        """
+        self._disconnect_action_delay = value
+
+    @property
     def port(self):
         """
         Returns the value of the `port` property.
@@ -1489,6 +1505,49 @@ class DnsResolverConfiguration(Struct):
         Sets the value of the `name_servers` property.
         """
         self._name_servers = value
+
+
+class DynamicCpu(Struct):
+
+    def __init__(
+        self,
+        cpu_tune=None,
+        topology=None,
+    ):
+        super(DynamicCpu, self).__init__(
+        )
+        self.cpu_tune = cpu_tune
+        self.topology = topology
+
+    @property
+    def cpu_tune(self):
+        """
+        Returns the value of the `cpu_tune` property.
+        """
+        return self._cpu_tune
+
+    @cpu_tune.setter
+    def cpu_tune(self, value):
+        """
+        Sets the value of the `cpu_tune` property.
+        """
+        Struct._check_type('cpu_tune', value, CpuTune)
+        self._cpu_tune = value
+
+    @property
+    def topology(self):
+        """
+        Returns the value of the `topology` property.
+        """
+        return self._topology
+
+    @topology.setter
+    def topology(self, value):
+        """
+        Sets the value of the `topology` property.
+        """
+        Struct._check_type('topology', value, CpuTopology)
+        self._topology = value
 
 
 class EntityProfileDetail(Struct):
@@ -12160,6 +12219,7 @@ class VmBase(Identified):
         comment=None,
         console=None,
         cpu=None,
+        cpu_pinning_policy=None,
         cpu_profile=None,
         cpu_shares=None,
         creation_time=None,
@@ -12216,6 +12276,7 @@ class VmBase(Identified):
         self.cluster = cluster
         self.console = console
         self.cpu = cpu
+        self.cpu_pinning_policy = cpu_pinning_policy
         self.cpu_profile = cpu_profile
         self.cpu_shares = cpu_shares
         self.creation_time = creation_time
@@ -12755,6 +12816,21 @@ class VmBase(Identified):
         """
         Struct._check_type('rng_device', value, RngDevice)
         self._rng_device = value
+
+    @property
+    def cpu_pinning_policy(self):
+        """
+        Returns the value of the `cpu_pinning_policy` property.
+        """
+        return self._cpu_pinning_policy
+
+    @cpu_pinning_policy.setter
+    def cpu_pinning_policy(self, value):
+        """
+        Sets the value of the `cpu_pinning_policy` property.
+        """
+        Struct._check_type('cpu_pinning_policy', value, CpuPinningPolicy)
+        self._cpu_pinning_policy = value
 
     @property
     def creation_time(self):
@@ -13706,6 +13782,7 @@ class Action(Identified):
         commit_on_success=None,
         connection=None,
         connectivity_timeout=None,
+        correlation_id=None,
         data_center=None,
         deploy_hosted_engine=None,
         description=None,
@@ -13722,6 +13799,7 @@ class Action(Identified):
         filename=None,
         filter=None,
         fix_layout=None,
+        follow=None,
         force=None,
         grace_period=None,
         host=None,
@@ -13775,6 +13853,7 @@ class Action(Identified):
         timeout=None,
         undeploy_hosted_engine=None,
         upgrade_action=None,
+        upgrade_percent_complete=None,
         use_cloud_init=None,
         use_ignition=None,
         use_initialization=None,
@@ -13806,6 +13885,7 @@ class Action(Identified):
         self.commit_on_success = commit_on_success
         self.connection = connection
         self.connectivity_timeout = connectivity_timeout
+        self.correlation_id = correlation_id
         self.data_center = data_center
         self.deploy_hosted_engine = deploy_hosted_engine
         self.details = details
@@ -13821,6 +13901,7 @@ class Action(Identified):
         self.filename = filename
         self.filter = filter
         self.fix_layout = fix_layout
+        self.follow = follow
         self.force = force
         self.grace_period = grace_period
         self.host = host
@@ -13872,6 +13953,7 @@ class Action(Identified):
         self.timeout = timeout
         self.undeploy_hosted_engine = undeploy_hosted_engine
         self.upgrade_action = upgrade_action
+        self.upgrade_percent_complete = upgrade_percent_complete
         self.use_cloud_init = use_cloud_init
         self.use_ignition = use_ignition
         self.use_initialization = use_initialization
@@ -13938,6 +14020,20 @@ class Action(Identified):
         """
         Struct._check_type('source_host', value, Host)
         self._source_host = value
+
+    @property
+    def correlation_id(self):
+        """
+        Returns the value of the `correlation_id` property.
+        """
+        return self._correlation_id
+
+    @correlation_id.setter
+    def correlation_id(self, value):
+        """
+        Sets the value of the `correlation_id` property.
+        """
+        self._correlation_id = value
 
     @property
     def optimize_cpu_settings(self):
@@ -14037,6 +14133,20 @@ class Action(Identified):
         Sets the value of the `check_connectivity` property.
         """
         self._check_connectivity = value
+
+    @property
+    def follow(self):
+        """
+        Returns the value of the `follow` property.
+        """
+        return self._follow
+
+    @follow.setter
+    def follow(self, value):
+        """
+        Sets the value of the `follow` property.
+        """
+        self._follow = value
 
     @property
     def collapse_snapshots(self):
@@ -14640,6 +14750,20 @@ class Action(Identified):
         """
         Struct._check_type('permission', value, Permission)
         self._permission = value
+
+    @property
+    def upgrade_percent_complete(self):
+        """
+        Returns the value of the `upgrade_percent_complete` property.
+        """
+        return self._upgrade_percent_complete
+
+    @upgrade_percent_complete.setter
+    def upgrade_percent_complete(self, value):
+        """
+        Sets the value of the `upgrade_percent_complete` property.
+        """
+        self._upgrade_percent_complete = value
 
     @property
     def data_center(self):
@@ -15726,6 +15850,7 @@ class Backup(Identified):
         modification_date=None,
         name=None,
         phase=None,
+        snapshot=None,
         to_checkpoint_id=None,
         vm=None,
     ):
@@ -15741,6 +15866,7 @@ class Backup(Identified):
         self.host = host
         self.modification_date = modification_date
         self.phase = phase
+        self.snapshot = snapshot
         self.to_checkpoint_id = to_checkpoint_id
         self.vm = vm
 
@@ -15844,6 +15970,21 @@ class Backup(Identified):
         Sets the value of the `disks` property.
         """
         self._disks = value
+
+    @property
+    def snapshot(self):
+        """
+        Returns the value of the `snapshot` property.
+        """
+        return self._snapshot
+
+    @snapshot.setter
+    def snapshot(self, value):
+        """
+        Sets the value of the `snapshot` property.
+        """
+        Struct._check_type('snapshot', value, Snapshot)
+        self._snapshot = value
 
     @property
     def creation_date(self):
@@ -16183,6 +16324,9 @@ class Cluster(Identified):
         threads_as_cores=None,
         trusted_service=None,
         tunnel_migration=None,
+        upgrade_correlation_id=None,
+        upgrade_in_progress=None,
+        upgrade_percent_complete=None,
         version=None,
         virt_service=None,
         vnc_encryption=None,
@@ -16232,6 +16376,9 @@ class Cluster(Identified):
         self.threads_as_cores = threads_as_cores
         self.trusted_service = trusted_service
         self.tunnel_migration = tunnel_migration
+        self.upgrade_correlation_id = upgrade_correlation_id
+        self.upgrade_in_progress = upgrade_in_progress
+        self.upgrade_percent_complete = upgrade_percent_complete
         self.version = version
         self.virt_service = virt_service
         self.vnc_encryption = vnc_encryption
@@ -16293,6 +16440,20 @@ class Cluster(Identified):
         """
         Struct._check_type('version', value, Version)
         self._version = value
+
+    @property
+    def upgrade_correlation_id(self):
+        """
+        Returns the value of the `upgrade_correlation_id` property.
+        """
+        return self._upgrade_correlation_id
+
+    @upgrade_correlation_id.setter
+    def upgrade_correlation_id(self, value):
+        """
+        Sets the value of the `upgrade_correlation_id` property.
+        """
+        self._upgrade_correlation_id = value
 
     @property
     def display(self):
@@ -16395,6 +16556,20 @@ class Cluster(Identified):
         """
         Struct._check_type('firewall_type', value, FirewallType)
         self._firewall_type = value
+
+    @property
+    def upgrade_percent_complete(self):
+        """
+        Returns the value of the `upgrade_percent_complete` property.
+        """
+        return self._upgrade_percent_complete
+
+    @upgrade_percent_complete.setter
+    def upgrade_percent_complete(self, value):
+        """
+        Sets the value of the `upgrade_percent_complete` property.
+        """
+        self._upgrade_percent_complete = value
 
     @property
     def required_rng_sources(self):
@@ -16725,6 +16900,20 @@ class Cluster(Identified):
         Sets the value of the `permissions` property.
         """
         self._permissions = value
+
+    @property
+    def upgrade_in_progress(self):
+        """
+        Returns the value of the `upgrade_in_progress` property.
+        """
+        return self._upgrade_in_progress
+
+    @upgrade_in_progress.setter
+    def upgrade_in_progress(self, value):
+        """
+        Sets the value of the `upgrade_in_progress` property.
+        """
+        self._upgrade_in_progress = value
 
     @property
     def scheduling_policy(self):
@@ -20530,6 +20719,7 @@ class Host(Identified):
         cluster=None,
         comment=None,
         cpu=None,
+        cpu_units=None,
         description=None,
         device_passthrough=None,
         devices=None,
@@ -20593,6 +20783,7 @@ class Host(Identified):
         self.certificate = certificate
         self.cluster = cluster
         self.cpu = cpu
+        self.cpu_units = cpu_units
         self.device_passthrough = device_passthrough
         self.devices = devices
         self.display = display
@@ -21247,6 +21438,20 @@ class Host(Identified):
         self._iscsi = value
 
     @property
+    def cpu_units(self):
+        """
+        Returns the value of the `cpu_units` property.
+        """
+        return self._cpu_units
+
+    @cpu_units.setter
+    def cpu_units(self, value):
+        """
+        Sets the value of the `cpu_units` property.
+        """
+        self._cpu_units = value
+
+    @property
     def status(self):
         """
         Returns the value of the `status` property.
@@ -21407,6 +21612,103 @@ class Host(Identified):
         Sets the value of the `network_operation_in_progress` property.
         """
         self._network_operation_in_progress = value
+
+
+class HostCpuUnit(Identified):
+
+    def __init__(
+        self,
+        comment=None,
+        core_id=None,
+        cpu_id=None,
+        description=None,
+        id=None,
+        name=None,
+        runs_vdsm=None,
+        socket_id=None,
+        vms=None,
+    ):
+        super(HostCpuUnit, self).__init__(
+            comment=comment,
+            description=description,
+            id=id,
+            name=name,
+        )
+        self.core_id = core_id
+        self.cpu_id = cpu_id
+        self.runs_vdsm = runs_vdsm
+        self.socket_id = socket_id
+        self.vms = vms
+
+    @property
+    def socket_id(self):
+        """
+        Returns the value of the `socket_id` property.
+        """
+        return self._socket_id
+
+    @socket_id.setter
+    def socket_id(self, value):
+        """
+        Sets the value of the `socket_id` property.
+        """
+        self._socket_id = value
+
+    @property
+    def runs_vdsm(self):
+        """
+        Returns the value of the `runs_vdsm` property.
+        """
+        return self._runs_vdsm
+
+    @runs_vdsm.setter
+    def runs_vdsm(self, value):
+        """
+        Sets the value of the `runs_vdsm` property.
+        """
+        self._runs_vdsm = value
+
+    @property
+    def core_id(self):
+        """
+        Returns the value of the `core_id` property.
+        """
+        return self._core_id
+
+    @core_id.setter
+    def core_id(self, value):
+        """
+        Sets the value of the `core_id` property.
+        """
+        self._core_id = value
+
+    @property
+    def cpu_id(self):
+        """
+        Returns the value of the `cpu_id` property.
+        """
+        return self._cpu_id
+
+    @cpu_id.setter
+    def cpu_id(self, value):
+        """
+        Sets the value of the `cpu_id` property.
+        """
+        self._cpu_id = value
+
+    @property
+    def vms(self):
+        """
+        Returns the value of the `vms` property.
+        """
+        return self._vms
+
+    @vms.setter
+    def vms(self, value):
+        """
+        Sets the value of the `vms` property.
+        """
+        self._vms = value
 
 
 class HostDevice(Identified):
@@ -22850,6 +23152,7 @@ class Template(VmBase):
         comment=None,
         console=None,
         cpu=None,
+        cpu_pinning_policy=None,
         cpu_profile=None,
         cpu_shares=None,
         creation_time=None,
@@ -22869,6 +23172,7 @@ class Template(VmBase):
         io=None,
         large_icon=None,
         lease=None,
+        mediated_devices=None,
         memory=None,
         memory_policy=None,
         migration=None,
@@ -22911,6 +23215,7 @@ class Template(VmBase):
             comment=comment,
             console=console,
             cpu=cpu,
+            cpu_pinning_policy=cpu_pinning_policy,
             cpu_profile=cpu_profile,
             cpu_shares=cpu_shares,
             creation_time=creation_time,
@@ -22959,6 +23264,7 @@ class Template(VmBase):
         self.cdroms = cdroms
         self.disk_attachments = disk_attachments
         self.graphics_consoles = graphics_consoles
+        self.mediated_devices = mediated_devices
         self.nics = nics
         self.permissions = permissions
         self.status = status
@@ -23009,6 +23315,20 @@ class Template(VmBase):
         Sets the value of the `disk_attachments` property.
         """
         self._disk_attachments = value
+
+    @property
+    def mediated_devices(self):
+        """
+        Returns the value of the `mediated_devices` property.
+        """
+        return self._mediated_devices
+
+    @mediated_devices.setter
+    def mediated_devices(self, value):
+        """
+        Sets the value of the `mediated_devices` property.
+        """
+        self._mediated_devices = value
 
     @property
     def cdroms(self):
@@ -23124,6 +23444,7 @@ class Vm(VmBase):
         comment=None,
         console=None,
         cpu=None,
+        cpu_pinning_policy=None,
         cpu_profile=None,
         cpu_shares=None,
         creation_time=None,
@@ -23136,6 +23457,7 @@ class Vm(VmBase):
         disk_attachments=None,
         display=None,
         domain=None,
+        dynamic_cpu=None,
         external_host_provider=None,
         floppies=None,
         fqdn=None,
@@ -23153,6 +23475,7 @@ class Vm(VmBase):
         katello_errata=None,
         large_icon=None,
         lease=None,
+        mediated_devices=None,
         memory=None,
         memory_policy=None,
         migration=None,
@@ -23210,6 +23533,7 @@ class Vm(VmBase):
             comment=comment,
             console=console,
             cpu=cpu,
+            cpu_pinning_policy=cpu_pinning_policy,
             cpu_profile=cpu_profile,
             cpu_shares=cpu_shares,
             creation_time=creation_time,
@@ -23259,6 +23583,7 @@ class Vm(VmBase):
         self.applications = applications
         self.cdroms = cdroms
         self.disk_attachments = disk_attachments
+        self.dynamic_cpu = dynamic_cpu
         self.external_host_provider = external_host_provider
         self.floppies = floppies
         self.fqdn = fqdn
@@ -23270,6 +23595,7 @@ class Vm(VmBase):
         self.host_devices = host_devices
         self.instance_type = instance_type
         self.katello_errata = katello_errata
+        self.mediated_devices = mediated_devices
         self.next_run_configuration_exists = next_run_configuration_exists
         self.nics = nics
         self.numa_nodes = numa_nodes
@@ -23335,6 +23661,21 @@ class Vm(VmBase):
         Sets the value of the `reported_devices` property.
         """
         self._reported_devices = value
+
+    @property
+    def dynamic_cpu(self):
+        """
+        Returns the value of the `dynamic_cpu` property.
+        """
+        return self._dynamic_cpu
+
+    @dynamic_cpu.setter
+    def dynamic_cpu(self, value):
+        """
+        Sets the value of the `dynamic_cpu` property.
+        """
+        Struct._check_type('dynamic_cpu', value, DynamicCpu)
+        self._dynamic_cpu = value
 
     @property
     def sessions(self):
@@ -23504,6 +23845,20 @@ class Vm(VmBase):
         """
         Struct._check_type('original_template', value, Template)
         self._original_template = value
+
+    @property
+    def mediated_devices(self):
+        """
+        Returns the value of the `mediated_devices` property.
+        """
+        return self._mediated_devices
+
+    @mediated_devices.setter
+    def mediated_devices(self, value):
+        """
+        Sets the value of the `mediated_devices` property.
+        """
+        self._mediated_devices = value
 
     @property
     def status(self):
@@ -23820,6 +24175,47 @@ class Vm(VmBase):
         Sets the value of the `run_once` property.
         """
         self._run_once = value
+
+
+class VmMediatedDevice(Device):
+
+    def __init__(
+        self,
+        comment=None,
+        description=None,
+        id=None,
+        instance_type=None,
+        name=None,
+        spec_params=None,
+        template=None,
+        vm=None,
+        vms=None,
+    ):
+        super(VmMediatedDevice, self).__init__(
+            comment=comment,
+            description=description,
+            id=id,
+            instance_type=instance_type,
+            name=name,
+            template=template,
+            vm=vm,
+            vms=vms,
+        )
+        self.spec_params = spec_params
+
+    @property
+    def spec_params(self):
+        """
+        Returns the value of the `spec_params` property.
+        """
+        return self._spec_params
+
+    @spec_params.setter
+    def spec_params(self, value):
+        """
+        Sets the value of the `spec_params` property.
+        """
+        self._spec_params = value
 
 
 class Watchdog(Device):
@@ -24164,6 +24560,7 @@ class InstanceType(Template):
         comment=None,
         console=None,
         cpu=None,
+        cpu_pinning_policy=None,
         cpu_profile=None,
         cpu_shares=None,
         creation_time=None,
@@ -24183,6 +24580,7 @@ class InstanceType(Template):
         io=None,
         large_icon=None,
         lease=None,
+        mediated_devices=None,
         memory=None,
         memory_policy=None,
         migration=None,
@@ -24226,6 +24624,7 @@ class InstanceType(Template):
             comment=comment,
             console=console,
             cpu=cpu,
+            cpu_pinning_policy=cpu_pinning_policy,
             cpu_profile=cpu_profile,
             cpu_shares=cpu_shares,
             creation_time=creation_time,
@@ -24245,6 +24644,7 @@ class InstanceType(Template):
             io=io,
             large_icon=large_icon,
             lease=lease,
+            mediated_devices=mediated_devices,
             memory=memory,
             memory_policy=memory_policy,
             migration=migration,
@@ -24601,6 +25001,7 @@ class Snapshot(Vm):
         comment=None,
         console=None,
         cpu=None,
+        cpu_pinning_policy=None,
         cpu_profile=None,
         cpu_shares=None,
         creation_time=None,
@@ -24615,6 +25016,7 @@ class Snapshot(Vm):
         disks=None,
         display=None,
         domain=None,
+        dynamic_cpu=None,
         external_host_provider=None,
         floppies=None,
         fqdn=None,
@@ -24632,6 +25034,7 @@ class Snapshot(Vm):
         katello_errata=None,
         large_icon=None,
         lease=None,
+        mediated_devices=None,
         memory=None,
         memory_policy=None,
         migration=None,
@@ -24696,6 +25099,7 @@ class Snapshot(Vm):
             comment=comment,
             console=console,
             cpu=cpu,
+            cpu_pinning_policy=cpu_pinning_policy,
             cpu_profile=cpu_profile,
             cpu_shares=cpu_shares,
             creation_time=creation_time,
@@ -24708,6 +25112,7 @@ class Snapshot(Vm):
             disk_attachments=disk_attachments,
             display=display,
             domain=domain,
+            dynamic_cpu=dynamic_cpu,
             external_host_provider=external_host_provider,
             floppies=floppies,
             fqdn=fqdn,
@@ -24725,6 +25130,7 @@ class Snapshot(Vm):
             katello_errata=katello_errata,
             large_icon=large_icon,
             lease=lease,
+            mediated_devices=mediated_devices,
             memory=memory,
             memory_policy=memory_policy,
             migration=migration,
@@ -24885,6 +25291,7 @@ class AccessProtocol(Enum):
 
 @unique
 class Architecture(Enum):
+    AARCH64 = 'aarch64'
     PPC64 = 'ppc64'
     S390X = 's390x'
     UNDEFINED = 'undefined'
@@ -25010,6 +25417,7 @@ class CloudInitNetworkProtocol(Enum):
 class ClusterUpgradeAction(Enum):
     FINISH = 'finish'
     START = 'start'
+    UPDATE_PROGRESS = 'update_progress'
 
     def __init__(self, image):
         self._image = image
@@ -25035,6 +25443,20 @@ class CpuMode(Enum):
     CUSTOM = 'custom'
     HOST_MODEL = 'host_model'
     HOST_PASSTHROUGH = 'host_passthrough'
+
+    def __init__(self, image):
+        self._image = image
+
+    def __str__(self):
+        return self._image
+
+
+@unique
+class CpuPinningPolicy(Enum):
+    DEDICATED = 'dedicated'
+    MANUAL = 'manual'
+    NONE = 'none'
+    RESIZE_AND_PIN_NUMA = 'resize_and_pin_numa'
 
     def __init__(self, image):
         self._image = image
@@ -25712,6 +26134,7 @@ class NfsVersion(Enum):
 @unique
 class NicInterface(Enum):
     E1000 = 'e1000'
+    E1000E = 'e1000e'
     PCI_PASSTHROUGH = 'pci_passthrough'
     RTL8139 = 'rtl8139'
     RTL8139_VIRTIO = 'rtl8139_virtio'
