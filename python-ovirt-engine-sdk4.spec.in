@@ -9,6 +9,7 @@ Source: ovirt-engine-sdk-python-@PACKAGE_VERSION@.tar.gz
 
 BuildRequires: gcc
 BuildRequires: libxml2-devel
+BuildRequires: asciidoctor
 Requires: libxml2
 
 %description

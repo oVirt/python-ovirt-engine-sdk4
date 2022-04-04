@@ -97,12 +97,9 @@ jobs:
 
         if: ${{ matrix.shortcut == 'cs8' }}
         run: |
-          echo cloning Ondra pdoc repo: (git clone...)
-          git clone https://github.com/machacekondra/pdoc.git pdoc
-          echo installing Ondra pdoc repo: (pip3 install...)
+          git clone https://github.com/oliel/pdoc.git pdoc
           pip3 install -e ./pdoc -U
-          echo running Ondra pdoc (pdoc...)
-          pdoc --overwrite --html --html-dir=${GEN_DOC_DIR}/
+          pdoc --overwrite --html --html-dir=${GEN_DOC_DIR}/ ovirtsdk4
 
       - name: Upload generated documentation artifacts
         if: ${{ matrix.shortcut == 'cs8' }}
