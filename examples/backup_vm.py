@@ -489,7 +489,7 @@ def get_last_backup_event(connection, search_id):
 
     # The first item is the most recent event.
     last_event = backup_events[0]
-    return dict(code=event.code, description=event.description)
+    return dict(code=last_event.code, description=last_event.description)
 
 
 def verify_vm_exists(connection, vm_uuid):
