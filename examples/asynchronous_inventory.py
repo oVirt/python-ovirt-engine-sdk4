@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 #
@@ -140,7 +141,7 @@ vms_service = system_service.vms_service()
 # distributed amongst the multiple connections, and will be added to the
 # pipelines. It is necessary to do this block by block because otherwise, if
 # we send all the requests at once, the requests that can't be added to the
-# pipelines of the connections wold be queued in memory, wasting expensive
+# pipelines of the connections would be queued in memory, wasting expensive
 # resources of the underlying library. After sending each block of requests,
 # we need to wait for the responses.
 print('Loading VM disk attachments ...')
@@ -154,7 +155,7 @@ for vms_slice in grouper(vms, block):
         atts_future = atts_service.list(wait=False)
         atts_futures[vm.id] = atts_future
 
-    for vm_id, atts_future in atts_futures.iteritems():
+    for vm_id, atts_future in atts_futures.items():
         vm = vms_index[vm_id]
         vm.disk_attachments = atts_future.wait()
         for att in vm.disk_attachments:
@@ -174,7 +175,7 @@ for vms_slice in grouper(vms, block):
         nics_future = nics_service.list(wait=False)
         nics_futures[vm.id] = nics_future
 
-    for vm_id, nics_future in nics_futures.iteritems():
+    for vm_id, nics_future in nics_futures.items():
         vm = vms_index[vm_id]
         vm.nics = nics_future.wait()
         print("Loaded NICs of VM '%s'." % vm.name)
@@ -192,7 +193,7 @@ for vms_slice in grouper(vms, block):
         devices_future = devices_service.list(wait=False)
         devices_futures[vm.id] = devices_future
 
-    for vm_id, devices_future in devices_futures.iteritems():
+    for vm_id, devices_future in devices_futures.items():
         vm = vms_index[vm_id]
         vm.reported_devices = devices_future.wait()
         print("Loaded reported devices of VM '%s'." % vm.name)

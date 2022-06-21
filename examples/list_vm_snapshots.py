@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 #
@@ -68,14 +68,14 @@ sds_map = {
 
 # For each virtual machine find its snapshots, then for each snapshot
 # find its disks:
-for vm_id, vm_name in vms_map.iteritems():
+for vm_id, vm_name in vms_map.items():
     vm_service = vms_service.vm_service(vm_id)
     snaps_service = vm_service.snapshots_service()
     snaps_map = {
         snap.id: snap.description
         for snap in snaps_service.list()
     }
-    for snap_id, snap_description in snaps_map.iteritems():
+    for snap_id, snap_description in snaps_map.items():
         snap_service = snaps_service.snapshot_service(snap_id)
         disks_service = snap_service.disks_service()
         for disk in disks_service.list():
