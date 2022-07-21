@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 #
@@ -28,6 +28,8 @@ logging.basicConfig(level=logging.DEBUG, filename='example.log')
 # This example will connect to the server, and create a virtual machine
 # from a specific version of a template and specify storage domain where
 # virtual machine disk should be created.
+# This example assumes that the template has exactly 1 disk. If it has more
+# disks then the example needs to be adjusted.
 
 # Create the connection to the server:
 connection = sdk.Connection(
