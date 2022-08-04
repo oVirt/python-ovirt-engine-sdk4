@@ -3504,9 +3504,9 @@ class AttachedStorageDomainDisksService(Service):
         """
         Adds or registers a disk.
         IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. To add a new disk use the <<services/disks/methods/add, add>>
+        compatibility. It will be removed in the future. To add a new disk use the xref:services-disks-methods-add[add]
         operation of the service that manages the disks of the system. To register an unregistered disk use the
-        <<services/attached_storage_domain_disk/methods/register, register>> operation of the service that manages
+        xref:services-attached_storage_domain_disk-methods-register[register] operation of the service that manages
         that disk.
 
 
@@ -4783,7 +4783,7 @@ class ClusterEnabledFeatureService(Service):
         ----
         GET /ovirt-engine/api/clusters/123/enabledfeatures/456
         ----
-        That will return a <<types/cluster_feature, ClusterFeature>> object containing the name:
+        That will return a xref:types-cluster_feature[ClusterFeature] object containing the name:
         [source,xml]
         ----
         <cluster_feature id="456">
@@ -5059,7 +5059,7 @@ class ClusterFeatureService(Service):
         ----
         GET /ovirt-engine/api/clusterlevels/4.1/clusterfeatures/456
         ----
-        That will return a <<types/cluster_feature, ClusterFeature>> object containing the name:
+        That will return a xref:types-cluster_feature[ClusterFeature] object containing the name:
         [source,xml]
         ----
         <cluster_feature id="456">
@@ -5191,7 +5191,7 @@ class ClusterFeaturesService(Service):
 
 class ClusterLevelService(Service):
     """
-    Provides information about a specific cluster level. See the <<services/cluster_levels,ClusterLevels>> service for
+    Provides information about a specific cluster level. See the xref:services-cluster_levels[ClusterLevels] service for
     more information.
 
     """
@@ -5215,7 +5215,7 @@ class ClusterLevelService(Service):
         ----
         GET /ovirt-engine/api/clusterlevels/3.6
         ----
-        That will return a <<types/cluster_level, ClusterLevel>> object containing the supported CPU types, and other
+        That will return a xref:types-cluster_level[ClusterLevel] object containing the supported CPU types, and other
         information which describes the cluster level:
         [source,xml]
         ----
@@ -7068,7 +7068,7 @@ class DiskAttachmentService(Service):
 class DiskAttachmentsService(Service):
     """
     This service manages the set of disks attached to a virtual machine. Each attached disk is represented by a
-    <<types/disk_attachment,DiskAttachment>>, containing the bootable flag, the disk interface and the reference to
+    xref:types-disk_attachment[DiskAttachment], containing the bootable flag, the disk interface and the reference to
     the disk.
 
     """
@@ -7700,11 +7700,11 @@ class DisksService(Service):
         """
         Adds a new floating disk.
         There are three types of disks that can be added - disk image, direct LUN and Managed Block disk.
-        https://wiki.openstack.org/wiki/Cinder[Cinder] integration has been replaced by Managed Block Storage.
+        link:https://wiki.openstack.org/wiki/Cinder[Cinder] integration has been replaced by Managed Block Storage.
         *Adding a new image disk:*
-        When creating a new floating image <<types/disk,Disk>>, the API requires the `storage_domain`, `provisioned_size`
+        When creating a new floating image xref:types-disk[Disk], the API requires the `storage_domain`, `provisioned_size`
         and `format` attributes.
-        Note that block storage domains (i.e., storage domains with the <<types/storage_type, storage type>> of iSCSI or
+        Note that block storage domains (i.e. storage domains with the xref:types-storage_type[storage type] of iSCSI or
         FCP) don't support the combination of the raw `format` with `sparse=true`, so `sparse=false` must be stated
         explicitly.
         To create a new floating image disk with specified `provisioned_size`, `format` and `name` on a storage domain
@@ -10433,7 +10433,7 @@ class ExternalTemplateImportsService(Service):
         ----
         POST /externaltemplateimports
         ----
-        With request body of type <<types/external_template_import,ExternalTemplateImport>>, for example:
+        With request body of type xref:types-external_template_import[ExternalTemplateImport], for example:
         [source,xml]
         ----
         <external_template_import>
@@ -10496,7 +10496,7 @@ class ExternalVmImportsService(Service):
         ----
         POST /externalvmimports
         ----
-        With request body of type <<types/external_vm_import,ExternalVmImport>>, for example:
+        With request body of type xref:types-external_vm_import[ExternalVmImport], for example:
         [source,xml]
         ----
         <external_vm_import>
@@ -11477,8 +11477,8 @@ class GlusterBricksService(Service):
         Start migration of data prior to removing bricks.
         Removing bricks is a two-step process, where the data on bricks to be removed, is first migrated to remaining
         bricks. Once migration is completed the removal of bricks is confirmed via the API
-        <<services/gluster_bricks/methods/remove, remove>>. If at any point, the action needs to be cancelled
-        <<services/gluster_bricks/methods/stop_migrate, stopmigrate>> has to be called.
+        xref:services-gluster_bricks-methods-remove[remove]. If at any point, the action needs to be cancelled
+        xref:services-gluster_bricks-methods-stop_migrate[stopmigrate] has to be called.
         For instance, to delete a brick from a gluster volume with id `123`, send a request:
         [source]
         ----
@@ -11496,7 +11496,7 @@ class GlusterBricksService(Service):
         </action>
         ----
         The migration process can be tracked from the job id returned from the API using
-        <<services/job/methods/get, job>> and steps in job using <<services/step/methods/get, step>>
+        xref:services-job-methods-get[job] and steps in job using xref:services-step-methods-get[step]
 
 
         This method supports the following parameters:
@@ -11543,7 +11543,7 @@ class GlusterBricksService(Service):
         """
         Removes bricks from gluster volume.
         The recommended way to remove bricks without data loss is to first migrate the data using
-        <<services/gluster_bricks/methods/stop_migrate, stopmigrate>> and then removing them. If migrate was not called on
+        xref:services-gluster_bricks-methods-stop_migrate[stopmigrate] and then removing them. If migrate was not called on
         bricks prior to remove, the bricks are removed without data migration which may lead to data loss.
         For example, to delete the bricks from gluster volume `123`, send a request like this:
         [source]
@@ -11633,7 +11633,7 @@ class GlusterBricksService(Service):
         This method supports the following parameters:
 
         `bricks`:: List of bricks for which data migration needs to be stopped. This list should match the arguments passed to
-        <<services/gluster_bricks/methods/migrate, migrate>>.
+        xref:services-gluster_bricks-methods-migrate[migrate].
 
         `async_`:: Indicates if the action should be performed asynchronously.
 
@@ -12152,7 +12152,7 @@ class GlusterVolumesService(Service):
 class GroupService(Service):
     """
     Manages a group of users. Use this service to either get groups details or remove groups. In order
-    to add new groups please use <<services/groups, service>> that manages the collection of groups.
+    to add new groups please use xref:services-groups[service] that manages the collection of groups.
 
     """
 
@@ -13781,8 +13781,8 @@ class ImageService(Service):
 class ImageTransferService(Service):
     """
     This service provides a mechanism to control an image transfer. The client will have
-    to create a transfer by using <<services/image_transfers/methods/add, add>>
-    of the <<services/image_transfers>> service, stating the image to transfer
+    to create a transfer by using xref:services-image_transfers-methods-add[add]
+    of the xref:services-image_transfers[image transfers] service, stating the image to transfer
     data to/from.
     After doing that, the transfer is managed by this service.
     *Using oVirt's Python's SDK:*
@@ -13814,7 +13814,7 @@ class ImageTransferService(Service):
     )
     ----
     If the user wishes to download a disk rather than upload, he/she should specify
-    `download` as the <<types/image_transfer_direction, direction>> attribute of the transfer.
+    `download` as the xref:types-image_transfer_direction[direction] attribute of the transfer.
     This will grant a read permission from the image, instead of a write permission.
     E.g:
     [source,python]
@@ -13832,10 +13832,10 @@ class ImageTransferService(Service):
     Transfers have phases, which govern the flow of the upload/download.
     A client implementing such a flow should poll/check the transfer's phase and
     act accordingly. All the possible phases can be found in
-    <<types/image_transfer_phase, ImageTransferPhase>>.
-    After adding a new transfer, its phase will be <<types/image_transfer_phase, initializing>>.
+    xref:types-image_transfer_phase[ImageTransferPhase].
+    After adding a new transfer, its phase will be xref:types-image_transfer_phase[initializing].
     The client will have to poll on the transfer's phase until it changes.
-    When the phase becomes <<types/image_transfer_phase, transferring>>,
+    When the phase becomes xref:types-image_transfer_phase[transferring],
     the session is ready to start the transfer.
     For example:
     [source,python]
@@ -13845,114 +13845,8 @@ class ImageTransferService(Service):
        time.sleep(3)
        transfer = transfer_service.get()
     ----
-    At that stage, if the transfer's phase is <<types/image_transfer_phase, paused_system>>, then the session was
-    not successfully established. One possible reason for that is that the ovirt-imageio-daemon is not running
-    in the host that was selected for transfer.
-    The transfer can be resumed by calling <<services/image_transfer/methods/resume, resume>>
-    of the service that manages it.
-    If the session was successfully established - the returned transfer entity will
-    contain the <<types/image_transfer, transfer_url>> and <<types/image_transfer, proxy_url>> attributes,
-    which the client needs to use in order to transfer the required data. The client can choose whatever
-    technique and tool for sending the HTTPS request with the image's data.
-    - `transfer_url` is the address of an imageio server running on one of the hypervisors.
-    - `proxy_url` is the address of an imageio proxy server that can be used if
-      you cannot access transfer_url.
-    To transfer the image, it is recommended to use the imageio client python library.
-    [source,python]
-    ----
-    from ovirt_imageio import client
-    # Upload qcow2 image to virtual disk:
-    client.upload("disk.qcow2", transfer.transfer_url)
-    # Download virtual disk to qcow2 image:
-    client.download(transfer.transfer_url, "disk.qcow2")
-    ----
-    You can also upload and download using imageio REST API. For more info
-    on this, see imageio API documentation:
-        http://ovirt.github.io/ovirt-imageio/images.html
-    When finishing the transfer, the user should call
-    <<services/image_transfer/methods/finalize, finalize>>. This will make the
-    final adjustments and verifications for finishing the transfer process.
-    For example:
-    [source,python]
-    ----
-    transfer_service.finalize()
-    ----
-    In case of an error, the transfer's phase will be changed to
-    <<types/image_transfer_phase, finished_failure>>, and
-    the disk's status will be changed to `Illegal`. Otherwise it will be changed to
-    <<types/image_transfer_phase, finished_success>>, and the disk will be ready
-    to be used. In both cases, the transfer entity will be removed shortly after.
-    *Using HTTP and cURL calls:*
-    - For upload, create a new disk first:
-    * Specify 'initial_size' and 'provisioned_size' in bytes.
-    * 'initial_size' must be bigger or the same as the size of the uploaded data.
-    [source]
-    ----
-    POST /ovirt-engine/api/disks
-    ----
-    With a request body as follows:
-    [source,xml]
-    ----
-    <disk>
-      <storage_domains>
-        <storage_domain id="123"/>
-      </storage_domains>
-      <alias>mydisk</alias>
-      <initial_size>1073741824</initial_size>
-      <provisioned_size>1073741824</provisioned_size>
-      <format>raw</format>
-    </disk>
-    ----
-    - Create a new image transfer for downloading/uploading a `disk` with id `456`:
-    [source]
-    ----
-    POST /ovirt-engine/api/imagetransfers
-    ----
-    With a request body as follows:
-    [source,xml]
-    ----
-    <image_transfer>
-      <disk id="456"/>
-      <direction>upload|download</direction>
-    </image_transfer>
-    ----
-    Will respond:
-    [source,xml]
-    ----
-    <image_transfer id="123">
-      <direction>download|upload</direction>
-      <phase>initializing|transferring</phase>
-      <proxy_url>https://proxy_fqdn:54323/images/41c732d4-2210-4e7b-9e5c-4e2805baadbb</proxy_url>
-      <transfer_url>https://daemon_fqdn:54322/images/41c732d4-2210-4e7b-9e5c-4e2805baadbb</transfer_url>
-      ...
-    </image_transfer>
-    ----
-    Note: If the phase is 'initializing', poll the `image_transfer` till its phase changes to 'transferring'.
-    - Use the 'transfer_url' or 'proxy_url' to invoke a curl command:
-    - use 'transfer_url' for transferring directly from/to ovirt-imageio-daemon,
-      or, use 'proxy_url' for transferring from/to ovirt-imageio-proxy.
-      Note: using the proxy would mitigate scenarios where there's no direct connectivity
-      to the daemon machine, e.g. vdsm machines are on a different network than the engine.
-    -- Download:
-    [source,shell]
-    ----
-    $ curl --cacert /etc/pki/ovirt-engine/ca.pem https://daemon_fqdn:54322/images/41c732d4-2210-4e7b-9e5c-4e2805baadbb -o <output_file>
-    ----
-    -- Upload:
-    [source,shell]
-    ----
-    $ curl --cacert /etc/pki/ovirt-engine/ca.pem --upload-file <file_to_upload> -X PUT https://daemon_fqdn:54322/images/41c732d4-2210-4e7b-9e5c-4e2805baadbb
-    ----
-    - Finalize the image transfer by invoking the action:
-    [source]
-    ----
-    POST /ovirt-engine/api/imagetransfers/123/finalize
-    ----
-    With a request body as follows:
-    [source,xml]
-    ----
-    <action />
-    ----
+    At that stage, if the phase of the transfer is xref:types-image_transfer_phase[paused_system], the session was
+    not successfully established. This can happen if ovirt-imageio is not running in the selected host.
 
     """
 
@@ -14139,7 +14033,7 @@ class ImageTransferService(Service):
 class ImageTransfersService(Service):
     """
     This service manages image transfers, for performing Image I/O API in {product-name}.
-    Please refer to <<services/image_transfer, image transfer>> for further
+    Please refer to xref:services-image_transfer[image transfer] for further
     documentation.
 
     """
@@ -16890,9 +16784,9 @@ class NetworkService(Service):
         DELETE /ovirt-engine/api/datacenters/123/networks/456
         ----
         NOTE: To remove an external logical network, the network has to be removed directly from its provider by
-        https://developer.openstack.org/api-ref/network[OpenStack Networking API].
+        link:https://developer.openstack.org/api-ref/network[OpenStack Networking API].
         The entity representing the external network inside {product-name} is removed automatically,
-        if <<types/open_stack_network_provider/attributes/auto_sync,`auto_sync`>> is enabled for the provider,
+        if xref:types-open_stack_network_provider-attributes-auto_sync[`auto_sync`] is enabled for the provider,
         otherwise the entity has to be removed using this method.
 
 
@@ -17327,7 +17221,7 @@ class NetworkFiltersService(Service):
     """
     Represents a readonly network filters sub-collection.
     The network filter enables to filter packets send to/from the VM's nic according to defined rules.
-    For more information please refer to <<services/network_filter,NetworkFilter>> service documentation
+    For more information please refer to xref:services-network_filter[NetworkFilter] service documentation
     Network filters are supported in different versions, starting from version 3.0.
     A network filter is defined for each vnic profile.
     A vnic profile is defined for a specific network.
@@ -18677,7 +18571,7 @@ class OpenstackNetworkService(Service):
         Data center is mandatory, and can be specified
         using the `id` or `name` attributes. The rest of
         the attributes will be ignored.
-        NOTE: If <<types/open_stack_network_provider/attributes/auto_sync,`auto_sync`>> is
+        NOTE: If xref:types-open_stack_network_provider-attributes-auto_sync[`auto_sync`] is
         enabled for the provider, the network might be imported automatically. To
         prevent this, automatic import can be disabled by setting the `auto_sync` to false,
         and enabling it again after importing the network.
@@ -20420,7 +20314,7 @@ class PermitsService(Service):
         **kwargs
     ):
         """
-        Adds a permit to the role. The permit name can be retrieved from the <<services/cluster_levels>> service.
+        Adds a permit to the role. The permit name can be retrieved from the xref:services-cluster_levels[cluster_levels] service.
         For example to assign a permit `create_vm` to the role with id `123` send a request like this:
         ....
         POST /ovirt-engine/api/roles/123/permits
@@ -21693,7 +21587,7 @@ class RoleService(Service):
         """
         Updates a role. You are allowed to update `name`, `description` and `administrative` attributes after role is
         created. Within this endpoint you can't add or remove roles permits you need to use
-        <<services/permits, service>> that manages permits of role.
+        xref:services-permits[service] that manages permits of role.
         For example to update role's `name`, `description` and `administrative` attributes send a request like this:
         [source]
         ----
@@ -23010,8 +22904,8 @@ class SnapshotsService(Service):
         ----
         [IMPORTANT]
         ====
-        When a snapshot is created the default value for the <<types/snapshot/attributes/persist_memorystate,
-        persist_memorystate>> attribute is `true`. That means that the content of the memory of the virtual
+        When a snapshot is created, the default value for the
+        xref:types-snapshot-attributes-persist_memorystate[persist_memorystate] attribute is `true`. That means that the content of the memory of the virtual
         machine will be included in the snapshot, and it also means that the virtual machine will be paused
         for a longer time. That can negatively affect applications that are very sensitive to timing (NTP
         servers, for example). In those cases make sure that you set the attribute to `false`:
@@ -23206,7 +23100,7 @@ class SshPublicKeyService(Service):
         """
         Replaces the key with a new resource.
         IMPORTANT: Since version 4.4.8 of the engine this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. Instead please use DELETE followed by <<services/ssh_public_keys/methods/add, add operation>>.
+        compatibility. It will be removed in the future. Instead please use DELETE followed by xref:services-ssh_public_keys-methods-add[add operation].
 
 
         """
@@ -24101,7 +23995,7 @@ class StorageDomainService(Service):
          </action>
         ----
          Note that this operation is only applicable to block storage domains (i.e., storage domains with the
-         <<types/storage_type, storage type> of iSCSI or FCP).
+         xref:types-storage_type[storage type] of iSCSI or FCP).
 
 
         This method supports the following parameters:
@@ -24289,7 +24183,7 @@ class StorageDomainService(Service):
     ):
         """
         Updates a storage domain.
-        Not all of the <<types/storage_domain,StorageDomain>>'s attributes are updatable after creation. Those that can be
+        Not all of the xref:types-storage_domain[StorageDomain]'s attributes are updatable after creation. Those that can be
         updated are: `name`, `description`, `comment`, `warning_low_space_indicator`, `critical_space_action_blocker` and
         `wipe_after_delete.` (Note that changing the `wipe_after_delete` attribute will not change the wipe after delete
         property of disks that already exist).
@@ -24645,8 +24539,9 @@ class StorageDomainDiskService(MeasurableService):
     Manages a single disk available in a storage domain.
     IMPORTANT: Since version 4.2 of the engine this service is intended only to list disks available in the storage
     domain, and to register unregistered disks. All the other operations, like copying a disk, moving a disk, etc, have
-    been deprecated and will be removed in the future. To perform those operations use the <<services/disks, service
-    that manages all the disks of the system>>, or the <<services/disk, service that manages an specific disk>>.
+    been deprecated and will be removed in the future. To perform those operations
+    use the xref:services-disks[service that manages all the disks of the system]
+    or the xref:services-disk[service that manages a specific disk].
 
     """
 
@@ -24667,7 +24562,7 @@ class StorageDomainDiskService(MeasurableService):
         """
         Copies a disk to the specified storage domain.
         IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. To copy a disk use the <<services/disk/methods/copy, copy>>
+        compatibility. It will be removed in the future. To copy a disk use the xref:services-disk-methods-copy[copy]
         operation of the service that manages that disk.
 
 
@@ -24709,7 +24604,7 @@ class StorageDomainDiskService(MeasurableService):
         """
         Exports a disk to an export storage domain.
         IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. To export a disk use the <<services/disk/methods/export, export>>
+        compatibility. It will be removed in the future. To export a disk use the xref:services-disk-methods-export[export]
         operation of the service that manages that disk.
 
 
@@ -24785,7 +24680,7 @@ class StorageDomainDiskService(MeasurableService):
         """
         Moves a disk to another storage domain.
         IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. To move a disk use the <<services/disk/methods/move, move>>
+        compatibility. It will be removed in the future. To move a disk use the xref:services-disk-methods-move[move]
         operation of the service that manages that disk.
 
 
@@ -24876,7 +24771,7 @@ class StorageDomainDiskService(MeasurableService):
         """
         Removes a disk.
         IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. To remove a disk use the <<services/disk/methods/remove, remove>>
+        compatibility. It will be removed in the future. To remove a disk use the xref:services-disk-methods-remove[remove]
         operation of the service that manages that disk.
 
 
@@ -24901,7 +24796,7 @@ class StorageDomainDiskService(MeasurableService):
         """
         Sparsify the disk.
         IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. To remove a disk use the <<services/disk/methods/remove, remove>>
+        compatibility. It will be removed in the future. To remove a disk use the xref:services-disk-methods-remove[remove]
         operation of the service that manages that disk.
 
 
@@ -24929,7 +24824,7 @@ class StorageDomainDiskService(MeasurableService):
         Updates the disk.
         IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards
         compatibility. It will be removed in the future. To update a disk use the
-        <<services/disk/methods/update, update>> operation of the service that manages that disk.
+        xref:services-disk-methods-update[update] operation of the service that manages that disk.
 
 
         This method supports the following parameters:
@@ -25007,9 +24902,9 @@ class StorageDomainDisksService(Service):
         """
         Adds or registers a disk.
         IMPORTANT: Since version 4.2 of the {engine-name} this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. To add a new disk use the <<services/disks/methods/add, add>>
+        compatibility. It will be removed in the future. To add a new disk use the xref:services-disks-methods-add[add]
         operation of the service that manages the disks of the system. To register an unregistered disk use the
-        <<services/attached_storage_domain_disk/methods/register, register>> operation of the service that manages
+        xref:services-attached_storage_domain_disk-methods-register[register] operation of the service that manages
         that disk.
 
 
@@ -25463,7 +25358,7 @@ class StorageDomainTemplateService(Service):
         `vnic_profile_mappings`:: Deprecated attribute describing mapping rules for virtual NIC profiles that will be applied during the import\register process.
         WARNING: Please note that this attribute has been deprecated since version 4.2.1 of the engine, and preserved only for backward
         compatibility. It will be removed in the future. To specify `vnic_profile_mappings` use the `vnic_profile_mappings`
-        attribute inside the <<types/registration_configuration, RegistrationConfiguration>> type.
+        attribute inside the xref:types-registration_configuration[RegistrationConfiguration] type.
 
         `registration_configuration`:: This parameter describes how the template should be
         registered.
@@ -25852,7 +25747,7 @@ class StorageDomainVmService(Service):
         `vnic_profile_mappings`:: Deprecated attribute describing mapping rules for virtual NIC profiles that will be applied during the import\register process.
         WARNING: Please note that this attribute has been deprecated since version 4.2.1 of the engine, and preserved only for backward
         compatibility. It will be removed in the future. To specify `vnic_profile_mappings` use the `vnic_profile_mappings`
-        attribute inside the <<types/registration_configuration, RegistrationConfiguration>> type.
+        attribute inside the xref:types-registration_configuration[RegistrationConfiguration] type.
 
         `reassign_bad_macs`:: Indicates if the problematic MAC addresses should be re-assigned during the import process by the engine.
         A MAC address would be considered as a problematic one if one of the following is true:
@@ -26134,8 +26029,8 @@ class StorageDomainVmsService(Service):
     </vms>
     ----
     Virtual machines and templates in these collections have a similar representation to their counterparts in the
-    top-level <<types/vm, Vm>> and <<types/template, Template>> collections, except they also contain a
-    <<types/storage_domain, StorageDomain>> reference and an <<services/storage_domain_vm/methods/import, import>>
+    top-level xref:types-vm[Vm] and xref:types-template[Template] collections, except they also contain a
+    xref:types-storage_domain[StorageDomain] reference and an xref:services-storage_domain_vm-methods-import[import]
     action.
 
     """
@@ -26247,7 +26142,7 @@ class StorageDomainsService(Service):
     ):
         """
         Adds a new storage domain.
-        Creation of a new <<types/storage_domain,StorageDomain>> requires the `name`, `type`, `host`, and `storage`
+        Creation of a new xref:types-storage_domain[StorageDomain] requires the `name`, `type`, `host`, and `storage`
         attributes. Identify the `host` attribute with the `id` or `name` attributes. In {product-name} 3.6 and
         later you can enable the wipe after delete option by default on the storage domain. To configure this, specify
         `wipe_after_delete` in the POST request. This option can be edited after the domain is created, but doing so will
@@ -28036,34 +27931,43 @@ class SystemOptionService(Service):
     ):
         """
         Get the values of specific configuration option.
-        For example to retrieve the values of configuration option `MigrationPoliciesSupported` send a request like this:
+        For example to retrieve the values of configuration option `MigrationPolicies` send a request like this:
         [source]
         ----
-        GET /ovirt-engine/api/options/MigrationPoliciesSupported
+        GET /ovirt-engine/api/options/MigrationPolicies
         ----
         The response to that request will be the following:
         [source,xml]
         ----
-        <system_option href="/ovirt-engine/api/options/MigrationPoliciesSupported" id="MigrationPoliciesSupported">
-          <name>MigrationPoliciesSupported</name>
-          <values>
-            <system_option_value>
-              <value>true</value>
-              <version>4.0</version>
-            </system_option_value>
-            <system_option_value>
-              <value>true</value>
-              <version>4.1</version>
-            </system_option_value>
-            <system_option_value>
-              <value>true</value>
-              <version>4.2</version>
-            </system_option_value>
-            <system_option_value>
-              <value>false</value>
-              <version>3.6</version>
-            </system_option_value>
-          </values>
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <system_option href="/ovirt-engine/api/options/MigrationPolicies" id="MigrationPolicies">
+            <name>MigrationPolicies</name>
+            <values>
+                <system_option_value>
+                    <value>[{"id":{"uuid":"80554327-0569-496b-bdeb-fcbbf52b827b"},...}]</value>
+                    <version>4.2</version>
+                </system_option_value>
+                <system_option_value>
+                    <value>[{"id":{"uuid":"80554327-0569-496b-bdeb-fcbbf52b827b"},...}]</value>
+                    <version>4.3</version>
+                </system_option_value>
+                <system_option_value>
+                    <value>[{"id":{"uuid":"80554327-0569-496b-bdeb-fcbbf52b827b"},...}]</value>
+                    <version>4.4</version>
+                </system_option_value>
+                <system_option_value>
+                    <value>[{"id":{"uuid":"80554327-0569-496b-bdeb-fcbbf52b827b"},...}]</value>
+                    <version>4.5</version>
+                </system_option_value>
+                <system_option_value>
+                    <value>[{"id":{"uuid":"80554327-0569-496b-bdeb-fcbbf52b827b"},...}]</value>
+                    <version>4.6</version>
+                </system_option_value>
+                <system_option_value>
+                    <value>[{"id":{"uuid":"80554327-0569-496b-bdeb-fcbbf52b827b"},...}]</value>
+                    <version>4.7</version>
+                </system_option_value>
+            </values>
         </system_option>
         ----
         NOTE: The appropriate permissions are required to query configuration options. Some options can be queried
@@ -28083,23 +27987,23 @@ class SystemOptionService(Service):
         `version`:: Optional version parameter that specifies that only particular version of the configuration option
         should be returned.
         If this parameter isn't used then all the versions will be returned.
-        For example, to get the value of the `MigrationPoliciesSupported` option but only for version `4.2` send
+        For example, to get the value of the `MigrationPolicies` option but only for version `4.2` send
         a request like this:
         [source]
         ----
-        GET /ovirt-engine/api/options/MigrationPoliciesSupported?version=4.2
+        GET /ovirt-engine/api/options/MigrationPolicies?version=4.2
         ----
         The response to that request will be like this:
         [source,xml]
         ----
-        <system_option href="/ovirt-engine/api/options/MigrationPoliciesSupported" id="MigrationPoliciesSupported">
-          <name>MigrationPoliciesSupported</name>
-          <values>
-            <system_option_value>
-              <value>true</value>
-              <version>4.2</version>
-            </system_option_value>
-          </values>
+        <system_option href="/ovirt-engine/api/options/MigrationPolicies" id="MigrationPolicies">
+            <name>MigrationPolicies</name>
+            <values>
+                <system_option_value>
+                    <value>[{"id":{"uuid":"80554327-0569-496b-bdeb-fcbbf52b827b"},...}]</value>
+                    <version>4.2</version>
+                </system_option_value>
+            </values>
         </system_option>
         ----
 
@@ -29017,6 +28921,23 @@ class TemplateService(Service):
           <exclusive>true<exclusive/>
         </action>
         ----
+        Since version 4.2 of the engine it is also possible to export a template as a virtual appliance (OVA).
+        For example, to export template `123` as an OVA file named `myvm.ova` that is placed in the directory `/home/ovirt/` on host `myhost`:
+        [source]
+        ----
+        POST /ovirt-engine/api/templates/123/export
+        ----
+        With a request body like this:
+        [source,xml]
+        ----
+        <action>
+          <host>
+            <name>myhost</name>
+          </host>
+          <directory>/home/ovirt</directory>
+          <filename>myvm.ova</filename>
+        </action>
+        ----
 
 
         This method supports the following parameters:
@@ -29822,7 +29743,7 @@ class TemplateDiskAttachmentService(Service):
 class TemplateDiskAttachmentsService(Service):
     """
     This service manages the set of disks attached to a template. Each attached disk is represented by a
-    <<types/disk_attachment,DiskAttachment>>.
+    xref:types-disk_attachment[DiskAttachment].
 
     """
 
@@ -30929,7 +30850,7 @@ class TemplatesService(Service):
         original virtual machine. To do so use the `vm.disk_attachments` attribute, specifying the identifier of the disk
         of the original virtual machine and the characteristics that you want to change. For example, if the original
         virtual machine has a disk with the identifier `456`, and, for that disk, you want to change the name to `mydisk`
-        the format to <<types/disk_format, _Copy On Write_>> and make it <<types/disk, sparse>>, send a request body like
+        the format to xref:types-disk_format[_Copy On Write_] and make it xref:types-disk[sparse], send a request body like
         this:
         [source,xml]
         ----
@@ -31432,7 +31353,7 @@ class UserService(Service):
     A service to manage a user in the system.
     Use this service to either get users details or remove users.
     In order to add new users please use
-    <<services/users>>.
+    xref:services-users[users].
 
     """
 
@@ -31580,7 +31501,7 @@ class UserService(Service):
         </user>
         ----
         IMPORTANT: Since version 4.4.5 of the engine this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. Please use the <<services/user_option, options>>
+        compatibility. It will be removed in the future. Please use the xref:services-user_option[options]
         endpoint instead.
 
 
@@ -31898,7 +31819,7 @@ class UsersService(Service):
         </user>
         ----
         In case you are working with Active Directory you have to pass user principal name (UPN) as `username`, followed
-        by authorization provider name. Due to https://bugzilla.redhat.com/1147900[bug 1147900] you need to provide
+        by authorization provider name. Due to link:https://bugzilla.redhat.com/1147900[bug 1147900] you need to provide
         also `principal` parameter set to UPN of the user.
         For example, to add the user with UPN `myuser@mysubdomain.mydomain.com` from the `myextension-authz`
         authorization provider send a request body like this:
@@ -32255,7 +32176,7 @@ class VmService(MeasurableService):
         """
         Apply an automatic CPU and NUMA configuration on the VM.
         IMPORTANT: Since version 4.5 of the engine this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. Instead please use PUT followed by <<services/vm/methods/update, update operation>>.
+        compatibility. It will be removed in the future. Instead please use PUT followed by xref:services-vm-methods-update[update operation].
         An example for a request:
         [source]
         ----
@@ -32412,7 +32333,7 @@ class VmService(MeasurableService):
     ):
         """
         Permanently restores the virtual machine to the state of the previewed snapshot.
-        See the <<services/vm/methods/preview_snapshot, preview_snapshot>> operation for details.
+        See the xref:services-vm-methods-preview_snapshot[preview_snapshot] operation for details.
 
 
         This method supports the following parameters:
@@ -32934,8 +32855,8 @@ class VmService(MeasurableService):
         Temporarily restores the virtual machine to the state of a snapshot.
         The snapshot is indicated with the `snapshot.id` parameter. It is restored temporarily, so that the content can
         be inspected. Once that inspection is finished, the state of the virtual machine can be made permanent, using the
-        <<services/vm/methods/commit_snapshot, commit_snapshot>> method, or discarded using the
-        <<services/vm/methods/undo_snapshot, undo_snapshot>> method.
+        xref:services-vm-methods-commit_snapshot[commit_snapshot] method, or discarded using the
+        xref:services-vm-methods-undo_snapshot[undo_snapshot] method.
 
 
         This method supports the following parameters:
@@ -33384,13 +33305,13 @@ class VmService(MeasurableService):
         powered off, this definition will be reverted.
 
         `use_cloud_init`:: If set to `true`, the initialization type is set to _cloud-init_. The default value is `false`.
-        See https://cloudinit.readthedocs.io/en/latest[this] for details.
+        See link:https://cloudinit.readthedocs.io/en/latest[cloud-init documentation] for details.
 
         `use_sysprep`:: If set to `true`, the initialization type is set to _Sysprep_. The default value is `false`.
-        See https://en.wikipedia.org/wiki/Sysprep[this] for details.
+        See link:https://en.wikipedia.org/wiki/Sysprep[Sysprep] for details.
 
         `use_ignition`:: If set to `true`, the initialization type is set to _Ignition_. The default value is `false`.
-        See https://coreos.com/ignition/docs/latest/[this] for details.
+        See link:https://coreos.com/ignition/docs/latest/[Ignition documentation] for details.
 
         `use_initialization`:: If set to `true`, the initialization type is set by the VM's OS.
         Windows will set to _Sysprep_, Linux to _cloud-init_ and RedHat CoreOS to _Ignition_.
@@ -33657,8 +33578,8 @@ class VmService(MeasurableService):
         VNC and SPICE, then the authentication token will only be valid for
         the SPICE protocol.
         In order to obtain an authentication token for a specific protocol, for
-        example for VNC, use the `ticket` method of the <<services/vm_graphics_console,
-        service>>, which manages the graphics consoles of the virtual machine, by sending
+        example for VNC, use the `ticket` method of the
+        xref:services-vm_graphics_console[service], which manages the graphics consoles of the virtual machine, by sending
         a request:
         [source]
         ----
@@ -33835,7 +33756,7 @@ class VmService(MeasurableService):
     ):
         """
         Restores the virtual machine to the state it had before previewing the snapshot.
-        See the <<services/vm/methods/preview_snapshot, preview_snapshot>> operation for details.
+        See the xref:services-vm-methods-preview_snapshot[preview_snapshot] operation for details.
 
 
         This method supports the following parameters:
@@ -34821,7 +34742,7 @@ class VmCdromsService(Service):
     Manages the CDROM devices of a virtual machine.
     Currently virtual machines have exactly one CDROM device. No new devices can be added, and the existing one can't
     be removed, thus there are no `add` or `remove` methods. Changing and ejecting CDROM disks is done with the
-    <<services/vm_cdrom/methods/update, update>> method of the <<services/vm_cdrom, service>> that manages the
+    xref:services-vm_cdrom-methods-update[update] method of the xref:services-vm_cdrom[service] that manages the
     CDROM device.
 
     """
@@ -35497,8 +35418,7 @@ class VmDiskService(MeasurableService):
         """
         Detach the disk from the virtual machine.
         NOTE: In version 3 of the API this used to also remove the disk completely from the system, but starting with
-        version 4 it doesn't. If you need to remove it completely use the <<services/disk/methods/remove,remove
-        method of the top level disk service>>.
+        version 4 it doesn't. If you need to remove it completely use the xref:services-disk-methods-remove[remove method of the top level disk service].
 
 
         This method supports the following parameters:
@@ -36255,7 +36175,7 @@ class VmHostDevicesService(Service):
         ----
         POST /ovirt-engine/api/vms/123/hostdevices
         ----
-        With request body of type <<types/host_device,HostDevice>>, for example
+        With request body of type xref:types-host_device[HostDevice], for example
         [source,xml]
         ----
         <host_device id="123" />
@@ -36264,7 +36184,7 @@ class VmHostDevicesService(Service):
         to *exactly* one host. The device ID is then taken relative to this host.
         NOTE: Attachment of a PCI device that is part of a bigger IOMMU group will result in attachment of the remaining
         devices from that IOMMU group as "placeholders". These devices are then identified using the `placeholder`
-        attribute of the <<types/host_device,HostDevice>> type set to `true`.
+        attribute of the xref:types-host_device[HostDevice] type set to `true`.
         In case you want attach a device that already serves as an IOMMU placeholder, simply issue an explicit Add operation
         for it, and its `placeholder` flag will be cleared, and the device will be accessible to the virtual machine.
 
@@ -36859,7 +36779,7 @@ class VmNicService(MeasurableService):
     def network_filter_parameters_service(self):
         """
         Reference to the service that manages the network filter parameters of the NIC.
-        A single top-level network filter may assigned to the NIC by the NIC's <<types/vnic_profile,vNIC Profile>>.
+        A single top-level network filter may assigned to the NIC by the NIC's xref:types-vnic_profile[vNIC Profile].
 
         """
         return NicNetworkFilterParametersService(self._connection, '%s/networkfilterparameters' % self._path)
@@ -38452,7 +38372,7 @@ class VmsService(Service):
         </vm>
         ----
         In order to boot from CDROM, you first need to insert a disk, as described in the
-        <<services/vm_cdrom, CDROM service>>. Then booting from that CDROM can be specified using the `os.boot.devices`
+        xref:services-vm_cdrom[CDROM service]. Then booting from that CDROM can be specified using the `os.boot.devices`
         attribute:
         [source,xml]
         ----
@@ -38955,7 +38875,7 @@ class VnicProfilesService(Service):
         ----
         Please note that there is a default network filter to each VNIC profile.
         For more details of how the default network filter is calculated please refer to
-        the documentation in <<services/network_filters,NetworkFilters>>.
+        the documentation in xref:services-network_filters[NetworkFilters].
         NOTE: The automatically created vNIC profile for the external network will be without network filter.
         The output of creating a new VNIC profile depends in the  body  arguments that were given.
         In case no network filter was given, the default network filter will be configured. For example:
@@ -39287,8 +39207,8 @@ class AttachedStorageDomainDiskService(MeasurableService):
     Manages a single disk available in a storage domain attached to a data center.
     IMPORTANT: Since version 4.2 of the engine this service is intended only to list disks available in the storage
     domain, and to register unregistered disks. All the other operations, like copying a disk, moving a disk, etc, have
-    been deprecated and will be removed in the future. To perform those operations use the <<services/disks, service
-    that manages all the disks of the system>>, or the <<services/disk, service that manages an specific disk>>.
+    been deprecated and will be removed in the future. To perform those operations use the xref:services-disks[service that manages all the disks of the system]
+    or the xref:services-disk[service that manages a specific disk].
 
     """
 
@@ -39309,7 +39229,7 @@ class AttachedStorageDomainDiskService(MeasurableService):
         """
         Copies a disk to the specified storage domain.
         IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. To copy a disk use the <<services/disk/methods/copy, copy>>
+        compatibility. It will be removed in the future. To copy a disk use the xref:services-disk-methods-copy[copy]
         operation of the service that manages that disk.
 
 
@@ -39351,7 +39271,7 @@ class AttachedStorageDomainDiskService(MeasurableService):
         """
         Exports a disk to an export storage domain.
         IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. To export a disk use the <<services/disk/methods/export, export>>
+        compatibility. It will be removed in the future. To export a disk use the xref:services-disk-methods-export[export]
         operation of the service that manages that disk.
 
 
@@ -39427,7 +39347,7 @@ class AttachedStorageDomainDiskService(MeasurableService):
         """
         Moves a disk to another storage domain.
         IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. To move a disk use the <<services/disk/methods/move, move>>
+        compatibility. It will be removed in the future. To move a disk use the xref:services-disk-methods-move[move]
         operation of the service that manages that disk.
 
 
@@ -39499,7 +39419,7 @@ class AttachedStorageDomainDiskService(MeasurableService):
         """
         Removes a disk.
         IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. To remove a disk use the <<services/disk/methods/remove, remove>>
+        compatibility. It will be removed in the future. To remove a disk use the xref:services-disk-methods-remove[remove]
         operation of the service that manages that disk.
 
 
@@ -39524,7 +39444,7 @@ class AttachedStorageDomainDiskService(MeasurableService):
         """
         Sparsify the disk.
         IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. To remove a disk use the <<services/disk/methods/remove, remove>>
+        compatibility. It will be removed in the future. To remove a disk use the xref:services-disk-methods-remove[remove]
         operation of the service that manages that disk.
 
 
@@ -39552,7 +39472,7 @@ class AttachedStorageDomainDiskService(MeasurableService):
         Updates the disk.
         IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards
         compatibility. It will be removed in the future. To update a disk use the
-        <<services/disk/methods/update, update>> operation of the service that manages that disk.
+        xref:services-disk-methods-update[update] operation of the service that manages that disk.
 
 
         This method supports the following parameters:
@@ -40033,7 +39953,7 @@ class DiskService(MeasurableService):
         Refreshes a direct LUN disk with up-to-date information from the storage.
         Refreshing a direct LUN disk is useful when:
         - The LUN was added using the API without the host parameter, and therefore does not contain
-          any information from the storage (see <<services/disks/methods/add, DisksService::add>>).
+          any information from the storage (see xref:services-disks-methods-add[DisksService::add]).
         - New information about the LUN is available on the storage and you want to update the LUN with it.
         To refresh direct LUN disk `123` using host `456`, send the following request:
         [source]
@@ -40355,8 +40275,8 @@ class EngineKatelloErrataService(KatelloErrataService):
 class ExternalHostProviderService(ExternalProviderService):
     """
     Represents an external host provider, such as Foreman or Satellite.
-    See https://www.theforeman.org/ for more details on Foreman.
-    See https://access.redhat.com/products/red-hat-satellite for more details on Red Hat Satellite.
+    See link:https://www.theforeman.org/[Foreman documentation] for details.
+    See link:https://access.redhat.com/products/red-hat-satellite[Satellite documentation] for details.
 
     """
 
@@ -40719,7 +40639,7 @@ class GlusterBrickService(MeasurableService):
         Removes a brick.
         Removes a brick from the underlying gluster volume and deletes entries from database. This can be used only when
         removing a single brick without data migration. To remove multiple bricks and with data migration, use
-        <<services/gluster_bricks/methods/migrate, migrate>> instead.
+        xref:services-gluster_bricks-methods-migrate[migrate] instead.
         For example, to delete brick `234` from gluster volume `123`, send a request like this:
         [source]
         ----
@@ -40767,8 +40687,8 @@ class GlusterBrickService(MeasurableService):
         """
         Replaces this brick with a new one.
         IMPORTANT: This operation has been deprecated since version 3.5 of the engine and will be removed in the future.
-        Use <<services/gluster_bricks/methods/add, add brick(s)>> and
-        <<services/gluster_bricks/methods/migrate, migrate brick(s)>> instead.
+        Use xref:services-gluster_bricks-methods-add[add brick(s)] and
+        xref:services-gluster_bricks-methods-migrate[migrate brick(s)] instead.
 
 
         This method supports the following parameters:
@@ -41617,10 +41537,10 @@ class HostService(MeasurableService):
         <action/>
         ----
         IMPORTANT: Since {engine-name} 4.3, it is possible to also specify `commit_on_success` in
-        the <<services/host/methods/setup_networks, setupnetworks>> request, in which case the new
+        the xref:services-host-methods-setup_networks[setupnetworks] request, in which case the new
         configuration is automatically saved in the {hypervisor-name} upon completing the setup and
         re-establishing connectivity between the {hypervisor-name} and {engine-name}, and without
-        waiting for a separate <<services/host/methods/commit_net_config, commitnetconfig>> request.
+        waiting for a separate xref:services-host-methods-commit_net_config[commitnetconfig] request.
 
 
         This method supports the following parameters:
@@ -42558,12 +42478,12 @@ class HostService(MeasurableService):
         host_service.commit_net_config()
         ----
         IMPORTANT: To make sure that the network configuration has been saved in the host, and that it will be applied
-        when the host is rebooted, remember to call <<services/host/methods/commit_net_config, commitnetconfig>>.
+        when the host is rebooted, remember to call xref:services-host-methods-commit_net_config[commitnetconfig].
         IMPORTANT: Since {engine-name} 4.3, it is possible to also specify `commit_on_success` in
-        the <<services/host/methods/setup_networks, setupnetworks>> request, in which case the new
+        the xref:services-host-methods-setup_networks[setupnetworks] request, in which case the new
         configuration is automatically saved in the {hypervisor-name} upon completing the setup and
         re-establishing connectivity between the {hypervisor-name} and {engine-name}, and without
-        waiting for a separate <<services/host/methods/commit_net_config, commitnetconfig>> request.
+        waiting for a separate xref:services-host-methods-commit_net_config[commitnetconfig] request.
 
 
         This method supports the following parameters:
@@ -42572,7 +42492,7 @@ class HostService(MeasurableService):
 
         `commit_on_success`:: Specifies whether to automatically save the configuration in the {hypervisor-name} upon completing
         the setup and re-establishing connectivity between the {hypervisor-name} and {engine-name},
-        and without waiting for a separate <<services/host/methods/commit_net_config, commitnetconfig>>
+        and without waiting for a separate xref:services-host-methods-commit_net_config[commitnetconfig]
         request.
         The default value is `false`, which means that the configuration will not be
         saved automatically.
@@ -42829,7 +42749,7 @@ class HostService(MeasurableService):
         Check if there are upgrades available for the host. If there are upgrades available an icon will be displayed
         next to host status icon in the Administration Portal. Audit log messages are also added to indicate the
         availability of upgrades. The upgrade can be started from the webadmin or by using the
-        <<services/host/methods/upgrade, upgrade>> host action.
+        xref:services-host-methods-upgrade[upgrade] host action.
 
 
         """

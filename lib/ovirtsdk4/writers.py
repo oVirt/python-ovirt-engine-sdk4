@@ -5885,8 +5885,12 @@ class MigrationOptionsWriter(Writer):
             MigrationBandwidthWriter.write_one(obj.bandwidth, writer, 'bandwidth')
         if obj.compressed is not None:
             Writer.write_string(writer, 'compressed', obj.compressed.value)
+        if obj.custom_parallel_migrations is not None:
+            Writer.write_integer(writer, 'custom_parallel_migrations', obj.custom_parallel_migrations)
         if obj.encrypted is not None:
             Writer.write_string(writer, 'encrypted', obj.encrypted.value)
+        if obj.parallel_migrations_policy is not None:
+            Writer.write_string(writer, 'parallel_migrations_policy', obj.parallel_migrations_policy.value)
         if obj.policy is not None:
             MigrationPolicyWriter.write_one(obj.policy, writer, 'policy')
         writer.write_end()
@@ -7044,6 +7048,8 @@ class OperatingSystemInfoWriter(Writer):
             Writer.write_string(writer, 'name', obj.name)
         if obj.small_icon is not None:
             IconWriter.write_one(obj.small_icon, writer, 'small_icon')
+        if obj.tpm_support is not None:
+            Writer.write_string(writer, 'tpm_support', obj.tpm_support.value)
         writer.write_end()
 
     @staticmethod

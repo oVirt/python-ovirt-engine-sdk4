@@ -5106,7 +5106,9 @@ class MigrationOptions(Struct):
         auto_converge=None,
         bandwidth=None,
         compressed=None,
+        custom_parallel_migrations=None,
         encrypted=None,
+        parallel_migrations_policy=None,
         policy=None,
     ):
         super(MigrationOptions, self).__init__(
@@ -5114,7 +5116,9 @@ class MigrationOptions(Struct):
         self.auto_converge = auto_converge
         self.bandwidth = bandwidth
         self.compressed = compressed
+        self.custom_parallel_migrations = custom_parallel_migrations
         self.encrypted = encrypted
+        self.parallel_migrations_policy = parallel_migrations_policy
         self.policy = policy
 
     @property
@@ -5148,6 +5152,21 @@ class MigrationOptions(Struct):
         self._bandwidth = value
 
     @property
+    def parallel_migrations_policy(self):
+        """
+        Returns the value of the `parallel_migrations_policy` property.
+        """
+        return self._parallel_migrations_policy
+
+    @parallel_migrations_policy.setter
+    def parallel_migrations_policy(self, value):
+        """
+        Sets the value of the `parallel_migrations_policy` property.
+        """
+        Struct._check_type('parallel_migrations_policy', value, ParallelMigrationsPolicy)
+        self._parallel_migrations_policy = value
+
+    @property
     def auto_converge(self):
         """
         Returns the value of the `auto_converge` property.
@@ -5176,6 +5195,20 @@ class MigrationOptions(Struct):
         """
         Struct._check_type('compressed', value, InheritableBoolean)
         self._compressed = value
+
+    @property
+    def custom_parallel_migrations(self):
+        """
+        Returns the value of the `custom_parallel_migrations` property.
+        """
+        return self._custom_parallel_migrations
+
+    @custom_parallel_migrations.setter
+    def custom_parallel_migrations(self, value):
+        """
+        Sets the value of the `custom_parallel_migrations` property.
+        """
+        self._custom_parallel_migrations = value
 
     @property
     def policy(self):
@@ -6674,6 +6707,7 @@ class OperatingSystemInfo(Identified):
         large_icon=None,
         name=None,
         small_icon=None,
+        tpm_support=None,
     ):
         super(OperatingSystemInfo, self).__init__(
             comment=comment,
@@ -6684,6 +6718,7 @@ class OperatingSystemInfo(Identified):
         self.architecture = architecture
         self.large_icon = large_icon
         self.small_icon = small_icon
+        self.tpm_support = tpm_support
 
     @property
     def large_icon(self):
@@ -6699,6 +6734,21 @@ class OperatingSystemInfo(Identified):
         """
         Struct._check_type('large_icon', value, Icon)
         self._large_icon = value
+
+    @property
+    def tpm_support(self):
+        """
+        Returns the value of the `tpm_support` property.
+        """
+        return self._tpm_support
+
+    @tpm_support.setter
+    def tpm_support(self, value):
+        """
+        Sets the value of the `tpm_support` property.
+        """
+        Struct._check_type('tpm_support', value, TpmSupport)
+        self._tpm_support = value
 
     @property
     def architecture(self):
@@ -25454,6 +25504,7 @@ class CpuMode(Enum):
 @unique
 class CpuPinningPolicy(Enum):
     DEDICATED = 'dedicated'
+    ISOLATE_THREADS = 'isolate_threads'
     MANUAL = 'manual'
     NONE = 'none'
     RESIZE_AND_PIN_NUMA = 'resize_and_pin_numa'
@@ -26409,6 +26460,21 @@ class OsType(Enum):
 
 
 @unique
+class ParallelMigrationsPolicy(Enum):
+    AUTO = 'auto'
+    AUTO_PARALLEL = 'auto_parallel'
+    CUSTOM = 'custom'
+    DISABLED = 'disabled'
+    INHERIT = 'inherit'
+
+    def __init__(self, image):
+        self._image = image
+
+    def __str__(self):
+        return self._image
+
+
+@unique
 class PayloadEncoding(Enum):
     BASE64 = 'base64'
     PLAINTEXT = 'plaintext'
@@ -26796,6 +26862,19 @@ class TemplateStatus(Enum):
     ILLEGAL = 'illegal'
     LOCKED = 'locked'
     OK = 'ok'
+
+    def __init__(self, image):
+        self._image = image
+
+    def __str__(self):
+        return self._image
+
+
+@unique
+class TpmSupport(Enum):
+    REQUIRED = 'required'
+    SUPPORTED = 'supported'
+    UNSUPPORTED = 'unsupported'
 
     def __init__(self, image):
         self._image = image
