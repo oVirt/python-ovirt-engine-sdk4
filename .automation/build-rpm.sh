@@ -14,3 +14,4 @@ rpmbuild \
 # Move RPMs to exported artifacts
 [[ -d $ARTIFACTS_DIR ]] || mkdir -p $ARTIFACTS_DIR
 find rpmbuild -iname \*rpm | xargs mv -t $ARTIFACTS_DIR
+cp $TARBALL $ARTIFACTS_DIR
