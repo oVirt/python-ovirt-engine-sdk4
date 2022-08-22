@@ -10294,8 +10294,12 @@ class MigrationOptionsReader(Reader):
                 obj.bandwidth = MigrationBandwidthReader.read_one(reader)
             elif tag == 'compressed':
                 obj.compressed = Reader.read_enum(types.InheritableBoolean, reader)
+            elif tag == 'custom_parallel_migrations':
+                obj.custom_parallel_migrations = Reader.read_integer(reader)
             elif tag == 'encrypted':
                 obj.encrypted = Reader.read_enum(types.InheritableBoolean, reader)
+            elif tag == 'parallel_migrations_policy':
+                obj.parallel_migrations_policy = Reader.read_enum(types.ParallelMigrationsPolicy, reader)
             elif tag == 'policy':
                 obj.policy = MigrationPolicyReader.read_one(reader)
             else:
@@ -12359,6 +12363,8 @@ class OperatingSystemInfoReader(Reader):
                 obj.name = Reader.read_string(reader)
             elif tag == 'small_icon':
                 obj.small_icon = IconReader.read_one(reader)
+            elif tag == 'tpm_support':
+                obj.tpm_support = Reader.read_enum(types.TpmSupport, reader)
             else:
                 reader.next_element()
         for link in links:

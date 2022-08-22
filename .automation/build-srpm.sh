@@ -1,8 +1,8 @@
 #!/bin/sh -e
 
-VERSION="4.5.2"
+VERSION="4.5.3"
 MILESTONE=master
-RPM_RELEASE="0.1.${MILESTONE}.$(date -u +%Y%m%d%H%M%S)"
+RPM_RELEASE="0.1.$MILESTONE.$(date -u +%Y%m%d%H%M%S)"
 
 PACKAGE_NAME="python-ovirt-engine-sdk4"
 

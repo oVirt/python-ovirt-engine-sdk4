@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 #
@@ -26,6 +26,8 @@ logging.basicConfig(level=logging.DEBUG, filename='example.log')
 
 # This example shows how to create a new template importing it from an
 # image available in a Glance storage domain.
+
+IMAGE_NAME = 'CirrOS 0.4.0 for x86_64'
 
 # Create the connection to the server:
 connection = sdk.Connection(
@@ -56,7 +58,7 @@ images_service = sd_service.images_service()
 # image we need to retrieve all of them and do the filtering explicitly:
 images = images_service.list()
 image = next(
-    (i for i in images if i.name == 'CirrOS 0.3.4 for x86_64'),
+    (i for i in images if i.name == IMAGE_NAME),
     None
 )
 

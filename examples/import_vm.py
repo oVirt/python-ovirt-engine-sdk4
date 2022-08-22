@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 #
@@ -27,6 +27,8 @@ logging.basicConfig(level=logging.DEBUG, filename='example.log')
 # This example will import a VM from an export domain using a
 # target domain, the example assumes there is an exported vm in
 # the export storage domain
+# Please note: export domains are deprecated since 4.0, in favor of
+#              regular data domains.
 
 # Create a connection to the server:
 connection = sdk.Connection(

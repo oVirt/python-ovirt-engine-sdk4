@@ -83,6 +83,9 @@ API.
 %endif
 
 %changelog
+* Thu Aug 4 2022 Ori Liel <oliel@redhat.com> - 4.5.2
+- Update to model 4.5.11
+
 * Tue Mar 29 2022 Ori Liel <oliel@redhat.com> - 4.5.1
 - Update to model 4.5.7
 
