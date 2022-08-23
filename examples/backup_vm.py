@@ -221,7 +221,8 @@ def cmd_download(args):
 
         backup = get_backup(connection, backup_service, args.backup_uuid)
         if backup.phase != types.BackupPhase.READY:
-            raise RuntimeError("Backup {} is not ready".format(backup_uuid))
+            raise RuntimeError("Backup {} is not ready (current phase is {})."
+                               .format(args.backup_uuid, backup.phase))
 
         download_backup(connection, backup, args, incremental=args.incremental)
 
