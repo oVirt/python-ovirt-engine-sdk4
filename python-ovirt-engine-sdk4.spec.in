@@ -28,16 +28,16 @@ This package contains the Python 3 SDK for version 4 of the oVirt Engine
 API.
 
 %if 0%{?rhel} < 9
-%package -n python38-ovirt-engine-sdk4
+%package -n @ANSIBLE_PYTHON_RPM@-ovirt-engine-sdk4
 Summary: oVirt Engine Software Development Kit (Python)
-BuildRequires: python38-devel
+BuildRequires: @ANSIBLE_PYTHON_RPM@-devel
 Requires: libxml2
-Requires: python38
-Requires: python38-pycurl >= 7.43.0-6
-Requires: python38-six
+Requires: @ANSIBLE_PYTHON_RPM@
+Requires: @ANSIBLE_PYTHON_RPM@-pycurl >= 7.43.0-6
+Requires: @ANSIBLE_PYTHON_RPM@-six
 
-%description -n python38-ovirt-engine-sdk4
-This package contains the Python 3.8 SDK for version 4 of the oVirt Engine
+%description -n @ANSIBLE_PYTHON_RPM@-ovirt-engine-sdk4
+This package contains the Python @ANSIBLE_PYTHON_MAJOR_DOT_MINOR@ SDK for version 4 of the oVirt Engine
 API.
 %endif
 
@@ -49,8 +49,8 @@ API.
 %define __python3 /usr/bin/python3
 %py3_build
 %if 0%{?rhel} < 9
-%define python3_pkgversion 38
-%define __python3 /usr/bin/python3.8
+%define python3_pkgversion @ANSIBLE_PYTHON_MAJOR_MINOR@
+%define __python3 @ANSIBLE_PYTHON_BIN@
 %py3_build
 %endif
 
@@ -59,8 +59,8 @@ API.
 %define __python3 /usr/bin/python3
 %py3_install
 %if 0%{?rhel} < 9
-%define python3_pkgversion 38
-%define __python3 /usr/bin/python3.8
+%define python3_pkgversion @ANSIBLE_PYTHON_MAJOR_MINOR@
+%define __python3 @ANSIBLE_PYTHON_BIN@
 %py3_install
 %endif
 
@@ -73,12 +73,12 @@ API.
 %{python3_sitearch}/*
 
 %if 0%{?rhel} < 9
-%files -n python38-ovirt-engine-sdk4
+%files -n @ANSIBLE_PYTHON_RPM@-ovirt-engine-sdk4
 %doc README.adoc
 %doc examples
 %license LICENSE.txt
-%define python3_pkgversion 38
-%define __python3 /usr/bin/python3.8
+%define python3_pkgversion @ANSIBLE_PYTHON_MAJOR_MINOR@
+%define __python3 @ANSIBLE_PYTHON_BIN@
 %{python3_sitearch}/*
 %endif
 
