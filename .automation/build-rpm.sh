@@ -1,5 +1,6 @@
 #!/bin/sh -e
 
+source $(dirname "$(readlink -f "$0")")/generate-setup-files.sh
 source $(dirname "$(readlink -f "$0")")/build-srpm.sh
 
 # Install build dependencies

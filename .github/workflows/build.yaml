@@ -89,14 +89,6 @@ jobs:
           name: rpm-${{ matrix.shortcut }}
           path: ${{ env.ARTIFACTS_DIR }}
 
-      - name: Install documentation generation dependencies
-        if: ${{ matrix.shortcut == 'cs9' }}
-        run: pip3 install pdoc
-
-      - name: Install created sdk
-        if: ${{ matrix.shortcut == 'cs9' }}
-        run: pip3 install . -U
-
       - name: Checkout target repository
         if: ${{ matrix.shortcut == 'cs9' }}
         uses: actions/checkout@v2
@@ -104,22 +96,68 @@ jobs:
           path: ovirt-engine-sdk
           ref: 'gh-pages'
 
-      - name: Create python documentation
-        if: ${{ matrix.shortcut == 'cs9' }}
-        run: pdoc -t ovirt-engine-sdk -o ${GEN_DOC_DIR} ovirtsdk4
+  generate_documentation:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Install Dependencies
+      # This step installs dependencies for python-sdk and pdoc
+        run: |
+          sudo apt install -y git \
+            python2 \
+            python2-dev \
+            curl \
+            asciidoctor \
+            gcc \
+            libxml2-dev \
+            libcurl4-openssl-dev \
+            libexpat1-dev \
+            gettext \
+            libz-dev \
+            libssl-dev \
+            libgnutls28-dev
+
+      - name: Checkout sources
+        uses: actions/checkout@v2
+
+      - name: Install pip2.7
+        # This step installs pip2.7, which will be needed later
+        run: |
+          curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py 
+          python2 get-pip.py 
+
+      - name: Install Python-SDK with Python 2.7
+        # This step installs the python-sdk with python2.7, as the extension of pdoc,
+        # which is subsequently installed, doesn't have python3 support.
+        run: |
+          pip2.7 install setuptools
+          bash .automation/generate-setup-files.sh
+          python2.7 setup.py install --user --prefix=
+        shell: bash
+
+      - name: Install Pdoc
+        # This steps installs an extension of pdoc which supports asciidoc
+        # (this extension runs on python2).
+        run: |
+          git clone https://github.com/machacekondra/pdoc
+          cd pdoc
+          pip2.7 install -U .
+
+      - name: Install pygments
+        run: pip2.7 install pygments
+
+      - name: Generate documentation
+        run: pdoc ovirtsdk4 --html --html-dir=html
 
       - name: Upload generated documentation artifacts
-        if: ${{ matrix.shortcut == 'cs9' }}
         uses: actions/upload-artifact@v2
         with:
           name: generated-documentation
-          path: ${{ env.GEN_DOC_DIR }}
-
+          path: ${{ env.GEN_DOC_DIR }}/*
 
   publish-doc:
     permissions:
       contents: write
-    needs: build
+    needs: generate_documentation
     if: ${{ github.event_name == 'push' }}
     runs-on: ubuntu-latest
     container:
@@ -170,7 +208,6 @@ jobs:
       - name: Move created documentation to gh-pages
         run: |
           mkdir -p ./ovirt-engine-sdk/${{env.FOLDER}}/
-          cp ./html/ovirtsdk4.html ./ovirt-engine-sdk/${{env.FOLDER}}/index.html
           cp ./html/ovirtsdk4/* ./ovirt-engine-sdk/${{env.FOLDER}}/
 
       - name: Push changes to gh-pages
