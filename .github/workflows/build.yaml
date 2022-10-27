@@ -209,6 +209,11 @@ jobs:
         run: |
           mkdir -p ./ovirt-engine-sdk/${{env.FOLDER}}/
           cp ./html/ovirtsdk4/* ./ovirt-engine-sdk/${{env.FOLDER}}/
+	  if [[ ${{env.FOLDER}} == "master" ]];
+          then
+            mkdir -p ./ovirt-engine-sdk/4.5/
+            cp ./html/ovirtsdk4/* ./ovirt-engine-sdk/4.5/
+          fi
 
       - name: Push changes to gh-pages
         run: |
