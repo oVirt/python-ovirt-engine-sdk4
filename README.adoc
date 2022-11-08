@@ -705,8 +705,5 @@ return.
 The reference documentation of the API is available
 http://ovirt.github.io/ovirt-engine-api-model[here].
 
-The reference documentation of the SDK is available
-http://ovirt.github.io/ovirt-engine-sdk[here].
-
 There is a collection of examples that show how to use the SDK
 https://github.com/oVirt/ovirt-engine-sdk/tree/master/sdk/examples[here].
