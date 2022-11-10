@@ -1,5 +1,7 @@
 #!/bin/sh -e
 
+source $(dirname "$(readlink -f "$0")")/generate-setup-files.sh
+
 TARBALL="ovirt-engine-sdk-python-${PACKAGE_VERSION}.tar.gz"
 
 find . -not -name '*.spec' -not -name '*.in' -type f | tar --files-from /proc/self/fd/0 -czf "${TARBALL}" python-ovirt-engine-sdk4.spec
