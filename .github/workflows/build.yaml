@@ -1,11 +1,11 @@
 name: build
 on:
   push:
-    branches: [main]
+    branches: [sdk_4.5]
   pull_request:
-    branches: [main]
+    branches: [sdk_4.5]
   workflow_dispatch:
-    branches: [main]
+    branches: [sdk_4.5]
 
 env:
   LD_LIBRARY_PATH: /usr/local/opt/curl/lib:$LD_LIBRARY_PATH
