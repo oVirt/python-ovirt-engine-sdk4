@@ -25342,6 +25342,7 @@ class AccessProtocol(Enum):
 @unique
 class Architecture(Enum):
     AARCH64 = 'aarch64'
+    LOONGARCH64 = 'loongarch64'
     PPC64 = 'ppc64'
     S390X = 's390x'
     UNDEFINED = 'undefined'

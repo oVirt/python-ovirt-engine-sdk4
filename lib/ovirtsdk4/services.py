@@ -7119,7 +7119,7 @@ class DiskAttachmentsService(Service):
         ----
         POST /ovirt-engine/api/vms/345/diskattachments
         ----
-        IMPORTANT: The server accepts requests that don't contain the `active` attribute, but the effect is
+        IMPORTANT: The server accepts requests that do not contain the `active` attribute, but the effect is
         undefined. In some cases the disk will be automatically activated and in other cases it won't. To
         avoid issues it is strongly recommended to always include the `active` attribute with the desired
         value.
@@ -7705,7 +7705,7 @@ class DisksService(Service):
         When creating a new floating image xref:types-disk[Disk], the API requires the `storage_domain`, `provisioned_size`
         and `format` attributes.
         Note that block storage domains (i.e. storage domains with the xref:types-storage_type[storage type] of iSCSI or
-        FCP) don't support the combination of the raw `format` with `sparse=true`, so `sparse=false` must be stated
+        FCP) do not support the combination of the raw `format` with `sparse=true`, so `sparse=false` must be stated
         explicitly.
         To create a new floating image disk with specified `provisioned_size`, `format` and `name` on a storage domain
         with an id `123` and enabled for incremental backup, send a request as follows:
@@ -34682,7 +34682,7 @@ class VmCdromService(Service):
         </cdrom>
         ----
         By default the above operations change permanently the disk that will be visible to the virtual machine
-        after the next boot, but they don't have any effect on the currently running virtual machine. If you want
+        after the next boot, but they do not have any effect on the currently running virtual machine. If you want
         to change the disk that is visible to the current running virtual machine, add the `current=true` parameter.
         For example, to eject the current disk send a request like this:
         [source]
@@ -39567,6 +39567,9 @@ class DiskService(MeasurableService):
            </disk>
          </action>
         ----
+        Note: In order to sparsify a disk, two conversions might be needed if the disk is on a Block Storage Domain.
+        For example: If a disk is RAW, converting it to QCOW will result in a larger disk. In order to reduce the size,
+        it is possible to convert the disk again to QCOW and keep the same allocation policy.
 
 
         This method supports the following parameters:
