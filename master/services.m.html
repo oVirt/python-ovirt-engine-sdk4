@@ -14384,7 +14384,7 @@ In both cases, use the following URL for a virtual machine with an id <code>345<
 <div class="title">Important</div>
 </td>
 <td class="content">
-The server accepts requests that don&#8217;t contain the <code>active</code> attribute, but the effect is
+The server accepts requests that do not contain the <code>active</code> attribute, but the effect is
 undefined. In some cases the disk will be automatically activated and in other cases it won&#8217;t. To
 avoid issues it is strongly recommended to always include the <code>active</code> attribute with the desired
 value.
@@ -14897,6 +14897,11 @@ send a request like the following:</p>
    &lt;/disk&gt;
  &lt;/action&gt;</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>Note: In order to sparsify a disk, two conversions might be needed if the disk is on a Block Storage Domain.
+For example: If a disk is RAW, converting it to QCOW will result in a larger disk. In order to reduce the size,
+it is possible to convert the disk again to QCOW and keep the same allocation policy.</p>
 </div>
 <div class="paragraph">
 <p>This method supports the following parameters:</p>
@@ -15846,7 +15851,7 @@ There are three types of disks that can be added - disk image, direct LUN and Ma
 When creating a new floating image <a href="#types-disk">Disk</a>, the API requires the <code>storage_domain</code>, <code>provisioned_size</code>
 and <code>format</code> attributes.
 Note that block storage domains (i.e. storage domains with the <a href="#types-storage_type">storage type</a> of iSCSI or
-FCP) don&#8217;t support the combination of the raw <code>format</code> with <code>sparse=true</code>, so <code>sparse=false</code> must be stated
+FCP) do not support the combination of the raw <code>format</code> with <code>sparse=true</code>, so <code>sparse=false</code> must be stated
 explicitly.
 To create a new floating image disk with specified <code>provisioned_size</code>, <code>format</code> and <code>name</code> on a storage domain
 with an id <code>123</code> and enabled for incremental backup, send a request as follows:</p>
@@ -50886,7 +50891,7 @@ To eject the disk use a <code>file</code> with an empty <code>id</code>:</p>
 </div>
 <div class="paragraph">
 <p>By default the above operations change permanently the disk that will be visible to the virtual machine
-after the next boot, but they don&#8217;t have any effect on the currently running virtual machine. If you want
+after the next boot, but they do not have any effect on the currently running virtual machine. If you want
 to change the disk that is visible to the current running virtual machine, add the <code>current=true</code> parameter.
 For example, to eject the current disk send a request like this:</p>
 </div>
