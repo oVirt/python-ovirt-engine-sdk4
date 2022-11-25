@@ -83,6 +83,10 @@ API.
 %endif
 
 %changelog
+* Fri Nov 25 2022 Martin Perina <mperina@redhat.com> - 4.6.0-1
+- Update to model 4.6.0
+- Switch from Python 3.8 to 3.9 on EL8 to support ansible-core >= 2.13
+
 * Thu Aug 4 2022 Ori Liel <oliel@redhat.com> - 4.5.2
 - Update to model 4.5.11
 
