@@ -27,6 +27,21 @@ Requires: python3-six
 This package contains the Python 3 SDK for version 4 of the oVirt Engine
 API.
 
+%if 0%{?rhel} >= 9
+%package -n python3.11-ovirt-engine-sdk4
+Summary: oVirt Engine Software Development Kit (Python)
+BuildRequires: python3.11-devel
+BuildRequires: python3.11-setuptools
+Requires: libxml2
+Requires: python3.11
+Requires: python3.11-pycurl >= 7.43.0-6
+Requires: python3.11-six
+
+%description -n python3.11-ovirt-engine-sdk4
+This package contains the Python 3.11 SDK for version 4 of the oVirt Engine
+API.
+%endif
+
 %if 0%{?rhel} < 9
 %package -n python39-ovirt-engine-sdk4
 Summary: oVirt Engine Software Development Kit (Python)
@@ -53,6 +68,11 @@ API.
 %define __python3 /usr/bin/python3.9
 %py3_build
 %endif
+%if 0%{?rhel} >= 9
+%define python3_pkgversion 3.11
+%define __python3 /usr/bin/python3.11
+%py3_build
+%endif
 
 %install
 %define python3_pkgversion 3
@@ -61,6 +81,11 @@ API.
 %if 0%{?rhel} < 9
 %define python3_pkgversion 39
 %define __python3 /usr/bin/python3.9
+%py3_install
+%endif
+%if 0%{?rhel} >= 9
+%define python3_pkgversion 3.11
+%define __python3 /usr/bin/python3.11
 %py3_install
 %endif
 
@@ -79,6 +104,16 @@ API.
 %license LICENSE.txt
 %define python3_pkgversion 39
 %define __python3 /usr/bin/python3.9
+%{python3_sitearch}/*
+%endif
+
+%if 0%{?rhel} >= 9
+%files -n python3.11-ovirt-engine-sdk4
+%doc README.adoc
+%doc examples
+%license LICENSE.txt
+%define python3_pkgversion 3.11
+%define __python3 /usr/bin/python3.11
 %{python3_sitearch}/*
 %endif
 
