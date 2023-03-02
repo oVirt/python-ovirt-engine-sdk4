@@ -94,6 +94,7 @@ jobs:
       - name: Install Dependencies
       # This step installs dependencies for python-sdk and pdoc
         run: |
+          sudo apt update &&
           sudo apt install -y git \
             python2 \
             python2-dev \
