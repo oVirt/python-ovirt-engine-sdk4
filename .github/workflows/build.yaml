@@ -157,7 +157,7 @@ jobs:
       image: quay.io/centos/centos:stream9
     steps:
       - name: Download generated documentation artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: generated-documentation
           path: ${{ env.GEN_DOC_DIR }}
