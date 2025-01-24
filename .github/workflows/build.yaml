@@ -18,11 +18,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - name: centos-stream-8
-            shortcut: cs8
-            container-name: el8stream
           - name: centos-stream-9
-            shortcut: cs9
+            shortcut: c9s
             container-name: el9stream
 
     name: ${{ matrix.name }}
@@ -37,7 +34,7 @@ jobs:
       - name: Prepare build environment
         run: |
           # Install oVirt repositories
-          dnf copr enable -y ovirt/ovirt-master-snapshot centos-stream-8
+          dnf copr enable -y ovirt/ovirt-master-snapshot centos-stream-9
           dnf install -y ovirt-release-master
 
       - name: Install required packages
@@ -82,8 +79,8 @@ jobs:
           directory: ${{ env.ARTIFACTS_DIR }}
 
       - name: Checkout target repository
-        if: ${{ matrix.shortcut == 'cs9' }}
-        uses: actions/checkout@v2
+        if: ${{ matrix.shortcut == 'c9s' }}
+        uses: actions/checkout@v4
         with:
           path: ovirt-engine-sdk
           ref: 'gh-pages'
@@ -110,7 +107,7 @@ jobs:
             libgnutls28-dev
 
       - name: Checkout sources
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Install pip2.7
         # This step installs pip2.7, which will be needed later
@@ -142,7 +139,7 @@ jobs:
         run: pdoc ovirtsdk4 --html --html-dir=html
 
       - name: Upload generated documentation artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: generated-documentation
           path: ${{ env.GEN_DOC_DIR }}/*
@@ -157,7 +154,7 @@ jobs:
       image: quay.io/centos/centos:stream9
     steps:
       - name: Download generated documentation artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: generated-documentation
           path: ${{ env.GEN_DOC_DIR }}
@@ -176,7 +173,7 @@ jobs:
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
 
       - name: Checkout target repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           path: ovirt-engine-sdk
           ref: 'gh-pages'
