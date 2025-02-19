@@ -21,6 +21,7 @@ jobs:
           - name: centos-stream-9
             shortcut: c9s
             container-name: el9stream
+            pip-command: pip3
 
     name: ${{ matrix.name }}
 
@@ -86,15 +87,15 @@ jobs:
           ref: 'gh-pages'
 
   generate_documentation:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Install Dependencies
       # This step installs dependencies for python-sdk and pdoc
         run: |
           sudo apt update &&
           sudo apt install -y git \
-            python2 \
-            python2-dev \
+            python3 \
+            python3-dev \
             curl \
             asciidoctor \
             gcc \
@@ -109,34 +110,26 @@ jobs:
       - name: Checkout sources
         uses: actions/checkout@v4
 
-      - name: Install pip2.7
-        # This step installs pip2.7, which will be needed later
-        run: |
-          curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
-          python2 get-pip.py
-
-      - name: Install Python-SDK with Python 2.7
+      - name: Install Python-SDK with Python 3
         # This step installs the python-sdk with python2.7, as the extension of pdoc,
         # which is subsequently installed, doesn't have python3 support.
         run: |
-          pip2.7 install setuptools
+          pip install setuptools
           bash .automation/generate-setup-files.sh
-          python2.7 setup.py install --user --prefix=
+          python3 setup.py install --user --prefix=
         shell: bash
 
       - name: Install Pdoc
         # This steps installs an extension of pdoc which supports asciidoc
         # (this extension runs on python2).
         run: |
-          git clone https://github.com/machacekondra/pdoc
-          cd pdoc
-          pip2.7 install -U .
+          pip install pdoc
 
       - name: Install pygments
-        run: pip2.7 install pygments
+        run: pip install pygments
 
       - name: Generate documentation
-        run: pdoc ovirtsdk4 --html --html-dir=html
+        run: pdoc ovirtsdk4 -o ./${{ env.GEN_DOC_DIR }} -t pdoc
 
       - name: Upload generated documentation artifacts
         uses: actions/upload-artifact@v4
@@ -157,7 +150,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: generated-documentation
-          path: ${{ env.GEN_DOC_DIR }}
+          path: ${{ env.GEN_DOC_DIR }}/
 
       - name: Install package dependencies
         run: |
@@ -197,8 +190,8 @@ jobs:
 
       - name: Move created documentation to gh-pages
         run: |
-          mkdir -p ./ovirt-engine-sdk/${{env.FOLDER}}/
-          cp ./html/ovirtsdk4/* ./ovirt-engine-sdk/${{env.FOLDER}}/
+          mkdir -p ./ovirt-engine-sdk/${{ env.FOLDER }}/
+          cp -r ./${{ env.GEN_DOC_DIR }}/* ./ovirt-engine-sdk/${{ env.FOLDER }}/
 
       - name: Push changes to gh-pages
         run: |

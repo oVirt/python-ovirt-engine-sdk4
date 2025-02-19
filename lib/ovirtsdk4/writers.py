@@ -23,6 +23,8 @@ from ovirtsdk4.writer import Writer
 
 
 class ActionWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(ActionWriter, self).__init__()
@@ -252,6 +254,8 @@ class ActionWriter(Writer):
 
 
 class AffinityGroupWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(AffinityGroupWriter, self).__init__()
@@ -313,6 +317,8 @@ class AffinityGroupWriter(Writer):
 
 
 class AffinityLabelWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(AffinityLabelWriter, self).__init__()
@@ -360,6 +366,8 @@ class AffinityLabelWriter(Writer):
 
 
 class AffinityRuleWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(AffinityRuleWriter, self).__init__()
@@ -397,6 +405,8 @@ class AffinityRuleWriter(Writer):
 
 
 class AgentWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(AgentWriter, self).__init__()
@@ -456,6 +466,8 @@ class AgentWriter(Writer):
 
 
 class AgentConfigurationWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(AgentConfigurationWriter, self).__init__()
@@ -499,6 +511,8 @@ class AgentConfigurationWriter(Writer):
 
 
 class ApiWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(ApiWriter, self).__init__()
@@ -542,6 +556,8 @@ class ApiWriter(Writer):
 
 
 class ApiSummaryWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(ApiSummaryWriter, self).__init__()
@@ -581,6 +597,8 @@ class ApiSummaryWriter(Writer):
 
 
 class ApiSummaryItemWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(ApiSummaryItemWriter, self).__init__()
@@ -616,6 +634,8 @@ class ApiSummaryItemWriter(Writer):
 
 
 class ApplicationWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(ApplicationWriter, self).__init__()
@@ -657,6 +677,8 @@ class ApplicationWriter(Writer):
 
 
 class AuthorizedKeyWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(AuthorizedKeyWriter, self).__init__()
@@ -700,6 +722,8 @@ class AuthorizedKeyWriter(Writer):
 
 
 class BackupWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(BackupWriter, self).__init__()
@@ -757,6 +781,8 @@ class BackupWriter(Writer):
 
 
 class BalanceWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(BalanceWriter, self).__init__()
@@ -800,6 +826,8 @@ class BalanceWriter(Writer):
 
 
 class BiosWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(BiosWriter, self).__init__()
@@ -835,6 +863,8 @@ class BiosWriter(Writer):
 
 
 class BlockStatisticWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(BlockStatisticWriter, self).__init__()
@@ -868,6 +898,8 @@ class BlockStatisticWriter(Writer):
 
 
 class BondingWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(BondingWriter, self).__init__()
@@ -907,6 +939,8 @@ class BondingWriter(Writer):
 
 
 class BookmarkWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(BookmarkWriter, self).__init__()
@@ -948,6 +982,8 @@ class BookmarkWriter(Writer):
 
 
 class BootWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(BootWriter, self).__init__()
@@ -985,6 +1021,8 @@ class BootWriter(Writer):
 
 
 class BootMenuWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(BootMenuWriter, self).__init__()
@@ -1018,6 +1056,8 @@ class BootMenuWriter(Writer):
 
 
 class BrickProfileDetailWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(BrickProfileDetailWriter, self).__init__()
@@ -1053,6 +1093,8 @@ class BrickProfileDetailWriter(Writer):
 
 
 class CdromWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(CdromWriter, self).__init__()
@@ -1102,6 +1144,8 @@ class CdromWriter(Writer):
 
 
 class CertificateWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(CertificateWriter, self).__init__()
@@ -1147,6 +1191,8 @@ class CertificateWriter(Writer):
 
 
 class CheckpointWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(CheckpointWriter, self).__init__()
@@ -1196,6 +1242,8 @@ class CheckpointWriter(Writer):
 
 
 class CloudInitWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(CloudInitWriter, self).__init__()
@@ -1241,6 +1289,8 @@ class CloudInitWriter(Writer):
 
 
 class ClusterWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(ClusterWriter, self).__init__()
@@ -1374,6 +1424,8 @@ class ClusterWriter(Writer):
 
 
 class ClusterFeatureWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(ClusterFeatureWriter, self).__init__()
@@ -1415,6 +1467,8 @@ class ClusterFeatureWriter(Writer):
 
 
 class ClusterLevelWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(ClusterLevelWriter, self).__init__()
@@ -1460,6 +1514,8 @@ class ClusterLevelWriter(Writer):
 
 
 class ConfigurationWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(ConfigurationWriter, self).__init__()
@@ -1495,6 +1551,8 @@ class ConfigurationWriter(Writer):
 
 
 class ConsoleWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(ConsoleWriter, self).__init__()
@@ -1528,6 +1586,8 @@ class ConsoleWriter(Writer):
 
 
 class CoreWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(CoreWriter, self).__init__()
@@ -1563,6 +1623,8 @@ class CoreWriter(Writer):
 
 
 class CpuWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(CpuWriter, self).__init__()
@@ -1612,6 +1674,8 @@ class CpuWriter(Writer):
 
 
 class CpuProfileWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(CpuProfileWriter, self).__init__()
@@ -1657,6 +1721,8 @@ class CpuProfileWriter(Writer):
 
 
 class CpuTopologyWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(CpuTopologyWriter, self).__init__()
@@ -1694,6 +1760,8 @@ class CpuTopologyWriter(Writer):
 
 
 class CpuTuneWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(CpuTuneWriter, self).__init__()
@@ -1727,6 +1795,8 @@ class CpuTuneWriter(Writer):
 
 
 class CpuTypeWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(CpuTypeWriter, self).__init__()
@@ -1764,6 +1834,8 @@ class CpuTypeWriter(Writer):
 
 
 class CustomPropertyWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(CustomPropertyWriter, self).__init__()
@@ -1801,6 +1873,8 @@ class CustomPropertyWriter(Writer):
 
 
 class DataCenterWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(DataCenterWriter, self).__init__()
@@ -1868,6 +1942,8 @@ class DataCenterWriter(Writer):
 
 
 class DeviceWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(DeviceWriter, self).__init__()
@@ -1915,6 +1991,8 @@ class DeviceWriter(Writer):
 
 
 class DiskWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(DiskWriter, self).__init__()
@@ -2032,6 +2110,8 @@ class DiskWriter(Writer):
 
 
 class DiskAttachmentWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(DiskAttachmentWriter, self).__init__()
@@ -2091,6 +2171,8 @@ class DiskAttachmentWriter(Writer):
 
 
 class DiskProfileWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(DiskProfileWriter, self).__init__()
@@ -2136,6 +2218,8 @@ class DiskProfileWriter(Writer):
 
 
 class DiskSnapshotWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(DiskSnapshotWriter, self).__init__()
@@ -2257,6 +2341,8 @@ class DiskSnapshotWriter(Writer):
 
 
 class DisplayWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(DisplayWriter, self).__init__()
@@ -2318,6 +2404,8 @@ class DisplayWriter(Writer):
 
 
 class DnsWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(DnsWriter, self).__init__()
@@ -2353,6 +2441,8 @@ class DnsWriter(Writer):
 
 
 class DnsResolverConfigurationWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(DnsResolverConfigurationWriter, self).__init__()
@@ -2390,6 +2480,8 @@ class DnsResolverConfigurationWriter(Writer):
 
 
 class DomainWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(DomainWriter, self).__init__()
@@ -2435,6 +2527,8 @@ class DomainWriter(Writer):
 
 
 class DynamicCpuWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(DynamicCpuWriter, self).__init__()
@@ -2470,6 +2564,8 @@ class DynamicCpuWriter(Writer):
 
 
 class EntityProfileDetailWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(EntityProfileDetailWriter, self).__init__()
@@ -2503,6 +2599,8 @@ class EntityProfileDetailWriter(Writer):
 
 
 class ErrorHandlingWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(ErrorHandlingWriter, self).__init__()
@@ -2536,6 +2634,8 @@ class ErrorHandlingWriter(Writer):
 
 
 class EventWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(EventWriter, self).__init__()
@@ -2609,6 +2709,8 @@ class EventWriter(Writer):
 
 
 class EventSubscriptionWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(EventSubscriptionWriter, self).__init__()
@@ -2656,6 +2758,8 @@ class EventSubscriptionWriter(Writer):
 
 
 class ExternalComputeResourceWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(ExternalComputeResourceWriter, self).__init__()
@@ -2703,6 +2807,8 @@ class ExternalComputeResourceWriter(Writer):
 
 
 class ExternalDiscoveredHostWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(ExternalDiscoveredHostWriter, self).__init__()
@@ -2752,6 +2858,8 @@ class ExternalDiscoveredHostWriter(Writer):
 
 
 class ExternalHostWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(ExternalHostWriter, self).__init__()
@@ -2795,6 +2903,8 @@ class ExternalHostWriter(Writer):
 
 
 class ExternalHostGroupWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(ExternalHostGroupWriter, self).__init__()
@@ -2844,6 +2954,8 @@ class ExternalHostGroupWriter(Writer):
 
 
 class ExternalHostProviderWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(ExternalHostProviderWriter, self).__init__()
@@ -2905,6 +3017,8 @@ class ExternalHostProviderWriter(Writer):
 
 
 class ExternalNetworkProviderConfigurationWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(ExternalNetworkProviderConfigurationWriter, self).__init__()
@@ -2948,6 +3062,8 @@ class ExternalNetworkProviderConfigurationWriter(Writer):
 
 
 class ExternalProviderWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(ExternalProviderWriter, self).__init__()
@@ -2999,6 +3115,8 @@ class ExternalProviderWriter(Writer):
 
 
 class ExternalTemplateImportWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(ExternalTemplateImportWriter, self).__init__()
@@ -3046,6 +3164,8 @@ class ExternalTemplateImportWriter(Writer):
 
 
 class ExternalVmImportWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(ExternalVmImportWriter, self).__init__()
@@ -3103,6 +3223,8 @@ class ExternalVmImportWriter(Writer):
 
 
 class FaultWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(FaultWriter, self).__init__()
@@ -3138,6 +3260,8 @@ class FaultWriter(Writer):
 
 
 class FencingPolicyWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(FencingPolicyWriter, self).__init__()
@@ -3179,6 +3303,8 @@ class FencingPolicyWriter(Writer):
 
 
 class FileWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(FileWriter, self).__init__()
@@ -3224,6 +3350,8 @@ class FileWriter(Writer):
 
 
 class FilterWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(FilterWriter, self).__init__()
@@ -3267,6 +3395,8 @@ class FilterWriter(Writer):
 
 
 class FloppyWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(FloppyWriter, self).__init__()
@@ -3316,6 +3446,8 @@ class FloppyWriter(Writer):
 
 
 class FopStatisticWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(FopStatisticWriter, self).__init__()
@@ -3351,6 +3483,8 @@ class FopStatisticWriter(Writer):
 
 
 class GlusterBrickWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(GlusterBrickWriter, self).__init__()
@@ -3422,6 +3556,8 @@ class GlusterBrickWriter(Writer):
 
 
 class GlusterBrickAdvancedDetailsWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(GlusterBrickAdvancedDetailsWriter, self).__init__()
@@ -3483,6 +3619,8 @@ class GlusterBrickAdvancedDetailsWriter(Writer):
 
 
 class GlusterBrickMemoryInfoWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(GlusterBrickMemoryInfoWriter, self).__init__()
@@ -3516,6 +3654,8 @@ class GlusterBrickMemoryInfoWriter(Writer):
 
 
 class GlusterClientWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(GlusterClientWriter, self).__init__()
@@ -3555,6 +3695,8 @@ class GlusterClientWriter(Writer):
 
 
 class GlusterHookWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(GlusterHookWriter, self).__init__()
@@ -3614,6 +3756,8 @@ class GlusterHookWriter(Writer):
 
 
 class GlusterMemoryPoolWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(GlusterMemoryPoolWriter, self).__init__()
@@ -3669,6 +3813,8 @@ class GlusterMemoryPoolWriter(Writer):
 
 
 class GlusterServerHookWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(GlusterServerHookWriter, self).__init__()
@@ -3716,6 +3862,8 @@ class GlusterServerHookWriter(Writer):
 
 
 class GlusterVolumeWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(GlusterVolumeWriter, self).__init__()
@@ -3781,6 +3929,8 @@ class GlusterVolumeWriter(Writer):
 
 
 class GlusterVolumeProfileDetailsWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(GlusterVolumeProfileDetailsWriter, self).__init__()
@@ -3824,6 +3974,8 @@ class GlusterVolumeProfileDetailsWriter(Writer):
 
 
 class GracePeriodWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(GracePeriodWriter, self).__init__()
@@ -3857,6 +4009,8 @@ class GracePeriodWriter(Writer):
 
 
 class GraphicsConsoleWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(GraphicsConsoleWriter, self).__init__()
@@ -3910,6 +4064,8 @@ class GraphicsConsoleWriter(Writer):
 
 
 class GroupWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(GroupWriter, self).__init__()
@@ -3961,6 +4117,8 @@ class GroupWriter(Writer):
 
 
 class GuestOperatingSystemWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(GuestOperatingSystemWriter, self).__init__()
@@ -4004,6 +4162,8 @@ class GuestOperatingSystemWriter(Writer):
 
 
 class HardwareInformationWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(HardwareInformationWriter, self).__init__()
@@ -4053,6 +4213,8 @@ class HardwareInformationWriter(Writer):
 
 
 class HighAvailabilityWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(HighAvailabilityWriter, self).__init__()
@@ -4088,6 +4250,8 @@ class HighAvailabilityWriter(Writer):
 
 
 class HookWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(HookWriter, self).__init__()
@@ -4133,6 +4297,8 @@ class HookWriter(Writer):
 
 
 class HostWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(HostWriter, self).__init__()
@@ -4280,6 +4446,8 @@ class HostWriter(Writer):
 
 
 class HostCpuUnitWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(HostCpuUnitWriter, self).__init__()
@@ -4329,6 +4497,8 @@ class HostCpuUnitWriter(Writer):
 
 
 class HostDeviceWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(HostDeviceWriter, self).__init__()
@@ -4392,6 +4562,8 @@ class HostDeviceWriter(Writer):
 
 
 class HostDevicePassthroughWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(HostDevicePassthroughWriter, self).__init__()
@@ -4425,6 +4597,8 @@ class HostDevicePassthroughWriter(Writer):
 
 
 class HostNicWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(HostNicWriter, self).__init__()
@@ -4512,6 +4686,8 @@ class HostNicWriter(Writer):
 
 
 class HostNicVirtualFunctionsConfigurationWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(HostNicVirtualFunctionsConfigurationWriter, self).__init__()
@@ -4549,6 +4725,8 @@ class HostNicVirtualFunctionsConfigurationWriter(Writer):
 
 
 class HostStorageWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(HostStorageWriter, self).__init__()
@@ -4626,6 +4804,8 @@ class HostStorageWriter(Writer):
 
 
 class HostedEngineWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(HostedEngineWriter, self).__init__()
@@ -4667,6 +4847,8 @@ class HostedEngineWriter(Writer):
 
 
 class IconWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(IconWriter, self).__init__()
@@ -4710,6 +4892,8 @@ class IconWriter(Writer):
 
 
 class IdentifiedWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(IdentifiedWriter, self).__init__()
@@ -4749,6 +4933,8 @@ class IdentifiedWriter(Writer):
 
 
 class ImageWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(ImageWriter, self).__init__()
@@ -4794,6 +4980,8 @@ class ImageWriter(Writer):
 
 
 class ImageTransferWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(ImageTransferWriter, self).__init__()
@@ -4863,6 +5051,8 @@ class ImageTransferWriter(Writer):
 
 
 class InitializationWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(InitializationWriter, self).__init__()
@@ -4938,6 +5128,8 @@ class InitializationWriter(Writer):
 
 
 class InstanceTypeWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(InstanceTypeWriter, self).__init__()
@@ -5093,6 +5285,8 @@ class InstanceTypeWriter(Writer):
 
 
 class IoWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(IoWriter, self).__init__()
@@ -5126,6 +5320,8 @@ class IoWriter(Writer):
 
 
 class IpWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(IpWriter, self).__init__()
@@ -5165,6 +5361,8 @@ class IpWriter(Writer):
 
 
 class IpAddressAssignmentWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(IpAddressAssignmentWriter, self).__init__()
@@ -5200,6 +5398,8 @@ class IpAddressAssignmentWriter(Writer):
 
 
 class IscsiBondWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(IscsiBondWriter, self).__init__()
@@ -5245,6 +5445,8 @@ class IscsiBondWriter(Writer):
 
 
 class IscsiDetailsWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(IscsiDetailsWriter, self).__init__()
@@ -5310,6 +5512,8 @@ class IscsiDetailsWriter(Writer):
 
 
 class JobWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(JobWriter, self).__init__()
@@ -5365,6 +5569,8 @@ class JobWriter(Writer):
 
 
 class KatelloErratumWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(KatelloErratumWriter, self).__init__()
@@ -5422,6 +5628,8 @@ class KatelloErratumWriter(Writer):
 
 
 class KernelWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(KernelWriter, self).__init__()
@@ -5455,6 +5663,8 @@ class KernelWriter(Writer):
 
 
 class KsmWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(KsmWriter, self).__init__()
@@ -5490,6 +5700,8 @@ class KsmWriter(Writer):
 
 
 class LinkLayerDiscoveryProtocolElementWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(LinkLayerDiscoveryProtocolElementWriter, self).__init__()
@@ -5537,6 +5749,8 @@ class LinkLayerDiscoveryProtocolElementWriter(Writer):
 
 
 class LogicalUnitWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(LogicalUnitWriter, self).__init__()
@@ -5606,6 +5820,8 @@ class LogicalUnitWriter(Writer):
 
 
 class MDevTypeWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(MDevTypeWriter, self).__init__()
@@ -5645,6 +5861,8 @@ class MDevTypeWriter(Writer):
 
 
 class MacWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(MacWriter, self).__init__()
@@ -5678,6 +5896,8 @@ class MacWriter(Writer):
 
 
 class MacPoolWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(MacPoolWriter, self).__init__()
@@ -5725,6 +5945,8 @@ class MacPoolWriter(Writer):
 
 
 class MemoryOverCommitWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(MemoryOverCommitWriter, self).__init__()
@@ -5758,6 +5980,8 @@ class MemoryOverCommitWriter(Writer):
 
 
 class MemoryPolicyWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(MemoryPolicyWriter, self).__init__()
@@ -5799,6 +6023,8 @@ class MemoryPolicyWriter(Writer):
 
 
 class MethodWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(MethodWriter, self).__init__()
@@ -5832,6 +6058,8 @@ class MethodWriter(Writer):
 
 
 class MigrationBandwidthWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(MigrationBandwidthWriter, self).__init__()
@@ -5867,6 +6095,8 @@ class MigrationBandwidthWriter(Writer):
 
 
 class MigrationOptionsWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(MigrationOptionsWriter, self).__init__()
@@ -5912,6 +6142,8 @@ class MigrationOptionsWriter(Writer):
 
 
 class MigrationPolicyWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(MigrationPolicyWriter, self).__init__()
@@ -5951,6 +6183,8 @@ class MigrationPolicyWriter(Writer):
 
 
 class NetworkWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(NetworkWriter, self).__init__()
@@ -6034,6 +6268,8 @@ class NetworkWriter(Writer):
 
 
 class NetworkAttachmentWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(NetworkAttachmentWriter, self).__init__()
@@ -6091,6 +6327,8 @@ class NetworkAttachmentWriter(Writer):
 
 
 class NetworkConfigurationWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(NetworkConfigurationWriter, self).__init__()
@@ -6126,6 +6364,8 @@ class NetworkConfigurationWriter(Writer):
 
 
 class NetworkFilterWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(NetworkFilterWriter, self).__init__()
@@ -6167,6 +6407,8 @@ class NetworkFilterWriter(Writer):
 
 
 class NetworkFilterParameterWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(NetworkFilterParameterWriter, self).__init__()
@@ -6210,6 +6452,8 @@ class NetworkFilterParameterWriter(Writer):
 
 
 class NetworkLabelWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(NetworkLabelWriter, self).__init__()
@@ -6253,6 +6497,8 @@ class NetworkLabelWriter(Writer):
 
 
 class NfsProfileDetailWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(NfsProfileDetailWriter, self).__init__()
@@ -6288,6 +6534,8 @@ class NfsProfileDetailWriter(Writer):
 
 
 class NicWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(NicWriter, self).__init__()
@@ -6367,6 +6615,8 @@ class NicWriter(Writer):
 
 
 class NicConfigurationWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(NicConfigurationWriter, self).__init__()
@@ -6410,6 +6660,8 @@ class NicConfigurationWriter(Writer):
 
 
 class NumaNodeWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(NumaNodeWriter, self).__init__()
@@ -6461,6 +6713,8 @@ class NumaNodeWriter(Writer):
 
 
 class NumaNodePinWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(NumaNodePinWriter, self).__init__()
@@ -6498,6 +6752,8 @@ class NumaNodePinWriter(Writer):
 
 
 class OpenStackImageWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(OpenStackImageWriter, self).__init__()
@@ -6539,6 +6795,8 @@ class OpenStackImageWriter(Writer):
 
 
 class OpenStackImageProviderWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(OpenStackImageProviderWriter, self).__init__()
@@ -6596,6 +6854,8 @@ class OpenStackImageProviderWriter(Writer):
 
 
 class OpenStackNetworkWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(OpenStackNetworkWriter, self).__init__()
@@ -6637,6 +6897,8 @@ class OpenStackNetworkWriter(Writer):
 
 
 class OpenStackNetworkProviderWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(OpenStackNetworkProviderWriter, self).__init__()
@@ -6716,6 +6978,8 @@ class OpenStackNetworkProviderWriter(Writer):
 
 
 class OpenStackProviderWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(OpenStackProviderWriter, self).__init__()
@@ -6769,6 +7033,8 @@ class OpenStackProviderWriter(Writer):
 
 
 class OpenStackSubnetWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(OpenStackSubnetWriter, self).__init__()
@@ -6822,6 +7088,8 @@ class OpenStackSubnetWriter(Writer):
 
 
 class OpenStackVolumeProviderWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(OpenStackVolumeProviderWriter, self).__init__()
@@ -6883,6 +7151,8 @@ class OpenStackVolumeProviderWriter(Writer):
 
 
 class OpenStackVolumeTypeWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(OpenStackVolumeTypeWriter, self).__init__()
@@ -6926,6 +7196,8 @@ class OpenStackVolumeTypeWriter(Writer):
 
 
 class OpenstackVolumeAuthenticationKeyWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(OpenstackVolumeAuthenticationKeyWriter, self).__init__()
@@ -6975,6 +7247,8 @@ class OpenstackVolumeAuthenticationKeyWriter(Writer):
 
 
 class OperatingSystemWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(OperatingSystemWriter, self).__init__()
@@ -7022,6 +7296,8 @@ class OperatingSystemWriter(Writer):
 
 
 class OperatingSystemInfoWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(OperatingSystemInfoWriter, self).__init__()
@@ -7069,6 +7345,8 @@ class OperatingSystemInfoWriter(Writer):
 
 
 class OptionWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(OptionWriter, self).__init__()
@@ -7106,6 +7384,8 @@ class OptionWriter(Writer):
 
 
 class PackageWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(PackageWriter, self).__init__()
@@ -7139,6 +7419,8 @@ class PackageWriter(Writer):
 
 
 class PayloadWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(PayloadWriter, self).__init__()
@@ -7176,6 +7458,8 @@ class PayloadWriter(Writer):
 
 
 class PermissionWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(PermissionWriter, self).__init__()
@@ -7237,6 +7521,8 @@ class PermissionWriter(Writer):
 
 
 class PermitWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(PermitWriter, self).__init__()
@@ -7280,6 +7566,8 @@ class PermitWriter(Writer):
 
 
 class PmProxyWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(PmProxyWriter, self).__init__()
@@ -7313,6 +7601,8 @@ class PmProxyWriter(Writer):
 
 
 class PortMirroringWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(PortMirroringWriter, self).__init__()
@@ -7344,6 +7634,8 @@ class PortMirroringWriter(Writer):
 
 
 class PowerManagementWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(PowerManagementWriter, self).__init__()
@@ -7397,6 +7689,8 @@ class PowerManagementWriter(Writer):
 
 
 class ProductWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(ProductWriter, self).__init__()
@@ -7436,6 +7730,8 @@ class ProductWriter(Writer):
 
 
 class ProductInfoWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(ProductInfoWriter, self).__init__()
@@ -7475,6 +7771,8 @@ class ProductInfoWriter(Writer):
 
 
 class ProfileDetailWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(ProfileDetailWriter, self).__init__()
@@ -7516,6 +7814,8 @@ class ProfileDetailWriter(Writer):
 
 
 class PropertyWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(PropertyWriter, self).__init__()
@@ -7551,6 +7851,8 @@ class PropertyWriter(Writer):
 
 
 class ProxyTicketWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(ProxyTicketWriter, self).__init__()
@@ -7584,6 +7886,8 @@ class ProxyTicketWriter(Writer):
 
 
 class QosWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(QosWriter, self).__init__()
@@ -7659,6 +7963,8 @@ class QosWriter(Writer):
 
 
 class QuotaWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(QuotaWriter, self).__init__()
@@ -7720,6 +8026,8 @@ class QuotaWriter(Writer):
 
 
 class QuotaClusterLimitWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(QuotaClusterLimitWriter, self).__init__()
@@ -7771,6 +8079,8 @@ class QuotaClusterLimitWriter(Writer):
 
 
 class QuotaStorageLimitWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(QuotaStorageLimitWriter, self).__init__()
@@ -7818,6 +8128,8 @@ class QuotaStorageLimitWriter(Writer):
 
 
 class RangeWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(RangeWriter, self).__init__()
@@ -7853,6 +8165,8 @@ class RangeWriter(Writer):
 
 
 class RateWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(RateWriter, self).__init__()
@@ -7888,6 +8202,8 @@ class RateWriter(Writer):
 
 
 class RegistrationAffinityGroupMappingWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(RegistrationAffinityGroupMappingWriter, self).__init__()
@@ -7923,6 +8239,8 @@ class RegistrationAffinityGroupMappingWriter(Writer):
 
 
 class RegistrationAffinityLabelMappingWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(RegistrationAffinityLabelMappingWriter, self).__init__()
@@ -7958,6 +8276,8 @@ class RegistrationAffinityLabelMappingWriter(Writer):
 
 
 class RegistrationClusterMappingWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(RegistrationClusterMappingWriter, self).__init__()
@@ -7993,6 +8313,8 @@ class RegistrationClusterMappingWriter(Writer):
 
 
 class RegistrationConfigurationWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(RegistrationConfigurationWriter, self).__init__()
@@ -8038,6 +8360,8 @@ class RegistrationConfigurationWriter(Writer):
 
 
 class RegistrationDomainMappingWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(RegistrationDomainMappingWriter, self).__init__()
@@ -8073,6 +8397,8 @@ class RegistrationDomainMappingWriter(Writer):
 
 
 class RegistrationLunMappingWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(RegistrationLunMappingWriter, self).__init__()
@@ -8108,6 +8434,8 @@ class RegistrationLunMappingWriter(Writer):
 
 
 class RegistrationRoleMappingWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(RegistrationRoleMappingWriter, self).__init__()
@@ -8143,6 +8471,8 @@ class RegistrationRoleMappingWriter(Writer):
 
 
 class RegistrationVnicProfileMappingWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(RegistrationVnicProfileMappingWriter, self).__init__()
@@ -8178,6 +8508,8 @@ class RegistrationVnicProfileMappingWriter(Writer):
 
 
 class ReportedConfigurationWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(ReportedConfigurationWriter, self).__init__()
@@ -8217,6 +8549,8 @@ class ReportedConfigurationWriter(Writer):
 
 
 class ReportedDeviceWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(ReportedDeviceWriter, self).__init__()
@@ -8264,6 +8598,8 @@ class ReportedDeviceWriter(Writer):
 
 
 class RngDeviceWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(RngDeviceWriter, self).__init__()
@@ -8299,6 +8635,8 @@ class RngDeviceWriter(Writer):
 
 
 class RoleWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(RoleWriter, self).__init__()
@@ -8346,6 +8684,8 @@ class RoleWriter(Writer):
 
 
 class SchedulingPolicyWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(SchedulingPolicyWriter, self).__init__()
@@ -8397,6 +8737,8 @@ class SchedulingPolicyWriter(Writer):
 
 
 class SchedulingPolicyUnitWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(SchedulingPolicyUnitWriter, self).__init__()
@@ -8444,6 +8786,8 @@ class SchedulingPolicyUnitWriter(Writer):
 
 
 class SeLinuxWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(SeLinuxWriter, self).__init__()
@@ -8477,6 +8821,8 @@ class SeLinuxWriter(Writer):
 
 
 class SerialNumberWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(SerialNumberWriter, self).__init__()
@@ -8512,6 +8858,8 @@ class SerialNumberWriter(Writer):
 
 
 class SessionWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(SessionWriter, self).__init__()
@@ -8561,6 +8909,8 @@ class SessionWriter(Writer):
 
 
 class SkipIfConnectivityBrokenWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(SkipIfConnectivityBrokenWriter, self).__init__()
@@ -8596,6 +8946,8 @@ class SkipIfConnectivityBrokenWriter(Writer):
 
 
 class SkipIfSdActiveWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(SkipIfSdActiveWriter, self).__init__()
@@ -8629,6 +8981,8 @@ class SkipIfSdActiveWriter(Writer):
 
 
 class SnapshotWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(SnapshotWriter, self).__init__()
@@ -8852,6 +9206,8 @@ class SnapshotWriter(Writer):
 
 
 class SpecialObjectsWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(SpecialObjectsWriter, self).__init__()
@@ -8887,6 +9243,8 @@ class SpecialObjectsWriter(Writer):
 
 
 class SpmWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(SpmWriter, self).__init__()
@@ -8922,6 +9280,8 @@ class SpmWriter(Writer):
 
 
 class SshWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(SshWriter, self).__init__()
@@ -8971,6 +9331,8 @@ class SshWriter(Writer):
 
 
 class SshPublicKeyWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(SshPublicKeyWriter, self).__init__()
@@ -9014,6 +9376,8 @@ class SshPublicKeyWriter(Writer):
 
 
 class SsoWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(SsoWriter, self).__init__()
@@ -9047,6 +9411,8 @@ class SsoWriter(Writer):
 
 
 class StatisticWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(StatisticWriter, self).__init__()
@@ -9112,6 +9478,8 @@ class StatisticWriter(Writer):
 
 
 class StepWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(StepWriter, self).__init__()
@@ -9175,6 +9543,8 @@ class StepWriter(Writer):
 
 
 class StorageConnectionWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(StorageConnectionWriter, self).__init__()
@@ -9244,6 +9614,8 @@ class StorageConnectionWriter(Writer):
 
 
 class StorageConnectionExtensionWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(StorageConnectionExtensionWriter, self).__init__()
@@ -9291,6 +9663,8 @@ class StorageConnectionExtensionWriter(Writer):
 
 
 class StorageDomainWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(StorageDomainWriter, self).__init__()
@@ -9390,6 +9764,8 @@ class StorageDomainWriter(Writer):
 
 
 class StorageDomainLeaseWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(StorageDomainLeaseWriter, self).__init__()
@@ -9423,6 +9799,8 @@ class StorageDomainLeaseWriter(Writer):
 
 
 class SystemOptionWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(SystemOptionWriter, self).__init__()
@@ -9464,6 +9842,8 @@ class SystemOptionWriter(Writer):
 
 
 class SystemOptionValueWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(SystemOptionValueWriter, self).__init__()
@@ -9499,6 +9879,8 @@ class SystemOptionValueWriter(Writer):
 
 
 class TagWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(TagWriter, self).__init__()
@@ -9550,6 +9932,8 @@ class TagWriter(Writer):
 
 
 class TemplateWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(TemplateWriter, self).__init__()
@@ -9705,6 +10089,8 @@ class TemplateWriter(Writer):
 
 
 class TemplateVersionWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(TemplateVersionWriter, self).__init__()
@@ -9742,6 +10128,8 @@ class TemplateVersionWriter(Writer):
 
 
 class TicketWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(TicketWriter, self).__init__()
@@ -9777,6 +10165,8 @@ class TicketWriter(Writer):
 
 
 class TimeZoneWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(TimeZoneWriter, self).__init__()
@@ -9812,6 +10202,8 @@ class TimeZoneWriter(Writer):
 
 
 class TransparentHugePagesWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(TransparentHugePagesWriter, self).__init__()
@@ -9845,6 +10237,8 @@ class TransparentHugePagesWriter(Writer):
 
 
 class UnmanagedNetworkWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(UnmanagedNetworkWriter, self).__init__()
@@ -9888,6 +10282,8 @@ class UnmanagedNetworkWriter(Writer):
 
 
 class UsbWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(UsbWriter, self).__init__()
@@ -9923,6 +10319,8 @@ class UsbWriter(Writer):
 
 
 class UserWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(UserWriter, self).__init__()
@@ -9996,6 +10394,8 @@ class UserWriter(Writer):
 
 
 class UserOptionWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(UserOptionWriter, self).__init__()
@@ -10039,6 +10439,8 @@ class UserOptionWriter(Writer):
 
 
 class ValueWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(ValueWriter, self).__init__()
@@ -10074,6 +10476,8 @@ class ValueWriter(Writer):
 
 
 class VcpuPinWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(VcpuPinWriter, self).__init__()
@@ -10109,6 +10513,8 @@ class VcpuPinWriter(Writer):
 
 
 class VendorWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(VendorWriter, self).__init__()
@@ -10148,6 +10554,8 @@ class VendorWriter(Writer):
 
 
 class VersionWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(VersionWriter, self).__init__()
@@ -10197,6 +10605,8 @@ class VersionWriter(Writer):
 
 
 class VirtioScsiWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(VirtioScsiWriter, self).__init__()
@@ -10230,6 +10640,8 @@ class VirtioScsiWriter(Writer):
 
 
 class VirtualNumaNodeWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(VirtualNumaNodeWriter, self).__init__()
@@ -10287,6 +10699,8 @@ class VirtualNumaNodeWriter(Writer):
 
 
 class VlanWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(VlanWriter, self).__init__()
@@ -10320,6 +10734,8 @@ class VlanWriter(Writer):
 
 
 class VmWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(VmWriter, self).__init__()
@@ -10531,6 +10947,8 @@ class VmWriter(Writer):
 
 
 class VmBaseWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(VmBaseWriter, self).__init__()
@@ -10664,6 +11082,8 @@ class VmBaseWriter(Writer):
 
 
 class VmMediatedDeviceWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(VmMediatedDeviceWriter, self).__init__()
@@ -10713,6 +11133,8 @@ class VmMediatedDeviceWriter(Writer):
 
 
 class VmPlacementPolicyWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(VmPlacementPolicyWriter, self).__init__()
@@ -10748,6 +11170,8 @@ class VmPlacementPolicyWriter(Writer):
 
 
 class VmPoolWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(VmPoolWriter, self).__init__()
@@ -10819,6 +11243,8 @@ class VmPoolWriter(Writer):
 
 
 class VmSummaryWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(VmSummaryWriter, self).__init__()
@@ -10856,6 +11282,8 @@ class VmSummaryWriter(Writer):
 
 
 class VnicPassThroughWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(VnicPassThroughWriter, self).__init__()
@@ -10889,6 +11317,8 @@ class VnicPassThroughWriter(Writer):
 
 
 class VnicProfileWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(VnicProfileWriter, self).__init__()
@@ -10946,6 +11376,8 @@ class VnicProfileWriter(Writer):
 
 
 class VnicProfileMappingWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(VnicProfileMappingWriter, self).__init__()
@@ -10983,6 +11415,8 @@ class VnicProfileMappingWriter(Writer):
 
 
 class VolumeGroupWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(VolumeGroupWriter, self).__init__()
@@ -11020,6 +11454,8 @@ class VolumeGroupWriter(Writer):
 
 
 class WatchdogWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(WatchdogWriter, self).__init__()
@@ -11071,6 +11507,8 @@ class WatchdogWriter(Writer):
 
 
 class WeightWriter(Writer):
+    """
+    """
 
     def __init__(self):
         super(WeightWriter, self).__init__()
