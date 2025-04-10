@@ -2,3 +2,4 @@
 PKG-INFO
 setup.py
 version.py
+lib/ovirtsdk4/__pycache__/

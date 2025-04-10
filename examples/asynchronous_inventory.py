@@ -17,10 +17,10 @@
 # limitations under the License.
 #
 
+from itertools import zip_longest
 import logging
 import ovirtsdk4 as sdk
 
-from six.moves import zip_longest
 
 # This example shows how to use the asynchronous and pipelining capabilities
 # of the SDK to download from the server large amounts of data in an efficient

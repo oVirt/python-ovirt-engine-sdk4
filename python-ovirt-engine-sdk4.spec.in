@@ -21,7 +21,6 @@ BuildRequires: python3-devel
 Requires: libxml2
 Requires: python3
 Requires: python3-pycurl >= 7.43.0-6
-Requires: python3-six
 
 %description -n python3-ovirt-engine-sdk4
 This package contains the Python 3 SDK for version 4 of the oVirt Engine
@@ -34,7 +33,6 @@ BuildRequires: python3.11-setuptools
 Requires: libxml2
 Requires: python3.11
 Requires: python3.11-pycurl >= 7.43.0-6
-Requires: python3.11-six
 
 %description -n python3.11-ovirt-engine-sdk4
 This package contains the Python 3.11 SDK for version 4 of the oVirt Engine
@@ -47,7 +45,6 @@ BuildRequires: python3.12-setuptools
 Requires: libxml2
 Requires: python3.12
 Requires: python3.12-pycurl >= 7.43.0-6
-Requires: python3.12-six
 
 %description -n python3.12-ovirt-engine-sdk4
 This package contains the Python 3.12 SDK for version 4 of the oVirt Engine
