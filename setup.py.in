@@ -27,7 +27,6 @@ import sys
 # Required packages:
 requires = [
     'pycurl >= 7.19.0',
-    'six',
 ]
 
 # Python before version 3.4 doesn't support enum types, which we need,
