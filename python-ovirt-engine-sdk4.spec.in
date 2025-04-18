@@ -26,29 +26,6 @@ Requires: python3-pycurl >= 7.43.0-6
 This package contains the Python 3 SDK for version 4 of the oVirt Engine
 API.
 
-%package -n python3.11-ovirt-engine-sdk4
-Summary: oVirt Engine Software Development Kit (Python)
-BuildRequires: python3.11-devel
-BuildRequires: python3.11-setuptools
-Requires: libxml2
-Requires: python3.11
-Requires: python3.11-pycurl >= 7.43.0-6
-
-%description -n python3.11-ovirt-engine-sdk4
-This package contains the Python 3.11 SDK for version 4 of the oVirt Engine
-API.
-
-%package -n python3.12-ovirt-engine-sdk4
-Summary: oVirt Engine Software Development Kit (Python)
-BuildRequires: python3.12-devel
-BuildRequires: python3.12-setuptools
-Requires: libxml2
-Requires: python3.12
-Requires: python3.12-pycurl >= 7.43.0-6
-
-%description -n python3.12-ovirt-engine-sdk4
-This package contains the Python 3.12 SDK for version 4 of the oVirt Engine
-API.
 
 %prep
 %setup -c -q -n ovirt-engine-sdk-python-@PACKAGE_VERSION@
@@ -57,22 +34,10 @@ API.
 %define python3_pkgversion 3
 %define __python3 /usr/bin/python3
 %py3_build
-%define python3_pkgversion 3.11
-%define __python3 /usr/bin/python3.11
-%py3_build
-%define python3_pkgversion 3.12
-%define __python3 /usr/bin/python3.12
-%py3_build
 
 %install
 %define python3_pkgversion 3
 %define __python3 /usr/bin/python3
-%py3_install
-%define python3_pkgversion 3.11
-%define __python3 /usr/bin/python3.11
-%py3_install
-%define python3_pkgversion 3.12
-%define __python3 /usr/bin/python3.12
 %py3_install
 
 %files -n python3-ovirt-engine-sdk4
@@ -83,23 +48,12 @@ API.
 %define __python3 /usr/bin/python3
 %{python3_sitearch}/*
 
-%files -n python3.11-ovirt-engine-sdk4
-%doc README.adoc
-%doc examples
-%license LICENSE.txt
-%define python3_pkgversion 3.11
-%define __python3 /usr/bin/python3.11
-%{python3_sitearch}/*
-
-%files -n python3.12-ovirt-engine-sdk4
-%doc README.adoc
-%doc examples
-%license LICENSE.txt
-%define python3_pkgversion 3.12
-%define __python3 /usr/bin/python3.12
-%{python3_sitearch}/*
 
 %changelog
+* Fri Apr 18 2025 Jean-Louis Dupond <jean-louis@dupond.be> - 4.6.3-1
+- Drop el8 support
+- Drop Python 3.11 subpackage, as this is not needed for ansible-core on el9
+
 * Thu Mar 23 2023 Martin Necas <mnecas@redhat.com> - 4.6.2-1
 - Add Python 3.11 subpackage to be usable in ansible-core 2.14 for el8
 
