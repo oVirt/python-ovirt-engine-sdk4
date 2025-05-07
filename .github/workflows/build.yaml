@@ -22,6 +22,10 @@ jobs:
             shortcut: c9s
             container-name: el9stream
             pip-command: pip3
+          - name: centos-stream-10
+            shortcut: c10s
+            container-name: el10stream
+            pip-command: pip3
 
     name: ${{ matrix.name }}
 
@@ -35,7 +39,7 @@ jobs:
       - name: Prepare build environment
         run: |
           # Install oVirt repositories
-          dnf copr enable -y ovirt/ovirt-master-snapshot centos-stream-9
+          dnf copr enable -y ovirt/ovirt-master-snapshot ${{ matrix.name }}
           dnf install -y ovirt-release-master
 
       - name: Install required packages
