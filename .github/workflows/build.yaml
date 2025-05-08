@@ -57,10 +57,8 @@ jobs:
             python3-devel \
             python3-nose \
             python3-pip \
-            python3-pycodestyle \
             python3-pycurl \
             python3-pygments \
-            python3-pyflakes \
             python3-wheel \
             rpm-build \
             tar \
