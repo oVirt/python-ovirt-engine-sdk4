@@ -19,7 +19,7 @@
 import ovirtsdk4 as sdk
 import unittest
 
-from nose.tools import raises
+from nose2.tools import raises
 from .server import TestServer
 
 

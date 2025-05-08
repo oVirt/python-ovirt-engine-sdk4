@@ -18,7 +18,7 @@
 
 from datetime import datetime
 from io import BytesIO
-from nose.tools import *
+from nose2.tools import *
 from ovirtsdk4 import Error
 from ovirtsdk4 import types
 from ovirtsdk4.writer import Writer

@@ -18,7 +18,7 @@
 
 from datetime import datetime
 from io import BytesIO
-from nose.tools import (
+from nose2.tools import (
     assert_equals,
     assert_is_none,
     assert_raises,

@@ -19,7 +19,7 @@
 import ovirtsdk4 as sdk
 import unittest
 
-from nose.tools import (
+from nose2.tools import (
     assert_true,
     raises
 )

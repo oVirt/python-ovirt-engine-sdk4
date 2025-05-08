@@ -18,7 +18,7 @@
 
 import unittest
 
-from nose.tools import (
+from nose2.tools import (
     assert_is_not_none,
     assert_equal,
 )

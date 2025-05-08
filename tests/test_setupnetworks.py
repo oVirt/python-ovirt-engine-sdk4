@@ -19,7 +19,7 @@
 import ovirtsdk4.types as types
 import unittest
 
-from nose.tools import assert_equal
+from nose2.tools import assert_equal
 from .server import TestServer
 
 

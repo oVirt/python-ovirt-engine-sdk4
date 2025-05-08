@@ -17,7 +17,7 @@
 #
 
 from ovirtsdk4 import types
-from nose.tools import assert_equal
+from nose2.tools import assert_equal
 
 
 def test_enum():
