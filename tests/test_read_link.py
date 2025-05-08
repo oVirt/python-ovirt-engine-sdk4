@@ -22,7 +22,7 @@ import ovirtsdk4.readers as readers
 import ovirtsdk4.types as types
 
 from io import BytesIO
-from nose.tools import (
+from nose2.tools import (
     assert_is_not_none,
     assert_is_none,
     assert_equals,

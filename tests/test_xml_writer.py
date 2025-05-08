@@ -17,7 +17,7 @@
 #
 
 from io import BytesIO
-from nose.tools import *
+from nose2.tools import *
 from ovirtsdk4.xml import XmlWriter
 
 

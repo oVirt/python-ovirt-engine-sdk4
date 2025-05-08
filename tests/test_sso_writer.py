@@ -19,7 +19,7 @@
 import ovirtsdk4.types as types
 
 from io import BytesIO
-from nose.tools import (
+from nose2.tools import (
     assert_equals,
 )
 from ovirtsdk4.writers import SsoWriter

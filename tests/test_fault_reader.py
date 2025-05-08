@@ -17,7 +17,7 @@
 #
 
 from io import BytesIO
-from nose.tools import *
+from nose2.tools import *
 from ovirtsdk4 import types
 from ovirtsdk4 import readers
 from ovirtsdk4.xml import XmlReader

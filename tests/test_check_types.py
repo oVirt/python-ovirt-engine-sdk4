@@ -20,7 +20,7 @@ import ovirtsdk4.services as services
 import ovirtsdk4.types as types
 import unittest
 
-from nose.tools import (
+from nose2.tools import (
     assert_in,
     assert_raises,
 )

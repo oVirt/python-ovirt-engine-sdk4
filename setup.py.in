@@ -17,10 +17,7 @@
 # limitations under the License.
 #
 
-import codecs
-import distutils.extension
 import glob
-import os
 import setuptools
 import sys
 
@@ -62,7 +59,7 @@ setuptools.setup(
     packages=setuptools.find_packages('lib'),
     install_requires=requires,
     ext_modules=[
-        distutils.extension.Extension(
+        setuptools.Extension(
             name='ovirtsdk4.xml',
             include_dirs=[
                 '/usr/include/libxml2',
