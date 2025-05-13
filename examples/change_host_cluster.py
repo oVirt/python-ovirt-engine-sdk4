@@ -64,7 +64,7 @@ host_service.update(
     ),
 )
 
-# Activate the host again:   
+# Activate the host again:
 host_service.activate()
 while True:
     time.sleep(5)

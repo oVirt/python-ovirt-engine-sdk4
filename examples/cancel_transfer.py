@@ -19,6 +19,7 @@ Cancel a paused transfer that was started using the API.
 """
 
 import argparse
+import getpass
 import logging
 
 from contextlib import closing

@@ -32,9 +32,11 @@ except ImportError:
 
 from ovirtsdk4.http import Response
 
+
 def get_version():
     from ovirtsdk4 import version
     return version.VERSION
+
 
 class Error(Exception):
     """
@@ -979,7 +981,7 @@ class Connection(object):
         # some as arrays of bytes, so we need to check the type of the
         # provided data and convert it to strings before trying to
         # manipulate it with the "replace", "strip" and "split" methods:
-        text = data.decode('utf-8') if type(data) == bytes else data
+        text = data.decode('utf-8') if type(data) is bytes else data
 
         # Split the debug data into lines and send a debug message for
         # each line:
@@ -1049,7 +1051,7 @@ class ConnectionBuilder(object):
 #   import ovirtsdk4 as sdk
 #   vm = sdk.types.Vm()
 #
-import ovirtsdk4.readers as readers  # noqa: F401
-import ovirtsdk4.writers as writers  # noqa: F401
-import ovirtsdk4.types as types  # noqa: F401
-import ovirtsdk4.services as services  # noqa: F401
+import ovirtsdk4.readers as readers  # noqa: E402, F401
+import ovirtsdk4.writers as writers  # noqa: E402, F401
+import ovirtsdk4.types as types  # noqa: E402, F401
+import ovirtsdk4.services as services  # noqa: E402, F401

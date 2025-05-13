@@ -36,11 +36,13 @@ connections = 10
 # of connections multiplied by the size of the pipeline:
 block = connections * pipeline
 
+
 # This method is taken from itertools recipes:
 # https://docs.python.org/3/library/itertools.html
 def grouper(iterable, n, fillvalue=None):
     args = [iter(iterable)] * n
     return zip_longest(fillvalue=fillvalue, *args)
+
 
 # This function takes a list of objects and creates a hash where the keys are
 # the identifiers and the values are the objects. We will use it to create
@@ -48,6 +50,7 @@ def grouper(iterable, n, fillvalue=None):
 # corresponding to a virtual machine, given their identifiers.
 def index(vals):
     return {item.id: item for item in vals}
+
 
 # In order to download large collections of objects, it is convenient to use a
 # different HTTP connection for each of them, so that they are downloaded in

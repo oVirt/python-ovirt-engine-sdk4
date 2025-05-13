@@ -40,7 +40,6 @@ import uuid
 from contextlib import closing
 
 import ovirtsdk4 as sdk
-from ovirtsdk4 import types
 
 from helpers import common
 from helpers import jobs

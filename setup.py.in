@@ -29,7 +29,7 @@ requires = [
 # Python before version 3.4 doesn't support enum types, which we need,
 # so we need to use the "enum34" package:
 if sys.version_info < (3, 4):
-  requires.append('enum34')
+    requires.append('enum34')
 
 # Setup the package:
 setuptools.setup(

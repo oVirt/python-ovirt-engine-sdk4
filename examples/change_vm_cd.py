@@ -17,12 +17,8 @@
 # limitations under the License.
 #
 
-import logging
-import time
-
 from contextlib import closing
 
-import ovirtsdk4 as sdk
 import ovirtsdk4.types as types
 
 from helpers import common
@@ -85,4 +81,3 @@ with closing(connection):
         ),
         current=args.current,
     )
-

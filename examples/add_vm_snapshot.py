@@ -28,12 +28,12 @@ logging.basicConfig(level=logging.DEBUG, filename='example.log')
 
 # Create the connection to the server:
 connection = sdk.Connection(
-  url='https://engine40.example.com/ovirt-engine/api',
-  username='admin@internal',
-  password='redhat123',
-  ca_file='ca.pem',
-  debug=True,
-  log=logging.getLogger(),
+    url='https://engine40.example.com/ovirt-engine/api',
+    username='admin@internal',
+    password='redhat123',
+    ca_file='ca.pem',
+    debug=True,
+    log=logging.getLogger(),
 )
 
 # Locate the virtual machines service and use it to find the virtual
@@ -46,9 +46,9 @@ snapshots_service = vms_service.vm_service(vm.id).snapshots_service()
 
 # Add the new snapshot:
 snapshots_service.add(
-  types.Snapshot(
-    description='My snapshot',
-  ),
+    types.Snapshot(
+        description='My snapshot',
+    ),
 )
 
 # Close the connection to the server:

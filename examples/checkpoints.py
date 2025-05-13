@@ -168,7 +168,7 @@ def cmd_purge(args):
 def remove_checkpoint(checkpoint_service, timeout=60):
     checkpoint_service.remove()
 
-    dedaline = time.monotonic() + timeout
+    deadline = time.monotonic() + timeout
     while True:
         try:
             checkpoint_service.get()

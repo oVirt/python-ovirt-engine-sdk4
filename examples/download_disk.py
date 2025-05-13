@@ -24,7 +24,6 @@ Requires the ovirt-imageio-client package.
 """
 
 import inspect
-import time
 
 from contextlib import closing
 
@@ -39,6 +38,7 @@ from helpers.common import progress
 
 # This example will connect to the server and download the data
 # of the disk to a local file.
+
 
 def parse_args():
     parser = common.ArgumentParser(description="Download disk")

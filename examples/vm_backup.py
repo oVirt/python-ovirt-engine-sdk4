@@ -117,7 +117,7 @@ snap_description = '%s-backup-%s' % (data_vm.name, uuid.uuid4())
 events_service.add(
     event=types.Event(
         vm=types.Vm(
-          id=data_vm.id,
+            id=data_vm.id,
         ),
         origin=APPLICATION_NAME,
         severity=types.LogSeverity.NORMAL,
@@ -240,7 +240,7 @@ logging.info('Removed the snapshot \'%s\'.', snap.description)
 events_service.add(
     event=types.Event(
         vm=types.Vm(
-          id=data_vm.id,
+            id=data_vm.id,
         ),
         origin=APPLICATION_NAME,
         severity=types.LogSeverity.NORMAL,
