@@ -22,7 +22,6 @@ Show how to list disk snapshots.
 import json
 from contextlib import closing
 
-import ovirtsdk4 as sdk
 from helpers import common
 
 

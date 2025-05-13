@@ -76,7 +76,6 @@ Find storage domain where named "nfs-01":
 import json
 from contextlib import closing
 
-import ovirtsdk4 as sdk
 from helpers import common
 
 

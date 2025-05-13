@@ -310,7 +310,7 @@ with closing(connection):
                 buffer_size=args.buffer_size,
                 progress=pb,
                 **extra_args)
-    except:
+    except:  # noqa: E722
         progress("Canceling image transfer...")
         imagetransfer.cancel_transfer(connection, transfer)
         raise

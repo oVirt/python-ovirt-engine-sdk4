@@ -44,11 +44,11 @@ builder = sdk.ConnectionBuilder(
 # call the "build" method, and it is very convenient to combine this
 # with the "with" mechanism of Python:
 with builder.build() as connection:
-   for vm in connection.system_service().vms_service().list():
-       print(vm.name)
+    for vm in connection.system_service().vms_service().list():
+        print(vm.name)
 
 # The connection has been closed automatically. If there is the need to
 # create another connection, the builder object can be reused:
 with builder.build() as connection:
-   for host in connection.system_service().hosts_service().list():
-       print(host.name)
+    for host in connection.system_service().hosts_service().list():
+        print(host.name)

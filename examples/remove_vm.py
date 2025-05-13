@@ -20,7 +20,6 @@
 import logging
 
 import ovirtsdk4 as sdk
-import ovirtsdk4.types as types
 
 logging.basicConfig(level=logging.DEBUG, filename='example.log')
 

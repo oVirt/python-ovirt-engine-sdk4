@@ -22,11 +22,11 @@ import os
 import time
 
 import ovirtsdk4 as sdk
-import ovirtsdk4.types as types
 
 logging.basicConfig(level=logging.DEBUG, filename='example.log')
 
 # This shows how to poll the collection of events.
+
 
 # In order to make sure that no events are lost it is good idea to write
 # in persistent storage the index of the last event that we processed.
@@ -36,6 +36,7 @@ def write_index(index):
     with open('index.txt', 'w') as fd:
         fd.write(str(index))
 
+
 def read_index():
     if os.path.exists('index.txt'):
         with open('index.txt', 'r') as fd:
@@ -43,10 +44,12 @@ def read_index():
     else:
         return None
 
+
 # This is the function that will be called to process the events, it
 # will just print the identifier and the description of the event.
 def process_event(event):
     print("%s - %s" % (event.id, event.description))
+
 
 # Create the connection to the server:
 connection = sdk.Connection(

@@ -25,6 +25,7 @@ logging.basicConfig(level=logging.DEBUG, filename='example.log')
 # This example fetches the specified VM configuration data and
 # saves it into an OVF file.
 
+
 def get_connection():
     # Create the connection to the server:
     return sdk.Connection(
@@ -35,6 +36,7 @@ def get_connection():
         debug=True,
         log=logging.getLogger(),
     )
+
 
 if __name__ == "__main__":
 

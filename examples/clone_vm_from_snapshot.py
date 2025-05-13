@@ -53,8 +53,8 @@ vm_service = vms_service.vm_service(vm.id)
 snaps_service = vm_service.snapshots_service()
 snaps = snaps_service.list()
 snap = next(
-  (s for s in snaps if s.description == 'mysnap'),
-  None
+    (s for s in snaps if s.description == 'mysnap'),
+    None
 )
 
 # Create a new virtual machine, cloning it from the snapshot:

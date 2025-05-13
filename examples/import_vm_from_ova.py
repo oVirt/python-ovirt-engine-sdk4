@@ -74,7 +74,7 @@ imports_service.add(
             id='virtio-win.iso'
         ),
         sparse=True
-     )
+    )
 )
 
 # Close the connection:

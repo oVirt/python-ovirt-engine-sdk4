@@ -40,7 +40,7 @@ connection = sdk.Connection(
 
 # Find the virtual machine:
 vms_service = connection.system_service().vms_service()
-vm = vms_service.list(search = 'name=myvm')[0]
+vm = vms_service.list(search='name=myvm')[0]
 
 # Find the service that manages the virtual machine:
 vm_service = vms_service.vm_service(vm.id)
@@ -48,7 +48,7 @@ vm_service = vms_service.vm_service(vm.id)
 # Create cloud-init script, which you want to execute in
 # deployed virtual machine, please note that the script must
 # be properly formatted and indented as it's using YAML.
-my_script="""
+my_script = """
 write_files:
   - content: |
       Hello, world!

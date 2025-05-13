@@ -136,7 +136,7 @@ try:
         ),
         query={'correlation_id': correlation_id}
     )
-except:
+except:  # noqa: E722
     # ignore exception, call fails as the VM can't be returned because the VM is already deleted and recreated
     pass
 
@@ -167,7 +167,7 @@ try:
         ),
         query={'correlation_id': correlation_id}
     )
-except:
+except:  # noqa: E722
     # ignore exception, call fails as the VM can't be returned because the VM is already deleted and recreated
     pass
 

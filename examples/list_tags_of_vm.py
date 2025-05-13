@@ -53,4 +53,3 @@ for tag in tags_service.list():
 
 # Close the connection to the server:
 connection.close()
-

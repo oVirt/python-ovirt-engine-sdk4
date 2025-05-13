@@ -68,4 +68,3 @@ label_vms_service.add(
 )
 # Close the connection to the server:
 connection.close()
-

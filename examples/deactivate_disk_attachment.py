@@ -72,11 +72,11 @@ if disk_attachment is not None:
     while True:
         time.sleep(5)
         disk_attachment = disk_attachment_service.get()
-        if disk_attachment.active == False:
+        if not disk_attachment.active:
             break
 
 else:
-    print ("There's no disk attachment for %s." % disk.name)
+    print("There's no disk attachment for %s." % disk.name)
 
 # Close the connection to the server:
 connection.close()

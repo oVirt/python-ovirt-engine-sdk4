@@ -261,8 +261,8 @@ def cancel_transfer(connection, transfer):
     """
     log.info("Cancelling transfer %s", transfer.id)
     transfer_service = (connection.system_service()
-                            .image_transfers_service()
-                            .image_transfer_service(transfer.id))
+                        .image_transfers_service()
+                        .image_transfer_service(transfer.id))
     transfer_service.cancel()
 
 
@@ -303,8 +303,8 @@ def finalize_transfer(connection, transfer, disk, timeout=60):
     log.info("Finalizing transfer %s for disk %s", transfer.id, disk.id)
 
     transfer_service = (connection.system_service()
-                            .image_transfers_service()
-                            .image_transfer_service(transfer.id))
+                        .image_transfers_service()
+                        .image_transfer_service(transfer.id))
 
     start = time.time()
 
@@ -318,8 +318,8 @@ def finalize_transfer(connection, transfer, disk, timeout=60):
             # the database, we can assume that the disk status is already
             # updated, so we can check it only once.
             disk_service = (connection.system_service()
-                                .disks_service()
-                                .disk_service(disk.id))
+                            .disks_service()
+                            .disk_service(disk.id))
             try:
                 disk = disk_service.get()
             except sdk.NotFoundError:

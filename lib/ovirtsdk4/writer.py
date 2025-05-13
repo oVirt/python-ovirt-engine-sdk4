@@ -49,7 +49,7 @@ class Writer(object):
         """
         Converts the given boolean value to a string.
         """
-        if type(value) != bool:
+        if type(value) is not bool:
             raise TypeError('The \'value\' parameter must be a boolean')
         return 'true' if value else 'false'
 
@@ -65,7 +65,7 @@ class Writer(object):
         """
         Converts the given integer value to a string.
         """
-        if type(value) != int:
+        if type(value) is not int:
             raise TypeError('The \'value\' parameter must be an integer')
         return str(value)
 
@@ -81,7 +81,7 @@ class Writer(object):
         """
         Converts the given decimal value to a string.
         """
-        if type(value) != float:
+        if type(value) is not float:
             raise TypeError('The \'value\' parameter must be a decimal')
         return str(value)
 
@@ -97,7 +97,7 @@ class Writer(object):
         """
         Converts the given date value to a string.
         """
-        if type(value) != datetime.datetime:
+        if type(value) is not datetime.datetime:
             raise TypeError('The \'value\' parameter must be a date')
         return value.isoformat()
 
@@ -155,7 +155,7 @@ class Writer(object):
         cursor = None
         if target is None:
             cursor = xml.XmlWriter(None, indent)
-        elif type(target) == xml.XmlWriter:
+        elif type(target) is xml.XmlWriter:
             cursor = target
         else:
             raise Error(
@@ -166,7 +166,7 @@ class Writer(object):
         # Do the actual write, and make sure to always close the XML
         # writer if we created it:
         try:
-            if type(obj) == list:
+            if type(obj) is list:
                 # For lists we can't decide which tag to use, so the
                 # 'root' parameter is mandatory in this case:
                 if root is None:

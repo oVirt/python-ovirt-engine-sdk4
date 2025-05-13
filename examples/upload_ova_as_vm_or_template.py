@@ -71,7 +71,6 @@ def parse_args():
         action="store_true",
         help="Create template or Virtual Machine from an ova file.")
 
-
     return parser.parse_args()
 
 
@@ -175,7 +174,7 @@ with closing(connection):
                 key = key.replace('{%s}' % namespaces['ovf'], '')
                 props[key] = value
 
-            disk_id=props['diskId']
+            disk_id = props['diskId']
 
             disk_sparse = props['volume-type'] == 'Sparse'
 
@@ -235,7 +234,7 @@ with closing(connection):
         # Add the virtual machine or template, the transferred disks will be attached to
         # this virtual machine or template:
         progress("Adding {} {}".format('template' if args.template else 'virtual machine',
-            vm_or_template_name))
+                                                                        vm_or_template_name))
 
         if args.template:
             templates_service = connection.system_service().templates_service()

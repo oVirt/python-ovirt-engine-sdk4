@@ -20,7 +20,6 @@
 import logging
 
 import ovirtsdk4 as sdk
-import ovirtsdk4.types as types
 
 logging.basicConfig(level=logging.DEBUG, filename='example.log')
 
@@ -53,7 +52,7 @@ vms = vms_service.list(
 
 # Print the virtual machine names and identifiers:
 for vm in vms:
-  print('%s: %s' % (vm.name, vm.id))
+    print('%s: %s' % (vm.name, vm.id))
 
 # Close the connection to the server:
 connection.close()

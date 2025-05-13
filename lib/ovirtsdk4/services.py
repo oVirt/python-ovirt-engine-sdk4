@@ -4077,7 +4077,7 @@ class BookmarkService(Service):
         """
         Get a bookmark.
         An example for getting a bookmark:
-        
+
         ```
         GET /ovirt-engine/api/bookmarks/123
         ```
@@ -4129,7 +4129,7 @@ class BookmarkService(Service):
         """
         Remove a bookmark.
         An example for removing a bookmark:
-        
+
         ```
         DELETE /ovirt-engine/api/bookmarks/123
         ```
@@ -4179,7 +4179,7 @@ class BookmarkService(Service):
         """
         Update a bookmark.
         An example for updating a bookmark:
-        
+
         ```
         PUT /ovirt-engine/api/bookmarks/123
         ```
@@ -4259,7 +4259,7 @@ class BookmarksService(Service):
         """
         Adding a new bookmark.
         Example of adding a bookmark:
-        
+
         ```
         POST /ovirt-engine/api/bookmarks
         ```
@@ -4309,7 +4309,7 @@ class BookmarksService(Service):
         """
         Listing all the available bookmarks.
         Example of listing bookmarks:
-        
+
         ```
         GET /ovirt-engine/api/bookmarks
         ```
@@ -4420,7 +4420,7 @@ class ClusterService(Service):
         """
         Gets information about the cluster.
         An example of getting a cluster:
-        
+
         ```
         GET /ovirt-engine/api/clusters/123
         ```
@@ -4540,7 +4540,7 @@ class ClusterService(Service):
         Refresh the Gluster heal info for all volumes in cluster.
         For example, Cluster `123`, send a request like
         this:
-        
+
         ```
         POST /ovirt-engine/api/clusters/123/refreshglusterhealstatus
         ```
@@ -4568,7 +4568,7 @@ class ClusterService(Service):
     ):
         """
         Removes the cluster from the system.
-        
+
         ```
         DELETE /ovirt-engine/api/clusters/00000000-0000-0000-0000-000000000000
         ```
@@ -4656,7 +4656,7 @@ class ClusterService(Service):
     ):
         """
         Synchronizes all networks on the cluster.
-        
+
         ```
         POST /ovirt-engine/api/clusters/123/syncallnetworks
         ```
@@ -4711,7 +4711,7 @@ class ClusterService(Service):
         Updates information about the cluster.
         Only the specified fields are updated; others remain unchanged.
         For example, to update the cluster's CPU:
-        
+
         ```
         PUT /ovirt-engine/api/clusters/123
         ```
@@ -4761,7 +4761,7 @@ class ClusterService(Service):
         Start, update or finish upgrade process for the cluster based on the action value. This action marks the
         cluster for upgrade, updates the progress, or clears the upgrade running flag on the cluster based on the
         action value which takes values of `start`, `stop` or `update_progress`.
-        
+
         ```
         POST /ovirt-engine/api/clusters/123/upgrade
         ```
@@ -4967,7 +4967,7 @@ class ClusterEnabledFeatureService(Service):
         """
         Provides the information about the cluster feature enabled.
         For example, to find details of the enabled feature `456` for cluster `123`, send a request like this:
-        
+
         ```
         GET /ovirt-engine/api/clusters/123/enabledfeatures/456
         ```
@@ -5018,7 +5018,7 @@ class ClusterEnabledFeatureService(Service):
         """
         Disables a cluster feature.
         For example, to disable the feature `456` of cluster `123` send a request like this:
-        
+
         ```
         DELETE /ovirt-engine/api/clusters/123/enabledfeatures/456
         ```
@@ -5069,7 +5069,7 @@ class ClusterEnabledFeaturesService(Service):
         """
         Enable an additional feature for a cluster.
         For example, to enable a feature `456` on cluster `123`, send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/clusters/123/enabledfeatures
         ```
@@ -5101,7 +5101,7 @@ class ClusterEnabledFeaturesService(Service):
         """
         Lists the additional features enabled for the cluster.
         For example, to get the features enabled for cluster `123` send a request like this:
-        
+
         ```
         GET /ovirt-engine/api/clusters/123/enabledfeatures
         ```
@@ -5253,7 +5253,7 @@ class ClusterFeatureService(Service):
         """
         Provides the information about the a cluster feature supported by a cluster level.
         For example, to find details of the cluster feature `456` for cluster level 4.1, send a request like this:
-        
+
         ```
         GET /ovirt-engine/api/clusterlevels/4.1/clusterfeatures/456
         ```
@@ -5326,7 +5326,7 @@ class ClusterFeaturesService(Service):
     ):
         """
         Lists the cluster features supported by the cluster level.
-        
+
         ```
         GET /ovirt-engine/api/clusterlevels/4.1/clusterfeatures
         ```
@@ -5416,7 +5416,7 @@ class ClusterLevelService(Service):
         """
         Provides the information about the capabilities of the specific cluster level managed by this service.
         For example, to find what CPU types are supported by level 3.6 you can send a request like this:
-        
+
         ```
         GET /ovirt-engine/api/clusterlevels/3.6
         ```
@@ -5517,7 +5517,7 @@ class ClusterLevelsService(Service):
     ):
         """
         Lists the cluster levels supported by the system.
-        
+
         ```
         GET /ovirt-engine/api/clusterlevels
         ```
@@ -5728,7 +5728,7 @@ class ClusterNetworksService(Service):
         """
         Assigns the network to a cluster.
         Post a request like in the example below to assign the network to a cluster:
-        
+
         ```
         POST /ovirt-engine/api/clusters/123/networks
         ```
@@ -5860,7 +5860,7 @@ class ClustersService(Service):
         Creates a new cluster.
         This requires the `name`, `cpu.type`, and `data_center` attributes. Identify the data center with either the `id`
         or `name` attribute.
-        
+
         ```
         POST /ovirt-engine/api/clusters
         ```
@@ -5877,7 +5877,7 @@ class ClustersService(Service):
         ```
         To create a cluster with an external network provider to be deployed on
         every host that is added to the cluster, send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/clusters
         ```
@@ -6339,7 +6339,7 @@ class DataCenterService(Service):
         switch to another host if the SPM has uncleared tasks.
         Clearing all finished tasks enables the SPM switching.
         For example, to clean all the finished tasks on a data center with ID `123` send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/datacenters/123/cleanfinishedtasks
         ```
@@ -6393,7 +6393,7 @@ class DataCenterService(Service):
         """
         Get a data center.
         An example of getting a data center:
-        
+
         ```
         GET /ovirt-engine/api/datacenters/123
         ```
@@ -6474,7 +6474,7 @@ class DataCenterService(Service):
     ):
         """
         Removes the data center.
-        
+
         ```
         DELETE /ovirt-engine/api/datacenters/123
         ```
@@ -6540,7 +6540,7 @@ class DataCenterService(Service):
         Used for manually setting a storage domain in the data center as a master.
         For example, for setting a storage domain with ID '456' as a master on a data center with ID '123',
         send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/datacenters/123/setmaster
         ```
@@ -6603,7 +6603,7 @@ class DataCenterService(Service):
         Updates the data center.
         The `name`, `description`, `storage_type`, `version`, `storage_format` and `mac_pool` elements are updatable
         post-creation. For example, to change the name and description of data center `123` send a request like this:
-        
+
         ```
         PUT /ovirt-engine/api/datacenters/123
         ```
@@ -6694,7 +6694,7 @@ class DataCenterService(Service):
         """
         Attach and detach storage domains to and from a data center.
         For attaching a single storage domain we should use the following POST request:
-        
+
         ```
         POST /ovirt-engine/api/datacenters/123/storagedomains
         ```
@@ -6706,7 +6706,7 @@ class DataCenterService(Service):
         </storage_domain>
         ```
         For detaching a single storage domain we should use the following DELETE request:
-        
+
         ```
         DELETE /ovirt-engine/api/datacenters/123/storagedomains/123
         ```
@@ -6895,7 +6895,7 @@ class DataCenterNetworksService(Service):
         """
         Create a new network in a data center.
         Post a request like in the example below to create a new network in a data center with an ID of `123`.
-        
+
         ```
         POST /ovirt-engine/api/datacenters/123/networks
         ```
@@ -7029,7 +7029,7 @@ class DataCentersService(Service):
         Creates a new data center.
         Creation of a new data center requires the `name` and `local` elements. For example, to create a data center
         named `mydc` that uses shared storage (NFS, iSCSI or fibre channel) send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/datacenters
         ```
@@ -7083,7 +7083,7 @@ class DataCentersService(Service):
         """
         Lists the data centers.
         The following request retrieves a representation of the data centers:
-        
+
         ```
         GET /ovirt-engine/api/datacenters
         ```
@@ -7236,7 +7236,7 @@ class DiskAttachmentService(Service):
         """
         Returns the details of the attachment, including the bootable flag and link to the disk.
         An example of getting a disk attachment:
-        
+
         ```
         GET /ovirt-engine/api/vms/123/diskattachments/456
         ```
@@ -7293,7 +7293,7 @@ class DiskAttachmentService(Service):
         This will only detach the disk from the virtual machine, but won't remove it from
         the system, unless the `detach_only` parameter is `false`.
         An example of removing a disk attachment:
-        
+
         ```
         DELETE /ovirt-engine/api/vms/123/diskattachments/456?detach_only=true
         ```
@@ -7338,7 +7338,7 @@ class DiskAttachmentService(Service):
     ):
         """
         Update the disk attachment and the disk properties within it.
-        
+
         ```
         PUT /vms/{vm:id}/disksattachments/{attachment:id}
         <disk_attachment>
@@ -7426,7 +7426,7 @@ class DiskAttachmentsService(Service):
         ```
         In this case the disk will be created and then attached to the virtual machine.
         In both cases, use the following URL for a virtual machine with an id `345`:
-        
+
         ```
         POST /ovirt-engine/api/vms/345/diskattachments
         ```
@@ -8063,7 +8063,7 @@ class DisksService(Service):
         do not support the combination of the raw `format` with `sparse=true`, so `sparse=false` must be stated explicitly.
         To create a new floating image disk with specified `provisioned_size`, `format` and `name` on a storage domain
         with an id `123` and enabled for incremental backup, send a request as follows:
-        
+
         ```
         POST /ovirt-engine/api/disks
         ```
@@ -8089,7 +8089,7 @@ class DisksService(Service):
         To create a new floating direct LUN disk with a `host` element with an id `123`, specified `alias`, `type` and
         `logical_unit` with an id `456` (that has the attributes `address`, `port` and `target`),
         send a request as follows:
-        
+
         ```
         POST /ovirt-engine/api/disks
         ```
@@ -8136,7 +8136,7 @@ class DisksService(Service):
         ```
         To create a disk with with the disk identifier and image identifier obtained
         with the `qemu-img info` command shown above, send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/disks
         ```
@@ -8193,7 +8193,7 @@ class DisksService(Service):
     ):
         """
         Get list of disks.
-        
+
         ```
         GET /ovirt-engine/api/disks
         ```
@@ -8912,7 +8912,7 @@ class DomainsService(Service):
         GET /ovirt-engine/api/domains
         ```
         Will return the list of domains:
-        
+
         ```xml
         <domains>
           <domain href="/ovirt-engine/api/domains/5678" id="5678">
@@ -9007,11 +9007,11 @@ class EventService(Service):
         """
         Get an event.
         An example of getting an event:
-        
+
         ```
         GET /ovirt-engine/api/events/123
         ```
-        
+
         ```xml
         <event href="/ovirt-engine/api/events/123" id="123">
           <description>Host example.com was added by admin@internal-authz.</description>
@@ -9071,7 +9071,7 @@ class EventService(Service):
         """
         Removes an event from internal audit log.
         An event can be removed by sending following request
-        
+
         ```
         DELETE /ovirt-engine/api/events/123
         ```
@@ -9144,7 +9144,7 @@ class EventSubscriptionService(Service):
         ```
         GET /ovirt-engine/api/users/123/vm_console_detected
         ```
-        
+
         ```xml
         <event-subscription href="/ovirt-engine/api/users/123/event-subscriptions/vm_console_detected">
           <event>vm_console_detected</event>
@@ -9252,7 +9252,7 @@ class EventSubscriptionsService(Service):
         POST /ovirt-engine/api/users/123/eventsubscriptions
         ```
         With a request body like this:
-        
+
         ```xml
         <event_subscription>
             <event>host_high_cpu_use</event>
@@ -9307,7 +9307,7 @@ class EventSubscriptionsService(Service):
         ```
         GET /ovirt-engine/api/users/123/event-subscriptions
         ```
-        
+
         ```xml
         <event-subscriptions>
           <event-subscription href="/ovirt-engine/api/users/123/event-subscriptions/host_install_failed">
@@ -9411,7 +9411,7 @@ class EventsService(Service):
         administrator of the system. For example, an external monitoring tool may be able to detect that a file system
         is full inside the guest operating system of a virtual machine. This event can be added to the internal audit
         log sending a request like this:
-        
+
         ```
         POST /ovirt-engine/api/events
         <event>
@@ -9423,7 +9423,7 @@ class EventsService(Service):
         ```
         Events can also be linked to specific objects. For example, the above event could be linked to the specific
         virtual machine where it happened, using the `vm` link:
-        
+
         ```
         POST /ovirt-engine/api/events
         <event>
@@ -9464,12 +9464,12 @@ class EventsService(Service):
     ):
         """
         Get list of events.
-        
+
         ```
         GET /ovirt-engine/api/events
         ```
         To the above request we get following response:
-        
+
         ```xml
         <events>
           <event href="/ovirt-engine/api/events/2" id="2">
@@ -9515,7 +9515,7 @@ class EventsService(Service):
         strictly increasing, so when this parameter is used only the events with greater indexes
         will be returned. For example, the following request will return only the events
         with indexes greater than `123`:
-        
+
         ```
         GET /ovirt-engine/api/events?from=123
         ```
@@ -9528,12 +9528,12 @@ class EventsService(Service):
         `search` \n
         The events service provides search queries similar to other resource services.
         We can search by providing specific severity.
-        
+
         ```
         GET /ovirt-engine/api/events?search=severity%3Dnormal
         ```
         To the above request we get a list of events which severity is equal to `normal`:
-        
+
         ```xml
         <events>
           <event href="/ovirt-engine/api/events/2" id="2">
@@ -9564,17 +9564,17 @@ class EventsService(Service):
         separates results into pages with the page command in a search query.
         The following search query tells the API to paginate results using a
         page value in combination with the sortby clause:
-        
+
         ```
         sortby time asc page 1
         ```
         Below example paginates event resources. The URL-encoded request is:
-        
+
         ```
         GET /ovirt-engine/api/events?search=sortby%20time%20asc%20page%201
         ```
         Increase the page value to view the next page of results.
-        
+
         ```
         GET /ovirt-engine/api/events?search=sortby%20time%20asc%20page%202
         ```
@@ -9717,7 +9717,7 @@ class ExternalComputeResourceService(Service):
         GET /ovirt-engine/api/externalhostproviders/123/computeresources/234
         ```
         It will return a response like this:
-        
+
         ```xml
         <external_compute_resource href="/ovirt-engine/api/externalhostproviders/123/computeresources/234" id="234">
           <name>hostname</name>
@@ -9798,7 +9798,7 @@ class ExternalComputeResourcesService(Service):
         GET /ovirt-engine/api/externalhostproviders/123/computeresources
         ```
         It will return a response like this:
-        
+
         ```xml
         <external_compute_resources>
           <external_compute_resource href="/ovirt-engine/api/externalhostproviders/123/computeresources/234" id="234">
@@ -9900,7 +9900,7 @@ class ExternalDiscoveredHostService(Service):
         GET /ovirt-engine/api/externalhostproviders/123/discoveredhosts/234
         ```
         The result will be like this:
-        
+
         ```xml
         <external_discovered_host href="/ovirt-engine/api/externalhostproviders/123/discoveredhosts/234" id="234">
          <name>mac001a4ad04040</name>
@@ -9976,11 +9976,11 @@ class ExternalDiscoveredHostsService(Service):
         Get list of discovered hosts' information.
         Discovered hosts are fetched from third-party providers such as Foreman.
         To list all discovered hosts for provider `123` send the following:
-        
+
         ```
         GET /ovirt-engine/api/externalhostproviders/123/discoveredhost
         ```
-        
+
         ```xml
         <external_discovered_hosts>
          <external_discovered_host href="/ovirt-engine/api/externalhostproviders/123/discoveredhosts/456" id="456">
@@ -10145,7 +10145,7 @@ class ExternalHostGroupService(Service):
         GET /ovirt-engine/api/externalhostproviders/123/hostgroups/234
         ```
         It will return a response like this:
-        
+
         ```xml
         <external_host_group href="/ovirt-engine/api/externalhostproviders/123/hostgroups/234" id="234">
           <name>rhel7</name>
@@ -10226,7 +10226,7 @@ class ExternalHostGroupsService(Service):
         GET /ovirt-engine/api/externalhostproviders/123/hostgroups
         ```
         The response will be like this:
-        
+
         ```xml
         <external_host_groups>
           <external_host_group href="/ovirt-engine/api/externalhostproviders/123/hostgroups/234" id="234">
@@ -10676,7 +10676,7 @@ class ExternalProviderService(Service):
         """
         In order to test connectivity for external provider we need
         to run following request where 123 is an id of a provider.
-        
+
         ```
         POST /ovirt-engine/api/externalhostproviders/123/testconnectivity
         ```
@@ -10755,12 +10755,12 @@ class ExternalProviderCertificateService(Service):
     ):
         """
         Get specific certificate.
-        
+
         ```
         GET /ovirt-engine/api/externalhostproviders/123/certificate/0
         ```
         And here is sample response:
-        
+
         ```xml
         <certificate id="0">
           <organization>provider.example.com</organization>
@@ -10831,12 +10831,12 @@ class ExternalProviderCertificatesService(Service):
     ):
         """
         Returns the chain of certificates presented by the external provider.
-        
+
         ```
         GET /ovirt-engine/api/externalhostproviders/123/certificates
         ```
         And here is sample response:
-        
+
         ```xml
         <certificates>
           <certificate id="789">...</certificate>
@@ -10929,12 +10929,12 @@ class ExternalTemplateImportsService(Service):
         """
         This operation is used to import a template from external hypervisor.
         For example import of a template OVA can be facilitated using the following request:
-        
+
         ```
         POST /externaltemplateimports
         ```
         With request body of type `ExternalTemplateImport`, for example:
-        
+
         ```xml
         <external_template_import>
           <template>
@@ -10992,12 +10992,12 @@ class ExternalVmImportsService(Service):
         """
         This operation is used to import a virtual machine from external hypervisor, such as KVM, XEN or VMware.
         For example import of a virtual machine from VMware can be facilitated using the following request:
-        
+
         ```
         POST /externalvmimports
         ```
         With request body of type `ExternalVmImport`, for example:
-        
+
         ```xml
         <external_vm_import>
           <vm>
@@ -11059,12 +11059,12 @@ class FenceAgentService(Service):
     ):
         """
         Gets details of this fence agent.
-        
+
         ```
         GET /ovirt-engine/api/hosts/123/fenceagents/0
         ```
         And here is sample response:
-        
+
         ```xml
         <agent id="0">
           <type>apc</type>
@@ -11116,7 +11116,7 @@ class FenceAgentService(Service):
     ):
         """
         Removes a fence agent for a specific host.
-        
+
         ```
         DELETE /ovirt-engine/api/hosts/123/fenceagents/0
         ```
@@ -11232,7 +11232,7 @@ class FenceAgentsService(Service):
     ):
         """
         Add a new fencing-agent to the host.
-        
+
         ```
         POST /ovirt-engine/api/hosts/123/fenceagents
         ```
@@ -11243,7 +11243,7 @@ class FenceAgentsService(Service):
         slot is mandatory.
 
         apc, bladecenter, wti fencing agent/s sample request:
-        
+
         ```xml
           <agent>
             <type>apc</type>
@@ -11256,7 +11256,7 @@ class FenceAgentsService(Service):
           </agent>
         ```
         apc_snmp, hpblade, ilo, ilo2, ilo_ssh, redfish, rsa fencing agent/s sample request:
-        
+
         ```xml
           <agent>
             <type>apc_snmp</type>
@@ -11269,7 +11269,7 @@ class FenceAgentsService(Service):
           </agent>
         ```
         cisco_ucs, drac5, eps fencing agent/s sample request:
-        
+
         ```xml
           <agent>
             <type>cisco_ucs</type>
@@ -11281,7 +11281,7 @@ class FenceAgentsService(Service):
           </agent>
         ```
         drac7, ilo3, ilo4, ipmilan, rsb fencing agent/s sample request:
-        
+
         ```xml
           <agent>
             <type>drac7</type>
@@ -11315,12 +11315,12 @@ class FenceAgentsService(Service):
     ):
         """
         Returns the list of fencing agents configured for the host.
-        
+
         ```
         GET /ovirt-engine/api/hosts/123/fenceagents
         ```
         And here is sample response:
-        
+
         ```xml
         <agents>
           <agent id="0">
@@ -11488,7 +11488,7 @@ class FilesService(Service):
         parameter to `true`.
         The default value of the `refresh` parameter is `true`, but it can be changed using the configuration value
         `ForceRefreshDomainFilesByDefault`:
-        
+
         ```
         # engine-config -s ForceRefreshDomainFilesByDefault=false
         ```
@@ -11839,12 +11839,12 @@ class GlusterBricksService(Service):
         bricks. The bricks that were previously marked for removal will now be used as normal bricks.
         For example, to retain the bricks that on glustervolume `123` from which data was migrated, send a request like
         this:
-        
+
         ```
         POST /ovirt-engine/api/clusters/567/glustervolumes/123/glusterbricks/activate
         ```
         With a request body like this:
-        
+
         ```xml
         <action>
           <bricks>
@@ -11908,12 +11908,12 @@ class GlusterBricksService(Service):
         needs to be passed. In case the replica count is being increased, then the number of bricks needs to be
         equivalent to the number of replica sets.
         For example, to add bricks to gluster volume `123`, send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/clusters/567/glustervolumes/123/glusterbricks
         ```
         With a request body like this:
-        
+
         ```xml
         <bricks>
           <brick>
@@ -11969,12 +11969,12 @@ class GlusterBricksService(Service):
         """
         Lists the bricks of a gluster volume.
         For example, to list bricks of gluster volume `123`, send a request like this:
-        
+
         ```
         GET /ovirt-engine/api/clusters/567/glustervolumes/123/glusterbricks
         ```
         Provides an output as below:
-        
+
         ```xml
         <bricks>
           <brick id="234">
@@ -12043,14 +12043,14 @@ class GlusterBricksService(Service):
         Removing bricks is a two-step process, where the data on bricks to be removed, is first migrated to remaining
         bricks. Once migration is completed the removal of bricks is confirmed via the API
         `GlusterBricksService.remove`. If at any point, the action needs to be cancelled
-        `GlusterBricksService.stop_migrate` has to be called.For instance, 
+        `GlusterBricksService.stop_migrate` has to be called.For instance,
         to delete a brick from a gluster volume with id `123`, send a request:
-        
+
         ```
         POST /ovirt-engine/api/clusters/567/glustervolumes/123/glusterbricks/migrate
         ```
         With a request body like this:
-        
+
         ```xml
         <action>
           <bricks>
@@ -12115,12 +12115,12 @@ class GlusterBricksService(Service):
         `GlusterBricksService.stop_migrate` and then removing them. If migrate was not called on
         bricks prior to remove, the bricks are removed without data migration which may lead to data loss.
         For example, to delete the bricks from gluster volume `123`, send a request like this:
-        
+
         ```
         DELETE /ovirt-engine/api/clusters/567/glustervolumes/123/glusterbricks
         ```
         With a request body like this:
-        
+
         ```xml
         <bricks>
           <brick>
@@ -12190,12 +12190,12 @@ class GlusterBricksService(Service):
         continue using the bricks. The bricks that were marked for removal will function as normal bricks post this
         operation.
         For example, to stop migration of data from the bricks of gluster volume `123`, send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/clusters/567/glustervolumes/123/glusterbricks/stopmigrate
         ```
         With a request body like this:
-        
+
         ```xml
         <bricks>
           <brick>
@@ -12613,12 +12613,12 @@ class GlusterVolumesService(Service):
         The volume is created based on properties of the `volume` parameter. The properties `name`, `volume_type` and
         `bricks` are required.
         For example, to add a volume with name `myvolume` to the cluster `123`, send the following request:
-        
+
         ```
         POST /ovirt-engine/api/clusters/123/glustervolumes
         ```
         With the following request body:
-        
+
         ```xml
         <gluster_volume>
           <name>myvolume</name>
@@ -12683,7 +12683,7 @@ class GlusterVolumesService(Service):
         Lists all gluster volumes in the cluster.
         For example, to list all Gluster Volumes in cluster `456`, send a request like
         this:
-        
+
         ```
         GET /ovirt-engine/api/clusters/456/glustervolumes
         ```
@@ -12792,7 +12792,7 @@ class GroupService(Service):
         GET /ovirt-engine/api/groups/123
         ```
         Will return the group information:
-        
+
         ```xml
         <group href="/ovirt-engine/api/groups/123" id="123">
           <name>mygroup</name>
@@ -12951,12 +12951,12 @@ class GroupsService(Service):
         Add group from a directory service. Please note that domain name is name of the authorization provider.
         For example, to add the `Developers` group from the `internal-authz` authorization provider send a request
         like this:
-        
+
         ```
         POST /ovirt-engine/api/groups
         ```
         With a request body like this:
-        
+
         ```xml
         <group>
           <name>Developers</name>
@@ -13010,7 +13010,7 @@ class GroupsService(Service):
         GET /ovirt-engine/api/groups
         ```
         Will return the list of groups:
-        
+
         ```xml
         <groups>
           <group href="/ovirt-engine/api/groups/123" id="123">
@@ -13186,11 +13186,11 @@ class HostDeviceService(Service):
         """
         Retrieve information about a particular host's device.
         An example of getting a host device:
-        
+
         ```
         GET /ovirt-engine/api/hosts/123/devices/456
         ```
-        
+
         ```xml
         <host_device href="/ovirt-engine/api/hosts/123/devices/456" id="456">
           <name>usb_1_9_1_1_0</name>
@@ -13665,12 +13665,12 @@ class HostStorageService(Service):
     ):
         """
         Get list of storages.
-        
+
         ```
         GET /ovirt-engine/api/hosts/123/storage
         ```
         The XML response you get will be like this one:
-        
+
         ```xml
         <host_storages>
           <host_storage id="123">
@@ -13691,7 +13691,7 @@ class HostStorageService(Service):
         This parameter will give the option to not perform the status check of the LUNs.
         The default is `true` for backward compatibility.
         Here an example with the LUN status :
-        
+
         ```xml
         <host_storage id="123">
           <logical_units>
@@ -13711,7 +13711,7 @@ class HostStorageService(Service):
         </host_storage>
         ```
         Here an example without the LUN status :
-        
+
         ```xml
         <host_storage id="123">
           <logical_units>
@@ -13812,12 +13812,12 @@ class HostsService(Service):
         The host is created based on the attributes of the `host` parameter. The `name`, `address`, and `root_password`
         properties are required.
         For example, to add a host, send the following request:
-        
+
         ```
         POST /ovirt-engine/api/hosts
         ```
         With the following request body:
-        
+
         ```xml
         <host>
           <name>myhost</name>
@@ -13830,7 +13830,7 @@ class HostsService(Service):
         IMPORTANT: Since version 4.1.2 of the engine, when a host is newly added, the host's firewall
         definitions are overridden by default.
         To add a hosted engine host, use the optional `deploy_hosted_engine` parameter:
-        
+
         ```
         POST /ovirt-engine/api/hosts?deploy_hosted_engine=true
         ```
@@ -13839,13 +13839,13 @@ class HostsService(Service):
         Only external network providers for OVN are supported for the automatic deployment.
         To deploy an external network provider other than the one defined in the clusters, overwrite the external
         network provider when adding hosts, by sending the following request:
-        
+
         ```
         POST /ovirt-engine/api/hosts
         ```
         With a request body that contains a reference to the desired provider in the
         `external_network_provider_configuration`:
-        
+
         ```xml
         <host>
           <name>myhost</name>
@@ -13924,7 +13924,7 @@ class HostsService(Service):
         GET /ovirt-engine/api/hosts
         ```
         The response body will be similar to this:
-        
+
         ```xml
         <hosts>
           <host href="/ovirt-engine/api/hosts/123" id="123">
@@ -14201,12 +14201,12 @@ class IconService(Service):
     ):
         """
         Get an icon.
-        
+
         ```
         GET /ovirt-engine/api/icons/123
         ```
         You will get a XML response like this one:
-        
+
         ```xml
         <icon id="123">
           <data>Some binary data here</data>
@@ -14276,12 +14276,12 @@ class IconsService(Service):
     ):
         """
         Get a list of icons.
-        
+
         ```
         GET /ovirt-engine/api/icons
         ```
         You will get a XML response which is similar to this one:
-        
+
         ```xml
         <icons>
           <icon id="123">
@@ -14768,12 +14768,12 @@ class ImageTransfersService(Service):
         *Creating a new image transfer for downloading or uploading a `disk`:*
         To create an image transfer to download or upload a disk with id `123`,
         send the following request:
-        
+
         ```
         POST /ovirt-engine/api/imagetransfers
         ```
         With a request body like this:
-        
+
         ```xml
         <image_transfer>
           <disk id="123"/>
@@ -14783,12 +14783,12 @@ class ImageTransfersService(Service):
         *Creating a new image transfer for downloading or uploading a `disk_snapshot`:*
         To create an image transfer to download or upload a `disk_snapshot` with id `456`,
         send the following request:
-        
+
         ```
         POST /ovirt-engine/api/imagetransfers
         ```
         With a request body like this:
-        
+
         ```xml
         <image_transfer>
           <snapshot id="456"/>
@@ -15094,7 +15094,7 @@ class InstanceTypeService(Service):
     ):
         """
         Get a specific instance type and it's attributes.
-        
+
         ```
         GET /ovirt-engine/api/instancetypes/123
         ```
@@ -15140,7 +15140,7 @@ class InstanceTypeService(Service):
         Removes a specific instance type from the system.
         If a virtual machine was created using an instance type X after removal of the instance type
         the virtual machine's instance type will be set to `custom`.
-        
+
         ```
         DELETE /ovirt-engine/api/instancetypes/123
         ```
@@ -15193,7 +15193,7 @@ class InstanceTypeService(Service):
         If a virtual machine was created using an instance type X and some configuration in instance
         type X was updated, the virtual machine's configuration will be updated automatically by the
         engine.
-        
+
         ```
         PUT /ovirt-engine/api/instancetypes/123
         ```
@@ -16004,19 +16004,19 @@ class InstanceTypesService(Service):
         Creates a new instance type.
         This requires only a name attribute and can include all hardware configurations of the
         virtual machine.
-        
+
         ```
         POST /ovirt-engine/api/instancetypes
         ```
         With a request body like this:
-        
+
         ```xml
         <instance_type>
           <name>myinstancetype</name>
         </template>
         ```
         Creating an instance type with all hardware configurations with a request body like this:
-        
+
         ```xml
         <instance_type>
           <name>myinstancetype</name>
@@ -16241,7 +16241,7 @@ class IscsiBondService(Service):
         """
         Removes of an existing iSCSI bond.
         For example, to remove the iSCSI bond `456` send a request like this:
-        
+
         ```
         DELETE /ovirt-engine/api/datacenters/123/iscsibonds/456
         ```
@@ -16292,12 +16292,12 @@ class IscsiBondService(Service):
         Updates an iSCSI bond.
         Updating of an iSCSI bond can be done on the `name` and the `description` attributes only. For example, to
         update the iSCSI bond `456` of data center `123`, send a request like this:
-        
+
         ```
         PUT /ovirt-engine/api/datacenters/123/iscsibonds/1234
         ```
         The request body should look like this:
-        
+
         ```xml
         <iscsi_bond>
            <name>mybond</name>
@@ -16389,12 +16389,12 @@ class IscsiBondsService(Service):
         Create a new iSCSI bond on a data center.
         For example, to create a new iSCSI bond on data center `123` using storage connections `456` and `789`, send a
         request like this:
-        
+
         ```
         POST /ovirt-engine/api/datacenters/123/iscsibonds
         ```
         The request body should look like this:
-        
+
         ```xml
         <iscsi_bond>
           <name>mybond</name>
@@ -16514,12 +16514,12 @@ class JobService(Service):
         """
         Set an external job execution to be cleared by the system.
         For example, to set a job with identifier `123` send the following request:
-        
+
         ```
         POST /ovirt-engine/api/jobs/clear
         ```
         With the following request body:
-        
+
         ```xml
         <action/>
         ```
@@ -16569,12 +16569,12 @@ class JobService(Service):
         """
         Marks an external job execution as ended.
         For example, to terminate a job with identifier `123` send the following request:
-        
+
         ```
         POST /ovirt-engine/api/jobs/end
         ```
         With the following request body:
-        
+
         ```xml
         <action>
           <force>true</force>
@@ -16635,12 +16635,12 @@ class JobService(Service):
     ):
         """
         Retrieves a job.
-        
+
         ```
         GET /ovirt-engine/api/jobs/123
         ```
         You will receive response in XML like this one:
-        
+
         ```xml
         <job href="/ovirt-engine/api/jobs/123" id="123">
           <actions>
@@ -16733,12 +16733,12 @@ class JobsService(Service):
         """
         Add an external job.
         For example, to add a job with the following request:
-        
+
         ```
         POST /ovirt-engine/api/jobs
         ```
         With the following request body:
-        
+
         ```xml
         <job>
           <description>Doing some work</description>
@@ -16746,7 +16746,7 @@ class JobsService(Service):
         </job>
         ```
         The response should look like:
-        
+
         ```xml
         <job href="/ovirt-engine/api/jobs/123" id="123">
           <actions>
@@ -16803,12 +16803,12 @@ class JobsService(Service):
     ):
         """
         Retrieves the representation of the jobs.
-        
+
         ```
         GET /ovirt-engine/api/jobs
         ```
         You will receive response in XML like this one:
-        
+
         ```xml
         <jobs>
           <job href="/ovirt-engine/api/jobs/123" id="123">
@@ -16929,12 +16929,12 @@ class KatelloErrataService(Service):
     ):
         """
         Retrieves the representation of the Katello errata.
-        
+
         ```
         GET /ovirt-engine/api/katelloerrata
         ```
         You will receive response in XML like this one:
-        
+
         ```xml
         <katello_errata>
           <katello_erratum href="/ovirt-engine/api/katelloerrata/123" id="123">
@@ -17038,12 +17038,12 @@ class KatelloErratumService(Service):
     ):
         """
         Retrieves a Katello erratum.
-        
+
         ```
         GET /ovirt-engine/api/katelloerrata/123
         ```
         You will receive response in XML like this one:
-        
+
         ```xml
         <katello_erratum href="/ovirt-engine/api/katelloerrata/123" id="123">
           <name>RHBA-2013:XYZ</name>
@@ -17220,7 +17220,7 @@ class MacPoolService(Service):
         """
         Removes a MAC address pool.
         For example, to remove the MAC address pool having id `123` send a request like this:
-        
+
         ```
         DELETE /ovirt-engine/api/macpools/123
         ```
@@ -17271,12 +17271,12 @@ class MacPoolService(Service):
         Updates a MAC address pool.
         The `name`, `description`, `allow_duplicates`, and `ranges` attributes can be updated.
         For example, to update the MAC address pool of id `123` send a request like this:
-        
+
         ```
         PUT /ovirt-engine/api/macpools/123
         ```
         With a request body like this:
-        
+
         ```xml
         <mac_pool>
           <name>UpdatedMACPool</name>
@@ -17359,12 +17359,12 @@ class MacPoolsService(Service):
         Creates a new MAC address pool.
         Creation of a MAC address pool requires values for the `name` and `ranges` attributes.
         For example, to create MAC address pool send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/macpools
         ```
         With a request body like this:
-        
+
         ```xml
         <mac_pool>
           <name>MACPool</name>
@@ -17576,12 +17576,12 @@ class NetworkService(Service):
         """
         Gets a logical network.
         For example:
-        
+
         ```
         GET /ovirt-engine/api/networks/123
         ```
         Will respond:
-        
+
         ```xml
         <network href="/ovirt-engine/api/networks/123" id="123">
           <name>ovirtmgmt</name>
@@ -17638,7 +17638,7 @@ class NetworkService(Service):
         """
         Removes a logical network, or the association of a logical network to a data center.
         For example, to remove the logical network `123` send a request like this:
-        
+
         ```
         DELETE /ovirt-engine/api/networks/123
         ```
@@ -17646,7 +17646,7 @@ class NetworkService(Service):
         result as if we would just remove that network. However it might be more specific to say we're removing network
         `456` of data center `123`.
         For example, to remove the association of network `456` to data center `123` send a request like this:
-        
+
         ```
         DELETE /ovirt-engine/api/datacenters/123/networks/456
         ```
@@ -17702,12 +17702,12 @@ class NetworkService(Service):
         Updates a logical network.
         The `name`, `description`, `ip`, `vlan`, `stp` and `display` attributes can be updated.
         For example, to update the description of the logical network `123` send a request like this:
-        
+
         ```
         PUT /ovirt-engine/api/networks/123
         ```
         With a request body like this:
-        
+
         ```xml
         <network>
           <description>My updated description</description>
@@ -17716,12 +17716,12 @@ class NetworkService(Service):
         The maximum transmission unit of a network is set using a PUT request to
         specify the integer value of the `mtu` attribute.
         For example, to set the maximum transmission unit send a request like this:
-        
+
         ```
         PUT /ovirt-engine/api/datacenters/123/networks/456
         ```
         With a request body like this:
-        
+
         ```xml
         <network>
           <mtu>1500</mtu>
@@ -18034,7 +18034,7 @@ class NetworkAttachmentsService(Service):
 class NetworkFilterService(Service):
     """
     Manages a network filter.
-    
+
     ```xml
     <network_filter id="00000019-0019-0019-0019-00000000026b">
       <name>example-network-filter-b</name>
@@ -18121,12 +18121,12 @@ class NetworkFiltersService(Service):
     Please note, that if a network is assigned to cluster with a version supporting a network filter, the filter
     may not be available due to the data center version being smaller then the network filter's version.
     Example of listing all of the supported network filters for a specific cluster:
-    
+
     ```
     GET http://localhost:8080/ovirt-engine/api/clusters/{cluster:id}/networkfilters
     ```
     Output:
-    
+
     ```xml
     <network_filters>
       <network_filter id="00000019-0019-0019-0019-00000000026c">
@@ -18284,7 +18284,7 @@ class NetworkLabelService(Service):
         """
         Removes a label from a logical network.
         For example, to remove the label `exemplary` from a logical network having id `123` send the following request:
-        
+
         ```
         DELETE /ovirt-engine/api/networks/123/networklabels/exemplary
         ```
@@ -18357,12 +18357,12 @@ class NetworkLabelsService(Service):
         You can attach labels to a logical network to automate the association of that logical network with physical host
         network interfaces to which the same label has been attached.
         For example, to attach the label `mylabel` to a logical network having id `123` send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/networks/123/networklabels
         ```
         With a request body like this:
-        
+
         ```xml
         <network_label id="mylabel"/>
         ```
@@ -18477,12 +18477,12 @@ class NetworksService(Service):
         Creates a new logical network, or associates an existing network with a data center.
         Creation of a new network requires the `name` and `data_center` elements.
         For example, to create a network named `mynetwork` for data center `123` send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/networks
         ```
         With a request body like this:
-        
+
         ```xml
         <network>
           <name>mynetwork</name>
@@ -18490,12 +18490,12 @@ class NetworksService(Service):
         </network>
         ```
         To associate the existing network `456` with the data center `123` send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/datacenters/123/networks
         ```
         With a request body like this:
-        
+
         ```xml
         <network>
           <name>ovirtmgmt</name>
@@ -18503,11 +18503,11 @@ class NetworksService(Service):
         ```
         To create a network named `exnetwork` on top of an external _OpenStack_ network provider `456` send a request
         like this:
-        
+
         ```
         POST /ovirt-engine/api/networks
         ```
-        
+
         ```xml
         <network>
           <name>exnetwork</name>
@@ -18543,12 +18543,12 @@ class NetworksService(Service):
         """
         List logical networks.
         For example:
-        
+
         ```
         GET /ovirt-engine/api/networks
         ```
         Will respond:
-        
+
         ```xml
         <networks>
           <network href="/ovirt-engine/api/networks/123" id="123">
@@ -18706,7 +18706,7 @@ class NicNetworkFilterParameterService(Service):
         Removes the filter parameter.
         For example, to remove the filter parameter with id `123` on NIC `456` of virtual machine `789`
         send a request like this:
-        
+
         ```
         DELETE /ovirt-engine/api/vms/789/nics/456/networkfilterparameters/123
         ```
@@ -18735,12 +18735,12 @@ class NicNetworkFilterParameterService(Service):
         Updates the network filter parameter.
         For example, to update the network filter parameter having with with id `123` on NIC `456` of
         virtual machine `789` send a request like this:
-        
+
         ```
         PUT /ovirt-engine/api/vms/789/nics/456/networkfilterparameters/123
         ```
         With a request body like this:
-        
+
         ```xml
         <network_filter_parameter>
           <name>updatedName</name>
@@ -18808,12 +18808,12 @@ class NicNetworkFilterParametersService(Service):
         Add a network filter parameter.
         For example, to add the parameter for the network filter on NIC `456` of
         virtual machine `789` send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/vms/789/nics/456/networkfilterparameters
         ```
         With a request body like this:
-        
+
         ```xml
         <network_filter_parameter>
           <name>IP</name>
@@ -18974,12 +18974,12 @@ class OpenstackImageService(Service):
         Imports a virtual machine from a Glance image storage domain.
         For example, to import the image with identifier `456` from the
         storage domain with identifier `123` send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/openstackimageproviders/123/images/456/import
         ```
         With a request body like this:
-        
+
         ```xml
         <action>
           <storage_domain>
@@ -19176,7 +19176,7 @@ class OpenstackImageProviderService(ExternalProviderService):
         """
         In order to test connectivity for external provider we need
         to run following request where 123 is an id of a provider.
-        
+
         ```
         POST /ovirt-engine/api/externalhostproviders/123/testconnectivity
         ```
@@ -19616,7 +19616,7 @@ class OpenstackNetworkProviderService(ExternalProviderService):
         """
         Returns the representation of the object managed by this service.
         For example, to get the OpenStack network provider with identifier `1234`, send a request like this:
-        
+
         ```
         GET /ovirt-engine/api/openstacknetworkproviders/1234
         ```
@@ -19687,7 +19687,7 @@ class OpenstackNetworkProviderService(ExternalProviderService):
         """
         Removes the provider.
         For example, to remove the OpenStack network provider with identifier `1234`, send a request like this:
-        
+
         ```
         DELETE /ovirt-engine/api/openstacknetworkproviders/1234
         ```
@@ -19736,7 +19736,7 @@ class OpenstackNetworkProviderService(ExternalProviderService):
         """
         In order to test connectivity for external provider we need
         to run following request where 123 is an id of a provider.
-        
+
         ```
         POST /ovirt-engine/api/externalhostproviders/123/testconnectivity
         ```
@@ -19786,12 +19786,12 @@ class OpenstackNetworkProviderService(ExternalProviderService):
         Updates the provider.
         For example, to update `provider_name`, `requires_authentication`, `url`, `tenant_name` and `type` properties,
         for the OpenStack network provider with identifier `1234`, send a request like this:
-        
+
         ```
         PUT /ovirt-engine/api/openstacknetworkproviders/1234
         ```
         With a request body like this:
-        
+
         ```xml
         <openstack_network_provider>
           <name>ovn-network-provider</name>
@@ -20630,7 +20630,7 @@ class OpenstackVolumeProviderService(ExternalProviderService):
         """
         In order to test connectivity for external provider we need
         to run following request where 123 is an id of a provider.
-        
+
         ```
         POST /ovirt-engine/api/externalhostproviders/123/testconnectivity
         ```
@@ -20762,12 +20762,12 @@ class OpenstackVolumeProvidersService(Service):
         """
         Adds a new volume provider.
         For example:
-        
+
         ```
         POST /ovirt-engine/api/openstackvolumeproviders
         ```
         With a request body like this:
-        
+
         ```xml
         <openstack_volume_provider>
           <name>mycinder</name>
@@ -21273,7 +21273,7 @@ class PermitService(Service):
         ```
         GET /ovirt-engine/api/roles/123/permits/456
         ```
-        
+
         ```xml
         <permit href="/ovirt-engine/api/roles/123/permits/456" id="456">
           <name>change_vm_cd</name>
@@ -21396,7 +21396,7 @@ class PermitsService(Service):
         POST /ovirt-engine/api/roles/123/permits
         ```
         With a request body like this:
-        
+
         ```xml
         <permit>
           <name>create_vm</name>
@@ -21444,7 +21444,7 @@ class PermitsService(Service):
         ```
         GET /ovirt-engine/api/roles/123/permits
         ```
-        
+
         ```xml
         <permits>
           <permit href="/ovirt-engine/api/roles/123/permits/5" id="5">
@@ -21539,12 +21539,12 @@ class QosService(Service):
     ):
         """
         Get specified QoS in the data center.
-        
+
         ```
         GET /ovirt-engine/api/datacenters/123/qoss/123
         ```
         You will get response like this one below:
-        
+
         ```xml
         <qos href="/ovirt-engine/api/datacenters/123/qoss/123" id="123">
           <name>123</name>
@@ -21595,7 +21595,7 @@ class QosService(Service):
     ):
         """
         Remove specified QoS from datacenter.
-        
+
         ```
         DELETE /ovirt-engine/api/datacenters/123/qoss/123
         ```
@@ -21644,19 +21644,19 @@ class QosService(Service):
     ):
         """
         Update the specified QoS in the dataCenter.
-        
+
         ```
         PUT /ovirt-engine/api/datacenters/123/qoss/123
         ```
         For example with curl:
-        
+
         ```
         curl -u admin@internal:123456 -X PUT -H "content-type: application/xml" -d \
         "<qos><name>321</name><description>321</description><max_iops>10</max_iops></qos>" \
         https://engine/ovirt-engine/api/datacenters/123/qoss/123
         ```
         You will receive response like this:
-        
+
         ```xml
         <qos href="/ovirt-engine/api/datacenters/123/qoss/123" id="123">
           <name>321</name>
@@ -21734,12 +21734,12 @@ class QossService(Service):
     ):
         """
         Add a new QoS to the dataCenter.
-        
+
         ```
         POST /ovirt-engine/api/datacenters/123/qoss
         ```
         The response will look as follows:
-        
+
         ```xml
         <qos href="/ovirt-engine/api/datacenters/123/qoss/123" id="123">
           <name>123</name>
@@ -21787,7 +21787,7 @@ class QossService(Service):
     ):
         """
         Returns the list of _quality of service_ configurations available in the data center.
-        
+
         ```
         GET /ovirt-engine/api/datacenter/123/qoss
         ```
@@ -21884,11 +21884,11 @@ class QuotaService(Service):
         """
         Retrieves a quota.
         An example of retrieving a quota:
-        
+
         ```
         GET /ovirt-engine/api/datacenters/123/quotas/456
         ```
-        
+
         ```xml
         <quota id="456">
           <name>myquota</name>
@@ -21940,7 +21940,7 @@ class QuotaService(Service):
         """
         Delete a quota.
         An example of deleting a quota:
-        
+
         ```
         DELETE /ovirt-engine/api/datacenters/123-456/quotas/654-321
         -0472718ab224 HTTP/1.1
@@ -21993,11 +21993,11 @@ class QuotaService(Service):
         """
         Updates a quota.
         An example of updating a quota:
-        
+
         ```
         PUT /ovirt-engine/api/datacenters/123/quotas/456
         ```
-        
+
         ```xml
         <quota>
           <cluster_hard_limit_pct>30</cluster_hard_limit_pct>
@@ -22386,24 +22386,24 @@ class QuotaStorageLimitsService(Service):
         """
         Adds a storage limit to a specified quota.
         To create a 100GiB storage limit for all storage domains in a data center, send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/datacenters/123/quotas/456/quotastoragelimits
         ```
         With a request body like this:
-        
+
         ```xml
         <quota_storage_limit>
           <limit>100</limit>
         </quota_storage_limit>
         ```
         To create a 50GiB storage limit for a storage domain with the ID `000`, send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/datacenters/123/quotas/456/quotastoragelimits
         ```
         With a request body like this:
-        
+
         ```xml
         <quota_storage_limit>
           <limit>50</limit>
@@ -22517,11 +22517,11 @@ class QuotasService(Service):
         """
         Creates a new quota.
         An example of creating a new quota:
-        
+
         ```
         POST /ovirt-engine/api/datacenters/123/quotas
         ```
-        
+
         ```xml
         <quota>
           <name>myquota</name>
@@ -22632,12 +22632,12 @@ class RoleService(Service):
     ):
         """
         Get the role.
-        
+
         ```
         GET /ovirt-engine/api/roles/123
         ```
         You will receive XML response like this one:
-        
+
         ```xml
         <role id="123">
           <name>MyRole</name>
@@ -22688,7 +22688,7 @@ class RoleService(Service):
         """
         Removes the role.
         To remove the role you need to know its id, then send request like this:
-        
+
         ```
         DELETE /ovirt-engine/api/roles/{role_id}
         ```
@@ -22740,12 +22740,12 @@ class RoleService(Service):
         created. Within this endpoint you can't add or remove roles permits you need to use `PermitsService`
         that manages permits of role.
         For example to update role's `name`, `description` and `administrative` attributes send a request like this:
-        
+
         ```
         PUT /ovirt-engine/api/roles/123
         ```
         With a request body like this:
-        
+
         ```xml
         <role>
           <name>MyNewRoleName</name>
@@ -22833,12 +22833,12 @@ class RolesService(Service):
         Create a new role. The role can be administrative or non-administrative and can have different permits.
         For example, to add the `MyRole` non-administrative role with permits to login and create virtual machines
         send a request like this (note that you have to pass permit id):
-        
+
         ```
         POST /ovirt-engine/api/roles
         ```
         With a request body like this:
-        
+
         ```xml
         <role>
           <name>MyRole</name>
@@ -22888,12 +22888,12 @@ class RolesService(Service):
     ):
         """
         List roles.
-        
+
         ```
         GET /ovirt-engine/api/roles
         ```
         You will receive response in XML like this one:
-        
+
         ```xml
         <roles>
           <role id="123">
@@ -23562,12 +23562,12 @@ class SnapshotService(Service):
         Restores a virtual machine snapshot.
         For example, to restore the snapshot with identifier `456` of virtual machine with identifier `123` send a
         request like this:
-        
+
         ```
         POST /ovirt-engine/api/vms/123/snapshots/456/restore
         ```
         With an empty `action` in the body:
-        
+
         ```xml
         <action/>
         ```
@@ -23581,12 +23581,12 @@ class SnapshotService(Service):
         For each disk parameter, it is also required to specify its `image_id`.
         For example, to restore a snapshot with an identifier `456` of a virtual machine with identifier `123`, including
         a disk with identifier `111` and `image_id` of `222`, send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/vms/123/snapshots/456/restore
         ```
         Request body:
-        
+
         ```xml
         <action>
           <disks>
@@ -24104,12 +24104,12 @@ class SnapshotsService(Service):
         """
         Creates a virtual machine snapshot.
         For example, to create a new snapshot for virtual machine `123` send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/vms/123/snapshots
         ```
         With a request body like this:
-        
+
         ```xml
         <snapshot>
           <description>My snapshot</description>
@@ -24124,7 +24124,7 @@ class SnapshotsService(Service):
         This is used in order to restore a chain of images from backup. I.e. when restoring
         a disk with snapshots, the relevant `image_id` should be specified for each snapshot
         (so the identifiers of the disk snapshots are identical to the backup).
-        
+
         ```xml
         <snapshot>
           <description>My snapshot</description>
@@ -24139,12 +24139,12 @@ class SnapshotsService(Service):
         ```
         [IMPORTANT]
         ====
-        When a snapshot is created, the default value for the `ovirtsdk4.types.Snapshot.persist_memorystate` attribute is `true`. 
-        That means that the content of the memory of the virtual machine will be included in the snapshot, 
-        and it also means that the virtual machine will be pausedfor a longer time. 
+        When a snapshot is created, the default value for the `ovirtsdk4.types.Snapshot.persist_memorystate` attribute is `true`.
+        That means that the content of the memory of the virtual machine will be included in the snapshot,
+        and it also means that the virtual machine will be pausedfor a longer time.
         That can negatively affect applications that are very sensitive to timing (NTP
         servers, for example). In those cases make sure that you set the attribute to `false`:
-        
+
         ```xml
         <snapshot>
           <description>My snapshot</description>
@@ -24424,12 +24424,12 @@ class SshPublicKeysService(Service):
         Returns a list of SSH public keys of the user.
         For example, to retrieve the list of SSH keys of user with identifier `123`,
         send a request like this:
-        
+
         ```
         GET /ovirt-engine/api/users/123/sshpublickeys
         ```
         The result will be the following XML document:
-        
+
         ```xml
         <ssh_public_keys>
           <ssh_public_key href="/ovirt-engine/api/users/123/sshpublickeys/456" id="456">
@@ -24593,12 +24593,12 @@ class StatisticsService(Service):
         Retrieves a list of statistics.
         For example, to retrieve the statistics for virtual machine `123` send a
         request like this:
-        
+
         ```
         GET /ovirt-engine/api/vms/123/statistics
         ```
         The result will be like this:
-        
+
         ```xml
         <statistics>
           <statistic href="/ovirt-engine/api/vms/123/statistics/456" id="456">
@@ -24618,12 +24618,12 @@ class StatisticsService(Service):
         </statistics>
         ```
         Just a single part of the statistics can be retrieved by specifying its id at the end of the URI. That means:
-        
+
         ```
         GET /ovirt-engine/api/vms/123/statistics/456
         ```
         Outputs:
-        
+
         ```xml
         <statistic href="/ovirt-engine/api/vms/123/statistics/456" id="456">
           <name>memory.installed</name>
@@ -24724,12 +24724,12 @@ class StepService(MeasurableService):
         Marks an external step execution as ended.
         For example, to terminate a step with identifier `456` which belongs to a `job` with identifier `123` send the
         following request:
-        
+
         ```
         POST /ovirt-engine/api/jobs/123/steps/456/end
         ```
         With the following request body:
-        
+
         ```xml
         <action>
           <force>true</force>
@@ -24790,12 +24790,12 @@ class StepService(MeasurableService):
     ):
         """
         Retrieves a step.
-        
+
         ```
         GET /ovirt-engine/api/jobs/123/steps/456
         ```
         You will receive response in XML like this one:
-        
+
         ```xml
         <step href="/ovirt-engine/api/jobs/123/steps/456" id="456">
           <actions>
@@ -24884,12 +24884,12 @@ class StepsService(Service):
         Add an external step to an existing job or to an existing step.
         For example, to add a step to `job` with identifier `123` send the
         following request:
-        
+
         ```
         POST /ovirt-engine/api/jobs/123/steps
         ```
         With the following request body:
-        
+
         ```xml
         <step>
           <description>Validating</description>
@@ -24899,7 +24899,7 @@ class StepsService(Service):
         </step>
         ```
         The response should look like:
-        
+
         ```xml
         <step href="/ovirt-engine/api/jobs/123/steps/456" id="456">
           <actions>
@@ -24953,12 +24953,12 @@ class StepsService(Service):
     ):
         """
         Retrieves the representation of the steps.
-        
+
         ```
         GET /ovirt-engine/api/job/123/steps
         ```
         You will receive response in XML like this one:
-        
+
         ```xml
         <steps>
           <step href="/ovirt-engine/api/jobs/123/steps/456" id="456">
@@ -25066,7 +25066,7 @@ class StorageService(Service):
         This parameter will give the option to not perform the status check of the LUNs.
         The default is `true` for backward compatibility.
         Here an example with the LUN status :
-        
+
         ```xml
         <host_storage id="360014051136c20574f743bdbd28177fd">
           <logical_units>
@@ -25086,7 +25086,7 @@ class StorageService(Service):
         </host_storage>
         ```
         Here an example without the LUN status :
-        
+
         ```xml
         <host_storage id="360014051136c20574f743bdbd28177fd">
           <logical_units>
@@ -25275,12 +25275,12 @@ class StorageDomainService(Service):
         In order to do so the data stored on the provided logical units will be moved to other logical units of the
         storage domain and only then they will be reduced from the storage domain.
         For example, in order to reduce two logical units from a storage domain send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/storageDomains/123/reduceluns
         ```
         With a request body like this:
-        
+
         ```xml
          <action>
            <logical_units>
@@ -25336,12 +25336,12 @@ class StorageDomainService(Service):
         This action forces a rescan of the provided LUNs and
         updates the database with the new size, if required.
         For example, in order to refresh the size of two LUNs send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/storageDomains/262b056b-aede-40f1-9666-b883eff59d40/refreshluns
         ```
         With a request body like this:
-        
+
         ```xml
          <action>
            <logical_units>
@@ -25418,7 +25418,7 @@ class StorageDomainService(Service):
         case the `host` parameter will be ignored.
         The value should contain the name or the identifier of the host. For example, to use the host named `myhost`
         to remove the storage domain with identifier `123` send a request like this:
-        
+
         ```
         DELETE /ovirt-engine/api/storageDomains/123?host=myhost
         ```
@@ -25426,7 +25426,7 @@ class StorageDomainService(Service):
         `format` \n
         Indicates if the actual storage should be formatted, removing all the metadata from the underlying LUN or
         directory:
-        
+
         ```
         DELETE /ovirt-engine/api/storageDomains/123?format=true
         ```
@@ -25435,7 +25435,7 @@ class StorageDomainService(Service):
         `destroy` \n
         Indicates if the operation should succeed, and the storage domain removed from the database, even if the
         storage is not accessible.
-        
+
         ```
         DELETE /ovirt-engine/api/storageDomains/123?destroy=true
         ```
@@ -25500,12 +25500,12 @@ class StorageDomainService(Service):
         property of disks that already exist).
         To update the `name` and `wipe_after_delete` attributes of a storage domain with an identifier `123`, send a
         request as follows:
-        
+
         ```
         PUT /ovirt-engine/api/storageDomains/123
         ```
         With a request body as follows:
-        
+
         ```xml
         <storage_domain>
           <name>data2</name>
@@ -25940,7 +25940,7 @@ class StorageDomainDiskService(MeasurableService):
         """
         Exports a disk to an export storage domain.
         IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. To export a disk use the `DiskService.export` 
+        compatibility. It will be removed in the future. To export a disk use the `DiskService.export`
         operation of the service that manages that disk.
 
 
@@ -26176,7 +26176,7 @@ class StorageDomainDiskService(MeasurableService):
         """
         Updates the disk.
         IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. To update a disk use the `DiskService.update` operation 
+        compatibility. It will be removed in the future. To update a disk use the `DiskService.update` operation
         of the service that manages that disk.
 
 
@@ -26646,7 +26646,7 @@ class StorageDomainTemplateService(Service):
         """
         Action to import a template from an export storage domain.
         For example, to import the template `456` from the storage domain `123` send the following request:
-        
+
         ```
         POST /ovirt-engine/api/storagedomains/123/templates/456/import
         ```
@@ -27020,12 +27020,12 @@ class StorageDomainVmService(Service):
         """
         Imports a virtual machine from an export storage domain.
         For example, send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/storagedomains/123/vms/456/import
         ```
         With a request body like this:
-        
+
         ```xml
         <action>
           <storage_domain>
@@ -27037,7 +27037,7 @@ class StorageDomainVmService(Service):
         </action>
         ```
         To import a virtual machine as a new entity add the `clone` parameter:
-        
+
         ```xml
         <action>
           <storage_domain>
@@ -27054,7 +27054,7 @@ class StorageDomainVmService(Service):
         ```
         Include an optional `disks` parameter to choose which disks to import. For example, to import the disks
         of the template that have the identifiers `123` and `456` send the following request body:
-        
+
         ```xml
         <action>
           <cluster>
@@ -27231,7 +27231,7 @@ class StorageDomainVmService(Service):
         """
         Deletes a virtual machine from an export storage domain.
         For example, to delete the virtual machine `456` from the storage domain `123`, send a request like this:
-        
+
         ```
         DELETE /ovirt-engine/api/storagedomains/123/vms/456
         ```
@@ -27443,12 +27443,12 @@ class StorageDomainVmsService(Service):
     Lists the virtual machines of an export storage domain.
     For example, to retrieve the virtual machines that are available in the storage domain with identifier `123` send the
     following request:
-    
+
     ```
     GET /ovirt-engine/api/storagedomains/123/vms
     ```
     This will return the following response body:
-    
+
     ```xml
     <vms>
       <vm id="456" href="/api/storagedomains/123/vms/456">
@@ -27586,12 +27586,12 @@ class StorageDomainsService(Service):
         not change the wipe after delete property of disks that already exist.
         To add a new storage domain with specified `name`, `type`, `storage.type`, `storage.address`, and `storage.path`,
         and using a host with an id `123`, send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/storageDomains
         ```
         With a request body like this:
-        
+
         ```xml
         <storage_domain>
           <name>mydata</name>
@@ -27607,7 +27607,7 @@ class StorageDomainsService(Service):
         </storage_domain>
         ```
         To create a new NFS ISO storage domain send a request like this:
-        
+
         ```xml
         <storage_domain>
           <name>myisos</name>
@@ -27623,7 +27623,7 @@ class StorageDomainsService(Service):
         </storage_domain>
         ```
         To create a new iSCSI storage domain send a request like this:
-        
+
         ```xml
         <storage_domain>
           <name>myiscsi</name>
@@ -28168,7 +28168,7 @@ class StorageServerConnectionService(Service):
         provided, no host will be disconnected.
         For example, to use the host with identifier `456` to delete the storage connection with identifier `123`
         send a request like this:
-        
+
         ```
         DELETE /ovirt-engine/api/storageconnections/123?host=456
         ```
@@ -28223,7 +28223,7 @@ class StorageServerConnectionService(Service):
         PUT /ovirt-engine/api/storageconnections/123
         ```
         With a request body like this:
-        
+
         ```xml
         <storage_connection>
           <address>mynewnfs.example.com</address>
@@ -28234,7 +28234,7 @@ class StorageServerConnectionService(Service):
         PUT /ovirt-engine/api/storageconnections/123
         ```
         With a request body like this:
-        
+
         ```xml
         <storage_connection>
           <port>3260</port>
@@ -28414,12 +28414,12 @@ class StorageServerConnectionExtensionService(Service):
         """
         Update a storage server connection extension for the given host.
         To update the storage connection `456` of host `123` send a request like this:
-        
+
         ```
         PUT /ovirt-engine/api/hosts/123/storageconnectionextensions/456
         ```
         With a request body like this:
-        
+
         ```xml
         <storage_connection_extension>
           <target>iqn.2016-01.com.example:mytarget</target>
@@ -28482,12 +28482,12 @@ class StorageServerConnectionExtensionsService(Service):
         The extension lets the user define credentials for an iSCSI target for a specific host. For example to use
         `myuser` and `mypassword` as the credentials when connecting to the iSCSI target from host `123` send a request
         like this:
-        
+
         ```
         POST /ovirt-engine/api/hosts/123/storageconnectionextensions
         ```
         With a request body like this:
-        
+
         ```xml
         <storage_connection_extension>
           <target>iqn.2016-01.com.example:mytarget</target>
@@ -28601,12 +28601,12 @@ class StorageServerConnectionsService(Service):
         Creates a new storage connection.
         For example, to create a new storage connection for the NFS server `mynfs.example.com` and NFS share
         `/export/mydata` send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/storageconnections
         ```
         With a request body like this:
-        
+
         ```xml
         <storage_connection>
           <type>nfs</type>
@@ -28881,12 +28881,12 @@ class SystemService(Service):
         """
         Returns basic information describing the API, like the product name, the version number and a summary of the
         number of relevant objects.
-        
+
         ```
         GET /ovirt-engine/api
         ```
         We get following response:
-        
+
         ```xml
         <api>
           <link rel="capabilities" href="/api/capabilities"/>
@@ -29434,12 +29434,12 @@ class SystemOptionService(Service):
         """
         Get the values of specific configuration option.
         For example to retrieve the values of configuration option `MigrationPolicies` send a request like this:
-        
+
         ```
         GET /ovirt-engine/api/options/MigrationPolicies
         ```
         The response to that request will be the following:
-        
+
         ```xml
         <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
         <system_option href="/ovirt-engine/api/options/MigrationPolicies" id="MigrationPolicies">
@@ -29490,12 +29490,12 @@ class SystemOptionService(Service):
         If this parameter isn't used then all the versions will be returned.
         For example, to get the value of the `MigrationPolicies` option but only for version `4.2` send
         a request like this:
-        
+
         ```
         GET /ovirt-engine/api/options/MigrationPolicies?version=4.2
         ```
         The response to that request will be like this:
-        
+
         ```xml
         <system_option href="/ovirt-engine/api/options/MigrationPolicies" id="MigrationPolicies">
             <name>MigrationPolicies</name>
@@ -29604,7 +29604,7 @@ class SystemPermissionsService(AssignedPermissionsService):
         POST /ovirt-engine/api/vms/123/permissions
         ```
         With a request body like this:
-        
+
         ```xml
         <permission>
           <role>
@@ -29618,7 +29618,7 @@ class SystemPermissionsService(AssignedPermissionsService):
         POST /ovirt-engine/api/permissions
         ```
         With a request body like this:
-        
+
         ```xml
         <permission>
           <role>
@@ -29634,7 +29634,7 @@ class SystemPermissionsService(AssignedPermissionsService):
         POST /ovirt-engine/api/clusters/123/permissions
         ```
         With a request body like this:
-        
+
         ```xml
         <permission>
           <role>
@@ -29832,7 +29832,7 @@ class SystemPermissionsService(AssignedPermissionsService):
         ```
         GET /ovirt-engine/api/clusters/123/permissions
         ```
-        
+
         ```xml
         <permissions>
           <permission id="456">
@@ -30112,7 +30112,7 @@ class TagService(Service):
         ```
         GET /ovirt-engine/api/tags/123
         ```
-        
+
         ```xml
         <tag href="/ovirt-engine/api/tags/123" id="123">
           <name>root</name>
@@ -30213,7 +30213,7 @@ class TagService(Service):
         PUT /ovirt-engine/api/tags/123
         ```
         With request body like:
-        
+
         ```xml
         <tag>
           <parent id="456"/>
@@ -30221,7 +30221,7 @@ class TagService(Service):
         ```
         You may also specify a tag name instead of id. For example to update parent tag to tag with name `mytag`
         of the tag with id `123` send a request like this:
-        
+
         ```xml
         <tag>
           <parent>
@@ -30301,7 +30301,7 @@ class TagsService(Service):
         POST /ovirt-engine/api/tags
         ```
         With a request body like this:
-        
+
         ```xml
         <tag>
           <name>mytag</name>
@@ -30310,7 +30310,7 @@ class TagsService(Service):
         NOTE: The root tag is a special pseudo-tag assumed as the default parent tag if no parent tag is specified.
         The root tag cannot be deleted nor assigned a parent tag.
         To create new tag with specific parent tag send a request body like this:
-        
+
         ```xml
         <tag>
           <name>mytag</name>
@@ -30361,7 +30361,7 @@ class TagsService(Service):
         ```
         GET /ovirt-engine/api/tags
         ```
-        
+
         ```xml
         <tags>
           <tag href="/ovirt-engine/api/tags/222" id="222">
@@ -30478,12 +30478,12 @@ class TemplateService(Service):
         """
         Exports a template to the data center export domain.
         For example, send the following request:
-        
+
         ```
         POST /ovirt-engine/api/templates/123/export
         ```
         With a request body like this:
-        
+
         ```xml
         <action>
           <storage_domain id="456"/>
@@ -30492,12 +30492,12 @@ class TemplateService(Service):
         ```
         Since version 4.2 of the engine it is also possible to export a template as a virtual appliance (OVA).
         For example, to export template `123` as an OVA file named `myvm.ova` that is placed in the directory `/home/ovirt/` on host `myhost`:
-        
+
         ```
         POST /ovirt-engine/api/templates/123/export
         ```
         With a request body like this:
-        
+
         ```xml
         <action>
           <host>
@@ -30601,7 +30601,7 @@ class TemplateService(Service):
     ):
         """
         Removes a virtual machine template.
-        
+
         ```
         DELETE /ovirt-engine/api/templates/123
         ```
@@ -30767,12 +30767,12 @@ class TemplateService(Service):
         The `name`, `description`, `type`, `memory`, `cpu`, `topology`, `os`, `high_availability`, `display`,
         `stateless`, `usb`, and `timezone` elements can be updated after a template has been created.
         For example, to update a template so that it has 1 GiB of memory send a request like this:
-        
+
         ```
         PUT /ovirt-engine/api/templates/123
         ```
         With the following request body:
-        
+
         ```xml
         <template>
           <memory>1073741824</memory>
@@ -30780,7 +30780,7 @@ class TemplateService(Service):
         ```
         The `version_name` name attribute is the only one that can be updated within the `version` attribute used for
         template versions:
-        
+
         ```xml
         <template>
           <version>
@@ -30931,7 +30931,7 @@ class TemplateCdromService(Service):
         """
         Returns the information about this CD-ROM device.
         For example, to get information about the CD-ROM device of template `123` send a request like:
-        
+
         ```
         GET /ovirt-engine/api/templates/123/cdroms/
         ```
@@ -31322,7 +31322,7 @@ class TemplateDiskAttachmentService(Service):
         disk on other storage domains.
         A storage domain has to be specified to determine which of the copies should be removed (template disks can
         have copies on multiple storage domains).
-        
+
         ```
         DELETE /ovirt-engine/api/templates/{template:id}/diskattachments/{attachment:id}?storage_domain=072fbaa1-08f3-4a40-9f34-a5ca22dd1d74
         ```
@@ -31840,7 +31840,7 @@ class TemplateMediatedDeviceService(Service):
         Updates the information about the mediated device.
         You can update the information using `specParams` element.
         For example, to update a mediated device, send a request like this:
-        
+
         ```
         PUT /ovirt-engine/api/templates/123/mediateddevices/00000000-0000-0000-0000-000000000000
         <vm_mediated_device>
@@ -31853,7 +31853,7 @@ class TemplateMediatedDeviceService(Service):
         </vm_mediated_device>
         ```
         with response body:
-        
+
         ```xml
         <vm_mediated_device href="/ovirt-engine/api/templates/123/mediateddevices/00000000-0000-0000-0000-000000000000" id="00000000-0000-0000-0000-000000000000">
           <template href="/ovirt-engine/api/templates/123" id="123"/>
@@ -32517,12 +32517,12 @@ class TemplatesService(Service):
         This requires the `name` and `vm` elements. To identify the virtual machine use the `vm.id` or `vm.name`
         attributes. For example, to create a template from a virtual machine with the identifier `123` send a request
         like this:
-        
+
         ```
         POST /ovirt-engine/api/templates
         ```
         With a request body like this:
-        
+
         ```xml
         <template>
           <name>mytemplate</name>
@@ -32530,7 +32530,7 @@ class TemplatesService(Service):
         </template>
         ```
         Since version 4.3, in order to create virtual machine template from a snapshot send a request body like this:
-        
+
         ```xml
         <template>
           <name>mytemplate</name>
@@ -32568,7 +32568,7 @@ class TemplatesService(Service):
         for the new template, and the `base_template` and `version_name` attributes for the new template version. The
         `base_template` and `version_name` attributes must be specified within a `version` section enclosed in the
         `template` section. Identify the virtual machine with the `id` or `name` attributes.
-        
+
         ```xml
         <template>
           <name>mytemplate</name>
@@ -32810,7 +32810,7 @@ class TemplatesService(Service):
         """
         Returns the list of virtual machine templates.
         For example:
-        
+
         ```
         GET /ovirt-engine/api/templates
         ```
@@ -33109,7 +33109,7 @@ class UserService(Service):
         GET /ovirt-engine/api/users/1234
         ```
         Will return the user information:
-        
+
         ```xml
         <user href="/ovirt-engine/api/users/1234" id="1234">
           <name>admin</name>
@@ -33219,12 +33219,12 @@ class UserService(Service):
         Updates information about the user.
         Only the `user_options` field can be updated.
         For example, to update user options:
-        
+
         ```
         PUT /ovirt-engine/api/users/123
         ```
         With a request body like this:
-        
+
         ```xml
         <user>
            <user_options>
@@ -33343,12 +33343,12 @@ class UserOptionService(Service):
         """
         Returns a user profile property of type JSON.
         Example request(for user with identifier `123` and option with identifier `456`):
-        
+
         ```
         GET /ovirt-engine/api/users/123/options/456
         ```
         The result will be the following XML document:
-        
+
         ```xml
           <user_option href="/ovirt-engine/api/users/123/options/456" id="456">
             <name>SomeName</name>
@@ -33379,7 +33379,7 @@ class UserOptionService(Service):
         """
         Deletes an existing property of type JSON.
         Example request(for user with identifier `123` and option with identifier `456`):
-        
+
         ```
         DELETE /ovirt-engine/api/users/123/options/456
         ```
@@ -33427,12 +33427,12 @@ class UserOptionsService(Service):
         """
         Adds a new user profile property of type JSON.
         Example request(for user with identifier `123`):
-        
+
         ```
         POST /ovirt-engine/api/users/123/options
         ```
         Payload:
-        
+
         ```xml
           <user_option>
             <name>SomeName</name>
@@ -33463,12 +33463,12 @@ class UserOptionsService(Service):
         """
         Returns a list of user profile properties of type JSON.
         Example request(for user with identifier `123`):
-        
+
         ```
         GET /ovirt-engine/api/users/123/options
         ```
         The result will be the following XML document:
-        
+
         ```xml
         <user_options>
           <user_option href="/ovirt-engine/api/users/123/options/456" id="456">
@@ -33536,12 +33536,12 @@ class UsersService(Service):
         Add user from a directory service.
         For example, to add the `myuser` user from the `myextension-authz` authorization provider send a request
         like this:
-        
+
         ```
         POST /ovirt-engine/api/users
         ```
         With a request body like this:
-        
+
         ```xml
         <user>
           <user_name>myuser@myextension-authz</user_name>
@@ -33555,7 +33555,7 @@ class UsersService(Service):
         also `principal` parameter set to UPN of the user.
         For example, to add the user with UPN `myuser@mysubdomain.mydomain.com` from the `myextension-authz`
         authorization provider send a request body like this:
-        
+
         ```xml
         <user>
           <principal>myuser@mysubdomain.mydomain.com</principal>
@@ -33597,7 +33597,7 @@ class UsersService(Service):
         GET /ovirt-engine/api/users
         ```
         Will return the list of users:
-        
+
         ```xml
         <users>
           <user href="/ovirt-engine/api/users/1234" id="1234">
@@ -33930,12 +33930,12 @@ class VmService(MeasurableService):
         IMPORTANT: Since version 4.5 of the engine this operation is deprecated, and preserved only for backwards
         compatibility. It will be removed in the future. Instead please use PUT followed by `VmService.update`.
         An example for a request:
-        
+
         ```
         POST /ovirt-engine/api/vms/123/autopincpuandnumanodes
         ```
         With a request body like this:
-        
+
         ```xml
         <action>
           <optimize_cpu_settings>true</optimize_cpu_settings>
@@ -33991,13 +33991,13 @@ class VmService(MeasurableService):
     ):
         """
         This operation stops any migration of a virtual machine to another physical host.
-        
+
         ```
         POST /ovirt-engine/api/vms/123/cancelmigration
         ```
         The cancel migration action does not take any action specific parameters;
         therefore, the request body should contain an empty `action`:
-        
+
         ```xml
         <action/>
         ```
@@ -34143,13 +34143,13 @@ class VmService(MeasurableService):
     ):
         """
         Detaches a virtual machine from a pool.
-        
+
         ```
         POST /ovirt-engine/api/vms/123/detach
         ```
         The detach action does not take any action specific parameters; therefore, the request body should contain an
         empty `action`:
-        
+
         ```xml
         <action/>
         ```
@@ -34201,12 +34201,12 @@ class VmService(MeasurableService):
         Exports the virtual machine.
         A virtual machine can be exported to an export domain.
         For example, to export virtual machine `123` to the export domain `myexport`:
-        
+
         ```
         POST /ovirt-engine/api/vms/123/export
         ```
         With a request body like this:
-        
+
         ```xml
         <action>
           <storage_domain>
@@ -34218,12 +34218,12 @@ class VmService(MeasurableService):
         ```
         Since version 4.2 of the engine it is also possible to export a virtual machine as a virtual appliance (OVA).
         For example, to export virtual machine `123` as an OVA file named `myvm.ova` that is placed in the directory `/home/ovirt/` on host `myhost`:
-        
+
         ```
         POST /ovirt-engine/api/vms/123/export
         ```
         With a request body like this:
-        
+
         ```xml
         <action>
           <host>
@@ -34298,11 +34298,11 @@ class VmService(MeasurableService):
         a running virtual machine. Normally, this is done automatically by the manager, but this must be executed
         manually with the API for virtual machines using OpenStack Volume (Cinder) disks.
         Example:
-        
+
         ```
         POST /ovirt-engine/api/vms/123/freezefilesystems
         ```
-        
+
         ```xml
         <action/>
         ```
@@ -34363,12 +34363,12 @@ class VmService(MeasurableService):
         effect when the virtual machine is restarted. By default the value is `false`.
         If the parameter is included in the request, but without a value, it is assumed that the value is `true`. The
         the following request:
-        
+
         ```
         GET /vms/{vm:id};next_run
         ```
         Is equivalent to using the value `true`:
-        
+
         ```
         GET /vms/{vm:id};next_run=true
         ```
@@ -34396,7 +34396,7 @@ class VmService(MeasurableService):
         describing the virtual machine. This parameter will work only when all_content=True is set.
         The OVF will be presented in `ovirtsdk4.types.Initialization.configuration`.
         For example:
-        
+
         ```
         GET /vms/{vm:id}?all_content=true&ovf_as_ova=true
         ```
@@ -34458,12 +34458,12 @@ class VmService(MeasurableService):
         Users require the appropriate user permissions for the virtual machine in order to access the virtual machine
         from an external console.
         For example:
-        
+
         ```
         POST /ovirt-engine/api/vms/123/logon
         ```
         Request body:
-        
+
         ```xml
         <action/>
         ```
@@ -34513,11 +34513,11 @@ class VmService(MeasurableService):
         Sets the global maintenance mode on the hosted engine virtual machine.
         This action has no effect on other virtual machines.
         Example:
-        
+
         ```
         POST /ovirt-engine/api/vms/123/maintenance
         ```
-        
+
         ```xml
         <action>
           <maintenance_enabled>true<maintenance_enabled/>
@@ -34576,12 +34576,12 @@ class VmService(MeasurableService):
         """
         Migrates a virtual machine to another physical host.
         Example:
-        
+
         ```
         POST /ovirt-engine/api/vms/123/migrate
         ```
         To specify a specific host to migrate the virtual machine to:
-        
+
         ```xml
         <action>
           <host id="2ab5e1da-b726-4274-bbf7-0a42b16a0fc3"/>
@@ -34674,12 +34674,12 @@ class VmService(MeasurableService):
         For each disk parameter, it is also required to specify its `image_id`.
         For example, to preview a snapshot with identifier `456` which includes a disk with identifier `111` and its
         `image_id` as `222`, send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/vms/123/previewsnapshot
         ```
         Request body:
-        
+
         ```xml
         <action>
           <disks>
@@ -34751,13 +34751,13 @@ class VmService(MeasurableService):
         """
         Sends a reboot request to a virtual machine.
         For example:
-        
+
         ```
         POST /ovirt-engine/api/vms/123/reboot
         ```
         The reboot action does not take any action specific parameters; therefore, the request body should contain an
         empty `action`:
-        
+
         ```xml
         <action/>
         ```
@@ -34767,7 +34767,7 @@ class VmService(MeasurableService):
         ```
         POST /ovirt-engine/api/vms/123/reboot
         ```
-        
+
         ```xml
         <action>
             <force>true</force>
@@ -34825,7 +34825,7 @@ class VmService(MeasurableService):
         """
         Removes the virtual machine, including the virtual disks attached to it.
         For example, to remove the virtual machine with identifier `123`:
-        
+
         ```
         DELETE /ovirt-engine/api/vms/123
         ```
@@ -34930,13 +34930,13 @@ class VmService(MeasurableService):
         """
         Sends a reset request to a virtual machine.
         For example:
-        
+
         ```
         POST /ovirt-engine/api/vms/123/reset
         ```
         The reset action does not take any action specific parameters; therefore, the request body should contain an
         empty `action`:
-        
+
         ```xml
         <action/>
         ```
@@ -34983,13 +34983,13 @@ class VmService(MeasurableService):
         """
         Captures screenshot of the current state of the VM.
         For example:
-        
+
         ```
         POST /ovirt-engine/api/vms/123/screenshot
         ```
         The screenshot action does not take any action specific parameters; therefore, the request body should contain an
         empty `action`:
-        
+
         ```xml
         <action/>
         ```
@@ -35020,13 +35020,13 @@ class VmService(MeasurableService):
         """
         This operation sends a shutdown request to a virtual machine.
         For example:
-        
+
         ```
         POST /ovirt-engine/api/vms/123/shutdown
         ```
         The shutdown action does not take any action specific parameters;
         therefore, the request body should contain an empty `action`:
-        
+
         ```xml
         <action/>
         ```
@@ -35036,7 +35036,7 @@ class VmService(MeasurableService):
         ```
         POST /ovirt-engine/api/vms/123/shutdown
         ```
-        
+
         ```xml
         <action>
             <force>true</force>
@@ -35109,12 +35109,12 @@ class VmService(MeasurableService):
         If the virtual environment is complete and the virtual machine contains all necessary components to function,
         it can be started.
         This example starts the virtual machine:
-        
+
         ```
         POST /ovirt-engine/api/vms/123/start
         ```
         With a request body:
-        
+
         ```xml
         <action/>
         ```
@@ -35128,7 +35128,7 @@ class VmService(MeasurableService):
         `vm` \n
         The definition of the virtual machine for this specific run.
         For example:
-        
+
         ```xml
         <action>
           <vm>
@@ -35231,13 +35231,13 @@ class VmService(MeasurableService):
         """
         This operation forces a virtual machine to power-off.
         For example:
-        
+
         ```
         POST /ovirt-engine/api/vms/123/stop
         ```
         The stop action does not take any action specific parameters;
         therefore, the request body should contain an empty `action`:
-        
+
         ```xml
         <action/>
         ```
@@ -35247,7 +35247,7 @@ class VmService(MeasurableService):
         ```
         POST /ovirt-engine/api/vms/123/stop
         ```
-        
+
         ```xml
         <action>
             <force>true</force>
@@ -35310,13 +35310,13 @@ class VmService(MeasurableService):
         This operation saves the virtual machine state to disk and stops it.
         Start a suspended virtual machine and restore the virtual machine state with the start action.
         For example:
-        
+
         ```
         POST /ovirt-engine/api/vms/123/suspend
         ```
         The suspend action does not take any action specific parameters;
         therefore, the request body should contain an empty `action`:
-        
+
         ```xml
         <action/>
         ```
@@ -35367,11 +35367,11 @@ class VmService(MeasurableService):
         running virtual machine. Normally, this is done automatically by the manager, but this must be executed manually
         with the API for virtual machines using OpenStack Volume (Cinder) disks.
         Example:
-        
+
         ```
         POST /api/vms/123/thawfilesystems
         ```
-        
+
         ```xml
         <action/>
         ```
@@ -35420,13 +35420,13 @@ class VmService(MeasurableService):
         """
         Generates a time-sensitive authentication token for accessing a virtual machine's display.
         For example:
-        
+
         ```
         POST /ovirt-engine/api/vms/123/ticket
         ```
         The client-provided action optionally includes a desired ticket value and/or an expiry time in seconds.
         The response specifies the actual ticket value and expiry used.
-        
+
         ```xml
         <action>
           <ticket>
@@ -35443,9 +35443,9 @@ class VmService(MeasurableService):
         VNC and SPICE, then the authentication token will only be valid for
         the SPICE protocol.
         In order to obtain an authentication token for a specific protocol, for
-        example for VNC, use the `ticket` method of the `VmService.graphics_consoles_service`, 
+        example for VNC, use the `ticket` method of the `VmService.graphics_consoles_service`,
         which manages the graphics consoles of the virtual machine, by sending a request:
-        
+
         ```
         POST /ovirt-engine/api/vms/123/graphicsconsoles/456/ticket
         ```
@@ -36093,12 +36093,12 @@ class VmBackupService(Service):
         End backup, unlock resources, and perform cleanups.
         To finalize a virtual machine with an id '123' and a backup with an id '456'
         send a request as follows:
-        
+
         ```
         POST /ovirt-engine/api/vms/123/backups/456/finalize
         ```
         With a request body as follows:
-        
+
         ```xml
         <action />
         ```
@@ -36343,12 +36343,12 @@ class VmBackupsService(Service):
         Adds a new backup entity to a virtual machine.
         For example, to start a new incremental backup of a virtual machine
         since checkpoint id `previous-checkpoint-uuid`, send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/vms/123/backups
         ```
         With a request body like this:
-        
+
         ```xml
         <backup>
           <from_checkpoint_id>previous-checkpoint-uuid</from_checkpoint_id>
@@ -36359,7 +36359,7 @@ class VmBackupsService(Service):
         </backup>
         ```
         The response body:
-        
+
         ```xml
         <backup id="backup-uuid">
             <from_checkpoint_id>previous-checkpoint-uuid</from_checkpoint_id>
@@ -36374,12 +36374,12 @@ class VmBackupsService(Service):
         </backup>
         ```
         To provide the ID of the created backup, send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/vms/123/backups
         ```
         With a request body like this:
-        
+
         ```xml
         <backup id="backup-uuid">
           <from_checkpoint_id>previous-checkpoint-uuid</from_checkpoint_id>
@@ -36522,7 +36522,7 @@ class VmCdromService(Service):
         The information consists of `cdrom` attribute containing reference to the CDROM device, the virtual machine,
         and optionally the inserted disk.
         If there is a disk inserted then the `file` attribute will contain a reference to the ISO image:
-        
+
         ```xml
         <cdrom href="..." id="00000000-0000-0000-0000-000000000000">
           <file id="mycd.iso"/>
@@ -36530,7 +36530,7 @@ class VmCdromService(Service):
         </cdrom>
         ```
         If there is no disk inserted then the `file` attribute won't be reported:
-        
+
         ```xml
         <cdrom href="..." id="00000000-0000-0000-0000-000000000000">
           <vm href="/ovirt-engine/api/vms/123" id="123"/>
@@ -36587,12 +36587,12 @@ class VmCdromService(Service):
         Updates the information about this CDROM device.
         It allows to change or eject the disk by changing the value of the `file` attribute.
         For example, to insert or change the disk send a request like this:
-        
+
         ```
         PUT /ovirt-engine/api/vms/123/cdroms/00000000-0000-0000-0000-000000000000
         ```
         The body should contain the new value for the `file` attribute:
-        
+
         ```xml
         <cdrom>
           <file id="mycd.iso"/>
@@ -36601,7 +36601,7 @@ class VmCdromService(Service):
         The value of the `id` attribute, `mycd.iso` in this example, should correspond to a file available in an
         attached ISO storage domain.
         To eject the disk use a `file` with an empty `id`:
-        
+
         ```xml
         <cdrom>
           <file id=""/>
@@ -36611,12 +36611,12 @@ class VmCdromService(Service):
         after the next boot, but they do not have any effect on the currently running virtual machine. If you want
         to change the disk that is visible to the current running virtual machine, add the `current=true` parameter.
         For example, to eject the current disk send a request like this:
-        
+
         ```
         PUT /ovirt-engine/api/vms/123/cdroms/00000000-0000-0000-0000-000000000000?current=true
         ```
         With a request body like this:
-        
+
         ```xml
         <cdrom>
           <file id=""/>
@@ -37057,7 +37057,7 @@ class VmCheckpointsService(Service):
         """
         The list of virtual machine checkpoints.
         To get a list of checkpoints for a virtual machine with an id '123', send a request as follows:
-        
+
         ```
         GET /ovirt-engine/api/vms/123/checkpoints
         ```
@@ -37630,7 +37630,7 @@ class VmGraphicsConsoleService(Service):
         `true`.
         For example, to get data for the current execution of the virtual machine, including the
         `address` and `port` attributes, send a request like this:
-        
+
         ```
         GET /ovit-engine/api/vms/123/graphicsconsoles/456?current=true
         ```
@@ -37717,18 +37717,18 @@ class VmGraphicsConsoleService(Service):
         Generates the file which is compatible with `remote-viewer` client.
         Use the following request to generate remote viewer connection file of the graphics console.
         Note that this action generates the file only if virtual machine is running.
-        
+
         ```
         POST /ovirt-engine/api/vms/123/graphicsconsoles/456/remoteviewerconnectionfile
         ```
         The `remoteviewerconnectionfile` action does not take any action specific parameters,
         so the request body should contain an empty `action`:
-        
+
         ```xml
         <action/>
         ```
         The response contains the file, which can be used with `remote-viewer` client.
-        
+
         ```xml
         <action>
           <remote_viewer_connection_file>
@@ -37847,13 +37847,13 @@ class VmGraphicsConsoleService(Service):
     ):
         """
         Generates a time-sensitive authentication token for accessing this virtual machine's console.
-        
+
         ```
         POST /ovirt-engine/api/vms/123/graphicsconsoles/456/ticket
         ```
         The client-provided action optionally includes a desired ticket value and/or an expiry time in seconds.
         In any case, the response specifies the actual ticket value and expiry used.
-        
+
         ```xml
         <action>
           <ticket>
@@ -37968,7 +37968,7 @@ class VmGraphicsConsolesService(Service):
         `true`.
         For example, to get data for the current execution of the virtual machine, including the
         `address` and `port` attributes, send a request like this:
-        
+
         ```
         GET /ovirt-engine/api/vms/123/graphicsconsoles?current=true
         ```
@@ -38053,11 +38053,11 @@ class VmHostDeviceService(Service):
         """
         Retrieve information about particular host device attached to given virtual machine.
         Example:
-        
+
         ```
         GET /ovirt-engine/api/vms/123/hostdevices/456
         ```
-        
+
         ```xml
         <host_device href="/ovirt-engine/api/hosts/543/devices/456" id="456">
           <name>pci_0000_04_00_0</name>
@@ -38121,7 +38121,7 @@ class VmHostDeviceService(Service):
         in setting its `placeholder` flag to `true`). Note that all IOMMU placeholder devices will be removed
         automatically as soon as there will be no more non-placeholder devices (all devices from given IOMMU
         group are detached).
-        
+
         ```
         DELETE /ovirt-engine/api/vms/123/hostdevices/456
         ```
@@ -38192,12 +38192,12 @@ class VmHostDevicesService(Service):
         """
         Attach target device to given virtual machine.
         Example:
-        
+
         ```
         POST /ovirt-engine/api/vms/123/hostdevices
         ```
         With request body of type `ovirtsdk4.types.HostDevice` for example
-        
+
         ```xml
         <host_device id="123" />
         ```
@@ -38413,7 +38413,7 @@ class VmMediatedDeviceService(Service):
         Updates the information about the mediated device.
         You can update the information using `specParams` element.
         For example, to update a mediated device, send a request like this:
-        
+
         ```
         PUT /ovirt-engine/api/vms/123/mediateddevices/00000000-0000-0000-0000-000000000000
         <vm_mediated_device>
@@ -38426,7 +38426,7 @@ class VmMediatedDeviceService(Service):
         </vm_mediated_device>
         ```
         with response body:
-        
+
         ```xml
         <vm_mediated_device href="/ovirt-engine/api/vms/123/mediateddevices/00000000-0000-0000-0000-000000000000" id="00000000-0000-0000-0000-000000000000">
           <vm href="/ovirt-engine/api/vms/123" id="123"/>
@@ -38735,7 +38735,7 @@ class VmNicService(MeasurableService):
         """
         Removes the NIC.
         For example, to remove the NIC with id `456` from the virtual machine with id `123` send a request like this:
-        
+
         ```
         DELETE /ovirt-engine/api/vms/123/nics/456
         ```
@@ -38795,12 +38795,12 @@ class VmNicService(MeasurableService):
         Updates the NIC.
         For example, to update the NIC having with `456` belonging to virtual the machine with id `123` send a request
         like this:
-        
+
         ```
         PUT /ovirt-engine/api/vms/123/nics/456
         ```
         With a request body like this:
-        
+
         ```xml
         <nic>
           <name>mynic</name>
@@ -38900,11 +38900,11 @@ class VmNicsService(Service):
         Adds a NIC to the virtual machine.
         The following example adds to the virtual machine `123` a network interface named `mynic` using `virtio` and the
         NIC profile `456`.
-        
+
         ```
         POST /ovirt-engine/api/vms/123/nics
         ```
-        
+
         ```xml
         <nic>
           <name>mynic</name>
@@ -39081,7 +39081,7 @@ class VmNumaNodeService(Service):
         """
         Removes a virtual NUMA node.
         An example of removing a virtual NUMA node:
-        
+
         ```
         DELETE /ovirt-engine/api/vms/123/numanodes/456
         ```
@@ -39133,12 +39133,12 @@ class VmNumaNodeService(Service):
         """
         Updates a virtual NUMA node.
         An example of pinning a virtual NUMA node to a physical NUMA node on the host:
-        
+
         ```
         PUT /ovirt-engine/api/vms/123/numanodes/456
         ```
         The request body should contain the following:
-        
+
         ```xml
         <vm_numa_node>
           <numa_node_pins>
@@ -39201,14 +39201,14 @@ class VmNumaNodesService(Service):
         """
         Creates a new virtual NUMA node for the virtual machine.
         An example of creating a NUMA node:
-        
+
         ```
         POST /ovirt-engine/api/vms/c7ecd2dc/numanodes
         Accept: application/xml
         Content-type: application/xml
         ```
         The request body can contain the following:
-        
+
         ```xml
         <vm_numa_node>
           <cpu>
@@ -39329,13 +39329,13 @@ class VmPoolService(Service):
     ):
         """
         This operation allocates a virtual machine in the virtual machine pool.
-        
+
         ```
         POST /ovirt-engine/api/vmpools/123/allocatevm
         ```
         The allocate virtual machine action does not take any action specific parameters, so the request body should
         contain an empty `action`:
-        
+
         ```xml
         <action/>
         ```
@@ -39383,12 +39383,12 @@ class VmPoolService(Service):
     ):
         """
         Get the virtual machine pool.
-        
+
         ```
         GET /ovirt-engine/api/vmpools/123
         ```
         You will get a XML response like that one:
-        
+
         ```xml
         <vm_pool id="123">
           <actions>...</actions>
@@ -39454,7 +39454,7 @@ class VmPoolService(Service):
     ):
         """
         Removes a virtual machine pool.
-        
+
         ```
         DELETE /ovirt-engine/api/vmpools/123
         ```
@@ -39504,14 +39504,14 @@ class VmPoolService(Service):
     ):
         """
         Update the virtual machine pool.
-        
+
         ```
         PUT /ovirt-engine/api/vmpools/123
         ```
         The `name`, `description`, `size`, `prestarted_vms` and `max_user_vms`
         attributes can be updated after the virtual machine pool has been
         created.
-        
+
         ```xml
         <vmpool>
           <name>VM_Pool_B</name>
@@ -39606,12 +39606,12 @@ class VmPoolsService(Service):
         Creates a new virtual machine pool.
         A new pool requires the `name`, `cluster` and `template` attributes. Identify the cluster and template with the
         `id` or `name` nested attributes:
-        
+
         ```
         POST /ovirt-engine/api/vmpools
         ```
         With the following body:
-        
+
         ```xml
         <vmpool>
           <name>mypool</name>
@@ -39664,12 +39664,12 @@ class VmPoolsService(Service):
     ):
         """
         Get a list of available virtual machines pools.
-        
+
         ```
         GET /ovirt-engine/api/vmpools
         ```
         You will receive the following response:
-        
+
         ```xml
         <vm_pools>
           <vm_pool id="123">
@@ -39978,12 +39978,12 @@ class VmSessionsService(Service):
         """
         Lists all user sessions for this virtual machine.
         For example, to retrieve the session information for virtual machine `123` send a request like this:
-        
+
         ```
         GET /ovirt-engine/api/vms/123/sessions
         ```
         The response body will contain something like this:
-        
+
         ```xml
         <sessions>
           <session href="/ovirt-engine/api/vms/123/sessions/456" id="456">
@@ -40120,7 +40120,7 @@ class VmWatchdogService(Service):
         """
         Removes the watchdog from the virtual machine.
         For example, to remove a watchdog from a virtual machine, send a request like this:
-        
+
         ```
         DELETE /ovirt-engine/api/vms/123/watchdogs/00000000-0000-0000-0000-000000000000
         ```
@@ -40171,7 +40171,7 @@ class VmWatchdogService(Service):
         Updates the information about the watchdog.
         You can update the information using `action` and `model` elements.
         For example, to update a watchdog, send a request like this:
-        
+
         ```
         PUT /ovirt-engine/api/vms/123/watchdogs
         <watchdog>
@@ -40179,7 +40179,7 @@ class VmWatchdogService(Service):
         </watchdog>
         ```
         with response body:
-        
+
         ```xml
         <watchdog href="/ovirt-engine/api/vms/123/watchdogs/00000000-0000-0000-0000-000000000000" id="00000000-0000-0000-0000-000000000000">
           <vm href="/ovirt-engine/api/vms/123" id="123"/>
@@ -40258,7 +40258,7 @@ class VmWatchdogsService(Service):
         """
         Adds new watchdog to the virtual machine.
         For example, to add a watchdog to a virtual machine, send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/vms/123/watchdogs
         <watchdog>
@@ -40267,7 +40267,7 @@ class VmWatchdogsService(Service):
         </watchdog>
         ```
         with response body:
-        
+
         ```xml
         <watchdog href="/ovirt-engine/api/vms/123/watchdogs/00000000-0000-0000-0000-000000000000" id="00000000-0000-0000-0000-000000000000">
           <vm href="/ovirt-engine/api/vms/123" id="123"/>
@@ -40463,7 +40463,7 @@ class VmsService(Service):
         When creating a virtual machine from a template or from a snapshot it is usually useful to explicitly indicate
         in what storage domain to create the disks for the virtual machine. If the virtual machine is created from
         a template then this is achieved passing a set of `disk_attachment` elements that indicate the mapping:
-        
+
         ```xml
         <vm>
           ...
@@ -40480,7 +40480,7 @@ class VmsService(Service):
         ```
         When the virtual machine is created from a snapshot this set of disks is slightly different, it uses the
         `image_id` attribute instead of `id`.
-        
+
         ```xml
         <vm>
           ...
@@ -40499,7 +40499,7 @@ class VmsService(Service):
         It is possible to specify additional virtual machine parameters in the XML description, e.g. a virtual machine
         of `desktop` type, with 2 GiB of RAM and additional description can be added sending a request body like the
         following:
-        
+
         ```xml
         <vm>
           <name>myvm</name>
@@ -40510,7 +40510,7 @@ class VmsService(Service):
         </vm>
         ```
         A bootable CDROM device can be set like this:
-        
+
         ```xml
         <vm>
           ...
@@ -40519,10 +40519,10 @@ class VmsService(Service):
           </os>
         </vm>
         ```
-        In order to boot from CDROM, you first need to insert a disk, as described in the `VmCdromService`. 
+        In order to boot from CDROM, you first need to insert a disk, as described in the `VmCdromService`.
         Then booting from that CDROM can be specified using the `os.boot.devices`.
         attribute:
-        
+
         ```xml
         <vm>
           ...
@@ -40769,7 +40769,7 @@ class VmsService(Service):
         describing the virtual machine. This parameter will work only when all_content=True is set.
         The OVF will be presented in `ovirtsdk4.types.Initialization.configuration`.
         For example:
-        
+
         ```
         GET /vms?all_content=true&ovf_as_ova=true
         ```
@@ -41028,12 +41028,12 @@ class VnicProfilesService(Service):
         """
         Add a vNIC profile.
         For example to add vNIC profile `123` to network `456` send a request to:
-        
+
         ```
         POST /ovirt-engine/api/networks/456/vnicprofiles
         ```
         With the following body:
-        
+
         ```xml
         <vnic_profile id="123">
           <name>new_vNIC_name</name>
@@ -41049,7 +41049,7 @@ class VnicProfilesService(Service):
         NOTE: The automatically created vNIC profile for the external network will be without network filter.
         The output of creating a new VNIC profile depends in the  body  arguments that were given.
         In case no network filter was given, the default network filter will be configured. For example:
-        
+
         ```xml
         <vnic_profile href="/ovirt-engine/api/vnicprofiles/123" id="123">
           <name>new_vNIC_name</name>
@@ -41064,7 +41064,7 @@ class VnicProfilesService(Service):
         ```
         In case an empty network filter was given, no network filter will be configured for the specific VNIC profile
         regardless of the VNIC profile's default network filter. For example:
-        
+
         ```xml
         <vnic_profile>
           <name>no_network_filter</name>
@@ -41073,7 +41073,7 @@ class VnicProfilesService(Service):
         ```
         In case that a specific valid network filter id was given, the VNIC profile will be configured with the given
         network filter regardless of the VNIC profiles's default network filter. For example:
-        
+
         ```xml
         <vnic_profile>
           <name>user_choice_network_filter</name>
@@ -41401,7 +41401,7 @@ class AttachedStorageDomainDiskService(MeasurableService):
     Manages a single disk available in a storage domain attached to a data center.
     IMPORTANT: Since version 4.2 of the engine this service is intended only to list disks available in the storage
     domain, and to register unregistered disks. All the other operations, like copying a disk, moving a disk, etc, have
-    been deprecated and will be removed in the future. To perform those operations use the `DisksService` service that 
+    been deprecated and will be removed in the future. To perform those operations use the `DisksService` service that
     manages all the disks of the system or the `DiskService` service that manages a specific disk.
 
     """
@@ -41423,7 +41423,7 @@ class AttachedStorageDomainDiskService(MeasurableService):
         """
         Copies a disk to the specified storage domain.
         IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. To copy a disk use the `DiskService.copy` 
+        compatibility. It will be removed in the future. To copy a disk use the `DiskService.copy`
         operation of the service that manages that disk.
 
 
@@ -41554,7 +41554,7 @@ class AttachedStorageDomainDiskService(MeasurableService):
         """
         Moves a disk to another storage domain.
         IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. To move a disk use the `DiskService.move` 
+        compatibility. It will be removed in the future. To move a disk use the `DiskService.move`
         operation of the service that manages that disk.
 
 
@@ -41770,12 +41770,12 @@ class DiskService(MeasurableService):
         Converts disk format and/or preallocation mode.
         For example, to convert the disk format from preallocated-cow to a sparse-raw image,
         send a request like the following:
-        
+
         ```
         POST /ovirt-engine/api/disks/123/convert
         ```
         With the following request body:
-        
+
         ```xml
          <action>
            <disk>
@@ -41838,12 +41838,12 @@ class DiskService(MeasurableService):
         """
         This operation copies a disk to the specified storage domain.
         For example, a disk can be copied using the following request:
-        
+
         ```
         POST /ovirt-engine/api/disks/123/copy
         ```
         With a request body like this:
-        
+
         ```xml
         <action>
           <storage_domain id="456"/>
@@ -41855,7 +41855,7 @@ class DiskService(MeasurableService):
         If the disk profile or the quota currently used by the disk are not defined for the new storage domain, they
         can be explicitly specified. If they are not specified, the first available disk profile and the default quota are used.
         For example, to specify disk profile `987` and quota `753`, send a request body like this:
-        
+
         ```xml
         <action>
           <storage_domain id="456"/>
@@ -41874,7 +41874,7 @@ class DiskService(MeasurableService):
         POST /ovirt-engine/api/storagedomains/123/disks/789
         ```
         With a request body like this:
-        
+
         ```xml
         <action>
           <storage_domain>
@@ -42064,12 +42064,12 @@ class DiskService(MeasurableService):
         Moves a disk to another storage domain.
         For example, to move the disk with identifier `123` to a storage domain with identifier `456` send the following
         request:
-        
+
         ```
         POST /ovirt-engine/api/disks/123/move
         ```
         With the following request body:
-        
+
         ```xml
         <action>
           <storage_domain id="456"/>
@@ -42082,7 +42082,7 @@ class DiskService(MeasurableService):
         quota are used.
         For example, to explicitly use disk profile `987` and
         quota `753` send a request body like this:
-        
+
         ```xml
         <action>
           <storage_domain id="456"/>
@@ -42212,12 +42212,12 @@ class DiskService(MeasurableService):
           any information from the storage (see `DisksService.add`).
         - New information about the LUN is available on the storage and you want to update the LUN with it.
         To refresh direct LUN disk `123` using host `456`, send the following request:
-        
+
         ```
         POST /ovirt-engine/api/disks/123/refreshlun
         ```
         With the following request body:
-        
+
         ```xml
         <action>
           <host id='456'/>
@@ -42340,12 +42340,12 @@ class DiskService(MeasurableService):
         * For Managed Block disks: `provisioned_size`, `alias` and `description`.
         * For VM attached disks, the `qcow_version` can also be updated.
         For example, a disk's update can be done by using the following request:
-        
+
         ```
         PUT /ovirt-engine/api/disks/123
         ```
         With a request body like this:
-        
+
         ```xml
         <disk>
           <qcow_version>qcow2_v3</qcow_version>
@@ -42456,12 +42456,12 @@ class EngineKatelloErrataService(KatelloErrataService):
     ):
         """
         Retrieves the representation of the Katello errata.
-        
+
         ```
         GET /ovirt-engine/api/katelloerrata
         ```
         You will receive response in XML like this one:
-        
+
         ```xml
         <katello_errata>
           <katello_erratum href="/ovirt-engine/api/katelloerrata/123" id="123">
@@ -42579,7 +42579,7 @@ class ExternalHostProviderService(ExternalProviderService):
         GET /ovirt-engine/api/externalhostproviders/123
         ```
         The response will be like this:
-        
+
         ```xml
         <external_host_provider href="/ovirt-engine/api/externalhostproviders/123" id="123">
           <name>mysatellite</name>
@@ -42696,7 +42696,7 @@ class ExternalHostProviderService(ExternalProviderService):
         """
         In order to test connectivity for external provider we need
         to run following request where 123 is an id of a provider.
-        
+
         ```
         POST /ovirt-engine/api/externalhostproviders/123/testconnectivity
         ```
@@ -42848,12 +42848,12 @@ class GlusterBrickService(MeasurableService):
         Retrieves status details of brick from underlying gluster volume with header `All-Content` set to `true`. This is
         the equivalent of running `gluster volume status <volumename> <brickname> detail`.
         For example, to get the details of brick `234` of gluster volume `123`, send a request like this:
-        
+
         ```
         GET /ovirt-engine/api/clusters/567/glustervolumes/123/glusterbricks/234
         ```
         Which will return a response body like this:
-        
+
         ```xml
         <brick id="234">
           <name>host1:/rhgs/data/brick1</name>
@@ -42931,7 +42931,7 @@ class GlusterBrickService(MeasurableService):
         removing a single brick without data migration. To remove multiple bricks and with data migration, use
         `GlusterBricksService.migrate` instead.
         For example, to delete brick `234` from gluster volume `123`, send a request like this:
-        
+
         ```
         DELETE /ovirt-engine/api/clusters/567/glustervolumes/123/glusterbricks/234
         ```
@@ -43061,12 +43061,12 @@ class GlusterVolumeService(MeasurableService):
         """
         Get the gluster volume details.
         For example, to get details of a gluster volume with identifier `123` in cluster `456`, send a request like this:
-        
+
         ```
         GET /ovirt-engine/api/clusters/456/glustervolumes/123
         ```
         This GET request will return the following output:
-        
+
         ```xml
         <gluster_volume id="123">
          <name>data</name>
@@ -43137,7 +43137,7 @@ class GlusterVolumeService(MeasurableService):
         Get gluster volume profile statistics.
         For example, to get profile statistics for a gluster volume with identifier `123` in cluster `456`, send a
         request like this:
-        
+
         ```
         POST /ovirt-engine/api/clusters/456/glustervolumes/123/getprofilestatistics
         ```
@@ -43172,7 +43172,7 @@ class GlusterVolumeService(MeasurableService):
         non-replicated volume, all bricks should be online to perform the rebalance operation. In a replicated volume, at
         least one of the bricks in the replica should be online.
         For example, to rebalance a gluster volume with identifier `123` in cluster `456`, send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/clusters/456/glustervolumes/123/rebalance
         ```
@@ -43233,7 +43233,7 @@ class GlusterVolumeService(MeasurableService):
         """
         Removes the gluster volume.
         For example, to remove a volume with identifier `123` in cluster `456`, send a request like this:
-        
+
         ```
         DELETE /ovirt-engine/api/clusters/456/glustervolumes/123
         ```
@@ -43283,7 +43283,7 @@ class GlusterVolumeService(MeasurableService):
         Resets all the options set in the gluster volume.
         For example, to reset all options in a gluster volume with identifier `123` in cluster `456`, send a request like
         this:
-        
+
         ```
         POST /ovirt-engine/api/clusters/456/glustervolumes/123/resetalloptions
         ```
@@ -43334,12 +43334,12 @@ class GlusterVolumeService(MeasurableService):
         Resets a particular option in the gluster volume.
         For example, to reset a particular option `option1` in a gluster volume with identifier `123` in cluster `456`,
         send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/clusters/456/glustervolumes/123/resetoption
         ```
         With the following request body:
-        
+
         ```xml
         <action>
          <option name="option1"/>
@@ -43398,12 +43398,12 @@ class GlusterVolumeService(MeasurableService):
         Sets a particular option in the gluster volume.
         For example, to set `option1` with value `value1` in a gluster volume with identifier `123` in cluster `456`,
         send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/clusters/456/glustervolumes/123/setoption
         ```
         With the following request body:
-        
+
         ```xml
         <action>
          <option name="option1" value="value1"/>
@@ -43460,7 +43460,7 @@ class GlusterVolumeService(MeasurableService):
         Starts the gluster volume.
         A Gluster Volume should be started to read/write data. For example, to start a gluster volume with identifier
         `123` in cluster `456`, send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/clusters/456/glustervolumes/123/start
         ```
@@ -43514,7 +43514,7 @@ class GlusterVolumeService(MeasurableService):
         """
         Start profiling the gluster volume.
         For example, to start profiling a gluster volume with identifier `123` in cluster `456`, send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/clusters/456/glustervolumes/123/startprofile
         ```
@@ -43564,7 +43564,7 @@ class GlusterVolumeService(MeasurableService):
         Stops the gluster volume.
         Stopping a volume will make its data inaccessible.
         For example, to stop a gluster volume with identifier `123` in cluster `456`, send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/clusters/456/glustervolumes/123/stop
         ```
@@ -43614,7 +43614,7 @@ class GlusterVolumeService(MeasurableService):
         """
         Stop profiling the gluster volume.
         For example, to stop profiling a gluster volume with identifier `123` in cluster `456`, send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/clusters/456/glustervolumes/123/stopprofile
         ```
@@ -43663,7 +43663,7 @@ class GlusterVolumeService(MeasurableService):
         Stop rebalancing the gluster volume.
         For example, to stop rebalancing a gluster volume with identifier `123` in cluster `456`, send a request like
         this:
-        
+
         ```
         POST /ovirt-engine/api/clusters/456/glustervolumes/123/stoprebalance
         ```
@@ -43886,12 +43886,12 @@ class HostService(MeasurableService):
         not lost as a result of the configuration changes. If host connectivity is lost, the host requires a reboot and
         automatically reverts to the previous networking configuration.
         For example, to commit the network configuration of host with id `123` send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/hosts/123/commitnetconfig
         ```
         With a request body like this:
-        
+
         ```xml
         <action/>
         ```
@@ -43947,12 +43947,12 @@ class HostService(MeasurableService):
         IMPORTANT: Any network attachments that are not present on the source host will be erased from the target host
         by the copy operation.
         To copy networks from another host, send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/hosts/123/copyhostnetworks
         ```
         With a request body like this:
-        
+
         ```xml
         <action>
            <source_host id="456"/>
@@ -44063,12 +44063,12 @@ class HostService(MeasurableService):
         Returns a list of IscsiDetails objects containing the discovered data.
         For example, to discover iSCSI targets available in `myiscsi.example.com`,
         from host `123`, send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/hosts/123/discoveriscsi
         ```
         With a request body like this:
-        
+
         ```xml
         <action>
           <iscsi>
@@ -44077,7 +44077,7 @@ class HostService(MeasurableService):
         </action>
         ```
         The result will be like this:
-        
+
         ```xml
         <discovered_targets>
           <iscsi_details>
@@ -44186,7 +44186,7 @@ class HostService(MeasurableService):
         """
         Controls the host's power management device.
         For example, to start the host. This can be done via:
-        
+
         ```
         #!/bin/sh -ex
         url="https://engine.example.com/ovirt-engine/api"
@@ -44257,12 +44257,12 @@ class HostService(MeasurableService):
     ):
         """
         To manually set a host as the storage pool manager (SPM).
-        
+
         ```
         POST /ovirt-engine/api/hosts/123/forceselectspm
         ```
         With a request body like this:
-        
+
         ```xml
         <action/>
         ```
@@ -44311,7 +44311,7 @@ class HostService(MeasurableService):
     ):
         """
         Gets the host details.
-        
+
         ```
         GET /ovirt-engine/api/hosts/123
         ```
@@ -44525,12 +44525,12 @@ class HostService(MeasurableService):
         Returns an array of strings containing the discovered data.
         For example, to discover iSCSI targets available in `myiscsi.example.com`,
         from host `123`, send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/hosts/123/iscsidiscover
         ```
         With a request body like this:
-        
+
         ```xml
         <action>
           <iscsi>
@@ -44681,7 +44681,7 @@ class HostService(MeasurableService):
     ):
         """
         Remove the host from the system.
-        
+
         ```
         #!/bin/sh -ex
         url="https://engine.example.com/ovirt-engine/api"
@@ -44760,7 +44760,7 @@ class HostService(MeasurableService):
         For example, if you have a host with three network interfaces `eth0`, `eth1` and `eth2` and you want to configure
         a new bond using `eth0` and `eth1`, and put a VLAN on top of it. Using a simple shell script and the `curl`
         command line HTTP client that can be done as follows:
-        
+
         ```
         #!/bin/sh -ex
         url="https://engine.example.com/ovirt-engine/api"
@@ -44832,7 +44832,7 @@ class HostService(MeasurableService):
         ```
         NOTE: This is valid for version 4 of the API. In previous versions some elements were represented as XML
         attributes instead of XML elements. In particular the `options` and `ip` elements were represented as follows:
-        
+
         ```xml
         <options name="mode" value="4"/>
         <options name="miimon" value="100"/>
@@ -44908,8 +44908,8 @@ class HostService(MeasurableService):
         IMPORTANT: To make sure that the network configuration has been saved in the host, and that it will be applied
         when the host is rebooted, remember to call `HostService.commit_net_config`.
         IMPORTANT: Since {engine-name} 4.3, it is possible to also specify `commit_on_success` in
-        the `HostService.setup_networks` request, in which case the newconfiguration is automatically saved in 
-        the {hypervisor-name} upon completing the setup and re-establishing connectivity between the {hypervisor-name} 
+        the `HostService.setup_networks` request, in which case the newconfiguration is automatically saved in
+        the {hypervisor-name} upon completing the setup and re-establishing connectivity between the {hypervisor-name}
         and {engine-name}, and without waiting for a separate `HostService.commit_net_config` request.
 
 
@@ -44984,12 +44984,12 @@ class HostService(MeasurableService):
     ):
         """
         To synchronize all networks on the host, send a request like this:
-        
+
         ```
         POST /ovirt-engine/api/hosts/123/syncallnetworks
         ```
         With a request body like this:
-        
+
         ```xml
         <action/>
         ```
@@ -45085,7 +45085,7 @@ class HostService(MeasurableService):
         """
         Update the host properties.
         For example, to update a the kernel command line of a host send a request like this:
-        
+
         ```
         PUT /ovirt-engine/api/hosts/123
         ```

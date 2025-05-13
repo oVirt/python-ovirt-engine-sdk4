@@ -77,7 +77,7 @@ quota_service = quotas_service.quota_service(quota.id)
 limits_service = quota_service.quota_storage_limits_service()
 limits = limits_service.list()
 limit = next(
-    (l for l in limits if l.id == sd.id),
+    (lim for lim in limits if lim.id == sd.id),
     None
 )
 
