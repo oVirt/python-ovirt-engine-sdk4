@@ -36,23 +36,15 @@ setuptools.setup(
     name='ovirt-engine-sdk-python',
     version='@RPM_VERSION@',
     description='Python SDK for oVirt Engine API',
-    author='Michael Pasternak, Juan Hernandez, Ondra Machacek, Ori Liel, Martin Necas',
-    author_email=(
-        'mishka8520@yahoo.com, '
-        'juan.hernandez@redhat.com, '
-        'omachace@redhat.com, '
-        'oliel@redhat.com, '
-        'mnecas@redhat.com'
-    ),
-    license='ASL2',
+    author='oVirt Developers',
+    author_email='devel@ovirt.org',
+    license='Apache-2.0',
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Environment :: Console',
         'Intended Audience :: Developers',
         'Intended Audience :: System Administrators',
-        'License :: OSI Approved :: Apache Software License',
         'Operating System :: OS Independent',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
     ],
     package_dir={'': 'lib'},
