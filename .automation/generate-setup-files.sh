@@ -16,7 +16,6 @@ GENERATED_FILES="
  lib/ovirtsdk4/version.py
  setup.py
  PKG-INFO
- lib/ovirt_engine_sdk_python.egg-info/PKG-INFO
  python-ovirt-engine-sdk4.spec
 "
 
