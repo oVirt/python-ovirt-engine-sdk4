@@ -46,30 +46,27 @@ class AffinityGroupService(Service):
     ):
         """
         Retrieve the affinity group details.
-        ```xml
+        [source,xml]
+        ----
         <affinity_group id="00000000-0000-0000-0000-000000000000">
           <name>AF_GROUP_001</name>
           <cluster id="00000000-0000-0000-0000-000000000000"/>
           <positive>true</positive>
           <enforcing>true</enforcing>
         </affinity_group>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -94,22 +91,21 @@ class AffinityGroupService(Service):
     ):
         """
         Remove the affinity group.
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/clusters/000-000/affinitygroups/123-456
-        ```
+        ----
+
+
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the removal should be performed asynchronously.
+        `async_`:: Indicates if the removal should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -144,14 +140,13 @@ class AffinityGroupService(Service):
 
         This method supports the following parameters:
 
-        `group` \n
-        The affinity group.
-        `headers` \n
-        Additional HTTP headers.
-        `query` \n
-        Additional URL query parameters.
-        `wait` \n
-        If `True` wait for the response.
+        `group`:: The affinity group.
+
+        `headers`:: Additional HTTP headers.
+
+        `query`:: Additional URL query parameters.
+
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -259,17 +254,13 @@ class AffinityGroupHostService(Service):
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the removal should be performed asynchronously.
+        `async_`:: Indicates if the removal should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -324,17 +315,13 @@ class AffinityGroupHostLabelService(Service):
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the removal should be performed asynchronously.
+        `async_`:: Indicates if the removal should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -388,27 +375,25 @@ class AffinityGroupHostLabelsService(Service):
         Adds a host label to the affinity group.
         For example, to add the label `789` to the affinity group `456` of cluster `123`,
         send a request like this:
-        ```
+        ....
         POST /ovirt-engine/api/clusters/123/affinitygroups/456/hostlabels
-        ```
+        ....
         With the following body:
-        ```xml
+        [source,xml]
+        ----
         <affinity_label id="789"/>
-        ```
+        ----
+
 
         This method supports the following parameters:
 
-        `label` \n
-        The AffinityLabel object to add to the affinity group.
+        `label`:: The AffinityLabel object to add to the affinity group.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -434,24 +419,20 @@ class AffinityGroupHostLabelsService(Service):
         List all host labels assigned to this affinity group.
         The order of the returned labels isn't guaranteed.
 
+
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of host labels to return.
+        `max`:: Sets the maximum number of host labels to return.
         If not specified, all the labels are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -517,27 +498,25 @@ class AffinityGroupHostsService(Service):
         Adds a host to the affinity group.
         For example, to add the host `789` to the affinity group `456` of cluster `123`, send a request like
         this:
-        ```
+        ....
         POST /ovirt-engine/api/clusters/123/affinitygroups/456/hosts
-        ```
+        ....
         With the following body:
-        ```xml
+        [source,xml]
+        ----
         <host id="789"/>
-        ```
+        ----
+
 
         This method supports the following parameters:
 
-        `host` \n
-        The host to be added to the affinity group.
+        `host`:: The host to be added to the affinity group.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -563,23 +542,20 @@ class AffinityGroupHostsService(Service):
         List all hosts assigned to this affinity group.
         The order of the returned hosts isn't guaranteed.
 
+
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of hosts to return. If not specified, all the hosts are returned.
+        `max`:: Sets the maximum number of hosts to return. If not specified, all the hosts are
+        returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -646,17 +622,13 @@ class AffinityGroupVmService(Service):
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the removal should be performed asynchronously.
+        `async_`:: Indicates if the removal should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -711,17 +683,13 @@ class AffinityGroupVmLabelService(Service):
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the removal should be performed asynchronously.
+        `async_`:: Indicates if the removal should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -775,28 +743,25 @@ class AffinityGroupVmLabelsService(Service):
         Adds a virtual machine label to the affinity group.
         For example, to add the label `789` to the affinity group `456` of cluster `123`,
         send a request like this:
-        ```
+        ....
         POST /ovirt-engine/api/clusters/123/affinitygroups/456/vmlabels
-        ```
+        ....
         With the following body:
-        ```xml
+        [source,xml]
+        ----
         <affinity_label id="789"/>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `label` \n
-        The AffinityLabel object to add to the affinity group.
+        `label`:: The AffinityLabel object to add to the affinity group.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -822,24 +787,20 @@ class AffinityGroupVmLabelsService(Service):
         List all virtual machine labels assigned to this affinity group.
         The order of the returned labels isn't guaranteed.
 
+
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of virtual machine labels to return.
+        `max`:: Sets the maximum number of virtual machine labels to return.
         If not specified, all the labels are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -861,6 +822,7 @@ class AffinityGroupVmLabelsService(Service):
     def label_service(self, id):
         """
         Access the service that manages the virtual machine label assignment to this affinity group.
+
         """
         Service._check_types([
             ('id', id, str),
@@ -885,6 +847,7 @@ class AffinityGroupVmLabelsService(Service):
 class AffinityGroupVmsService(Service):
     """
     This service manages a collection of all the virtual machines assigned to an affinity group.
+
     """
 
     def __init__(self, connection, path):
@@ -903,13 +866,16 @@ class AffinityGroupVmsService(Service):
         Adds a virtual machine to the affinity group.
         For example, to add the virtual machine `789` to the affinity group `456` of cluster `123`, send a request like
         this:
-        ```
+        ....
         POST /ovirt-engine/api/clusters/123/affinitygroups/456/vms
-        ```
+        ....
         With the following body:
-        ```xml
+        [source,xml]
+        ----
         <vm id="789"/>
-        ```
+        ----
+
+
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -935,23 +901,20 @@ class AffinityGroupVmsService(Service):
         List all virtual machines assigned to this affinity group.
         The order of the returned virtual machines isn't guaranteed.
 
+
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of virtual machines to return. If not specified, all the virtual machines are returned.
+        `max`:: Sets the maximum number of virtual machines to return. If not specified, all the virtual machines are
+        returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -973,6 +936,7 @@ class AffinityGroupVmsService(Service):
     def vm_service(self, id):
         """
         Access the service that manages the virtual machine assignment to this affinity group.
+
         """
         Service._check_types([
             ('id', id, str),
@@ -997,6 +961,7 @@ class AffinityGroupVmsService(Service):
 class AffinityGroupsService(Service):
     """
     The affinity groups service manages virtual machine relationships and dependencies.
+
     """
 
     def __init__(self, connection, path):
@@ -1014,11 +979,13 @@ class AffinityGroupsService(Service):
         """
         Create a new affinity group.
         Post a request like in the example below to create a new affinity group:
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/clusters/000-000/affinitygroups
-        ```
+        ----
         And use the following example in its body:
-        ```xml
+        [source,xml]
+        ----
         <affinity_group>
           <name>AF_GROUP_001</name>
           <hosts_rule>
@@ -1029,21 +996,18 @@ class AffinityGroupsService(Service):
             <enabled>false</enabled>
           </vms_rule>
         </affinity_group>
-        ```
+        ----
+
 
         This method supports the following parameters:
 
-        `group` \n
-        The affinity group object to create.
+        `group`:: The affinity group object to create.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -1069,23 +1033,19 @@ class AffinityGroupsService(Service):
         List existing affinity groups.
         The order of the affinity groups results isn't guaranteed.
 
+
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of affinity groups to return. If not specified all the affinity groups are returned.
+        `max`:: Sets the maximum number of affinity groups to return. If not specified all the affinity groups are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -1107,6 +1067,7 @@ class AffinityGroupsService(Service):
     def group_service(self, id):
         """
         Access the affinity group service that manages the affinity group specified by an ID.
+
         """
         Service._check_types([
             ('id', id, str),
@@ -1131,6 +1092,7 @@ class AffinityGroupsService(Service):
 class AffinityLabelService(Service):
     """
     The details of a single affinity label.
+
     """
 
     def __init__(self, connection, path):
@@ -1149,20 +1111,17 @@ class AffinityLabelService(Service):
         """
         Retrieves the details of a label.
 
+
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -1187,6 +1146,8 @@ class AffinityLabelService(Service):
         """
         Removes a label from the system and clears all assignments
         of the removed label.
+
+
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -1209,6 +1170,8 @@ class AffinityLabelService(Service):
         """
         Updates a label. This call will update all metadata, such as the name
         or description.
+
+
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -1224,12 +1187,14 @@ class AffinityLabelService(Service):
     def hosts_service(self):
         """
         List all hosts with this label.
+
         """
         return AffinityLabelHostsService(self._connection, '%s/hosts' % self._path)
 
     def vms_service(self):
         """
         List all virtual machines with this label.
+
         """
         return AffinityLabelVmsService(self._connection, '%s/vms' % self._path)
 
@@ -1258,7 +1223,9 @@ class AffinityLabelHostService(Service):
     This service represents a host that has a specific
     label when accessed through the affinitylabels/hosts
     subcollection.
+
     """
+
     def __init__(self, connection, path):
         super(AffinityLabelHostService, self).__init__(connection, path)
 
@@ -1273,20 +1240,17 @@ class AffinityLabelHostService(Service):
         """
         Retrieves details about a host that has this label assigned.
 
+
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -1310,6 +1274,8 @@ class AffinityLabelHostService(Service):
     ):
         """
         Remove a label from a host.
+
+
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -1338,6 +1304,7 @@ class AffinityLabelHostsService(Service):
     This service represents list of hosts that have a specific
     label when accessed through the affinitylabels/hosts
     subcollection.
+
     """
 
     def __init__(self, connection, path):
@@ -1354,6 +1321,8 @@ class AffinityLabelHostsService(Service):
     ):
         """
         Add a label to a host.
+
+
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -1378,20 +1347,17 @@ class AffinityLabelHostsService(Service):
         List all hosts with the label.
         The order of the returned hosts isn't guaranteed.
 
+
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -1410,6 +1376,7 @@ class AffinityLabelHostsService(Service):
         """
         A link to the specific label-host assignment to
         allow label removal.
+
         """
         Service._check_types([
             ('id', id, str),
@@ -1436,6 +1403,7 @@ class AffinityLabelVmService(Service):
     This service represents a vm that has a specific
     label when accessed through the affinitylabels/vms
     subcollection.
+
     """
 
     def __init__(self, connection, path):
@@ -1452,20 +1420,17 @@ class AffinityLabelVmService(Service):
         """
         Retrieves details about a vm that has this label assigned.
 
+
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -1489,6 +1454,8 @@ class AffinityLabelVmService(Service):
     ):
         """
         Remove a label from a vm.
+
+
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -1517,6 +1484,7 @@ class AffinityLabelVmsService(Service):
     This service represents list of vms that have a specific
     label when accessed through the affinitylabels/vms
     subcollection.
+
     """
 
     def __init__(self, connection, path):
@@ -1533,6 +1501,8 @@ class AffinityLabelVmsService(Service):
     ):
         """
         Add a label to a vm.
+
+
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -1557,20 +1527,17 @@ class AffinityLabelVmsService(Service):
         List all virtual machines with the label.
         The order of the returned virtual machines isn't guaranteed.
 
+
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -1589,6 +1556,7 @@ class AffinityLabelVmsService(Service):
         """
         A link to the specific label-vm assignment to
         allow label removal.
+
         """
         Service._check_types([
             ('id', id, str),
@@ -1613,6 +1581,7 @@ class AffinityLabelVmsService(Service):
 class AffinityLabelsService(Service):
     """
     Manages the affinity labels available in the system.
+
     """
 
     def __init__(self, connection, path):
@@ -1630,6 +1599,8 @@ class AffinityLabelsService(Service):
         """
         Creates a new label. The label is automatically attached
         to all entities mentioned in the vms or hosts lists.
+
+
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -1655,23 +1626,19 @@ class AffinityLabelsService(Service):
         Lists all labels present in the system.
         The order of the returned labels isn't guaranteed.
 
+
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of labels to return. If not specified all the labels are returned.
+        `max`:: Sets the maximum number of labels to return. If not specified all the labels are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -1693,6 +1660,7 @@ class AffinityLabelsService(Service):
     def label_service(self, id):
         """
         Link to a single label details.
+
         """
         Service._check_types([
             ('id', id, str),
@@ -1726,6 +1694,7 @@ class AreaService(Service):
     A concept may be associated to more than one area, or to no area.
     The value of this annotation is intended for reporting only, and it doesn't affect at all the generated code or the
     validity of the model
+
     """
 
     def __init__(self, connection, path):
@@ -1747,6 +1716,7 @@ class AssignedAffinityLabelService(Service):
     """
     This service represents one label to entity assignment
     when accessed using the entities/affinitylabels subcollection.
+
     """
 
     def __init__(self, connection, path):
@@ -1763,20 +1733,17 @@ class AssignedAffinityLabelService(Service):
         """
         Retrieves details about the attached label.
 
+
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -1800,6 +1767,8 @@ class AssignedAffinityLabelService(Service):
     ):
         """
         Removes the label from an entity. Does not touch the label itself.
+
+
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -1827,6 +1796,7 @@ class AssignedAffinityLabelsService(Service):
     """
     This service is used to list and manipulate affinity labels that are
     assigned to supported entities when accessed using entities/affinitylabels.
+
     """
 
     def __init__(self, connection, path):
@@ -1843,6 +1813,8 @@ class AssignedAffinityLabelsService(Service):
     ):
         """
         Attaches a label to an entity.
+
+
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -1867,20 +1839,17 @@ class AssignedAffinityLabelsService(Service):
         Lists all labels that are attached to an entity.
         The order of the returned entities isn't guaranteed.
 
+
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -1899,6 +1868,7 @@ class AssignedAffinityLabelsService(Service):
         """
         Link to the specific entity-label assignment to allow
         removal.
+
         """
         Service._check_types([
             ('id', id, str),
@@ -1938,18 +1908,14 @@ class AssignedCpuProfileService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -1975,17 +1941,13 @@ class AssignedCpuProfileService(Service):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2035,6 +1997,8 @@ class AssignedCpuProfilesService(Service):
     ):
         """
         Add a new cpu profile for the cluster.
+
+
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2060,23 +2024,19 @@ class AssignedCpuProfilesService(Service):
         List the CPU profiles assigned to the cluster.
         The order of the returned CPU profiles isn't guaranteed.
 
+
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of profiles to return. If not specified all the profiles are returned.
+        `max`:: Sets the maximum number of profiles to return. If not specified all the profiles are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2096,6 +2056,8 @@ class AssignedCpuProfilesService(Service):
         return self._internal_get(headers, query, wait)
 
     def profile_service(self, id):
+        """
+        """
         Service._check_types([
             ('id', id, str),
         ])
@@ -2134,18 +2096,14 @@ class AssignedDiskProfileService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2171,17 +2129,13 @@ class AssignedDiskProfileService(Service):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2231,6 +2185,8 @@ class AssignedDiskProfilesService(Service):
     ):
         """
         Add a new disk profile for the storage domain.
+
+
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2256,23 +2212,19 @@ class AssignedDiskProfilesService(Service):
         Returns the list of disk profiles assigned to the storage domain.
         The order of the returned disk profiles isn't guaranteed.
 
+
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of profiles to return. If not specified all the profiles are returned.
+        `max`:: Sets the maximum number of profiles to return. If not specified all the profiles are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2317,6 +2269,7 @@ class AssignedDiskProfilesService(Service):
 class AssignedPermissionsService(Service):
     """
     Represents a permission sub-collection, scoped by user, group or some entity type.
+
     """
 
     def __init__(self, connection, path):
@@ -2335,59 +2288,60 @@ class AssignedPermissionsService(Service):
         Assign a new permission to a user or group for specific entity.
         For example, to assign the `UserVmManager` role to the virtual machine with id `123` to the user with id `456`
         send a request like this:
-        ```
+        ....
         POST /ovirt-engine/api/vms/123/permissions
-        ```
+        ....
         With a request body like this:
-        ```xml
+        [source,xml]
+        ----
         <permission>
           <role>
             <name>UserVmManager</name>
           </role>
           <user id="456"/>
         </permission>
-        ```
+        ----
         To assign the `SuperUser` role to the system to the user with id `456` send a request like this:
-        ```
+        ....
         POST /ovirt-engine/api/permissions
-        ```
+        ....
         With a request body like this:
-        ```xml
+        [source,xml]
+        ----
         <permission>
           <role>
             <name>SuperUser</name>
           </role>
           <user id="456"/>
         </permission>
-        ```
+        ----
         If you want to assign permission to the group instead of the user please replace the `user` element with the
         `group` element with proper `id` of the group. For example to assign the `UserRole` role to the cluster with
         id `123` to the group with id `789` send a request like this:
-        ```
+        ....
         POST /ovirt-engine/api/clusters/123/permissions
-        ```
+        ....
         With a request body like this:
-        ```xml
+        [source,xml]
+        ----
         <permission>
           <role>
             <name>UserRole</name>
           </role>
           <group id="789"/>
         </permission>
-        ```
+        ----
+
+
         This method supports the following parameters:
 
-        `permission` \n
-        The permission.
+        `permission`:: The permission.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2411,19 +2365,16 @@ class AssignedPermissionsService(Service):
         """
         Add a new permission on the cluster to the group in the system.
 
+
         This method supports the following parameters:
 
-        `permission` \n
-        The permission.
+        `permission`:: The permission.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2447,19 +2398,16 @@ class AssignedPermissionsService(Service):
         """
         Add a new permission on the data center to the group in the system.
 
+
         This method supports the following parameters:
 
-        `permission` \n
-        The permission.
+        `permission`:: The permission.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2483,19 +2431,16 @@ class AssignedPermissionsService(Service):
         """
         Add a new group level permission for a given virtual machine.
 
+
         This method supports the following parameters:
 
-        `permission` \n
-        The permission.
+        `permission`:: The permission.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2519,19 +2464,16 @@ class AssignedPermissionsService(Service):
         """
         Add a new permission on the host to the group in the system.
 
+
         This method supports the following parameters:
 
-        `permission` \n
-        The permission.
+        `permission`:: The permission.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2555,11 +2497,11 @@ class AssignedPermissionsService(Service):
         """
         List all the permissions of the specific entity.
         For example to list all the permissions of the cluster with id `123` send a request like this:
-        ```
+        ....
         GET /ovirt-engine/api/clusters/123/permissions
-        ```
-        With a request body like this:
-        ```xml
+        ....
+        [source,xml]
+        ----
         <permissions>
           <permission id="456">
             <cluster id="123"/>
@@ -2572,23 +2514,20 @@ class AssignedPermissionsService(Service):
             <group id="127"/>
           </permission>
         </permissions>
-        ```
+        ----
         The order of the returned permissions isn't guaranteed.
+
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2614,19 +2553,16 @@ class AssignedPermissionsService(Service):
         """
         Add a new permission on the storage domain to the group in the system.
 
+
         This method supports the following parameters:
 
-        `permission` \n
-        The permission.
+        `permission`:: The permission.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2650,19 +2586,16 @@ class AssignedPermissionsService(Service):
         """
         Add a new permission on the template to the group in the system.
 
+
         This method supports the following parameters:
 
-        `permission` \n
-        The permission.
+        `permission`:: The permission.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2686,19 +2619,16 @@ class AssignedPermissionsService(Service):
         """
         Add a new user level permission for a given virtual machine.
 
+
         This method supports the following parameters:
 
-        `permission` \n
-        The permission.
+        `permission`:: The permission.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2722,19 +2652,16 @@ class AssignedPermissionsService(Service):
         """
         Add a new permission on the vm to the group in the system.
 
+
         This method supports the following parameters:
 
-        `permission` \n
-        The permission.
+        `permission`:: The permission.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2758,19 +2685,16 @@ class AssignedPermissionsService(Service):
         """
         Add a new permission on the vm pool to the group in the system.
 
+
         This method supports the following parameters:
 
-        `permission` \n
-        The permission.
+        `permission`:: The permission.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2787,6 +2711,7 @@ class AssignedPermissionsService(Service):
         """
         Sub-resource locator method, returns individual permission resource on which the remainder of the URI is
         dispatched.
+
         """
         Service._check_types([
             ('id', id, str),
@@ -2811,6 +2736,7 @@ class AssignedPermissionsService(Service):
 class AssignedRolesService(Service):
     """
     Represents a roles sub-collection, for example scoped by user.
+
     """
 
     def __init__(self, connection, path):
@@ -2830,23 +2756,19 @@ class AssignedRolesService(Service):
         Returns the roles assigned to the permission.
         The order of the returned roles isn't guaranteed.
 
+
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of roles to return. If not specified all the roles are returned.
+        `max`:: Sets the maximum number of roles to return. If not specified all the roles are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2868,6 +2790,7 @@ class AssignedRolesService(Service):
     def role_service(self, id):
         """
         Sub-resource locator method, returns individual role resource on which the remainder of the URI is dispatched.
+
         """
         Service._check_types([
             ('id', id, str),
@@ -2892,6 +2815,7 @@ class AssignedRolesService(Service):
 class AssignedTagService(Service):
     """
     A service to manage assignment of specific tag to specific entities in system.
+
     """
 
     def __init__(self, connection, path):
@@ -2909,31 +2833,29 @@ class AssignedTagService(Service):
         Gets the information about the assigned tag.
         For example to retrieve the information about the tag with the id `456` which is assigned to virtual machine
         with id `123` send a request like this:
-        ```
+        ....
         GET /ovirt-engine/api/vms/123/tags/456
-        ```
-        results in a response body like this:
-        ```xml
+        ....
+        [source,xml]
+        ----
         <tag href="/ovirt-engine/api/tags/456" id="456">
           <name>root</name>
           <description>root</description>
           <vm href="/ovirt-engine/api/vms/123" id="123"/>
         </tag>
-        ```
+        ----
+
+
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2959,23 +2881,20 @@ class AssignedTagService(Service):
         """
         Unassign tag from specific entity in the system.
         For example to unassign the tag with id `456` from virtual machine with id `123` send a request like this:
-        ```
+        ....
         DELETE /ovirt-engine/api/vms/123/tags/456
-        ```
+        ....
+
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -3028,30 +2947,27 @@ class AssignedTagsService(Service):
         """
         Assign tag to specific entity in the system.
         For example to assign tag `mytag` to virtual machine with the id `123` send a request like this:
-        ```
+        ....
         POST /ovirt-engine/api/vms/123/tags
-        ```
+        ....
         With a request body like this:
-        ```xml
+        [source,xml]
+        ----
         <tag>
           <name>mytag</name>
         </tag>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `tag` \n
-        The assigned tag.
+        `tag`:: The assigned tag.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -3076,11 +2992,11 @@ class AssignedTagsService(Service):
         """
         List all tags assigned to the specific entity.
         For example to list all the tags of the virtual machine with id `123` send a request like this:
-        ```
+        ....
         GET /ovirt-engine/api/vms/123/tags
-        ```
-        Results in a response body like this:
-        ```xml
+        ....
+        [source,xml]
+        ----
         <tags>
           <tag href="/ovirt-engine/api/tags/222" id="222">
             <name>mytag</name>
@@ -3088,26 +3004,22 @@ class AssignedTagsService(Service):
             <vm href="/ovirt-engine/api/vms/123" id="123"/>
           </tag>
         </tags>
-        ```
+        ----
         The order of the returned tags isn't guaranteed.
+
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of tags to return. If not specified all the tags are returned.
+        `max`:: Sets the maximum number of tags to return. If not specified all the tags are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -3129,6 +3041,7 @@ class AssignedTagsService(Service):
     def tag_service(self, id):
         """
         Reference to the service that manages assignment of specific tag.
+
         """
         Service._check_types([
             ('id', id, str),
@@ -3169,18 +3082,14 @@ class AssignedVnicProfileService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -3206,17 +3115,13 @@ class AssignedVnicProfileService(Service):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -3237,6 +3142,8 @@ class AssignedVnicProfileService(Service):
         self._internal_remove(headers, query, wait)
 
     def permissions_service(self):
+        """
+        """
         return AssignedPermissionsService(self._connection, '%s/permissions' % self._path)
 
     def service(self, path):
@@ -3273,6 +3180,8 @@ class AssignedVnicProfilesService(Service):
     ):
         """
         Add a new virtual network interface card profile for the network.
+
+
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -3298,23 +3207,19 @@ class AssignedVnicProfilesService(Service):
         Returns the list of VNIC profiles assifned to the network.
         The order of the returned VNIC profiles isn't guaranteed.
 
+
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of profiles to return. If not specified all the profiles are returned.
+        `max`:: Sets the maximum number of profiles to return. If not specified all the profiles are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -3334,6 +3239,8 @@ class AssignedVnicProfilesService(Service):
         return self._internal_get(headers, query, wait)
 
     def profile_service(self, id):
+        """
+        """
         Service._check_types([
             ('id', id, str),
         ])
@@ -3373,28 +3280,27 @@ class AttachedStorageDomainService(Service):
         """
         This operation activates an attached storage domain.
         Once the storage domain is activated it is ready for use with the data center.
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/datacenters/123/storagedomains/456/activate
-        ```
+        ----
         The activate action does not take any action specific parameters,
         so the request body should contain an empty `action`:
-        ```xml
+        [source,xml]
+        ----
         <action/>
-        ```
+        ----
+
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the activation should be performed asynchronously.
+        `async_`:: Indicates if the activation should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -3426,53 +3332,45 @@ class AttachedStorageDomainService(Service):
         This operation deactivates an attached storage domain.
         Once the storage domain is deactivated it will not be used with the data center.
         For example, to deactivate storage domain `456`, send the following request:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/datacenters/123/storagedomains/456/deactivate
-        ```
-
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <action/>
-        ```
-
+        ----
         If the `force` parameter is `true` then the operation will succeed, even if the OVF update which takes place
         before the deactivation of the storage domain failed. If the `force` parameter is `false` and the OVF update failed,
         the deactivation of the storage domain will also fail.
 
+
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the deactivation should be performed asynchronously.
+        `async_`:: Indicates if the deactivation should be performed asynchronously.
 
-        `force` \n
-        Indicates if the operation should succeed and the storage domain should be moved to a deactivated state, even if
+        `force`:: Indicates if the operation should succeed and the storage domain should be moved to a deactivated state, even if
         the OVF update for the storage domain failed.
-
         For example, to deactivate storage domain `456` using force flag, send the following request:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/datacenters/123/storagedomains/456/deactivate
-        ```
-
+        ----
         With a request body like this:
-
-        ```
+        [source,xml]
+        ----
         <action>
           <force>true</force>
         <action>
-        ```
+        ----
         This parameter is optional, and the default value is `false`.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -3504,18 +3402,14 @@ class AttachedStorageDomainService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -3541,17 +3435,13 @@ class AttachedStorageDomainService(Service):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -3614,24 +3504,21 @@ class AttachedStorageDomainDisksService(Service):
         """
         Adds or registers a disk.
         IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. To add a new disk use the `DisksService.add`
+        compatibility. It will be removed in the future. To add a new disk use the xref:services-disks-methods-add[add]
         operation of the service that manages the disks of the system. To register an unregistered disk use the
-        `AttachedStorageDomainDiskService.register` operation of the service that manages that disk.
+        xref:services-attached_storage_domain_disk-methods-register[register] operation of the service that manages
+        that disk.
 
 
         This method supports the following parameters:
 
-        `disk` \n
-        The disk to add or register.
+        `disk`:: The disk to add or register.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -3663,21 +3550,16 @@ class AttachedStorageDomainDisksService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of disks to return. If not specified all the disks are returned.
+        `max`:: Sets the maximum number of disks to return. If not specified all the disks are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -3745,17 +3627,13 @@ class AttachedStorageDomainsService(Service):
 
         This method supports the following parameters:
 
-        `storage_domain` \n
-        The storage domain to attach to the data center.
+        `storage_domain`:: The storage domain to attach to the data center.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -3784,21 +3662,16 @@ class AttachedStorageDomainsService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of storage domains to return. If not specified all the storage domains are returned.
+        `max`:: Sets the maximum number of storage domains to return. If not specified all the storage domains are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -3859,21 +3732,16 @@ class BalanceService(Service):
         """
         This method supports the following parameters:
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -3903,17 +3771,13 @@ class BalanceService(Service):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -3994,24 +3858,18 @@ class BalancesService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of balances to return. If not specified all the balances are returned.
+        `max`:: Sets the maximum number of balances to return. If not specified all the balances are returned.
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -4077,33 +3935,29 @@ class BookmarkService(Service):
         """
         Get a bookmark.
         An example for getting a bookmark:
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/bookmarks/123
-        ```
-
-        ```xml
+        ----
+        [source,xml]
+        ----
         <bookmark href="/ovirt-engine/api/bookmarks/123" id="123">
           <name>example_vm</name>
           <value>vm: name=example*</value>
         </bookmark>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -4129,25 +3983,21 @@ class BookmarkService(Service):
         """
         Remove a bookmark.
         An example for removing a bookmark:
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/bookmarks/123
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -4179,33 +4029,29 @@ class BookmarkService(Service):
         """
         Update a bookmark.
         An example for updating a bookmark:
-
-        ```
+        [source]
+        ----
         PUT /ovirt-engine/api/bookmarks/123
-        ```
+        ----
         With the request body:
-
-        ```xml
+        [source,xml]
+        ----
         <bookmark>
           <name>new_example_vm</name>
           <value>vm: name=new_example*</value>
         </bookmark>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `bookmark` \n
-        The updated bookmark.
+        `bookmark`:: The updated bookmark.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -4259,32 +4105,28 @@ class BookmarksService(Service):
         """
         Adding a new bookmark.
         Example of adding a bookmark:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/bookmarks
-        ```
-
-        ```xml
+        ----
+        [source,xml]
+        ----
         <bookmark>
           <name>new_example_vm</name>
           <value>vm: name=new_example*</value>
         </bookmark>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `bookmark` \n
-        The added bookmark.
+        `bookmark`:: The added bookmark.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -4309,13 +4151,12 @@ class BookmarksService(Service):
         """
         Listing all the available bookmarks.
         Example of listing bookmarks:
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/bookmarks
-        ```
-        The response will be similar to:
-
-        ```xml
+        ----
+        [source,xml]
+        ----
         <bookmarks>
           <bookmark href="/ovirt-engine/api/bookmarks/123" id="123">
             <name>database</name>
@@ -4326,27 +4167,22 @@ class BookmarksService(Service):
             <value>vm: name=example*</value>
           </bookmark>
         </bookmarks>
-        ```
+        ----
         The order of the returned bookmarks isn't guaranteed.
 
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of bookmarks to return. If not specified all the bookmarks are returned.
+        `max`:: Sets the maximum number of bookmarks to return. If not specified all the bookmarks are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -4420,12 +4256,12 @@ class ClusterService(Service):
         """
         Gets information about the cluster.
         An example of getting a cluster:
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/clusters/123
-        ```
-
-        ```xml
+        ----
+        [source,xml]
+        ----
         <cluster href="/ovirt-engine/api/clusters/123" id="123">
           <actions>
             <link href="/ovirt-engine/api/clusters/123/resetemulatedmachine" rel="resetemulatedmachine"/>
@@ -4491,26 +4327,21 @@ class ClusterService(Service):
           <virt_service>true</virt_service>
           <data_center href="/ovirt-engine/api/datacenters/111" id="111"/>
         </cluster>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -4540,10 +4371,10 @@ class ClusterService(Service):
         Refresh the Gluster heal info for all volumes in cluster.
         For example, Cluster `123`, send a request like
         this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/clusters/123/refreshglusterhealstatus
-        ```
+        ----
 
 
         """
@@ -4568,25 +4399,21 @@ class ClusterService(Service):
     ):
         """
         Removes the cluster from the system.
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/clusters/00000000-0000-0000-0000-000000000000
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -4617,17 +4444,13 @@ class ClusterService(Service):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the reset should be performed asynchronously.
+        `async_`:: Indicates if the reset should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -4656,30 +4479,26 @@ class ClusterService(Service):
     ):
         """
         Synchronizes all networks on the cluster.
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/clusters/123/syncallnetworks
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <action/>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the action should be performed asynchronously.
+        `async_`:: Indicates if the action should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -4711,19 +4530,19 @@ class ClusterService(Service):
         Updates information about the cluster.
         Only the specified fields are updated; others remain unchanged.
         For example, to update the cluster's CPU:
-
-        ```
+        [source]
+        ----
         PUT /ovirt-engine/api/clusters/123
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <cluster>
           <cpu>
             <type>Intel Haswell-noTSX Family</type>
           </cpu>
         </cluster>
-        ```
+        ----
 
 
         """
@@ -4761,22 +4580,22 @@ class ClusterService(Service):
         Start, update or finish upgrade process for the cluster based on the action value. This action marks the
         cluster for upgrade, updates the progress, or clears the upgrade running flag on the cluster based on the
         action value which takes values of `start`, `stop` or `update_progress`.
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/clusters/123/upgrade
-        ```
+        ----
         With a request body like this to mark the cluster for upgrade:
-
-        ```xml
+        [source,xml]
+        ----
         <action>
             <upgrade_action>
                 start
             </upgrade_action>
         </action>
-        ```
+        ----
         After starting the upgrade, use a request body like this to update the progress to 15%:
-
-        ```xml
+        [source,xml]
+        ----
         <action>
             <upgrade_action>
                 update_progress
@@ -4785,33 +4604,26 @@ class ClusterService(Service):
                 15
             </upgrade_percent_complete>
         </action>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `upgrade_action` \n
-        The action to be performed.
+        `upgrade_action`:: The action to be performed.
 
-        `correlation_id` \n
-        Explicitly set the upgrade correlation identifier.  Use to correlate events
+        `correlation_id`:: Explicitly set the upgrade correlation identifier.  Use to correlate events
         detailing the cluster upgrade to the upgrade itself.  If not specificed, the
         correlation id from `Correlation-Id` http header will be used.
 
-        `upgrade_percent_complete` \n
-        Update the upgrade's progress as a percent complete of the total process.
+        `upgrade_percent_complete`:: Update the upgrade's progress as a percent complete of the total process.
 
-        `async_` \n
-        Indicates if the action should be performed asynchronously.
+        `async_`:: Indicates if the action should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -4967,33 +4779,29 @@ class ClusterEnabledFeatureService(Service):
         """
         Provides the information about the cluster feature enabled.
         For example, to find details of the enabled feature `456` for cluster `123`, send a request like this:
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/clusters/123/enabledfeatures/456
-        ```
-        That will return a `ovirtsdk4.types.ClusterFeature` object containing the name:
-
-        ```xml
+        ----
+        That will return a xref:types-cluster_feature[ClusterFeature] object containing the name:
+        [source,xml]
+        ----
         <cluster_feature id="456">
           <name>libgfapi_supported</name>
         </cluster_feature>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -5018,10 +4826,10 @@ class ClusterEnabledFeatureService(Service):
         """
         Disables a cluster feature.
         For example, to disable the feature `456` of cluster `123` send a request like this:
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/clusters/123/enabledfeatures/456
-        ```
+        ----
 
 
         """
@@ -5069,15 +4877,17 @@ class ClusterEnabledFeaturesService(Service):
         """
         Enable an additional feature for a cluster.
         For example, to enable a feature `456` on cluster `123`, send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/clusters/123/enabledfeatures
-        ```
+        ----
         The request body should look like this:
-
-        ```xml
+        [source,xml]
+        ----
         <cluster_feature id="456"/>
-        ```
+        ----
+
+
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -5101,36 +4911,32 @@ class ClusterEnabledFeaturesService(Service):
         """
         Lists the additional features enabled for the cluster.
         For example, to get the features enabled for cluster `123` send a request like this:
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/clusters/123/enabledfeatures
-        ```
+        ----
         This will return a list of features:
-
-        ```xml
+        [source,xml]
+        ----
         <enabled_features>
           <cluster_feature id="123">
              <name>test_feature</name>
           </cluster_feature>
           ...
         </enabled_features>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -5195,18 +5001,14 @@ class ClusterExternalProvidersService(Service):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -5253,33 +5055,29 @@ class ClusterFeatureService(Service):
         """
         Provides the information about the a cluster feature supported by a cluster level.
         For example, to find details of the cluster feature `456` for cluster level 4.1, send a request like this:
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/clusterlevels/4.1/clusterfeatures/456
-        ```
-        That will return a `ovirtsdk4.types.ClusterFeature` object containing the name:
-
-        ```xml
+        ----
+        That will return a xref:types-cluster_feature[ClusterFeature] object containing the name:
+        [source,xml]
+        ----
         <cluster_feature id="456">
           <name>libgfapi_supported</name>
         </cluster_feature>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -5326,36 +5124,32 @@ class ClusterFeaturesService(Service):
     ):
         """
         Lists the cluster features supported by the cluster level.
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/clusterlevels/4.1/clusterfeatures
-        ```
+        ----
         This will return a list of cluster features supported by the cluster level:
-
-        ```xml
+        [source,xml]
+        ----
         <cluster_features>
           <cluster_feature id="123">
              <name>test_feature</name>
           </cluster_feature>
           ...
         </cluster_features>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -5397,8 +5191,9 @@ class ClusterFeaturesService(Service):
 
 class ClusterLevelService(Service):
     """
-    Provides information about a specific cluster level. See the `ClusterLevelsService` service for
+    Provides information about a specific cluster level. See the xref:services-cluster_levels[ClusterLevels] service for
     more information.
+
     """
 
     def __init__(self, connection, path):
@@ -5416,14 +5211,14 @@ class ClusterLevelService(Service):
         """
         Provides the information about the capabilities of the specific cluster level managed by this service.
         For example, to find what CPU types are supported by level 3.6 you can send a request like this:
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/clusterlevels/3.6
-        ```
-        That will return a `ovirtsdk4.types.ClusterLevel` object containing the supported CPU types, and other
+        ----
+        That will return a xref:types-cluster_level[ClusterLevel] object containing the supported CPU types, and other
         information which describes the cluster level:
-
-        ```xml
+        [source,xml]
+        ----
         <cluster_level id="3.6">
           <cpu_types>
             <cpu_type>
@@ -5441,23 +5236,19 @@ class ClusterLevelService(Service):
             ...
           </permits>
         </cluster_level>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -5517,37 +5308,33 @@ class ClusterLevelsService(Service):
     ):
         """
         Lists the cluster levels supported by the system.
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/clusterlevels
-        ```
+        ----
         This will return a list of available cluster levels.
-
-        ```xml
+        [source,xml]
+        ----
         <cluster_levels>
           <cluster_level id="4.0">
              ...
           </cluster_level>
           ...
         </cluster_levels>
-        ```
+        ----
         The order of the returned cluster levels isn't guaranteed.
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -5610,18 +5397,14 @@ class ClusterNetworkService(Service):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -5672,17 +5455,13 @@ class ClusterNetworkService(Service):
 
         This method supports the following parameters:
 
-        `network` \n
-        The cluster network.
+        `network`:: The cluster network.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -5728,30 +5507,26 @@ class ClusterNetworksService(Service):
         """
         Assigns the network to a cluster.
         Post a request like in the example below to assign the network to a cluster:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/clusters/123/networks
-        ```
+        ----
         Use the following example in its body:
-
-        ```xml
+        [source,xml]
+        ----
         <network id="123" />
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `network` \n
-        The network object to be assigned to the cluster.
+        `network`:: The network object to be assigned to the cluster.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -5780,21 +5555,16 @@ class ClusterNetworksService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of networks to return. If not specified, all the networks are returned.
+        `max`:: Sets the maximum number of networks to return. If not specified, all the networks are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -5860,13 +5630,13 @@ class ClustersService(Service):
         Creates a new cluster.
         This requires the `name`, `cpu.type`, and `data_center` attributes. Identify the data center with either the `id`
         or `name` attribute.
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/clusters
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <cluster>
           <name>mycluster</name>
           <cpu>
@@ -5874,16 +5644,16 @@ class ClustersService(Service):
           </cpu>
           <data_center id="123"/>
         </cluster>
-        ```
+        ----
         To create a cluster with an external network provider to be deployed on
         every host that is added to the cluster, send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/clusters
-        ```
+        ----
         With a request body containing a reference to the desired provider:
-
-        ```xml
+        [source,xml]
+        ----
         <cluster>
           <name>mycluster</name>
           <cpu>
@@ -5894,7 +5664,7 @@ class ClustersService(Service):
             <external_provider name="ovirt-provider-ovn"/>
           </external_network_providers>
         </cluster>
-        ```
+        ----
 
 
         """
@@ -5929,32 +5699,24 @@ class ClustersService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of clusters to return. If not specified, all the clusters are returned.
+        `max`:: Sets the maximum number of clusters to return. If not specified, all the clusters are returned.
 
-        `search` \n
-        A query string used to restrict the returned clusters.
+        `search`:: A query string used to restrict the returned clusters.
 
-        `case_sensitive` \n
-        Indicates if the search should be performed taking case into account.
+        `case_sensitive`:: Indicates if the search should be performed taking case into account.
         The default value is `true`, which means that case is taken into account. To search
         ignoring case, set it to `false`.
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -6027,17 +5789,13 @@ class CopyableService(Service):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the copy should be performed asynchronously.
+        `async_`:: Indicates if the copy should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -6087,18 +5845,14 @@ class CpuProfileService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -6124,17 +5878,13 @@ class CpuProfileService(Service):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -6165,6 +5915,8 @@ class CpuProfileService(Service):
     ):
         """
         Update the specified cpu profile in the system.
+
+
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -6254,21 +6006,16 @@ class CpuProfilesService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of profiles to return. If not specified, all the profiles are returned.
+        `max`:: Sets the maximum number of profiles to return. If not specified, all the profiles are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -6339,30 +6086,26 @@ class DataCenterService(Service):
         switch to another host if the SPM has uncleared tasks.
         Clearing all finished tasks enables the SPM switching.
         For example, to clean all the finished tasks on a data center with ID `123` send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/datacenters/123/cleanfinishedtasks
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <action/>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the action should be performed asynchronously.
+        `async_`:: Indicates if the action should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -6393,12 +6136,12 @@ class DataCenterService(Service):
         """
         Get a data center.
         An example of getting a data center:
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/datacenters/123
-        ```
-
-        ```xml
+        ----
+        [source,xml]
+        ----
         <data_center href="/ovirt-engine/api/datacenters/123" id="123">
           <name>Default</name>
           <description>The default Data Center</description>
@@ -6425,26 +6168,21 @@ class DataCenterService(Service):
           </version>
           <mac_pool href="/ovirt-engine/api/macpools/456" id="456"/>
         </data_center>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -6474,10 +6212,10 @@ class DataCenterService(Service):
     ):
         """
         Removes the data center.
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/datacenters/123
-        ```
+        ----
         Without any special parameters, the storage domains attached to the data center are detached and then removed
         from the storage. If something fails when performing this operation, for example if there is no host available to
         remove the storage domains from the storage, the complete operation will fail.
@@ -6488,22 +6226,17 @@ class DataCenterService(Service):
 
         This method supports the following parameters:
 
-        `force` \n
-        Indicates if the operation should succeed, and the storage domain removed from the database, even if
+        `force`:: Indicates if the operation should succeed, and the storage domain removed from the database, even if
         something fails during the operation.
         This parameter is optional, and the default value is `false`.
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -6540,36 +6273,31 @@ class DataCenterService(Service):
         Used for manually setting a storage domain in the data center as a master.
         For example, for setting a storage domain with ID '456' as a master on a data center with ID '123',
         send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/datacenters/123/setmaster
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <action>
           <storage_domain id="456"/>
         </action>
-        ```
+        ----
         The new master storage domain can be also specified by its name.
 
 
         This method supports the following parameters:
 
-        `storage_domain` \n
-        The new master storage domain for the data center.
+        `storage_domain`:: The new master storage domain for the data center.
 
-        `async_` \n
-        Indicates if the action should be performed asynchronously.
+        `async_`:: Indicates if the action should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -6603,33 +6331,29 @@ class DataCenterService(Service):
         Updates the data center.
         The `name`, `description`, `storage_type`, `version`, `storage_format` and `mac_pool` elements are updatable
         post-creation. For example, to change the name and description of data center `123` send a request like this:
-
-        ```
+        [source]
+        ----
         PUT /ovirt-engine/api/datacenters/123
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <data_center>
           <name>myupdatedname</name>
           <description>An updated description for the data center</description>
         </data_center>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `data_center` \n
-        The data center that is being updated.
+        `data_center`:: The data center that is being updated.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -6694,22 +6418,22 @@ class DataCenterService(Service):
         """
         Attach and detach storage domains to and from a data center.
         For attaching a single storage domain we should use the following POST request:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/datacenters/123/storagedomains
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <storage_domain>
           <name>data1</name>
         </storage_domain>
-        ```
+        ----
         For detaching a single storage domain we should use the following DELETE request:
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/datacenters/123/storagedomains/123
-        ```
+        ----
 
         """
         return AttachedStorageDomainsService(self._connection, '%s/storagedomains' % self._path)
@@ -6777,18 +6501,14 @@ class DataCenterNetworkService(Service):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -6839,17 +6559,13 @@ class DataCenterNetworkService(Service):
 
         This method supports the following parameters:
 
-        `network` \n
-        The data center network.
+        `network`:: The data center network.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -6895,32 +6611,28 @@ class DataCenterNetworksService(Service):
         """
         Create a new network in a data center.
         Post a request like in the example below to create a new network in a data center with an ID of `123`.
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/datacenters/123/networks
-        ```
+        ----
         Use the following example in its body:
-
-        ```xml
+        [source,xml]
+        ----
         <network>
           <name>mynetwork</name>
         </network>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `network` \n
-        The network object to be created in the data center.
+        `network`:: The network object to be created in the data center.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -6949,21 +6661,16 @@ class DataCenterNetworksService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of networks to return. If not specified, all the networks are returned.
+        `max`:: Sets the maximum number of networks to return. If not specified, all the networks are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -7029,33 +6736,29 @@ class DataCentersService(Service):
         Creates a new data center.
         Creation of a new data center requires the `name` and `local` elements. For example, to create a data center
         named `mydc` that uses shared storage (NFS, iSCSI or fibre channel) send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/datacenters
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <data_center>
           <name>mydc</name>
           <local>false</local>
         </data_center>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `data_center` \n
-        The data center that is being added.
+        `data_center`:: The data center that is being added.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -7083,13 +6786,13 @@ class DataCentersService(Service):
         """
         Lists the data centers.
         The following request retrieves a representation of the data centers:
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/datacenters
-        ```
+        ----
         The above request performed with `curl`:
-
-        ```bash
+        [source,bash]
+        ----
         curl \
         --request GET \
         --cacert /etc/pki/ovirt-engine/ca.pem \
@@ -7097,10 +6800,10 @@ class DataCentersService(Service):
         --header "Accept: application/xml" \
         --user "admin@internal:mypassword" \
         https://myengine.example.com/ovirt-engine/api/datacenters
-        ```
+        ----
         This is what an example response could look like:
-
-        ```xml
+        [source,xml]
+        ----
         <data_center href="/ovirt-engine/api/datacenters/123" id="123">
           <name>Default</name>
           <description>The default Data Center</description>
@@ -7125,7 +6828,7 @@ class DataCentersService(Service):
             <minor>0</minor>
           </version>
         </data_center>
-        ```
+        ----
         Note the `id` code of your `Default` data center. This code identifies this data center in relation to other
         resources of your virtual environment.
         The data center also contains a link to the storage domains collection. The data center uses this collection to
@@ -7136,32 +6839,24 @@ class DataCentersService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of data centers to return. If not specified all the data centers are returned.
+        `max`:: Sets the maximum number of data centers to return. If not specified all the data centers are returned.
 
-        `search` \n
-        A query string used to restrict the returned data centers.
+        `search`:: A query string used to restrict the returned data centers.
 
-        `case_sensitive` \n
-        Indicates if the search performed using the `search` parameter should be performed taking case into
+        `case_sensitive`:: Indicates if the search performed using the `search` parameter should be performed taking case into
         account. The default value is `true`, which means that case is taken into account. If you want to search
         ignoring case set it to `false`.
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -7236,12 +6931,12 @@ class DiskAttachmentService(Service):
         """
         Returns the details of the attachment, including the bootable flag and link to the disk.
         An example of getting a disk attachment:
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/vms/123/diskattachments/456
-        ```
-
-        ```xml
+        ----
+        [source,xml]
+        ----
         <disk_attachment href="/ovirt-engine/api/vms/123/diskattachments/456" id="456">
           <active>true</active>
           <bootable>true</bootable>
@@ -7249,23 +6944,19 @@ class DiskAttachmentService(Service):
           <disk href="/ovirt-engine/api/disks/456" id="456"/>
           <vm href="/ovirt-engine/api/vms/123" id="123"/>
         </disk_attachment>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -7293,26 +6984,22 @@ class DiskAttachmentService(Service):
         This will only detach the disk from the virtual machine, but won't remove it from
         the system, unless the `detach_only` parameter is `false`.
         An example of removing a disk attachment:
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/vms/123/diskattachments/456?detach_only=true
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `detach_only` \n
-        Indicates if the disk should only be detached from the virtual machine, but not removed from the system.
+        `detach_only`:: Indicates if the disk should only be detached from the virtual machine, but not removed from the system.
         The default value is `true`, which won't remove the disk from the system.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -7338,8 +7025,8 @@ class DiskAttachmentService(Service):
     ):
         """
         Update the disk attachment and the disk properties within it.
-
-        ```
+        [source]
+        ----
         PUT /vms/{vm:id}/disksattachments/{attachment:id}
         <disk_attachment>
           <bootable>true</bootable>
@@ -7351,7 +7038,7 @@ class DiskAttachmentService(Service):
             ...
           </disk>
         </disk_attachment>
-        ```
+        ----
 
 
         """
@@ -7381,7 +7068,9 @@ class DiskAttachmentService(Service):
 class DiskAttachmentsService(Service):
     """
     This service manages the set of disks attached to a virtual machine. Each attached disk is represented by a
-    `DiskAttachment`, containing the bootable flag, the disk interface and the reference to the disk.
+    xref:types-disk_attachment[DiskAttachment], containing the bootable flag, the disk interface and the reference to
+    the disk.
+
     """
 
     def __init__(self, connection, path):
@@ -7399,8 +7088,8 @@ class DiskAttachmentsService(Service):
         """
         Adds a new disk attachment to the virtual machine. The `attachment` parameter can contain just a reference, if
         the disk already exists:
-
-        ```xml
+        [source,xml]
+        ----
         <disk_attachment>
           <bootable>true</bootable>
           <pass_discard>true</pass_discard>
@@ -7408,10 +7097,10 @@ class DiskAttachmentsService(Service):
           <active>true</active>
           <disk id="123"/>
         </disk_attachment>
-        ```
+        ----
         Or it can contain the complete representation of the disk, if the disk doesn't exist yet:
-
-        ```xml
+        [source,xml]
+        ----
         <disk_attachment>
           <bootable>true</bootable>
           <pass_discard>true</pass_discard>
@@ -7423,13 +7112,13 @@ class DiskAttachmentsService(Service):
             ...
           </disk>
         </disk_attachment>
-        ```
+        ----
         In this case the disk will be created and then attached to the virtual machine.
         In both cases, use the following URL for a virtual machine with an id `345`:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/vms/345/diskattachments
-        ```
+        ----
         IMPORTANT: The server accepts requests that do not contain the `active` attribute, but the effect is
         undefined. In some cases the disk will be automatically activated and in other cases it won't. To
         avoid issues it is strongly recommended to always include the `active` attribute with the desired
@@ -7438,17 +7127,13 @@ class DiskAttachmentsService(Service):
 
         This method supports the following parameters:
 
-        `attachment` \n
-        The disk attachment to add to the virtual machine.
+        `attachment`:: The disk attachment to add to the virtual machine.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -7476,18 +7161,14 @@ class DiskAttachmentsService(Service):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -7513,17 +7194,13 @@ class DiskAttachmentsService(Service):
         """
         This method supports the following parameters:
 
-        `attachment` \n
-        The disk attachment to add to the virtual machine.
+        `attachment`:: The disk attachment to add to the virtual machine.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -7547,17 +7224,13 @@ class DiskAttachmentsService(Service):
         """
         This method supports the following parameters:
 
-        `attachment` \n
-        The disk attachment to add to the virtual machine.
+        `attachment`:: The disk attachment to add to the virtual machine.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -7614,18 +7287,14 @@ class DiskProfileService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -7651,17 +7320,13 @@ class DiskProfileService(Service):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -7783,21 +7448,16 @@ class DiskProfilesService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of profiles to return. If not specified all the profiles are returned.
+        `max`:: Sets the maximum number of profiles to return. If not specified all the profiles are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -7857,18 +7517,14 @@ class DiskSnapshotService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -7894,17 +7550,13 @@ class DiskSnapshotService(Service):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -7964,27 +7616,20 @@ class DiskSnapshotsService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of snapshots to return. If not specified all the snapshots are returned.
+        `max`:: Sets the maximum number of snapshots to return. If not specified all the snapshots are returned.
 
-        `include_active` \n
-        If true return also active snapshots. If not specified active snapshots are not returned.
+        `include_active`:: If true return also active snapshots. If not specified active snapshots are not returned.
 
-        `include_template` \n
-        If true return also template snapshots. If not specified template snapshots are not returned.
+        `include_template`:: If true return also template snapshots. If not specified template snapshots are not returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -8055,21 +7700,22 @@ class DisksService(Service):
         """
         Adds a new floating disk.
         There are three types of disks that can be added - disk image, direct LUN and Managed Block disk.
-        link:https://wiki.openstack.org/wiki/Cinder integration has been replaced by Managed Block Storage.
+        link:https://wiki.openstack.org/wiki/Cinder[Cinder] integration has been replaced by Managed Block Storage.
         *Adding a new image disk:*
-        When creating a new floating image, the API requires the `storage_domain`, `provisioned_size`
+        When creating a new floating image xref:types-disk[Disk], the API requires the `storage_domain`, `provisioned_size`
         and `format` attributes.
-        Note that block storage domains (i.e. storage domains with the `StorageType` of iSCSI or FCP)
-        do not support the combination of the raw `format` with `sparse=true`, so `sparse=false` must be stated explicitly.
+        Note that block storage domains (i.e. storage domains with the xref:types-storage_type[storage type] of iSCSI or
+        FCP) do not support the combination of the raw `format` with `sparse=true`, so `sparse=false` must be stated
+        explicitly.
         To create a new floating image disk with specified `provisioned_size`, `format` and `name` on a storage domain
         with an id `123` and enabled for incremental backup, send a request as follows:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/disks
-        ```
+        ----
         With a request body as follows:
-
-        ```xml
+        [source,xml]
+        ----
         <disk>
           <storage_domains>
             <storage_domain id="123"/>
@@ -8079,7 +7725,7 @@ class DisksService(Service):
           <format>cow</format>
           <backup>incremental</backup>
         </disk>
-        ```
+        ----
         *Adding a new direct LUN disk:*
         When adding a new floating direct LUN via the API, there are two flavors that can be used:
         . With a `host` element - in this case, the host is used for sanity checks (e.g., that the LUN is visible) and
@@ -8089,13 +7735,13 @@ class DisksService(Service):
         To create a new floating direct LUN disk with a `host` element with an id `123`, specified `alias`, `type` and
         `logical_unit` with an id `456` (that has the attributes `address`, `port` and `target`),
         send a request as follows:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/disks
-        ```
+        ----
         With a request body as follows:
-
-        ```xml
+        [source,xml]
+        ----
         <disk>
           <alias>mylun</alias>
           <lun_storage>
@@ -8110,10 +7756,11 @@ class DisksService(Service):
             </logical_units>
           </lun_storage>
         </disk>
-        ```
+        ----
         To create a new floating direct LUN disk without using a host, remove the `host` element.
         *Adding a new Cinder disk:*
         Cinder integration has been replaced by Managed Block Storage.
+        //TODO: Add an example for adding an MBS disk
         *Adding a floating disks in order to upload disk snapshots:*
         Since version 4.2 of the engine it is possible to upload disks with
         snapshots. This request should be used to create the base image of the
@@ -8124,7 +7771,8 @@ class DisksService(Service):
         backup process. The image identifier can be also fetched using the
         `qemu-img info` command. For example, if the disk image is stored into
         a file named `b7a4c6c5-443b-47c5-967f-6abc79675e8b/myimage.img`:
-        ```shell
+        [source,shell]
+        ----
         $ qemu-img info b7a4c6c5-443b-47c5-967f-6abc79675e8b/myimage.img
         image: b548366b-fb51-4b41-97be-733c887fe305
         file format: qcow2
@@ -8133,16 +7781,16 @@ class DisksService(Service):
         cluster_size: 65536
         backing file: ad58716a-1fe9-481f-815e-664de1df04eb
         backing file format: raw
-        ```
+        ----
         To create a disk with with the disk identifier and image identifier obtained
         with the `qemu-img info` command shown above, send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/disks
-        ```
+        ----
         With a request body as follows:
-        ]
-        ```xml
+        [source,xml]
+        ----
         <disk id="b7a4c6c5-443b-47c5-967f-6abc79675e8b">
           <image_id>b548366b-fb51-4b41-97be-733c887fe305</image_id>
           <storage_domains>
@@ -8152,22 +7800,18 @@ class DisksService(Service):
           <provisioned_size>1048576</provisioned_size>
           <format>cow</format>
         </disk>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `disk` \n
-        The disk.
+        `disk`:: The disk.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -8193,13 +7837,13 @@ class DisksService(Service):
     ):
         """
         Get list of disks.
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/disks
-        ```
+        ----
         You will get a XML response which will look like this one:
-
-        ```xml
+        [source,xml]
+        ----
         <disks>
           <disk id="123">
             <actions>...</actions>
@@ -8219,35 +7863,29 @@ class DisksService(Service):
           </disk>
           ...
         </disks>
-        ```
+        ----
         The order of the returned list of disks is guaranteed only if the `sortby` clause is included in the
         `search` parameter.
 
+
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of disks to return. If not specified all the disks are returned.
+        `max`:: Sets the maximum number of disks to return. If not specified all the disks are returned.
 
-        `search` \n
-        A query string used to restrict the returned disks.
+        `search`:: A query string used to restrict the returned disks.
 
-        `case_sensitive` \n
-        Indicates if the search performed using the `search` parameter should be performed taking case into
+        `case_sensitive`:: Indicates if the search performed using the `search` parameter should be performed taking case into
         account. The default value is `true`, which means that case is taken into account. If you want to search
         ignoring case set it to `false`.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -8287,17 +7925,13 @@ class DisksService(Service):
 
         This method supports the following parameters:
 
-        `disk` \n
-        The disk.
+        `disk`:: The disk.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -8324,17 +7958,13 @@ class DisksService(Service):
 
         This method supports the following parameters:
 
-        `disk` \n
-        The disk.
+        `disk`:: The disk.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -8394,12 +8024,12 @@ class DomainService(Service):
         """
         Gets the authentication domain information.
         Usage:
-        ```
+        ....
         GET /ovirt-engine/api/domains/5678
-        ```
+        ....
         Will return the domain information:
-
-        ```xml
+        [source,xml]
+        ----
         <domain href="/ovirt-engine/api/domains/5678" id="5678">
           <name>internal-authz</name>
           <link href="/ovirt-engine/api/domains/5678/users" rel="users"/>
@@ -8407,23 +8037,19 @@ class DomainService(Service):
           <link href="/ovirt-engine/api/domains/5678/users?search={query}" rel="users/search"/>
           <link href="/ovirt-engine/api/domains/5678/groups?search={query}" rel="groups/search"/>
         </domain>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -8490,18 +8116,14 @@ class DomainGroupService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -8554,29 +8176,22 @@ class DomainGroupsService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of groups to return. If not specified all the groups are returned.
+        `max`:: Sets the maximum number of groups to return. If not specified all the groups are returned.
 
-        `search` \n
-        A query string used to restrict the returned groups.
+        `search`:: A query string used to restrict the returned groups.
 
-        `case_sensitive` \n
-        Indicates if the search performed using the `search` parameter should be performed taking case into
+        `case_sensitive`:: Indicates if the search performed using the `search` parameter should be performed taking case into
         account. The default value is `true`, which means that case is taken into account. If you want to search
         ignoring case set it to `false`.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -8645,12 +8260,12 @@ class DomainUserService(Service):
         """
         Gets the domain user information.
         Usage:
-        ```
+        ....
         GET /ovirt-engine/api/domains/5678/users/1234
-        ```
+        ....
         Will return the domain user information:
-        ]
-        ```xml
+        [source,xml]
+        ----
         <user href="/ovirt-engine/api/users/1234" id="1234">
           <name>admin</name>
           <namespace>*</namespace>
@@ -8661,23 +8276,19 @@ class DomainUserService(Service):
           </domain>
           <groups/>
         </user>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -8727,18 +8338,14 @@ class DomainUserGroupsService(Service):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -8789,12 +8396,12 @@ class DomainUsersService(Service):
         """
         List all the users in the domain.
         Usage:
-        ```
+        ....
         GET /ovirt-engine/api/domains/5678/users
-        ```
+        ....
         Will return the list of users in the domain:
-        ]
-        ```xml
+        [source,xml]
+        ----
         <users>
           <user href="/ovirt-engine/api/domains/5678/users/1234" id="1234">
             <name>admin</name>
@@ -8807,35 +8414,28 @@ class DomainUsersService(Service):
             <groups/>
           </user>
         </users>
-        ```
+        ----
         The order of the returned list of users isn't guaranteed.
 
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of users to return. If not specified all the users are returned.
+        `max`:: Sets the maximum number of users to return. If not specified all the users are returned.
 
-        `search` \n
-        A query string used to restrict the returned users.
+        `search`:: A query string used to restrict the returned users.
 
-        `case_sensitive` \n
-        Indicates if the search performed using the `search` parameter should be performed taking case into
+        `case_sensitive`:: Indicates if the search performed using the `search` parameter should be performed taking case into
         account. The default value is `true`, which means that case is taken into account. If you want to search
         ignoring case set it to `false`.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -8908,12 +8508,12 @@ class DomainsService(Service):
         """
         List all the authentication domains in the system.
         Usage:
-        ```
+        ....
         GET /ovirt-engine/api/domains
-        ```
+        ....
         Will return the list of domains:
-
-        ```xml
+        [source,xml]
+        ----
         <domains>
           <domain href="/ovirt-engine/api/domains/5678" id="5678">
             <name>internal-authz</name>
@@ -8923,27 +8523,22 @@ class DomainsService(Service):
             <link href="/ovirt-engine/api/domains/5678/groups?search={query}" rel="groups/search"/>
           </domain>
         </domains>
-        ```
+        ----
         The order of the returned list of domains isn't guaranteed.
 
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of domains to return. If not specified all the domains are returned.
+        `max`:: Sets the maximum number of domains to return. If not specified all the domains are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -9007,12 +8602,12 @@ class EventService(Service):
         """
         Get an event.
         An example of getting an event:
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/events/123
-        ```
-
-        ```xml
+        ----
+        [source,xml]
+        ----
         <event href="/ovirt-engine/api/events/123" id="123">
           <description>Host example.com was added by admin@internal-authz.</description>
           <code>42</code>
@@ -9026,7 +8621,7 @@ class EventService(Service):
           <host href="/ovirt-engine/api/hosts/789" id="789"/>
           <user href="/ovirt-engine/api/users/987" id="987"/>
         </event>
-        ```
+        ----
         Note that the number of fields changes according to the information that resides on the event.
         For example, for storage domain related events you will get the storage domain reference,
         as well as the reference for the data center this storage domain resides in.
@@ -9034,18 +8629,14 @@ class EventService(Service):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -9071,25 +8662,21 @@ class EventService(Service):
         """
         Removes an event from internal audit log.
         An event can be removed by sending following request
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/events/123
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -9141,18 +8728,18 @@ class EventSubscriptionService(Service):
         Gets the information about the event-subscription.
         For example to retrieve the information about the subscription of user '123' to
         the event 'vm_console_detected':
-        ```
+        ....
         GET /ovirt-engine/api/users/123/vm_console_detected
-        ```
-
-        ```xml
+        ....
+        [source,xml]
+        ----
         <event-subscription href="/ovirt-engine/api/users/123/event-subscriptions/vm_console_detected">
           <event>vm_console_detected</event>
           <notification_method>smtp</notification_method>
           <user href="/ovirt-engine/api/users/123" id="123"/>
           <address>a@b.com</address>
         </event-subscription>
-        ```
+        ----
 
 
         """
@@ -9177,23 +8764,20 @@ class EventSubscriptionService(Service):
         """
         Removes the event-subscription from the system.
         For example to remove user 123's subscription to `vm_console_detected` event:
-        ```
+        ....
         DELETE /ovirt-engine/api/users/123/vm_console_detected
-        ```
+        ....
+
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -9248,17 +8832,17 @@ class EventSubscriptionsService(Service):
         An event-subscription is always added in the context of a user. For example, to add new
         event-subscription for `host_high_cpu_use` for user `123`, and have the notification
         sent to the e-mail address: `a@b.com`, send a request like this:
-        ```
+        ....
         POST /ovirt-engine/api/users/123/eventsubscriptions
-        ```
+        ....
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <event_subscription>
             <event>host_high_cpu_use</event>
             <address>a@b.com</address>
         </event_subscription>
-        ```
+        ----
         The event name will become the ID of the new event-subscription entity:
         GET .../api/users/123/eventsubscriptions/host_high_cpu_use
         Note that no user id is provided in the request body. This is because the user-id (in this case 123)
@@ -9269,17 +8853,13 @@ class EventSubscriptionsService(Service):
 
         This method supports the following parameters:
 
-        `event_subscription` \n
-        The added event-subscription.
+        `event_subscription`:: The added event-subscription.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -9304,11 +8884,11 @@ class EventSubscriptionsService(Service):
         """
         List the event-subscriptions for the provided user.
         For example to list event-subscriptions for user `123`:
-        ```
+        ....
         GET /ovirt-engine/api/users/123/event-subscriptions
-        ```
-
-        ```xml
+        ....
+        [source,xml]
+        ----
         <event-subscriptions>
           <event-subscription href="/ovirt-engine/api/users/123/event-subscriptions/host_install_failed">
             <event>host_install_failed</event>
@@ -9323,27 +8903,22 @@ class EventSubscriptionsService(Service):
             <address>a@b.com</address>
           </event-subscription>
         </event-subscriptions>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of event-subscriptions to return.
+        `max`:: Sets the maximum number of event-subscriptions to return.
         If not specified all the event-subscriptions are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -9411,8 +8986,8 @@ class EventsService(Service):
         administrator of the system. For example, an external monitoring tool may be able to detect that a file system
         is full inside the guest operating system of a virtual machine. This event can be added to the internal audit
         log sending a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/events
         <event>
           <description>File system /home is full</description>
@@ -9420,11 +8995,11 @@ class EventsService(Service):
           <origin>mymonitor</origin>
           <custom_id>1467879754</custom_id>
         </event>
-        ```
+        ----
         Events can also be linked to specific objects. For example, the above event could be linked to the specific
         virtual machine where it happened, using the `vm` link:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/events
         <event>
           <description>File system /home is full</description>
@@ -9433,7 +9008,7 @@ class EventsService(Service):
           <custom_id>1467879754</custom_id>
           <vm id="aae98225-5b73-490d-a252-899209af17e9"/>
         </event>
-        ```
+        ----
         NOTE: When using links, like the `vm` in the previous example, only the `id` attribute is accepted. The `name`
         attribute, if provided, is simply ignored.
 
@@ -9464,13 +9039,13 @@ class EventsService(Service):
     ):
         """
         Get list of events.
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/events
-        ```
+        ----
         To the above request we get following response:
-
-        ```xml
+        [source,xml]
+        ----
         <events>
           <event href="/ovirt-engine/api/events/2" id="2">
             <description>User admin@internal-authz logged out.</description>
@@ -9495,7 +9070,7 @@ class EventsService(Service):
             <user href="/ovirt-engine/api/users/57d91d48-00da-0137-0138-000000000244" id="57d91d48-00da-0137-0138-000000000244"/>
           </event>
         </events>
-        ```
+        ----
         The following events occur:
         * id="1" - The API logs in the admin user account.
         * id="2" - The API logs out of the admin user account.
@@ -9503,38 +9078,35 @@ class EventsService(Service):
         `search` parameter, then the events will be ordered according to that clause. If the `sortby` clause isn't
         included, then the events will be sorted by the numeric value of the `id` attribute, starting with the
         highest value. This, combined with the `max` parameter, simplifies obtaining the most recent event:
-        ```
+        ....
         GET /ovirt-engine/api/events?max=1
-        ```
+        ....
 
 
         This method supports the following parameters:
 
-        `from_` \n
-        Indicates the event index after which events should be returned. The indexes of events are
+        `from_`:: Indicates the event index after which events should be returned. The indexes of events are
         strictly increasing, so when this parameter is used only the events with greater indexes
         will be returned. For example, the following request will return only the events
         with indexes greater than `123`:
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/events?from=123
-        ```
+        ----
         This parameter is optional, and if not specified then the first event returned will be most recently
         generated.
 
-        `max` \n
-        Sets the maximum number of events to return. If not specified all the events are returned.
+        `max`:: Sets the maximum number of events to return. If not specified all the events are returned.
 
-        `search` \n
-        The events service provides search queries similar to other resource services.
+        `search`:: The events service provides search queries similar to other resource services.
         We can search by providing specific severity.
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/events?search=severity%3Dnormal
-        ```
+        ----
         To the above request we get a list of events which severity is equal to `normal`:
-
-        ```xml
+        [source,xml]
+        ----
         <events>
           <event href="/ovirt-engine/api/events/2" id="2">
             <description>User admin@internal-authz logged out.</description>
@@ -9557,45 +9129,40 @@ class EventsService(Service):
             <time>2016-09-14T11:52:18.861+02:00</time>
           </event>
         </events>
-        ```
+        ----
         A virtualization environment generates a large amount of events after
         a period of time. However, the API only displays a default number of
         events for one search query. To display more than the default, the API
         separates results into pages with the page command in a search query.
         The following search query tells the API to paginate results using a
         page value in combination with the sortby clause:
-
-        ```
+        [source]
+        ----
         sortby time asc page 1
-        ```
+        ----
         Below example paginates event resources. The URL-encoded request is:
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/events?search=sortby%20time%20asc%20page%201
-        ```
+        ----
         Increase the page value to view the next page of results.
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/events?search=sortby%20time%20asc%20page%202
-        ```
+        ----
 
-        `case_sensitive` \n
-        Indicates if the search performed using the `search` parameter should be performed taking case into
+        `case_sensitive`:: Indicates if the search performed using the `search` parameter should be performed taking case into
         account. The default value is `true`, which means that case is taken into account. If you want to search
         ignoring case set it to `false`.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -9636,17 +9203,13 @@ class EventsService(Service):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the un-delete should be performed asynchronously.
+        `async_`:: Indicates if the un-delete should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -9713,12 +9276,12 @@ class ExternalComputeResourceService(Service):
         """
         Retrieves external compute resource details.
         For example, to get the details of compute resource `234` of provider `123`, send a request like this:
-        ```
+        ....
         GET /ovirt-engine/api/externalhostproviders/123/computeresources/234
-        ```
+        ....
         It will return a response like this:
-
-        ```xml
+        [source,xml]
+        ----
         <external_compute_resource href="/ovirt-engine/api/externalhostproviders/123/computeresources/234" id="234">
           <name>hostname</name>
           <provider>oVirt</provider>
@@ -9726,23 +9289,19 @@ class ExternalComputeResourceService(Service):
           <user>admin@internal</user>
           <external_host_provider href="/ovirt-engine/api/externalhostproviders/123" id="123"/>
         </external_compute_resource>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -9794,12 +9353,12 @@ class ExternalComputeResourcesService(Service):
         """
         Retrieves a list of external compute resources.
         For example, to retrieve the compute resources of external host provider `123`, send a request like this:
-        ```
+        ....
         GET /ovirt-engine/api/externalhostproviders/123/computeresources
-        ```
+        ....
         It will return a response like this:
-
-        ```xml
+        [source,xml]
+        ----
         <external_compute_resources>
           <external_compute_resource href="/ovirt-engine/api/externalhostproviders/123/computeresources/234" id="234">
             <name>hostname</name>
@@ -9810,27 +9369,22 @@ class ExternalComputeResourcesService(Service):
            </external_compute_resource>
            ...
         </external_compute_resources>
-        ```
+        ----
         The order of the returned list of compute resources isn't guaranteed.
 
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of resources to return. If not specified all the resources are returned.
+        `max`:: Sets the maximum number of resources to return. If not specified all the resources are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -9896,12 +9450,12 @@ class ExternalDiscoveredHostService(Service):
         Retrieves information about an host that is managed in external provider management system, such as Foreman. The
         information includes hostname, address, subnet, base image and more.
         For example, to get the details of host `234` from provider `123`, send a request like this:
-        ```
+        ....
         GET /ovirt-engine/api/externalhostproviders/123/discoveredhosts/234
-        ```
+        ....
         The result will be like this:
-
-        ```xml
+        [source,xml]
+        ----
         <external_discovered_host href="/ovirt-engine/api/externalhostproviders/123/discoveredhosts/234" id="234">
          <name>mac001a4ad04040</name>
          <ip>10.34.67.43</ip>
@@ -9910,23 +9464,19 @@ class ExternalDiscoveredHostService(Service):
          <subnet_name>sat0</subnet_name>
          <external_host_provider href="/ovirt-engine/api/externalhostproviders/123" id="123"/>
         </external_discovered_host>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -9976,12 +9526,12 @@ class ExternalDiscoveredHostsService(Service):
         Get list of discovered hosts' information.
         Discovered hosts are fetched from third-party providers such as Foreman.
         To list all discovered hosts for provider `123` send the following:
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/externalhostproviders/123/discoveredhost
-        ```
-
-        ```xml
+        ----
+        [source,xml]
+        ----
         <external_discovered_hosts>
          <external_discovered_host href="/ovirt-engine/api/externalhostproviders/123/discoveredhosts/456" id="456">
           <name>mac001a4ad04031</name>
@@ -10001,27 +9551,22 @@ class ExternalDiscoveredHostsService(Service):
          </external_discovered_host>
          ...
         </external_discovered_hosts>
-        ```
+        ----
         The order of the returned list of hosts isn't guaranteed.
 
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of hosts to return. If not specified all the hosts are returned.
+        `max`:: Sets the maximum number of hosts to return. If not specified all the hosts are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -10081,18 +9626,14 @@ class ExternalHostService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -10141,12 +9682,12 @@ class ExternalHostGroupService(Service):
         """
         Get host group information.
         For example, to get the details of hostgroup `234` of provider `123`, send a request like this:
-        ```
+        ....
         GET /ovirt-engine/api/externalhostproviders/123/hostgroups/234
-        ```
+        ....
         It will return a response like this:
-
-        ```xml
+        [source,xml]
+        ----
         <external_host_group href="/ovirt-engine/api/externalhostproviders/123/hostgroups/234" id="234">
           <name>rhel7</name>
           <architecture_name>x86_64</architecture_name>
@@ -10155,23 +9696,19 @@ class ExternalHostGroupService(Service):
           <subnet_name>sat0</subnet_name>
           <external_host_provider href="/ovirt-engine/api/externalhostproviders/123" id="123"/>
         </external_host_group>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -10222,12 +9759,12 @@ class ExternalHostGroupsService(Service):
         Host group is a term of host providers - the host group includes provision details. This API returns all possible
         hostgroups exposed by the external provider.
         For example, to get the details of all host groups of provider `123`, send a request like this:
-        ```
+        ....
         GET /ovirt-engine/api/externalhostproviders/123/hostgroups
-        ```
+        ....
         The response will be like this:
-
-        ```xml
+        [source,xml]
+        ----
         <external_host_groups>
           <external_host_group href="/ovirt-engine/api/externalhostproviders/123/hostgroups/234" id="234">
             <name>rhel7</name>
@@ -10239,27 +9776,22 @@ class ExternalHostGroupsService(Service):
           </external_host_group>
           ...
         </external_host_groups>
-        ```
+        ----
         The order of the returned list of host groups isn't guaranteed.
 
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of groups to return. If not specified all the groups are returned.
+        `max`:: Sets the maximum number of groups to return. If not specified all the groups are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -10352,24 +9884,18 @@ class ExternalHostProvidersService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of providers to return. If not specified all the providers are returned.
+        `max`:: Sets the maximum number of providers to return. If not specified all the providers are returned.
 
-        `search` \n
-        A query string used to restrict the returned external host providers.
+        `search`:: A query string used to restrict the returned external host providers.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -10438,21 +9964,16 @@ class ExternalHostsService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of hosts to return. If not specified all the hosts are returned.
+        `max`:: Sets the maximum number of hosts to return. If not specified all the hosts are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -10517,18 +10038,14 @@ class ExternalNetworkProviderConfigurationService(Service):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -10580,18 +10097,14 @@ class ExternalNetworkProviderConfigurationsService(Service):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -10676,25 +10189,21 @@ class ExternalProviderService(Service):
         """
         In order to test connectivity for external provider we need
         to run following request where 123 is an id of a provider.
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/externalhostproviders/123/testconnectivity
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the test should be performed asynchronously.
+        `async_`:: Indicates if the test should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -10755,35 +10264,31 @@ class ExternalProviderCertificateService(Service):
     ):
         """
         Get specific certificate.
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/externalhostproviders/123/certificate/0
-        ```
+        ----
         And here is sample response:
-
-        ```xml
+        [source,xml]
+        ----
         <certificate id="0">
           <organization>provider.example.com</organization>
           <subject>CN=provider.example.com</subject>
           <content>...</content>
         </certificate>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -10831,39 +10336,34 @@ class ExternalProviderCertificatesService(Service):
     ):
         """
         Returns the chain of certificates presented by the external provider.
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/externalhostproviders/123/certificates
-        ```
+        ----
         And here is sample response:
-
-        ```xml
+        [source,xml]
+        ----
         <certificates>
           <certificate id="789">...</certificate>
           ...
         </certificates>
-        ```
+        ----
         The order of the returned certificates is always guaranteed to be the sign order: the first is the
         certificate of the server itself, the second the certificate of the CA that signs the first, so on.
 
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of certificates to return. If not specified all the certificates are returned.
+        `max`:: Sets the maximum number of certificates to return. If not specified all the certificates are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -10929,13 +10429,13 @@ class ExternalTemplateImportsService(Service):
         """
         This operation is used to import a template from external hypervisor.
         For example import of a template OVA can be facilitated using the following request:
-
-        ```
+        [source]
+        ----
         POST /externaltemplateimports
-        ```
-        With request body of type `ExternalTemplateImport`, for example:
-
-        ```xml
+        ----
+        With request body of type xref:types-external_template_import[ExternalTemplateImport], for example:
+        [source,xml]
+        ----
         <external_template_import>
           <template>
             <name>my_template</name>
@@ -10945,7 +10445,7 @@ class ExternalTemplateImportsService(Service):
           <url>ova:///mnt/ova/ova_template.ova</url>
           <host id="8bb5ade5-e988-4000-8b93-dbfc6717fe50" />
         </external_template_import>
-        ```
+        ----
 
 
         """
@@ -10992,13 +10492,13 @@ class ExternalVmImportsService(Service):
         """
         This operation is used to import a virtual machine from external hypervisor, such as KVM, XEN or VMware.
         For example import of a virtual machine from VMware can be facilitated using the following request:
-
-        ```
+        [source]
+        ----
         POST /externalvmimports
-        ```
-        With request body of type `ExternalVmImport`, for example:
-
-        ```xml
+        ----
+        With request body of type xref:types-external_vm_import[ExternalVmImport], for example:
+        [source,xml]
+        ----
         <external_vm_import>
           <vm>
             <name>my_vm</name>
@@ -11013,7 +10513,7 @@ class ExternalVmImportsService(Service):
           <url>vpx://wmware_user@vcenter-host/DataCenter/Cluster/esxi-host?no_verify=1</url>
           <drivers_iso id="virtio-win-1.6.7.iso" />
         </external_vm_import>
-        ```
+        ----
 
 
         """
@@ -11059,13 +10559,13 @@ class FenceAgentService(Service):
     ):
         """
         Gets details of this fence agent.
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/hosts/123/fenceagents/0
-        ```
+        ----
         And here is sample response:
-
-        ```xml
+        [source,xml]
+        ----
         <agent id="0">
           <type>apc</type>
           <order>1</order>
@@ -11075,23 +10575,19 @@ class FenceAgentService(Service):
           <port>9</port>
           <options>name1=value1, name2=value2</options>
         </agent>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -11116,25 +10612,21 @@ class FenceAgentService(Service):
     ):
         """
         Removes a fence agent for a specific host.
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/hosts/123/fenceagents/0
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -11169,17 +10661,13 @@ class FenceAgentService(Service):
 
         This method supports the following parameters:
 
-        `agent` \n
-        Fence agent details.
+        `agent`:: Fence agent details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -11232,19 +10720,17 @@ class FenceAgentsService(Service):
     ):
         """
         Add a new fencing-agent to the host.
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/hosts/123/fenceagents
-        ```
         You should consult the /usr/sbin/fence_<agent_name> manual page for
         the legal parameters to [name1=value1, name2=value2,...] in the options field.
         If any parameter in options appears by name that means that it is mandatory.
         For example in <options>slot=7[,name1=value1, name2=value2,...]</options>
         slot is mandatory.
-
+        ----
         apc, bladecenter, wti fencing agent/s sample request:
-
-        ```xml
+        [source,xml]
           <agent>
             <type>apc</type>
             <order>1</order>
@@ -11254,10 +10740,8 @@ class FenceAgentsService(Service):
             <port>9</port>
             <options>slot=7[,name1=value1, name2=value2,...]</options>
           </agent>
-        ```
         apc_snmp, hpblade, ilo, ilo2, ilo_ssh, redfish, rsa fencing agent/s sample request:
-
-        ```xml
+        [source,xml]
           <agent>
             <type>apc_snmp</type>
             <order>1</order>
@@ -11267,10 +10751,8 @@ class FenceAgentsService(Service):
             <port>9</port>
             <options>[name1=value1, name2=value2,...]</options>
           </agent>
-        ```
         cisco_ucs, drac5, eps fencing agent/s sample request:
-
-        ```xml
+        [source,xml]
           <agent>
             <type>cisco_ucs</type>
             <order>1</order>
@@ -11279,10 +10761,8 @@ class FenceAgentsService(Service):
             <password>xxx</password>
             <options>slot=7[,name1=value1, name2=value2,...]</options>
           </agent>
-        ```
         drac7, ilo3, ilo4, ipmilan, rsb fencing agent/s sample request:
-
-        ```xml
+        [source,xml]
           <agent>
             <type>drac7</type>
             <order>1</order>
@@ -11291,7 +10771,8 @@ class FenceAgentsService(Service):
             <password>xxx</password>
             <options>[name1=value1, name2=value2,...]</options>
           </agent>
-        ```
+
+
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -11315,13 +10796,13 @@ class FenceAgentsService(Service):
     ):
         """
         Returns the list of fencing agents configured for the host.
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/hosts/123/fenceagents
-        ```
+        ----
         And here is sample response:
-
-        ```xml
+        [source,xml]
+        ----
         <agents>
           <agent id="0">
             <type>apc</type>
@@ -11333,27 +10814,22 @@ class FenceAgentsService(Service):
             <options>name1=value1, name2=value2</options>
           </agent>
         </agents>
-        ```
+        ----
         The order of the returned list of fencing agents isn't guaranteed.
 
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of agents to return. If not specified all the agents are returned.
+        `max`:: Sets the maximum number of agents to return. If not specified all the agents are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -11416,18 +10892,14 @@ class FileService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -11488,42 +10960,34 @@ class FilesService(Service):
         parameter to `true`.
         The default value of the `refresh` parameter is `true`, but it can be changed using the configuration value
         `ForceRefreshDomainFilesByDefault`:
-
-        ```
+        [source]
+        ----
         # engine-config -s ForceRefreshDomainFilesByDefault=false
-        ```
+        ----
         IMPORTANT: Setting the value of the `refresh` parameter to `true` has an impact on the performance of the
         server. Use it only if necessary.
 
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of files to return. If not specified, all the files are returned.
+        `max`:: Sets the maximum number of files to return. If not specified, all the files are returned.
 
-        `search` \n
-        A query string used to restrict the returned files.
+        `search`:: A query string used to restrict the returned files.
 
-        `case_sensitive` \n
-        Indicates if the search performed using the `search` parameter should take case into
+        `case_sensitive`:: Indicates if the search performed using the `search` parameter should take case into
         account. The default value is `true`.
 
-        `refresh` \n
-        Indicates whether the list of files should be refreshed from the storage domain, rather than showing cached
+        `refresh`:: Indicates whether the list of files should be refreshed from the storage domain, rather than showing cached
         results that are updated at certain intervals.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -11595,21 +11059,16 @@ class FilterService(Service):
         """
         This method supports the following parameters:
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -11639,17 +11098,13 @@ class FilterService(Service):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -11732,24 +11187,18 @@ class FiltersService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of filters to return. If not specified all the filters are returned.
+        `max`:: Sets the maximum number of filters to return. If not specified all the filters are returned.
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -11839,13 +11288,13 @@ class GlusterBricksService(Service):
         bricks. The bricks that were previously marked for removal will now be used as normal bricks.
         For example, to retain the bricks that on glustervolume `123` from which data was migrated, send a request like
         this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/clusters/567/glustervolumes/123/glusterbricks/activate
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <action>
           <bricks>
             <brick>
@@ -11853,25 +11302,20 @@ class GlusterBricksService(Service):
             </brick>
           </bricks>
         </action>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `bricks` \n
-        The list of bricks that need to be re-activated.
+        `bricks`:: The list of bricks that need to be re-activated.
 
-        `async_` \n
-        Indicates if the activation should be performed asynchronously.
+        `async_`:: Indicates if the activation should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -11908,35 +11352,31 @@ class GlusterBricksService(Service):
         needs to be passed. In case the replica count is being increased, then the number of bricks needs to be
         equivalent to the number of replica sets.
         For example, to add bricks to gluster volume `123`, send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/clusters/567/glustervolumes/123/glusterbricks
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <bricks>
           <brick>
             <server_id>111</server_id>
             <brick_dir>/export/data/brick3</brick_dir>
           </brick>
         </bricks>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `bricks` \n
-        The list of bricks to be added to the volume
+        `bricks`:: The list of bricks to be added to the volume
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -11969,13 +11409,13 @@ class GlusterBricksService(Service):
         """
         Lists the bricks of a gluster volume.
         For example, to list bricks of gluster volume `123`, send a request like this:
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/clusters/567/glustervolumes/123/glusterbricks
-        ```
+        ----
         Provides an output as below:
-
-        ```xml
+        [source,xml]
+        ----
         <bricks>
           <brick id="234">
             <name>host1:/rhgs/data/brick1</name>
@@ -11990,27 +11430,22 @@ class GlusterBricksService(Service):
             <status>up</status>
           </brick>
         </bricks>
-        ```
+        ----
         The order of the returned list is based on the brick order provided at gluster volume creation.
 
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of bricks to return. If not specified all the bricks are returned.
+        `max`:: Sets the maximum number of bricks to return. If not specified all the bricks are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -12042,16 +11477,16 @@ class GlusterBricksService(Service):
         Start migration of data prior to removing bricks.
         Removing bricks is a two-step process, where the data on bricks to be removed, is first migrated to remaining
         bricks. Once migration is completed the removal of bricks is confirmed via the API
-        `GlusterBricksService.remove`. If at any point, the action needs to be cancelled
-        `GlusterBricksService.stop_migrate` has to be called.For instance,
-        to delete a brick from a gluster volume with id `123`, send a request:
-
-        ```
+        xref:services-gluster_bricks-methods-remove[remove]. If at any point, the action needs to be cancelled
+        xref:services-gluster_bricks-methods-stop_migrate[stopmigrate] has to be called.
+        For instance, to delete a brick from a gluster volume with id `123`, send a request:
+        [source]
+        ----
         POST /ovirt-engine/api/clusters/567/glustervolumes/123/glusterbricks/migrate
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <action>
           <bricks>
             <brick>
@@ -12059,26 +11494,22 @@ class GlusterBricksService(Service):
             </brick>
           </bricks>
         </action>
-        ```
+        ----
         The migration process can be tracked from the job id returned from the API using
-        `JobService.get` and steps in job using `StepService.get`.
+        xref:services-job-methods-get[job] and steps in job using xref:services-step-methods-get[step]
+
 
         This method supports the following parameters:
 
-        `bricks` \n
-        List of bricks for which data migration needs to be started.
+        `bricks`:: List of bricks for which data migration needs to be started.
 
-        `async_` \n
-        Indicates if the migration should be performed asynchronously.
+        `async_`:: Indicates if the migration should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -12112,43 +11543,37 @@ class GlusterBricksService(Service):
         """
         Removes bricks from gluster volume.
         The recommended way to remove bricks without data loss is to first migrate the data using
-        `GlusterBricksService.stop_migrate` and then removing them. If migrate was not called on
+        xref:services-gluster_bricks-methods-stop_migrate[stopmigrate] and then removing them. If migrate was not called on
         bricks prior to remove, the bricks are removed without data migration which may lead to data loss.
         For example, to delete the bricks from gluster volume `123`, send a request like this:
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/clusters/567/glustervolumes/123/glusterbricks
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <bricks>
           <brick>
             <name>host:brick_directory</name>
           </brick>
         </bricks>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `bricks` \n
-        The list of bricks to be removed
+        `bricks`:: The list of bricks to be removed
 
-        `replica_count` \n
-        Replica count of volume post add operation.
+        `replica_count`:: Replica count of volume post add operation.
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -12190,38 +11615,33 @@ class GlusterBricksService(Service):
         continue using the bricks. The bricks that were marked for removal will function as normal bricks post this
         operation.
         For example, to stop migration of data from the bricks of gluster volume `123`, send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/clusters/567/glustervolumes/123/glusterbricks/stopmigrate
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <bricks>
           <brick>
             <name>host:brick_directory</name>
           </brick>
         </bricks>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `bricks` \n
-        List of bricks for which data migration needs to be stopped. This list should match the arguments passed to
-        `GlusterBricksService.migrate`.
+        `bricks`:: List of bricks for which data migration needs to be stopped. This list should match the arguments passed to
+        xref:services-gluster_bricks-methods-migrate[migrate].
 
-        `async_` \n
-        Indicates if the action should be performed asynchronously.
+        `async_`:: Indicates if the action should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -12289,17 +11709,13 @@ class GlusterHookService(Service):
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the action should be performed asynchronously.
+        `async_`:: Indicates if the action should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -12333,17 +11749,13 @@ class GlusterHookService(Service):
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the action should be performed asynchronously.
+        `async_`:: Indicates if the action should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -12373,18 +11785,14 @@ class GlusterHookService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -12413,17 +11821,13 @@ class GlusterHookService(Service):
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -12465,17 +11869,13 @@ class GlusterHookService(Service):
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the action should be performed asynchronously.
+        `async_`:: Indicates if the action should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -12534,21 +11934,16 @@ class GlusterHooksService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of hooks to return. If not specified all the hooks are returned.
+        `max`:: Sets the maximum number of hooks to return. If not specified all the hooks are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -12613,13 +12008,13 @@ class GlusterVolumesService(Service):
         The volume is created based on properties of the `volume` parameter. The properties `name`, `volume_type` and
         `bricks` are required.
         For example, to add a volume with name `myvolume` to the cluster `123`, send the following request:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/clusters/123/glustervolumes
-        ```
+        ----
         With the following request body:
-
-        ```xml
+        [source,xml]
+        ----
         <gluster_volume>
           <name>myvolume</name>
           <volume_type>replicate</volume_type>
@@ -12639,23 +12034,19 @@ class GlusterVolumesService(Service):
             </brick>
           <bricks>
         </gluster_volume>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `volume` \n
-        The gluster volume definition from which to create the volume is passed as input and the newly created
+        `volume`:: The gluster volume definition from which to create the volume is passed as input and the newly created
         volume is returned.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -12683,38 +12074,31 @@ class GlusterVolumesService(Service):
         Lists all gluster volumes in the cluster.
         For example, to list all Gluster Volumes in cluster `456`, send a request like
         this:
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/clusters/456/glustervolumes
-        ```
+        ----
         The order of the returned list of volumes isn't guaranteed.
 
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of volumes to return. If not specified all the volumes are returned.
+        `max`:: Sets the maximum number of volumes to return. If not specified all the volumes are returned.
 
-        `search` \n
-        A query string used to restrict the returned volumes.
+        `search`:: A query string used to restrict the returned volumes.
 
-        `case_sensitive` \n
-        Indicates if the search performed using the `search` parameter should be performed taking case into
+        `case_sensitive`:: Indicates if the search performed using the `search` parameter should be performed taking case into
         account. The default value is `true`, which means that case is taken into account. If you want to search
         ignoring case set it to `false`.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -12768,7 +12152,8 @@ class GlusterVolumesService(Service):
 class GroupService(Service):
     """
     Manages a group of users. Use this service to either get groups details or remove groups. In order
-    to add new groups please use `GroupsService` that manages the collection of groups.
+    to add new groups please use xref:services-groups[service] that manages the collection of groups.
+
     """
 
     def __init__(self, connection, path):
@@ -12788,12 +12173,12 @@ class GroupService(Service):
         """
         Gets the system group information.
         Usage:
-        ```
+        ....
         GET /ovirt-engine/api/groups/123
-        ```
+        ....
         Will return the group information:
-
-        ```xml
+        [source,xml]
+        ----
         <group href="/ovirt-engine/api/groups/123" id="123">
           <name>mygroup</name>
           <link href="/ovirt-engine/api/groups/123/roles" rel="roles"/>
@@ -12805,23 +12190,19 @@ class GroupService(Service):
             <name>myextension-authz</name>
           </domain>
         </group>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -12847,24 +12228,20 @@ class GroupService(Service):
         """
         Removes the system group.
         Usage:
-        ```
+        ....
         DELETE /ovirt-engine/api/groups/123
-        ```
+        ....
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -12951,35 +12328,31 @@ class GroupsService(Service):
         Add group from a directory service. Please note that domain name is name of the authorization provider.
         For example, to add the `Developers` group from the `internal-authz` authorization provider send a request
         like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/groups
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <group>
           <name>Developers</name>
           <domain>
             <name>internal-authz</name>
           </domain>
         </group>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `group` \n
-        The group to be added.
+        `group`:: The group to be added.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -13006,12 +12379,12 @@ class GroupsService(Service):
         """
         List all the groups in the system.
         Usage:
-        ```
+        ....
         GET /ovirt-engine/api/groups
-        ```
+        ....
         Will return the list of groups:
-
-        ```xml
+        [source,xml]
+        ----
         <groups>
           <group href="/ovirt-engine/api/groups/123" id="123">
             <name>mygroup</name>
@@ -13026,35 +12399,28 @@ class GroupsService(Service):
           </group>
           ...
         </groups>
-        ```
+        ----
         The order of the returned list of groups isn't guaranteed.
 
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of groups to return. If not specified all the groups are returned.
+        `max`:: Sets the maximum number of groups to return. If not specified all the groups are returned.
 
-        `search` \n
-        A query string used to restrict the returned groups.
+        `search`:: A query string used to restrict the returned groups.
 
-        `case_sensitive` \n
-        Indicates if the search performed using the `search` parameter should be performed taking case into
+        `case_sensitive`:: Indicates if the search performed using the `search` parameter should be performed taking case into
         account. The default value is `true`, which means that case is taken into account. If you want to search
         ignoring case set it to `false`.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -13128,18 +12494,14 @@ class HostCpuUnitsService(Service):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -13186,12 +12548,12 @@ class HostDeviceService(Service):
         """
         Retrieve information about a particular host's device.
         An example of getting a host device:
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/hosts/123/devices/456
-        ```
-
-        ```xml
+        ----
+        [source,xml]
+        ----
         <host_device href="/ovirt-engine/api/hosts/123/devices/456" id="456">
           <name>usb_1_9_1_1_0</name>
           <capability>usb</capability>
@@ -13200,23 +12562,19 @@ class HostDeviceService(Service):
             <name>usb_1_9_1</name>
           </parent_device>
         </host_device>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -13269,21 +12627,16 @@ class HostDevicesService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of devices to return. If not specified all the devices are returned.
+        `max`:: Sets the maximum number of devices to return. If not specified all the devices are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -13345,18 +12698,14 @@ class HostHookService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -13407,21 +12756,16 @@ class HostHooksService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of hooks to return. If not specified, all the hooks are returned.
+        `max`:: Sets the maximum number of hooks to return. If not specified, all the hooks are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -13490,33 +12834,27 @@ class HostNicsService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of NICs to return. If not specified all the NICs are returned.
+        `max`:: Sets the maximum number of NICs to return. If not specified all the NICs are returned.
 
-        `all_content` \n
-        Indicates if all of the attributes of the host network interface should be included in the response.
+        `all_content`:: Indicates if all of the attributes of the host network interface should be included in the response.
         By default the following attributes are excluded:
         - `virtual_functions_configuration`
         For example, to retrieve the complete representation of network interface '456' of host '123':
-        ```
+        ....
         GET /ovirt-engine/api/hosts/123/nics?all_content=true
-        ```
+        ....
         NOTE: These attributes are not included by default because retrieving them impacts performance. They are
         seldom used and require additional queries to the database. Use this parameter with caution and only when
         specifically required.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -13588,21 +12926,16 @@ class HostNumaNodesService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of nodes to return. If not specified all the nodes are returned.
+        `max`:: Sets the maximum number of nodes to return. If not specified all the nodes are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -13665,34 +12998,33 @@ class HostStorageService(Service):
     ):
         """
         Get list of storages.
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/hosts/123/storage
-        ```
+        ----
         The XML response you get will be like this one:
-
-        ```xml
+        [source,xml]
+        ----
         <host_storages>
           <host_storage id="123">
             ...
           </host_storage>
           ...
         </host_storages>
-        ```
+        ----
         The order of the returned list of storages isn't guaranteed.
 
 
         This method supports the following parameters:
 
-        `report_status` \n
-        Indicates if the status of the LUNs in the storage should be checked.
+        `report_status`:: Indicates if the status of the LUNs in the storage should be checked.
         Checking the status of the LUN is an heavy weight operation and
         this data is not always needed by the user.
         This parameter will give the option to not perform the status check of the LUNs.
         The default is `true` for backward compatibility.
         Here an example with the LUN status :
-
-        ```xml
+        [source,xml]
+        ----
         <host_storage id="123">
           <logical_units>
             <logical_unit id="123">
@@ -13709,10 +13041,10 @@ class HostStorageService(Service):
           <type>iscsi</type>
           <host id="123"/>
         </host_storage>
-        ```
+        ----
         Here an example without the LUN status :
-
-        ```xml
+        [source,xml]
+        ----
         <host_storage id="123">
           <logical_units>
             <logical_unit id="123">
@@ -13728,20 +13060,16 @@ class HostStorageService(Service):
           <type>iscsi</type>
           <host id="123"/>
         </host_storage>
-        ```
+        ----
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -13812,41 +13140,41 @@ class HostsService(Service):
         The host is created based on the attributes of the `host` parameter. The `name`, `address`, and `root_password`
         properties are required.
         For example, to add a host, send the following request:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/hosts
-        ```
+        ----
         With the following request body:
-
-        ```xml
+        [source,xml]
+        ----
         <host>
           <name>myhost</name>
           <address>myhost.example.com</address>
           <root_password>myrootpassword</root_password>
         </host>
-        ```
+        ----
         NOTE: The `root_password` element is only included in the client-provided initial representation and is not
         exposed in the representations returned from subsequent requests.
         IMPORTANT: Since version 4.1.2 of the engine, when a host is newly added, the host's firewall
         definitions are overridden by default.
         To add a hosted engine host, use the optional `deploy_hosted_engine` parameter:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/hosts?deploy_hosted_engine=true
-        ```
+        ----
         If the cluster has a default external network provider that is supported for automatic deployment,
         the external network provider is deployed when adding the host.
         Only external network providers for OVN are supported for the automatic deployment.
         To deploy an external network provider other than the one defined in the clusters, overwrite the external
         network provider when adding hosts, by sending the following request:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/hosts
-        ```
+        ----
         With a request body that contains a reference to the desired provider in the
         `external_network_provider_configuration`:
-
-        ```xml
+        [source,xml]
+        ----
         <host>
           <name>myhost</name>
           <address>myhost.example.com</address>
@@ -13857,23 +13185,19 @@ class HostsService(Service):
             </external_network_provider_configuration>
           </external_network_provider_configurations>
         </host>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `host` \n
-        The host definition with which the new host is created is passed as a parameter, and the newly created host
+        `host`:: The host definition with which the new host is created is passed as a parameter, and the newly created host
         is returned.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -13920,12 +13244,12 @@ class HostsService(Service):
         """
         Get a list of all available hosts.
         For example, to list the hosts send the following request:
-        ```
+        ....
         GET /ovirt-engine/api/hosts
-        ```
+        ....
         The response body will be similar to this:
-
-        ```xml
+        [source,xml]
+        ----
         <hosts>
           <host href="/ovirt-engine/api/hosts/123" id="123">
             ...
@@ -13935,72 +13259,61 @@ class HostsService(Service):
           </host>
           ...
         </host>
-        ```
+        ----
         The order of the returned list of hosts is guaranteed only if the `sortby` clause is included in
         the `search` parameter.
 
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of hosts to return. If not specified all the hosts are returned.
+        `max`:: Sets the maximum number of hosts to return. If not specified all the hosts are returned.
 
-        `search` \n
-        A query string used to restrict the returned hosts.
+        `search`:: A query string used to restrict the returned hosts.
 
-        `case_sensitive` \n
-        Indicates if the search performed using the `search` parameter should be performed taking case into
+        `case_sensitive`:: Indicates if the search performed using the `search` parameter should be performed taking case into
         account. The default value is `true`, which means that case is taken into account. If you want to search
         ignoring case set it to `false`.
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `all_content` \n
-        Indicates if all of the attributes of the hosts should be included in the response.
+        `all_content`:: Indicates if all of the attributes of the hosts should be included in the response.
         By default the following host attributes are excluded:
         - `hosted_engine`
         For example, to retrieve the complete representation of the hosts:
-        ```
+        ....
         GET /ovirt-engine/api/hosts?all_content=true
-        ```
+        ....
         NOTE: These attributes are not included by default because retrieving them impacts performance. They are
         seldom used and require additional queries to the database. Use this parameter with caution and only when
         specifically required.
 
-        `migration_target_of` \n
-        Accepts a comma-separated list of virtual machine IDs and returns the hosts
+        `migration_target_of`:: Accepts a comma-separated list of virtual machine IDs and returns the hosts
         that these virtual machines can be migrated to.
         For example, to retrieve the list of hosts to which the virtual machine with ID 123 and
         the virtual machine with ID 456 can be migrated to, send the following request:
-        ```
+        ....
         GET /ovirt-engine/api/hosts?migration_target_of=123,456
-        ```
+        ....
 
-        `check_vms_in_affinity_closure` \n
-        This parameter can be used with `migration_target_of`
+        `check_vms_in_affinity_closure`:: This parameter can be used with `migration_target_of`
         to get valid migration targets for the listed virtual machines
         and all other virtual machines that are in positive enforcing
         affinity with the listed virtual machines.
         This is useful in case the virtual machines will be migrated
         together with others in positive affinity groups.
         The default value is `false`.
-        ```
+        ....
         GET /ovirt-engine/api/hosts?migration_target_of=123,456&check_vms_in_affinity_closure=true
-        ```
+        ....
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -14059,18 +13372,14 @@ class HostsService(Service):
 
         This method supports the following parameters:
 
-        `host` \n
-        The host definition with which the new host is created is passed as a parameter, and the newly created host
+        `host`:: The host definition with which the new host is created is passed as a parameter, and the newly created host
         is returned.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -14117,18 +13426,14 @@ class HostsService(Service):
 
         This method supports the following parameters:
 
-        `host` \n
-        The host definition with which the new host is created is passed as a parameter, and the newly created host
+        `host`:: The host definition with which the new host is created is passed as a parameter, and the newly created host
         is returned.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -14201,34 +13506,30 @@ class IconService(Service):
     ):
         """
         Get an icon.
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/icons/123
-        ```
+        ----
         You will get a XML response like this one:
-
-        ```xml
+        [source,xml]
+        ----
         <icon id="123">
           <data>Some binary data here</data>
           <media_type>image/png</media_type>
         </icon>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -14276,13 +13577,13 @@ class IconsService(Service):
     ):
         """
         Get a list of icons.
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/icons
-        ```
+        ----
         You will get a XML response which is similar to this one:
-
-        ```xml
+        [source,xml]
+        ----
         <icons>
           <icon id="123">
             <data>...</data>
@@ -14290,27 +13591,22 @@ class IconsService(Service):
           </icon>
           ...
         </icons>
-        ```
+        ----
         The order of the returned list of icons isn't guaranteed.
 
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of icons to return. If not specified all the icons are returned.
+        `max`:: Sets the maximum number of icons to return. If not specified all the icons are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -14372,18 +13668,14 @@ class ImageService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -14427,34 +13719,25 @@ class ImageService(Service):
 
         This method supports the following parameters:
 
-        `cluster` \n
-        The cluster to which the image should be imported if the `import_as_template` parameter
+        `cluster`:: The cluster to which the image should be imported if the `import_as_template` parameter
         is set to `true`.
 
-        `disk` \n
-        The disk to import.
+        `disk`:: The disk to import.
 
-        `import_as_template` \n
-        Specifies if a template should be created from the imported disk.
+        `import_as_template`:: Specifies if a template should be created from the imported disk.
 
-        `template` \n
-        The name of the template being created if the
+        `template`:: The name of the template being created if the
         `import_as_template` parameter is set to `true`.
 
-        `storage_domain` \n
-        The storage domain to which the disk should be imported.
+        `storage_domain`:: The storage domain to which the disk should be imported.
 
-        `async_` \n
-        Indicates if the import should be performed asynchronously.
+        `async_`:: Indicates if the import should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -14498,12 +13781,14 @@ class ImageService(Service):
 class ImageTransferService(Service):
     """
     This service provides a mechanism to control an image transfer. The client will have
-    to create a transfer by using `ImageTransfersService.add` of the `ImageTransfersService`
-    service, stating the image to transfer data to/from. After doing that, the transfer is managed by this service.
+    to create a transfer by using xref:services-image_transfers-methods-add[add]
+    of the xref:services-image_transfers[image transfers] service, stating the image to transfer
+    data to/from.
+    After doing that, the transfer is managed by this service.
     *Using oVirt's Python's SDK:*
     Uploading a `disk` with id `123` (on a random host in the data center):
-
-    ```python
+    [source,python]
+    ----
     transfers_service = system_service.image_transfers_service()
     transfer = transfers_service.add(
        types.ImageTransfer(
@@ -14512,9 +13797,10 @@ class ImageTransferService(Service):
           )
        )
     )
-    ```
+    ----
     Uploading a `disk` with id `123` on `host` id `456`:
-    ```python
+    [source,python]
+    ----
     transfers_service = system_service.image_transfers_service()
     transfer = transfers_service.add(
        types.ImageTransfer(
@@ -14526,12 +13812,13 @@ class ImageTransferService(Service):
          )
        )
     )
-    ```
+    ----
     If the user wishes to download a disk rather than upload, he/she should specify
-    `download` as the `ImageTransfer.direction` attribute of the transfer.
+    `download` as the xref:types-image_transfer_direction[direction] attribute of the transfer.
     This will grant a read permission from the image, instead of a write permission.
     E.g:
-    ```python
+    [source,python]
+    ----
     transfers_service = system_service.image_transfers_service()
     transfer = transfers_service.add(
        types.ImageTransfer(
@@ -14541,23 +13828,26 @@ class ImageTransferService(Service):
           direction=types.ImageTransferDirection.DOWNLOAD
        )
     )
-    ```
+    ----
     Transfers have phases, which govern the flow of the upload/download.
     A client implementing such a flow should poll/check the transfer's phase and
-    act accordingly. All the possible phases can be found in `ovirtsdk4.types.ImageTransferPhase`.
-    After adding a new transfer, its phase will be `ovirtsdk4.types.ImageTransferPhase.INITIALIZING`.
+    act accordingly. All the possible phases can be found in
+    xref:types-image_transfer_phase[ImageTransferPhase].
+    After adding a new transfer, its phase will be xref:types-image_transfer_phase[initializing].
     The client will have to poll on the transfer's phase until it changes.
-    When the phase becomes `ovirtsdk4.types.ImageTransferPhase.TRANSFERRING`,
+    When the phase becomes xref:types-image_transfer_phase[transferring],
     the session is ready to start the transfer.
     For example:
-    ```python
+    [source,python]
+    ----
     transfer_service = transfers_service.image_transfer_service(transfer.id)
     while transfer.phase == types.ImageTransferPhase.INITIALIZING:
        time.sleep(3)
        transfer = transfer_service.get()
-    ```
-    At that stage, if the phase of the transfer is `ovirtsdk4.types.ImageTransferPhase.PAUSED_SYSTEM`, the session was
+    ----
+    At that stage, if the phase of the transfer is xref:types-image_transfer_phase[paused_system], the session was
     not successfully established. This can happen if ovirt-imageio is not running in the selected host.
+
     """
 
     def __init__(self, connection, path):
@@ -14572,6 +13862,8 @@ class ImageTransferService(Service):
     ):
         """
         Cancel the image transfer session. This terminates the transfer operation and removes the partial image.
+
+
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -14648,18 +13940,14 @@ class ImageTransferService(Service):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -14707,15 +13995,15 @@ class ImageTransferService(Service):
         """
         Resume the image transfer session. The client will need to poll the transfer's phase until
         it is different than `resuming`. For example:
-
-        ```python
+        [source,python]
+        ----
         transfer_service = transfers_service.image_transfer_service(transfer.id)
         transfer_service.resume()
         transfer = transfer_service.get()
         while transfer.phase == types.ImageTransferPhase.RESUMING:
            time.sleep(1)
            transfer = transfer_service.get()
-        ```
+        ----
 
 
         """
@@ -14745,7 +14033,9 @@ class ImageTransferService(Service):
 class ImageTransfersService(Service):
     """
     This service manages image transfers, for performing Image I/O API in {product-name}.
-    Please refer to `ImageTransferService` for further documentation.
+    Please refer to xref:services-image_transfer[image transfer] for further
+    documentation.
+
     """
 
     def __init__(self, connection, path):
@@ -14768,48 +14058,44 @@ class ImageTransfersService(Service):
         *Creating a new image transfer for downloading or uploading a `disk`:*
         To create an image transfer to download or upload a disk with id `123`,
         send the following request:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/imagetransfers
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <image_transfer>
           <disk id="123"/>
           <direction>upload|download</direction>
         </image_transfer>
-        ```
+        ----
         *Creating a new image transfer for downloading or uploading a `disk_snapshot`:*
         To create an image transfer to download or upload a `disk_snapshot` with id `456`,
         send the following request:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/imagetransfers
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <image_transfer>
           <snapshot id="456"/>
           <direction>download|upload</direction>
         </image_transfer>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `image_transfer` \n
-        The image transfer to add.
+        `image_transfer`:: The image transfer to add.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -14833,17 +14119,13 @@ class ImageTransfersService(Service):
         """
         This method supports the following parameters:
 
-        `image_transfer` \n
-        The image transfer to add.
+        `image_transfer`:: The image transfer to add.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -14867,17 +14149,13 @@ class ImageTransfersService(Service):
         """
         This method supports the following parameters:
 
-        `image_transfer` \n
-        The image transfer to add.
+        `image_transfer`:: The image transfer to add.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -14901,17 +14179,13 @@ class ImageTransfersService(Service):
         """
         This method supports the following parameters:
 
-        `image_transfer` \n
-        The image transfer to add.
+        `image_transfer`:: The image transfer to add.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -14940,18 +14214,14 @@ class ImageTransfersService(Service):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -15018,21 +14288,16 @@ class ImagesService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of images to return. If not specified all the images are returned.
+        `max`:: Sets the maximum number of images to return. If not specified all the images are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -15094,26 +14359,22 @@ class InstanceTypeService(Service):
     ):
         """
         Get a specific instance type and it's attributes.
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/instancetypes/123
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -15140,25 +14401,21 @@ class InstanceTypeService(Service):
         Removes a specific instance type from the system.
         If a virtual machine was created using an instance type X after removal of the instance type
         the virtual machine's instance type will be set to `custom`.
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/instancetypes/123
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -15193,14 +14450,14 @@ class InstanceTypeService(Service):
         If a virtual machine was created using an instance type X and some configuration in instance
         type X was updated, the virtual machine's configuration will be updated automatically by the
         engine.
-
-        ```
+        [source]
+        ----
         PUT /ovirt-engine/api/instancetypes/123
-        ```
+        ----
         For example, to update the memory of instance type `123` to 1 GiB and set the cpu topology
         to 2 sockets and 1 core, send a request like this:
-
-        ```xml
+        [source, xml]
+        ----
         <instance_type>
           <memory>1073741824</memory>
           <cpu>
@@ -15211,7 +14468,7 @@ class InstanceTypeService(Service):
             </topology>
           </cpu>
         </instance_type>
-        ```
+        ----
 
 
         """
@@ -15301,18 +14558,14 @@ class InstanceTypeGraphicsConsoleService(Service):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -15341,17 +14594,13 @@ class InstanceTypeGraphicsConsoleService(Service):
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -15431,21 +14680,16 @@ class InstanceTypeGraphicsConsolesService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of consoles to return. If not specified all the consoles are returned.
+        `max`:: Sets the maximum number of consoles to return. If not specified all the consoles are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -15510,18 +14754,14 @@ class InstanceTypeNicService(Service):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -15550,17 +14790,13 @@ class InstanceTypeNicService(Service):
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -15674,24 +14910,18 @@ class InstanceTypeNicsService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of NICs to return. If not specified all the NICs are returned.
+        `max`:: Sets the maximum number of NICs to return. If not specified all the NICs are returned.
 
-        `search` \n
-        A query string used to restrict the returned templates.
+        `search`:: A query string used to restrict the returned templates.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -15757,18 +14987,14 @@ class InstanceTypeWatchdogService(Service):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -15797,17 +15023,13 @@ class InstanceTypeWatchdogService(Service):
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -15921,25 +15143,19 @@ class InstanceTypeWatchdogsService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of watchdogs to return. If not specified all the watchdogs are
+        `max`:: Sets the maximum number of watchdogs to return. If not specified all the watchdogs are
         returned.
 
-        `search` \n
-        A query string used to restrict the returned templates.
+        `search`:: A query string used to restrict the returned templates.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -16004,20 +15220,20 @@ class InstanceTypesService(Service):
         Creates a new instance type.
         This requires only a name attribute and can include all hardware configurations of the
         virtual machine.
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/instancetypes
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <instance_type>
           <name>myinstancetype</name>
         </template>
-        ```
+        ----
         Creating an instance type with all hardware configurations with a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <instance_type>
           <name>myinstancetype</name>
           <console>
@@ -16079,7 +15295,7 @@ class InstanceTypesService(Service):
             <enabled>true</enabled>
           </virtio_scsi>
         </instance_type>
-        ```
+        ----
 
 
         """
@@ -16112,30 +15328,23 @@ class InstanceTypesService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of instance types to return. If not specified all the instance
+        `max`:: Sets the maximum number of instance types to return. If not specified all the instance
         types are returned.
 
-        `search` \n
-        A query string used to restrict the returned templates.
+        `search`:: A query string used to restrict the returned templates.
 
-        `case_sensitive` \n
-        Indicates if the search performed using the `search` parameter should be performed
+        `case_sensitive`:: Indicates if the search performed using the `search` parameter should be performed
         taking case into account. The default value is `true`, which means that case is taken
         into account. If you want to search ignoring case set it to `false`.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -16204,18 +15413,14 @@ class IscsiBondService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -16241,25 +15446,21 @@ class IscsiBondService(Service):
         """
         Removes of an existing iSCSI bond.
         For example, to remove the iSCSI bond `456` send a request like this:
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/datacenters/123/iscsibonds/456
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -16292,33 +15493,29 @@ class IscsiBondService(Service):
         Updates an iSCSI bond.
         Updating of an iSCSI bond can be done on the `name` and the `description` attributes only. For example, to
         update the iSCSI bond `456` of data center `123`, send a request like this:
-
-        ```
+        [source]
+        ----
         PUT /ovirt-engine/api/datacenters/123/iscsibonds/1234
-        ```
+        ----
         The request body should look like this:
-
-        ```xml
+        [source,xml]
+        ----
         <iscsi_bond>
            <name>mybond</name>
            <description>My iSCSI bond</description>
         </iscsi_bond>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `bond` \n
-        The iSCSI bond to update.
+        `bond`:: The iSCSI bond to update.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -16389,13 +15586,13 @@ class IscsiBondsService(Service):
         Create a new iSCSI bond on a data center.
         For example, to create a new iSCSI bond on data center `123` using storage connections `456` and `789`, send a
         request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/datacenters/123/iscsibonds
-        ```
+        ----
         The request body should look like this:
-
-        ```xml
+        [source,xml]
+        ----
         <iscsi_bond>
           <name>mybond</name>
           <storage_connections>
@@ -16406,7 +15603,7 @@ class IscsiBondsService(Service):
             <network id="abc"/>
           </networks>
         </iscsi_bond>
-        ```
+        ----
 
 
         """
@@ -16437,21 +15634,16 @@ class IscsiBondsService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of bonds to return. If not specified all the bonds are returned.
+        `max`:: Sets the maximum number of bonds to return. If not specified all the bonds are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -16514,30 +15706,26 @@ class JobService(Service):
         """
         Set an external job execution to be cleared by the system.
         For example, to set a job with identifier `123` send the following request:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/jobs/clear
-        ```
+        ----
         With the following request body:
-
-        ```xml
+        [source,xml]
+        ----
         <action/>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the action should be performed asynchronously.
+        `async_`:: Indicates if the action should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -16569,40 +15757,34 @@ class JobService(Service):
         """
         Marks an external job execution as ended.
         For example, to terminate a job with identifier `123` send the following request:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/jobs/end
-        ```
+        ----
         With the following request body:
-
-        ```xml
+        [source,xml]
+        ----
         <action>
           <force>true</force>
           <status>finished</status>
         </action>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `force` \n
-        Indicates if the job should be forcibly terminated.
+        `force`:: Indicates if the job should be forcibly terminated.
 
-        `succeeded` \n
-        Indicates if the job should be marked as successfully finished or as failed.
+        `succeeded`:: Indicates if the job should be marked as successfully finished or as failed.
         This parameter is optional, and the default value is `true`.
 
-        `async_` \n
-        Indicates if the action should be performed asynchronously.
+        `async_`:: Indicates if the action should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -16635,13 +15817,13 @@ class JobService(Service):
     ):
         """
         Retrieves a job.
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/jobs/123
-        ```
+        ----
         You will receive response in XML like this one:
-
-        ```xml
+        [source,xml]
+        ----
         <job href="/ovirt-engine/api/jobs/123" id="123">
           <actions>
             <link href="/ovirt-engine/api/jobs/123/clear" rel="clear"/>
@@ -16657,23 +15839,19 @@ class JobService(Service):
           <status>failed</status>
           <owner href="/ovirt-engine/api/users/456" id="456"/>
         </job>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -16733,21 +15911,21 @@ class JobsService(Service):
         """
         Add an external job.
         For example, to add a job with the following request:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/jobs
-        ```
+        ----
         With the following request body:
-
-        ```xml
+        [source,xml]
+        ----
         <job>
           <description>Doing some work</description>
           <auto_cleared>true</auto_cleared>
         </job>
-        ```
+        ----
         The response should look like:
-
-        ```xml
+        [source,xml]
+        ----
         <job href="/ovirt-engine/api/jobs/123" id="123">
           <actions>
             <link href="/ovirt-engine/api/jobs/123/clear" rel="clear"/>
@@ -16762,22 +15940,18 @@ class JobsService(Service):
           <status>started</status>
           <owner href="/ovirt-engine/api/users/456" id="456"/>
         </job>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `job` \n
-        Job that will be added.
+        `job`:: Job that will be added.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -16803,13 +15977,13 @@ class JobsService(Service):
     ):
         """
         Retrieves the representation of the jobs.
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/jobs
-        ```
+        ----
         You will receive response in XML like this one:
-
-        ```xml
+        [source,xml]
+        ----
         <jobs>
           <job href="/ovirt-engine/api/jobs/123" id="123">
             <actions>
@@ -16828,35 +16002,28 @@ class JobsService(Service):
           </job>
           ...
         </jobs>
-        ```
+        ----
         The order of the returned list of jobs isn't guaranteed.
 
 
         This method supports the following parameters:
 
-        `search` \n
-        A query string used to restrict the returned jobs.
+        `search`:: A query string used to restrict the returned jobs.
 
-        `case_sensitive` \n
-        Indicates if the search performed using the `search` parameter should be performed taking case into
+        `case_sensitive`:: Indicates if the search performed using the `search` parameter should be performed taking case into
         account. The default value is `true`, which means that case is taken into account. If you want to search
         ignoring case set it to `false`.
 
-        `max` \n
-        Sets the maximum number of jobs to return. If not specified all the jobs are returned.
+        `max`:: Sets the maximum number of jobs to return. If not specified all the jobs are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -16929,13 +16096,13 @@ class KatelloErrataService(Service):
     ):
         """
         Retrieves the representation of the Katello errata.
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/katelloerrata
-        ```
+        ----
         You will receive response in XML like this one:
-
-        ```xml
+        [source,xml]
+        ----
         <katello_errata>
           <katello_erratum href="/ovirt-engine/api/katelloerrata/123" id="123">
             <name>RHBA-2013:XYZ</name>
@@ -16954,27 +16121,22 @@ class KatelloErrataService(Service):
           </katello_erratum>
           ...
         </katello_errata>
-        ```
+        ----
         The order of the returned list of erratum isn't guaranteed.
 
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of errata to return. If not specified all the errata are returned.
+        `max`:: Sets the maximum number of errata to return. If not specified all the errata are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -17038,13 +16200,13 @@ class KatelloErratumService(Service):
     ):
         """
         Retrieves a Katello erratum.
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/katelloerrata/123
-        ```
+        ----
         You will receive response in XML like this one:
-
-        ```xml
+        [source,xml]
+        ----
         <katello_erratum href="/ovirt-engine/api/katelloerrata/123" id="123">
           <name>RHBA-2013:XYZ</name>
           <description>The description of the erratum</description>
@@ -17060,23 +16222,19 @@ class KatelloErratumService(Service):
             ...
           </packages>
         </katello_erratum>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -17126,18 +16284,14 @@ class LinkLayerDiscoveryProtocolService(Service):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -17183,18 +16337,14 @@ class MacPoolService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -17220,25 +16370,21 @@ class MacPoolService(Service):
         """
         Removes a MAC address pool.
         For example, to remove the MAC address pool having id `123` send a request like this:
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/macpools/123
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -17271,13 +16417,13 @@ class MacPoolService(Service):
         Updates a MAC address pool.
         The `name`, `description`, `allow_duplicates`, and `ranges` attributes can be updated.
         For example, to update the MAC address pool of id `123` send a request like this:
-
-        ```
+        [source]
+        ----
         PUT /ovirt-engine/api/macpools/123
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <mac_pool>
           <name>UpdatedMACPool</name>
           <description>An updated MAC address pool</description>
@@ -17293,7 +16439,7 @@ class MacPoolService(Service):
             </range>
           </ranges>
         </mac_pool>
-        ```
+        ----
 
 
         """
@@ -17359,13 +16505,13 @@ class MacPoolsService(Service):
         Creates a new MAC address pool.
         Creation of a MAC address pool requires values for the `name` and `ranges` attributes.
         For example, to create MAC address pool send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/macpools
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <mac_pool>
           <name>MACPool</name>
           <description>A MAC address pool</description>
@@ -17378,7 +16524,7 @@ class MacPoolsService(Service):
             </range>
           </ranges>
         </mac_pool>
-        ```
+        ----
 
 
         """
@@ -17409,21 +16555,16 @@ class MacPoolsService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of pools to return. If not specified all the pools are returned.
+        `max`:: Sets the maximum number of pools to return. If not specified all the pools are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -17512,17 +16653,13 @@ class MoveableService(Service):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the move should be performed asynchronously.
+        `async_`:: Indicates if the move should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -17576,13 +16713,13 @@ class NetworkService(Service):
         """
         Gets a logical network.
         For example:
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/networks/123
-        ```
+        ----
         Will respond:
-
-        ```xml
+        [source,xml]
+        ----
         <network href="/ovirt-engine/api/networks/123" id="123">
           <name>ovirtmgmt</name>
           <description>Default Management Network</description>
@@ -17596,23 +16733,19 @@ class NetworkService(Service):
           </usages>
           <data_center href="/ovirt-engine/api/datacenters/456" id="456"/>
         </network>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -17638,38 +16771,34 @@ class NetworkService(Service):
         """
         Removes a logical network, or the association of a logical network to a data center.
         For example, to remove the logical network `123` send a request like this:
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/networks/123
-        ```
+        ----
         Each network is bound exactly to one data center. So if we disassociate network with data center it has the same
         result as if we would just remove that network. However it might be more specific to say we're removing network
         `456` of data center `123`.
         For example, to remove the association of network `456` to data center `123` send a request like this:
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/datacenters/123/networks/456
-        ```
+        ----
         NOTE: To remove an external logical network, the network has to be removed directly from its provider by
-        link:https://developer.openstack.org/api-ref/network.
+        link:https://developer.openstack.org/api-ref/network[OpenStack Networking API].
         The entity representing the external network inside {product-name} is removed automatically,
-        if `ovirtsdk4.types.OpenStackNetworkProvider.auto_sync` is enabled for the provider,
+        if xref:types-open_stack_network_provider-attributes-auto_sync[`auto_sync`] is enabled for the provider,
         otherwise the entity has to be removed using this method.
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -17702,31 +16831,31 @@ class NetworkService(Service):
         Updates a logical network.
         The `name`, `description`, `ip`, `vlan`, `stp` and `display` attributes can be updated.
         For example, to update the description of the logical network `123` send a request like this:
-
-        ```
+        [source]
+        ----
         PUT /ovirt-engine/api/networks/123
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <network>
           <description>My updated description</description>
         </network>
-        ```
+        ----
         The maximum transmission unit of a network is set using a PUT request to
         specify the integer value of the `mtu` attribute.
         For example, to set the maximum transmission unit send a request like this:
-
-        ```
+        [source]
+        ----
         PUT /ovirt-engine/api/datacenters/123/networks/456
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <network>
           <mtu>1500</mtu>
         </network>
-        ```
+        ----
         NOTE: Updating external networks is not propagated to the provider.
 
 
@@ -17813,18 +16942,14 @@ class NetworkAttachmentService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -17850,17 +16975,13 @@ class NetworkAttachmentService(Service):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -17975,21 +17096,16 @@ class NetworkAttachmentsService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of attachments to return. If not specified all the attachments are returned.
+        `max`:: Sets the maximum number of attachments to return. If not specified all the attachments are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -18034,8 +17150,8 @@ class NetworkAttachmentsService(Service):
 class NetworkFilterService(Service):
     """
     Manages a network filter.
-
-    ```xml
+    [source,xml]
+    ----
     <network_filter id="00000019-0019-0019-0019-00000000026b">
       <name>example-network-filter-b</name>
       <version>
@@ -18045,7 +17161,7 @@ class NetworkFilterService(Service):
         <revision>-1</revision>
       </version>
     </network_filter>
-    ```
+    ----
     Please note that version is referring to the minimal support version for the specific filter.
 
     """
@@ -18067,18 +17183,14 @@ class NetworkFilterService(Service):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -18109,7 +17221,7 @@ class NetworkFiltersService(Service):
     """
     Represents a readonly network filters sub-collection.
     The network filter enables to filter packets send to/from the VM's nic according to defined rules.
-    For more information please refer to `NetworkFilterService` service documentation
+    For more information please refer to xref:services-network_filter[NetworkFilter] service documentation
     Network filters are supported in different versions, starting from version 3.0.
     A network filter is defined for each vnic profile.
     A vnic profile is defined for a specific network.
@@ -18121,13 +17233,13 @@ class NetworkFiltersService(Service):
     Please note, that if a network is assigned to cluster with a version supporting a network filter, the filter
     may not be available due to the data center version being smaller then the network filter's version.
     Example of listing all of the supported network filters for a specific cluster:
-
-    ```
+    [source]
+    ----
     GET http://localhost:8080/ovirt-engine/api/clusters/{cluster:id}/networkfilters
-    ```
+    ----
     Output:
-
-    ```xml
+    [source,xml]
+    ----
     <network_filters>
       <network_filter id="00000019-0019-0019-0019-00000000026c">
         <name>example-network-filter-a</name>
@@ -18157,7 +17269,7 @@ class NetworkFiltersService(Service):
         </version>
       </network_filter>
     </network_filters>
-    ```
+    ----
 
     """
 
@@ -18180,18 +17292,14 @@ class NetworkFiltersService(Service):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -18247,18 +17355,14 @@ class NetworkLabelService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -18284,25 +17388,21 @@ class NetworkLabelService(Service):
         """
         Removes a label from a logical network.
         For example, to remove the label `exemplary` from a logical network having id `123` send the following request:
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/networks/123/networklabels/exemplary
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -18357,15 +17457,15 @@ class NetworkLabelsService(Service):
         You can attach labels to a logical network to automate the association of that logical network with physical host
         network interfaces to which the same label has been attached.
         For example, to attach the label `mylabel` to a logical network having id `123` send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/networks/123/networklabels
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <network_label id="mylabel"/>
-        ```
+        ----
 
 
         """
@@ -18396,21 +17496,16 @@ class NetworkLabelsService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of labels to return. If not specified all the labels are returned.
+        `max`:: Sets the maximum number of labels to return. If not specified all the labels are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -18477,44 +17572,44 @@ class NetworksService(Service):
         Creates a new logical network, or associates an existing network with a data center.
         Creation of a new network requires the `name` and `data_center` elements.
         For example, to create a network named `mynetwork` for data center `123` send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/networks
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <network>
           <name>mynetwork</name>
           <data_center id="123"/>
         </network>
-        ```
+        ----
         To associate the existing network `456` with the data center `123` send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/datacenters/123/networks
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <network>
           <name>ovirtmgmt</name>
         </network>
-        ```
+        ----
         To create a network named `exnetwork` on top of an external _OpenStack_ network provider `456` send a request
         like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/networks
-        ```
-
-        ```xml
+        ----
+        [source,xml]
+        ----
         <network>
           <name>exnetwork</name>
           <external_provider id="456"/>
           <data_center id="123"/>
         </network>
-        ```
+        ----
 
 
         """
@@ -18543,13 +17638,13 @@ class NetworksService(Service):
         """
         List logical networks.
         For example:
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/networks
-        ```
+        ----
         Will respond:
-
-        ```xml
+        [source,xml]
+        ----
         <networks>
           <network href="/ovirt-engine/api/networks/123" id="123">
             <name>ovirtmgmt</name>
@@ -18566,36 +17661,29 @@ class NetworksService(Service):
           </network>
           ...
         </networks>
-        ```
+        ----
         The order of the returned list of networks is guaranteed only if the `sortby` clause is included in the
         `search` parameter.
 
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of networks to return. If not specified all the networks are returned.
+        `max`:: Sets the maximum number of networks to return. If not specified all the networks are returned.
 
-        `search` \n
-        A query string used to restrict the returned networks.
+        `search`:: A query string used to restrict the returned networks.
 
-        `case_sensitive` \n
-        Indicates if the search performed using the `search` parameter should be performed taking case into
+        `case_sensitive`:: Indicates if the search performed using the `search` parameter should be performed taking case into
         account. The default value is `true`, which means that case is taken into account. If you want to search
         ignoring case set it to `false`.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -18669,18 +17757,14 @@ class NicNetworkFilterParameterService(Service):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -18706,10 +17790,10 @@ class NicNetworkFilterParameterService(Service):
         Removes the filter parameter.
         For example, to remove the filter parameter with id `123` on NIC `456` of virtual machine `789`
         send a request like this:
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/vms/789/nics/456/networkfilterparameters/123
-        ```
+        ----
 
 
         """
@@ -18735,33 +17819,29 @@ class NicNetworkFilterParameterService(Service):
         Updates the network filter parameter.
         For example, to update the network filter parameter having with with id `123` on NIC `456` of
         virtual machine `789` send a request like this:
-
-        ```
+        [source]
+        ----
         PUT /ovirt-engine/api/vms/789/nics/456/networkfilterparameters/123
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <network_filter_parameter>
           <name>updatedName</name>
           <value>updatedValue</value>
         </network_filter_parameter>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `parameter` \n
-        The network filter parameter that is being updated.
+        `parameter`:: The network filter parameter that is being updated.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -18808,33 +17888,29 @@ class NicNetworkFilterParametersService(Service):
         Add a network filter parameter.
         For example, to add the parameter for the network filter on NIC `456` of
         virtual machine `789` send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/vms/789/nics/456/networkfilterparameters
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <network_filter_parameter>
           <name>IP</name>
           <value>10.0.1.2</value>
         </network_filter_parameter>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `parameter` \n
-        The network filter parameter that is being added.
+        `parameter`:: The network filter parameter that is being added.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -18862,18 +17938,14 @@ class NicNetworkFilterParametersService(Service):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -18931,18 +18003,14 @@ class OpenstackImageService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -18974,13 +18042,13 @@ class OpenstackImageService(Service):
         Imports a virtual machine from a Glance image storage domain.
         For example, to import the image with identifier `456` from the
         storage domain with identifier `123` send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/openstackimageproviders/123/images/456/import
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <action>
           <storage_domain>
             <name>images0</name>
@@ -18989,29 +18057,23 @@ class OpenstackImageService(Service):
             <name>images0</name>
           </cluster>
         </action>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `import_as_template` \n
-        Indicates whether the image should be imported as a template.
+        `import_as_template`:: Indicates whether the image should be imported as a template.
 
-        `cluster` \n
-        This parameter is mandatory in case of using `import_as_template` and indicates which cluster should be used
+        `cluster`:: This parameter is mandatory in case of using `import_as_template` and indicates which cluster should be used
         for import glance image as template.
 
-        `async_` \n
-        Indicates if the import should be performed asynchronously.
+        `async_`:: Indicates if the import should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -19072,18 +18134,14 @@ class OpenstackImageProviderService(ExternalProviderService):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -19135,17 +18193,13 @@ class OpenstackImageProviderService(ExternalProviderService):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -19176,25 +18230,21 @@ class OpenstackImageProviderService(ExternalProviderService):
         """
         In order to test connectivity for external provider we need
         to run following request where 123 is an id of a provider.
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/externalhostproviders/123/testconnectivity
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the test should be performed asynchronously.
+        `async_`:: Indicates if the test should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -19327,24 +18377,18 @@ class OpenstackImageProvidersService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of providers to return. If not specified all the providers are returned.
+        `max`:: Sets the maximum number of providers to return. If not specified all the providers are returned.
 
-        `search` \n
-        A query string used to restrict the returned OpenStack image providers.
+        `search`:: A query string used to restrict the returned OpenStack image providers.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -19413,21 +18457,16 @@ class OpenstackImagesService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of images to return. If not specified all the images are returned.
+        `max`:: Sets the maximum number of images to return. If not specified all the images are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -19490,18 +18529,14 @@ class OpenstackNetworkService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -19532,27 +18567,22 @@ class OpenstackNetworkService(Service):
 
         This method supports the following parameters:
 
-        `data_center` \n
-        The data center into which the network is to be imported.
+        `data_center`:: The data center into which the network is to be imported.
         Data center is mandatory, and can be specified
         using the `id` or `name` attributes. The rest of
         the attributes will be ignored.
-        NOTE: If `ovirtsdk4.types.OpenStackNetworkProvider.auto_sync` is
+        NOTE: If xref:types-open_stack_network_provider-attributes-auto_sync[`auto_sync`] is
         enabled for the provider, the network might be imported automatically. To
         prevent this, automatic import can be disabled by setting the `auto_sync` to false,
         and enabling it again after importing the network.
 
-        `async_` \n
-        Indicates if the import should be performed asynchronously.
+        `async_`:: Indicates if the import should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -19616,26 +18646,22 @@ class OpenstackNetworkProviderService(ExternalProviderService):
         """
         Returns the representation of the object managed by this service.
         For example, to get the OpenStack network provider with identifier `1234`, send a request like this:
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/openstacknetworkproviders/1234
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -19687,25 +18713,21 @@ class OpenstackNetworkProviderService(ExternalProviderService):
         """
         Removes the provider.
         For example, to remove the OpenStack network provider with identifier `1234`, send a request like this:
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/openstacknetworkproviders/1234
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -19736,25 +18758,21 @@ class OpenstackNetworkProviderService(ExternalProviderService):
         """
         In order to test connectivity for external provider we need
         to run following request where 123 is an id of a provider.
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/externalhostproviders/123/testconnectivity
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the test should be performed asynchronously.
+        `async_`:: Indicates if the test should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -19786,13 +18804,13 @@ class OpenstackNetworkProviderService(ExternalProviderService):
         Updates the provider.
         For example, to update `provider_name`, `requires_authentication`, `url`, `tenant_name` and `type` properties,
         for the OpenStack network provider with identifier `1234`, send a request like this:
-
-        ```
+        [source]
+        ----
         PUT /ovirt-engine/api/openstacknetworkproviders/1234
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <openstack_network_provider>
           <name>ovn-network-provider</name>
           <requires_authentication>false</requires_authentication>
@@ -19800,22 +18818,18 @@ class OpenstackNetworkProviderService(ExternalProviderService):
           <tenant_name>oVirt</tenant_name>
           <type>external</type>
         </openstack_network_provider>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `provider` \n
-        The provider to update.
+        `provider`:: The provider to update.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -19922,24 +18936,18 @@ class OpenstackNetworkProvidersService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of providers to return. If not specified all the providers are returned.
+        `max`:: Sets the maximum number of providers to return. If not specified all the providers are returned.
 
-        `search` \n
-        A query string used to restrict the returned OpenStack network providers.
+        `search`:: A query string used to restrict the returned OpenStack network providers.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -20010,21 +19018,16 @@ class OpenstackNetworksService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of networks to return. If not specified all the networks are returned.
+        `max`:: Sets the maximum number of networks to return. If not specified all the networks are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -20084,18 +19087,14 @@ class OpenstackSubnetService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -20121,17 +19120,13 @@ class OpenstackSubnetService(Service):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -20208,21 +19203,16 @@ class OpenstackSubnetsService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of sub-networks to return. If not specified all the sub-networks are returned.
+        `max`:: Sets the maximum number of sub-networks to return. If not specified all the sub-networks are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -20284,18 +19274,14 @@ class OpenstackVolumeAuthenticationKeyService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -20321,17 +19307,13 @@ class OpenstackVolumeAuthenticationKeyService(Service):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -20437,21 +19419,16 @@ class OpenstackVolumeAuthenticationKeysService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of keys to return. If not specified all the keys are returned.
+        `max`:: Sets the maximum number of keys to return. If not specified all the keys are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -20516,18 +19493,14 @@ class OpenstackVolumeProviderService(ExternalProviderService):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -20580,22 +19553,17 @@ class OpenstackVolumeProviderService(ExternalProviderService):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `force` \n
-        Indicates if the operation should succeed, and the provider removed from the database,
+        `force`:: Indicates if the operation should succeed, and the provider removed from the database,
         even if something fails during the operation.
         This parameter is optional, and the default value is `false`.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -20630,25 +19598,21 @@ class OpenstackVolumeProviderService(ExternalProviderService):
         """
         In order to test connectivity for external provider we need
         to run following request where 123 is an id of a provider.
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/externalhostproviders/123/testconnectivity
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the test should be performed asynchronously.
+        `async_`:: Indicates if the test should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -20762,13 +19726,13 @@ class OpenstackVolumeProvidersService(Service):
         """
         Adds a new volume provider.
         For example:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/openstackvolumeproviders
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <openstack_volume_provider>
           <name>mycinder</name>
           <url>https://mycinder.example.com:8776</url>
@@ -20780,7 +19744,7 @@ class OpenstackVolumeProvidersService(Service):
           <password>mypassword</password>
           <tenant_name>mytenant</tenant_name>
         </openstack_volume_provider>
-        ```
+        ----
 
 
         """
@@ -20812,24 +19776,18 @@ class OpenstackVolumeProvidersService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of providers to return. If not specified all the providers are returned.
+        `max`:: Sets the maximum number of providers to return. If not specified all the providers are returned.
 
-        `search` \n
-        A query string used to restrict the returned volume providers.
+        `search`:: A query string used to restrict the returned volume providers.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -20894,18 +19852,14 @@ class OpenstackVolumeTypeService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -20958,21 +19912,16 @@ class OpenstackVolumeTypesService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of volume types to return. If not specified all the volume types are returned.
+        `max`:: Sets the maximum number of volume types to return. If not specified all the volume types are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -21032,18 +19981,14 @@ class OperatingSystemService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -21096,21 +20041,16 @@ class OperatingSystemsService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of networks to return. If not specified all the networks are returned.
+        `max`:: Sets the maximum number of networks to return. If not specified all the networks are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -21170,18 +20110,14 @@ class PermissionService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -21207,17 +20143,13 @@ class PermissionService(Service):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -21270,33 +20202,29 @@ class PermitService(Service):
         Gets the information about the permit of the role.
         For example to retrieve the information about the permit with the id `456` of the role with the id `123`
         send a request like this:
-        ```
+        ....
         GET /ovirt-engine/api/roles/123/permits/456
-        ```
-
-        ```xml
+        ....
+        [source,xml]
+        ----
         <permit href="/ovirt-engine/api/roles/123/permits/456" id="456">
           <name>change_vm_cd</name>
           <administrative>false</administrative>
           <role href="/ovirt-engine/api/roles/123" id="123"/>
         </permit>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -21322,24 +20250,20 @@ class PermitService(Service):
         """
         Removes the permit from the role.
         For example to remove the permit with id `456` from the role with id `123` send a request like this:
-        ```
+        ....
         DELETE /ovirt-engine/api/roles/123/permits/456
-        ```
+        ....
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -21390,33 +20314,29 @@ class PermitsService(Service):
         **kwargs
     ):
         """
-        Adds a permit to the role. The permit name can be retrieved from the `ClusterLevelsService` service.
+        Adds a permit to the role. The permit name can be retrieved from the xref:services-cluster_levels[cluster_levels] service.
         For example to assign a permit `create_vm` to the role with id `123` send a request like this:
-        ```
+        ....
         POST /ovirt-engine/api/roles/123/permits
-        ```
+        ....
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <permit>
           <name>create_vm</name>
         </permit>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `permit` \n
-        The permit to add.
+        `permit`:: The permit to add.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -21441,11 +20361,11 @@ class PermitsService(Service):
         """
         List the permits of the role.
         For example to list the permits of the role with the id `123` send a request like this:
-        ```
+        ....
         GET /ovirt-engine/api/roles/123/permits
-        ```
-
-        ```xml
+        ....
+        [source,xml]
+        ----
         <permits>
           <permit href="/ovirt-engine/api/roles/123/permits/5" id="5">
             <name>change_vm_cd</name>
@@ -21458,27 +20378,22 @@ class PermitsService(Service):
             <role href="/ovirt-engine/api/roles/123" id="123"/>
           </permit>
         </permits>
-        ```
+        ----
         The order of the returned list of permits isn't guaranteed.
 
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of permits to return. If not specified all the permits are returned.
+        `max`:: Sets the maximum number of permits to return. If not specified all the permits are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -21539,13 +20454,13 @@ class QosService(Service):
     ):
         """
         Get specified QoS in the data center.
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/datacenters/123/qoss/123
-        ```
+        ----
         You will get response like this one below:
-
-        ```xml
+        [source,xml]
+        ----
         <qos href="/ovirt-engine/api/datacenters/123/qoss/123" id="123">
           <name>123</name>
           <description>123</description>
@@ -21554,23 +20469,19 @@ class QosService(Service):
           <type>storage</type>
           <data_center href="/ovirt-engine/api/datacenters/123" id="123"/>
         </qos>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -21595,25 +20506,21 @@ class QosService(Service):
     ):
         """
         Remove specified QoS from datacenter.
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/datacenters/123/qoss/123
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -21644,20 +20551,20 @@ class QosService(Service):
     ):
         """
         Update the specified QoS in the dataCenter.
-
-        ```
+        [source]
+        ----
         PUT /ovirt-engine/api/datacenters/123/qoss/123
-        ```
+        ----
         For example with curl:
-
-        ```
+        [source]
+        ----
         curl -u admin@internal:123456 -X PUT -H "content-type: application/xml" -d \
         "<qos><name>321</name><description>321</description><max_iops>10</max_iops></qos>" \
         https://engine/ovirt-engine/api/datacenters/123/qoss/123
-        ```
+        ----
         You will receive response like this:
-
-        ```xml
+        [source,xml]
+        ----
         <qos href="/ovirt-engine/api/datacenters/123/qoss/123" id="123">
           <name>321</name>
           <description>321</description>
@@ -21666,22 +20573,18 @@ class QosService(Service):
           <type>storage</type>
           <data_center href="/ovirt-engine/api/datacenters/123" id="123"/>
         </qos>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `qos` \n
-        Updated QoS object.
+        `qos`:: Updated QoS object.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -21734,13 +20637,13 @@ class QossService(Service):
     ):
         """
         Add a new QoS to the dataCenter.
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/datacenters/123/qoss
-        ```
+        ----
         The response will look as follows:
-
-        ```xml
+        [source,xml]
+        ----
         <qos href="/ovirt-engine/api/datacenters/123/qoss/123" id="123">
           <name>123</name>
           <description>123</description>
@@ -21748,22 +20651,18 @@ class QossService(Service):
           <type>storage</type>
           <data_center href="/ovirt-engine/api/datacenters/123" id="123"/>
         </qos>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `qos` \n
-        Added QoS object.
+        `qos`:: Added QoS object.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -21787,39 +20686,34 @@ class QossService(Service):
     ):
         """
         Returns the list of _quality of service_ configurations available in the data center.
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/datacenter/123/qoss
-        ```
+        ----
         You will get response which will look like this:
-
-        ```xml
+        [source, xml]
+        ----
         <qoss>
           <qos href="/ovirt-engine/api/datacenters/123/qoss/1" id="1">...</qos>
           <qos href="/ovirt-engine/api/datacenters/123/qoss/2" id="2">...</qos>
           <qos href="/ovirt-engine/api/datacenters/123/qoss/3" id="3">...</qos>
         </qoss>
-        ```
+        ----
         The returned list of quality of service configurations isn't guaranteed.
 
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of QoS descriptors to return. If not specified all the descriptors are returned.
+        `max`:: Sets the maximum number of QoS descriptors to return. If not specified all the descriptors are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -21884,12 +20778,12 @@ class QuotaService(Service):
         """
         Retrieves a quota.
         An example of retrieving a quota:
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/datacenters/123/quotas/456
-        ```
-
-        ```xml
+        ----
+        [source,xml]
+        ----
         <quota id="456">
           <name>myquota</name>
           <description>My new quota for virtual machines</description>
@@ -21898,23 +20792,19 @@ class QuotaService(Service):
           <storage_hard_limit_pct>20</storage_hard_limit_pct>
           <storage_soft_limit_pct>80</storage_soft_limit_pct>
         </quota>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -21940,28 +20830,24 @@ class QuotaService(Service):
         """
         Delete a quota.
         An example of deleting a quota:
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/datacenters/123-456/quotas/654-321
         -0472718ab224 HTTP/1.1
         Accept: application/xml
         Content-type: application/xml
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -21993,19 +20879,21 @@ class QuotaService(Service):
         """
         Updates a quota.
         An example of updating a quota:
-
-        ```
+        [source]
+        ----
         PUT /ovirt-engine/api/datacenters/123/quotas/456
-        ```
-
-        ```xml
+        ----
+        [source,xml]
+        ----
         <quota>
           <cluster_hard_limit_pct>30</cluster_hard_limit_pct>
           <cluster_soft_limit_pct>70</cluster_soft_limit_pct>
           <storage_hard_limit_pct>20</storage_hard_limit_pct>
           <storage_soft_limit_pct>80</storage_soft_limit_pct>
         </quota>
-        ```
+        ----
+
+
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -22083,18 +20971,14 @@ class QuotaClusterLimitService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -22120,17 +21004,13 @@ class QuotaClusterLimitService(Service):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -22212,21 +21092,16 @@ class QuotaClusterLimitsService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of limits to return. If not specified all the limits are returned.
+        `max`:: Sets the maximum number of limits to return. If not specified all the limits are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -22286,18 +21161,14 @@ class QuotaStorageLimitService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -22323,17 +21194,13 @@ class QuotaStorageLimitService(Service):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the update should be performed asynchronously.
+        `async_`:: Indicates if the update should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -22386,30 +21253,30 @@ class QuotaStorageLimitsService(Service):
         """
         Adds a storage limit to a specified quota.
         To create a 100GiB storage limit for all storage domains in a data center, send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/datacenters/123/quotas/456/quotastoragelimits
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <quota_storage_limit>
           <limit>100</limit>
         </quota_storage_limit>
-        ```
+        ----
         To create a 50GiB storage limit for a storage domain with the ID `000`, send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/datacenters/123/quotas/456/quotastoragelimits
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <quota_storage_limit>
           <limit>50</limit>
           <storage_domain id="000"/>
         </quota_storage_limit>
-        ```
+        ----
 
 
         """
@@ -22440,21 +21307,16 @@ class QuotaStorageLimitsService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of limits to return. If not specified, all the limits are returned.
+        `max`:: Sets the maximum number of limits to return. If not specified, all the limits are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -22517,17 +21379,17 @@ class QuotasService(Service):
         """
         Creates a new quota.
         An example of creating a new quota:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/datacenters/123/quotas
-        ```
-
-        ```xml
+        ----
+        [source,xml]
+        ----
         <quota>
           <name>myquota</name>
           <description>My new quota for virtual machines</description>
         </quota>
-        ```
+        ----
 
 
         """
@@ -22558,21 +21420,16 @@ class QuotasService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of quota descriptors to return. If not specified all the descriptors are returned.
+        `max`:: Sets the maximum number of quota descriptors to return. If not specified all the descriptors are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -22632,13 +21489,13 @@ class RoleService(Service):
     ):
         """
         Get the role.
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/roles/123
-        ```
+        ----
         You will receive XML response like this one:
-
-        ```xml
+        [source,xml]
+        ----
         <role id="123">
           <name>MyRole</name>
           <description>MyRole description</description>
@@ -22646,23 +21503,19 @@ class RoleService(Service):
           <administrative>true</administrative>
           <mutable>false</mutable>
         </role>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -22688,25 +21541,21 @@ class RoleService(Service):
         """
         Removes the role.
         To remove the role you need to know its id, then send request like this:
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/roles/{role_id}
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -22737,37 +21586,33 @@ class RoleService(Service):
     ):
         """
         Updates a role. You are allowed to update `name`, `description` and `administrative` attributes after role is
-        created. Within this endpoint you can't add or remove roles permits you need to use `PermitsService`
-        that manages permits of role.
+        created. Within this endpoint you can't add or remove roles permits you need to use
+        xref:services-permits[service] that manages permits of role.
         For example to update role's `name`, `description` and `administrative` attributes send a request like this:
-
-        ```
+        [source]
+        ----
         PUT /ovirt-engine/api/roles/123
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <role>
           <name>MyNewRoleName</name>
           <description>My new description of the role</description>
           <administrative>true</administrative>
         </group>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `role` \n
-        Updated role.
+        `role`:: Updated role.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -22833,13 +21678,13 @@ class RolesService(Service):
         Create a new role. The role can be administrative or non-administrative and can have different permits.
         For example, to add the `MyRole` non-administrative role with permits to login and create virtual machines
         send a request like this (note that you have to pass permit id):
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/roles
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <role>
           <name>MyRole</name>
           <description>My custom role to create virtual machines</description>
@@ -22849,22 +21694,18 @@ class RolesService(Service):
             <permit id="1300"/>
           </permits>
         </group>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `role` \n
-        Role that will be added.
+        `role`:: Role that will be added.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -22888,13 +21729,13 @@ class RolesService(Service):
     ):
         """
         List roles.
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/roles
-        ```
+        ----
         You will receive response in XML like this one:
-
-        ```xml
+        [source,xml]
+        ----
         <roles>
           <role id="123">
              <name>SuperUser</name>
@@ -22905,27 +21746,22 @@ class RolesService(Service):
           </role>
           ...
         </roles>
-        ```
+        ----
         The order of the returned list of roles isn't guaranteed.
 
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of roles to return. If not specified all the roles are returned.
+        `max`:: Sets the maximum number of roles to return. If not specified all the roles are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -23020,24 +21856,18 @@ class SchedulingPoliciesService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of policies to return. If not specified all the policies are returned.
+        `max`:: Sets the maximum number of policies to return. If not specified all the policies are returned.
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -23105,21 +21935,16 @@ class SchedulingPolicyService(Service):
         """
         This method supports the following parameters:
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -23149,17 +21974,13 @@ class SchedulingPolicyService(Service):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -23270,21 +22091,16 @@ class SchedulingPolicyUnitService(Service):
         """
         This method supports the following parameters:
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -23314,17 +22130,13 @@ class SchedulingPolicyUnitService(Service):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -23383,24 +22195,18 @@ class SchedulingPolicyUnitsService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of policy units to return. If not specified all the policy units are returned.
+        `max`:: Sets the maximum number of policy units to return. If not specified all the policy units are returned.
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -23467,18 +22273,14 @@ class SnapshotService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -23505,26 +22307,21 @@ class SnapshotService(Service):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `all_content` \n
-        Indicates if all the attributes of the virtual machine snapshot should be included in the response.
-        By default the attribute `ovirtsdk4.types.Initialization.configuration` is excluded.
+        `all_content`:: Indicates if all the attributes of the virtual machine snapshot should be included in the response.
+        By default the attribute `initialization.configuration.data` is excluded.
         For example, to retrieve the complete representation of the snapshot with id `456` of the virtual machine
         with id `123` send a request like this:
-        ```
+        ....
         GET /ovirt-engine/api/vms/123/snapshots/456?all_content=true
-        ```
+        ....
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -23562,32 +22359,31 @@ class SnapshotService(Service):
         Restores a virtual machine snapshot.
         For example, to restore the snapshot with identifier `456` of virtual machine with identifier `123` send a
         request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/vms/123/snapshots/456/restore
-        ```
+        ----
         With an empty `action` in the body:
-
-        ```xml
+        [source,xml]
+        ----
         <action/>
-        ```
+        ----
         NOTE: Confirm that the commit operation is finished and the virtual machine is down before running the virtual machine.
 
 
         This method supports the following parameters:
 
-        `disks` \n
-        Specify the disks included in the snapshot's restore.
+        `disks`:: Specify the disks included in the snapshot's restore.
         For each disk parameter, it is also required to specify its `image_id`.
         For example, to restore a snapshot with an identifier `456` of a virtual machine with identifier `123`, including
         a disk with identifier `111` and `image_id` of `222`, send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/vms/123/snapshots/456/restore
-        ```
+        ----
         Request body:
-
-        ```xml
+        [source,xml]
+        ----
         <action>
           <disks>
             <disk id="111">
@@ -23595,19 +22391,15 @@ class SnapshotService(Service):
             </disk>
           </disks>
         </action>
-        ```
+        ----
 
-        `async_` \n
-        Indicates if the restore should be performed asynchronously.
+        `async_`:: Indicates if the restore should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -23687,18 +22479,14 @@ class SnapshotCdromService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -23751,21 +22539,16 @@ class SnapshotCdromsService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of CDROMS to return. If not specified all the CDROMS are returned.
+        `max`:: Sets the maximum number of CDROMS to return. If not specified all the CDROMS are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -23825,18 +22608,14 @@ class SnapshotDiskService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -23889,21 +22668,16 @@ class SnapshotDisksService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of disks to return. If not specified all the disks are returned.
+        `max`:: Sets the maximum number of disks to return. If not specified all the disks are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -23963,18 +22737,14 @@ class SnapshotNicService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -24027,21 +22797,16 @@ class SnapshotNicsService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of NICs to return. If not specified all the NICs are returned.
+        `max`:: Sets the maximum number of NICs to return. If not specified all the NICs are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -24104,17 +22869,17 @@ class SnapshotsService(Service):
         """
         Creates a virtual machine snapshot.
         For example, to create a new snapshot for virtual machine `123` send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/vms/123/snapshots
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <snapshot>
           <description>My snapshot</description>
         </snapshot>
-        ```
+        ----
         For including only a sub-set of disks in the snapshots, add `disk_attachments` element to the
         request body. Note that disks which are not specified in `disk_attachments` element will not be a
         part of the snapshot. If an empty `disk_attachments` element is passed, the snapshot will include
@@ -24124,8 +22889,8 @@ class SnapshotsService(Service):
         This is used in order to restore a chain of images from backup. I.e. when restoring
         a disk with snapshots, the relevant `image_id` should be specified for each snapshot
         (so the identifiers of the disk snapshots are identical to the backup).
-
-        ```xml
+        [source,xml]
+        ----
         <snapshot>
           <description>My snapshot</description>
           <disk_attachments>
@@ -24136,21 +22901,21 @@ class SnapshotsService(Service):
             </disk_attachment>
           </disk_attachments>
         </snapshot>
-        ```
+        ----
         [IMPORTANT]
         ====
-        When a snapshot is created, the default value for the `ovirtsdk4.types.Snapshot.persist_memorystate` attribute is `true`.
-        That means that the content of the memory of the virtual machine will be included in the snapshot,
-        and it also means that the virtual machine will be pausedfor a longer time.
-        That can negatively affect applications that are very sensitive to timing (NTP
+        When a snapshot is created, the default value for the
+        xref:types-snapshot-attributes-persist_memorystate[persist_memorystate] attribute is `true`. That means that the content of the memory of the virtual
+        machine will be included in the snapshot, and it also means that the virtual machine will be paused
+        for a longer time. That can negatively affect applications that are very sensitive to timing (NTP
         servers, for example). In those cases make sure that you set the attribute to `false`:
-
-        ```xml
+        [source,xml]
+        ----
         <snapshot>
           <description>My snapshot</description>
           <persist_memorystate>false</persist_memorystate>
         </snapshot>
-        ```
+        ----
         ====
 
 
@@ -24183,30 +22948,24 @@ class SnapshotsService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of snapshots to return. If not specified all the snapshots are returned.
+        `max`:: Sets the maximum number of snapshots to return. If not specified all the snapshots are returned.
 
-        `all_content` \n
-        Indicates if all the attributes of the virtual machine snapshot should be included in the response.
-        By default the attribute `ovirtsdk4.types.Initialization.configuration` is excluded.
+        `all_content`:: Indicates if all the attributes of the virtual machine snapshot should be included in the response.
+        By default the attribute `initialization.configuration.data` is excluded.
         For example, to retrieve the complete representation of the virtual machine with id `123` snapshots send a
         request like this:
-        ```
+        ....
         GET /ovirt-engine/api/vms/123/snapshots?all_content=true
-        ```
+        ....
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -24270,18 +23029,14 @@ class SshPublicKeyService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -24307,17 +23062,13 @@ class SshPublicKeyService(Service):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -24349,7 +23100,9 @@ class SshPublicKeyService(Service):
         """
         Replaces the key with a new resource.
         IMPORTANT: Since version 4.4.8 of the engine this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. Instead please use DELETE followed by `SshPublicKeysService.add`.
+        compatibility. It will be removed in the future. Instead please use DELETE followed by xref:services-ssh_public_keys-methods-add[add operation].
+
+
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -24424,23 +23177,23 @@ class SshPublicKeysService(Service):
         Returns a list of SSH public keys of the user.
         For example, to retrieve the list of SSH keys of user with identifier `123`,
         send a request like this:
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/users/123/sshpublickeys
-        ```
+        ----
         The result will be the following XML document:
-
-        ```xml
+        [source,xml]
+        ----
         <ssh_public_keys>
           <ssh_public_key href="/ovirt-engine/api/users/123/sshpublickeys/456" id="456">
             <content>ssh-rsa ...</content>
             <user href="/ovirt-engine/api/users/123" id="123"/>
           </ssh_public_key>
         </ssh_public_keys>
-        ```
+        ----
         Or the following JSON object
-
-        ```json
+        [source,json]
+        ----
         {
           "ssh_public_key": [
             {
@@ -24454,27 +23207,22 @@ class SshPublicKeysService(Service):
             }
           ]
         }
-        ```
+        ----
         The order of the returned list of keys is not guaranteed.
 
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of keys to return. If not specified all the keys are returned.
+        `max`:: Sets the maximum number of keys to return. If not specified all the keys are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -24534,18 +23282,14 @@ class StatisticService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -24593,13 +23337,13 @@ class StatisticsService(Service):
         Retrieves a list of statistics.
         For example, to retrieve the statistics for virtual machine `123` send a
         request like this:
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/vms/123/statistics
-        ```
+        ----
         The result will be like this:
-
-        ```xml
+        [source,xml]
+        ----
         <statistics>
           <statistic href="/ovirt-engine/api/vms/123/statistics/456" id="456">
             <name>memory.installed</name>
@@ -24616,15 +23360,15 @@ class StatisticsService(Service):
           </statistic>
           ...
         </statistics>
-        ```
+        ----
         Just a single part of the statistics can be retrieved by specifying its id at the end of the URI. That means:
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/vms/123/statistics/456
-        ```
+        ----
         Outputs:
-
-        ```xml
+        [source,xml]
+        ----
         <statistic href="/ovirt-engine/api/vms/123/statistics/456" id="456">
           <name>memory.installed</name>
           <description>Total memory configured</description>
@@ -24638,27 +23382,22 @@ class StatisticsService(Service):
           </values>
           <vm href="/ovirt-engine/api/vms/123" id="123"/>
         </statistic>
-        ```
+        ----
         The order of the returned list of statistics isn't guaranteed.
 
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of statistics to return. If not specified all the statistics are returned.
+        `max`:: Sets the maximum number of statistics to return. If not specified all the statistics are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -24724,40 +23463,34 @@ class StepService(MeasurableService):
         Marks an external step execution as ended.
         For example, to terminate a step with identifier `456` which belongs to a `job` with identifier `123` send the
         following request:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/jobs/123/steps/456/end
-        ```
+        ----
         With the following request body:
-
-        ```xml
+        [source,xml]
+        ----
         <action>
           <force>true</force>
           <succeeded>true</succeeded>
         </action>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `force` \n
-        Indicates if the step should be forcibly terminated.
+        `force`:: Indicates if the step should be forcibly terminated.
 
-        `succeeded` \n
-        Indicates if the step should be marked as successfully finished or as failed.
+        `succeeded`:: Indicates if the step should be marked as successfully finished or as failed.
         This parameter is optional, and the default value is `true`.
 
-        `async_` \n
-        Indicates if the action should be performed asynchronously.
+        `async_`:: Indicates if the action should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -24790,13 +23523,13 @@ class StepService(MeasurableService):
     ):
         """
         Retrieves a step.
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/jobs/123/steps/456
-        ```
+        ----
         You will receive response in XML like this one:
-
-        ```xml
+        [source,xml]
+        ----
         <step href="/ovirt-engine/api/jobs/123/steps/456" id="456">
           <actions>
             <link href="/ovirt-engine/api/jobs/123/steps/456/end" rel="end"/>
@@ -24810,23 +23543,19 @@ class StepService(MeasurableService):
           <type>validating</type>
           <job href="/ovirt-engine/api/jobs/123" id="123"/>
         </step>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -24884,23 +23613,23 @@ class StepsService(Service):
         Add an external step to an existing job or to an existing step.
         For example, to add a step to `job` with identifier `123` send the
         following request:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/jobs/123/steps
-        ```
+        ----
         With the following request body:
-
-        ```xml
+        [source,xml]
+        ----
         <step>
           <description>Validating</description>
           <start_time>2016-12-12T23:07:26.605+02:00</start_time>
           <status>started</status>
           <type>validating</type>
         </step>
-        ```
+        ----
         The response should look like:
-
-        ```xml
+        [source,xml]
+        ----
         <step href="/ovirt-engine/api/jobs/123/steps/456" id="456">
           <actions>
             <link href="/ovirt-engine/api/jobs/123/steps/456/end" rel="end"/>
@@ -24914,22 +23643,18 @@ class StepsService(Service):
           <type>validating</type>
           <job href="/ovirt-engine/api/jobs/123" id="123"/>
         </step>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `step` \n
-        Step that will be added.
+        `step`:: Step that will be added.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -24953,13 +23678,13 @@ class StepsService(Service):
     ):
         """
         Retrieves the representation of the steps.
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/job/123/steps
-        ```
+        ----
         You will receive response in XML like this one:
-
-        ```xml
+        [source,xml]
+        ----
         <steps>
           <step href="/ovirt-engine/api/jobs/123/steps/456" id="456">
             <actions>
@@ -24976,27 +23701,22 @@ class StepsService(Service):
           </step>
           ...
         </steps>
-        ```
+        ----
         The order of the returned list of steps isn't guaranteed.
 
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of steps to return. If not specified all the steps are returned.
+        `max`:: Sets the maximum number of steps to return. If not specified all the steps are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -25059,15 +23779,14 @@ class StorageService(Service):
         """
         This method supports the following parameters:
 
-        `report_status` \n
-        Indicates if the status of the LUNs in the storage should be checked.
+        `report_status`:: Indicates if the status of the LUNs in the storage should be checked.
         Checking the status of the LUN is an heavy weight operation and
         this data is not always needed by the user.
         This parameter will give the option to not perform the status check of the LUNs.
         The default is `true` for backward compatibility.
         Here an example with the LUN status :
-
-        ```xml
+        [source,xml]
+        ----
         <host_storage id="360014051136c20574f743bdbd28177fd">
           <logical_units>
             <logical_unit id="360014051136c20574f743bdbd28177fd">
@@ -25084,10 +23803,10 @@ class StorageService(Service):
           <type>iscsi</type>
           <host id="8bb5ade5-e988-4000-8b93-dbfc6717fe50"/>
         </host_storage>
-        ```
+        ----
         Here an example without the LUN status :
-
-        ```xml
+        [source,xml]
+        ----
         <host_storage id="360014051136c20574f743bdbd28177fd">
           <logical_units>
             <logical_unit id="360014051136c20574f743bdbd28177fd">
@@ -25103,20 +23822,16 @@ class StorageService(Service):
           <type>iscsi</type>
           <host id="8bb5ade5-e988-4000-8b93-dbfc6717fe50"/>
         </host_storage>
-        ```
+        ----
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -25178,21 +23893,16 @@ class StorageDomainService(Service):
 
         This method supports the following parameters:
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -25228,20 +23938,15 @@ class StorageDomainService(Service):
 
         This method supports the following parameters:
 
-        `host` \n
-        Indicates the data center's host.
+        `host`:: Indicates the data center's host.
 
-        `async_` \n
-        Indicates if the action should be performed asynchronously.
+        `async_`:: Indicates if the action should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -25275,37 +23980,33 @@ class StorageDomainService(Service):
         In order to do so the data stored on the provided logical units will be moved to other logical units of the
         storage domain and only then they will be reduced from the storage domain.
         For example, in order to reduce two logical units from a storage domain send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/storageDomains/123/reduceluns
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
          <action>
            <logical_units>
              <logical_unit id="1IET_00010001"/>
              <logical_unit id="1IET_00010002"/>
            </logical_units>
          </action>
-        ```
-        Note that this operation is only applicable to block storage domains (i.e., storage domains with the
-        `ovirtsdk4.types.StorageType` of iSCSI or FCP).
+        ----
+         Note that this operation is only applicable to block storage domains (i.e., storage domains with the
+         xref:types-storage_type[storage type] of iSCSI or FCP).
 
 
         This method supports the following parameters:
 
-        `logical_units` \n
-        The logical units that need to be reduced from the storage domain.
+        `logical_units`:: The logical units that need to be reduced from the storage domain.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -25336,38 +24037,33 @@ class StorageDomainService(Service):
         This action forces a rescan of the provided LUNs and
         updates the database with the new size, if required.
         For example, in order to refresh the size of two LUNs send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/storageDomains/262b056b-aede-40f1-9666-b883eff59d40/refreshluns
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
          <action>
            <logical_units>
              <logical_unit id="1IET_00010001"/>
              <logical_unit id="1IET_00010002"/>
            </logical_units>
          </action>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `logical_units` \n
-        The LUNs that need to be refreshed.
+        `logical_units`:: The LUNs that need to be refreshed.
 
-        `async_` \n
-        Indicates if the refresh should be performed asynchronously.
+        `async_`:: Indicates if the refresh should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -25412,47 +24108,40 @@ class StorageDomainService(Service):
 
         This method supports the following parameters:
 
-        `host` \n
-        Indicates which host should be used to remove the storage domain.
+        `host`:: Indicates which host should be used to remove the storage domain.
         This parameter is mandatory, except if the `destroy` parameter is included and its value is `true`, in that
         case the `host` parameter will be ignored.
         The value should contain the name or the identifier of the host. For example, to use the host named `myhost`
         to remove the storage domain with identifier `123` send a request like this:
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/storageDomains/123?host=myhost
-        ```
+        ----
 
-        `format` \n
-        Indicates if the actual storage should be formatted, removing all the metadata from the underlying LUN or
+        `format`:: Indicates if the actual storage should be formatted, removing all the metadata from the underlying LUN or
         directory:
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/storageDomains/123?format=true
-        ```
+        ----
         This parameter is optional, and the default value is `false`.
 
-        `destroy` \n
-        Indicates if the operation should succeed, and the storage domain removed from the database, even if the
+        `destroy`:: Indicates if the operation should succeed, and the storage domain removed from the database, even if the
         storage is not accessible.
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/storageDomains/123?destroy=true
-        ```
+        ----
         This parameter is optional, and the default value is `false`.
         When the value of `destroy` is `true` the `host` parameter will be ignored.
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -25494,39 +24183,35 @@ class StorageDomainService(Service):
     ):
         """
         Updates a storage domain.
-        Not all of the `ovirtsdk4.types.StorageDomain`'s attributes are updatable after creation. Those that can be
+        Not all of the xref:types-storage_domain[StorageDomain]'s attributes are updatable after creation. Those that can be
         updated are: `name`, `description`, `comment`, `warning_low_space_indicator`, `critical_space_action_blocker` and
         `wipe_after_delete.` (Note that changing the `wipe_after_delete` attribute will not change the wipe after delete
         property of disks that already exist).
         To update the `name` and `wipe_after_delete` attributes of a storage domain with an identifier `123`, send a
         request as follows:
-
-        ```
+        [source]
+        ----
         PUT /ovirt-engine/api/storageDomains/123
-        ```
+        ----
         With a request body as follows:
-
-        ```xml
+        [source,xml]
+        ----
         <storage_domain>
           <name>data2</name>
           <wipe_after_delete>true</wipe_after_delete>
         </storage_domain>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `storage_domain` \n
-        The updated storage domain.
+        `storage_domain`:: The updated storage domain.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -25573,17 +24258,13 @@ class StorageDomainService(Service):
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the `OVF_STORE` update should be performed asynchronously.
+        `async_`:: Indicates if the `OVF_STORE` update should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -25720,21 +24401,16 @@ class StorageDomainContentDiskService(Service):
         """
         This method supports the following parameters:
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -25794,29 +24470,22 @@ class StorageDomainContentDisksService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of disks to return. If not specified all the disks are returned.
+        `max`:: Sets the maximum number of disks to return. If not specified all the disks are returned.
 
-        `search` \n
-        A query string used to restrict the returned disks.
+        `search`:: A query string used to restrict the returned disks.
 
-        `case_sensitive` \n
-        Indicates if the search performed using the `search` parameter should be performed taking case into
+        `case_sensitive`:: Indicates if the search performed using the `search` parameter should be performed taking case into
         account. The default value is `true`, which means that case is taken into account. If you want to search
         ignoring case set it to `false`.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -25871,8 +24540,8 @@ class StorageDomainDiskService(MeasurableService):
     IMPORTANT: Since version 4.2 of the engine this service is intended only to list disks available in the storage
     domain, and to register unregistered disks. All the other operations, like copying a disk, moving a disk, etc, have
     been deprecated and will be removed in the future. To perform those operations
-    use the `DisksService` service that manages all the disks of the system,
-    or the `DiskService` service that manages a specific disk.
+    use the xref:services-disks[service that manages all the disks of the system]
+    or the xref:services-disk[service that manages a specific disk].
 
     """
 
@@ -25893,26 +24562,21 @@ class StorageDomainDiskService(MeasurableService):
         """
         Copies a disk to the specified storage domain.
         IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. To copy a disk use the `DiskService.copy`
+        compatibility. It will be removed in the future. To copy a disk use the xref:services-disk-methods-copy[copy]
         operation of the service that manages that disk.
 
 
         This method supports the following parameters:
 
-        `disk` \n
-        Description of the resulting disk.
+        `disk`:: Description of the resulting disk.
 
-        `storage_domain` \n
-        The storage domain where the new disk will be created.
+        `storage_domain`:: The storage domain where the new disk will be created.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -25940,23 +24604,19 @@ class StorageDomainDiskService(MeasurableService):
         """
         Exports a disk to an export storage domain.
         IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. To export a disk use the `DiskService.export`
+        compatibility. It will be removed in the future. To export a disk use the xref:services-disk-methods-export[export]
         operation of the service that manages that disk.
 
 
         This method supports the following parameters:
 
-        `storage_domain` \n
-        The export storage domain where the disk should be exported to.
+        `storage_domain`:: The export storage domain where the disk should be exported to.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -25985,18 +24645,14 @@ class StorageDomainDiskService(MeasurableService):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -26024,28 +24680,23 @@ class StorageDomainDiskService(MeasurableService):
         """
         Moves a disk to another storage domain.
         IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. To move a disk use the `DiskService.move`
+        compatibility. It will be removed in the future. To move a disk use the xref:services-disk-methods-move[move]
         operation of the service that manages that disk.
+
 
         This method supports the following parameters:
 
-        `storage_domain` \n
-        The storage domain where the disk will be moved to.
+        `storage_domain`:: The storage domain where the disk will be moved to.
 
-        `async_` \n
-        Indicates if the move should be performed asynchronously.
+        `async_`:: Indicates if the move should be performed asynchronously.
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -26085,17 +24736,13 @@ class StorageDomainDiskService(MeasurableService):
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -26124,7 +24771,7 @@ class StorageDomainDiskService(MeasurableService):
         """
         Removes a disk.
         IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. To remove a disk use the `DiskService.remove`
+        compatibility. It will be removed in the future. To remove a disk use the xref:services-disk-methods-remove[remove]
         operation of the service that manages that disk.
 
 
@@ -26149,7 +24796,7 @@ class StorageDomainDiskService(MeasurableService):
         """
         Sparsify the disk.
         IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. To remove a disk use the `DiskService.remove`
+        compatibility. It will be removed in the future. To remove a disk use the xref:services-disk-methods-remove[remove]
         operation of the service that manages that disk.
 
 
@@ -26176,23 +24823,19 @@ class StorageDomainDiskService(MeasurableService):
         """
         Updates the disk.
         IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. To update a disk use the `DiskService.update` operation
-        of the service that manages that disk.
+        compatibility. It will be removed in the future. To update a disk use the
+        xref:services-disk-methods-update[update] operation of the service that manages that disk.
 
 
         This method supports the following parameters:
 
-        `disk` \n
-        The update to apply to the disk.
+        `disk`:: The update to apply to the disk.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -26259,23 +24902,21 @@ class StorageDomainDisksService(Service):
         """
         Adds or registers a disk.
         IMPORTANT: Since version 4.2 of the {engine-name} this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. To add a new disk use the `DisksService.add`
+        compatibility. It will be removed in the future. To add a new disk use the xref:services-disks-methods-add[add]
         operation of the service that manages the disks of the system. To register an unregistered disk use the
-        `AttachedStorageDomainDiskService.register` operation of the service that manages that disk.
+        xref:services-attached_storage_domain_disk-methods-register[register] operation of the service that manages
+        that disk.
+
 
         This method supports the following parameters:
 
-        `disk` \n
-        The disk to add or register.
+        `disk`:: The disk to add or register.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -26309,31 +24950,25 @@ class StorageDomainDisksService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of disks to return. If not specified, all the disks are returned.
+        `max`:: Sets the maximum number of disks to return. If not specified, all the disks are returned.
 
-        `unregistered` \n
-        Indicates whether to retrieve a list of registered or unregistered disks in the storage domain.
+        `unregistered`:: Indicates whether to retrieve a list of registered or unregistered disks in the storage domain.
         To get a list of unregistered disks in the storage domain the call should indicate the unregistered flag.
         For example, to get a list of unregistered disks the REST API call should look like this:
-        ```
+        ....
         GET /ovirt-engine/api/storagedomains/123/disks?unregistered=true
-        ```
+        ....
         The default value of the unregistered flag is `false`.
         The request only applies to storage domains that are attached.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -26399,18 +25034,14 @@ class StorageDomainServerConnectionService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -26439,17 +25070,13 @@ class StorageDomainServerConnectionService(Service):
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the action should be performed asynchronously.
+        `async_`:: Indicates if the action should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -26528,21 +25155,16 @@ class StorageDomainServerConnectionsService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of connections to return. If not specified all the connections are returned.
+        `max`:: Sets the maximum number of connections to return. If not specified all the connections are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -26603,18 +25225,14 @@ class StorageDomainTemplateService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -26646,12 +25264,13 @@ class StorageDomainTemplateService(Service):
         """
         Action to import a template from an export storage domain.
         For example, to import the template `456` from the storage domain `123` send the following request:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/storagedomains/123/templates/456/import
-        ```
+        ----
         With the following request body:
-        ```xml
+        [source, xml]
+        ----
         <action>
           <storage_domain>
             <name>myexport</name>
@@ -26660,7 +25279,7 @@ class StorageDomainTemplateService(Service):
             <name>mycluster</name>
           </cluster>
         </action>
-        ```
+        ----
         If you register an entity without specifying the cluster ID or name,
         the cluster name from the entity's OVF will be used (unless the register request also includes the
         cluster mapping).
@@ -26668,22 +25287,17 @@ class StorageDomainTemplateService(Service):
 
         This method supports the following parameters:
 
-        `clone` \n
-        Use the optional `clone` parameter to generate new UUIDs for the imported template and its entities.
+        `clone`:: Use the optional `clone` parameter to generate new UUIDs for the imported template and its entities.
         You can import a template with the `clone` parameter set to `false` when importing a template
         from an export domain, with templates that were exported by a different {product-name} environment.
 
-        `async_` \n
-        Indicates if the import should be performed asynchronously.
+        `async_`:: Indicates if the import should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -26736,36 +25350,29 @@ class StorageDomainTemplateService(Service):
 
         This method supports the following parameters:
 
-        `allow_partial_import` \n
-        Indicates whether a template is allowed to be registered with only some of its disks.
+        `allow_partial_import`:: Indicates whether a template is allowed to be registered with only some of its disks.
         If this flag is `true`, the system will not fail in the validation process if an image is not found, but
         instead it will allow the template to be registered without the missing disks. This is mainly used during
         registration of a template when some of the storage domains are not available. The default value is `false`.
 
-        `vnic_profile_mappings` \n
-        Deprecated attribute describing mapping rules for virtual NIC profiles that will be applied during the import\register process.
+        `vnic_profile_mappings`:: Deprecated attribute describing mapping rules for virtual NIC profiles that will be applied during the import\register process.
         WARNING: Please note that this attribute has been deprecated since version 4.2.1 of the engine, and preserved only for backward
         compatibility. It will be removed in the future. To specify `vnic_profile_mappings` use the `vnic_profile_mappings`
-        attribute inside the `ovirtsdk4.types.RegistrationConfiguration` type.
+        attribute inside the xref:types-registration_configuration[RegistrationConfiguration] type.
 
-        `registration_configuration` \n
-        This parameter describes how the template should be
+        `registration_configuration`:: This parameter describes how the template should be
         registered.
         This parameter is optional. If the parameter is not specified, the template
         will be registered with the same configuration that
         it had in the original environment where it was created.
 
-        `async_` \n
-        Indicates if the registration should be performed asynchronously.
+        `async_`:: Indicates if the registration should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -26809,17 +25416,13 @@ class StorageDomainTemplateService(Service):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -26887,31 +25490,25 @@ class StorageDomainTemplatesService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of templates to return. If not specified all the templates are returned.
+        `max`:: Sets the maximum number of templates to return. If not specified all the templates are returned.
 
-        `unregistered` \n
-        Indicates whether to retrieve a list of registered or unregistered templates which contain disks on the storage domain.
+        `unregistered`:: Indicates whether to retrieve a list of registered or unregistered templates which contain disks on the storage domain.
         To get a list of unregistered templates the call should indicate the unregistered flag.
         For example, to get a list of unregistered templates the REST API call should look like this:
-        ```
+        ....
         GET /ovirt-engine/api/storagedomains/123/templates?unregistered=true
-        ```
+        ....
         The default value of the unregisterd flag is `false`.
         The request only apply to storage domains that are attached.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -26977,18 +25574,14 @@ class StorageDomainVmService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -27020,13 +25613,13 @@ class StorageDomainVmService(Service):
         """
         Imports a virtual machine from an export storage domain.
         For example, send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/storagedomains/123/vms/456/import
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <action>
           <storage_domain>
             <name>mydata</name>
@@ -27035,10 +25628,10 @@ class StorageDomainVmService(Service):
             <name>mycluster</name>
           </cluster>
         </action>
-        ```
+        ----
         To import a virtual machine as a new entity add the `clone` parameter:
-
-        ```xml
+        [source,xml]
+        ----
         <action>
           <storage_domain>
             <name>mydata</name>
@@ -27051,11 +25644,11 @@ class StorageDomainVmService(Service):
             <name>myvm</name>
           </vm>
         </action>
-        ```
+        ----
         Include an optional `disks` parameter to choose which disks to import. For example, to import the disks
         of the template that have the identifiers `123` and `456` send the following request body:
-
-        ```xml
+        [source,xml]
+        ----
         <action>
           <cluster>
             <name>mycluster</name>
@@ -27068,7 +25661,7 @@ class StorageDomainVmService(Service):
             <disk id="456"/>
           </disks>
         </action>
-        ```
+        ----
         If you register an entity without specifying the cluster ID or name,
         the cluster name from the entity's OVF will be used (unless the register request also includes the
         cluster mapping).
@@ -27076,8 +25669,7 @@ class StorageDomainVmService(Service):
 
         This method supports the following parameters:
 
-        `clone` \n
-        Indicates if the identifiers of the imported virtual machine
+        `clone`:: Indicates if the identifiers of the imported virtual machine
         should be regenerated.
         By default when a virtual machine is imported the identifiers
         are preserved. This means that the same virtual machine can't
@@ -27085,24 +25677,19 @@ class StorageDomainVmService(Service):
         unique. To allow importing the same machine multiple times set
         this parameter to `true`, as the default is `false`.
 
-        `collapse_snapshots` \n
-        Indicates of the snapshots of the virtual machine that is imported
+        `collapse_snapshots`:: Indicates of the snapshots of the virtual machine that is imported
         should be collapsed, so that the result will be a virtual machine
         without snapshots.
         This parameter is optional, and if it isn't explicitly specified the
         default value is `false`.
 
-        `async_` \n
-        Indicates if the import should be performed asynchronously.
+        `async_`:: Indicates if the import should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -27151,43 +25738,35 @@ class StorageDomainVmService(Service):
         """
         This method supports the following parameters:
 
-        `allow_partial_import` \n
-        Indicates whether a virtual machine is allowed to be registered with only some of its disks.
+        `allow_partial_import`:: Indicates whether a virtual machine is allowed to be registered with only some of its disks.
         If this flag is `true`, the engine will not fail in the validation process if an image is not found, but
         instead it will allow the virtual machine to be registered without the missing disks. This is mainly used
         during registration of a virtual machine when some of the storage domains are not available. The default
         value is `false`.
 
-        `vnic_profile_mappings` \n
-        Deprecated attribute describing mapping rules for virtual NIC profiles that will be applied during the import\register process.
+        `vnic_profile_mappings`:: Deprecated attribute describing mapping rules for virtual NIC profiles that will be applied during the import\register process.
         WARNING: Please note that this attribute has been deprecated since version 4.2.1 of the engine, and preserved only for backward
         compatibility. It will be removed in the future. To specify `vnic_profile_mappings` use the `vnic_profile_mappings`
-        attribute inside the `ovirtsdk4.types.RegistrationConfiguration` type.
+        attribute inside the xref:types-registration_configuration[RegistrationConfiguration] type.
 
-        `reassign_bad_macs` \n
-        Indicates if the problematic MAC addresses should be re-assigned during the import process by the engine.
+        `reassign_bad_macs`:: Indicates if the problematic MAC addresses should be re-assigned during the import process by the engine.
         A MAC address would be considered as a problematic one if one of the following is true:
         - It conflicts with a MAC address that is already allocated to a virtual machine in the target environment.
         - It's out of the range of the target MAC address pool.
 
-        `registration_configuration` \n
-        This parameter describes how the virtual machine should be
+        `registration_configuration`:: This parameter describes how the virtual machine should be
         registered.
         This parameter is optional. If the parameter is not specified, the virtual
         machine will be registered with the same configuration that
         it had in the original environment where it was created.
 
-        `async_` \n
-        Indicates if the registration should be performed asynchronously.
+        `async_`:: Indicates if the registration should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -27231,25 +25810,21 @@ class StorageDomainVmService(Service):
         """
         Deletes a virtual machine from an export storage domain.
         For example, to delete the virtual machine `456` from the storage domain `123`, send a request like this:
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/storagedomains/123/vms/456
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -27324,18 +25899,14 @@ class StorageDomainVmDiskAttachmentService(Service):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -27387,18 +25958,14 @@ class StorageDomainVmDiskAttachmentsService(Service):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -27443,13 +26010,13 @@ class StorageDomainVmsService(Service):
     Lists the virtual machines of an export storage domain.
     For example, to retrieve the virtual machines that are available in the storage domain with identifier `123` send the
     following request:
-
-    ```
+    [source]
+    ----
     GET /ovirt-engine/api/storagedomains/123/vms
-    ```
+    ----
     This will return the following response body:
-
-    ```xml
+    [source,xml]
+    ----
     <vms>
       <vm id="456" href="/api/storagedomains/123/vms/456">
         <name>vm1</name>
@@ -27460,10 +26027,12 @@ class StorageDomainVmsService(Service):
         </actions>
       </vm>
     </vms>
-    ```
+    ----
     Virtual machines and templates in these collections have a similar representation to their counterparts in the
-    top-level `ovirtsdk4.types.Vm` and `ovirtsdk4.types.Template` collections, except they also contain a
-    `ovirtsdk4.types.StorageDomain` reference and an `StorageDomainVmService.import_` action.
+    top-level xref:types-vm[Vm] and xref:types-template[Template] collections, except they also contain a
+    xref:types-storage_domain[StorageDomain] reference and an xref:services-storage_domain_vm-methods-import[import]
+    action.
+
     """
 
     def __init__(self, connection, path):
@@ -27487,33 +26056,27 @@ class StorageDomainVmsService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of virtual machines to return. If not specified all the virtual machines are
+        `max`:: Sets the maximum number of virtual machines to return. If not specified all the virtual machines are
         returned.
 
-        `unregistered` \n
-        Indicates whether to retrieve a list of registered or unregistered virtual machines which
+        `unregistered`:: Indicates whether to retrieve a list of registered or unregistered virtual machines which
         contain disks on the storage domain.
         To get a list of unregistered virtual machines the call should indicate the unregistered flag.
         For example, to get a list of unregistered virtual machines the REST API call should look like this:
-        ```
+        ....
         GET /ovirt-engine/api/storagedomains/123/vms?unregistered=true
-        ```
+        ....
         The default value of the unregisterd flag is `false`.
         The request only apply to storage domains that are attached.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -27579,20 +26142,20 @@ class StorageDomainsService(Service):
     ):
         """
         Adds a new storage domain.
-        Creation of a new `ovirtsdk4.types.StorageDomain` requires the `name`, `type`, `host`, and `storage`
+        Creation of a new xref:types-storage_domain[StorageDomain] requires the `name`, `type`, `host`, and `storage`
         attributes. Identify the `host` attribute with the `id` or `name` attributes. In {product-name} 3.6 and
         later you can enable the wipe after delete option by default on the storage domain. To configure this, specify
         `wipe_after_delete` in the POST request. This option can be edited after the domain is created, but doing so will
         not change the wipe after delete property of disks that already exist.
         To add a new storage domain with specified `name`, `type`, `storage.type`, `storage.address`, and `storage.path`,
         and using a host with an id `123`, send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/storageDomains
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <storage_domain>
           <name>mydata</name>
           <type>data</type>
@@ -27605,10 +26168,10 @@ class StorageDomainsService(Service):
             <name>myhost</name>
           </host>
         </storage_domain>
-        ```
+        ----
         To create a new NFS ISO storage domain send a request like this:
-
-        ```xml
+        [source,xml]
+        ----
         <storage_domain>
           <name>myisos</name>
           <type>iso</type>
@@ -27621,10 +26184,10 @@ class StorageDomainsService(Service):
             <name>myhost</name>
           </host>
         </storage_domain>
-        ```
+        ----
         To create a new iSCSI storage domain send a request like this:
-
-        ```xml
+        [source,xml]
+        ----
         <storage_domain>
           <name>myiscsi</name>
           <type>data</type>
@@ -27639,22 +26202,18 @@ class StorageDomainsService(Service):
             <name>myhost</name>
           </host>
         </storage_domain>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `storage_domain` \n
-        The storage domain to add.
+        `storage_domain`:: The storage domain to add.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -27681,17 +26240,13 @@ class StorageDomainsService(Service):
 
         This method supports the following parameters:
 
-        `storage_domain` \n
-        The storage domain to add.
+        `storage_domain`:: The storage domain to add.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -27718,17 +26273,13 @@ class StorageDomainsService(Service):
 
         This method supports the following parameters:
 
-        `storage_domain` \n
-        The storage domain to add.
+        `storage_domain`:: The storage domain to add.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -27755,17 +26306,13 @@ class StorageDomainsService(Service):
 
         This method supports the following parameters:
 
-        `storage_domain` \n
-        The storage domain to add.
+        `storage_domain`:: The storage domain to add.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -27792,17 +26339,13 @@ class StorageDomainsService(Service):
 
         This method supports the following parameters:
 
-        `storage_domain` \n
-        The storage domain to add.
+        `storage_domain`:: The storage domain to add.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -27835,32 +26378,24 @@ class StorageDomainsService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of storage domains to return. If not specified, all the storage domains are returned.
+        `max`:: Sets the maximum number of storage domains to return. If not specified, all the storage domains are returned.
 
-        `search` \n
-        A query string used to restrict the returned storage domains.
+        `search`:: A query string used to restrict the returned storage domains.
 
-        `case_sensitive` \n
-        Indicates if the search should be performed taking case into account.
+        `case_sensitive`:: Indicates if the search should be performed taking case into account.
         The default value is `true`, which means that case is taken into account. If you want to search
         ignoring case, set it to `false`.
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -27904,17 +26439,13 @@ class StorageDomainsService(Service):
 
         This method supports the following parameters:
 
-        `storage_domain` \n
-        The storage domain to add.
+        `storage_domain`:: The storage domain to add.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -27968,18 +26499,14 @@ class StorageServerConnectionService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -28163,27 +26690,22 @@ class StorageServerConnectionService(Service):
 
         This method supports the following parameters:
 
-        `host` \n
-        The name or identifier of the host from which the connection would be unmounted (disconnected). If not
+        `host`:: The name or identifier of the host from which the connection would be unmounted (disconnected). If not
         provided, no host will be disconnected.
         For example, to use the host with identifier `456` to delete the storage connection with identifier `123`
         send a request like this:
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/storageconnections/123?host=456
-        ```
+        ----
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -28219,28 +26741,30 @@ class StorageServerConnectionService(Service):
         """
         Updates the storage connection.
         For example, to change the address of an NFS storage server, send a request like this:
-        ```
+        [source,xml]
+        ----
         PUT /ovirt-engine/api/storageconnections/123
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <storage_connection>
           <address>mynewnfs.example.com</address>
         </storage_connection>
-        ```
+        ----
         To change the connection of an iSCSI storage server, send a request like this:
-        ```
+        [source,xml]
+        ----
         PUT /ovirt-engine/api/storageconnections/123
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <storage_connection>
           <port>3260</port>
           <target>iqn.2017-01.com.myhost:444</target>
         </storage_connection>
-        ```
+        ----
 
 
         """
@@ -28335,18 +26859,14 @@ class StorageServerConnectionExtensionService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -28372,17 +26892,13 @@ class StorageServerConnectionExtensionService(Service):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -28414,19 +26930,19 @@ class StorageServerConnectionExtensionService(Service):
         """
         Update a storage server connection extension for the given host.
         To update the storage connection `456` of host `123` send a request like this:
-
-        ```
+        [source]
+        ----
         PUT /ovirt-engine/api/hosts/123/storageconnectionextensions/456
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <storage_connection_extension>
           <target>iqn.2016-01.com.example:mytarget</target>
           <username>myuser</username>
           <password>mypassword</password>
         </storage_connection_extension>
-        ```
+        ----
 
 
         """
@@ -28482,19 +26998,19 @@ class StorageServerConnectionExtensionsService(Service):
         The extension lets the user define credentials for an iSCSI target for a specific host. For example to use
         `myuser` and `mypassword` as the credentials when connecting to the iSCSI target from host `123` send a request
         like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/hosts/123/storageconnectionextensions
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <storage_connection_extension>
           <target>iqn.2016-01.com.example:mytarget</target>
           <username>myuser</username>
           <password>mypassword</password>
         </storage_connection_extension>
-        ```
+        ----
 
 
         """
@@ -28525,21 +27041,16 @@ class StorageServerConnectionExtensionsService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of extensions to return. If not specified all the extensions are returned.
+        `max`:: Sets the maximum number of extensions to return. If not specified all the extensions are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -28601,13 +27112,13 @@ class StorageServerConnectionsService(Service):
         Creates a new storage connection.
         For example, to create a new storage connection for the NFS server `mynfs.example.com` and NFS share
         `/export/mydata` send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/storageconnections
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <storage_connection>
           <type>nfs</type>
           <address>mynfs.example.com</address>
@@ -28616,7 +27127,7 @@ class StorageServerConnectionsService(Service):
             <name>myhost</name>
           </host>
         </storage_connection>
-        ```
+        ----
 
 
         """
@@ -28695,21 +27206,16 @@ class StorageServerConnectionsService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of connections to return. If not specified all the connections are returned.
+        `max`:: Sets the maximum number of connections to return. If not specified all the connections are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -28881,13 +27387,13 @@ class SystemService(Service):
         """
         Returns basic information describing the API, like the product name, the version number and a summary of the
         number of relevant objects.
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api
-        ```
+        ----
         We get following response:
-
-        ```xml
+        [source,xml]
+        ----
         <api>
           <link rel="capabilities" href="/api/capabilities"/>
           <link rel="clusters" href="/api/clusters"/>
@@ -28947,7 +27453,7 @@ class SystemService(Service):
           </summary>
           <time>2016-09-14T12:00:48.132+02:00</time>
         </api>
-        ```
+        ----
         The entry point provides a user with links to the collections in a
         virtualization environment. The `rel` attribute of each collection link
         provides a reference point for each link.
@@ -28957,18 +27463,14 @@ class SystemService(Service):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -28994,17 +27496,13 @@ class SystemService(Service):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the reload should be performed asynchronously.
+        `async_`:: Indicates if the reload should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -29434,13 +27932,13 @@ class SystemOptionService(Service):
         """
         Get the values of specific configuration option.
         For example to retrieve the values of configuration option `MigrationPolicies` send a request like this:
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/options/MigrationPolicies
-        ```
+        ----
         The response to that request will be the following:
-
-        ```xml
+        [source,xml]
+        ----
         <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
         <system_option href="/ovirt-engine/api/options/MigrationPolicies" id="MigrationPolicies">
             <name>MigrationPolicies</name>
@@ -29471,7 +27969,7 @@ class SystemOptionService(Service):
                 </system_option_value>
             </values>
         </system_option>
-        ```
+        ----
         NOTE: The appropriate permissions are required to query configuration options. Some options can be queried
         only by users with administrator permissions.
         [IMPORTANT]
@@ -29479,24 +27977,25 @@ class SystemOptionService(Service):
         There is NO backward compatibility and no guarantee about the names or values of the options. Options may be
         removed and their meaning can be changed at any point.
         We strongly discourage the use of this service for applications other than the ones that are released
-        simultaneously with the engine. Usage by other applications is not supported. Therefore there will be no documentation listing accessible configuration options.
+        simultaneously with the engine. Usage by other applications is not supported. Therefore there will be no
+        documentation listing accessible configuration options.
         ====
+
 
         This method supports the following parameters:
 
-        `version` \n
-        Optional version parameter that specifies that only particular version of the configuration option
+        `version`:: Optional version parameter that specifies that only particular version of the configuration option
         should be returned.
         If this parameter isn't used then all the versions will be returned.
         For example, to get the value of the `MigrationPolicies` option but only for version `4.2` send
         a request like this:
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/options/MigrationPolicies?version=4.2
-        ```
+        ----
         The response to that request will be like this:
-
-        ```xml
+        [source,xml]
+        ----
         <system_option href="/ovirt-engine/api/options/MigrationPolicies" id="MigrationPolicies">
             <name>MigrationPolicies</name>
             <values>
@@ -29506,16 +28005,13 @@ class SystemOptionService(Service):
                 </system_option_value>
             </values>
         </system_option>
-        ```
+        ----
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -29600,64 +28096,60 @@ class SystemPermissionsService(AssignedPermissionsService):
         Assign a new permission to a user or group for specific entity.
         For example, to assign the `UserVmManager` role to the virtual machine with id `123` to the user with id `456`
         send a request like this:
-        ```
+        ....
         POST /ovirt-engine/api/vms/123/permissions
-        ```
+        ....
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <permission>
           <role>
             <name>UserVmManager</name>
           </role>
           <user id="456"/>
         </permission>
-        ```
+        ----
         To assign the `SuperUser` role to the system to the user with id `456` send a request like this:
-        ```
+        ....
         POST /ovirt-engine/api/permissions
-        ```
+        ....
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <permission>
           <role>
             <name>SuperUser</name>
           </role>
           <user id="456"/>
         </permission>
-        ```
+        ----
         If you want to assign permission to the group instead of the user please replace the `user` element with the
         `group` element with proper `id` of the group. For example to assign the `UserRole` role to the cluster with
         id `123` to the group with id `789` send a request like this:
-        ```
+        ....
         POST /ovirt-engine/api/clusters/123/permissions
-        ```
+        ....
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <permission>
           <role>
             <name>UserRole</name>
           </role>
           <group id="789"/>
         </permission>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `permission` \n
-        The permission.
+        `permission`:: The permission.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -29684,17 +28176,13 @@ class SystemPermissionsService(AssignedPermissionsService):
 
         This method supports the following parameters:
 
-        `permission` \n
-        The permission.
+        `permission`:: The permission.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -29721,17 +28209,13 @@ class SystemPermissionsService(AssignedPermissionsService):
 
         This method supports the following parameters:
 
-        `permission` \n
-        The permission.
+        `permission`:: The permission.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -29758,17 +28242,13 @@ class SystemPermissionsService(AssignedPermissionsService):
 
         This method supports the following parameters:
 
-        `permission` \n
-        The permission.
+        `permission`:: The permission.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -29795,17 +28275,13 @@ class SystemPermissionsService(AssignedPermissionsService):
 
         This method supports the following parameters:
 
-        `permission` \n
-        The permission.
+        `permission`:: The permission.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -29829,11 +28305,11 @@ class SystemPermissionsService(AssignedPermissionsService):
         """
         List all the permissions of the specific entity.
         For example to list all the permissions of the cluster with id `123` send a request like this:
-        ```
+        ....
         GET /ovirt-engine/api/clusters/123/permissions
-        ```
-
-        ```xml
+        ....
+        [source,xml]
+        ----
         <permissions>
           <permission id="456">
             <cluster id="123"/>
@@ -29846,24 +28322,20 @@ class SystemPermissionsService(AssignedPermissionsService):
             <group id="127"/>
           </permission>
         </permissions>
-        ```
+        ----
         The order of the returned permissions isn't guaranteed.
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -29892,17 +28364,13 @@ class SystemPermissionsService(AssignedPermissionsService):
 
         This method supports the following parameters:
 
-        `permission` \n
-        The permission.
+        `permission`:: The permission.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -29929,17 +28397,13 @@ class SystemPermissionsService(AssignedPermissionsService):
 
         This method supports the following parameters:
 
-        `permission` \n
-        The permission.
+        `permission`:: The permission.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -29966,17 +28430,13 @@ class SystemPermissionsService(AssignedPermissionsService):
 
         This method supports the following parameters:
 
-        `permission` \n
-        The permission.
+        `permission`:: The permission.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -30003,17 +28463,13 @@ class SystemPermissionsService(AssignedPermissionsService):
 
         This method supports the following parameters:
 
-        `permission` \n
-        The permission.
+        `permission`:: The permission.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -30040,17 +28496,13 @@ class SystemPermissionsService(AssignedPermissionsService):
 
         This method supports the following parameters:
 
-        `permission` \n
-        The permission.
+        `permission`:: The permission.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -30109,32 +28561,28 @@ class TagService(Service):
         """
         Gets the information about the tag.
         For example to retrieve the information about the tag with the id `123` send a request like this:
-        ```
+        ....
         GET /ovirt-engine/api/tags/123
-        ```
-
-        ```xml
+        ....
+        [source,xml]
+        ----
         <tag href="/ovirt-engine/api/tags/123" id="123">
           <name>root</name>
           <description>root</description>
         </tag>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -30160,24 +28608,20 @@ class TagService(Service):
         """
         Removes the tag from the system.
         For example to remove the tag with id `123` send a request like this:
-        ```
+        ....
         DELETE /ovirt-engine/api/tags/123
-        ```
+        ....
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -30209,41 +28653,37 @@ class TagService(Service):
         """
         Updates the tag entity.
         For example to update parent tag to tag with id `456` of the tag with id `123` send a request like this:
-        ```
+        ....
         PUT /ovirt-engine/api/tags/123
-        ```
+        ....
         With request body like:
-
-        ```xml
+        [source,xml]
+        ----
         <tag>
           <parent id="456"/>
         </tag>
-        ```
+        ----
         You may also specify a tag name instead of id. For example to update parent tag to tag with name `mytag`
         of the tag with id `123` send a request like this:
-
-        ```xml
+        [source,xml]
+        ----
         <tag>
           <parent>
             <name>mytag</name>
           </parent>
         </tag>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `tag` \n
-        The updated tag.
+        `tag`:: The updated tag.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -30297,43 +28737,39 @@ class TagsService(Service):
         """
         Add a new tag to the system.
         For example, to add new tag with name `mytag` to the system send a request like this:
-        ```
+        ....
         POST /ovirt-engine/api/tags
-        ```
+        ....
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <tag>
           <name>mytag</name>
         </tag>
-        ```
+        ----
         NOTE: The root tag is a special pseudo-tag assumed as the default parent tag if no parent tag is specified.
         The root tag cannot be deleted nor assigned a parent tag.
         To create new tag with specific parent tag send a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <tag>
           <name>mytag</name>
           <parent>
             <name>myparenttag</name>
           </parent>
         </tag>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `tag` \n
-        The added tag.
+        `tag`:: The added tag.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -30358,11 +28794,11 @@ class TagsService(Service):
         """
         List the tags in the system.
         For example to list the full hierarchy of the tags in the system send a request like this:
-        ```
+        ....
         GET /ovirt-engine/api/tags
-        ```
-
-        ```xml
+        ....
+        [source,xml]
+        ----
         <tags>
           <tag href="/ovirt-engine/api/tags/222" id="222">
             <name>root2</name>
@@ -30379,33 +28815,28 @@ class TagsService(Service):
             <description>root</description>
           </tag>
         </tags>
-        ```
+        ----
         In the previous XML output you can see the following hierarchy of the tags:
-        ```
+        ....
         root:        (id: 111)
           - root2    (id: 222)
             - root3  (id: 333)
-        ```
+        ....
         The order of the returned list of tags isn't guaranteed.
 
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of tags to return. If not specified all the tags are returned.
+        `max`:: Sets the maximum number of tags to return. If not specified all the tags are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -30478,27 +28909,27 @@ class TemplateService(Service):
         """
         Exports a template to the data center export domain.
         For example, send the following request:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/templates/123/export
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <action>
           <storage_domain id="456"/>
           <exclusive>true<exclusive/>
         </action>
-        ```
+        ----
         Since version 4.2 of the engine it is also possible to export a template as a virtual appliance (OVA).
         For example, to export template `123` as an OVA file named `myvm.ova` that is placed in the directory `/home/ovirt/` on host `myhost`:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/templates/123/export
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <action>
           <host>
             <name>myhost</name>
@@ -30506,27 +28937,22 @@ class TemplateService(Service):
           <directory>/home/ovirt</directory>
           <filename>myvm.ova</filename>
         </action>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `exclusive` \n
-        Indicates if the existing templates with the same name should be overwritten.
+        `exclusive`:: Indicates if the existing templates with the same name should be overwritten.
         The export action reports a failed action if a template of the same name exists in the destination domain.
         Set this parameter to `true` to change this behavior and overwrite any existing template.
 
-        `storage_domain` \n
-        Specifies the destination export storage domain.
+        `storage_domain`:: Specifies the destination export storage domain.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -30558,21 +28984,16 @@ class TemplateService(Service):
 
         This method supports the following parameters:
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -30601,25 +29022,21 @@ class TemplateService(Service):
     ):
         """
         Removes a virtual machine template.
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/templates/123
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the removal should be performed asynchronously.
+        `async_`:: Indicates if the removal should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -30654,22 +29071,17 @@ class TemplateService(Service):
 
         This method supports the following parameters:
 
-        `exclusive` \n
-        Indicates if the existing templates with the same name should be overwritten.
+        `exclusive`:: Indicates if the existing templates with the same name should be overwritten.
         The export action reports a failed action if a template of the same name exists in the destination domain.
         Set this parameter to `true` to change this behavior and overwrite any existing template.
 
-        `storage_domain` \n
-        Specifies the destination export storage domain.
+        `storage_domain`:: Specifies the destination export storage domain.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -30704,33 +29116,25 @@ class TemplateService(Service):
 
         This method supports the following parameters:
 
-        `host` \n
-        The host to generate the OVA file on.
+        `host`:: The host to generate the OVA file on.
 
-        `directory` \n
-        An absolute path of a directory on the host to generate the OVA file in.
+        `directory`:: An absolute path of a directory on the host to generate the OVA file in.
 
-        `filename` \n
-        The name of the OVA file.
+        `filename`:: The name of the OVA file.
         This is an optional parameter. If it is not specified, the name of the OVA file is determined according
-        to the name of the template. It will conform to the following pattern: template_name.ova.
+        to the name of the template. It will conform to the following pattern: "<template name>.ova".
 
-        `exclusive` \n
-        Indicates if the existing templates with the same name should be overwritten.
+        `exclusive`:: Indicates if the existing templates with the same name should be overwritten.
         The export action reports a failed action if a template of the same name exists in the destination domain.
         Set this parameter to `true` to change this behavior and overwrite any existing template.
 
-        `storage_domain` \n
-        Specifies the destination export storage domain.
+        `storage_domain`:: Specifies the destination export storage domain.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -30767,27 +29171,27 @@ class TemplateService(Service):
         The `name`, `description`, `type`, `memory`, `cpu`, `topology`, `os`, `high_availability`, `display`,
         `stateless`, `usb`, and `timezone` elements can be updated after a template has been created.
         For example, to update a template so that it has 1 GiB of memory send a request like this:
-
-        ```
+        [source]
+        ----
         PUT /ovirt-engine/api/templates/123
-        ```
+        ----
         With the following request body:
-
-        ```xml
+        [source,xml]
+        ----
         <template>
           <memory>1073741824</memory>
         </template>
-        ```
+        ----
         The `version_name` name attribute is the only one that can be updated within the `version` attribute used for
         template versions:
-
-        ```xml
+        [source,xml]
+        ----
         <template>
           <version>
             <version_name>mytemplate_2</version_name>
           </version>
         </template>
-        ```
+        ----
 
 
         """
@@ -30931,26 +29335,22 @@ class TemplateCdromService(Service):
         """
         Returns the information about this CD-ROM device.
         For example, to get information about the CD-ROM device of template `123` send a request like:
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/templates/123/cdroms/
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -31003,21 +29403,16 @@ class TemplateCdromsService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of CD-ROMs to return. If not specified all the CD-ROMs are returned.
+        `max`:: Sets the maximum number of CD-ROMs to return. If not specified all the CD-ROMs are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -31084,20 +29479,15 @@ class TemplateDiskService(Service):
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the copy should be performed asynchronously.
+        `async_`:: Indicates if the copy should be performed asynchronously.
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -31133,20 +29523,15 @@ class TemplateDiskService(Service):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the export should be performed asynchronously.
+        `async_`:: Indicates if the export should be performed asynchronously.
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -31180,18 +29565,14 @@ class TemplateDiskService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -31217,17 +29598,13 @@ class TemplateDiskService(Service):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -31282,18 +29659,14 @@ class TemplateDiskAttachmentService(Service):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -31322,25 +29695,21 @@ class TemplateDiskAttachmentService(Service):
         disk on other storage domains.
         A storage domain has to be specified to determine which of the copies should be removed (template disks can
         have copies on multiple storage domains).
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/templates/{template:id}/diskattachments/{attachment:id}?storage_domain=072fbaa1-08f3-4a40-9f34-a5ca22dd1d74
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `storage_domain` \n
-        Specifies the identifier of the storage domain the image to be removed resides on.
+        `storage_domain`:: Specifies the identifier of the storage domain the image to be removed resides on.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -31374,7 +29743,8 @@ class TemplateDiskAttachmentService(Service):
 class TemplateDiskAttachmentsService(Service):
     """
     This service manages the set of disks attached to a template. Each attached disk is represented by a
-    `ovirtsdk4.types.DiskAttachment`.
+    xref:types-disk_attachment[DiskAttachment].
+
     """
 
     def __init__(self, connection, path):
@@ -31396,18 +29766,14 @@ class TemplateDiskAttachmentsService(Service):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -31471,21 +29837,16 @@ class TemplateDisksService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of disks to return. If not specified all the disks are returned.
+        `max`:: Sets the maximum number of disks to return. If not specified all the disks are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -31548,18 +29909,14 @@ class TemplateGraphicsConsoleService(Service):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -31588,17 +29945,13 @@ class TemplateGraphicsConsoleService(Service):
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -31678,21 +30031,16 @@ class TemplateGraphicsConsolesService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of consoles to return. If not specified all the consoles are returned.
+        `max`:: Sets the maximum number of consoles to return. If not specified all the consoles are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -31757,18 +30105,14 @@ class TemplateMediatedDeviceService(Service):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -31797,17 +30141,13 @@ class TemplateMediatedDeviceService(Service):
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -31840,8 +30180,8 @@ class TemplateMediatedDeviceService(Service):
         Updates the information about the mediated device.
         You can update the information using `specParams` element.
         For example, to update a mediated device, send a request like this:
-
-        ```
+        [source]
+        ----
         PUT /ovirt-engine/api/templates/123/mediateddevices/00000000-0000-0000-0000-000000000000
         <vm_mediated_device>
           <spec_params>
@@ -31851,10 +30191,10 @@ class TemplateMediatedDeviceService(Service):
             </property>
           </spec_params>
         </vm_mediated_device>
-        ```
+        ----
         with response body:
-
-        ```xml
+        [source,xml]
+        ----
         <vm_mediated_device href="/ovirt-engine/api/templates/123/mediateddevices/00000000-0000-0000-0000-000000000000" id="00000000-0000-0000-0000-000000000000">
           <template href="/ovirt-engine/api/templates/123" id="123"/>
           <spec_params>
@@ -31864,25 +30204,21 @@ class TemplateMediatedDeviceService(Service):
             </property>
           </spec_params>
         </vm_mediated_device>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `devices` \n
-        The information about the mediated device.
+        `devices`:: The information about the mediated device.
         The request data must contain `specParams` properties.
         The response data contains complete information about the
         updated mediated device.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -31965,22 +30301,17 @@ class TemplateMediatedDevicesService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of mediated devices to return.
+        `max`:: Sets the maximum number of mediated devices to return.
         If not specified all the mediated devices are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -32042,18 +30373,14 @@ class TemplateNicService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -32079,17 +30406,13 @@ class TemplateNicService(Service):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -32202,21 +30525,16 @@ class TemplateNicsService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of NICs to return. If not specified all the NICs are returned.
+        `max`:: Sets the maximum number of NICs to return. If not specified all the NICs are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -32276,18 +30594,14 @@ class TemplateWatchdogService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -32313,17 +30627,13 @@ class TemplateWatchdogService(Service):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -32436,21 +30746,16 @@ class TemplateWatchdogsService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of watchdogs to return. If not specified all the watchdogs are returned.
+        `max`:: Sets the maximum number of watchdogs to return. If not specified all the watchdogs are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -32517,21 +30822,21 @@ class TemplatesService(Service):
         This requires the `name` and `vm` elements. To identify the virtual machine use the `vm.id` or `vm.name`
         attributes. For example, to create a template from a virtual machine with the identifier `123` send a request
         like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/templates
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <template>
           <name>mytemplate</name>
           <vm id="123"/>
         </template>
-        ```
+        ----
         Since version 4.3, in order to create virtual machine template from a snapshot send a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <template>
           <name>mytemplate</name>
           <vm id="123">
@@ -32540,15 +30845,15 @@ class TemplatesService(Service):
             </snapshots>
           </vm>
         </template>
-        ```
+        ----
         The disks of the template can be customized, making some of their characteristics different from the disks of the
-        original virtual machine. To do so use the `ovirtsdk4.types.Vm.disk_attachments` attribute, specifying the identifier of the disk
+        original virtual machine. To do so use the `vm.disk_attachments` attribute, specifying the identifier of the disk
         of the original virtual machine and the characteristics that you want to change. For example, if the original
         virtual machine has a disk with the identifier `456`, and, for that disk, you want to change the name to `mydisk`
-        the format to `ovirtsdk4.types.DiskFormat.COW` and make it `ovirtsdk4.types.Disk.sparse`, send a request body like
+        the format to xref:types-disk_format[_Copy On Write_] and make it xref:types-disk[sparse], send a request body like
         this:
-
-        ```xml
+        [source,xml]
+        ----
         <template>
           <name>mytemplate</name>
           <vm id="123">
@@ -32563,13 +30868,13 @@ class TemplatesService(Service):
             </disk_attachments>
           </vm>
         </template>
-        ```
+        ----
         The template can be created as a sub-version of an existing template. This requires the `name` and `vm` attributes
         for the new template, and the `base_template` and `version_name` attributes for the new template version. The
         `base_template` and `version_name` attributes must be specified within a `version` section enclosed in the
         `template` section. Identify the virtual machine with the `id` or `name` attributes.
-
-        ```xml
+        [source,xml]
+        ----
         <template>
           <name>mytemplate</name>
           <vm id="123"/>
@@ -32578,12 +30883,13 @@ class TemplatesService(Service):
             <version_name>mytemplate_001</version_name>
           </version>
         </template>
-        ```
+        ----
         The destination storage domain of the template can be customized, in one of two ways:
         1. Globally, at the request level. The request must list the desired disk attachments to be created on the
         storage domain. If the disk attachments are not listed, the global storage domain parameter will be ignored.
-
-        ```xml
+        +
+        [source,xml]
+        ----
         <template>
           <name>mytemplate</name>
           <storage_domain id="123"/>
@@ -32598,11 +30904,12 @@ class TemplatesService(Service):
             </disk_attachments>
           </vm>
         </template>
-        ```
+        ----
         2. Per each disk attachment. Specify the desired storage domain for each disk attachment.
         Specifying the global storage definition will override the storage domain per disk attachment specification.
-
-        ```xml
+        +
+        [source,xml]
+        ----
         <template>
           <name>mytemplate</name>
           <vm id="123">
@@ -32619,21 +30926,18 @@ class TemplatesService(Service):
             </disk_attachments>
           </vm>
         </template>
-        ```
+        ----
+
 
         This method supports the following parameters:
 
-        `template` \n
-        The information about the template or template version.
+        `template`:: The information about the template or template version.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -32670,17 +30974,13 @@ class TemplatesService(Service):
 
         This method supports the following parameters:
 
-        `template` \n
-        The information about the template or template version.
+        `template`:: The information about the template or template version.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -32717,17 +31017,13 @@ class TemplatesService(Service):
 
         This method supports the following parameters:
 
-        `template` \n
-        The information about the template or template version.
+        `template`:: The information about the template or template version.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -32764,17 +31060,13 @@ class TemplatesService(Service):
 
         This method supports the following parameters:
 
-        `template` \n
-        The information about the template or template version.
+        `template`:: The information about the template or template version.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -32810,42 +31102,34 @@ class TemplatesService(Service):
         """
         Returns the list of virtual machine templates.
         For example:
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/templates
-        ```
+        ----
         Will return the list of virtual machines and virtual machine templates.
         The order of the returned list of templates is not guaranteed.
 
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of templates to return. If not specified, all the templates are returned.
+        `max`:: Sets the maximum number of templates to return. If not specified, all the templates are returned.
 
-        `search` \n
-        A query string used to restrict the returned templates.
+        `search`:: A query string used to restrict the returned templates.
 
-        `case_sensitive` \n
-        Indicates if the search performed using the `search` parameter should be performed taking case into
+        `case_sensitive`:: Indicates if the search performed using the `search` parameter should be performed taking case into
         account. The default value is `true`, which means that case is taken into account. If you want to search
         ignoring case set it to `false`.
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -32918,18 +31202,14 @@ class UnmanagedNetworkService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -32955,17 +31235,13 @@ class UnmanagedNetworkService(Service):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -33021,21 +31297,16 @@ class UnmanagedNetworksService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of networks to return. If not specified all the networks are returned.
+        `max`:: Sets the maximum number of networks to return. If not specified all the networks are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -33081,7 +31352,9 @@ class UserService(Service):
     """
     A service to manage a user in the system.
     Use this service to either get users details or remove users.
-    In order to add new users please use `UsersService`.
+    In order to add new users please use
+    xref:services-users[users].
+
     """
 
     def __init__(self, connection, path):
@@ -33105,12 +31378,12 @@ class UserService(Service):
         """
         Gets the system user information.
         Usage:
-        ```
+        ....
         GET /ovirt-engine/api/users/1234
-        ```
+        ....
         Will return the user information:
-
-        ```xml
+        [source,xml]
+        ----
         <user href="/ovirt-engine/api/users/1234" id="1234">
           <name>admin</name>
           <link href="/ovirt-engine/api/users/1234/sshpublickeys" rel="sshpublickeys"/>
@@ -33128,23 +31401,19 @@ class UserService(Service):
             <name>domain-authz</name>
           </domain>
         </user>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -33170,24 +31439,20 @@ class UserService(Service):
         """
         Removes the system user.
         Usage:
-        ```
+        ....
         DELETE /ovirt-engine/api/users/1234
-        ```
+        ....
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -33219,13 +31484,13 @@ class UserService(Service):
         Updates information about the user.
         Only the `user_options` field can be updated.
         For example, to update user options:
-
-        ```
+        [source]
+        ----
         PUT /ovirt-engine/api/users/123
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <user>
            <user_options>
               <property>
@@ -33234,9 +31499,12 @@ class UserService(Service):
               </property>
            </user_options>
         </user>
-        ```
+        ----
         IMPORTANT: Since version 4.4.5 of the engine this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. Please use the `UserOptionService` endpoint instead.
+        compatibility. It will be removed in the future. Please use the xref:services-user_option[options]
+        endpoint instead.
+
+
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -33343,19 +31611,19 @@ class UserOptionService(Service):
         """
         Returns a user profile property of type JSON.
         Example request(for user with identifier `123` and option with identifier `456`):
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/users/123/options/456
-        ```
+        ----
         The result will be the following XML document:
-
-        ```xml
+        [source,xml]
+        ----
           <user_option href="/ovirt-engine/api/users/123/options/456" id="456">
             <name>SomeName</name>
             <content>["any", "JSON"]</content>
             <user href="/ovirt-engine/api/users/123" id="123"/>
           </user_option>
-        ```
+        ----
 
 
         """
@@ -33379,10 +31647,10 @@ class UserOptionService(Service):
         """
         Deletes an existing property of type JSON.
         Example request(for user with identifier `123` and option with identifier `456`):
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/users/123/options/456
-        ```
+        ----
 
 
         """
@@ -33427,18 +31695,18 @@ class UserOptionsService(Service):
         """
         Adds a new user profile property of type JSON.
         Example request(for user with identifier `123`):
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/users/123/options
-        ```
+        ----
         Payload:
-
-        ```xml
+        [source,xml]
+        ----
           <user_option>
             <name>SomeName</name>
             <content>["any", "JSON"]</content>
           </user_option>
-        ```
+        ----
 
 
         """
@@ -33463,13 +31731,13 @@ class UserOptionsService(Service):
         """
         Returns a list of user profile properties of type JSON.
         Example request(for user with identifier `123`):
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/users/123/options
-        ```
+        ----
         The result will be the following XML document:
-
-        ```xml
+        [source,xml]
+        ----
         <user_options>
           <user_option href="/ovirt-engine/api/users/123/options/456" id="456">
             <name>SomeName</name>
@@ -33477,7 +31745,7 @@ class UserOptionsService(Service):
             <user href="/ovirt-engine/api/users/123" id="123"/>
           </user_option>
         </user_options>
-        ```
+        ----
 
 
         """
@@ -33536,27 +31804,27 @@ class UsersService(Service):
         Add user from a directory service.
         For example, to add the `myuser` user from the `myextension-authz` authorization provider send a request
         like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/users
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <user>
           <user_name>myuser@myextension-authz</user_name>
           <domain>
             <name>myextension-authz</name>
           </domain>
         </user>
-        ```
+        ----
         In case you are working with Active Directory you have to pass user principal name (UPN) as `username`, followed
-        by authorization provider name. Due to link:https://bugzilla.redhat.com/1147900 you need to provide
+        by authorization provider name. Due to link:https://bugzilla.redhat.com/1147900[bug 1147900] you need to provide
         also `principal` parameter set to UPN of the user.
         For example, to add the user with UPN `myuser@mysubdomain.mydomain.com` from the `myextension-authz`
         authorization provider send a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <user>
           <principal>myuser@mysubdomain.mydomain.com</principal>
           <user_name>myuser@mysubdomain.mydomain.com@myextension-authz</user_name>
@@ -33564,7 +31832,7 @@ class UsersService(Service):
             <name>myextension-authz</name>
           </domain>
         </user>
-        ```
+        ----
 
 
         """
@@ -33593,12 +31861,12 @@ class UsersService(Service):
         """
         List all the users in the system.
         Usage:
-        ```
+        ....
         GET /ovirt-engine/api/users
-        ```
+        ....
         Will return the list of users:
-
-        ```xml
+        [source,xml]
+        ----
         <users>
           <user href="/ovirt-engine/api/users/1234" id="1234">
             <name>admin</name>
@@ -33615,35 +31883,28 @@ class UsersService(Service):
             </domain>
           </user>
         </users>
-        ```
+        ----
         The order of the returned list of users isn't guaranteed.
 
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of users to return. If not specified all the users are returned.
+        `max`:: Sets the maximum number of users to return. If not specified all the users are returned.
 
-        `search` \n
-        A query string used to restrict the returned users.
+        `search`:: A query string used to restrict the returned users.
 
-        `case_sensitive` \n
-        Indicates if the search performed using the `search` parameter should be performed taking case into
+        `case_sensitive`:: Indicates if the search performed using the `search` parameter should be performed taking case into
         account. The default value is `true`, which means that case is taken into account. If you want to search
         ignoring case set it to `false`.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -33710,18 +31971,14 @@ class VirtualFunctionAllowedNetworkService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -33747,17 +32004,13 @@ class VirtualFunctionAllowedNetworkService(Service):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -33834,21 +32087,16 @@ class VirtualFunctionAllowedNetworksService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of networks to return. If not specified all the networks are returned.
+        `max`:: Sets the maximum number of networks to return. If not specified all the networks are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -33928,39 +32176,34 @@ class VmService(MeasurableService):
         """
         Apply an automatic CPU and NUMA configuration on the VM.
         IMPORTANT: Since version 4.5 of the engine this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. Instead please use PUT followed by `VmService.update`.
+        compatibility. It will be removed in the future. Instead please use PUT followed by xref:services-vm-methods-update[update operation].
         An example for a request:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/vms/123/autopincpuandnumanodes
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <action>
           <optimize_cpu_settings>true</optimize_cpu_settings>
         </action>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `optimize_cpu_settings` \n
-        Specifies how the auto CPU and NUMA configuration is applied.
+        `optimize_cpu_settings`:: Specifies how the auto CPU and NUMA configuration is applied.
         If set to true, will adjust the CPU topology to fit the VM pinned host hardware.
         Otherwise, it will use the VM CPU topology.
 
-        `async_` \n
-        Indicates if the detach action should be performed asynchronously.
+        `async_`:: Indicates if the detach action should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -33991,31 +32234,27 @@ class VmService(MeasurableService):
     ):
         """
         This operation stops any migration of a virtual machine to another physical host.
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/vms/123/cancelmigration
-        ```
+        ----
         The cancel migration action does not take any action specific parameters;
         therefore, the request body should contain an empty `action`:
-
-        ```xml
+        [source,xml]
+        ----
         <action/>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the migration should cancelled asynchronously.
+        `async_`:: Indicates if the migration should cancelled asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -34048,24 +32287,18 @@ class VmService(MeasurableService):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the clone should be performed asynchronously.
+        `async_`:: Indicates if the clone should be performed asynchronously.
 
-        `discard_snapshots` \n
-        Use the `discard_snapshots` parameter when the virtual machine should be clone with its
+        `discard_snapshots`:: Use the `discard_snapshots` parameter when the virtual machine should be clone with its
         snapshots collapsed. Default is true.
 
-        `storage_domain` \n
-        The storage domain on which the virtual machines disks will be copied to.
+        `storage_domain`:: The storage domain on which the virtual machines disks will be copied to.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -34100,21 +32333,18 @@ class VmService(MeasurableService):
     ):
         """
         Permanently restores the virtual machine to the state of the previewed snapshot.
-        See the `VmService.preview_snapshot` operation for details.
+        See the xref:services-vm-methods-preview_snapshot[preview_snapshot] operation for details.
+
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the snapshots should be committed asynchronously.
+        `async_`:: Indicates if the snapshots should be committed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -34143,31 +32373,27 @@ class VmService(MeasurableService):
     ):
         """
         Detaches a virtual machine from a pool.
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/vms/123/detach
-        ```
+        ----
         The detach action does not take any action specific parameters; therefore, the request body should contain an
         empty `action`:
-
-        ```xml
+        [source,xml]
+        ----
         <action/>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the detach action should be performed asynchronously.
+        `async_`:: Indicates if the detach action should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -34201,13 +32427,13 @@ class VmService(MeasurableService):
         Exports the virtual machine.
         A virtual machine can be exported to an export domain.
         For example, to export virtual machine `123` to the export domain `myexport`:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/vms/123/export
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <action>
           <storage_domain>
             <name>myexport</name>
@@ -34215,16 +32441,16 @@ class VmService(MeasurableService):
           <exclusive>true</exclusive>
           <discard_snapshots>true</discard_snapshots>
         </action>
-        ```
+        ----
         Since version 4.2 of the engine it is also possible to export a virtual machine as a virtual appliance (OVA).
         For example, to export virtual machine `123` as an OVA file named `myvm.ova` that is placed in the directory `/home/ovirt/` on host `myhost`:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/vms/123/export
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <action>
           <host>
             <name>myhost</name>
@@ -34232,34 +32458,27 @@ class VmService(MeasurableService):
           <directory>/home/ovirt</directory>
           <filename>myvm.ova</filename>
         </action>
-        ```
+        ----
         NOTE: Confirm that the export operation has completed before attempting any actions on the export domain.
 
 
         This method supports the following parameters:
 
-        `discard_snapshots` \n
-        Use the `discard_snapshots` parameter when the virtual machine should be exported with all of its
+        `discard_snapshots`:: Use the `discard_snapshots` parameter when the virtual machine should be exported with all of its
         snapshots collapsed.
 
-        `exclusive` \n
-        Use the `exclusive` parameter when the virtual machine should be exported even if another copy of
+        `exclusive`:: Use the `exclusive` parameter when the virtual machine should be exported even if another copy of
         it already exists in the export domain (override).
 
-        `storage_domain` \n
-        The (export) storage domain to export the virtual machine to.
+        `storage_domain`:: The (export) storage domain to export the virtual machine to.
 
-        `async_` \n
-        Indicates if the export should be performed asynchronously.
+        `async_`:: Indicates if the export should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -34298,29 +32517,25 @@ class VmService(MeasurableService):
         a running virtual machine. Normally, this is done automatically by the manager, but this must be executed
         manually with the API for virtual machines using OpenStack Volume (Cinder) disks.
         Example:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/vms/123/freezefilesystems
-        ```
-
-        ```xml
+        ----
+        [source,xml]
+        ----
         <action/>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the freeze should be performed asynchronously.
+        `async_`:: Indicates if the freeze should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -34357,62 +32572,54 @@ class VmService(MeasurableService):
 
         This method supports the following parameters:
 
-        `next_run` \n
-        Indicates if the returned result describes the virtual machine as it is currently running or if describes
+        `next_run`:: Indicates if the returned result describes the virtual machine as it is currently running or if describes
         the virtual machine with the modifications that have already been performed but that will only come into
         effect when the virtual machine is restarted. By default the value is `false`.
         If the parameter is included in the request, but without a value, it is assumed that the value is `true`. The
         the following request:
-
-        ```
+        [source]
+        ----
         GET /vms/{vm:id};next_run
-        ```
+        ----
         Is equivalent to using the value `true`:
-
-        ```
+        [source]
+        ----
         GET /vms/{vm:id};next_run=true
-        ```
+        ----
 
-        `all_content` \n
-        Indicates if all of the attributes of the virtual machine should be included in the response.
+        `all_content`:: Indicates if all of the attributes of the virtual machine should be included in the response.
         By default the following attributes are excluded:
         - `console`
-        - `ovirtsdk4.types.Initialization.configuration` - The OVF document describing the virtual machine.
+        - `initialization.configuration.data` - The OVF document describing the virtual machine.
         - `rng_source`
         - `soundcard`
         - `virtio_scsi`
         For example, to retrieve the complete representation of the virtual machine '123':
-        ```
+        ....
         GET /ovirt-engine/api/vms/123?all_content=true
-        ```
+        ....
         NOTE: These attributes are not included by default as they reduce performance. These attributes are seldom used
         and require additional queries to the database. Only use this parameter when required as it will reduce performance.
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `ovf_as_ova` \n
-        Indicates if the results should expose the OVF as it appears in OVA files of that VM. The OVF document
+        `ovf_as_ova`:: Indicates if the results should expose the OVF as it appears in OVA files of that VM. The OVF document
         describing the virtual machine. This parameter will work only when all_content=True is set.
-        The OVF will be presented in `ovirtsdk4.types.Initialization.configuration`.
+        The OVF will be presented in `initialization.configuration.data`.
         For example:
-
-        ```
+        [source]
+        ----
         GET /vms/{vm:id}?all_content=true&ovf_as_ova=true
-        ```
+        ----
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -34458,30 +32665,26 @@ class VmService(MeasurableService):
         Users require the appropriate user permissions for the virtual machine in order to access the virtual machine
         from an external console.
         For example:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/vms/123/logon
-        ```
+        ----
         Request body:
-
-        ```xml
+        [source,xml]
+        ----
         <action/>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the logon should be performed asynchronously.
+        `async_`:: Indicates if the logon should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -34513,34 +32716,29 @@ class VmService(MeasurableService):
         Sets the global maintenance mode on the hosted engine virtual machine.
         This action has no effect on other virtual machines.
         Example:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/vms/123/maintenance
-        ```
-
-        ```xml
+        ----
+        [source,xml]
+        ----
         <action>
           <maintenance_enabled>true<maintenance_enabled/>
         </action>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `maintenance_enabled` \n
-        Indicates if global maintenance should be enabled or disabled.
+        `maintenance_enabled`:: Indicates if global maintenance should be enabled or disabled.
 
-        `async_` \n
-        Indicates if the global maintenance action should be performed asynchronously.
+        `async_`:: Indicates if the global maintenance action should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -34576,52 +32774,44 @@ class VmService(MeasurableService):
         """
         Migrates a virtual machine to another physical host.
         Example:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/vms/123/migrate
-        ```
+        ----
         To specify a specific host to migrate the virtual machine to:
-
-        ```xml
+        [source,xml]
+        ----
         <action>
           <host id="2ab5e1da-b726-4274-bbf7-0a42b16a0fc3"/>
         </action>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `cluster` \n
-        Specifies the cluster the virtual machine should migrate to. This is an optional parameter. By default, the
+        `cluster`:: Specifies the cluster the virtual machine should migrate to. This is an optional parameter. By default, the
         virtual machine is migrated to another host within the same cluster.
         WARNING: Live migration to another cluster is not supported. Strongly consider the target cluster's hardware
         architecture and network architecture before attempting a migration.
 
-        `force` \n
-        Specifies that the virtual machine should migrate even if the virtual machine is defined as non-migratable.
+        `force`:: Specifies that the virtual machine should migrate even if the virtual machine is defined as non-migratable.
         This is an optional parameter. By default, it is set to `false`.
 
-        `host` \n
-        Specifies a specific host that the virtual machine should migrate to. This is an optional parameter. By default,
+        `host`:: Specifies a specific host that the virtual machine should migrate to. This is an optional parameter. By default,
         the {engine-name} automatically selects a default host for migration within the same cluster. If an API user
         requires a specific host, the user can specify the host with either an `id` or `name` parameter.
 
-        `migrate_vms_in_affinity_closure` \n
-        Migrate also all other virtual machines in positive enforcing affinity groups with this virtual machine,
+        `migrate_vms_in_affinity_closure`:: Migrate also all other virtual machines in positive enforcing affinity groups with this virtual machine,
         that are running on the same host.
         The default value is `false`.
 
-        `async_` \n
-        Indicates if the migration should be performed asynchronously.
+        `async_`:: Indicates if the migration should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -34665,22 +32855,23 @@ class VmService(MeasurableService):
         Temporarily restores the virtual machine to the state of a snapshot.
         The snapshot is indicated with the `snapshot.id` parameter. It is restored temporarily, so that the content can
         be inspected. Once that inspection is finished, the state of the virtual machine can be made permanent, using the
-        `VmService.commit_snapshot` method, or discarded using the `VmService.undo_snapshot` method.
+        xref:services-vm-methods-commit_snapshot[commit_snapshot] method, or discarded using the
+        xref:services-vm-methods-undo_snapshot[undo_snapshot] method.
+
 
         This method supports the following parameters:
 
-        `disks` \n
-        Specify the disks included in the snapshot's preview.
+        `disks`:: Specify the disks included in the snapshot's preview.
         For each disk parameter, it is also required to specify its `image_id`.
         For example, to preview a snapshot with identifier `456` which includes a disk with identifier `111` and its
         `image_id` as `222`, send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/vms/123/previewsnapshot
-        ```
+        ----
         Request body:
-
-        ```xml
+        [source,xml]
+        ----
         <action>
           <disks>
             <disk id="111">
@@ -34689,10 +32880,9 @@ class VmService(MeasurableService):
           </disks>
           <snapshot id="456"/>
         </action>
-        ```
+        ----
 
-        `lease` \n
-        Specify the lease storage domain ID to use in the preview of the snapshot.
+        `lease`:: Specify the lease storage domain ID to use in the preview of the snapshot.
         If lease parameter is not passed, then the previewed snapshot lease storage domain will be used.
         If lease parameter is passed with empty storage domain parameter, then no lease will be used
         for the snapshot preview.
@@ -34700,17 +32890,13 @@ class VmService(MeasurableService):
         only one of the leases domain IDs that belongs to one of the virtual machine snapshots.
         This is an optional parameter, set by default to `null`
 
-        `async_` \n
-        Indicates if the preview should be performed asynchronously.
+        `async_`:: Indicates if the preview should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -34751,47 +32937,42 @@ class VmService(MeasurableService):
         """
         Sends a reboot request to a virtual machine.
         For example:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/vms/123/reboot
-        ```
+        ----
         The reboot action does not take any action specific parameters; therefore, the request body should contain an
         empty `action`:
-
-        ```xml
+        [source,xml]
+        ----
         <action/>
-        ```
+        ----
         To reboot the VM even if a backup is running for it,
         the action should include the 'force' element.
         For example, to force reboot virtual machine `123`:
-        ```
+        ----
         POST /ovirt-engine/api/vms/123/reboot
-        ```
-
-        ```xml
+        ----
+        [source,xml]
+        ----
         <action>
             <force>true</force>
         </action>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `force` \n
-        Indicates if the VM should be forcibly rebooted even
+        `force`:: Indicates if the VM should be forcibly rebooted even
         if a backup is running for it.
 
-        `async_` \n
-        Indicates if the reboot should be performed asynchronously.
+        `async_`:: Indicates if the reboot should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -34825,33 +33006,27 @@ class VmService(MeasurableService):
         """
         Removes the virtual machine, including the virtual disks attached to it.
         For example, to remove the virtual machine with identifier `123`:
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/vms/123
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `detach_only` \n
-        Indicates if the attached virtual disks should be detached first and preserved instead of being removed.
+        `detach_only`:: Indicates if the attached virtual disks should be detached first and preserved instead of being removed.
 
-        `force` \n
-        Indicates if the virtual machine should be forcibly removed.
+        `force`:: Indicates if the virtual machine should be forcibly removed.
         Locked virtual machines and virtual machines with locked disk images
         cannot be removed without this flag set to true.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -34890,17 +33065,13 @@ class VmService(MeasurableService):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the action should be performed asynchronously.
+        `async_`:: Indicates if the action should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -34930,31 +33101,27 @@ class VmService(MeasurableService):
         """
         Sends a reset request to a virtual machine.
         For example:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/vms/123/reset
-        ```
+        ----
         The reset action does not take any action specific parameters; therefore, the request body should contain an
         empty `action`:
-
-        ```xml
+        [source,xml]
+        ----
         <action/>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the reset should be performed asynchronously.
+        `async_`:: Indicates if the reset should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -34983,16 +33150,16 @@ class VmService(MeasurableService):
         """
         Captures screenshot of the current state of the VM.
         For example:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/vms/123/screenshot
-        ```
+        ----
         The screenshot action does not take any action specific parameters; therefore, the request body should contain an
         empty `action`:
-
-        ```xml
+        [source,xml]
+        ----
         <action/>
-        ```
+        ----
 
 
         """
@@ -35020,51 +33187,45 @@ class VmService(MeasurableService):
         """
         This operation sends a shutdown request to a virtual machine.
         For example:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/vms/123/shutdown
-        ```
+        ----
         The shutdown action does not take any action specific parameters;
         therefore, the request body should contain an empty `action`:
-
-        ```xml
+        [source,xml]
+        ----
         <action/>
-        ```
+        ----
         To shutdown the VM even if a backup is running for it,
         the action should include the 'force' element.
         For example, to force shutdown virtual machine `123`:
-        ```
+        ----
         POST /ovirt-engine/api/vms/123/shutdown
-        ```
-
-        ```xml
+        ----
+        [source,xml]
+        ----
         <action>
             <force>true</force>
         </action>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `force` \n
-        Indicates if the VM should be forcibly shutdown even
+        `force`:: Indicates if the VM should be forcibly shutdown even
         if a backup is running for it.
 
-        `async_` \n
-        Indicates if the shutdown should be performed asynchronously.
+        `async_`:: Indicates if the shutdown should be performed asynchronously.
 
-        `reason` \n
-        The reason the virtual machine was stopped.
+        `reason`:: The reason the virtual machine was stopped.
         Optionally set by user when shutting down the virtual machine.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -35109,27 +33270,25 @@ class VmService(MeasurableService):
         If the virtual environment is complete and the virtual machine contains all necessary components to function,
         it can be started.
         This example starts the virtual machine:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/vms/123/start
-        ```
+        ----
         With a request body:
-
-        ```xml
+        [source,xml]
+        ----
         <action/>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `pause` \n
-        If set to `true`, start the virtual machine in paused mode. The default is `false`.
+        `pause`:: If set to `true`, start the virtual machine in paused mode. The default is `false`.
 
-        `vm` \n
-        The definition of the virtual machine for this specific run.
+        `vm`:: The definition of the virtual machine for this specific run.
         For example:
-
-        ```xml
+        [source,xml]
+        ----
         <action>
           <vm>
             <os>
@@ -35141,47 +33300,37 @@ class VmService(MeasurableService):
             </os>
           </vm>
         </action>
-        ```
+        ----
         This will set the boot device to the CDROM only for this specific start. After the virtual machine is
         powered off, this definition will be reverted.
 
-        `use_cloud_init` \n
-        If set to `true`, the initialization type is set to _cloud-init_. The default value is `false`.
-        See link:https://cloudinit.readthedocs.io/en/latest for details.
+        `use_cloud_init`:: If set to `true`, the initialization type is set to _cloud-init_. The default value is `false`.
+        See link:https://cloudinit.readthedocs.io/en/latest[cloud-init documentation] for details.
 
-        `use_sysprep` \n
-        If set to `true`, the initialization type is set to _Sysprep_. The default value is `false`.
-        See link:https://en.wikipedia.org/wiki/Sysprep for details.
+        `use_sysprep`:: If set to `true`, the initialization type is set to _Sysprep_. The default value is `false`.
+        See link:https://en.wikipedia.org/wiki/Sysprep[Sysprep] for details.
 
-        `use_ignition` \n
-        If set to `true`, the initialization type is set to _Ignition_. The default value is `false`.
-        See link:https://coreos.com/ignition/docs/latest/ for details.
+        `use_ignition`:: If set to `true`, the initialization type is set to _Ignition_. The default value is `false`.
+        See link:https://coreos.com/ignition/docs/latest/[Ignition documentation] for details.
 
-        `use_initialization` \n
-        If set to `true`, the initialization type is set by the VM's OS.
+        `use_initialization`:: If set to `true`, the initialization type is set by the VM's OS.
         Windows will set to _Sysprep_, Linux to _cloud-init_ and RedHat CoreOS to _Ignition_.
         If any of the initialization-types are explicitly set (useCloudInit, useSysprep or useIgnition),
         they will be prioritized and this flag will be ignored.
         The default value is `false`.
 
-        `async_` \n
-        Indicates if the start action should be performed asynchronously.
+        `async_`:: Indicates if the start action should be performed asynchronously.
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `volatile` \n
-        Indicates that this run configuration will be discarded even in the case of guest-initiated reboot.
+        `volatile`:: Indicates that this run configuration will be discarded even in the case of guest-initiated reboot.
         The default value is `false`.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -35231,51 +33380,45 @@ class VmService(MeasurableService):
         """
         This operation forces a virtual machine to power-off.
         For example:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/vms/123/stop
-        ```
+        ----
         The stop action does not take any action specific parameters;
         therefore, the request body should contain an empty `action`:
-
-        ```xml
+        [source,xml]
+        ----
         <action/>
-        ```
+        ----
         To stop the VM even if a backup is running for it,
         the action should include the 'force' element.
         For example, to force stop virtual machine `123`:
-        ```
+        ----
         POST /ovirt-engine/api/vms/123/stop
-        ```
-
-        ```xml
+        ----
+        [source,xml]
+        ----
         <action>
             <force>true</force>
         </action>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `force` \n
-        Indicates if the VM should be forcibly stop even
+        `force`:: Indicates if the VM should be forcibly stop even
         if a backup is running for it.
 
-        `async_` \n
-        Indicates if the stop action should be performed asynchronously.
+        `async_`:: Indicates if the stop action should be performed asynchronously.
 
-        `reason` \n
-        The reason the virtual machine was stopped.
+        `reason`:: The reason the virtual machine was stopped.
         Optionally set by user when shutting down the virtual machine.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -35310,31 +33453,27 @@ class VmService(MeasurableService):
         This operation saves the virtual machine state to disk and stops it.
         Start a suspended virtual machine and restore the virtual machine state with the start action.
         For example:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/vms/123/suspend
-        ```
+        ----
         The suspend action does not take any action specific parameters;
         therefore, the request body should contain an empty `action`:
-
-        ```xml
+        [source,xml]
+        ----
         <action/>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the suspend action should be performed asynchronously.
+        `async_`:: Indicates if the suspend action should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -35367,29 +33506,25 @@ class VmService(MeasurableService):
         running virtual machine. Normally, this is done automatically by the manager, but this must be executed manually
         with the API for virtual machines using OpenStack Volume (Cinder) disks.
         Example:
-
-        ```
+        [source]
+        ----
         POST /api/vms/123/thawfilesystems
-        ```
-
-        ```xml
+        ----
+        [source,xml]
+        ----
         <action/>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the thaw file systems action should be performed asynchronously.
+        `async_`:: Indicates if the thaw file systems action should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -35420,21 +33555,21 @@ class VmService(MeasurableService):
         """
         Generates a time-sensitive authentication token for accessing a virtual machine's display.
         For example:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/vms/123/ticket
-        ```
+        ----
         The client-provided action optionally includes a desired ticket value and/or an expiry time in seconds.
         The response specifies the actual ticket value and expiry used.
-
-        ```xml
+        [source,xml]
+        ----
         <action>
           <ticket>
             <value>abcd12345</value>
             <expiry>120</expiry>
           </ticket>
         </action>
-        ```
+        ----
         [IMPORTANT]
         ====
         If the virtual machine is configured to support only one graphics protocol
@@ -35443,28 +33578,25 @@ class VmService(MeasurableService):
         VNC and SPICE, then the authentication token will only be valid for
         the SPICE protocol.
         In order to obtain an authentication token for a specific protocol, for
-        example for VNC, use the `ticket` method of the `VmService.graphics_consoles_service`,
-        which manages the graphics consoles of the virtual machine, by sending a request:
-
-        ```
+        example for VNC, use the `ticket` method of the
+        xref:services-vm_graphics_console[service], which manages the graphics consoles of the virtual machine, by sending
+        a request:
+        [source]
+        ----
         POST /ovirt-engine/api/vms/123/graphicsconsoles/456/ticket
-        ```
+        ----
         ====
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the generation of the ticket should be performed asynchronously.
+        `async_`:: Indicates if the generation of the ticket should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -35502,28 +33634,21 @@ class VmService(MeasurableService):
 
         This method supports the following parameters:
 
-        `discard_snapshots` \n
-        Use the `discard_snapshots` parameter when the virtual machine should be exported with all of its
+        `discard_snapshots`:: Use the `discard_snapshots` parameter when the virtual machine should be exported with all of its
         snapshots collapsed.
 
-        `exclusive` \n
-        Use the `exclusive` parameter when the virtual machine should be exported even if another copy of
+        `exclusive`:: Use the `exclusive` parameter when the virtual machine should be exported even if another copy of
         it already exists in the export domain (override).
 
-        `storage_domain` \n
-        The (export) storage domain to export the virtual machine to.
+        `storage_domain`:: The (export) storage domain to export the virtual machine to.
 
-        `async_` \n
-        Indicates if the export should be performed asynchronously.
+        `async_`:: Indicates if the export should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -35568,39 +33693,29 @@ class VmService(MeasurableService):
 
         This method supports the following parameters:
 
-        `host` \n
-        The host to generate the OVA file on.
+        `host`:: The host to generate the OVA file on.
 
-        `directory` \n
-        An absolute path of a directory on the host to generate the OVA file in.
+        `directory`:: An absolute path of a directory on the host to generate the OVA file in.
 
-        `filename` \n
-        The name of the OVA file.
+        `filename`:: The name of the OVA file.
         This is an optional parameter, if it is not specified then the name of OVA file is determined according
         to the name of the virtual machine. It will conform the following pattern: "<virtual machine name>.ova".
 
-        `discard_snapshots` \n
-        Use the `discard_snapshots` parameter when the virtual machine should be exported with all of its
+        `discard_snapshots`:: Use the `discard_snapshots` parameter when the virtual machine should be exported with all of its
         snapshots collapsed.
 
-        `exclusive` \n
-        Use the `exclusive` parameter when the virtual machine should be exported even if another copy of
+        `exclusive`:: Use the `exclusive` parameter when the virtual machine should be exported even if another copy of
         it already exists in the export domain (override).
 
-        `storage_domain` \n
-        The (export) storage domain to export the virtual machine to.
+        `storage_domain`:: The (export) storage domain to export the virtual machine to.
 
-        `async_` \n
-        Indicates if the export should be performed asynchronously.
+        `async_`:: Indicates if the export should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -35641,21 +33756,18 @@ class VmService(MeasurableService):
     ):
         """
         Restores the virtual machine to the state it had before previewing the snapshot.
-        See the `VmService.preview_snapshot` operation for details.
+        See the xref:services-vm-methods-preview_snapshot[preview_snapshot] operation for details.
+
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the undo snapshot action should be performed asynchronously.
+        `async_`:: Indicates if the undo snapshot action should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -35934,21 +34046,16 @@ class VmApplicationService(Service):
 
         This method supports the following parameters:
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -36006,24 +34113,18 @@ class VmApplicationsService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of applications to return. If not specified all the applications are returned.
+        `max`:: Sets the maximum number of applications to return. If not specified all the applications are returned.
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -36093,15 +34194,15 @@ class VmBackupService(Service):
         End backup, unlock resources, and perform cleanups.
         To finalize a virtual machine with an id '123' and a backup with an id '456'
         send a request as follows:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/vms/123/backups/456/finalize
-        ```
+        ----
         With a request body as follows:
-
-        ```xml
+        [source,xml]
+        ----
         <action />
-        ```
+        ----
 
 
         """
@@ -36130,18 +34231,14 @@ class VmBackupService(Service):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -36200,18 +34297,14 @@ class VmBackupDiskService(Service):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -36261,21 +34354,16 @@ class VmBackupDisksService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of disks to return. If not specified, all the disks are returned.
+        `max`:: Sets the maximum number of disks to return. If not specified, all the disks are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -36343,13 +34431,13 @@ class VmBackupsService(Service):
         Adds a new backup entity to a virtual machine.
         For example, to start a new incremental backup of a virtual machine
         since checkpoint id `previous-checkpoint-uuid`, send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/vms/123/backups
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <backup>
           <from_checkpoint_id>previous-checkpoint-uuid</from_checkpoint_id>
           <disks>
@@ -36357,10 +34445,10 @@ class VmBackupsService(Service):
               ...
           </disks>
         </backup>
-        ```
+        ----
         The response body:
-
-        ```xml
+        [source,xml]
+        ----
         <backup id="backup-uuid">
             <from_checkpoint_id>previous-checkpoint-uuid</from_checkpoint_id>
             <to_checkpoint_id>new-checkpoint-uuid</to_checkpoint_id>
@@ -36372,15 +34460,15 @@ class VmBackupsService(Service):
             <status>initializing</status>
             <creation_date>
         </backup>
-        ```
+        ----
         To provide the ID of the created backup, send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/vms/123/backups
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <backup id="backup-uuid">
           <from_checkpoint_id>previous-checkpoint-uuid</from_checkpoint_id>
           <disks>
@@ -36388,22 +34476,18 @@ class VmBackupsService(Service):
               ...
           </disks>
         </backup>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `backup` \n
-        The information about the virtual machine backup entity.
+        `backup`:: The information about the virtual machine backup entity.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -36439,21 +34523,16 @@ class VmBackupsService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of virtual machine backups to return. If not specified, all the virtual machine backups are returned.
+        `max`:: Sets the maximum number of virtual machine backups to return. If not specified, all the virtual machine backups are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -36522,40 +34601,35 @@ class VmCdromService(Service):
         The information consists of `cdrom` attribute containing reference to the CDROM device, the virtual machine,
         and optionally the inserted disk.
         If there is a disk inserted then the `file` attribute will contain a reference to the ISO image:
-
-        ```xml
+        [source,xml]
+        ----
         <cdrom href="..." id="00000000-0000-0000-0000-000000000000">
           <file id="mycd.iso"/>
           <vm href="/ovirt-engine/api/vms/123" id="123"/>
         </cdrom>
-        ```
+        ----
         If there is no disk inserted then the `file` attribute won't be reported:
-
-        ```xml
+        [source,xml]
+        ----
         <cdrom href="..." id="00000000-0000-0000-0000-000000000000">
           <vm href="/ovirt-engine/api/vms/123" id="123"/>
         </cdrom>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `current` \n
-        Indicates if the operation should return the information for the currently running virtual machine. This
+        `current`:: Indicates if the operation should return the information for the currently running virtual machine. This
         parameter is optional, and the default value is `false`.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -36587,58 +34661,54 @@ class VmCdromService(Service):
         Updates the information about this CDROM device.
         It allows to change or eject the disk by changing the value of the `file` attribute.
         For example, to insert or change the disk send a request like this:
-
-        ```
+        [source]
+        ----
         PUT /ovirt-engine/api/vms/123/cdroms/00000000-0000-0000-0000-000000000000
-        ```
+        ----
         The body should contain the new value for the `file` attribute:
-
-        ```xml
+        [source,xml]
+        ----
         <cdrom>
           <file id="mycd.iso"/>
         </cdrom>
-        ```
+        ----
         The value of the `id` attribute, `mycd.iso` in this example, should correspond to a file available in an
         attached ISO storage domain.
         To eject the disk use a `file` with an empty `id`:
-
-        ```xml
+        [source,xml]
+        ----
         <cdrom>
           <file id=""/>
         </cdrom>
-        ```
+        ----
         By default the above operations change permanently the disk that will be visible to the virtual machine
         after the next boot, but they do not have any effect on the currently running virtual machine. If you want
         to change the disk that is visible to the current running virtual machine, add the `current=true` parameter.
         For example, to eject the current disk send a request like this:
-
-        ```
+        [source]
+        ----
         PUT /ovirt-engine/api/vms/123/cdroms/00000000-0000-0000-0000-000000000000?current=true
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <cdrom>
           <file id=""/>
         </cdrom>
-        ```
+        ----
         IMPORTANT: The changes made with the `current=true` parameter are never persisted, so they won't have any
         effect after the virtual machine is rebooted.
 
 
         This method supports the following parameters:
 
-        `cdrom` \n
-        The information about the CDROM device.
+        `cdrom`:: The information about the CDROM device.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -36672,7 +34742,9 @@ class VmCdromsService(Service):
     Manages the CDROM devices of a virtual machine.
     Currently virtual machines have exactly one CDROM device. No new devices can be added, and the existing one can't
     be removed, thus there are no `add` or `remove` methods. Changing and ejecting CDROM disks is done with the
-    `VmCdromService.update` method of the `VmCdRomService` that manages the CDROM device.
+    xref:services-vm_cdrom-methods-update[update] method of the xref:services-vm_cdrom[service] that manages the
+    CDROM device.
+
     """
 
     def __init__(self, connection, path):
@@ -36719,21 +34791,16 @@ class VmCdromsService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of CDROMs to return. If not specified all the CDROMs are returned.
+        `max`:: Sets the maximum number of CDROMs to return. If not specified all the CDROMs are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -36801,18 +34868,14 @@ class VmCheckpointService(Service):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -36842,17 +34905,13 @@ class VmCheckpointService(Service):
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -36916,18 +34975,14 @@ class VmCheckpointDiskService(Service):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -36977,21 +35032,16 @@ class VmCheckpointDisksService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of disks to return. If not specified, all the disks are returned.
+        `max`:: Sets the maximum number of disks to return. If not specified, all the disks are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -37057,30 +35107,25 @@ class VmCheckpointsService(Service):
         """
         The list of virtual machine checkpoints.
         To get a list of checkpoints for a virtual machine with an id '123', send a request as follows:
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/vms/123/checkpoints
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of virtual machine checkpoints to return.
+        `max`:: Sets the maximum number of virtual machine checkpoints to return.
         If not specified, all the virtual machine checkpoints are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -37144,17 +35189,13 @@ class VmDiskService(MeasurableService):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the activation should be performed asynchronously.
+        `async_`:: Indicates if the activation should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -37184,17 +35225,13 @@ class VmDiskService(MeasurableService):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the deactivation should be performed asynchronously.
+        `async_`:: Indicates if the deactivation should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -37225,20 +35262,15 @@ class VmDiskService(MeasurableService):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the export should be performed asynchronously.
+        `async_`:: Indicates if the export should be performed asynchronously.
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -37270,18 +35302,14 @@ class VmDiskService(MeasurableService):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -37308,20 +35336,15 @@ class VmDiskService(MeasurableService):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the move should be performed asynchronously.
+        `async_`:: Indicates if the move should be performed asynchronously.
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -37359,17 +35382,13 @@ class VmDiskService(MeasurableService):
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -37399,22 +35418,18 @@ class VmDiskService(MeasurableService):
         """
         Detach the disk from the virtual machine.
         NOTE: In version 3 of the API this used to also remove the disk completely from the system, but starting with
-        version 4 it doesn't. If you need to remove it completely use the `DiskService.remove` method of the top level
-        disk service.
+        version 4 it doesn't. If you need to remove it completely use the xref:services-disk-methods-remove[remove method of the top level disk service].
+
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -37539,21 +35554,16 @@ class VmDisksService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of disks to return. If not specified all the disks are returned.
+        `max`:: Sets the maximum number of disks to return. If not specified all the disks are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -37623,31 +35633,26 @@ class VmGraphicsConsoleService(Service):
 
         This method supports the following parameters:
 
-        `current` \n
-        Specifies if the data returned should correspond to the next execution of
+        `current`:: Specifies if the data returned should correspond to the next execution of
         the virtual machine, or to the current execution.
         IMPORTANT: The `address` and `port` attributes will not be populated unless the value is
         `true`.
         For example, to get data for the current execution of the virtual machine, including the
         `address` and `port` attributes, send a request like this:
-
-        ```
+        [source]
+        ----
         GET /ovit-engine/api/vms/123/graphicsconsoles/456?current=true
-        ```
+        ----
         The default value is `false`.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -37677,17 +35682,13 @@ class VmGraphicsConsoleService(Service):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the generation of the ticket should be performed asynchronously.
+        `async_`:: Indicates if the generation of the ticket should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -37717,19 +35718,19 @@ class VmGraphicsConsoleService(Service):
         Generates the file which is compatible with `remote-viewer` client.
         Use the following request to generate remote viewer connection file of the graphics console.
         Note that this action generates the file only if virtual machine is running.
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/vms/123/graphicsconsoles/456/remoteviewerconnectionfile
-        ```
+        ----
         The `remoteviewerconnectionfile` action does not take any action specific parameters,
         so the request body should contain an empty `action`:
-
-        ```xml
+        [source,xml]
+        ----
         <action/>
-        ```
+        ----
         The response contains the file, which can be used with `remote-viewer` client.
-
-        ```xml
+        [source,xml]
+        ----
         <action>
           <remote_viewer_connection_file>
             [virt-viewer]
@@ -37751,11 +35752,11 @@ class VmGraphicsConsoleService(Service):
             ca=...
           </remote_viewer_connection_file>
         </action>
-        ```
+        ----
         E.g., to fetch the content of remote viewer connection file and save it into temporary file, user can use
         oVirt Python SDK as follows:
-
-        ```python
+        [source,python]
+        ----
         # Find the virtual machine:
         vm = vms_service.list(search='name=myvm')[0]
         # Locate the service that manages the virtual machine, as that is where
@@ -37771,14 +35772,14 @@ class VmGraphicsConsoleService(Service):
         path = "/tmp/remote_viewer_connection_file.vv"
         with open(path, "w") as f:
             f.write(remote_viewer_connection_file)
-        ```
+        ----
         When you create the remote viewer connection file, then you can connect to virtual machine graphic console,
         as follows:
-
-        ```bash
+        [source,bash]
+        ----
         #!/bin/sh -ex
         remote-viewer --ovirt-ca-file=/etc/pki/ovirt-engine/ca.pem /tmp/remote_viewer_connection_file.vv
-        ```
+        ----
 
 
         """
@@ -37807,17 +35808,13 @@ class VmGraphicsConsoleService(Service):
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -37847,36 +35844,32 @@ class VmGraphicsConsoleService(Service):
     ):
         """
         Generates a time-sensitive authentication token for accessing this virtual machine's console.
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/vms/123/graphicsconsoles/456/ticket
-        ```
+        ----
         The client-provided action optionally includes a desired ticket value and/or an expiry time in seconds.
         In any case, the response specifies the actual ticket value and expiry used.
-
-        ```xml
+        [source,xml]
+        ----
         <action>
           <ticket>
             <value>abcd12345</value>
             <expiry>120</expiry>
           </ticket>
         </action>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `ticket` \n
-        The generated ticket that can be used to access this console.
+        `ticket`:: The generated ticket that can be used to access this console.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -37958,34 +35951,28 @@ class VmGraphicsConsolesService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of consoles to return. If not specified all the consoles are returned.
+        `max`:: Sets the maximum number of consoles to return. If not specified all the consoles are returned.
 
-        `current` \n
-        Specifies if the data returned should correspond to the next execution of
+        `current`:: Specifies if the data returned should correspond to the next execution of
         the virtual machine, or to the current execution.
         IMPORTANT: The `address` and `port` attributes will not be populated unless the value is
         `true`.
         For example, to get data for the current execution of the virtual machine, including the
         `address` and `port` attributes, send a request like this:
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/vms/123/graphicsconsoles?current=true
-        ```
+        ----
         The default value is `false`.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -38053,12 +36040,12 @@ class VmHostDeviceService(Service):
         """
         Retrieve information about particular host device attached to given virtual machine.
         Example:
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/vms/123/hostdevices/456
-        ```
-
-        ```xml
+        ----
+        [source,xml]
+        ----
         <host_device href="/ovirt-engine/api/hosts/543/devices/456" id="456">
           <name>pci_0000_04_00_0</name>
           <capability>pci</capability>
@@ -38076,23 +36063,19 @@ class VmHostDeviceService(Service):
           </parent_device>
           <vm href="/ovirt-engine/api/vms/123" id="123"/>
         </host_device>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -38121,25 +36104,21 @@ class VmHostDeviceService(Service):
         in setting its `placeholder` flag to `true`). Note that all IOMMU placeholder devices will be removed
         automatically as soon as there will be no more non-placeholder devices (all devices from given IOMMU
         group are detached).
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/vms/123/hostdevices/456
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -38192,37 +36171,33 @@ class VmHostDevicesService(Service):
         """
         Attach target device to given virtual machine.
         Example:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/vms/123/hostdevices
-        ```
-        With request body of type `ovirtsdk4.types.HostDevice` for example
-
-        ```xml
+        ----
+        With request body of type xref:types-host_device[HostDevice], for example
+        [source,xml]
+        ----
         <host_device id="123" />
-        ```
+        ----
         NOTE: A necessary precondition for a successful host device attachment is that the virtual machine must be pinned
         to *exactly* one host. The device ID is then taken relative to this host.
         NOTE: Attachment of a PCI device that is part of a bigger IOMMU group will result in attachment of the remaining
         devices from that IOMMU group as "placeholders". These devices are then identified using the `placeholder`
-        attribute of the `ovirtsdk4.types.HostDevice` type set to `true`.
+        attribute of the xref:types-host_device[HostDevice] type set to `true`.
         In case you want attach a device that already serves as an IOMMU placeholder, simply issue an explicit Add operation
         for it, and its `placeholder` flag will be cleared, and the device will be accessible to the virtual machine.
 
 
         This method supports the following parameters:
 
-        `device` \n
-        The host device to be attached to given virtual machine.
+        `device`:: The host device to be attached to given virtual machine.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -38251,21 +36226,16 @@ class VmHostDevicesService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of devices to return. If not specified all the devices are returned.
+        `max`:: Sets the maximum number of devices to return. If not specified all the devices are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -38330,18 +36300,14 @@ class VmMediatedDeviceService(Service):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -38370,17 +36336,13 @@ class VmMediatedDeviceService(Service):
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -38413,8 +36375,8 @@ class VmMediatedDeviceService(Service):
         Updates the information about the mediated device.
         You can update the information using `specParams` element.
         For example, to update a mediated device, send a request like this:
-
-        ```
+        [source]
+        ----
         PUT /ovirt-engine/api/vms/123/mediateddevices/00000000-0000-0000-0000-000000000000
         <vm_mediated_device>
           <spec_params>
@@ -38424,10 +36386,10 @@ class VmMediatedDeviceService(Service):
             </property>
           </spec_params>
         </vm_mediated_device>
-        ```
+        ----
         with response body:
-
-        ```xml
+        [source,xml]
+        ----
         <vm_mediated_device href="/ovirt-engine/api/vms/123/mediateddevices/00000000-0000-0000-0000-000000000000" id="00000000-0000-0000-0000-000000000000">
           <vm href="/ovirt-engine/api/vms/123" id="123"/>
           <spec_params>
@@ -38437,25 +36399,21 @@ class VmMediatedDeviceService(Service):
             </property>
           </spec_params>
         </vm_mediated_device>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `device` \n
-        The information about the mediated device.
+        `device`:: The information about the mediated device.
         The request data must contain `specParams` properties.
         The response data contains complete information about the
         updated mediated device.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -38538,22 +36496,17 @@ class VmMediatedDevicesService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of mediated devices to return.
+        `max`:: Sets the maximum number of mediated devices to return.
         If not specified all the mediated devices are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -38618,17 +36571,13 @@ class VmNicService(MeasurableService):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the activation should be performed asynchronously.
+        `async_`:: Indicates if the activation should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -38658,17 +36607,13 @@ class VmNicService(MeasurableService):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the deactivation should be performed asynchronously.
+        `async_`:: Indicates if the deactivation should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -38698,18 +36643,14 @@ class VmNicService(MeasurableService):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -38735,10 +36676,10 @@ class VmNicService(MeasurableService):
         """
         Removes the NIC.
         For example, to remove the NIC with id `456` from the virtual machine with id `123` send a request like this:
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/vms/123/nics/456
-        ```
+        ----
         [IMPORTANT]
         ====
         The hotplugging feature only supports virtual machine operating systems with hotplugging operations.
@@ -38752,17 +36693,13 @@ class VmNicService(MeasurableService):
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -38795,19 +36732,19 @@ class VmNicService(MeasurableService):
         Updates the NIC.
         For example, to update the NIC having with `456` belonging to virtual the machine with id `123` send a request
         like this:
-
-        ```
+        [source]
+        ----
         PUT /ovirt-engine/api/vms/123/nics/456
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <nic>
           <name>mynic</name>
           <interface>e1000</interface>
           <vnic_profile id='789'/>
         </nic>
-        ```
+        ----
         [IMPORTANT]
         ====
         The hotplugging feature only supports virtual machine operating systems with hotplugging operations.
@@ -38842,7 +36779,8 @@ class VmNicService(MeasurableService):
     def network_filter_parameters_service(self):
         """
         Reference to the service that manages the network filter parameters of the NIC.
-        A single top-level network filter may assigned to the NIC by the NIC's `ovirtsdk4.types.Nic.vnic_profile`.
+        A single top-level network filter may assigned to the NIC by the NIC's xref:types-vnic_profile[vNIC Profile].
+
         """
         return NicNetworkFilterParametersService(self._connection, '%s/networkfilterparameters' % self._path)
 
@@ -38900,21 +36838,21 @@ class VmNicsService(Service):
         Adds a NIC to the virtual machine.
         The following example adds to the virtual machine `123` a network interface named `mynic` using `virtio` and the
         NIC profile `456`.
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/vms/123/nics
-        ```
-
-        ```xml
+        ----
+        [source,xml]
+        ----
         <nic>
           <name>mynic</name>
           <interface>virtio</interface>
           <vnic_profile id="456"/>
         </nic>
-        ```
+        ----
         The following example sends that request using `curl`:
-
-        ```bash
+        [source,bash]
+        ----
         curl \
         --request POST \
         --header "Version: 4" \
@@ -38930,7 +36868,7 @@ class VmNicsService(Service):
         </nic>
         ' \
         https://myengine.example.com/ovirt-engine/api/vms/123/nics
-        ```
+        ----
         [IMPORTANT]
         ====
         The hotplugging feature only supports virtual machine operating systems with hotplugging operations.
@@ -38970,21 +36908,16 @@ class VmNicsService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of NICs to return. If not specified all the NICs are returned.
+        `max`:: Sets the maximum number of NICs to return. If not specified all the NICs are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -39044,18 +36977,14 @@ class VmNumaNodeService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -39081,27 +37010,23 @@ class VmNumaNodeService(Service):
         """
         Removes a virtual NUMA node.
         An example of removing a virtual NUMA node:
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/vms/123/numanodes/456
-        ```
+        ----
         NOTE: It's required to remove the numa nodes from the highest index
         first.
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -39133,13 +37058,13 @@ class VmNumaNodeService(Service):
         """
         Updates a virtual NUMA node.
         An example of pinning a virtual NUMA node to a physical NUMA node on the host:
-
-        ```
+        [source]
+        ----
         PUT /ovirt-engine/api/vms/123/numanodes/456
-        ```
+        ----
         The request body should contain the following:
-
-        ```xml
+        [source,xml]
+        ----
         <vm_numa_node>
           <numa_node_pins>
             <numa_node_pin>
@@ -39147,7 +37072,7 @@ class VmNumaNodeService(Service):
             </numa_node_pin>
           </numa_node_pins>
         </vm_numa_node>
-        ```
+        ----
 
 
         """
@@ -39201,15 +37126,15 @@ class VmNumaNodesService(Service):
         """
         Creates a new virtual NUMA node for the virtual machine.
         An example of creating a NUMA node:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/vms/c7ecd2dc/numanodes
         Accept: application/xml
         Content-type: application/xml
-        ```
+        ----
         The request body can contain the following:
-
-        ```xml
+        [source,xml]
+        ----
         <vm_numa_node>
           <cpu>
             <cores>
@@ -39222,7 +37147,7 @@ class VmNumaNodesService(Service):
           <memory>1024</memory>
           <numa_tune_mode>strict</numa_tune_mode>
         </vm_numa_node>
-        ```
+        ----
 
 
         """
@@ -39253,21 +37178,16 @@ class VmNumaNodesService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of nodes to return. If not specified all the nodes are returned.
+        `max`:: Sets the maximum number of nodes to return. If not specified all the nodes are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -39329,31 +37249,27 @@ class VmPoolService(Service):
     ):
         """
         This operation allocates a virtual machine in the virtual machine pool.
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/vmpools/123/allocatevm
-        ```
+        ----
         The allocate virtual machine action does not take any action specific parameters, so the request body should
         contain an empty `action`:
-
-        ```xml
+        [source,xml]
+        ----
         <action/>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the allocation should be performed asynchronously.
+        `async_`:: Indicates if the allocation should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -39383,13 +37299,13 @@ class VmPoolService(Service):
     ):
         """
         Get the virtual machine pool.
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/vmpools/123
-        ```
+        ----
         You will get a XML response like that one:
-
-        ```xml
+        [source,xml]
+        ----
         <vm_pool id="123">
           <actions>...</actions>
           <name>MyVmPool</name>
@@ -39406,26 +37322,21 @@ class VmPoolService(Service):
           <vm id="123">...</vm>
           ...
         </vm_pool>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -39454,25 +37365,21 @@ class VmPoolService(Service):
     ):
         """
         Removes a virtual machine pool.
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/vmpools/123
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -39504,15 +37411,15 @@ class VmPoolService(Service):
     ):
         """
         Update the virtual machine pool.
-
-        ```
+        [source]
+        ----
         PUT /ovirt-engine/api/vmpools/123
-        ```
+        ----
         The `name`, `description`, `size`, `prestarted_vms` and `max_user_vms`
         attributes can be updated after the virtual machine pool has been
         created.
-
-        ```xml
+        [source,xml]
+        ----
         <vmpool>
           <name>VM_Pool_B</name>
           <description>Virtual Machine Pool B</description>
@@ -39520,22 +37427,18 @@ class VmPoolService(Service):
           <prestarted_vms>1</size>
           <max_user_vms>2</size>
         </vmpool>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `pool` \n
-        The virtual machine pool that is being updated.
+        `pool`:: The virtual machine pool that is being updated.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -39606,34 +37509,30 @@ class VmPoolsService(Service):
         Creates a new virtual machine pool.
         A new pool requires the `name`, `cluster` and `template` attributes. Identify the cluster and template with the
         `id` or `name` nested attributes:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/vmpools
-        ```
+        ----
         With the following body:
-
-        ```xml
+        [source,xml]
+        ----
         <vmpool>
           <name>mypool</name>
           <cluster id="123"/>
           <template id="456"/>
         </vmpool>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `pool` \n
-        Pool to add.
+        `pool`:: Pool to add.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -39664,52 +37563,44 @@ class VmPoolsService(Service):
     ):
         """
         Get a list of available virtual machines pools.
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/vmpools
-        ```
+        ----
         You will receive the following response:
-
-        ```xml
+        [source,xml]
+        ----
         <vm_pools>
           <vm_pool id="123">
             ...
           </vm_pool>
           ...
         </vm_pools>
-        ```
+        ----
         The order of the returned list of pools is guaranteed only if the `sortby` clause is included in the
         `search` parameter.
 
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of pools to return. If this value is not specified, all of the pools are returned.
+        `max`:: Sets the maximum number of pools to return. If this value is not specified, all of the pools are returned.
 
-        `search` \n
-        A query string used to restrict the returned pools.
+        `search`:: A query string used to restrict the returned pools.
 
-        `case_sensitive` \n
-        Indicates if the search performed using the `search` parameter should be performed taking case into
+        `case_sensitive`:: Indicates if the search performed using the `search` parameter should be performed taking case into
         account. The default value is `true`, which means that case is taken into account. If you want to search
         ignoring case set it to `false`.
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -39782,18 +37673,14 @@ class VmReportedDeviceService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -39844,21 +37731,16 @@ class VmReportedDevicesService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of devices to return. If not specified all the devices are returned.
+        `max`:: Sets the maximum number of devices to return. If not specified all the devices are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -39918,18 +37800,14 @@ class VmSessionService(Service):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -39978,13 +37856,13 @@ class VmSessionsService(Service):
         """
         Lists all user sessions for this virtual machine.
         For example, to retrieve the session information for virtual machine `123` send a request like this:
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/vms/123/sessions
-        ```
+        ----
         The response body will contain something like this:
-
-        ```xml
+        [source,xml]
+        ----
         <sessions>
           <session href="/ovirt-engine/api/vms/123/sessions/456" id="456">
             <console_user>true</console_user>
@@ -39996,27 +37874,22 @@ class VmSessionsService(Service):
           </session>
           ...
         </sessions>
-        ```
+        ----
         The order of the returned list of sessions isn't guaranteed.
 
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of sessions to return. If not specified all the sessions are returned.
+        `max`:: Sets the maximum number of sessions to return. If not specified all the sessions are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -40083,18 +37956,14 @@ class VmWatchdogService(Service):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -40120,25 +37989,21 @@ class VmWatchdogService(Service):
         """
         Removes the watchdog from the virtual machine.
         For example, to remove a watchdog from a virtual machine, send a request like this:
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/vms/123/watchdogs/00000000-0000-0000-0000-000000000000
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -40171,40 +38036,36 @@ class VmWatchdogService(Service):
         Updates the information about the watchdog.
         You can update the information using `action` and `model` elements.
         For example, to update a watchdog, send a request like this:
-
-        ```
+        [source]
+        ----
         PUT /ovirt-engine/api/vms/123/watchdogs
         <watchdog>
           <action>reset</action>
         </watchdog>
-        ```
+        ----
         with response body:
-
-        ```xml
+        [source,xml]
+        ----
         <watchdog href="/ovirt-engine/api/vms/123/watchdogs/00000000-0000-0000-0000-000000000000" id="00000000-0000-0000-0000-000000000000">
           <vm href="/ovirt-engine/api/vms/123" id="123"/>
           <action>reset</action>
           <model>i6300esb</model>
         </watchdog>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `watchdog` \n
-        The information about the watchdog.
+        `watchdog`:: The information about the watchdog.
         The request data must contain at least one of `model` and `action`
         elements. The response data contains complete information about the
         updated watchdog.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -40258,41 +38119,37 @@ class VmWatchdogsService(Service):
         """
         Adds new watchdog to the virtual machine.
         For example, to add a watchdog to a virtual machine, send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/vms/123/watchdogs
         <watchdog>
           <action>poweroff</action>
           <model>i6300esb</model>
         </watchdog>
-        ```
+        ----
         with response body:
-
-        ```xml
+        [source,xml]
+        ----
         <watchdog href="/ovirt-engine/api/vms/123/watchdogs/00000000-0000-0000-0000-000000000000" id="00000000-0000-0000-0000-000000000000">
           <vm href="/ovirt-engine/api/vms/123" id="123"/>
           <action>poweroff</action>
           <model>i6300esb</model>
         </watchdog>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `watchdog` \n
-        The information about the watchdog.
+        `watchdog`:: The information about the watchdog.
         The request data must contain `model` element (such as `i6300esb`) and `action` element
         (one of `none`, `reset`, `poweroff`, `dump`, `pause`). The response data additionally
         contains references to the added watchdog and to the virtual machine.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -40321,21 +38178,16 @@ class VmWatchdogsService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of watchdogs to return. If not specified all the watchdogs are returned.
+        `max`:: Sets the maximum number of watchdogs to return. If not specified all the watchdogs are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -40405,8 +38257,8 @@ class VmsService(Service):
         The virtual machine can be created in different ways:
         - From a template. In this case the identifier or name of the template must be provided. For example, using a
           plain shell script and XML:
-
-        ```bash
+        [source,bash]
+        ----
         #!/bin/sh -ex
         url="https://engine.example.com/ovirt-engine/api"
         user="admin@internal"
@@ -40431,11 +38283,11 @@ class VmsService(Service):
         </vm>
         ' \
         "${url}/vms"
-        ```
+        ----
         - From a snapshot. In this case the identifier of the snapshot has to be provided. For example, using a plain
           shel script and XML:
-
-        ```bash
+        [source,bash]
+        ----
         #!/bin/sh -ex
         url="https://engine.example.com/ovirt-engine/api"
         user="admin@internal"
@@ -40459,12 +38311,12 @@ class VmsService(Service):
         </vm>
         ' \
         "${url}/vms"
-        ```
+        ----
         When creating a virtual machine from a template or from a snapshot it is usually useful to explicitly indicate
         in what storage domain to create the disks for the virtual machine. If the virtual machine is created from
         a template then this is achieved passing a set of `disk_attachment` elements that indicate the mapping:
-
-        ```xml
+        [source,xml]
+        ----
         <vm>
           ...
           <disk_attachments>
@@ -40477,11 +38329,11 @@ class VmsService(Service):
             <disk_attachment>
           </disk_attachments>
         </vm>
-        ```
+        ----
         When the virtual machine is created from a snapshot this set of disks is slightly different, it uses the
         `image_id` attribute instead of `id`.
-
-        ```xml
+        [source,xml]
+        ----
         <vm>
           ...
           <disk_attachments>
@@ -40495,12 +38347,12 @@ class VmsService(Service):
             <disk_attachment>
           </disk_attachments>
         </vm>
-        ```
+        ----
         It is possible to specify additional virtual machine parameters in the XML description, e.g. a virtual machine
         of `desktop` type, with 2 GiB of RAM and additional description can be added sending a request body like the
         following:
-
-        ```xml
+        [source,xml]
+        ----
         <vm>
           <name>myvm</name>
           <description>My Desktop Virtual Machine</description>
@@ -40508,22 +38360,22 @@ class VmsService(Service):
           <memory>2147483648</memory>
           ...
         </vm>
-        ```
+        ----
         A bootable CDROM device can be set like this:
-
-        ```xml
+        [source,xml]
+        ----
         <vm>
           ...
           <os>
             <boot dev="cdrom"/>
           </os>
         </vm>
-        ```
-        In order to boot from CDROM, you first need to insert a disk, as described in the `VmCdromService`.
-        Then booting from that CDROM can be specified using the `os.boot.devices`.
+        ----
+        In order to boot from CDROM, you first need to insert a disk, as described in the
+        xref:services-vm_cdrom[CDROM service]. Then booting from that CDROM can be specified using the `os.boot.devices`
         attribute:
-
-        ```xml
+        [source,xml]
+        ----
         <vm>
           ...
           <os>
@@ -40534,7 +38386,7 @@ class VmsService(Service):
             </boot>
           </os>
         </vm>
-        ```
+        ----
         In all cases the name or identifier of the cluster where the virtual machine will be created is mandatory.
 
 
@@ -40735,57 +38587,47 @@ class VmsService(Service):
 
         This method supports the following parameters:
 
-        `search` \n
-        A query string used to restrict the returned virtual machines.
+        `search`:: A query string used to restrict the returned virtual machines.
 
-        `max` \n
-        The maximum number of results to return.
+        `max`:: The maximum number of results to return.
 
-        `case_sensitive` \n
-        Indicates if the search performed using the `search` parameter should be performed taking case into
+        `case_sensitive`:: Indicates if the search performed using the `search` parameter should be performed taking case into
         account. The default value is `true`, which means that case is taken into account. If you want to search
         ignoring case set it to `false`.
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `all_content` \n
-        Indicates if all the attributes of the virtual machines should be included in the response.
+        `all_content`:: Indicates if all the attributes of the virtual machines should be included in the response.
         By default the following attributes are excluded:
         - `console`
-        - `ovirtsdk4.types.Initialization.configuration` - The OVF document describing the virtual machine.
+        - `initialization.configuration.data` - The OVF document describing the virtual machine.
         - `rng_source`
         - `soundcard`
         - `virtio_scsi`
         For example, to retrieve the complete representation of the virtual machines send a request like this:
-        ```
+        ....
         GET /ovirt-engine/api/vms?all_content=true
-        ```
+        ....
         NOTE: The reason for not including these attributes is performance: they are seldom used and they require
         additional queries to the database. So try to use the this parameter only when it is really needed.
 
-        `ovf_as_ova` \n
-        Indicates if the results should expose the OVF as it appears in OVA files of that VM. The OVF document
+        `ovf_as_ova`:: Indicates if the results should expose the OVF as it appears in OVA files of that VM. The OVF document
         describing the virtual machine. This parameter will work only when all_content=True is set.
-        The OVF will be presented in `ovirtsdk4.types.Initialization.configuration`.
+        The OVF will be presented in `initialization.configuration.data`.
         For example:
-
-        ```
+        [source]
+        ----
         GET /vms?all_content=true&ovf_as_ova=true
-        ```
+        ----
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -40870,18 +38712,14 @@ class VnicProfileService(Service):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -40910,17 +38748,13 @@ class VnicProfileService(Service):
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -40955,17 +38789,13 @@ class VnicProfileService(Service):
 
         This method supports the following parameters:
 
-        `profile` \n
-        The vNIC profile that is being updated.
+        `profile`:: The vNIC profile that is being updated.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -41028,13 +38858,13 @@ class VnicProfilesService(Service):
         """
         Add a vNIC profile.
         For example to add vNIC profile `123` to network `456` send a request to:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/networks/456/vnicprofiles
-        ```
+        ----
         With the following body:
-
-        ```xml
+        [source,xml]
+        ----
         <vnic_profile id="123">
           <name>new_vNIC_name</name>
           <pass_through>
@@ -41042,15 +38872,15 @@ class VnicProfilesService(Service):
           </pass_through>
           <port_mirroring>false</port_mirroring>
         </vnic_profile>
-        ```
+        ----
         Please note that there is a default network filter to each VNIC profile.
         For more details of how the default network filter is calculated please refer to
-        the documentation in `NetworkFiltersService`.
+        the documentation in xref:services-network_filters[NetworkFilters].
         NOTE: The automatically created vNIC profile for the external network will be without network filter.
         The output of creating a new VNIC profile depends in the  body  arguments that were given.
         In case no network filter was given, the default network filter will be configured. For example:
-
-        ```xml
+        [source,xml]
+        ----
         <vnic_profile href="/ovirt-engine/api/vnicprofiles/123" id="123">
           <name>new_vNIC_name</name>
           <link href="/ovirt-engine/api/vnicprofiles/123/permissions" rel="permissions"/>
@@ -41061,40 +38891,36 @@ class VnicProfilesService(Service):
           <network href="/ovirt-engine/api/networks/456" id="456"/>
           <network_filter href="/ovirt-engine/api/networkfilters/789" id="789"/>
         </vnic_profile>
-        ```
+        ----
         In case an empty network filter was given, no network filter will be configured for the specific VNIC profile
         regardless of the VNIC profile's default network filter. For example:
-
-        ```xml
+        [source,xml]
+        ----
         <vnic_profile>
           <name>no_network_filter</name>
           <network_filter/>
         </vnic_profile>
-        ```
+        ----
         In case that a specific valid network filter id was given, the VNIC profile will be configured with the given
         network filter regardless of the VNIC profiles's default network filter. For example:
-
-        ```xml
+        [source,xml]
+        ----
         <vnic_profile>
           <name>user_choice_network_filter</name>
           <network_filter id= "0000001b-001b-001b-001b-0000000001d5"/>
         </vnic_profile>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `profile` \n
-        The vNIC profile that is being added.
+        `profile`:: The vNIC profile that is being added.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -41123,21 +38949,16 @@ class VnicProfilesService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of profiles to return. If not specified all the profiles are returned.
+        `max`:: Sets the maximum number of profiles to return. If not specified all the profiles are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -41198,21 +39019,16 @@ class WeightService(Service):
         """
         This method supports the following parameters:
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -41242,17 +39058,13 @@ class WeightService(Service):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -41333,24 +39145,18 @@ class WeightsService(Service):
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of weights to return. If not specified all the weights are returned.
+        `max`:: Sets the maximum number of weights to return. If not specified all the weights are returned.
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -41401,8 +39207,8 @@ class AttachedStorageDomainDiskService(MeasurableService):
     Manages a single disk available in a storage domain attached to a data center.
     IMPORTANT: Since version 4.2 of the engine this service is intended only to list disks available in the storage
     domain, and to register unregistered disks. All the other operations, like copying a disk, moving a disk, etc, have
-    been deprecated and will be removed in the future. To perform those operations use the `DisksService` service that
-    manages all the disks of the system or the `DiskService` service that manages a specific disk.
+    been deprecated and will be removed in the future. To perform those operations use the xref:services-disks[service that manages all the disks of the system]
+    or the xref:services-disk[service that manages a specific disk].
 
     """
 
@@ -41423,26 +39229,21 @@ class AttachedStorageDomainDiskService(MeasurableService):
         """
         Copies a disk to the specified storage domain.
         IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. To copy a disk use the `DiskService.copy`
+        compatibility. It will be removed in the future. To copy a disk use the xref:services-disk-methods-copy[copy]
         operation of the service that manages that disk.
 
 
         This method supports the following parameters:
 
-        `disk` \n
-        Description of the resulting disk.
+        `disk`:: Description of the resulting disk.
 
-        `storage_domain` \n
-        The storage domain where the new disk will be created.
+        `storage_domain`:: The storage domain where the new disk will be created.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -41470,23 +39271,19 @@ class AttachedStorageDomainDiskService(MeasurableService):
         """
         Exports a disk to an export storage domain.
         IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. To export a disk use the `DiskService.export`
+        compatibility. It will be removed in the future. To export a disk use the xref:services-disk-methods-export[export]
         operation of the service that manages that disk.
 
 
         This method supports the following parameters:
 
-        `storage_domain` \n
-        The export storage domain where the disk should be exported to.
+        `storage_domain`:: The export storage domain where the disk should be exported to.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -41515,18 +39312,14 @@ class AttachedStorageDomainDiskService(MeasurableService):
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -41554,29 +39347,23 @@ class AttachedStorageDomainDiskService(MeasurableService):
         """
         Moves a disk to another storage domain.
         IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. To move a disk use the `DiskService.move`
+        compatibility. It will be removed in the future. To move a disk use the xref:services-disk-methods-move[move]
         operation of the service that manages that disk.
 
 
         This method supports the following parameters:
 
-        `storage_domain` \n
-        The storage domain where the disk will be moved to.
+        `storage_domain`:: The storage domain where the disk will be moved to.
 
-        `async_` \n
-        Indicates if the move should be performed asynchronously.
+        `async_`:: Indicates if the move should be performed asynchronously.
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -41632,7 +39419,7 @@ class AttachedStorageDomainDiskService(MeasurableService):
         """
         Removes a disk.
         IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. To remove a disk use the `DiskService.remove`
+        compatibility. It will be removed in the future. To remove a disk use the xref:services-disk-methods-remove[remove]
         operation of the service that manages that disk.
 
 
@@ -41657,7 +39444,7 @@ class AttachedStorageDomainDiskService(MeasurableService):
         """
         Sparsify the disk.
         IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. To remove a disk use the `DiskService.remove`
+        compatibility. It will be removed in the future. To remove a disk use the xref:services-disk-methods-remove[remove]
         operation of the service that manages that disk.
 
 
@@ -41684,23 +39471,19 @@ class AttachedStorageDomainDiskService(MeasurableService):
         """
         Updates the disk.
         IMPORTANT: Since version 4.2 of the engine this operation is deprecated, and preserved only for backwards
-        compatibility. It will be removed in the future. To update a disk use the `DiskService.update`
-        operation of the service that manages that disk.
+        compatibility. It will be removed in the future. To update a disk use the
+        xref:services-disk-methods-update[update] operation of the service that manages that disk.
 
 
         This method supports the following parameters:
 
-        `disk` \n
-        The update to apply to the disk.
+        `disk`:: The update to apply to the disk.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -41770,20 +39553,20 @@ class DiskService(MeasurableService):
         Converts disk format and/or preallocation mode.
         For example, to convert the disk format from preallocated-cow to a sparse-raw image,
         send a request like the following:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/disks/123/convert
-        ```
+        ----
         With the following request body:
-
-        ```xml
+        [source,xml]
+        ----
          <action>
            <disk>
              <sparse>true</sparse>
              <format>raw</format>
            </disk>
          </action>
-        ```
+        ----
         Note: In order to sparsify a disk, two conversions might be needed if the disk is on a Block Storage Domain.
         For example: If a disk is RAW, converting it to QCOW will result in a larger disk. In order to reduce the size,
         it is possible to convert the disk again to QCOW and keep the same allocation policy.
@@ -41791,21 +39574,16 @@ class DiskService(MeasurableService):
 
         This method supports the following parameters:
 
-        `disk` \n
-        The description of the disk.
+        `disk`:: The description of the disk.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -41838,79 +39616,71 @@ class DiskService(MeasurableService):
         """
         This operation copies a disk to the specified storage domain.
         For example, a disk can be copied using the following request:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/disks/123/copy
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <action>
           <storage_domain id="456"/>
           <disk>
             <name>mydisk</name>
           </disk>
         </action>
-        ```
+        ----
         If the disk profile or the quota currently used by the disk are not defined for the new storage domain, they
         can be explicitly specified. If they are not specified, the first available disk profile and the default quota are used.
         For example, to specify disk profile `987` and quota `753`, send a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <action>
           <storage_domain id="456"/>
           <disk_profile id="987"/>
           <quota id="753"/>
         </action>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `storage_domain` \n
-        The storage domain where the new disk is created. This can be specified using the `id` or `name`
+        `storage_domain`:: The storage domain where the new disk is created. This can be specified using the `id` or `name`
         attributes. For example, to copy a disk to the storage domain called `mydata`, send a request like this:
-        ```
+        ....
         POST /ovirt-engine/api/storagedomains/123/disks/789
-        ```
+        ....
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <action>
           <storage_domain>
             <name>mydata</name>
           </storage_domain>
         </action>
-        ```
+        ----
 
-        `disk_profile` \n
-        Disk profile for the disk in the new storage domain.
+        `disk_profile`:: Disk profile for the disk in the new storage domain.
         Disk profiles are defined for storage domains,
         so the old disk profile will not exist in the new storage domain.
         If this parameter is not used, the first disk profile from the new storage domain
         to which the user has permissions will be assigned to the disk.
 
-        `quota` \n
-        Quota for the disk in the new storage domain.
+        `quota`:: Quota for the disk in the new storage domain.
         This optional parameter can be used to specify new quota for the disk,
         because the current quota may not be defined for the new storage domain.
         If this parameter is not used and the old quota is not defined for the new storage domain,
         the default (unlimited) quota will be assigned to the disk.
 
-        `async_` \n
-        Indicates if the copy should be performed asynchronously.
+        `async_`:: Indicates if the copy should be performed asynchronously.
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -41955,23 +39725,17 @@ class DiskService(MeasurableService):
 
         This method supports the following parameters:
 
-        `storage_domain` \n
-        The export storage domain where the disk will be exported to.
+        `storage_domain`:: The export storage domain where the disk will be exported to.
 
-        `async_` \n
-        Indicates if the export should be performed asynchronously.
+        `async_`:: Indicates if the export should be performed asynchronously.
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -42009,27 +39773,22 @@ class DiskService(MeasurableService):
 
         This method supports the following parameters:
 
-        `all_content` \n
-        Indicates if all of the attributes of the disk should be included in the response.
+        `all_content`:: Indicates if all of the attributes of the disk should be included in the response.
         By default the following disk attributes are excluded:
         - `vms`
         For example, to retrieve the complete representation of disk '123':
-        ```
+        ....
         GET /ovirt-engine/api/disks/123?all_content=true
-        ```
+        ....
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -42064,17 +39823,17 @@ class DiskService(MeasurableService):
         Moves a disk to another storage domain.
         For example, to move the disk with identifier `123` to a storage domain with identifier `456` send the following
         request:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/disks/123/move
-        ```
+        ----
         With the following request body:
-
-        ```xml
+        [source,xml]
+        ----
         <action>
           <storage_domain id="456"/>
         </action>
-        ```
+        ----
         If the disk profile or the quota used currently by
         the disk aren't defined for the new storage domain,
         then they can be explicitly specified. If they aren't
@@ -42082,49 +39841,41 @@ class DiskService(MeasurableService):
         quota are used.
         For example, to explicitly use disk profile `987` and
         quota `753` send a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <action>
           <storage_domain id="456"/>
           <disk_profile id="987"/>
           <quota id="753"/>
         </action>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `storage_domain` \n
-        The storage domain where the disk will be moved to.
+        `storage_domain`:: The storage domain where the disk will be moved to.
 
-        `disk_profile` \n
-        Disk profile for the disk in the new storage domain.
+        `disk_profile`:: Disk profile for the disk in the new storage domain.
         Disk profiles are defined for storage domains,
         so the old disk profile will not exist in the new storage domain.
         If this parameter is not used, the first disk profile from the new storage domain
         to which the user has permissions will be assigned to the disk.
 
-        `quota` \n
-        Quota for the disk in the new storage domain.
+        `quota`:: Quota for the disk in the new storage domain.
         This optional parameter can be used to specify new quota for the disk,
         because the current quota may not be defined for the new storage domain.
         If this parameter is not used and the old quota is not defined for the new storage domain,
         the default (unlimited) quota will be assigned to the disk.
 
-        `async_` \n
-        Indicates if the move should be performed asynchronously.
+        `async_`:: Indicates if the move should be performed asynchronously.
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -42168,17 +39919,13 @@ class DiskService(MeasurableService):
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -42209,35 +39956,31 @@ class DiskService(MeasurableService):
         Refreshes a direct LUN disk with up-to-date information from the storage.
         Refreshing a direct LUN disk is useful when:
         - The LUN was added using the API without the host parameter, and therefore does not contain
-          any information from the storage (see `DisksService.add`).
+          any information from the storage (see xref:services-disks-methods-add[DisksService::add]).
         - New information about the LUN is available on the storage and you want to update the LUN with it.
         To refresh direct LUN disk `123` using host `456`, send the following request:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/disks/123/refreshlun
-        ```
+        ----
         With the following request body:
-
-        ```xml
+        [source,xml]
+        ----
         <action>
           <host id='456'/>
         </action>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `host` \n
-        The host that will be used to refresh the direct LUN disk.
+        `host`:: The host that will be used to refresh the direct LUN disk.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -42266,17 +40009,13 @@ class DiskService(MeasurableService):
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -42340,36 +40079,32 @@ class DiskService(MeasurableService):
         * For Managed Block disks: `provisioned_size`, `alias` and `description`.
         * For VM attached disks, the `qcow_version` can also be updated.
         For example, a disk's update can be done by using the following request:
-
-        ```
+        [source]
+        ----
         PUT /ovirt-engine/api/disks/123
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <disk>
           <qcow_version>qcow2_v3</qcow_version>
           <alias>new-alias</alias>
           <description>new-desc</description>
         </disk>
-        ```
+        ----
         Since the backend operation is asynchronous, the disk element that is returned
         to the user might not be synced with the changed properties.
 
 
         This method supports the following parameters:
 
-        `disk` \n
-        The update to apply to the disk.
+        `disk`:: The update to apply to the disk.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -42386,14 +40121,13 @@ class DiskService(MeasurableService):
         """
         Reference to the service that manages the DiskSnapshots.
         For example, to list all disk snapshots under the disks resource '123':
-        ```
+        ....
         GET /ovirt-engine/api/disks/123/disksnapshots
-        ```
-
+        ....
         For example, to retrieve a specific disk snapshot '789' under the disk resource '123':
-        ```
+        ....
         GET /ovirt-engine/api/disks/123/disksnapshots/789
-        ```
+        ....
 
         """
         return DiskSnapshotsService(self._connection, '%s/disksnapshots' % self._path)
@@ -42456,13 +40190,13 @@ class EngineKatelloErrataService(KatelloErrataService):
     ):
         """
         Retrieves the representation of the Katello errata.
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/katelloerrata
-        ```
+        ----
         You will receive response in XML like this one:
-
-        ```xml
+        [source,xml]
+        ----
         <katello_errata>
           <katello_erratum href="/ovirt-engine/api/katelloerrata/123" id="123">
             <name>RHBA-2013:XYZ</name>
@@ -42481,27 +40215,22 @@ class EngineKatelloErrataService(KatelloErrataService):
           </katello_erratum>
           ...
         </katello_errata>
-        ```
+        ----
         The order of the returned list of erratum isn't guaranteed.
 
 
         This method supports the following parameters:
 
-        `max` \n
-        Sets the maximum number of errata to return. If not specified all the errata are returned.
+        `max`:: Sets the maximum number of errata to return. If not specified all the errata are returned.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -42549,8 +40278,8 @@ class EngineKatelloErrataService(KatelloErrataService):
 class ExternalHostProviderService(ExternalProviderService):
     """
     Represents an external host provider, such as Foreman or Satellite.
-    See link:https://www.theforeman.org/ for details.
-    See link:https://access.redhat.com/products/red-hat-satellite for details.
+    See link:https://www.theforeman.org/[Foreman documentation] for details.
+    See link:https://access.redhat.com/products/red-hat-satellite[Satellite documentation] for details.
 
     """
 
@@ -42575,35 +40304,31 @@ class ExternalHostProviderService(ExternalProviderService):
         Host provider, Foreman or Satellite, can be set as an external provider in ovirt. To see details about specific
         host providers attached to ovirt use this API.
         For example, to get the details of host provider `123`, send a request like this:
-        ```
+        ....
         GET /ovirt-engine/api/externalhostproviders/123
-        ```
+        ....
         The response will be like this:
-
-        ```xml
+        [source,xml]
+        ----
         <external_host_provider href="/ovirt-engine/api/externalhostproviders/123" id="123">
           <name>mysatellite</name>
           <requires_authentication>true</requires_authentication>
           <url>https://mysatellite.example.com</url>
           <username>admin</username>
         </external_host_provider>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -42655,17 +40380,13 @@ class ExternalHostProviderService(ExternalProviderService):
         """
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -42696,25 +40417,21 @@ class ExternalHostProviderService(ExternalProviderService):
         """
         In order to test connectivity for external provider we need
         to run following request where 123 is an id of a provider.
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/externalhostproviders/123/testconnectivity
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the test should be performed asynchronously.
+        `async_`:: Indicates if the test should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -42848,13 +40565,13 @@ class GlusterBrickService(MeasurableService):
         Retrieves status details of brick from underlying gluster volume with header `All-Content` set to `true`. This is
         the equivalent of running `gluster volume status <volumename> <brickname> detail`.
         For example, to get the details of brick `234` of gluster volume `123`, send a request like this:
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/clusters/567/glustervolumes/123/glusterbricks/234
-        ```
+        ----
         Which will return a response body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <brick id="234">
           <name>host1:/rhgs/data/brick1</name>
           <brick_dir>/rhgs/data/brick1</brick_dir>
@@ -42886,23 +40603,19 @@ class GlusterBrickService(MeasurableService):
           <pid>25589</pid>
           <port>49155</port>
         </brick>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -42929,27 +40642,23 @@ class GlusterBrickService(MeasurableService):
         Removes a brick.
         Removes a brick from the underlying gluster volume and deletes entries from database. This can be used only when
         removing a single brick without data migration. To remove multiple bricks and with data migration, use
-        `GlusterBricksService.migrate` instead.
+        xref:services-gluster_bricks-methods-migrate[migrate] instead.
         For example, to delete brick `234` from gluster volume `123`, send a request like this:
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/clusters/567/glustervolumes/123/glusterbricks/234
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -42981,23 +40690,19 @@ class GlusterBrickService(MeasurableService):
         """
         Replaces this brick with a new one.
         IMPORTANT: This operation has been deprecated since version 3.5 of the engine and will be removed in the future.
-        Use `GlusterBricksService.add` and
-        `GlusterBricksService.migrate` instead.
+        Use xref:services-gluster_bricks-methods-add[add brick(s)] and
+        xref:services-gluster_bricks-methods-migrate[migrate brick(s)] instead.
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the replacement should be performed asynchronously.
+        `async_`:: Indicates if the replacement should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -43061,13 +40766,13 @@ class GlusterVolumeService(MeasurableService):
         """
         Get the gluster volume details.
         For example, to get details of a gluster volume with identifier `123` in cluster `456`, send a request like this:
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/clusters/456/glustervolumes/123
-        ```
+        ----
         This GET request will return the following output:
-
-        ```xml
+        [source,xml]
+        ----
         <gluster_volume id="123">
          <name>data</name>
          <link href="/ovirt-engine/api/clusters/456/glustervolumes/123/glusterbricks" rel="glusterbricks"/>
@@ -43095,23 +40800,19 @@ class GlusterVolumeService(MeasurableService):
          </transport_types>
          <volume_type>replicate</volume_type>
          </gluster_volume>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -43137,10 +40838,10 @@ class GlusterVolumeService(MeasurableService):
         Get gluster volume profile statistics.
         For example, to get profile statistics for a gluster volume with identifier `123` in cluster `456`, send a
         request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/clusters/456/glustervolumes/123/getprofilestatistics
-        ```
+        ----
 
 
         """
@@ -43172,34 +40873,28 @@ class GlusterVolumeService(MeasurableService):
         non-replicated volume, all bricks should be online to perform the rebalance operation. In a replicated volume, at
         least one of the bricks in the replica should be online.
         For example, to rebalance a gluster volume with identifier `123` in cluster `456`, send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/clusters/456/glustervolumes/123/rebalance
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `fix_layout` \n
-        If set to true, rebalance will only fix the layout so that new data added to the volume is distributed
+        `fix_layout`:: If set to true, rebalance will only fix the layout so that new data added to the volume is distributed
         across all the hosts. But it will not migrate/rebalance the existing data. Default is `false`.
 
-        `force` \n
-        Indicates if the rebalance should be force started. The rebalance command can be executed with the force
+        `force`:: Indicates if the rebalance should be force started. The rebalance command can be executed with the force
         option even when the older clients are connected to the cluster. However, this could lead to a data loss
         situation. Default is `false`.
 
-        `async_` \n
-        Indicates if the rebalance should be performed asynchronously.
+        `async_`:: Indicates if the rebalance should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -43233,25 +40928,21 @@ class GlusterVolumeService(MeasurableService):
         """
         Removes the gluster volume.
         For example, to remove a volume with identifier `123` in cluster `456`, send a request like this:
-
-        ```
+        [source]
+        ----
         DELETE /ovirt-engine/api/clusters/456/glustervolumes/123
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -43283,25 +40974,21 @@ class GlusterVolumeService(MeasurableService):
         Resets all the options set in the gluster volume.
         For example, to reset all options in a gluster volume with identifier `123` in cluster `456`, send a request like
         this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/clusters/456/glustervolumes/123/resetalloptions
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the reset should be performed asynchronously.
+        `async_`:: Indicates if the reset should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -43334,35 +41021,30 @@ class GlusterVolumeService(MeasurableService):
         Resets a particular option in the gluster volume.
         For example, to reset a particular option `option1` in a gluster volume with identifier `123` in cluster `456`,
         send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/clusters/456/glustervolumes/123/resetoption
-        ```
+        ----
         With the following request body:
-
-        ```xml
+        [source,xml]
+        ----
         <action>
          <option name="option1"/>
         </action>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `option` \n
-        Option to reset.
+        `option`:: Option to reset.
 
-        `async_` \n
-        Indicates if the reset should be performed asynchronously.
+        `async_`:: Indicates if the reset should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -43398,35 +41080,30 @@ class GlusterVolumeService(MeasurableService):
         Sets a particular option in the gluster volume.
         For example, to set `option1` with value `value1` in a gluster volume with identifier `123` in cluster `456`,
         send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/clusters/456/glustervolumes/123/setoption
-        ```
+        ----
         With the following request body:
-
-        ```xml
+        [source,xml]
+        ----
         <action>
          <option name="option1" value="value1"/>
         </action>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `option` \n
-        Option to set.
+        `option`:: Option to set.
 
-        `async_` \n
-        Indicates if the action should be performed asynchronously.
+        `async_`:: Indicates if the action should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -43460,29 +41137,24 @@ class GlusterVolumeService(MeasurableService):
         Starts the gluster volume.
         A Gluster Volume should be started to read/write data. For example, to start a gluster volume with identifier
         `123` in cluster `456`, send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/clusters/456/glustervolumes/123/start
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `force` \n
-        Indicates if the volume should be force started. If a gluster volume is started already but few/all bricks
+        `force`:: Indicates if the volume should be force started. If a gluster volume is started already but few/all bricks
         are down then force start can be used to bring all the bricks up. Default is `false`.
 
-        `async_` \n
-        Indicates if the action should be performed asynchronously.
+        `async_`:: Indicates if the action should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -43514,25 +41186,21 @@ class GlusterVolumeService(MeasurableService):
         """
         Start profiling the gluster volume.
         For example, to start profiling a gluster volume with identifier `123` in cluster `456`, send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/clusters/456/glustervolumes/123/startprofile
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the action should be performed asynchronously.
+        `async_`:: Indicates if the action should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -43564,25 +41232,21 @@ class GlusterVolumeService(MeasurableService):
         Stops the gluster volume.
         Stopping a volume will make its data inaccessible.
         For example, to stop a gluster volume with identifier `123` in cluster `456`, send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/clusters/456/glustervolumes/123/stop
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the action should be performed asynchronously.
+        `async_`:: Indicates if the action should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -43614,25 +41278,21 @@ class GlusterVolumeService(MeasurableService):
         """
         Stop profiling the gluster volume.
         For example, to stop profiling a gluster volume with identifier `123` in cluster `456`, send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/clusters/456/glustervolumes/123/stopprofile
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the action should be performed asynchronously.
+        `async_`:: Indicates if the action should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -43663,25 +41323,21 @@ class GlusterVolumeService(MeasurableService):
         Stop rebalancing the gluster volume.
         For example, to stop rebalancing a gluster volume with identifier `123` in cluster `456`, send a request like
         this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/clusters/456/glustervolumes/123/stoprebalance
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the action should be performed asynchronously.
+        `async_`:: Indicates if the action should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -43771,17 +41427,13 @@ class HostService(MeasurableService):
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the activation should be performed asynchronously.
+        `async_`:: Indicates if the activation should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -43819,31 +41471,23 @@ class HostService(MeasurableService):
 
         This method supports the following parameters:
 
-        `host` \n
-        The host to approve.
+        `host`:: The host to approve.
 
-        `cluster` \n
-        The cluster where the host will be added after it is approved.
+        `cluster`:: The cluster where the host will be added after it is approved.
 
-        `async_` \n
-        Indicates if the approval should be performed asynchronously.
+        `async_`:: Indicates if the approval should be performed asynchronously.
 
-        `activate` \n
-        When set to 'true', this host will be activated after its approval completes. When set to 'false'
+        `activate`:: When set to 'true', this host will be activated after its approval completes. When set to 'false'
         the host will remain in 'maintenance' status after its approval. Absence of this parameter will be
         interpreted as 'true', since the desired default behavior is activating the host after approval.
 
-        `reboot` \n
-        Indicates if the host should be rebooted after successful installation. The default value is `true`.
+        `reboot`:: Indicates if the host should be rebooted after successful installation. The default value is `true`.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -43886,35 +41530,31 @@ class HostService(MeasurableService):
         not lost as a result of the configuration changes. If host connectivity is lost, the host requires a reboot and
         automatically reverts to the previous networking configuration.
         For example, to commit the network configuration of host with id `123` send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/hosts/123/commitnetconfig
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <action/>
-        ```
+        ----
         IMPORTANT: Since {engine-name} 4.3, it is possible to also specify `commit_on_success` in
-        the `HostService.setup_networks` request, in which case the new
+        the xref:services-host-methods-setup_networks[setupnetworks] request, in which case the new
         configuration is automatically saved in the {hypervisor-name} upon completing the setup and
         re-establishing connectivity between the {hypervisor-name} and {engine-name}, and without
-        waiting for a separate `HostService.commit_net_config` request.
+        waiting for a separate xref:services-host-methods-commit_net_config[commitnetconfig] request.
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the action should be performed asynchronously.
+        `async_`:: Indicates if the action should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -43947,35 +41587,30 @@ class HostService(MeasurableService):
         IMPORTANT: Any network attachments that are not present on the source host will be erased from the target host
         by the copy operation.
         To copy networks from another host, send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/hosts/123/copyhostnetworks
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <action>
            <source_host id="456"/>
         </action>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `source_host` \n
-        The host to copy networks from.
+        `source_host`:: The host to copy networks from.
 
-        `async_` \n
-        Indicates if the action should be performed asynchronously.
+        `async_`:: Indicates if the action should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -44012,21 +41647,16 @@ class HostService(MeasurableService):
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the deactivation should be performed asynchronously.
+        `async_`:: Indicates if the deactivation should be performed asynchronously.
 
-        `stop_gluster_service` \n
-        Indicates if the gluster service should be stopped as part of deactivating the host. It can be used while
+        `stop_gluster_service`:: Indicates if the gluster service should be stopped as part of deactivating the host. It can be used while
         performing maintenance operations on the gluster host. Default value for this variable is `false`.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -44063,22 +41693,22 @@ class HostService(MeasurableService):
         Returns a list of IscsiDetails objects containing the discovered data.
         For example, to discover iSCSI targets available in `myiscsi.example.com`,
         from host `123`, send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/hosts/123/discoveriscsi
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <action>
           <iscsi>
             <address>myiscsi.example.com</address>
           </iscsi>
         </action>
-        ```
+        ----
         The result will be like this:
-
-        ```xml
+        [source,xml]
+        ----
         <discovered_targets>
           <iscsi_details>
             <address>10.35.1.72</address>
@@ -44087,7 +41717,7 @@ class HostService(MeasurableService):
             <target>iqn.2015-08.com.tgt:444</target>
           </iscsi_details>
         </discovered_targets>
-        ```
+        ----
         IMPORTANT: When using this method to discover iscsi targets, you can use an FQDN or an
         IP address, but you must use the iscsi details from the discovered targets results to log in
         using the  iscsilogin method.
@@ -44095,20 +41725,15 @@ class HostService(MeasurableService):
 
         This method supports the following parameters:
 
-        `iscsi` \n
-        The target iSCSI device.
+        `iscsi`:: The target iSCSI device.
 
-        `async_` \n
-        Indicates if the discovery should be performed asynchronously.
+        `async_`:: Indicates if the discovery should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -44144,17 +41769,13 @@ class HostService(MeasurableService):
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the enrollment should be performed asynchronously.
+        `async_`:: Indicates if the enrollment should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -44186,8 +41807,8 @@ class HostService(MeasurableService):
         """
         Controls the host's power management device.
         For example, to start the host. This can be done via:
-
-        ```
+        [source]
+        ----
         #!/bin/sh -ex
         url="https://engine.example.com/ovirt-engine/api"
         user="admin@internal"
@@ -44206,25 +41827,20 @@ class HostService(MeasurableService):
         </action>
         ' \
         "${url}/hosts/123/fence"
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the fencing should be performed asynchronously.
+        `async_`:: Indicates if the fencing should be performed asynchronously.
 
-        `maintenance_after_restart` \n
-        Indicates if host should be put into maintenance after restart.
+        `maintenance_after_restart`:: Indicates if host should be put into maintenance after restart.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -44257,30 +41873,26 @@ class HostService(MeasurableService):
     ):
         """
         To manually set a host as the storage pool manager (SPM).
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/hosts/123/forceselectspm
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <action/>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the action should be performed asynchronously.
+        `async_`:: Indicates if the action should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -44311,41 +41923,35 @@ class HostService(MeasurableService):
     ):
         """
         Gets the host details.
-
-        ```
+        [source]
+        ----
         GET /ovirt-engine/api/hosts/123
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `filter` \n
-        Indicates if the results should be filtered according to the permissions of the user.
+        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
 
-        `all_content` \n
-        Indicates if all of the attributes of the host should be included in the response.
+        `all_content`:: Indicates if all of the attributes of the host should be included in the response.
         By default the following attributes are excluded:
         - `hosted_engine`
         For example, to retrieve the complete representation of host '123':
-        ```
+        ....
         GET /ovirt-engine/api/hosts/123?all_content=true
-        ```
+        ....
         NOTE: These attributes are not included by default because retrieving them impacts performance. They are
         seldom used and require additional queries to the database. Use this parameter with caution and only when
         specifically required.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -44390,8 +41996,8 @@ class HostService(MeasurableService):
         kdump configuration, hosted-engine deploy, kernel options changes, etc.
         The host type defines additional parameters for the action.
         Example of installing a host, using `curl` and JSON, plain:
-
-        ```bash
+        [source,bash]
+        ----
         curl \
         --verbose \
         --cacert /etc/pki/ovirt-engine/ca.pem \
@@ -44406,10 +42012,10 @@ class HostService(MeasurableService):
         }
         ' \
         "https://engine.example.com/ovirt-engine/api/hosts/123"
-        ```
+        ----
         Example of installing a host using `curl` and JSON with hosted engine components:
-
-        ```bash
+        [source,bash]
+        ----
         curl \
         curl \
         --verbose \
@@ -44426,55 +42032,43 @@ class HostService(MeasurableService):
         }
         ' \
         "https://engine.example.com/ovirt-engine/api/hosts/123"
-        ```
+        ----
         IMPORTANT: Since version 4.1.2 of the engine, when a host is reinstalled we override the host firewall
         definitions by default.
 
 
         This method supports the following parameters:
 
-        `activate` \n
-        When set to 'true', this host will be activated after its installation completes. When set to 'false'
+        `activate`:: When set to 'true', this host will be activated after its installation completes. When set to 'false'
         the host will remain in 'maintenance' status after its installation. Absence of this parameter will be
         interpreted as 'true', since the desired default behavior is activating the host after install.
 
-        `root_password` \n
-        The password of the `root` user used to connect to the host via SSH.
+        `root_password`:: The password of the `root` user used to connect to the host via SSH.
 
-        `ssh` \n
-        The SSH details used to connect to the host.
+        `ssh`:: The SSH details used to connect to the host.
 
-        `host` \n
-        The `override_iptables` property is used to indicate if the firewall configuration should be replaced by the
+        `host`:: The `override_iptables` property is used to indicate if the firewall configuration should be replaced by the
         default one.
 
-        `image` \n
-        When installing {hypervisor-name}, an ISO image file is required.
+        `image`:: When installing {hypervisor-name}, an ISO image file is required.
 
-        `async_` \n
-        Indicates if the installation should be performed asynchronously.
+        `async_`:: Indicates if the installation should be performed asynchronously.
 
-        `deploy_hosted_engine` \n
-        When set to `true` this host will also deploy the self-hosted engine components. A missing value
+        `deploy_hosted_engine`:: When set to `true` this host will also deploy the self-hosted engine components. A missing value
         is treated as `true` i.e deploy. Omitting this parameter means `false` and will not perform any operation in the
         self-hosted engine area.
 
-        `undeploy_hosted_engine` \n
-        When set to `true` this host will un-deploy the self-hosted engine components, and this host will
+        `undeploy_hosted_engine`:: When set to `true` this host will un-deploy the self-hosted engine components, and this host will
         not function as part of the High Availability cluster. A missing value is treated as `true` i.e un-deploy.
         Omitting this parameter means `false` and will not perform any operation in the self-hosted engine area.
 
-        `reboot` \n
-        Indicates if the host should be rebooted after successful installation. The default value is `true`.
+        `reboot`:: Indicates if the host should be rebooted after successful installation. The default value is `true`.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -44525,37 +42119,32 @@ class HostService(MeasurableService):
         Returns an array of strings containing the discovered data.
         For example, to discover iSCSI targets available in `myiscsi.example.com`,
         from host `123`, send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/hosts/123/iscsidiscover
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <action>
           <iscsi>
             <address>myiscsi.example.com</address>
           </iscsi>
         </action>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `iscsi` \n
-        The target iSCSI device.
+        `iscsi`:: The target iSCSI device.
 
-        `async_` \n
-        Indicates if the discovery should be performed asynchronously.
+        `async_`:: Indicates if the discovery should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -44593,20 +42182,15 @@ class HostService(MeasurableService):
 
         This method supports the following parameters:
 
-        `iscsi` \n
-        The target iSCSI device.
+        `iscsi`:: The target iSCSI device.
 
-        `async_` \n
-        Indicates if the login should be performed asynchronously.
+        `async_`:: Indicates if the login should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -44641,17 +42225,13 @@ class HostService(MeasurableService):
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the refresh should be performed asynchronously.
+        `async_`:: Indicates if the refresh should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -44681,8 +42261,8 @@ class HostService(MeasurableService):
     ):
         """
         Remove the host from the system.
-
-        ```
+        [source]
+        ----
         #!/bin/sh -ex
         url="https://engine.example.com/ovirt-engine/api"
         user="admin@internal"
@@ -44694,26 +42274,21 @@ class HostService(MeasurableService):
         --request DELETE \
         --header "Version: 4" \
         "${url}/hosts/1ff7a191-2f3b-4eff-812b-9f91a30c3acc"
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `force` \n
-        Indicates that the host should be removed even if it is non-responsive,
+        `force`:: Indicates that the host should be removed even if it is non-responsive,
         or if it is part of a Gluster Storage cluster and has volume bricks on it.
 
-        `async_` \n
-        Indicates if the remove should be performed asynchronously.
+        `async_`:: Indicates if the remove should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -44760,8 +42335,8 @@ class HostService(MeasurableService):
         For example, if you have a host with three network interfaces `eth0`, `eth1` and `eth2` and you want to configure
         a new bond using `eth0` and `eth1`, and put a VLAN on top of it. Using a simple shell script and the `curl`
         command line HTTP client that can be done as follows:
-
-        ```
+        [source]
+        ----
         #!/bin/sh -ex
         url="https://engine.example.com/ovirt-engine/api"
         user="admin@internal"
@@ -44829,18 +42404,18 @@ class HostService(MeasurableService):
          </action>
         ' \
         "${url}/hosts/1ff7a191-2f3b-4eff-812b-9f91a30c3acc/setupnetworks"
-        ```
+        ----
         NOTE: This is valid for version 4 of the API. In previous versions some elements were represented as XML
         attributes instead of XML elements. In particular the `options` and `ip` elements were represented as follows:
-
-        ```xml
+        [source,xml]
+        ----
         <options name="mode" value="4"/>
         <options name="miimon" value="100"/>
         <ip address="192.168.122.10" netmask="255.255.255.0"/>
-        ```
+        ----
         The same thing can be done using the Python SDK with the following code:
-
-        ```python
+        [source,python]
+        ----
         # Find the service that manages the collection of hosts:
         hosts_service = connection.system_service().hosts_service()
         # Find the host:
@@ -44904,38 +42479,34 @@ class HostService(MeasurableService):
         # After modifying the network configuration it is very important to make it
         # persistent:
         host_service.commit_net_config()
-        ```
+        ----
         IMPORTANT: To make sure that the network configuration has been saved in the host, and that it will be applied
-        when the host is rebooted, remember to call `HostService.commit_net_config`.
+        when the host is rebooted, remember to call xref:services-host-methods-commit_net_config[commitnetconfig].
         IMPORTANT: Since {engine-name} 4.3, it is possible to also specify `commit_on_success` in
-        the `HostService.setup_networks` request, in which case the newconfiguration is automatically saved in
-        the {hypervisor-name} upon completing the setup and re-establishing connectivity between the {hypervisor-name}
-        and {engine-name}, and without waiting for a separate `HostService.commit_net_config` request.
+        the xref:services-host-methods-setup_networks[setupnetworks] request, in which case the new
+        configuration is automatically saved in the {hypervisor-name} upon completing the setup and
+        re-establishing connectivity between the {hypervisor-name} and {engine-name}, and without
+        waiting for a separate xref:services-host-methods-commit_net_config[commitnetconfig] request.
 
 
         This method supports the following parameters:
 
-        `synchronized_network_attachments` \n
-        A list of network attachments that will be synchronized.
+        `synchronized_network_attachments`:: A list of network attachments that will be synchronized.
 
-        `commit_on_success` \n
-        Specifies whether to automatically save the configuration in the {hypervisor-name} upon completing
+        `commit_on_success`:: Specifies whether to automatically save the configuration in the {hypervisor-name} upon completing
         the setup and re-establishing connectivity between the {hypervisor-name} and {engine-name},
-        and without waiting for a separate `HostService.commit_net_config` request.
+        and without waiting for a separate xref:services-host-methods-commit_net_config[commitnetconfig]
+        request.
         The default value is `false`, which means that the configuration will not be
         saved automatically.
 
-        `async_` \n
-        Indicates if the action should be performed asynchronously.
+        `async_`:: Indicates if the action should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -44984,30 +42555,26 @@ class HostService(MeasurableService):
     ):
         """
         To synchronize all networks on the host, send a request like this:
-
-        ```
+        [source]
+        ----
         POST /ovirt-engine/api/hosts/123/syncallnetworks
-        ```
+        ----
         With a request body like this:
-
-        ```xml
+        [source,xml]
+        ----
         <action/>
-        ```
+        ----
 
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the action should be performed asynchronously.
+        `async_`:: Indicates if the action should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -45042,17 +42609,13 @@ class HostService(MeasurableService):
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the discovery should be performed asynchronously.
+        `async_`:: Indicates if the discovery should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -45085,19 +42648,19 @@ class HostService(MeasurableService):
         """
         Update the host properties.
         For example, to update a the kernel command line of a host send a request like this:
-
-        ```
+        [source]
+        ----
         PUT /ovirt-engine/api/hosts/123
-        ```
+        ----
         With request body like this:
-
-        ```xml
+        [source, xml]
+        ----
         <host>
           <os>
             <custom_kernel_cmdline>vfio_iommu_type1.allow_unsafe_interrupts=1</custom_kernel_cmdline>
           </os>
         </host>
-        ```
+        ----
 
 
         """
@@ -45137,30 +42700,23 @@ class HostService(MeasurableService):
 
         This method supports the following parameters:
 
-        `image` \n
-        This property is no longer relevant, since Vintage Node is no longer supported, and has been deprecated.
+        `image`:: This property is no longer relevant, since Vintage Node is no longer supported, and has been deprecated.
 
-        `reboot` \n
-        Indicates if the host should be rebooted after the upgrade.
+        `reboot`:: Indicates if the host should be rebooted after the upgrade.
         By default the host is rebooted.
         NOTE: This parameter is ignored for {hypervisor-name}, which is always rebooted after the upgrade.
 
-        `async_` \n
-        Indicates if the upgrade should be performed asynchronously.
+        `async_`:: Indicates if the upgrade should be performed asynchronously.
 
-        `timeout` \n
-        Upgrade timeout.
+        `timeout`:: Upgrade timeout.
         The maximum time to wait for upgrade to finish in minutes.
         Default value is specified by `ANSIBLE_PLAYBOOK_EXEC_DEFAULT_TIMEOUT` configration option.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -45196,7 +42752,7 @@ class HostService(MeasurableService):
         Check if there are upgrades available for the host. If there are upgrades available an icon will be displayed
         next to host status icon in the Administration Portal. Audit log messages are also added to indicate the
         availability of upgrades. The upgrade can be started from the webadmin or by using the
-        `HostService.upgrade` host action.
+        xref:services-host-methods-upgrade[upgrade] host action.
 
 
         """
@@ -45226,31 +42782,23 @@ class HostService(MeasurableService):
         """
         This method supports the following parameters:
 
-        `host` \n
-        The host to approve.
+        `host`:: The host to approve.
 
-        `cluster` \n
-        The cluster where the host will be added after it is approved.
+        `cluster`:: The cluster where the host will be added after it is approved.
 
-        `async_` \n
-        Indicates if the approval should be performed asynchronously.
+        `async_`:: Indicates if the approval should be performed asynchronously.
 
-        `activate` \n
-        When set to 'true', this host will be activated after its approval completes. When set to 'false'
+        `activate`:: When set to 'true', this host will be activated after its approval completes. When set to 'false'
         the host will remain in 'maintenance' status after its approval. Absence of this parameter will be
         interpreted as 'true', since the desired default behavior is activating the host after approval.
 
-        `reboot` \n
-        Indicates if the host should be rebooted after successful installation. The default value is `true`.
+        `reboot`:: Indicates if the host should be rebooted after successful installation. The default value is `true`.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -45300,48 +42848,36 @@ class HostService(MeasurableService):
 
         This method supports the following parameters:
 
-        `activate` \n
-        When set to 'true', this host will be activated after its installation completes. When set to 'false'
+        `activate`:: When set to 'true', this host will be activated after its installation completes. When set to 'false'
         the host will remain in 'maintenance' status after its installation. Absence of this parameter will be
         interpreted as 'true', since the desired default behavior is activating the host after install.
 
-        `root_password` \n
-        The password of the `root` user used to connect to the host via SSH.
+        `root_password`:: The password of the `root` user used to connect to the host via SSH.
 
-        `ssh` \n
-        The SSH details used to connect to the host.
+        `ssh`:: The SSH details used to connect to the host.
 
-        `host` \n
-        The `override_iptables` property is used to indicate if the firewall configuration should be replaced by the
+        `host`:: The `override_iptables` property is used to indicate if the firewall configuration should be replaced by the
         default one.
 
-        `image` \n
-        When installing {hypervisor-name}, an ISO image file is required.
+        `image`:: When installing {hypervisor-name}, an ISO image file is required.
 
-        `async_` \n
-        Indicates if the installation should be performed asynchronously.
+        `async_`:: Indicates if the installation should be performed asynchronously.
 
-        `deploy_hosted_engine` \n
-        When set to `true` this host will also deploy the self-hosted engine components. A missing value
+        `deploy_hosted_engine`:: When set to `true` this host will also deploy the self-hosted engine components. A missing value
         is treated as `true` i.e deploy. Omitting this parameter means `false` and will not perform any operation in the
         self-hosted engine area.
 
-        `undeploy_hosted_engine` \n
-        When set to `true` this host will un-deploy the self-hosted engine components, and this host will
+        `undeploy_hosted_engine`:: When set to `true` this host will un-deploy the self-hosted engine components, and this host will
         not function as part of the High Availability cluster. A missing value is treated as `true` i.e un-deploy.
         Omitting this parameter means `false` and will not perform any operation in the self-hosted engine area.
 
-        `reboot` \n
-        Indicates if the host should be rebooted after successful installation. The default value is `true`.
+        `reboot`:: Indicates if the host should be rebooted after successful installation. The default value is `true`.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -45428,31 +42964,23 @@ class HostService(MeasurableService):
 
         This method supports the following parameters:
 
-        `host` \n
-        The host to approve.
+        `host`:: The host to approve.
 
-        `cluster` \n
-        The cluster where the host will be added after it is approved.
+        `cluster`:: The cluster where the host will be added after it is approved.
 
-        `async_` \n
-        Indicates if the approval should be performed asynchronously.
+        `async_`:: Indicates if the approval should be performed asynchronously.
 
-        `activate` \n
-        When set to 'true', this host will be activated after its approval completes. When set to 'false'
+        `activate`:: When set to 'true', this host will be activated after its approval completes. When set to 'false'
         the host will remain in 'maintenance' status after its approval. Absence of this parameter will be
         interpreted as 'true', since the desired default behavior is activating the host after approval.
 
-        `reboot` \n
-        Indicates if the host should be rebooted after successful installation. The default value is `true`.
+        `reboot`:: Indicates if the host should be rebooted after successful installation. The default value is `true`.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -45502,48 +43030,36 @@ class HostService(MeasurableService):
 
         This method supports the following parameters:
 
-        `activate` \n
-        When set to 'true', this host will be activated after its installation completes. When set to 'false'
+        `activate`:: When set to 'true', this host will be activated after its installation completes. When set to 'false'
         the host will remain in 'maintenance' status after its installation. Absence of this parameter will be
         interpreted as 'true', since the desired default behavior is activating the host after install.
 
-        `root_password` \n
-        The password of the `root` user used to connect to the host via SSH.
+        `root_password`:: The password of the `root` user used to connect to the host via SSH.
 
-        `ssh` \n
-        The SSH details used to connect to the host.
+        `ssh`:: The SSH details used to connect to the host.
 
-        `host` \n
-        The `override_iptables` property is used to indicate if the firewall configuration should be replaced by the
+        `host`:: The `override_iptables` property is used to indicate if the firewall configuration should be replaced by the
         default one.
 
-        `image` \n
-        When installing {hypervisor-name}, an ISO image file is required.
+        `image`:: When installing {hypervisor-name}, an ISO image file is required.
 
-        `async_` \n
-        Indicates if the installation should be performed asynchronously.
+        `async_`:: Indicates if the installation should be performed asynchronously.
 
-        `deploy_hosted_engine` \n
-        When set to `true` this host will also deploy the self-hosted engine components. A missing value
+        `deploy_hosted_engine`:: When set to `true` this host will also deploy the self-hosted engine components. A missing value
         is treated as `true` i.e deploy. Omitting this parameter means `false` and will not perform any operation in the
         self-hosted engine area.
 
-        `undeploy_hosted_engine` \n
-        When set to `true` this host will un-deploy the self-hosted engine components, and this host will
+        `undeploy_hosted_engine`:: When set to `true` this host will un-deploy the self-hosted engine components, and this host will
         not function as part of the High Availability cluster. A missing value is treated as `true` i.e un-deploy.
         Omitting this parameter means `false` and will not perform any operation in the self-hosted engine area.
 
-        `reboot` \n
-        Indicates if the host should be rebooted after successful installation. The default value is `true`.
+        `reboot`:: Indicates if the host should be rebooted after successful installation. The default value is `true`.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -45830,30 +43346,25 @@ class HostNicService(MeasurableService):
         """
         This method supports the following parameters:
 
-        `all_content` \n
-        Indicates if all of the attributes of the host network interface should be included in the response.
+        `all_content`:: Indicates if all of the attributes of the host network interface should be included in the response.
         By default the following attributes are excluded:
         - `virtual_functions_configuration`
         For example, to retrieve the complete representation network interface '456' of host '123':
-        ```
+        ....
         GET /ovirt-engine/api/hosts/123/nics/456?all_content=true
-        ```
+        ....
         NOTE: These attributes are not included by default because retrieving them impacts performance. They are
         seldom used and require additional queries to the database. Use this parameter with caution and only when
         specifically required.
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -45891,17 +43402,13 @@ class HostNicService(MeasurableService):
 
         This method supports the following parameters:
 
-        `async_` \n
-        Indicates if the update should be performed asynchronously.
+        `async_`:: Indicates if the update should be performed asynchronously.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -46019,18 +43526,14 @@ class HostNumaNodeService(MeasurableService):
         """
         This method supports the following parameters:
 
-        `follow` \n
-        Indicates which inner links should be followed. The objects referenced by these links will be fetched as part
-        of the current request.
+        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers` \n
-        Additional HTTP headers.
+        `headers`:: Additional HTTP headers.
 
-        `query` \n
-        Additional URL query parameters.
+        `query`:: Additional URL query parameters.
 
-        `wait` \n
-        If `True` wait for the response.
+        `wait`:: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([

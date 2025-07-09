@@ -23,8 +23,6 @@ from ovirtsdk4.writer import Writer
 
 
 class ActionWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(ActionWriter, self).__init__()
@@ -244,7 +242,7 @@ class ActionWriter(Writer):
         if plural is None:
             plural = 'actions'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -254,8 +252,6 @@ class ActionWriter(Writer):
 
 
 class AffinityGroupWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(AffinityGroupWriter, self).__init__()
@@ -307,7 +303,7 @@ class AffinityGroupWriter(Writer):
         if plural is None:
             plural = 'affinity_groups'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -317,8 +313,6 @@ class AffinityGroupWriter(Writer):
 
 
 class AffinityLabelWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(AffinityLabelWriter, self).__init__()
@@ -356,7 +350,7 @@ class AffinityLabelWriter(Writer):
         if plural is None:
             plural = 'affinity_labels'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -366,8 +360,6 @@ class AffinityLabelWriter(Writer):
 
 
 class AffinityRuleWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(AffinityRuleWriter, self).__init__()
@@ -395,7 +387,7 @@ class AffinityRuleWriter(Writer):
         if plural is None:
             plural = 'affinity_rules'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -405,8 +397,6 @@ class AffinityRuleWriter(Writer):
 
 
 class AgentWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(AgentWriter, self).__init__()
@@ -456,7 +446,7 @@ class AgentWriter(Writer):
         if plural is None:
             plural = 'agents'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -466,8 +456,6 @@ class AgentWriter(Writer):
 
 
 class AgentConfigurationWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(AgentConfigurationWriter, self).__init__()
@@ -501,7 +489,7 @@ class AgentConfigurationWriter(Writer):
         if plural is None:
             plural = 'agent_configurations'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -511,8 +499,6 @@ class AgentConfigurationWriter(Writer):
 
 
 class ApiWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(ApiWriter, self).__init__()
@@ -546,7 +532,7 @@ class ApiWriter(Writer):
         if plural is None:
             plural = 'apis'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -556,8 +542,6 @@ class ApiWriter(Writer):
 
 
 class ApiSummaryWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(ApiSummaryWriter, self).__init__()
@@ -587,7 +571,7 @@ class ApiSummaryWriter(Writer):
         if plural is None:
             plural = 'api_summaries'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -597,8 +581,6 @@ class ApiSummaryWriter(Writer):
 
 
 class ApiSummaryItemWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(ApiSummaryItemWriter, self).__init__()
@@ -624,7 +606,7 @@ class ApiSummaryItemWriter(Writer):
         if plural is None:
             plural = 'api_summary_items'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -634,8 +616,6 @@ class ApiSummaryItemWriter(Writer):
 
 
 class ApplicationWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(ApplicationWriter, self).__init__()
@@ -667,7 +647,7 @@ class ApplicationWriter(Writer):
         if plural is None:
             plural = 'applications'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -677,8 +657,6 @@ class ApplicationWriter(Writer):
 
 
 class AuthorizedKeyWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(AuthorizedKeyWriter, self).__init__()
@@ -712,7 +690,7 @@ class AuthorizedKeyWriter(Writer):
         if plural is None:
             plural = 'authorized_keys'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -722,8 +700,6 @@ class AuthorizedKeyWriter(Writer):
 
 
 class BackupWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(BackupWriter, self).__init__()
@@ -771,7 +747,7 @@ class BackupWriter(Writer):
         if plural is None:
             plural = 'backups'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -781,8 +757,6 @@ class BackupWriter(Writer):
 
 
 class BalanceWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(BalanceWriter, self).__init__()
@@ -816,7 +790,7 @@ class BalanceWriter(Writer):
         if plural is None:
             plural = 'balances'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -826,8 +800,6 @@ class BalanceWriter(Writer):
 
 
 class BiosWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(BiosWriter, self).__init__()
@@ -853,7 +825,7 @@ class BiosWriter(Writer):
         if plural is None:
             plural = 'bioss'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -863,8 +835,6 @@ class BiosWriter(Writer):
 
 
 class BlockStatisticWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(BlockStatisticWriter, self).__init__()
@@ -888,7 +858,7 @@ class BlockStatisticWriter(Writer):
         if plural is None:
             plural = 'block_statistics'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -898,8 +868,6 @@ class BlockStatisticWriter(Writer):
 
 
 class BondingWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(BondingWriter, self).__init__()
@@ -929,7 +897,7 @@ class BondingWriter(Writer):
         if plural is None:
             plural = 'bondings'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -939,8 +907,6 @@ class BondingWriter(Writer):
 
 
 class BookmarkWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(BookmarkWriter, self).__init__()
@@ -972,7 +938,7 @@ class BookmarkWriter(Writer):
         if plural is None:
             plural = 'bookmarks'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -982,8 +948,6 @@ class BookmarkWriter(Writer):
 
 
 class BootWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(BootWriter, self).__init__()
@@ -1011,7 +975,7 @@ class BootWriter(Writer):
         if plural is None:
             plural = 'boots'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -1021,8 +985,6 @@ class BootWriter(Writer):
 
 
 class BootMenuWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(BootMenuWriter, self).__init__()
@@ -1046,7 +1008,7 @@ class BootMenuWriter(Writer):
         if plural is None:
             plural = 'boot_menus'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -1056,8 +1018,6 @@ class BootMenuWriter(Writer):
 
 
 class BrickProfileDetailWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(BrickProfileDetailWriter, self).__init__()
@@ -1083,7 +1043,7 @@ class BrickProfileDetailWriter(Writer):
         if plural is None:
             plural = 'brick_profile_details'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -1093,8 +1053,6 @@ class BrickProfileDetailWriter(Writer):
 
 
 class CdromWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(CdromWriter, self).__init__()
@@ -1134,7 +1092,7 @@ class CdromWriter(Writer):
         if plural is None:
             plural = 'cdroms'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -1144,8 +1102,6 @@ class CdromWriter(Writer):
 
 
 class CertificateWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(CertificateWriter, self).__init__()
@@ -1181,7 +1137,7 @@ class CertificateWriter(Writer):
         if plural is None:
             plural = 'certificates'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -1191,8 +1147,6 @@ class CertificateWriter(Writer):
 
 
 class CheckpointWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(CheckpointWriter, self).__init__()
@@ -1232,7 +1186,7 @@ class CheckpointWriter(Writer):
         if plural is None:
             plural = 'checkpoints'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -1242,8 +1196,6 @@ class CheckpointWriter(Writer):
 
 
 class CloudInitWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(CloudInitWriter, self).__init__()
@@ -1279,7 +1231,7 @@ class CloudInitWriter(Writer):
         if plural is None:
             plural = 'cloud_inits'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -1289,8 +1241,6 @@ class CloudInitWriter(Writer):
 
 
 class ClusterWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(ClusterWriter, self).__init__()
@@ -1414,7 +1364,7 @@ class ClusterWriter(Writer):
         if plural is None:
             plural = 'clusters'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -1424,8 +1374,6 @@ class ClusterWriter(Writer):
 
 
 class ClusterFeatureWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(ClusterFeatureWriter, self).__init__()
@@ -1457,7 +1405,7 @@ class ClusterFeatureWriter(Writer):
         if plural is None:
             plural = 'cluster_features'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -1467,8 +1415,6 @@ class ClusterFeatureWriter(Writer):
 
 
 class ClusterLevelWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(ClusterLevelWriter, self).__init__()
@@ -1504,7 +1450,7 @@ class ClusterLevelWriter(Writer):
         if plural is None:
             plural = 'cluster_levels'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -1514,8 +1460,6 @@ class ClusterLevelWriter(Writer):
 
 
 class ConfigurationWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(ConfigurationWriter, self).__init__()
@@ -1541,7 +1485,7 @@ class ConfigurationWriter(Writer):
         if plural is None:
             plural = 'configurations'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -1551,8 +1495,6 @@ class ConfigurationWriter(Writer):
 
 
 class ConsoleWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(ConsoleWriter, self).__init__()
@@ -1576,7 +1518,7 @@ class ConsoleWriter(Writer):
         if plural is None:
             plural = 'consoles'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -1586,8 +1528,6 @@ class ConsoleWriter(Writer):
 
 
 class CoreWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(CoreWriter, self).__init__()
@@ -1613,7 +1553,7 @@ class CoreWriter(Writer):
         if plural is None:
             plural = 'cores'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -1623,8 +1563,6 @@ class CoreWriter(Writer):
 
 
 class CpuWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(CpuWriter, self).__init__()
@@ -1664,7 +1602,7 @@ class CpuWriter(Writer):
         if plural is None:
             plural = 'cpus'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -1674,8 +1612,6 @@ class CpuWriter(Writer):
 
 
 class CpuProfileWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(CpuProfileWriter, self).__init__()
@@ -1711,7 +1647,7 @@ class CpuProfileWriter(Writer):
         if plural is None:
             plural = 'cpu_profiles'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -1721,8 +1657,6 @@ class CpuProfileWriter(Writer):
 
 
 class CpuTopologyWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(CpuTopologyWriter, self).__init__()
@@ -1750,7 +1684,7 @@ class CpuTopologyWriter(Writer):
         if plural is None:
             plural = 'cpu_topologies'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -1760,8 +1694,6 @@ class CpuTopologyWriter(Writer):
 
 
 class CpuTuneWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(CpuTuneWriter, self).__init__()
@@ -1785,7 +1717,7 @@ class CpuTuneWriter(Writer):
         if plural is None:
             plural = 'cpu_tunes'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -1795,8 +1727,6 @@ class CpuTuneWriter(Writer):
 
 
 class CpuTypeWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(CpuTypeWriter, self).__init__()
@@ -1824,7 +1754,7 @@ class CpuTypeWriter(Writer):
         if plural is None:
             plural = 'cpu_types'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -1834,8 +1764,6 @@ class CpuTypeWriter(Writer):
 
 
 class CustomPropertyWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(CustomPropertyWriter, self).__init__()
@@ -1863,7 +1791,7 @@ class CustomPropertyWriter(Writer):
         if plural is None:
             plural = 'custom_properties'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -1873,8 +1801,6 @@ class CustomPropertyWriter(Writer):
 
 
 class DataCenterWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(DataCenterWriter, self).__init__()
@@ -1932,7 +1858,7 @@ class DataCenterWriter(Writer):
         if plural is None:
             plural = 'data_centers'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -1942,8 +1868,6 @@ class DataCenterWriter(Writer):
 
 
 class DeviceWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(DeviceWriter, self).__init__()
@@ -1981,7 +1905,7 @@ class DeviceWriter(Writer):
         if plural is None:
             plural = 'devices'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -1991,8 +1915,6 @@ class DeviceWriter(Writer):
 
 
 class DiskWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(DiskWriter, self).__init__()
@@ -2100,7 +2022,7 @@ class DiskWriter(Writer):
         if plural is None:
             plural = 'disks'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -2110,8 +2032,6 @@ class DiskWriter(Writer):
 
 
 class DiskAttachmentWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(DiskAttachmentWriter, self).__init__()
@@ -2161,7 +2081,7 @@ class DiskAttachmentWriter(Writer):
         if plural is None:
             plural = 'disk_attachments'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -2171,8 +2091,6 @@ class DiskAttachmentWriter(Writer):
 
 
 class DiskProfileWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(DiskProfileWriter, self).__init__()
@@ -2208,7 +2126,7 @@ class DiskProfileWriter(Writer):
         if plural is None:
             plural = 'disk_profiles'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -2218,8 +2136,6 @@ class DiskProfileWriter(Writer):
 
 
 class DiskSnapshotWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(DiskSnapshotWriter, self).__init__()
@@ -2331,7 +2247,7 @@ class DiskSnapshotWriter(Writer):
         if plural is None:
             plural = 'disk_snapshots'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -2341,8 +2257,6 @@ class DiskSnapshotWriter(Writer):
 
 
 class DisplayWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(DisplayWriter, self).__init__()
@@ -2394,7 +2308,7 @@ class DisplayWriter(Writer):
         if plural is None:
             plural = 'displays'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -2404,8 +2318,6 @@ class DisplayWriter(Writer):
 
 
 class DnsWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(DnsWriter, self).__init__()
@@ -2431,7 +2343,7 @@ class DnsWriter(Writer):
         if plural is None:
             plural = 'dnss'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -2441,8 +2353,6 @@ class DnsWriter(Writer):
 
 
 class DnsResolverConfigurationWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(DnsResolverConfigurationWriter, self).__init__()
@@ -2470,7 +2380,7 @@ class DnsResolverConfigurationWriter(Writer):
         if plural is None:
             plural = 'dns_resolver_configurations'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -2480,8 +2390,6 @@ class DnsResolverConfigurationWriter(Writer):
 
 
 class DomainWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(DomainWriter, self).__init__()
@@ -2517,7 +2425,7 @@ class DomainWriter(Writer):
         if plural is None:
             plural = 'domains'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -2527,8 +2435,6 @@ class DomainWriter(Writer):
 
 
 class DynamicCpuWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(DynamicCpuWriter, self).__init__()
@@ -2554,7 +2460,7 @@ class DynamicCpuWriter(Writer):
         if plural is None:
             plural = 'dynamic_cpus'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -2564,8 +2470,6 @@ class DynamicCpuWriter(Writer):
 
 
 class EntityProfileDetailWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(EntityProfileDetailWriter, self).__init__()
@@ -2589,7 +2493,7 @@ class EntityProfileDetailWriter(Writer):
         if plural is None:
             plural = 'entity_profile_details'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -2599,8 +2503,6 @@ class EntityProfileDetailWriter(Writer):
 
 
 class ErrorHandlingWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(ErrorHandlingWriter, self).__init__()
@@ -2624,7 +2526,7 @@ class ErrorHandlingWriter(Writer):
         if plural is None:
             plural = 'error_handlings'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -2634,8 +2536,6 @@ class ErrorHandlingWriter(Writer):
 
 
 class EventWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(EventWriter, self).__init__()
@@ -2699,7 +2599,7 @@ class EventWriter(Writer):
         if plural is None:
             plural = 'events'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -2709,8 +2609,6 @@ class EventWriter(Writer):
 
 
 class EventSubscriptionWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(EventSubscriptionWriter, self).__init__()
@@ -2748,7 +2646,7 @@ class EventSubscriptionWriter(Writer):
         if plural is None:
             plural = 'event_subscriptions'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -2758,8 +2656,6 @@ class EventSubscriptionWriter(Writer):
 
 
 class ExternalComputeResourceWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(ExternalComputeResourceWriter, self).__init__()
@@ -2797,7 +2693,7 @@ class ExternalComputeResourceWriter(Writer):
         if plural is None:
             plural = 'external_compute_resources'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -2807,8 +2703,6 @@ class ExternalComputeResourceWriter(Writer):
 
 
 class ExternalDiscoveredHostWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(ExternalDiscoveredHostWriter, self).__init__()
@@ -2848,7 +2742,7 @@ class ExternalDiscoveredHostWriter(Writer):
         if plural is None:
             plural = 'external_discovered_hosts'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -2858,8 +2752,6 @@ class ExternalDiscoveredHostWriter(Writer):
 
 
 class ExternalHostWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(ExternalHostWriter, self).__init__()
@@ -2893,7 +2785,7 @@ class ExternalHostWriter(Writer):
         if plural is None:
             plural = 'external_hosts'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -2903,8 +2795,6 @@ class ExternalHostWriter(Writer):
 
 
 class ExternalHostGroupWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(ExternalHostGroupWriter, self).__init__()
@@ -2944,7 +2834,7 @@ class ExternalHostGroupWriter(Writer):
         if plural is None:
             plural = 'external_host_groups'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -2954,8 +2844,6 @@ class ExternalHostGroupWriter(Writer):
 
 
 class ExternalHostProviderWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(ExternalHostProviderWriter, self).__init__()
@@ -3007,7 +2895,7 @@ class ExternalHostProviderWriter(Writer):
         if plural is None:
             plural = 'external_host_providers'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -3017,8 +2905,6 @@ class ExternalHostProviderWriter(Writer):
 
 
 class ExternalNetworkProviderConfigurationWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(ExternalNetworkProviderConfigurationWriter, self).__init__()
@@ -3052,7 +2938,7 @@ class ExternalNetworkProviderConfigurationWriter(Writer):
         if plural is None:
             plural = 'external_network_provider_configurations'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -3062,8 +2948,6 @@ class ExternalNetworkProviderConfigurationWriter(Writer):
 
 
 class ExternalProviderWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(ExternalProviderWriter, self).__init__()
@@ -3105,7 +2989,7 @@ class ExternalProviderWriter(Writer):
         if plural is None:
             plural = 'external_providers'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -3115,8 +2999,6 @@ class ExternalProviderWriter(Writer):
 
 
 class ExternalTemplateImportWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(ExternalTemplateImportWriter, self).__init__()
@@ -3154,7 +3036,7 @@ class ExternalTemplateImportWriter(Writer):
         if plural is None:
             plural = 'external_template_imports'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -3164,8 +3046,6 @@ class ExternalTemplateImportWriter(Writer):
 
 
 class ExternalVmImportWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(ExternalVmImportWriter, self).__init__()
@@ -3213,7 +3093,7 @@ class ExternalVmImportWriter(Writer):
         if plural is None:
             plural = 'external_vm_imports'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -3223,8 +3103,6 @@ class ExternalVmImportWriter(Writer):
 
 
 class FaultWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(FaultWriter, self).__init__()
@@ -3250,7 +3128,7 @@ class FaultWriter(Writer):
         if plural is None:
             plural = 'faults'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -3260,8 +3138,6 @@ class FaultWriter(Writer):
 
 
 class FencingPolicyWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(FencingPolicyWriter, self).__init__()
@@ -3293,7 +3169,7 @@ class FencingPolicyWriter(Writer):
         if plural is None:
             plural = 'fencing_policies'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -3303,8 +3179,6 @@ class FencingPolicyWriter(Writer):
 
 
 class FileWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(FileWriter, self).__init__()
@@ -3340,7 +3214,7 @@ class FileWriter(Writer):
         if plural is None:
             plural = 'files'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -3350,8 +3224,6 @@ class FileWriter(Writer):
 
 
 class FilterWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(FilterWriter, self).__init__()
@@ -3385,7 +3257,7 @@ class FilterWriter(Writer):
         if plural is None:
             plural = 'filters'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -3395,8 +3267,6 @@ class FilterWriter(Writer):
 
 
 class FloppyWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(FloppyWriter, self).__init__()
@@ -3436,7 +3306,7 @@ class FloppyWriter(Writer):
         if plural is None:
             plural = 'floppies'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -3446,8 +3316,6 @@ class FloppyWriter(Writer):
 
 
 class FopStatisticWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(FopStatisticWriter, self).__init__()
@@ -3473,7 +3341,7 @@ class FopStatisticWriter(Writer):
         if plural is None:
             plural = 'fop_statistics'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -3483,8 +3351,6 @@ class FopStatisticWriter(Writer):
 
 
 class GlusterBrickWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(GlusterBrickWriter, self).__init__()
@@ -3546,7 +3412,7 @@ class GlusterBrickWriter(Writer):
         if plural is None:
             plural = 'bricks'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -3556,8 +3422,6 @@ class GlusterBrickWriter(Writer):
 
 
 class GlusterBrickAdvancedDetailsWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(GlusterBrickAdvancedDetailsWriter, self).__init__()
@@ -3609,7 +3473,7 @@ class GlusterBrickAdvancedDetailsWriter(Writer):
         if plural is None:
             plural = 'gluster_brick_advanced_detailss'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -3619,8 +3483,6 @@ class GlusterBrickAdvancedDetailsWriter(Writer):
 
 
 class GlusterBrickMemoryInfoWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(GlusterBrickMemoryInfoWriter, self).__init__()
@@ -3644,7 +3506,7 @@ class GlusterBrickMemoryInfoWriter(Writer):
         if plural is None:
             plural = 'gluster_brick_memory_infos'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -3654,8 +3516,6 @@ class GlusterBrickMemoryInfoWriter(Writer):
 
 
 class GlusterClientWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(GlusterClientWriter, self).__init__()
@@ -3685,7 +3545,7 @@ class GlusterClientWriter(Writer):
         if plural is None:
             plural = 'gluster_clients'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -3695,8 +3555,6 @@ class GlusterClientWriter(Writer):
 
 
 class GlusterHookWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(GlusterHookWriter, self).__init__()
@@ -3746,7 +3604,7 @@ class GlusterHookWriter(Writer):
         if plural is None:
             plural = 'gluster_hooks'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -3756,8 +3614,6 @@ class GlusterHookWriter(Writer):
 
 
 class GlusterMemoryPoolWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(GlusterMemoryPoolWriter, self).__init__()
@@ -3803,7 +3659,7 @@ class GlusterMemoryPoolWriter(Writer):
         if plural is None:
             plural = 'memory_pools'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -3813,8 +3669,6 @@ class GlusterMemoryPoolWriter(Writer):
 
 
 class GlusterServerHookWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(GlusterServerHookWriter, self).__init__()
@@ -3852,7 +3706,7 @@ class GlusterServerHookWriter(Writer):
         if plural is None:
             plural = 'server_hooks'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -3862,8 +3716,6 @@ class GlusterServerHookWriter(Writer):
 
 
 class GlusterVolumeWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(GlusterVolumeWriter, self).__init__()
@@ -3919,7 +3771,7 @@ class GlusterVolumeWriter(Writer):
         if plural is None:
             plural = 'gluster_volumes'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -3929,8 +3781,6 @@ class GlusterVolumeWriter(Writer):
 
 
 class GlusterVolumeProfileDetailsWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(GlusterVolumeProfileDetailsWriter, self).__init__()
@@ -3964,7 +3814,7 @@ class GlusterVolumeProfileDetailsWriter(Writer):
         if plural is None:
             plural = 'gluster_volume_profile_detailss'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -3974,8 +3824,6 @@ class GlusterVolumeProfileDetailsWriter(Writer):
 
 
 class GracePeriodWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(GracePeriodWriter, self).__init__()
@@ -3999,7 +3847,7 @@ class GracePeriodWriter(Writer):
         if plural is None:
             plural = 'grace_periods'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -4009,8 +3857,6 @@ class GracePeriodWriter(Writer):
 
 
 class GraphicsConsoleWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(GraphicsConsoleWriter, self).__init__()
@@ -4054,7 +3900,7 @@ class GraphicsConsoleWriter(Writer):
         if plural is None:
             plural = 'graphics_consoles'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -4064,8 +3910,6 @@ class GraphicsConsoleWriter(Writer):
 
 
 class GroupWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(GroupWriter, self).__init__()
@@ -4107,7 +3951,7 @@ class GroupWriter(Writer):
         if plural is None:
             plural = 'groups'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -4117,8 +3961,6 @@ class GroupWriter(Writer):
 
 
 class GuestOperatingSystemWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(GuestOperatingSystemWriter, self).__init__()
@@ -4152,7 +3994,7 @@ class GuestOperatingSystemWriter(Writer):
         if plural is None:
             plural = 'guest_operating_systems'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -4162,8 +4004,6 @@ class GuestOperatingSystemWriter(Writer):
 
 
 class HardwareInformationWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(HardwareInformationWriter, self).__init__()
@@ -4203,7 +4043,7 @@ class HardwareInformationWriter(Writer):
         if plural is None:
             plural = 'hardware_informations'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -4213,8 +4053,6 @@ class HardwareInformationWriter(Writer):
 
 
 class HighAvailabilityWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(HighAvailabilityWriter, self).__init__()
@@ -4240,7 +4078,7 @@ class HighAvailabilityWriter(Writer):
         if plural is None:
             plural = 'high_availabilities'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -4250,8 +4088,6 @@ class HighAvailabilityWriter(Writer):
 
 
 class HookWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(HookWriter, self).__init__()
@@ -4287,7 +4123,7 @@ class HookWriter(Writer):
         if plural is None:
             plural = 'hooks'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -4297,8 +4133,6 @@ class HookWriter(Writer):
 
 
 class HostWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(HostWriter, self).__init__()
@@ -4436,7 +4270,7 @@ class HostWriter(Writer):
         if plural is None:
             plural = 'hosts'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -4446,8 +4280,6 @@ class HostWriter(Writer):
 
 
 class HostCpuUnitWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(HostCpuUnitWriter, self).__init__()
@@ -4487,7 +4319,7 @@ class HostCpuUnitWriter(Writer):
         if plural is None:
             plural = 'host_cpu_units'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -4497,8 +4329,6 @@ class HostCpuUnitWriter(Writer):
 
 
 class HostDeviceWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(HostDeviceWriter, self).__init__()
@@ -4552,7 +4382,7 @@ class HostDeviceWriter(Writer):
         if plural is None:
             plural = 'host_devices'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -4562,8 +4392,6 @@ class HostDeviceWriter(Writer):
 
 
 class HostDevicePassthroughWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(HostDevicePassthroughWriter, self).__init__()
@@ -4587,7 +4415,7 @@ class HostDevicePassthroughWriter(Writer):
         if plural is None:
             plural = 'host_device_passthroughs'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -4597,8 +4425,6 @@ class HostDevicePassthroughWriter(Writer):
 
 
 class HostNicWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(HostNicWriter, self).__init__()
@@ -4676,7 +4502,7 @@ class HostNicWriter(Writer):
         if plural is None:
             plural = 'host_nics'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -4686,8 +4512,6 @@ class HostNicWriter(Writer):
 
 
 class HostNicVirtualFunctionsConfigurationWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(HostNicVirtualFunctionsConfigurationWriter, self).__init__()
@@ -4715,7 +4539,7 @@ class HostNicVirtualFunctionsConfigurationWriter(Writer):
         if plural is None:
             plural = 'host_nic_virtual_functions_configurations'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -4725,8 +4549,6 @@ class HostNicVirtualFunctionsConfigurationWriter(Writer):
 
 
 class HostStorageWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(HostStorageWriter, self).__init__()
@@ -4794,7 +4616,7 @@ class HostStorageWriter(Writer):
         if plural is None:
             plural = 'host_storages'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -4804,8 +4626,6 @@ class HostStorageWriter(Writer):
 
 
 class HostedEngineWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(HostedEngineWriter, self).__init__()
@@ -4837,7 +4657,7 @@ class HostedEngineWriter(Writer):
         if plural is None:
             plural = 'hosted_engines'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -4847,8 +4667,6 @@ class HostedEngineWriter(Writer):
 
 
 class IconWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(IconWriter, self).__init__()
@@ -4882,7 +4700,7 @@ class IconWriter(Writer):
         if plural is None:
             plural = 'icons'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -4892,8 +4710,6 @@ class IconWriter(Writer):
 
 
 class IdentifiedWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(IdentifiedWriter, self).__init__()
@@ -4923,7 +4739,7 @@ class IdentifiedWriter(Writer):
         if plural is None:
             plural = 'identifieds'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -4933,8 +4749,6 @@ class IdentifiedWriter(Writer):
 
 
 class ImageWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(ImageWriter, self).__init__()
@@ -4970,7 +4784,7 @@ class ImageWriter(Writer):
         if plural is None:
             plural = 'images'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -4980,8 +4794,6 @@ class ImageWriter(Writer):
 
 
 class ImageTransferWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(ImageTransferWriter, self).__init__()
@@ -5041,7 +4853,7 @@ class ImageTransferWriter(Writer):
         if plural is None:
             plural = 'image_transfers'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -5051,8 +4863,6 @@ class ImageTransferWriter(Writer):
 
 
 class InitializationWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(InitializationWriter, self).__init__()
@@ -5118,7 +4928,7 @@ class InitializationWriter(Writer):
         if plural is None:
             plural = 'initializations'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -5128,8 +4938,6 @@ class InitializationWriter(Writer):
 
 
 class InstanceTypeWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(InstanceTypeWriter, self).__init__()
@@ -5275,7 +5083,7 @@ class InstanceTypeWriter(Writer):
         if plural is None:
             plural = 'instance_types'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -5285,8 +5093,6 @@ class InstanceTypeWriter(Writer):
 
 
 class IoWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(IoWriter, self).__init__()
@@ -5310,7 +5116,7 @@ class IoWriter(Writer):
         if plural is None:
             plural = 'ios'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -5320,8 +5126,6 @@ class IoWriter(Writer):
 
 
 class IpWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(IpWriter, self).__init__()
@@ -5351,7 +5155,7 @@ class IpWriter(Writer):
         if plural is None:
             plural = 'ips'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -5361,8 +5165,6 @@ class IpWriter(Writer):
 
 
 class IpAddressAssignmentWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(IpAddressAssignmentWriter, self).__init__()
@@ -5388,7 +5190,7 @@ class IpAddressAssignmentWriter(Writer):
         if plural is None:
             plural = 'ip_address_assignments'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -5398,8 +5200,6 @@ class IpAddressAssignmentWriter(Writer):
 
 
 class IscsiBondWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(IscsiBondWriter, self).__init__()
@@ -5435,7 +5235,7 @@ class IscsiBondWriter(Writer):
         if plural is None:
             plural = 'iscsi_bonds'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -5445,8 +5245,6 @@ class IscsiBondWriter(Writer):
 
 
 class IscsiDetailsWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(IscsiDetailsWriter, self).__init__()
@@ -5502,7 +5300,7 @@ class IscsiDetailsWriter(Writer):
         if plural is None:
             plural = 'iscsi_detailss'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -5512,8 +5310,6 @@ class IscsiDetailsWriter(Writer):
 
 
 class JobWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(JobWriter, self).__init__()
@@ -5559,7 +5355,7 @@ class JobWriter(Writer):
         if plural is None:
             plural = 'jobs'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -5569,8 +5365,6 @@ class JobWriter(Writer):
 
 
 class KatelloErratumWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(KatelloErratumWriter, self).__init__()
@@ -5618,7 +5412,7 @@ class KatelloErratumWriter(Writer):
         if plural is None:
             plural = 'katello_errata'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -5628,8 +5422,6 @@ class KatelloErratumWriter(Writer):
 
 
 class KernelWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(KernelWriter, self).__init__()
@@ -5653,7 +5445,7 @@ class KernelWriter(Writer):
         if plural is None:
             plural = 'kernels'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -5663,8 +5455,6 @@ class KernelWriter(Writer):
 
 
 class KsmWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(KsmWriter, self).__init__()
@@ -5690,7 +5480,7 @@ class KsmWriter(Writer):
         if plural is None:
             plural = 'ksms'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -5700,8 +5490,6 @@ class KsmWriter(Writer):
 
 
 class LinkLayerDiscoveryProtocolElementWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(LinkLayerDiscoveryProtocolElementWriter, self).__init__()
@@ -5739,7 +5527,7 @@ class LinkLayerDiscoveryProtocolElementWriter(Writer):
         if plural is None:
             plural = 'link_layer_discovery_protocol_elements'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -5749,8 +5537,6 @@ class LinkLayerDiscoveryProtocolElementWriter(Writer):
 
 
 class LogicalUnitWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(LogicalUnitWriter, self).__init__()
@@ -5810,7 +5596,7 @@ class LogicalUnitWriter(Writer):
         if plural is None:
             plural = 'logical_units'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -5820,8 +5606,6 @@ class LogicalUnitWriter(Writer):
 
 
 class MDevTypeWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(MDevTypeWriter, self).__init__()
@@ -5851,7 +5635,7 @@ class MDevTypeWriter(Writer):
         if plural is None:
             plural = 'm_dev_types'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -5861,8 +5645,6 @@ class MDevTypeWriter(Writer):
 
 
 class MacWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(MacWriter, self).__init__()
@@ -5886,7 +5668,7 @@ class MacWriter(Writer):
         if plural is None:
             plural = 'macs'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -5896,8 +5678,6 @@ class MacWriter(Writer):
 
 
 class MacPoolWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(MacPoolWriter, self).__init__()
@@ -5935,7 +5715,7 @@ class MacPoolWriter(Writer):
         if plural is None:
             plural = 'mac_pools'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -5945,8 +5725,6 @@ class MacPoolWriter(Writer):
 
 
 class MemoryOverCommitWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(MemoryOverCommitWriter, self).__init__()
@@ -5970,7 +5748,7 @@ class MemoryOverCommitWriter(Writer):
         if plural is None:
             plural = 'memory_over_commits'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -5980,8 +5758,6 @@ class MemoryOverCommitWriter(Writer):
 
 
 class MemoryPolicyWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(MemoryPolicyWriter, self).__init__()
@@ -6013,7 +5789,7 @@ class MemoryPolicyWriter(Writer):
         if plural is None:
             plural = 'memory_policies'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -6023,8 +5799,6 @@ class MemoryPolicyWriter(Writer):
 
 
 class MethodWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(MethodWriter, self).__init__()
@@ -6048,7 +5822,7 @@ class MethodWriter(Writer):
         if plural is None:
             plural = 'methods'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -6058,8 +5832,6 @@ class MethodWriter(Writer):
 
 
 class MigrationBandwidthWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(MigrationBandwidthWriter, self).__init__()
@@ -6085,7 +5857,7 @@ class MigrationBandwidthWriter(Writer):
         if plural is None:
             plural = 'migration_bandwidths'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -6095,8 +5867,6 @@ class MigrationBandwidthWriter(Writer):
 
 
 class MigrationOptionsWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(MigrationOptionsWriter, self).__init__()
@@ -6132,7 +5902,7 @@ class MigrationOptionsWriter(Writer):
         if plural is None:
             plural = 'migration_optionss'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -6142,8 +5912,6 @@ class MigrationOptionsWriter(Writer):
 
 
 class MigrationPolicyWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(MigrationPolicyWriter, self).__init__()
@@ -6173,7 +5941,7 @@ class MigrationPolicyWriter(Writer):
         if plural is None:
             plural = 'migration_policies'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -6183,8 +5951,6 @@ class MigrationPolicyWriter(Writer):
 
 
 class NetworkWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(NetworkWriter, self).__init__()
@@ -6258,7 +6024,7 @@ class NetworkWriter(Writer):
         if plural is None:
             plural = 'networks'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -6268,8 +6034,6 @@ class NetworkWriter(Writer):
 
 
 class NetworkAttachmentWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(NetworkAttachmentWriter, self).__init__()
@@ -6317,7 +6081,7 @@ class NetworkAttachmentWriter(Writer):
         if plural is None:
             plural = 'network_attachments'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -6327,8 +6091,6 @@ class NetworkAttachmentWriter(Writer):
 
 
 class NetworkConfigurationWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(NetworkConfigurationWriter, self).__init__()
@@ -6354,7 +6116,7 @@ class NetworkConfigurationWriter(Writer):
         if plural is None:
             plural = 'network_configurations'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -6364,8 +6126,6 @@ class NetworkConfigurationWriter(Writer):
 
 
 class NetworkFilterWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(NetworkFilterWriter, self).__init__()
@@ -6397,7 +6157,7 @@ class NetworkFilterWriter(Writer):
         if plural is None:
             plural = 'network_filters'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -6407,8 +6167,6 @@ class NetworkFilterWriter(Writer):
 
 
 class NetworkFilterParameterWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(NetworkFilterParameterWriter, self).__init__()
@@ -6442,7 +6200,7 @@ class NetworkFilterParameterWriter(Writer):
         if plural is None:
             plural = 'network_filter_parameters'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -6452,8 +6210,6 @@ class NetworkFilterParameterWriter(Writer):
 
 
 class NetworkLabelWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(NetworkLabelWriter, self).__init__()
@@ -6487,7 +6243,7 @@ class NetworkLabelWriter(Writer):
         if plural is None:
             plural = 'network_labels'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -6497,8 +6253,6 @@ class NetworkLabelWriter(Writer):
 
 
 class NfsProfileDetailWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(NfsProfileDetailWriter, self).__init__()
@@ -6524,7 +6278,7 @@ class NfsProfileDetailWriter(Writer):
         if plural is None:
             plural = 'nfs_profile_details'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -6534,8 +6288,6 @@ class NfsProfileDetailWriter(Writer):
 
 
 class NicWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(NicWriter, self).__init__()
@@ -6605,7 +6357,7 @@ class NicWriter(Writer):
         if plural is None:
             plural = 'nics'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -6615,8 +6367,6 @@ class NicWriter(Writer):
 
 
 class NicConfigurationWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(NicConfigurationWriter, self).__init__()
@@ -6650,7 +6400,7 @@ class NicConfigurationWriter(Writer):
         if plural is None:
             plural = 'nic_configurations'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -6660,8 +6410,6 @@ class NicConfigurationWriter(Writer):
 
 
 class NumaNodeWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(NumaNodeWriter, self).__init__()
@@ -6703,7 +6451,7 @@ class NumaNodeWriter(Writer):
         if plural is None:
             plural = 'host_numa_nodes'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -6713,8 +6461,6 @@ class NumaNodeWriter(Writer):
 
 
 class NumaNodePinWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(NumaNodePinWriter, self).__init__()
@@ -6742,7 +6488,7 @@ class NumaNodePinWriter(Writer):
         if plural is None:
             plural = 'numa_node_pins'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -6752,8 +6498,6 @@ class NumaNodePinWriter(Writer):
 
 
 class OpenStackImageWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(OpenStackImageWriter, self).__init__()
@@ -6785,7 +6529,7 @@ class OpenStackImageWriter(Writer):
         if plural is None:
             plural = 'openstack_images'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -6795,8 +6539,6 @@ class OpenStackImageWriter(Writer):
 
 
 class OpenStackImageProviderWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(OpenStackImageProviderWriter, self).__init__()
@@ -6844,7 +6586,7 @@ class OpenStackImageProviderWriter(Writer):
         if plural is None:
             plural = 'openstack_image_providers'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -6854,8 +6596,6 @@ class OpenStackImageProviderWriter(Writer):
 
 
 class OpenStackNetworkWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(OpenStackNetworkWriter, self).__init__()
@@ -6887,7 +6627,7 @@ class OpenStackNetworkWriter(Writer):
         if plural is None:
             plural = 'openstack_networks'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -6897,8 +6637,6 @@ class OpenStackNetworkWriter(Writer):
 
 
 class OpenStackNetworkProviderWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(OpenStackNetworkProviderWriter, self).__init__()
@@ -6968,7 +6706,7 @@ class OpenStackNetworkProviderWriter(Writer):
         if plural is None:
             plural = 'openstack_network_providers'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -6978,8 +6716,6 @@ class OpenStackNetworkProviderWriter(Writer):
 
 
 class OpenStackProviderWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(OpenStackProviderWriter, self).__init__()
@@ -7023,7 +6759,7 @@ class OpenStackProviderWriter(Writer):
         if plural is None:
             plural = 'open_stack_providers'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -7033,8 +6769,6 @@ class OpenStackProviderWriter(Writer):
 
 
 class OpenStackSubnetWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(OpenStackSubnetWriter, self).__init__()
@@ -7078,7 +6812,7 @@ class OpenStackSubnetWriter(Writer):
         if plural is None:
             plural = 'openstack_subnets'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -7088,8 +6822,6 @@ class OpenStackSubnetWriter(Writer):
 
 
 class OpenStackVolumeProviderWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(OpenStackVolumeProviderWriter, self).__init__()
@@ -7141,7 +6873,7 @@ class OpenStackVolumeProviderWriter(Writer):
         if plural is None:
             plural = 'openstack_volume_providers'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -7151,8 +6883,6 @@ class OpenStackVolumeProviderWriter(Writer):
 
 
 class OpenStackVolumeTypeWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(OpenStackVolumeTypeWriter, self).__init__()
@@ -7186,7 +6916,7 @@ class OpenStackVolumeTypeWriter(Writer):
         if plural is None:
             plural = 'open_stack_volume_types'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -7196,8 +6926,6 @@ class OpenStackVolumeTypeWriter(Writer):
 
 
 class OpenstackVolumeAuthenticationKeyWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(OpenstackVolumeAuthenticationKeyWriter, self).__init__()
@@ -7237,7 +6965,7 @@ class OpenstackVolumeAuthenticationKeyWriter(Writer):
         if plural is None:
             plural = 'openstack_volume_authentication_keys'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -7247,8 +6975,6 @@ class OpenstackVolumeAuthenticationKeyWriter(Writer):
 
 
 class OperatingSystemWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(OperatingSystemWriter, self).__init__()
@@ -7286,7 +7012,7 @@ class OperatingSystemWriter(Writer):
         if plural is None:
             plural = 'oss'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -7296,8 +7022,6 @@ class OperatingSystemWriter(Writer):
 
 
 class OperatingSystemInfoWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(OperatingSystemInfoWriter, self).__init__()
@@ -7335,7 +7059,7 @@ class OperatingSystemInfoWriter(Writer):
         if plural is None:
             plural = 'operation_systems'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -7345,8 +7069,6 @@ class OperatingSystemInfoWriter(Writer):
 
 
 class OptionWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(OptionWriter, self).__init__()
@@ -7374,7 +7096,7 @@ class OptionWriter(Writer):
         if plural is None:
             plural = 'options'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -7384,8 +7106,6 @@ class OptionWriter(Writer):
 
 
 class PackageWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(PackageWriter, self).__init__()
@@ -7409,7 +7129,7 @@ class PackageWriter(Writer):
         if plural is None:
             plural = 'packages'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -7419,8 +7139,6 @@ class PackageWriter(Writer):
 
 
 class PayloadWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(PayloadWriter, self).__init__()
@@ -7448,7 +7166,7 @@ class PayloadWriter(Writer):
         if plural is None:
             plural = 'payloads'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -7458,8 +7176,6 @@ class PayloadWriter(Writer):
 
 
 class PermissionWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(PermissionWriter, self).__init__()
@@ -7511,7 +7227,7 @@ class PermissionWriter(Writer):
         if plural is None:
             plural = 'permissions'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -7521,8 +7237,6 @@ class PermissionWriter(Writer):
 
 
 class PermitWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(PermitWriter, self).__init__()
@@ -7556,7 +7270,7 @@ class PermitWriter(Writer):
         if plural is None:
             plural = 'permits'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -7566,8 +7280,6 @@ class PermitWriter(Writer):
 
 
 class PmProxyWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(PmProxyWriter, self).__init__()
@@ -7591,7 +7303,7 @@ class PmProxyWriter(Writer):
         if plural is None:
             plural = 'pm_proxies'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -7601,8 +7313,6 @@ class PmProxyWriter(Writer):
 
 
 class PortMirroringWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(PortMirroringWriter, self).__init__()
@@ -7624,7 +7334,7 @@ class PortMirroringWriter(Writer):
         if plural is None:
             plural = 'port_mirrorings'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -7634,8 +7344,6 @@ class PortMirroringWriter(Writer):
 
 
 class PowerManagementWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(PowerManagementWriter, self).__init__()
@@ -7679,7 +7387,7 @@ class PowerManagementWriter(Writer):
         if plural is None:
             plural = 'power_managements'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -7689,8 +7397,6 @@ class PowerManagementWriter(Writer):
 
 
 class ProductWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(ProductWriter, self).__init__()
@@ -7720,7 +7426,7 @@ class ProductWriter(Writer):
         if plural is None:
             plural = 'products'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -7730,8 +7436,6 @@ class ProductWriter(Writer):
 
 
 class ProductInfoWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(ProductInfoWriter, self).__init__()
@@ -7761,7 +7465,7 @@ class ProductInfoWriter(Writer):
         if plural is None:
             plural = 'product_infos'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -7771,8 +7475,6 @@ class ProductInfoWriter(Writer):
 
 
 class ProfileDetailWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(ProfileDetailWriter, self).__init__()
@@ -7804,7 +7506,7 @@ class ProfileDetailWriter(Writer):
         if plural is None:
             plural = 'profile_details'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -7814,8 +7516,6 @@ class ProfileDetailWriter(Writer):
 
 
 class PropertyWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(PropertyWriter, self).__init__()
@@ -7841,7 +7541,7 @@ class PropertyWriter(Writer):
         if plural is None:
             plural = 'properties'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -7851,8 +7551,6 @@ class PropertyWriter(Writer):
 
 
 class ProxyTicketWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(ProxyTicketWriter, self).__init__()
@@ -7876,7 +7574,7 @@ class ProxyTicketWriter(Writer):
         if plural is None:
             plural = 'proxy_tickets'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -7886,8 +7584,6 @@ class ProxyTicketWriter(Writer):
 
 
 class QosWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(QosWriter, self).__init__()
@@ -7953,7 +7649,7 @@ class QosWriter(Writer):
         if plural is None:
             plural = 'qoss'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -7963,8 +7659,6 @@ class QosWriter(Writer):
 
 
 class QuotaWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(QuotaWriter, self).__init__()
@@ -8016,7 +7710,7 @@ class QuotaWriter(Writer):
         if plural is None:
             plural = 'quotas'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -8026,8 +7720,6 @@ class QuotaWriter(Writer):
 
 
 class QuotaClusterLimitWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(QuotaClusterLimitWriter, self).__init__()
@@ -8069,7 +7761,7 @@ class QuotaClusterLimitWriter(Writer):
         if plural is None:
             plural = 'quota_cluster_limits'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -8079,8 +7771,6 @@ class QuotaClusterLimitWriter(Writer):
 
 
 class QuotaStorageLimitWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(QuotaStorageLimitWriter, self).__init__()
@@ -8118,7 +7808,7 @@ class QuotaStorageLimitWriter(Writer):
         if plural is None:
             plural = 'quota_storage_limits'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -8128,8 +7818,6 @@ class QuotaStorageLimitWriter(Writer):
 
 
 class RangeWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(RangeWriter, self).__init__()
@@ -8155,7 +7843,7 @@ class RangeWriter(Writer):
         if plural is None:
             plural = 'ranges'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -8165,8 +7853,6 @@ class RangeWriter(Writer):
 
 
 class RateWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(RateWriter, self).__init__()
@@ -8192,7 +7878,7 @@ class RateWriter(Writer):
         if plural is None:
             plural = 'rates'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -8202,8 +7888,6 @@ class RateWriter(Writer):
 
 
 class RegistrationAffinityGroupMappingWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(RegistrationAffinityGroupMappingWriter, self).__init__()
@@ -8229,7 +7913,7 @@ class RegistrationAffinityGroupMappingWriter(Writer):
         if plural is None:
             plural = 'registration_affinity_group_mappings'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -8239,8 +7923,6 @@ class RegistrationAffinityGroupMappingWriter(Writer):
 
 
 class RegistrationAffinityLabelMappingWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(RegistrationAffinityLabelMappingWriter, self).__init__()
@@ -8266,7 +7948,7 @@ class RegistrationAffinityLabelMappingWriter(Writer):
         if plural is None:
             plural = 'registration_affinity_label_mappings'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -8276,8 +7958,6 @@ class RegistrationAffinityLabelMappingWriter(Writer):
 
 
 class RegistrationClusterMappingWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(RegistrationClusterMappingWriter, self).__init__()
@@ -8303,7 +7983,7 @@ class RegistrationClusterMappingWriter(Writer):
         if plural is None:
             plural = 'registration_cluster_mappings'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -8313,8 +7993,6 @@ class RegistrationClusterMappingWriter(Writer):
 
 
 class RegistrationConfigurationWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(RegistrationConfigurationWriter, self).__init__()
@@ -8350,7 +8028,7 @@ class RegistrationConfigurationWriter(Writer):
         if plural is None:
             plural = 'registration_configurations'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -8360,8 +8038,6 @@ class RegistrationConfigurationWriter(Writer):
 
 
 class RegistrationDomainMappingWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(RegistrationDomainMappingWriter, self).__init__()
@@ -8387,7 +8063,7 @@ class RegistrationDomainMappingWriter(Writer):
         if plural is None:
             plural = 'registration_domain_mappings'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -8397,8 +8073,6 @@ class RegistrationDomainMappingWriter(Writer):
 
 
 class RegistrationLunMappingWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(RegistrationLunMappingWriter, self).__init__()
@@ -8424,7 +8098,7 @@ class RegistrationLunMappingWriter(Writer):
         if plural is None:
             plural = 'registration_lun_mappings'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -8434,8 +8108,6 @@ class RegistrationLunMappingWriter(Writer):
 
 
 class RegistrationRoleMappingWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(RegistrationRoleMappingWriter, self).__init__()
@@ -8461,7 +8133,7 @@ class RegistrationRoleMappingWriter(Writer):
         if plural is None:
             plural = 'registration_role_mappings'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -8471,8 +8143,6 @@ class RegistrationRoleMappingWriter(Writer):
 
 
 class RegistrationVnicProfileMappingWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(RegistrationVnicProfileMappingWriter, self).__init__()
@@ -8498,7 +8168,7 @@ class RegistrationVnicProfileMappingWriter(Writer):
         if plural is None:
             plural = 'registration_vnic_profile_mappings'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -8508,8 +8178,6 @@ class RegistrationVnicProfileMappingWriter(Writer):
 
 
 class ReportedConfigurationWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(ReportedConfigurationWriter, self).__init__()
@@ -8539,7 +8207,7 @@ class ReportedConfigurationWriter(Writer):
         if plural is None:
             plural = 'reported_configurations'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -8549,8 +8217,6 @@ class ReportedConfigurationWriter(Writer):
 
 
 class ReportedDeviceWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(ReportedDeviceWriter, self).__init__()
@@ -8588,7 +8254,7 @@ class ReportedDeviceWriter(Writer):
         if plural is None:
             plural = 'reported_devices'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -8598,8 +8264,6 @@ class ReportedDeviceWriter(Writer):
 
 
 class RngDeviceWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(RngDeviceWriter, self).__init__()
@@ -8625,7 +8289,7 @@ class RngDeviceWriter(Writer):
         if plural is None:
             plural = 'rng_devices'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -8635,8 +8299,6 @@ class RngDeviceWriter(Writer):
 
 
 class RoleWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(RoleWriter, self).__init__()
@@ -8674,7 +8336,7 @@ class RoleWriter(Writer):
         if plural is None:
             plural = 'roles'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -8684,8 +8346,6 @@ class RoleWriter(Writer):
 
 
 class SchedulingPolicyWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(SchedulingPolicyWriter, self).__init__()
@@ -8727,7 +8387,7 @@ class SchedulingPolicyWriter(Writer):
         if plural is None:
             plural = 'scheduling_policies'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -8737,8 +8397,6 @@ class SchedulingPolicyWriter(Writer):
 
 
 class SchedulingPolicyUnitWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(SchedulingPolicyUnitWriter, self).__init__()
@@ -8776,7 +8434,7 @@ class SchedulingPolicyUnitWriter(Writer):
         if plural is None:
             plural = 'scheduling_policy_units'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -8786,8 +8444,6 @@ class SchedulingPolicyUnitWriter(Writer):
 
 
 class SeLinuxWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(SeLinuxWriter, self).__init__()
@@ -8811,7 +8467,7 @@ class SeLinuxWriter(Writer):
         if plural is None:
             plural = 'se_linuxs'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -8821,8 +8477,6 @@ class SeLinuxWriter(Writer):
 
 
 class SerialNumberWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(SerialNumberWriter, self).__init__()
@@ -8848,7 +8502,7 @@ class SerialNumberWriter(Writer):
         if plural is None:
             plural = 'serial_numbers'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -8858,8 +8512,6 @@ class SerialNumberWriter(Writer):
 
 
 class SessionWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(SessionWriter, self).__init__()
@@ -8899,7 +8551,7 @@ class SessionWriter(Writer):
         if plural is None:
             plural = 'sessions'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -8909,8 +8561,6 @@ class SessionWriter(Writer):
 
 
 class SkipIfConnectivityBrokenWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(SkipIfConnectivityBrokenWriter, self).__init__()
@@ -8936,7 +8586,7 @@ class SkipIfConnectivityBrokenWriter(Writer):
         if plural is None:
             plural = 'skip_if_connectivity_brokens'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -8946,8 +8596,6 @@ class SkipIfConnectivityBrokenWriter(Writer):
 
 
 class SkipIfSdActiveWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(SkipIfSdActiveWriter, self).__init__()
@@ -8971,7 +8619,7 @@ class SkipIfSdActiveWriter(Writer):
         if plural is None:
             plural = 'skip_if_sd_actives'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -8981,8 +8629,6 @@ class SkipIfSdActiveWriter(Writer):
 
 
 class SnapshotWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(SnapshotWriter, self).__init__()
@@ -9196,7 +8842,7 @@ class SnapshotWriter(Writer):
         if plural is None:
             plural = 'snapshots'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -9206,8 +8852,6 @@ class SnapshotWriter(Writer):
 
 
 class SpecialObjectsWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(SpecialObjectsWriter, self).__init__()
@@ -9233,7 +8877,7 @@ class SpecialObjectsWriter(Writer):
         if plural is None:
             plural = 'special_objectss'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -9243,8 +8887,6 @@ class SpecialObjectsWriter(Writer):
 
 
 class SpmWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(SpmWriter, self).__init__()
@@ -9270,7 +8912,7 @@ class SpmWriter(Writer):
         if plural is None:
             plural = 'spms'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -9280,8 +8922,6 @@ class SpmWriter(Writer):
 
 
 class SshWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(SshWriter, self).__init__()
@@ -9321,7 +8961,7 @@ class SshWriter(Writer):
         if plural is None:
             plural = 'sshs'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -9331,8 +8971,6 @@ class SshWriter(Writer):
 
 
 class SshPublicKeyWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(SshPublicKeyWriter, self).__init__()
@@ -9366,7 +9004,7 @@ class SshPublicKeyWriter(Writer):
         if plural is None:
             plural = 'ssh_public_keys'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -9376,8 +9014,6 @@ class SshPublicKeyWriter(Writer):
 
 
 class SsoWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(SsoWriter, self).__init__()
@@ -9401,7 +9037,7 @@ class SsoWriter(Writer):
         if plural is None:
             plural = 'ssos'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -9411,8 +9047,6 @@ class SsoWriter(Writer):
 
 
 class StatisticWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(StatisticWriter, self).__init__()
@@ -9468,7 +9102,7 @@ class StatisticWriter(Writer):
         if plural is None:
             plural = 'statistics'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -9478,8 +9112,6 @@ class StatisticWriter(Writer):
 
 
 class StepWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(StepWriter, self).__init__()
@@ -9533,7 +9165,7 @@ class StepWriter(Writer):
         if plural is None:
             plural = 'steps'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -9543,8 +9175,6 @@ class StepWriter(Writer):
 
 
 class StorageConnectionWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(StorageConnectionWriter, self).__init__()
@@ -9604,7 +9234,7 @@ class StorageConnectionWriter(Writer):
         if plural is None:
             plural = 'storage_connections'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -9614,8 +9244,6 @@ class StorageConnectionWriter(Writer):
 
 
 class StorageConnectionExtensionWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(StorageConnectionExtensionWriter, self).__init__()
@@ -9653,7 +9281,7 @@ class StorageConnectionExtensionWriter(Writer):
         if plural is None:
             plural = 'storage_connection_extensions'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -9663,8 +9291,6 @@ class StorageConnectionExtensionWriter(Writer):
 
 
 class StorageDomainWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(StorageDomainWriter, self).__init__()
@@ -9754,7 +9380,7 @@ class StorageDomainWriter(Writer):
         if plural is None:
             plural = 'storage_domains'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -9764,8 +9390,6 @@ class StorageDomainWriter(Writer):
 
 
 class StorageDomainLeaseWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(StorageDomainLeaseWriter, self).__init__()
@@ -9789,7 +9413,7 @@ class StorageDomainLeaseWriter(Writer):
         if plural is None:
             plural = 'storage_domain_leases'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -9799,8 +9423,6 @@ class StorageDomainLeaseWriter(Writer):
 
 
 class SystemOptionWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(SystemOptionWriter, self).__init__()
@@ -9832,7 +9454,7 @@ class SystemOptionWriter(Writer):
         if plural is None:
             plural = 'system_options'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -9842,8 +9464,6 @@ class SystemOptionWriter(Writer):
 
 
 class SystemOptionValueWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(SystemOptionValueWriter, self).__init__()
@@ -9869,7 +9489,7 @@ class SystemOptionValueWriter(Writer):
         if plural is None:
             plural = 'system_option_values'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -9879,8 +9499,6 @@ class SystemOptionValueWriter(Writer):
 
 
 class TagWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(TagWriter, self).__init__()
@@ -9922,7 +9540,7 @@ class TagWriter(Writer):
         if plural is None:
             plural = 'tags'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -9932,8 +9550,6 @@ class TagWriter(Writer):
 
 
 class TemplateWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(TemplateWriter, self).__init__()
@@ -10079,7 +9695,7 @@ class TemplateWriter(Writer):
         if plural is None:
             plural = 'templates'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -10089,8 +9705,6 @@ class TemplateWriter(Writer):
 
 
 class TemplateVersionWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(TemplateVersionWriter, self).__init__()
@@ -10118,7 +9732,7 @@ class TemplateVersionWriter(Writer):
         if plural is None:
             plural = 'template_versions'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -10128,8 +9742,6 @@ class TemplateVersionWriter(Writer):
 
 
 class TicketWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(TicketWriter, self).__init__()
@@ -10155,7 +9767,7 @@ class TicketWriter(Writer):
         if plural is None:
             plural = 'tickets'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -10165,8 +9777,6 @@ class TicketWriter(Writer):
 
 
 class TimeZoneWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(TimeZoneWriter, self).__init__()
@@ -10192,7 +9802,7 @@ class TimeZoneWriter(Writer):
         if plural is None:
             plural = 'time_zones'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -10202,8 +9812,6 @@ class TimeZoneWriter(Writer):
 
 
 class TransparentHugePagesWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(TransparentHugePagesWriter, self).__init__()
@@ -10227,7 +9835,7 @@ class TransparentHugePagesWriter(Writer):
         if plural is None:
             plural = 'transparent_huge_pagess'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -10237,8 +9845,6 @@ class TransparentHugePagesWriter(Writer):
 
 
 class UnmanagedNetworkWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(UnmanagedNetworkWriter, self).__init__()
@@ -10272,7 +9878,7 @@ class UnmanagedNetworkWriter(Writer):
         if plural is None:
             plural = 'unmanaged_networks'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -10282,8 +9888,6 @@ class UnmanagedNetworkWriter(Writer):
 
 
 class UsbWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(UsbWriter, self).__init__()
@@ -10309,7 +9913,7 @@ class UsbWriter(Writer):
         if plural is None:
             plural = 'usbs'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -10319,8 +9923,6 @@ class UsbWriter(Writer):
 
 
 class UserWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(UserWriter, self).__init__()
@@ -10384,7 +9986,7 @@ class UserWriter(Writer):
         if plural is None:
             plural = 'users'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -10394,8 +9996,6 @@ class UserWriter(Writer):
 
 
 class UserOptionWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(UserOptionWriter, self).__init__()
@@ -10429,7 +10029,7 @@ class UserOptionWriter(Writer):
         if plural is None:
             plural = 'user_options'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -10439,8 +10039,6 @@ class UserOptionWriter(Writer):
 
 
 class ValueWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(ValueWriter, self).__init__()
@@ -10466,7 +10064,7 @@ class ValueWriter(Writer):
         if plural is None:
             plural = 'values'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -10476,8 +10074,6 @@ class ValueWriter(Writer):
 
 
 class VcpuPinWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(VcpuPinWriter, self).__init__()
@@ -10503,7 +10099,7 @@ class VcpuPinWriter(Writer):
         if plural is None:
             plural = 'vcpu_pins'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -10513,8 +10109,6 @@ class VcpuPinWriter(Writer):
 
 
 class VendorWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(VendorWriter, self).__init__()
@@ -10544,7 +10138,7 @@ class VendorWriter(Writer):
         if plural is None:
             plural = 'vendors'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -10554,8 +10148,6 @@ class VendorWriter(Writer):
 
 
 class VersionWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(VersionWriter, self).__init__()
@@ -10595,7 +10187,7 @@ class VersionWriter(Writer):
         if plural is None:
             plural = 'versions'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -10605,8 +10197,6 @@ class VersionWriter(Writer):
 
 
 class VirtioScsiWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(VirtioScsiWriter, self).__init__()
@@ -10630,7 +10220,7 @@ class VirtioScsiWriter(Writer):
         if plural is None:
             plural = 'virtio_scsis'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -10640,8 +10230,6 @@ class VirtioScsiWriter(Writer):
 
 
 class VirtualNumaNodeWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(VirtualNumaNodeWriter, self).__init__()
@@ -10689,7 +10277,7 @@ class VirtualNumaNodeWriter(Writer):
         if plural is None:
             plural = 'vm_numa_nodes'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -10699,8 +10287,6 @@ class VirtualNumaNodeWriter(Writer):
 
 
 class VlanWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(VlanWriter, self).__init__()
@@ -10724,7 +10310,7 @@ class VlanWriter(Writer):
         if plural is None:
             plural = 'vlans'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -10734,8 +10320,6 @@ class VlanWriter(Writer):
 
 
 class VmWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(VmWriter, self).__init__()
@@ -10937,7 +10521,7 @@ class VmWriter(Writer):
         if plural is None:
             plural = 'vms'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -10947,8 +10531,6 @@ class VmWriter(Writer):
 
 
 class VmBaseWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(VmBaseWriter, self).__init__()
@@ -11072,7 +10654,7 @@ class VmBaseWriter(Writer):
         if plural is None:
             plural = 'vm_bases'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -11082,8 +10664,6 @@ class VmBaseWriter(Writer):
 
 
 class VmMediatedDeviceWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(VmMediatedDeviceWriter, self).__init__()
@@ -11123,7 +10703,7 @@ class VmMediatedDeviceWriter(Writer):
         if plural is None:
             plural = 'vm_mediated_devices'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -11133,8 +10713,6 @@ class VmMediatedDeviceWriter(Writer):
 
 
 class VmPlacementPolicyWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(VmPlacementPolicyWriter, self).__init__()
@@ -11160,7 +10738,7 @@ class VmPlacementPolicyWriter(Writer):
         if plural is None:
             plural = 'vm_placement_policies'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -11170,8 +10748,6 @@ class VmPlacementPolicyWriter(Writer):
 
 
 class VmPoolWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(VmPoolWriter, self).__init__()
@@ -11233,7 +10809,7 @@ class VmPoolWriter(Writer):
         if plural is None:
             plural = 'vm_pools'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -11243,8 +10819,6 @@ class VmPoolWriter(Writer):
 
 
 class VmSummaryWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(VmSummaryWriter, self).__init__()
@@ -11272,7 +10846,7 @@ class VmSummaryWriter(Writer):
         if plural is None:
             plural = 'vm_summaries'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -11282,8 +10856,6 @@ class VmSummaryWriter(Writer):
 
 
 class VnicPassThroughWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(VnicPassThroughWriter, self).__init__()
@@ -11307,7 +10879,7 @@ class VnicPassThroughWriter(Writer):
         if plural is None:
             plural = 'vnic_pass_throughs'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -11317,8 +10889,6 @@ class VnicPassThroughWriter(Writer):
 
 
 class VnicProfileWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(VnicProfileWriter, self).__init__()
@@ -11366,7 +10936,7 @@ class VnicProfileWriter(Writer):
         if plural is None:
             plural = 'vnic_profiles'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -11376,8 +10946,6 @@ class VnicProfileWriter(Writer):
 
 
 class VnicProfileMappingWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(VnicProfileMappingWriter, self).__init__()
@@ -11405,7 +10973,7 @@ class VnicProfileMappingWriter(Writer):
         if plural is None:
             plural = 'vnic_profile_mappings'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -11415,8 +10983,6 @@ class VnicProfileMappingWriter(Writer):
 
 
 class VolumeGroupWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(VolumeGroupWriter, self).__init__()
@@ -11444,7 +11010,7 @@ class VolumeGroupWriter(Writer):
         if plural is None:
             plural = 'volume_groups'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -11454,8 +11020,6 @@ class VolumeGroupWriter(Writer):
 
 
 class WatchdogWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(WatchdogWriter, self).__init__()
@@ -11497,7 +11061,7 @@ class WatchdogWriter(Writer):
         if plural is None:
             plural = 'watchdogs'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)
@@ -11507,8 +11071,6 @@ class WatchdogWriter(Writer):
 
 
 class WeightWriter(Writer):
-    """
-    """
 
     def __init__(self):
         super(WeightWriter, self).__init__()
@@ -11544,7 +11106,7 @@ class WeightWriter(Writer):
         if plural is None:
             plural = 'weights'
         writer.write_start(plural)
-        if type(objs) is List:
+        if isinstance(objs, List):
             href = objs.href
             if href is not None:
                 writer.write_attribute('href', href)

@@ -20,6 +20,7 @@ import datetime
 import time
 import io
 import re
+import six
 
 from ovirtsdk4 import Error
 from ovirtsdk4 import xml
@@ -303,7 +304,8 @@ class Reader(object):
             # In Python 3 str is a list of 16 bits characters, so it
             # needs to be converted to an array of bytes, using UTF-8,
             # before trying to parse it.
-            source = source.encode('utf-8')
+            if six.PY3:
+                source = source.encode('utf-8')
             cursor = xml.XmlReader(io.BytesIO(source))
         elif isinstance(source, bytes):
             cursor = xml.XmlReader(io.BytesIO(source))

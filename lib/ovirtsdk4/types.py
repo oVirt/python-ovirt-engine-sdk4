@@ -22,8 +22,6 @@ from ovirtsdk4 import Struct
 
 
 class AffinityRule(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -81,8 +79,6 @@ class AffinityRule(Struct):
 
 
 class AgentConfiguration(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -189,8 +185,6 @@ class AgentConfiguration(Struct):
 
 
 class Api(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -301,8 +295,6 @@ class Api(Struct):
 
 
 class ApiSummary(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -380,8 +372,6 @@ class ApiSummary(Struct):
 
 
 class ApiSummaryItem(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -423,8 +413,6 @@ class ApiSummaryItem(Struct):
 
 
 class Bios(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -468,8 +456,6 @@ class Bios(Struct):
 
 
 class BlockStatistic(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -495,8 +481,6 @@ class BlockStatistic(Struct):
 
 
 class Bonding(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -572,8 +556,6 @@ class Bonding(Struct):
 
 
 class Boot(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -599,8 +581,6 @@ class Boot(Struct):
 
 
 class BootMenu(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -626,8 +606,6 @@ class BootMenu(Struct):
 
 
 class CloudInit(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -751,8 +729,6 @@ class CloudInit(Struct):
 
 
 class Configuration(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -795,8 +771,6 @@ class Configuration(Struct):
 
 
 class Console(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -822,8 +796,6 @@ class Console(Struct):
 
 
 class Core(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -865,8 +837,6 @@ class Core(Struct):
 
 
 class Cpu(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -1024,8 +994,6 @@ class Cpu(Struct):
 
 
 class CpuTopology(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -1083,8 +1051,6 @@ class CpuTopology(Struct):
 
 
 class CpuTune(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -1110,8 +1076,6 @@ class CpuTune(Struct):
 
 
 class CpuType(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -1170,8 +1134,6 @@ class CpuType(Struct):
 
 
 class CustomProperty(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -1229,8 +1191,6 @@ class CustomProperty(Struct):
 
 
 class Display(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -1482,8 +1442,6 @@ class Display(Struct):
 
 
 class Dns(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -1525,8 +1483,6 @@ class Dns(Struct):
 
 
 class DnsResolverConfiguration(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -1552,8 +1508,6 @@ class DnsResolverConfiguration(Struct):
 
 
 class DynamicCpu(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -1597,8 +1551,6 @@ class DynamicCpu(Struct):
 
 
 class EntityProfileDetail(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -1624,8 +1576,6 @@ class EntityProfileDetail(Struct):
 
 
 class ErrorHandling(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -1652,8 +1602,6 @@ class ErrorHandling(Struct):
 
 
 class ExternalTemplateImport(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -1797,8 +1745,6 @@ class ExternalTemplateImport(Struct):
 
 
 class ExternalVmImport(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -2024,8 +1970,6 @@ class ExternalVmImport(Struct):
 
 
 class Fault(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -2067,8 +2011,6 @@ class Fault(Struct):
 
 
 class FencingPolicy(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -2160,8 +2102,6 @@ class FencingPolicy(Struct):
 
 
 class FopStatistic(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -2203,8 +2143,6 @@ class FopStatistic(Struct):
 
 
 class GlusterBrickMemoryInfo(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -2230,8 +2168,6 @@ class GlusterBrickMemoryInfo(Struct):
 
 
 class GlusterClient(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -2305,8 +2241,6 @@ class GlusterClient(Struct):
 
 
 class GracePeriod(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -2332,8 +2266,6 @@ class GracePeriod(Struct):
 
 
 class GuestOperatingSystem(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -2441,8 +2373,6 @@ class GuestOperatingSystem(Struct):
 
 
 class HardwareInformation(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -2564,8 +2494,6 @@ class HardwareInformation(Struct):
 
 
 class HighAvailability(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -2607,8 +2535,6 @@ class HighAvailability(Struct):
 
 
 class HostDevicePassthrough(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -2634,8 +2560,6 @@ class HostDevicePassthrough(Struct):
 
 
 class HostNicVirtualFunctionsConfiguration(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -2693,8 +2617,6 @@ class HostNicVirtualFunctionsConfiguration(Struct):
 
 
 class HostedEngine(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -2784,8 +2706,6 @@ class HostedEngine(Struct):
 
 
 class Identified(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -2859,8 +2779,6 @@ class Identified(Struct):
 
 
 class Image(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -2928,8 +2846,6 @@ class Image(Identified):
 
 
 class ImageTransfer(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -3196,8 +3112,6 @@ class ImageTransfer(Identified):
 
 
 class Initialization(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -3562,8 +3476,6 @@ class Initialization(Struct):
 
 
 class Io(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -3589,8 +3501,6 @@ class Io(Struct):
 
 
 class Ip(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -3665,8 +3575,6 @@ class Ip(Struct):
 
 
 class IpAddressAssignment(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -3710,8 +3618,6 @@ class IpAddressAssignment(Struct):
 
 
 class IscsiBond(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -3778,8 +3684,6 @@ class IscsiBond(Identified):
 
 
 class IscsiDetails(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -4061,8 +3965,6 @@ class IscsiDetails(Struct):
 
 
 class Job(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -4210,8 +4112,6 @@ class Job(Identified):
 
 
 class KatelloErratum(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -4375,8 +4275,6 @@ class KatelloErratum(Identified):
 
 
 class Kernel(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -4403,8 +4301,6 @@ class Kernel(Struct):
 
 
 class Ksm(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -4446,8 +4342,6 @@ class Ksm(Struct):
 
 
 class LinkLayerDiscoveryProtocolElement(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -4529,8 +4423,6 @@ class LinkLayerDiscoveryProtocolElement(Identified):
 
 
 class LogicalUnit(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -4845,8 +4737,6 @@ class LogicalUnit(Struct):
 
 
 class MDevType(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -4920,8 +4810,6 @@ class MDevType(Struct):
 
 
 class Mac(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -4947,8 +4835,6 @@ class Mac(Struct):
 
 
 class MacPool(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -5030,8 +4916,6 @@ class MacPool(Identified):
 
 
 class MemoryOverCommit(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -5057,8 +4941,6 @@ class MemoryOverCommit(Struct):
 
 
 class MemoryPolicy(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -5150,8 +5032,6 @@ class MemoryPolicy(Struct):
 
 
 class Method(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -5178,8 +5058,6 @@ class Method(Struct):
 
 
 class MigrationBandwidth(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -5222,8 +5100,6 @@ class MigrationBandwidth(Struct):
 
 
 class MigrationOptions(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -5351,8 +5227,6 @@ class MigrationOptions(Struct):
 
 
 class MigrationPolicy(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -5371,8 +5245,6 @@ class MigrationPolicy(Identified):
 
 
 class Network(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -5719,8 +5591,6 @@ class Network(Identified):
 
 
 class NetworkAttachment(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -5887,8 +5757,6 @@ class NetworkAttachment(Identified):
 
 
 class NetworkConfiguration(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -5931,8 +5799,6 @@ class NetworkConfiguration(Struct):
 
 
 class NetworkFilter(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -5967,8 +5833,6 @@ class NetworkFilter(Identified):
 
 
 class NetworkFilterParameter(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -6019,8 +5883,6 @@ class NetworkFilterParameter(Identified):
 
 
 class NetworkLabel(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -6072,8 +5934,6 @@ class NetworkLabel(Identified):
 
 
 class NfsProfileDetail(EntityProfileDetail):
-    """
-    """
 
     def __init__(
         self,
@@ -6101,8 +5961,6 @@ class NfsProfileDetail(EntityProfileDetail):
 
 
 class NicConfiguration(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -6212,8 +6070,6 @@ class NicConfiguration(Struct):
 
 
 class NumaNode(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -6329,8 +6185,6 @@ class NumaNode(Identified):
 
 
 class NumaNodePin(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -6389,8 +6243,6 @@ class NumaNodePin(Struct):
 
 
 class OpenStackImage(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -6425,8 +6277,6 @@ class OpenStackImage(Identified):
 
 
 class OpenStackNetwork(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -6461,8 +6311,6 @@ class OpenStackNetwork(Identified):
 
 
 class OpenStackSubnet(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -6561,8 +6409,6 @@ class OpenStackSubnet(Identified):
 
 
 class OpenStackVolumeType(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -6613,8 +6459,6 @@ class OpenStackVolumeType(Identified):
 
 
 class OpenstackVolumeAuthenticationKey(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -6714,8 +6558,6 @@ class OpenstackVolumeAuthenticationKey(Identified):
 
 
 class OperatingSystem(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -6855,8 +6697,6 @@ class OperatingSystem(Struct):
 
 
 class OperatingSystemInfo(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -6942,8 +6782,6 @@ class OperatingSystemInfo(Identified):
 
 
 class Option(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -7001,8 +6839,6 @@ class Option(Struct):
 
 
 class Package(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -7028,8 +6864,6 @@ class Package(Struct):
 
 
 class Payload(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -7088,8 +6922,6 @@ class Payload(Struct):
 
 
 class Permission(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -7294,8 +7126,6 @@ class Permission(Identified):
 
 
 class Permit(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -7346,8 +7176,6 @@ class Permit(Identified):
 
 
 class PmProxy(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -7374,8 +7202,6 @@ class PmProxy(Struct):
 
 
 class PortMirroring(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -7386,8 +7212,6 @@ class PortMirroring(Struct):
 
 
 class PowerManagement(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -7574,8 +7398,6 @@ class PowerManagement(Struct):
 
 
 class Product(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -7594,8 +7416,6 @@ class Product(Identified):
 
 
 class ProductInfo(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -7670,8 +7490,6 @@ class ProductInfo(Struct):
 
 
 class ProfileDetail(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -7761,8 +7579,6 @@ class ProfileDetail(Struct):
 
 
 class Property(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -7804,8 +7620,6 @@ class Property(Struct):
 
 
 class ProxyTicket(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -7831,8 +7645,6 @@ class ProxyTicket(Struct):
 
 
 class Qos(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -8140,8 +7952,6 @@ class Qos(Identified):
 
 
 class Quota(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -8336,8 +8146,6 @@ class Quota(Identified):
 
 
 class QuotaClusterLimit(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -8453,8 +8261,6 @@ class QuotaClusterLimit(Identified):
 
 
 class QuotaStorageLimit(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -8538,8 +8344,6 @@ class QuotaStorageLimit(Identified):
 
 
 class Range(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -8581,8 +8385,6 @@ class Range(Struct):
 
 
 class Rate(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -8624,8 +8426,6 @@ class Rate(Struct):
 
 
 class RegistrationAffinityGroupMapping(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -8669,8 +8469,6 @@ class RegistrationAffinityGroupMapping(Struct):
 
 
 class RegistrationAffinityLabelMapping(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -8714,8 +8512,6 @@ class RegistrationAffinityLabelMapping(Struct):
 
 
 class RegistrationClusterMapping(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -8759,8 +8555,6 @@ class RegistrationClusterMapping(Struct):
 
 
 class RegistrationConfiguration(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -8882,8 +8676,6 @@ class RegistrationConfiguration(Struct):
 
 
 class RegistrationDomainMapping(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -8927,8 +8719,6 @@ class RegistrationDomainMapping(Struct):
 
 
 class RegistrationLunMapping(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -8972,8 +8762,6 @@ class RegistrationLunMapping(Struct):
 
 
 class RegistrationRoleMapping(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -9017,8 +8805,6 @@ class RegistrationRoleMapping(Struct):
 
 
 class RegistrationVnicProfileMapping(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -9062,8 +8848,6 @@ class RegistrationVnicProfileMapping(Struct):
 
 
 class ReportedConfiguration(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -9137,8 +8921,6 @@ class ReportedConfiguration(Struct):
 
 
 class ReportedDevice(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -9223,8 +9005,6 @@ class ReportedDevice(Identified):
 
 
 class RngDevice(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -9268,8 +9048,6 @@ class RngDevice(Struct):
 
 
 class Role(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -9352,8 +9130,6 @@ class Role(Identified):
 
 
 class SchedulingPolicy(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -9467,8 +9243,6 @@ class SchedulingPolicy(Identified):
 
 
 class SchedulingPolicyUnit(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -9551,8 +9325,6 @@ class SchedulingPolicyUnit(Identified):
 
 
 class SeLinux(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -9579,8 +9351,6 @@ class SeLinux(Struct):
 
 
 class SerialNumber(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -9623,8 +9393,6 @@ class SerialNumber(Struct):
 
 
 class Session(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -9725,8 +9493,6 @@ class Session(Identified):
 
 
 class SkipIfConnectivityBroken(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -9768,8 +9534,6 @@ class SkipIfConnectivityBroken(Struct):
 
 
 class SkipIfSdActive(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -9795,8 +9559,6 @@ class SkipIfSdActive(Struct):
 
 
 class SpecialObjects(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -9840,8 +9602,6 @@ class SpecialObjects(Struct):
 
 
 class Spm(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -9884,8 +9644,6 @@ class Spm(Struct):
 
 
 class Ssh(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -9985,8 +9743,6 @@ class Ssh(Identified):
 
 
 class SshPublicKey(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -10037,8 +9793,6 @@ class SshPublicKey(Identified):
 
 
 class Sso(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -10064,8 +9818,6 @@ class Sso(Struct):
 
 
 class Statistic(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -10303,8 +10055,6 @@ class Statistic(Identified):
 
 
 class Step(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -10520,8 +10270,6 @@ class Step(Identified):
 
 
 class StorageConnection(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -10783,8 +10531,6 @@ class StorageConnection(Identified):
 
 
 class StorageConnectionExtension(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -10867,8 +10613,6 @@ class StorageConnectionExtension(Identified):
 
 
 class StorageDomain(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -11373,8 +11117,6 @@ class StorageDomain(Identified):
 
 
 class StorageDomainLease(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -11401,8 +11143,6 @@ class StorageDomainLease(Struct):
 
 
 class SystemOption(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -11436,8 +11176,6 @@ class SystemOption(Identified):
 
 
 class SystemOptionValue(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -11479,8 +11217,6 @@ class SystemOptionValue(Struct):
 
 
 class Tag(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -11600,8 +11336,6 @@ class Tag(Identified):
 
 
 class TemplateVersion(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -11660,8 +11394,6 @@ class TemplateVersion(Struct):
 
 
 class Ticket(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -11703,8 +11435,6 @@ class Ticket(Struct):
 
 
 class TimeZone(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -11746,8 +11476,6 @@ class TimeZone(Struct):
 
 
 class TransparentHugePages(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -11773,8 +11501,6 @@ class TransparentHugePages(Struct):
 
 
 class UnmanagedNetwork(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -11826,8 +11552,6 @@ class UnmanagedNetwork(Identified):
 
 
 class Usb(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -11870,8 +11594,6 @@ class Usb(Struct):
 
 
 class User(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -12162,8 +11884,6 @@ class User(Identified):
 
 
 class UserOption(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -12214,8 +11934,6 @@ class UserOption(Identified):
 
 
 class Value(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -12257,8 +11975,6 @@ class Value(Struct):
 
 
 class VcpuPin(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -12300,8 +12016,6 @@ class VcpuPin(Struct):
 
 
 class Vendor(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -12320,8 +12034,6 @@ class Vendor(Identified):
 
 
 class Version(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -12419,8 +12131,6 @@ class Version(Identified):
 
 
 class VirtioScsi(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -12446,8 +12156,6 @@ class VirtioScsi(Struct):
 
 
 class VirtualNumaNode(NumaNode):
-    """
-    """
 
     def __init__(
         self,
@@ -12527,8 +12235,6 @@ class VirtualNumaNode(NumaNode):
 
 
 class Vlan(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -12554,8 +12260,6 @@ class Vlan(Struct):
 
 
 class VmBase(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -13355,8 +13059,6 @@ class VmBase(Identified):
 
 
 class VmPlacementPolicy(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -13399,8 +13101,6 @@ class VmPlacementPolicy(Struct):
 
 
 class VmPool(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -13681,8 +13381,6 @@ class VmPool(Identified):
 
 
 class VmSummary(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -13740,8 +13438,6 @@ class VmSummary(Struct):
 
 
 class VnicPassThrough(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -13768,8 +13464,6 @@ class VnicPassThrough(Struct):
 
 
 class VnicProfile(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -13936,8 +13630,6 @@ class VnicProfile(Identified):
 
 
 class VnicProfileMapping(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -13996,8 +13688,6 @@ class VnicProfileMapping(Struct):
 
 
 class VolumeGroup(Struct):
-    """
-    """
 
     def __init__(
         self,
@@ -14055,8 +13745,6 @@ class VolumeGroup(Struct):
 
 
 class Weight(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -14124,8 +13812,6 @@ class Weight(Identified):
 
 
 class Action(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -15662,8 +15348,6 @@ class Action(Identified):
 
 
 class AffinityGroup(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -15860,8 +15544,6 @@ class AffinityGroup(Identified):
 
 
 class AffinityLabel(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -15943,8 +15625,6 @@ class AffinityLabel(Identified):
 
 
 class Agent(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -16123,8 +15803,6 @@ class Agent(Identified):
 
 
 class Application(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -16159,8 +15837,6 @@ class Application(Identified):
 
 
 class AuthorizedKey(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -16211,8 +15887,6 @@ class AuthorizedKey(Identified):
 
 
 class Backup(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -16378,8 +16052,6 @@ class Backup(Identified):
 
 
 class Balance(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -16431,8 +16103,6 @@ class Balance(Identified):
 
 
 class Bookmark(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -16466,8 +16136,6 @@ class Bookmark(Identified):
 
 
 class BrickProfileDetail(EntityProfileDetail):
-    """
-    """
 
     def __init__(
         self,
@@ -16496,8 +16164,6 @@ class BrickProfileDetail(EntityProfileDetail):
 
 
 class Certificate(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -16563,8 +16229,6 @@ class Certificate(Identified):
 
 
 class Checkpoint(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -16664,8 +16328,6 @@ class Checkpoint(Identified):
 
 
 class Cluster(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -17421,8 +17083,6 @@ class Cluster(Identified):
 
 
 class ClusterFeature(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -17457,8 +17117,6 @@ class ClusterFeature(Identified):
 
 
 class ClusterLevel(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -17524,8 +17182,6 @@ class ClusterLevel(Identified):
 
 
 class CpuProfile(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -17593,8 +17249,6 @@ class CpuProfile(Identified):
 
 
 class DataCenter(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -17841,8 +17495,6 @@ class DataCenter(Identified):
 
 
 class Device(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -17927,8 +17579,6 @@ class Device(Identified):
 
 
 class Disk(Device):
-    """
-    """
 
     def __init__(
         self,
@@ -18529,8 +18179,6 @@ class Disk(Device):
 
 
 class DiskAttachment(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -18712,8 +18360,6 @@ class DiskAttachment(Identified):
 
 
 class DiskProfile(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -18781,8 +18427,6 @@ class DiskProfile(Identified):
 
 
 class DiskSnapshot(Disk):
-    """
-    """
 
     def __init__(
         self,
@@ -18912,8 +18556,6 @@ class DiskSnapshot(Disk):
 
 
 class Domain(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -18980,8 +18622,6 @@ class Domain(Identified):
 
 
 class Event(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -19279,8 +18919,6 @@ class Event(Identified):
 
 
 class EventSubscription(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -19365,8 +19003,6 @@ class EventSubscription(Identified):
 
 
 class ExternalComputeResource(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -19449,8 +19085,6 @@ class ExternalComputeResource(Identified):
 
 
 class ExternalDiscoveredHost(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -19549,8 +19183,6 @@ class ExternalDiscoveredHost(Identified):
 
 
 class ExternalHost(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -19601,8 +19233,6 @@ class ExternalHost(Identified):
 
 
 class ExternalHostGroup(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -19701,8 +19331,6 @@ class ExternalHostGroup(Identified):
 
 
 class ExternalNetworkProviderConfiguration(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -19754,8 +19382,6 @@ class ExternalNetworkProviderConfiguration(Identified):
 
 
 class ExternalProvider(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -19869,8 +19495,6 @@ class ExternalProvider(Identified):
 
 
 class File(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -19937,8 +19561,6 @@ class File(Identified):
 
 
 class Filter(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -19989,8 +19611,6 @@ class Filter(Identified):
 
 
 class Floppy(Device):
-    """
-    """
 
     def __init__(
         self,
@@ -20033,8 +19653,6 @@ class Floppy(Device):
 
 
 class GlusterBrickAdvancedDetails(Device):
-    """
-    """
 
     def __init__(
         self,
@@ -20172,8 +19790,6 @@ class GlusterBrickAdvancedDetails(Device):
 
 
 class GlusterHook(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -20355,8 +19971,6 @@ class GlusterHook(Identified):
 
 
 class GlusterMemoryPool(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -20502,8 +20116,6 @@ class GlusterMemoryPool(Identified):
 
 
 class GlusterServerHook(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -20588,8 +20200,6 @@ class GlusterServerHook(Identified):
 
 
 class GlusterVolume(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -20786,8 +20396,6 @@ class GlusterVolume(Identified):
 
 
 class GlusterVolumeProfileDetails(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -20837,8 +20445,6 @@ class GlusterVolumeProfileDetails(Identified):
 
 
 class GraphicsConsole(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -20972,8 +20578,6 @@ class GraphicsConsole(Identified):
 
 
 class Group(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -21088,8 +20692,6 @@ class Group(Identified):
 
 
 class Hook(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -21156,8 +20758,6 @@ class Hook(Identified):
 
 
 class Host(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -22065,8 +21665,6 @@ class Host(Identified):
 
 
 class HostCpuUnit(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -22164,8 +21762,6 @@ class HostCpuUnit(Identified):
 
 
 class HostDevice(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -22381,8 +21977,6 @@ class HostDevice(Identified):
 
 
 class HostNic(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -22797,8 +22391,6 @@ class HostNic(Identified):
 
 
 class HostStorage(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -23124,8 +22716,6 @@ class HostStorage(Identified):
 
 
 class Icon(Identified):
-    """
-    """
 
     def __init__(
         self,
@@ -23175,8 +22765,6 @@ class Icon(Identified):
 
 
 class Nic(Device):
-    """
-    """
 
     def __init__(
         self,
@@ -23463,8 +23051,6 @@ class Nic(Device):
 
 
 class OpenStackProvider(ExternalProvider):
-    """
-    """
 
     def __init__(
         self,
@@ -23510,8 +23096,6 @@ class OpenStackProvider(ExternalProvider):
 
 
 class OpenStackVolumeProvider(OpenStackProvider):
-    """
-    """
 
     def __init__(
         self,
@@ -23608,8 +23192,6 @@ class OpenStackVolumeProvider(OpenStackProvider):
 
 
 class Template(VmBase):
-    """
-    """
 
     def __init__(
         self,
@@ -23900,8 +23482,6 @@ class Template(VmBase):
 
 
 class Vm(VmBase):
-    """
-    """
 
     def __init__(
         self,
@@ -24648,8 +24228,6 @@ class Vm(VmBase):
 
 
 class VmMediatedDevice(Device):
-    """
-    """
 
     def __init__(
         self,
@@ -24691,8 +24269,6 @@ class VmMediatedDevice(Device):
 
 
 class Watchdog(Device):
-    """
-    """
 
     def __init__(
         self,
@@ -24752,8 +24328,6 @@ class Watchdog(Device):
 
 
 class Cdrom(Device):
-    """
-    """
 
     def __init__(
         self,
@@ -24796,8 +24370,6 @@ class Cdrom(Device):
 
 
 class ExternalHostProvider(ExternalProvider):
-    """
-    """
 
     def __init__(
         self,
@@ -24907,8 +24479,6 @@ class ExternalHostProvider(ExternalProvider):
 
 
 class GlusterBrick(GlusterBrickAdvancedDetails):
-    """
-    """
 
     def __init__(
         self,
@@ -25030,8 +24600,6 @@ class GlusterBrick(GlusterBrickAdvancedDetails):
 
 
 class InstanceType(Template):
-    """
-    """
 
     def __init__(
         self,
@@ -25166,8 +24734,6 @@ class InstanceType(Template):
 
 
 class OpenStackImageProvider(OpenStackProvider):
-    """
-    """
 
     def __init__(
         self,
@@ -25231,8 +24797,6 @@ class OpenStackImageProvider(OpenStackProvider):
 
 
 class OpenStackNetworkProvider(OpenStackProvider):
-    """
-    """
 
     def __init__(
         self,
@@ -25475,8 +25039,6 @@ class OpenStackNetworkProvider(OpenStackProvider):
 
 
 class Snapshot(Vm):
-    """
-    """
 
     def __init__(
         self,
@@ -25766,8 +25328,6 @@ class Snapshot(Vm):
 
 @unique
 class AccessProtocol(Enum):
-    """
-    """
     CIFS = 'cifs'
     GLUSTER = 'gluster'
     NFS = 'nfs'
@@ -25781,8 +25341,6 @@ class AccessProtocol(Enum):
 
 @unique
 class Architecture(Enum):
-    """
-    """
     AARCH64 = 'aarch64'
     LOONGARCH64 = 'loongarch64'
     PPC64 = 'ppc64'
@@ -25799,8 +25357,6 @@ class Architecture(Enum):
 
 @unique
 class AutoNumaStatus(Enum):
-    """
-    """
     DISABLE = 'disable'
     ENABLE = 'enable'
     UNKNOWN = 'unknown'
@@ -25814,8 +25370,6 @@ class AutoNumaStatus(Enum):
 
 @unique
 class AutoPinningPolicy(Enum):
-    """
-    """
     ADJUST = 'adjust'
     DISABLED = 'disabled'
     EXISTING = 'existing'
@@ -25829,8 +25383,6 @@ class AutoPinningPolicy(Enum):
 
 @unique
 class BackupPhase(Enum):
-    """
-    """
     FAILED = 'failed'
     FINALIZING = 'finalizing'
     INITIALIZING = 'initializing'
@@ -25847,8 +25399,6 @@ class BackupPhase(Enum):
 
 @unique
 class BiosType(Enum):
-    """
-    """
     CLUSTER_DEFAULT = 'cluster_default'
     I440FX_SEA_BIOS = 'i440fx_sea_bios'
     Q35_OVMF = 'q35_ovmf'
@@ -25864,8 +25414,6 @@ class BiosType(Enum):
 
 @unique
 class BootDevice(Enum):
-    """
-    """
     CDROM = 'cdrom'
     HD = 'hd'
     NETWORK = 'network'
@@ -25879,8 +25427,6 @@ class BootDevice(Enum):
 
 @unique
 class BootProtocol(Enum):
-    """
-    """
     AUTOCONF = 'autoconf'
     DHCP = 'dhcp'
     NONE = 'none'
@@ -25896,8 +25442,6 @@ class BootProtocol(Enum):
 
 @unique
 class CheckpointState(Enum):
-    """
-    """
     CREATED = 'created'
     INVALID = 'invalid'
 
@@ -25910,8 +25454,6 @@ class CheckpointState(Enum):
 
 @unique
 class CloudInitNetworkProtocol(Enum):
-    """
-    """
     ENI = 'eni'
     OPENSTACK_METADATA = 'openstack_metadata'
 
@@ -25924,8 +25466,6 @@ class CloudInitNetworkProtocol(Enum):
 
 @unique
 class ClusterUpgradeAction(Enum):
-    """
-    """
     FINISH = 'finish'
     START = 'start'
     UPDATE_PROGRESS = 'update_progress'
@@ -25939,8 +25479,6 @@ class ClusterUpgradeAction(Enum):
 
 @unique
 class ConfigurationType(Enum):
-    """
-    """
     OVA = 'ova'
     OVF = 'ovf'
 
@@ -25953,8 +25491,6 @@ class ConfigurationType(Enum):
 
 @unique
 class CpuMode(Enum):
-    """
-    """
     CUSTOM = 'custom'
     HOST_MODEL = 'host_model'
     HOST_PASSTHROUGH = 'host_passthrough'
@@ -25968,8 +25504,6 @@ class CpuMode(Enum):
 
 @unique
 class CpuPinningPolicy(Enum):
-    """
-    """
     DEDICATED = 'dedicated'
     ISOLATE_THREADS = 'isolate_threads'
     MANUAL = 'manual'
@@ -25985,8 +25519,6 @@ class CpuPinningPolicy(Enum):
 
 @unique
 class CreationStatus(Enum):
-    """
-    """
     COMPLETE = 'complete'
     FAILED = 'failed'
     IN_PROGRESS = 'in_progress'
@@ -26001,8 +25533,6 @@ class CreationStatus(Enum):
 
 @unique
 class DataCenterStatus(Enum):
-    """
-    """
     CONTEND = 'contend'
     MAINTENANCE = 'maintenance'
     NOT_OPERATIONAL = 'not_operational'
@@ -26019,8 +25549,6 @@ class DataCenterStatus(Enum):
 
 @unique
 class DiskBackup(Enum):
-    """
-    """
     INCREMENTAL = 'incremental'
     NONE = 'none'
 
@@ -26033,8 +25561,6 @@ class DiskBackup(Enum):
 
 @unique
 class DiskBackupMode(Enum):
-    """
-    """
     FULL = 'full'
     INCREMENTAL = 'incremental'
 
@@ -26047,8 +25573,6 @@ class DiskBackupMode(Enum):
 
 @unique
 class DiskContentType(Enum):
-    """
-    """
     BACKUP_SCRATCH = 'backup_scratch'
     DATA = 'data'
     HOSTED_ENGINE = 'hosted_engine'
@@ -26069,8 +25593,6 @@ class DiskContentType(Enum):
 
 @unique
 class DiskFormat(Enum):
-    """
-    """
     COW = 'cow'
     RAW = 'raw'
 
@@ -26083,8 +25605,6 @@ class DiskFormat(Enum):
 
 @unique
 class DiskInterface(Enum):
-    """
-    """
     IDE = 'ide'
     SATA = 'sata'
     SPAPR_VSCSI = 'spapr_vscsi'
@@ -26100,8 +25620,6 @@ class DiskInterface(Enum):
 
 @unique
 class DiskStatus(Enum):
-    """
-    """
     ILLEGAL = 'illegal'
     LOCKED = 'locked'
     OK = 'ok'
@@ -26115,8 +25633,6 @@ class DiskStatus(Enum):
 
 @unique
 class DiskStorageType(Enum):
-    """
-    """
     CINDER = 'cinder'
     IMAGE = 'image'
     LUN = 'lun'
@@ -26131,8 +25647,6 @@ class DiskStorageType(Enum):
 
 @unique
 class DiskType(Enum):
-    """
-    """
     DATA = 'data'
     SYSTEM = 'system'
 
@@ -26145,8 +25659,6 @@ class DiskType(Enum):
 
 @unique
 class DisplayType(Enum):
-    """
-    """
     SPICE = 'spice'
     VNC = 'vnc'
 
@@ -26159,8 +25671,6 @@ class DisplayType(Enum):
 
 @unique
 class EntityExternalStatus(Enum):
-    """
-    """
     ERROR = 'error'
     FAILURE = 'failure'
     INFO = 'info'
@@ -26176,8 +25686,6 @@ class EntityExternalStatus(Enum):
 
 @unique
 class ExternalStatus(Enum):
-    """
-    """
     ERROR = 'error'
     FAILURE = 'failure'
     INFO = 'info'
@@ -26193,8 +25701,6 @@ class ExternalStatus(Enum):
 
 @unique
 class ExternalSystemType(Enum):
-    """
-    """
     GLUSTER = 'gluster'
     VDSM = 'vdsm'
 
@@ -26207,8 +25713,6 @@ class ExternalSystemType(Enum):
 
 @unique
 class ExternalVmProviderType(Enum):
-    """
-    """
     KVM = 'kvm'
     VMWARE = 'vmware'
     XEN = 'xen'
@@ -26222,8 +25726,6 @@ class ExternalVmProviderType(Enum):
 
 @unique
 class FenceType(Enum):
-    """
-    """
     MANUAL = 'manual'
     RESTART = 'restart'
     START = 'start'
@@ -26239,8 +25741,6 @@ class FenceType(Enum):
 
 @unique
 class FipsMode(Enum):
-    """
-    """
     DISABLED = 'disabled'
     ENABLED = 'enabled'
     UNDEFINED = 'undefined'
@@ -26254,8 +25754,6 @@ class FipsMode(Enum):
 
 @unique
 class FirewallType(Enum):
-    """
-    """
     FIREWALLD = 'firewalld'
     IPTABLES = 'iptables'
 
@@ -26268,8 +25766,6 @@ class FirewallType(Enum):
 
 @unique
 class GlusterBrickStatus(Enum):
-    """
-    """
     DOWN = 'down'
     UNKNOWN = 'unknown'
     UP = 'up'
@@ -26283,8 +25779,6 @@ class GlusterBrickStatus(Enum):
 
 @unique
 class GlusterHookStatus(Enum):
-    """
-    """
     DISABLED = 'disabled'
     ENABLED = 'enabled'
     MISSING = 'missing'
