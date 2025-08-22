@@ -190,6 +190,7 @@ class Api(Struct):
         self,
         authenticated_user=None,
         effective_user=None,
+        engine_backup=None,
         product_info=None,
         special_objects=None,
         summary=None,
@@ -199,6 +200,7 @@ class Api(Struct):
         )
         self.authenticated_user = authenticated_user
         self.effective_user = effective_user
+        self.engine_backup = engine_backup
         self.product_info = product_info
         self.special_objects = special_objects
         self.summary = summary
@@ -248,6 +250,21 @@ class Api(Struct):
         """
         Struct._check_type('authenticated_user', value, User)
         self._authenticated_user = value
+
+    @property
+    def engine_backup(self):
+        """
+        Returns the value of the `engine_backup` property.
+        """
+        return self._engine_backup
+
+    @engine_backup.setter
+    def engine_backup(self, value):
+        """
+        Sets the value of the `engine_backup` property.
+        """
+        Struct._check_type('engine_backup', value, EngineBackupInfo)
+        self._engine_backup = value
 
     @property
     def time(self):
@@ -1548,6 +1565,111 @@ class DynamicCpu(Struct):
         """
         Struct._check_type('topology', value, CpuTopology)
         self._topology = value
+
+
+class EngineBackupInfo(Struct):
+
+    def __init__(
+        self,
+        last_cinder_backup=None,
+        last_db_backup=None,
+        last_dwh_backup=None,
+        last_engine_backup=None,
+        last_grafana_backup=None,
+        last_keycloak_backup=None,
+    ):
+        super(EngineBackupInfo, self).__init__(
+        )
+        self.last_cinder_backup = last_cinder_backup
+        self.last_db_backup = last_db_backup
+        self.last_dwh_backup = last_dwh_backup
+        self.last_engine_backup = last_engine_backup
+        self.last_grafana_backup = last_grafana_backup
+        self.last_keycloak_backup = last_keycloak_backup
+
+    @property
+    def last_cinder_backup(self):
+        """
+        Returns the value of the `last_cinder_backup` property.
+        """
+        return self._last_cinder_backup
+
+    @last_cinder_backup.setter
+    def last_cinder_backup(self, value):
+        """
+        Sets the value of the `last_cinder_backup` property.
+        """
+        self._last_cinder_backup = value
+
+    @property
+    def last_db_backup(self):
+        """
+        Returns the value of the `last_db_backup` property.
+        """
+        return self._last_db_backup
+
+    @last_db_backup.setter
+    def last_db_backup(self, value):
+        """
+        Sets the value of the `last_db_backup` property.
+        """
+        self._last_db_backup = value
+
+    @property
+    def last_engine_backup(self):
+        """
+        Returns the value of the `last_engine_backup` property.
+        """
+        return self._last_engine_backup
+
+    @last_engine_backup.setter
+    def last_engine_backup(self, value):
+        """
+        Sets the value of the `last_engine_backup` property.
+        """
+        self._last_engine_backup = value
+
+    @property
+    def last_keycloak_backup(self):
+        """
+        Returns the value of the `last_keycloak_backup` property.
+        """
+        return self._last_keycloak_backup
+
+    @last_keycloak_backup.setter
+    def last_keycloak_backup(self, value):
+        """
+        Sets the value of the `last_keycloak_backup` property.
+        """
+        self._last_keycloak_backup = value
+
+    @property
+    def last_dwh_backup(self):
+        """
+        Returns the value of the `last_dwh_backup` property.
+        """
+        return self._last_dwh_backup
+
+    @last_dwh_backup.setter
+    def last_dwh_backup(self, value):
+        """
+        Sets the value of the `last_dwh_backup` property.
+        """
+        self._last_dwh_backup = value
+
+    @property
+    def last_grafana_backup(self):
+        """
+        Returns the value of the `last_grafana_backup` property.
+        """
+        return self._last_grafana_backup
+
+    @last_grafana_backup.setter
+    def last_grafana_backup(self, value):
+        """
+        Sets the value of the `last_grafana_backup` property.
+        """
+        self._last_grafana_backup = value
 
 
 class EntityProfileDetail(Struct):
@@ -4426,6 +4548,7 @@ class LogicalUnit(Struct):
 
     def __init__(
         self,
+        active_paths=None,
         address=None,
         discard_max_size=None,
         discard_zeroes_data=None,
@@ -4448,6 +4571,7 @@ class LogicalUnit(Struct):
     ):
         super(LogicalUnit, self).__init__(
         )
+        self.active_paths = active_paths
         self.address = address
         self.discard_max_size = discard_max_size
         self.discard_zeroes_data = discard_zeroes_data
@@ -4565,6 +4689,20 @@ class LogicalUnit(Struct):
         Sets the value of the `target` property.
         """
         self._target = value
+
+    @property
+    def active_paths(self):
+        """
+        Returns the value of the `active_paths` property.
+        """
+        return self._active_paths
+
+    @active_paths.setter
+    def active_paths(self, value):
+        """
+        Sets the value of the `active_paths` property.
+        """
+        self._active_paths = value
 
     @property
     def serial(self):
@@ -6564,6 +6702,7 @@ class OperatingSystem(Struct):
         boot=None,
         cmdline=None,
         custom_kernel_cmdline=None,
+        description=None,
         initrd=None,
         kernel=None,
         reported_kernel_cmdline=None,
@@ -6575,6 +6714,7 @@ class OperatingSystem(Struct):
         self.boot = boot
         self.cmdline = cmdline
         self.custom_kernel_cmdline = custom_kernel_cmdline
+        self.description = description
         self.initrd = initrd
         self.kernel = kernel
         self.reported_kernel_cmdline = reported_kernel_cmdline
@@ -6665,6 +6805,20 @@ class OperatingSystem(Struct):
         Sets the value of the `initrd` property.
         """
         self._initrd = value
+
+    @property
+    def description(self):
+        """
+        Returns the value of the `description` property.
+        """
+        return self._description
+
+    @description.setter
+    def description(self, value):
+        """
+        Sets the value of the `description` property.
+        """
+        self._description = value
 
     @property
     def type(self):
@@ -13818,6 +13972,7 @@ class Action(Identified):
         activate=None,
         allow_partial_import=None,
         async_=None,
+        attach_wgt=None,
         attachment=None,
         authorized_key=None,
         auto_pinning_policy=None,
@@ -13922,6 +14077,7 @@ class Action(Identified):
         self.activate = activate
         self.allow_partial_import = allow_partial_import
         self.async_ = async_
+        self.attach_wgt = attach_wgt
         self.attachment = attachment
         self.authorized_key = authorized_key
         self.auto_pinning_policy = auto_pinning_policy
@@ -14012,6 +14168,20 @@ class Action(Identified):
         self.vm = vm
         self.vnic_profile_mappings = vnic_profile_mappings
         self.volatile = volatile
+
+    @property
+    def attach_wgt(self):
+        """
+        Returns the value of the `attach_wgt` property.
+        """
+        return self._attach_wgt
+
+    @attach_wgt.setter
+    def attach_wgt(self, value):
+        """
+        Sets the value of the `attach_wgt` property.
+        """
+        self._attach_wgt = value
 
     @property
     def image(self):

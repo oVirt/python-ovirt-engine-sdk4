@@ -58,6 +58,8 @@ class ActionReader(Reader):
                 obj.allow_partial_import = Reader.read_boolean(reader)
             elif tag == 'async':
                 obj.async_ = Reader.read_boolean(reader)
+            elif tag == 'attach_wgt':
+                obj.attach_wgt = Reader.read_boolean(reader)
             elif tag == 'attachment':
                 obj.attachment = DiskAttachmentReader.read_one(reader)
             elif tag == 'authorized_key':
@@ -771,6 +773,8 @@ class ApiReader(Reader):
                 obj.authenticated_user = UserReader.read_one(reader)
             elif tag == 'effective_user':
                 obj.effective_user = UserReader.read_one(reader)
+            elif tag == 'engine_backup':
+                obj.engine_backup = EngineBackupInfoReader.read_one(reader)
             elif tag == 'product_info':
                 obj.product_info = ProductInfoReader.read_one(reader)
             elif tag == 'special_objects':
@@ -4318,6 +4322,81 @@ class DynamicCpuReader(Reader):
         # Process the inner elements:
         while reader.forward():
             objs.append(DynamicCpuReader.read_one(reader))
+
+        # Discard the end tag:
+        reader.read()
+
+        return objs
+
+
+class EngineBackupInfoReader(Reader):
+
+    def __init__(self):
+        super(EngineBackupInfoReader, self).__init__()
+
+    @staticmethod
+    def read_one(reader):
+        # Do nothing if there aren't more tags:
+        if not reader.forward():
+            return None
+
+        # Create the object:
+        obj = types.EngineBackupInfo()
+
+        # Process the attributes:
+        obj.href = reader.get_attribute('href')
+
+        # Discard the start tag:
+        empty = reader.empty_element()
+        reader.read()
+        if empty:
+            return obj
+
+        # Process the inner elements:
+        links = []
+        while reader.forward():
+            tag = reader.node_name()
+            if tag == 'last_cinder_backup':
+                obj.last_cinder_backup = Reader.read_date(reader)
+            elif tag == 'last_db_backup':
+                obj.last_db_backup = Reader.read_date(reader)
+            elif tag == 'last_dwh_backup':
+                obj.last_dwh_backup = Reader.read_date(reader)
+            elif tag == 'last_engine_backup':
+                obj.last_engine_backup = Reader.read_date(reader)
+            elif tag == 'last_grafana_backup':
+                obj.last_grafana_backup = Reader.read_date(reader)
+            elif tag == 'last_keycloak_backup':
+                obj.last_keycloak_backup = Reader.read_date(reader)
+            else:
+                reader.next_element()
+        for link in links:
+            EngineBackupInfoReader._process_link(link, obj)
+
+        # Discard the end tag:
+        reader.read()
+
+        return obj
+
+    @staticmethod
+    def read_many(reader):
+        # Do nothing if there aren't more tags:
+        objs = List()
+        if not reader.forward():
+            return objs
+
+        # Process the attributes:
+        objs.href = reader.get_attribute('href')
+
+        # Discard the start tag:
+        empty = reader.empty_element()
+        reader.read()
+        if empty:
+            return objs
+
+        # Process the inner elements:
+        while reader.forward():
+            objs.append(EngineBackupInfoReader.read_one(reader))
 
         # Discard the end tag:
         reader.read()
@@ -9693,7 +9772,9 @@ class LogicalUnitReader(Reader):
         links = []
         while reader.forward():
             tag = reader.node_name()
-            if tag == 'address':
+            if tag == 'active_paths':
+                obj.active_paths = Reader.read_integer(reader)
+            elif tag == 'address':
                 obj.address = Reader.read_string(reader)
             elif tag == 'discard_max_size':
                 obj.discard_max_size = Reader.read_integer(reader)
@@ -12275,6 +12356,8 @@ class OperatingSystemReader(Reader):
                 obj.cmdline = Reader.read_string(reader)
             elif tag == 'custom_kernel_cmdline':
                 obj.custom_kernel_cmdline = Reader.read_string(reader)
+            elif tag == 'description':
+                obj.description = Reader.read_string(reader)
             elif tag == 'initrd':
                 obj.initrd = Reader.read_string(reader)
             elif tag == 'kernel':
@@ -19685,6 +19768,8 @@ Reader.register('domain', DomainReader.read_one)
 Reader.register('domains', DomainReader.read_many)
 Reader.register('dynamic_cpu', DynamicCpuReader.read_one)
 Reader.register('dynamic_cpus', DynamicCpuReader.read_many)
+Reader.register('engine_backup_info', EngineBackupInfoReader.read_one)
+Reader.register('engine_backup_infos', EngineBackupInfoReader.read_many)
 Reader.register('entity_profile_detail', EntityProfileDetailReader.read_one)
 Reader.register('entity_profile_details', EntityProfileDetailReader.read_many)
 Reader.register('error_handling', ErrorHandlingReader.read_one)

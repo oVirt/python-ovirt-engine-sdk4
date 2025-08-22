@@ -43,6 +43,8 @@ class ActionWriter(Writer):
             Writer.write_boolean(writer, 'allow_partial_import', obj.allow_partial_import)
         if obj.async_ is not None:
             Writer.write_boolean(writer, 'async', obj.async_)
+        if obj.attach_wgt is not None:
+            Writer.write_boolean(writer, 'attach_wgt', obj.attach_wgt)
         if obj.attachment is not None:
             DiskAttachmentWriter.write_one(obj.attachment, writer, 'attachment')
         if obj.authorized_key is not None:
@@ -511,6 +513,8 @@ class ApiWriter(Writer):
         href = obj.href
         if href is not None:
             writer.write_attribute('href', href)
+        if obj.engine_backup is not None:
+            EngineBackupInfoWriter.write_one(obj.engine_backup, writer, 'engine_backup')
         if obj.product_info is not None:
             ProductInfoWriter.write_one(obj.product_info, writer, 'product_info')
         if obj.special_objects is not None:
@@ -2466,6 +2470,49 @@ class DynamicCpuWriter(Writer):
                 writer.write_attribute('href', href)
         for obj in objs:
             DynamicCpuWriter.write_one(obj, writer, singular)
+        writer.write_end()
+
+
+class EngineBackupInfoWriter(Writer):
+
+    def __init__(self):
+        super(EngineBackupInfoWriter, self).__init__()
+
+    @staticmethod
+    def write_one(obj, writer, singular=None):
+        if singular is None:
+            singular = 'engine_backup_info'
+        writer.write_start(singular)
+        href = obj.href
+        if href is not None:
+            writer.write_attribute('href', href)
+        if obj.last_cinder_backup is not None:
+            Writer.write_date(writer, 'last_cinder_backup', obj.last_cinder_backup)
+        if obj.last_db_backup is not None:
+            Writer.write_date(writer, 'last_db_backup', obj.last_db_backup)
+        if obj.last_dwh_backup is not None:
+            Writer.write_date(writer, 'last_dwh_backup', obj.last_dwh_backup)
+        if obj.last_engine_backup is not None:
+            Writer.write_date(writer, 'last_engine_backup', obj.last_engine_backup)
+        if obj.last_grafana_backup is not None:
+            Writer.write_date(writer, 'last_grafana_backup', obj.last_grafana_backup)
+        if obj.last_keycloak_backup is not None:
+            Writer.write_date(writer, 'last_keycloak_backup', obj.last_keycloak_backup)
+        writer.write_end()
+
+    @staticmethod
+    def write_many(objs, writer, singular=None, plural=None):
+        if singular is None:
+            singular = 'engine_backup_info'
+        if plural is None:
+            plural = 'engine_backup_infos'
+        writer.write_start(plural)
+        if isinstance(objs, List):
+            href = objs.href
+            if href is not None:
+                writer.write_attribute('href', href)
+        for obj in objs:
+            EngineBackupInfoWriter.write_one(obj, writer, singular)
         writer.write_end()
 
 
@@ -5551,6 +5598,8 @@ class LogicalUnitWriter(Writer):
             writer.write_attribute('href', href)
         if obj.id is not None:
             writer.write_attribute('id', obj.id)
+        if obj.active_paths is not None:
+            Writer.write_integer(writer, 'active_paths', obj.active_paths)
         if obj.address is not None:
             Writer.write_string(writer, 'address', obj.address)
         if obj.discard_max_size is not None:
@@ -6993,6 +7042,8 @@ class OperatingSystemWriter(Writer):
             Writer.write_string(writer, 'cmdline', obj.cmdline)
         if obj.custom_kernel_cmdline is not None:
             Writer.write_string(writer, 'custom_kernel_cmdline', obj.custom_kernel_cmdline)
+        if obj.description is not None:
+            Writer.write_string(writer, 'description', obj.description)
         if obj.initrd is not None:
             Writer.write_string(writer, 'initrd', obj.initrd)
         if obj.kernel is not None:
@@ -11162,6 +11213,7 @@ Writer.register(types.Dns, DnsWriter.write_one)
 Writer.register(types.DnsResolverConfiguration, DnsResolverConfigurationWriter.write_one)
 Writer.register(types.Domain, DomainWriter.write_one)
 Writer.register(types.DynamicCpu, DynamicCpuWriter.write_one)
+Writer.register(types.EngineBackupInfo, EngineBackupInfoWriter.write_one)
 Writer.register(types.EntityProfileDetail, EntityProfileDetailWriter.write_one)
 Writer.register(types.ErrorHandling, ErrorHandlingWriter.write_one)
 Writer.register(types.Event, EventWriter.write_one)
