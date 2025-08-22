@@ -51,6 +51,8 @@ class Error(Exception):
         super(Error, self).__init__(message)
         """
         Creates an instance of Error class.
+
+        :param message: The exception message.
         """
         self.code = code
         """
@@ -186,7 +188,8 @@ class Connection(object):
     __XML_CONTENT_TYPE_RE = re.compile(r"^\s*(application|text)/xml\s*(;.*)?$")
 
     # Regular expression used to check JSON content type.
-    __JSON_CONTENT_TYPE_RE = re.compile(r"^\s*(application|text)/json\s*(;.*)?$")
+    __JSON_CONTENT_TYPE_RE = \
+        re.compile(r"^\s*(application|text)/json\s*(;.*)?$")
 
     # The typical URL path, used just to generate informative error messages.
     __TYPICAL_PATH = '/ovirt-engine/api'
@@ -235,89 +238,74 @@ class Connection(object):
 
         This method supports the following parameters:
 
-        `url` \n
-        A string containing the base URL of the server, usually
+        :param url: A string containing the base URL of the server, usually
         something like `https://server.example.com/ovirt-engine/api`.
 
-        `username` \n
-        The name of the user, something like `admin@internal`.
+        :param username: The name of the user, something like `admin@internal`.
 
-        `password` \n
-        The name password of the user.
+        :param password: The name password of the user.
 
-        `token` \n
+        :param token: The token to be used to access API.
         The token to be used to access API. Optionally, user can
         use token, instead of username and password to access API. If user
         don't specify `token` parameter, SDK will automatically create one.
 
-        `insecure` \n
-        A boolean flag that indicates if the server TLS
+        :param insecure: A boolean flag that indicates if the server TLS
         certificate and host name should be checked.
 
-        `ca_file` \n
-        A PEM file containing the trusted CA certificates. The
+        :param ca_file: A PEM file containing the trusted CA certificates. The
         certificate presented by the server will be verified using these CA
         certificates. If `ca_file` parameter is not set, system wide
         CA certificate store is used.
 
-        `debug` \n
+        :param debug: A boolean flag indicating if debug output should be
         A boolean flag indicating if debug output should be
         generated. If the value is `True` and the `log` parameter isn't
         `None` then the data sent to and received from the server will
         be written to the log. Be aware that user names and passwords will
         also be written, so handle it with care.
 
-        `log` \n
-        The logger where the log messages will be written.
+        :param log: The logger where the log messages will be written.
 
-        `kerberos` \n
-        A boolean flag indicating if Kerberos
+        :param kerberos: A boolean flag indicating if Kerberos
         authentication should be used instead of the default basic
         authentication.
 
-        `timeout` \n
-        The maximum total time to wait for the response, in
+        :param timeout: The maximum total time to wait for the response, in
         seconds. A value of zero (the default) means wait for ever. If
         the timeout expires before the response is received an exception
         will be raised.
 
-        `compress` \n
-        A boolean flag indicating if the SDK should ask
+        :param compress: A boolean flag indicating if the SDK should ask
         the server to send compressed responses. The default is `True`.
         Note that this is a hint for the server, and that it may return
         uncompressed data even when this parameter is set to `True`.
         Note that compression will be disabled if user pass `debug`
         parameter set to `true`, so the debug messages are in plain text.
 
-        `sso_url` \n
-        A string containing the base SSO URL of the serve.
+        :param sso_url: A string containing the base SSO URL of the serve.
         Default SSO url is computed from the `url` if no `sso_url` is provided.
 
-        `sso_revoke_url` \n
-        A string containing the base URL of the SSO
+        :param sso_revoke_url: A string containing the base URL of the SSO
         revoke service. This needs to be specified only when using
         an external authentication service. By default this URL
         is automatically calculated from the value of the `url` parameter,
         so that SSO token revoke will be performed using the SSO service
         that is part of the engine.
 
-        `sso_token_name` \n
-        The token name in the JSON SSO response returned
+        :param sso_token_name: The token name in the JSON SSO response returned
         from the SSO server. Default value is `access_token`.
 
-        `headers` \n
-        A dictionary with headers which should be send with every
-        request.
+        :param headers: A dictionary with headers which should be send with
+        every request.
 
-        `connections` \n
-        The maximum number of connections to open to the host.
-        If the value is `0` (the default) then the number of connections will
-        be unlimited.
+        :param connections: The maximum number of connections to open to the
+        host. If the value is `0` (the default) then the number of connections
+        will be unlimited.
 
-        `pipeline` \n
-        The maximum number of request to put in an HTTP pipeline
-        without waiting for the response. If the value is `0` (the default)
-        then pipelining is disabled.
+        :param pipeline: The maximum number of request to put in an HTTP
+        pipeline without waiting for the response. If the value is `0`
+        (the default) then pipelining is disabled.
         """
 
         # Check mandatory parameters:
@@ -382,8 +370,7 @@ class Connection(object):
 
         This method supports the following parameters.
 
-        `request` \n
-        The Request object containing the details of the HTTP
+        :param request: The Request object containing the details of the HTTP
         request to send.
 
         The returned value is a Request object containing the details of the
@@ -395,10 +382,10 @@ class Connection(object):
 
     def authenticate(self):
         """
-        Return token which can be used for authentication instead of credentials.
-        It will be created, if it not exists, yet. By default the token will be
-        revoked when the connection is closed, unless the `logout` parameter of
-        the `close` method is `False`.
+        Return token which can be used for authentication instead of
+        credentials. It will be created, if it not exists, yet.
+        By default the token will be revoked when the connection is closed,
+        unless the `logout` parameter of the `close` method is `False`.
         """
         try:
             if self._sso_token is None:
@@ -542,9 +529,9 @@ class Connection(object):
                     # If the request failed because of authentication, and it
                     # wasn't a request to the SSO service, then the most likely
                     # cause is an expired SSO token. In this case we need to
-                    # request a new token, and try the original request again, but
-                    # only once. It if fails again, we just return the failed
-                    # response.
+                    # request a new token, and try the original request again,
+                    # but only once. If it fails again, we just return the
+                    # failed response.
                     if response.code == 401 and not failed_auth:
                         self._sso_token = self._get_access_token()
                         context = self.__send(context[3])
@@ -656,9 +643,11 @@ class Connection(object):
     def _get_sso_error(self, sso_response):
         # OpenId define `error_description` field, OAuth doesn't:
         if 'error_description' in sso_response:
-            sso_error = (sso_response.get('error'), sso_response.get('error_description'))
+            sso_error = (sso_response.get('error'),
+                         sso_response.get('error_description'))
         else:
-            sso_error = (sso_response.get('error_code'), sso_response.get('error'))
+            sso_error = (sso_response.get('error_code'),
+                         sso_response.get('error'))
 
         return sso_error
 
@@ -722,7 +711,8 @@ class Connection(object):
         header_lines = headers_text.split('\n')
 
         # Check the returned content type:
-        self._check_content_type(self.__JSON_CONTENT_TYPE_RE, 'JSON', header_lines)
+        self._check_content_type(self.__JSON_CONTENT_TYPE_RE, 'JSON',
+                                 header_lines)
 
         return json.loads(body_buf.getvalue().decode('utf-8'))
 
@@ -807,7 +797,8 @@ class Connection(object):
             )
 
         # Remove the prefix from the URL, follow the path to the relevant
-        # service and invoke the "get", or "list method to retrieve its representation:
+        # service and invoke the "get", or "list method to retrieve its
+        # representation:
         path = href[len(prefix):]
         service = self.service(path)
         if isinstance(obj, List):
@@ -898,7 +889,8 @@ class Connection(object):
         """
         content_type = self._get_header_value(headers, 'content-type')
         if expected_re.match(content_type) is None:
-            msg = "The response content type '{}' isn't the expected {}".format(
+            msg = "The response content type '{}' isn't the expected {}"
+            msg = msg.format(
                 content_type,
                 expected_name,
             )
@@ -958,11 +950,12 @@ class Connection(object):
         """
         Return header value by its name.
 
-        `headers` list of headers
-        `name` name of the header
+        :param headers: list of headers
+        :param name: name of the header
         """
         return next(
-            (h.split(':')[1].strip() for h in headers if h.lower().startswith(name)),
+            (h.split(':')[1].strip() for h in headers
+             if h.lower().startswith(name)),
             None
         )
 

@@ -57,16 +57,15 @@ class AffinityGroupService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -97,15 +96,14 @@ class AffinityGroupService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the removal should be performed asynchronously.
+        :param async_: Indicates if the removal should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -138,15 +136,14 @@ class AffinityGroupService(Service):
         Update the affinity group.
 
 
-        This method supports the following parameters:
 
-        `group`:: The affinity group.
+        :param group: The affinity group.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -252,15 +249,14 @@ class AffinityGroupHostService(Service):
         Remove host from the affinity group.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the removal should be performed asynchronously.
+        :param async_: Indicates if the removal should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -313,15 +309,14 @@ class AffinityGroupHostLabelService(Service):
         Remove this label from the affinity group.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the removal should be performed asynchronously.
+        :param async_: Indicates if the removal should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -385,15 +380,14 @@ class AffinityGroupHostLabelsService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `label`:: The AffinityLabel object to add to the affinity group.
+        :param label: The AffinityLabel object to add to the affinity group.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -420,19 +414,18 @@ class AffinityGroupHostLabelsService(Service):
         The order of the returned labels isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of host labels to return.
+        :param max: Sets the maximum number of host labels to return.
         If not specified, all the labels are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -508,15 +501,14 @@ class AffinityGroupHostsService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `host`:: The host to be added to the affinity group.
+        :param host: The host to be added to the affinity group.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -543,19 +535,18 @@ class AffinityGroupHostsService(Service):
         The order of the returned hosts isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of hosts to return. If not specified, all the hosts are
+        :param max: Sets the maximum number of hosts to return. If not specified, all the hosts are
         returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -620,15 +611,14 @@ class AffinityGroupVmService(Service):
         Remove this virtual machine from the affinity group.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the removal should be performed asynchronously.
+        :param async_: Indicates if the removal should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -681,15 +671,14 @@ class AffinityGroupVmLabelService(Service):
         Remove this label from the affinity group.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the removal should be performed asynchronously.
+        :param async_: Indicates if the removal should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -753,15 +742,14 @@ class AffinityGroupVmLabelsService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `label`:: The AffinityLabel object to add to the affinity group.
+        :param label: The AffinityLabel object to add to the affinity group.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -788,19 +776,18 @@ class AffinityGroupVmLabelsService(Service):
         The order of the returned labels isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of virtual machine labels to return.
+        :param max: Sets the maximum number of virtual machine labels to return.
         If not specified, all the labels are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -902,19 +889,18 @@ class AffinityGroupVmsService(Service):
         The order of the returned virtual machines isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of virtual machines to return. If not specified, all the virtual machines are
+        :param max: Sets the maximum number of virtual machines to return. If not specified, all the virtual machines are
         returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -999,15 +985,14 @@ class AffinityGroupsService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `group`:: The affinity group object to create.
+        :param group: The affinity group object to create.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -1034,18 +1019,17 @@ class AffinityGroupsService(Service):
         The order of the affinity groups results isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of affinity groups to return. If not specified all the affinity groups are returned.
+        :param max: Sets the maximum number of affinity groups to return. If not specified all the affinity groups are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -1112,16 +1096,15 @@ class AffinityLabelService(Service):
         Retrieves the details of a label.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -1241,16 +1224,15 @@ class AffinityLabelHostService(Service):
         Retrieves details about a host that has this label assigned.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -1348,16 +1330,15 @@ class AffinityLabelHostsService(Service):
         The order of the returned hosts isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -1421,16 +1402,15 @@ class AffinityLabelVmService(Service):
         Retrieves details about a vm that has this label assigned.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -1528,16 +1508,15 @@ class AffinityLabelVmsService(Service):
         The order of the returned virtual machines isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -1627,18 +1606,17 @@ class AffinityLabelsService(Service):
         The order of the returned labels isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of labels to return. If not specified all the labels are returned.
+        :param max: Sets the maximum number of labels to return. If not specified all the labels are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -1734,16 +1712,15 @@ class AssignedAffinityLabelService(Service):
         Retrieves details about the attached label.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -1840,16 +1817,15 @@ class AssignedAffinityLabelsService(Service):
         The order of the returned entities isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -1906,16 +1882,15 @@ class AssignedCpuProfileService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -1939,15 +1914,14 @@ class AssignedCpuProfileService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2025,18 +1999,17 @@ class AssignedCpuProfilesService(Service):
         The order of the returned CPU profiles isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of profiles to return. If not specified all the profiles are returned.
+        :param max: Sets the maximum number of profiles to return. If not specified all the profiles are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2094,16 +2067,15 @@ class AssignedDiskProfileService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2127,15 +2099,14 @@ class AssignedDiskProfileService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2213,18 +2184,17 @@ class AssignedDiskProfilesService(Service):
         The order of the returned disk profiles isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of profiles to return. If not specified all the profiles are returned.
+        :param max: Sets the maximum number of profiles to return. If not specified all the profiles are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2333,15 +2303,14 @@ class AssignedPermissionsService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `permission`:: The permission.
+        :param permission: The permission.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2366,15 +2335,14 @@ class AssignedPermissionsService(Service):
         Add a new permission on the cluster to the group in the system.
 
 
-        This method supports the following parameters:
 
-        `permission`:: The permission.
+        :param permission: The permission.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2399,15 +2367,14 @@ class AssignedPermissionsService(Service):
         Add a new permission on the data center to the group in the system.
 
 
-        This method supports the following parameters:
 
-        `permission`:: The permission.
+        :param permission: The permission.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2432,15 +2399,14 @@ class AssignedPermissionsService(Service):
         Add a new group level permission for a given virtual machine.
 
 
-        This method supports the following parameters:
 
-        `permission`:: The permission.
+        :param permission: The permission.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2465,15 +2431,14 @@ class AssignedPermissionsService(Service):
         Add a new permission on the host to the group in the system.
 
 
-        This method supports the following parameters:
 
-        `permission`:: The permission.
+        :param permission: The permission.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2518,16 +2483,15 @@ class AssignedPermissionsService(Service):
         The order of the returned permissions isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2554,15 +2518,14 @@ class AssignedPermissionsService(Service):
         Add a new permission on the storage domain to the group in the system.
 
 
-        This method supports the following parameters:
 
-        `permission`:: The permission.
+        :param permission: The permission.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2587,15 +2550,14 @@ class AssignedPermissionsService(Service):
         Add a new permission on the template to the group in the system.
 
 
-        This method supports the following parameters:
 
-        `permission`:: The permission.
+        :param permission: The permission.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2620,15 +2582,14 @@ class AssignedPermissionsService(Service):
         Add a new user level permission for a given virtual machine.
 
 
-        This method supports the following parameters:
 
-        `permission`:: The permission.
+        :param permission: The permission.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2653,15 +2614,14 @@ class AssignedPermissionsService(Service):
         Add a new permission on the vm to the group in the system.
 
 
-        This method supports the following parameters:
 
-        `permission`:: The permission.
+        :param permission: The permission.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2686,15 +2646,14 @@ class AssignedPermissionsService(Service):
         Add a new permission on the vm pool to the group in the system.
 
 
-        This method supports the following parameters:
 
-        `permission`:: The permission.
+        :param permission: The permission.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2757,18 +2716,17 @@ class AssignedRolesService(Service):
         The order of the returned roles isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of roles to return. If not specified all the roles are returned.
+        :param max: Sets the maximum number of roles to return. If not specified all the roles are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2846,16 +2804,15 @@ class AssignedTagService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2886,15 +2843,14 @@ class AssignedTagService(Service):
         ....
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -2959,15 +2915,14 @@ class AssignedTagsService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `tag`:: The assigned tag.
+        :param tag: The assigned tag.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -3008,18 +2963,17 @@ class AssignedTagsService(Service):
         The order of the returned tags isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of tags to return. If not specified all the tags are returned.
+        :param max: Sets the maximum number of tags to return. If not specified all the tags are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -3080,16 +3034,15 @@ class AssignedVnicProfileService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -3113,15 +3066,14 @@ class AssignedVnicProfileService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -3208,18 +3160,17 @@ class AssignedVnicProfilesService(Service):
         The order of the returned VNIC profiles isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of profiles to return. If not specified all the profiles are returned.
+        :param max: Sets the maximum number of profiles to return. If not specified all the profiles are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -3292,15 +3243,14 @@ class AttachedStorageDomainService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the activation should be performed asynchronously.
+        :param async_: Indicates if the activation should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -3346,11 +3296,10 @@ class AttachedStorageDomainService(Service):
         the deactivation of the storage domain will also fail.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the deactivation should be performed asynchronously.
+        :param async_: Indicates if the deactivation should be performed asynchronously.
 
-        `force`:: Indicates if the operation should succeed and the storage domain should be moved to a deactivated state, even if
+        :param force: Indicates if the operation should succeed and the storage domain should be moved to a deactivated state, even if
         the OVF update for the storage domain failed.
         For example, to deactivate storage domain `456` using force flag, send the following request:
         [source]
@@ -3366,11 +3315,11 @@ class AttachedStorageDomainService(Service):
         ----
         This parameter is optional, and the default value is `false`.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -3400,16 +3349,15 @@ class AttachedStorageDomainService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -3433,15 +3381,14 @@ class AttachedStorageDomainService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -3510,15 +3457,14 @@ class AttachedStorageDomainDisksService(Service):
         that disk.
 
 
-        This method supports the following parameters:
 
-        `disk`:: The disk to add or register.
+        :param disk: The disk to add or register.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -3548,18 +3494,17 @@ class AttachedStorageDomainDisksService(Service):
         Retrieve the list of disks that are available in the storage domain.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of disks to return. If not specified all the disks are returned.
+        :param max: Sets the maximum number of disks to return. If not specified all the disks are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -3625,15 +3570,14 @@ class AttachedStorageDomainsService(Service):
         Attaches an existing storage domain to the data center.
 
 
-        This method supports the following parameters:
 
-        `storage_domain`:: The storage domain to attach to the data center.
+        :param storage_domain: The storage domain to attach to the data center.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -3660,18 +3604,17 @@ class AttachedStorageDomainsService(Service):
         The order of the returned storage domains isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of storage domains to return. If not specified all the storage domains are returned.
+        :param max: Sets the maximum number of storage domains to return. If not specified all the storage domains are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -3730,18 +3673,17 @@ class BalanceService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -3769,15 +3711,14 @@ class BalanceService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -3856,20 +3797,19 @@ class BalancesService(Service):
         The order of the returned balance modules isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of balances to return. If not specified all the balances are returned.
+        :param max: Sets the maximum number of balances to return. If not specified all the balances are returned.
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -3948,16 +3888,15 @@ class BookmarkService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -3989,15 +3928,14 @@ class BookmarkService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -4043,15 +3981,14 @@ class BookmarkService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `bookmark`:: The updated bookmark.
+        :param bookmark: The updated bookmark.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -4118,15 +4055,14 @@ class BookmarksService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `bookmark`:: The added bookmark.
+        :param bookmark: The added bookmark.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -4171,18 +4107,17 @@ class BookmarksService(Service):
         The order of the returned bookmarks isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of bookmarks to return. If not specified all the bookmarks are returned.
+        :param max: Sets the maximum number of bookmarks to return. If not specified all the bookmarks are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -4330,18 +4265,17 @@ class ClusterService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -4405,15 +4339,14 @@ class ClusterService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -4442,15 +4375,14 @@ class ClusterService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the reset should be performed asynchronously.
+        :param async_: Indicates if the reset should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -4490,15 +4422,14 @@ class ClusterService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the action should be performed asynchronously.
+        :param async_: Indicates if the action should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -4607,23 +4538,22 @@ class ClusterService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `upgrade_action`:: The action to be performed.
+        :param upgrade_action: The action to be performed.
 
-        `correlation_id`:: Explicitly set the upgrade correlation identifier.  Use to correlate events
+        :param correlation_id: Explicitly set the upgrade correlation identifier.  Use to correlate events
         detailing the cluster upgrade to the upgrade itself.  If not specificed, the
         correlation id from `Correlation-Id` http header will be used.
 
-        `upgrade_percent_complete`:: Update the upgrade's progress as a percent complete of the total process.
+        :param upgrade_percent_complete: Update the upgrade's progress as a percent complete of the total process.
 
-        `async_`:: Indicates if the action should be performed asynchronously.
+        :param async_: Indicates if the action should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -4792,16 +4722,15 @@ class ClusterEnabledFeatureService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -4927,16 +4856,15 @@ class ClusterEnabledFeaturesService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -4999,16 +4927,15 @@ class ClusterExternalProvidersService(Service):
         The order of the returned list of providers is not guaranteed.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -5068,16 +4995,15 @@ class ClusterFeatureService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -5140,16 +5066,15 @@ class ClusterFeaturesService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -5239,16 +5164,15 @@ class ClusterLevelService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -5325,16 +5249,15 @@ class ClusterLevelsService(Service):
         The order of the returned cluster levels isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -5395,16 +5318,15 @@ class ClusterNetworkService(Service):
         Retrieves the cluster network details.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -5453,15 +5375,14 @@ class ClusterNetworkService(Service):
         Updates the network in the cluster.
 
 
-        This method supports the following parameters:
 
-        `network`:: The cluster network.
+        :param network: The cluster network.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -5518,15 +5439,14 @@ class ClusterNetworksService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `network`:: The network object to be assigned to the cluster.
+        :param network: The network object to be assigned to the cluster.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -5553,18 +5473,17 @@ class ClusterNetworksService(Service):
         The order of the returned clusters isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of networks to return. If not specified, all the networks are returned.
+        :param max: Sets the maximum number of networks to return. If not specified, all the networks are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -5697,26 +5616,25 @@ class ClustersService(Service):
         `search` parameter.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of clusters to return. If not specified, all the clusters are returned.
+        :param max: Sets the maximum number of clusters to return. If not specified, all the clusters are returned.
 
-        `search`:: A query string used to restrict the returned clusters.
+        :param search: A query string used to restrict the returned clusters.
 
-        `case_sensitive`:: Indicates if the search should be performed taking case into account.
+        :param case_sensitive: Indicates if the search should be performed taking case into account.
         The default value is `true`, which means that case is taken into account. To search
         ignoring case, set it to `false`.
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -5787,15 +5705,14 @@ class CopyableService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the copy should be performed asynchronously.
+        :param async_: Indicates if the copy should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -5843,16 +5760,15 @@ class CpuProfileService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -5876,15 +5792,14 @@ class CpuProfileService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -6004,18 +5919,17 @@ class CpuProfilesService(Service):
         The order of the returned list of CPU profiles is random.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of profiles to return. If not specified, all the profiles are returned.
+        :param max: Sets the maximum number of profiles to return. If not specified, all the profiles are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -6097,15 +6011,14 @@ class DataCenterService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the action should be performed asynchronously.
+        :param async_: Indicates if the action should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -6171,18 +6084,17 @@ class DataCenterService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -6224,19 +6136,18 @@ class DataCenterService(Service):
         anyway.
 
 
-        This method supports the following parameters:
 
-        `force`:: Indicates if the operation should succeed, and the storage domain removed from the database, even if
+        :param force: Indicates if the operation should succeed, and the storage domain removed from the database, even if
         something fails during the operation.
         This parameter is optional, and the default value is `false`.
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -6287,17 +6198,16 @@ class DataCenterService(Service):
         The new master storage domain can be also specified by its name.
 
 
-        This method supports the following parameters:
 
-        `storage_domain`:: The new master storage domain for the data center.
+        :param storage_domain: The new master storage domain for the data center.
 
-        `async_`:: Indicates if the action should be performed asynchronously.
+        :param async_: Indicates if the action should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -6345,15 +6255,14 @@ class DataCenterService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `data_center`:: The data center that is being updated.
+        :param data_center: The data center that is being updated.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -6499,16 +6408,15 @@ class DataCenterNetworkService(Service):
         Retrieves the data center network details.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -6557,15 +6465,14 @@ class DataCenterNetworkService(Service):
         Updates the network in the data center.
 
 
-        This method supports the following parameters:
 
-        `network`:: The data center network.
+        :param network: The data center network.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -6624,15 +6531,14 @@ class DataCenterNetworksService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `network`:: The network object to be created in the data center.
+        :param network: The network object to be created in the data center.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -6659,18 +6565,17 @@ class DataCenterNetworksService(Service):
         The order of the returned list of networks isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of networks to return. If not specified, all the networks are returned.
+        :param max: Sets the maximum number of networks to return. If not specified, all the networks are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -6750,15 +6655,14 @@ class DataCentersService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `data_center`:: The data center that is being added.
+        :param data_center: The data center that is being added.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -6837,26 +6741,25 @@ class DataCentersService(Service):
         `search` parameter.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of data centers to return. If not specified all the data centers are returned.
+        :param max: Sets the maximum number of data centers to return. If not specified all the data centers are returned.
 
-        `search`:: A query string used to restrict the returned data centers.
+        :param search: A query string used to restrict the returned data centers.
 
-        `case_sensitive`:: Indicates if the search performed using the `search` parameter should be performed taking case into
+        :param case_sensitive: Indicates if the search performed using the `search` parameter should be performed taking case into
         account. The default value is `true`, which means that case is taken into account. If you want to search
         ignoring case set it to `false`.
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -6947,16 +6850,15 @@ class DiskAttachmentService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -6990,16 +6892,15 @@ class DiskAttachmentService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `detach_only`:: Indicates if the disk should only be detached from the virtual machine, but not removed from the system.
+        :param detach_only: Indicates if the disk should only be detached from the virtual machine, but not removed from the system.
         The default value is `true`, which won't remove the disk from the system.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -7125,15 +7026,14 @@ class DiskAttachmentsService(Service):
         value.
 
 
-        This method supports the following parameters:
 
-        `attachment`:: The disk attachment to add to the virtual machine.
+        :param attachment: The disk attachment to add to the virtual machine.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -7159,16 +7059,15 @@ class DiskAttachmentsService(Service):
         The order of the returned list of disks attachments isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -7192,15 +7091,14 @@ class DiskAttachmentsService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `attachment`:: The disk attachment to add to the virtual machine.
+        :param attachment: The disk attachment to add to the virtual machine.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -7222,15 +7120,14 @@ class DiskAttachmentsService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `attachment`:: The disk attachment to add to the virtual machine.
+        :param attachment: The disk attachment to add to the virtual machine.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -7285,16 +7182,15 @@ class DiskProfileService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -7318,15 +7214,14 @@ class DiskProfileService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -7446,18 +7341,17 @@ class DiskProfilesService(Service):
         The order of the returned list of disk profiles isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of profiles to return. If not specified all the profiles are returned.
+        :param max: Sets the maximum number of profiles to return. If not specified all the profiles are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -7515,16 +7409,15 @@ class DiskSnapshotService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -7548,15 +7441,14 @@ class DiskSnapshotService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -7614,22 +7506,21 @@ class DiskSnapshotsService(Service):
         The order of the returned list of disk snapshots isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of snapshots to return. If not specified all the snapshots are returned.
+        :param max: Sets the maximum number of snapshots to return. If not specified all the snapshots are returned.
 
-        `include_active`:: If true return also active snapshots. If not specified active snapshots are not returned.
+        :param include_active: If true return also active snapshots. If not specified active snapshots are not returned.
 
-        `include_template`:: If true return also template snapshots. If not specified template snapshots are not returned.
+        :param include_template: If true return also template snapshots. If not specified template snapshots are not returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -7803,15 +7694,14 @@ class DisksService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `disk`:: The disk.
+        :param disk: The disk.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -7868,24 +7758,23 @@ class DisksService(Service):
         `search` parameter.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of disks to return. If not specified all the disks are returned.
+        :param max: Sets the maximum number of disks to return. If not specified all the disks are returned.
 
-        `search`:: A query string used to restrict the returned disks.
+        :param search: A query string used to restrict the returned disks.
 
-        `case_sensitive`:: Indicates if the search performed using the `search` parameter should be performed taking case into
+        :param case_sensitive: Indicates if the search performed using the `search` parameter should be performed taking case into
         account. The default value is `true`, which means that case is taken into account. If you want to search
         ignoring case set it to `false`.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -7923,15 +7812,14 @@ class DisksService(Service):
         Add a new lun disk to the storage domain.
 
 
-        This method supports the following parameters:
 
-        `disk`:: The disk.
+        :param disk: The disk.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -7956,15 +7844,14 @@ class DisksService(Service):
         Add a new disk to the storage domain with the specified size allocating space from the storage domain.
 
 
-        This method supports the following parameters:
 
-        `disk`:: The disk.
+        :param disk: The disk.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -8040,16 +7927,15 @@ class DomainService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -8114,16 +8000,15 @@ class DomainGroupService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -8174,24 +8059,23 @@ class DomainGroupsService(Service):
         The order of the returned list of groups isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of groups to return. If not specified all the groups are returned.
+        :param max: Sets the maximum number of groups to return. If not specified all the groups are returned.
 
-        `search`:: A query string used to restrict the returned groups.
+        :param search: A query string used to restrict the returned groups.
 
-        `case_sensitive`:: Indicates if the search performed using the `search` parameter should be performed taking case into
+        :param case_sensitive: Indicates if the search performed using the `search` parameter should be performed taking case into
         account. The default value is `true`, which means that case is taken into account. If you want to search
         ignoring case set it to `false`.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -8279,16 +8163,15 @@ class DomainUserService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -8336,16 +8219,15 @@ class DomainUserGroupsService(Service):
         Returns the list of groups that the user is a member of.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -8418,24 +8300,23 @@ class DomainUsersService(Service):
         The order of the returned list of users isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of users to return. If not specified all the users are returned.
+        :param max: Sets the maximum number of users to return. If not specified all the users are returned.
 
-        `search`:: A query string used to restrict the returned users.
+        :param search: A query string used to restrict the returned users.
 
-        `case_sensitive`:: Indicates if the search performed using the `search` parameter should be performed taking case into
+        :param case_sensitive: Indicates if the search performed using the `search` parameter should be performed taking case into
         account. The default value is `true`, which means that case is taken into account. If you want to search
         ignoring case set it to `false`.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -8527,18 +8408,17 @@ class DomainsService(Service):
         The order of the returned list of domains isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of domains to return. If not specified all the domains are returned.
+        :param max: Sets the maximum number of domains to return. If not specified all the domains are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -8627,16 +8507,15 @@ class EventService(Service):
         as well as the reference for the data center this storage domain resides in.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -8668,15 +8547,14 @@ class EventService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -8769,15 +8647,14 @@ class EventSubscriptionService(Service):
         ....
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -8851,15 +8728,14 @@ class EventSubscriptionsService(Service):
         it's always set to SMTP as SNMP notifications are still unsupported by the API layer.
 
 
-        This method supports the following parameters:
 
-        `event_subscription`:: The added event-subscription.
+        :param event_subscription: The added event-subscription.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -8906,19 +8782,18 @@ class EventSubscriptionsService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of event-subscriptions to return.
+        :param max: Sets the maximum number of event-subscriptions to return.
         If not specified all the event-subscriptions are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -9083,9 +8958,8 @@ class EventsService(Service):
         ....
 
 
-        This method supports the following parameters:
 
-        `from_`:: Indicates the event index after which events should be returned. The indexes of events are
+        :param from_: Indicates the event index after which events should be returned. The indexes of events are
         strictly increasing, so when this parameter is used only the events with greater indexes
         will be returned. For example, the following request will return only the events
         with indexes greater than `123`:
@@ -9096,9 +8970,9 @@ class EventsService(Service):
         This parameter is optional, and if not specified then the first event returned will be most recently
         generated.
 
-        `max`:: Sets the maximum number of events to return. If not specified all the events are returned.
+        :param max: Sets the maximum number of events to return. If not specified all the events are returned.
 
-        `search`:: The events service provides search queries similar to other resource services.
+        :param search: The events service provides search queries similar to other resource services.
         We can search by providing specific severity.
         [source]
         ----
@@ -9151,18 +9025,18 @@ class EventsService(Service):
         GET /ovirt-engine/api/events?search=sortby%20time%20asc%20page%202
         ----
 
-        `case_sensitive`:: Indicates if the search performed using the `search` parameter should be performed taking case into
+        :param case_sensitive: Indicates if the search performed using the `search` parameter should be performed taking case into
         account. The default value is `true`, which means that case is taken into account. If you want to search
         ignoring case set it to `false`.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -9201,15 +9075,14 @@ class EventsService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the un-delete should be performed asynchronously.
+        :param async_: Indicates if the un-delete should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -9292,16 +9165,15 @@ class ExternalComputeResourceService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -9373,18 +9245,17 @@ class ExternalComputeResourcesService(Service):
         The order of the returned list of compute resources isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of resources to return. If not specified all the resources are returned.
+        :param max: Sets the maximum number of resources to return. If not specified all the resources are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -9467,16 +9338,15 @@ class ExternalDiscoveredHostService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -9555,18 +9425,17 @@ class ExternalDiscoveredHostsService(Service):
         The order of the returned list of hosts isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of hosts to return. If not specified all the hosts are returned.
+        :param max: Sets the maximum number of hosts to return. If not specified all the hosts are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -9624,16 +9493,15 @@ class ExternalHostService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -9699,16 +9567,15 @@ class ExternalHostGroupService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -9780,18 +9647,17 @@ class ExternalHostGroupsService(Service):
         The order of the returned list of host groups isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of groups to return. If not specified all the groups are returned.
+        :param max: Sets the maximum number of groups to return. If not specified all the groups are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -9882,20 +9748,19 @@ class ExternalHostProvidersService(Service):
         The order of the returned list of host providers isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of providers to return. If not specified all the providers are returned.
+        :param max: Sets the maximum number of providers to return. If not specified all the providers are returned.
 
-        `search`:: A query string used to restrict the returned external host providers.
+        :param search: A query string used to restrict the returned external host providers.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -9962,18 +9827,17 @@ class ExternalHostsService(Service):
         The order of the returned list of hosts isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of hosts to return. If not specified all the hosts are returned.
+        :param max: Sets the maximum number of hosts to return. If not specified all the hosts are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -10036,16 +9900,15 @@ class ExternalNetworkProviderConfigurationService(Service):
         Returns the information about an external network provider on the host.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -10095,16 +9958,15 @@ class ExternalNetworkProviderConfigurationsService(Service):
         The order of the returned list of networks is not guaranteed.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -10195,15 +10057,14 @@ class ExternalProviderService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the test should be performed asynchronously.
+        :param async_: Indicates if the test should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -10279,16 +10140,15 @@ class ExternalProviderCertificateService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -10352,18 +10212,17 @@ class ExternalProviderCertificatesService(Service):
         certificate of the server itself, the second the certificate of the CA that signs the first, so on.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of certificates to return. If not specified all the certificates are returned.
+        :param max: Sets the maximum number of certificates to return. If not specified all the certificates are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -10578,16 +10437,15 @@ class FenceAgentService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -10618,15 +10476,14 @@ class FenceAgentService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -10659,15 +10516,14 @@ class FenceAgentService(Service):
         Update a fencing-agent.
 
 
-        This method supports the following parameters:
 
-        `agent`:: Fence agent details.
+        :param agent: Fence agent details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -10818,18 +10674,17 @@ class FenceAgentsService(Service):
         The order of the returned list of fencing agents isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of agents to return. If not specified all the agents are returned.
+        :param max: Sets the maximum number of agents to return. If not specified all the agents are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -10890,16 +10745,15 @@ class FileService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -10968,26 +10822,25 @@ class FilesService(Service):
         server. Use it only if necessary.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of files to return. If not specified, all the files are returned.
+        :param max: Sets the maximum number of files to return. If not specified, all the files are returned.
 
-        `search`:: A query string used to restrict the returned files.
+        :param search: A query string used to restrict the returned files.
 
-        `case_sensitive`:: Indicates if the search performed using the `search` parameter should take case into
+        :param case_sensitive: Indicates if the search performed using the `search` parameter should take case into
         account. The default value is `true`.
 
-        `refresh`:: Indicates whether the list of files should be refreshed from the storage domain, rather than showing cached
+        :param refresh: Indicates whether the list of files should be refreshed from the storage domain, rather than showing cached
         results that are updated at certain intervals.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -11057,18 +10910,17 @@ class FilterService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -11096,15 +10948,14 @@ class FilterService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -11185,20 +11036,19 @@ class FiltersService(Service):
         The order of the returned list of filters isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of filters to return. If not specified all the filters are returned.
+        :param max: Sets the maximum number of filters to return. If not specified all the filters are returned.
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -11305,17 +11155,16 @@ class GlusterBricksService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `bricks`:: The list of bricks that need to be re-activated.
+        :param bricks: The list of bricks that need to be re-activated.
 
-        `async_`:: Indicates if the activation should be performed asynchronously.
+        :param async_: Indicates if the activation should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -11368,15 +11217,14 @@ class GlusterBricksService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `bricks`:: The list of bricks to be added to the volume
+        :param bricks: The list of bricks to be added to the volume
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -11434,18 +11282,17 @@ class GlusterBricksService(Service):
         The order of the returned list is based on the brick order provided at gluster volume creation.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of bricks to return. If not specified all the bricks are returned.
+        :param max: Sets the maximum number of bricks to return. If not specified all the bricks are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -11499,17 +11346,16 @@ class GlusterBricksService(Service):
         xref:services-job-methods-get[job] and steps in job using xref:services-step-methods-get[step]
 
 
-        This method supports the following parameters:
 
-        `bricks`:: List of bricks for which data migration needs to be started.
+        :param bricks: List of bricks for which data migration needs to be started.
 
-        `async_`:: Indicates if the migration should be performed asynchronously.
+        :param async_: Indicates if the migration should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -11561,19 +11407,18 @@ class GlusterBricksService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `bricks`:: The list of bricks to be removed
+        :param bricks: The list of bricks to be removed
 
-        `replica_count`:: Replica count of volume post add operation.
+        :param replica_count: Replica count of volume post add operation.
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -11630,18 +11475,17 @@ class GlusterBricksService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `bricks`:: List of bricks for which data migration needs to be stopped. This list should match the arguments passed to
+        :param bricks: List of bricks for which data migration needs to be stopped. This list should match the arguments passed to
         xref:services-gluster_bricks-methods-migrate[migrate].
 
-        `async_`:: Indicates if the action should be performed asynchronously.
+        :param async_: Indicates if the action should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -11707,15 +11551,14 @@ class GlusterHookService(Service):
         cluster. This updates the hook status to `DISABLED` in database.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the action should be performed asynchronously.
+        :param async_: Indicates if the action should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -11747,15 +11590,14 @@ class GlusterHookService(Service):
         cluster. This updates the hook status to `DISABLED` in database.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the action should be performed asynchronously.
+        :param async_: Indicates if the action should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -11783,16 +11625,15 @@ class GlusterHookService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -11819,15 +11660,14 @@ class GlusterHookService(Service):
         Removes the this Gluster hook from all servers in cluster and deletes it from the database.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -11867,15 +11707,14 @@ class GlusterHookService(Service):
         in cluster.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the action should be performed asynchronously.
+        :param async_: Indicates if the action should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -11932,18 +11771,17 @@ class GlusterHooksService(Service):
         The order of the returned list of hooks isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of hooks to return. If not specified all the hooks are returned.
+        :param max: Sets the maximum number of hooks to return. If not specified all the hooks are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -12037,16 +11875,15 @@ class GlusterVolumesService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `volume`:: The gluster volume definition from which to create the volume is passed as input and the newly created
+        :param volume: The gluster volume definition from which to create the volume is passed as input and the newly created
         volume is returned.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -12081,24 +11918,23 @@ class GlusterVolumesService(Service):
         The order of the returned list of volumes isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of volumes to return. If not specified all the volumes are returned.
+        :param max: Sets the maximum number of volumes to return. If not specified all the volumes are returned.
 
-        `search`:: A query string used to restrict the returned volumes.
+        :param search: A query string used to restrict the returned volumes.
 
-        `case_sensitive`:: Indicates if the search performed using the `search` parameter should be performed taking case into
+        :param case_sensitive: Indicates if the search performed using the `search` parameter should be performed taking case into
         account. The default value is `true`, which means that case is taken into account. If you want to search
         ignoring case set it to `false`.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -12193,16 +12029,15 @@ class GroupService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -12233,15 +12068,14 @@ class GroupService(Service):
         ....
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -12344,15 +12178,14 @@ class GroupsService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `group`:: The group to be added.
+        :param group: The group to be added.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -12403,24 +12236,23 @@ class GroupsService(Service):
         The order of the returned list of groups isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of groups to return. If not specified all the groups are returned.
+        :param max: Sets the maximum number of groups to return. If not specified all the groups are returned.
 
-        `search`:: A query string used to restrict the returned groups.
+        :param search: A query string used to restrict the returned groups.
 
-        `case_sensitive`:: Indicates if the search performed using the `search` parameter should be performed taking case into
+        :param case_sensitive: Indicates if the search performed using the `search` parameter should be performed taking case into
         account. The default value is `true`, which means that case is taken into account. If you want to search
         ignoring case set it to `false`.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -12492,16 +12324,15 @@ class HostCpuUnitsService(Service):
         about the current CPU pinning.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -12565,16 +12396,15 @@ class HostDeviceService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -12625,18 +12455,17 @@ class HostDevicesService(Service):
         The order of the returned list of devices isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of devices to return. If not specified all the devices are returned.
+        :param max: Sets the maximum number of devices to return. If not specified all the devices are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -12696,16 +12525,15 @@ class HostHookService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -12754,18 +12582,17 @@ class HostHooksService(Service):
         The order of the returned list of hooks is random.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of hooks to return. If not specified, all the hooks are returned.
+        :param max: Sets the maximum number of hooks to return. If not specified, all the hooks are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -12832,11 +12659,10 @@ class HostNicsService(Service):
         The order of the returned list of network interfaces isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of NICs to return. If not specified all the NICs are returned.
+        :param max: Sets the maximum number of NICs to return. If not specified all the NICs are returned.
 
-        `all_content`:: Indicates if all of the attributes of the host network interface should be included in the response.
+        :param all_content: Indicates if all of the attributes of the host network interface should be included in the response.
         By default the following attributes are excluded:
         - `virtual_functions_configuration`
         For example, to retrieve the complete representation of network interface '456' of host '123':
@@ -12847,14 +12673,14 @@ class HostNicsService(Service):
         seldom used and require additional queries to the database. Use this parameter with caution and only when
         specifically required.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -12924,18 +12750,17 @@ class HostNumaNodesService(Service):
         The order of the returned list of NUMA nodes isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of nodes to return. If not specified all the nodes are returned.
+        :param max: Sets the maximum number of nodes to return. If not specified all the nodes are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -13015,9 +12840,8 @@ class HostStorageService(Service):
         The order of the returned list of storages isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `report_status`:: Indicates if the status of the LUNs in the storage should be checked.
+        :param report_status: Indicates if the status of the LUNs in the storage should be checked.
         Checking the status of the LUN is an heavy weight operation and
         this data is not always needed by the user.
         This parameter will give the option to not perform the status check of the LUNs.
@@ -13062,14 +12886,14 @@ class HostStorageService(Service):
         </host_storage>
         ----
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -13188,16 +13012,15 @@ class HostsService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `host`:: The host definition with which the new host is created is passed as a parameter, and the newly created host
+        :param host: The host definition with which the new host is created is passed as a parameter, and the newly created host
         is returned.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -13264,19 +13087,18 @@ class HostsService(Service):
         the `search` parameter.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of hosts to return. If not specified all the hosts are returned.
+        :param max: Sets the maximum number of hosts to return. If not specified all the hosts are returned.
 
-        `search`:: A query string used to restrict the returned hosts.
+        :param search: A query string used to restrict the returned hosts.
 
-        `case_sensitive`:: Indicates if the search performed using the `search` parameter should be performed taking case into
+        :param case_sensitive: Indicates if the search performed using the `search` parameter should be performed taking case into
         account. The default value is `true`, which means that case is taken into account. If you want to search
         ignoring case set it to `false`.
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `all_content`:: Indicates if all of the attributes of the hosts should be included in the response.
+        :param all_content: Indicates if all of the attributes of the hosts should be included in the response.
         By default the following host attributes are excluded:
         - `hosted_engine`
         For example, to retrieve the complete representation of the hosts:
@@ -13287,7 +13109,7 @@ class HostsService(Service):
         seldom used and require additional queries to the database. Use this parameter with caution and only when
         specifically required.
 
-        `migration_target_of`:: Accepts a comma-separated list of virtual machine IDs and returns the hosts
+        :param migration_target_of: Accepts a comma-separated list of virtual machine IDs and returns the hosts
         that these virtual machines can be migrated to.
         For example, to retrieve the list of hosts to which the virtual machine with ID 123 and
         the virtual machine with ID 456 can be migrated to, send the following request:
@@ -13295,7 +13117,7 @@ class HostsService(Service):
         GET /ovirt-engine/api/hosts?migration_target_of=123,456
         ....
 
-        `check_vms_in_affinity_closure`:: This parameter can be used with `migration_target_of`
+        :param check_vms_in_affinity_closure: This parameter can be used with `migration_target_of`
         to get valid migration targets for the listed virtual machines
         and all other virtual machines that are in positive enforcing
         affinity with the listed virtual machines.
@@ -13306,14 +13128,14 @@ class HostsService(Service):
         GET /ovirt-engine/api/hosts?migration_target_of=123,456&check_vms_in_affinity_closure=true
         ....
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -13370,16 +13192,15 @@ class HostsService(Service):
         Add a new host to the system providing the host root password. This has been deprecated and provided for backwards compatibility.
 
 
-        This method supports the following parameters:
 
-        `host`:: The host definition with which the new host is created is passed as a parameter, and the newly created host
+        :param host: The host definition with which the new host is created is passed as a parameter, and the newly created host
         is returned.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -13424,16 +13245,15 @@ class HostsService(Service):
         Add a new host to the system providing the ssh password, fingerprint or public key.
 
 
-        This method supports the following parameters:
 
-        `host`:: The host definition with which the new host is created is passed as a parameter, and the newly created host
+        :param host: The host definition with which the new host is created is passed as a parameter, and the newly created host
         is returned.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -13520,16 +13340,15 @@ class IconService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -13595,18 +13414,17 @@ class IconsService(Service):
         The order of the returned list of icons isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of icons to return. If not specified all the icons are returned.
+        :param max: Sets the maximum number of icons to return. If not specified all the icons are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -13666,16 +13484,15 @@ class ImageService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -13717,27 +13534,26 @@ class ImageService(Service):
         generated by the engine.
 
 
-        This method supports the following parameters:
 
-        `cluster`:: The cluster to which the image should be imported if the `import_as_template` parameter
+        :param cluster: The cluster to which the image should be imported if the `import_as_template` parameter
         is set to `true`.
 
-        `disk`:: The disk to import.
+        :param disk: The disk to import.
 
-        `import_as_template`:: Specifies if a template should be created from the imported disk.
+        :param import_as_template: Specifies if a template should be created from the imported disk.
 
-        `template`:: The name of the template being created if the
+        :param template: The name of the template being created if the
         `import_as_template` parameter is set to `true`.
 
-        `storage_domain`:: The storage domain to which the disk should be imported.
+        :param storage_domain: The storage domain to which the disk should be imported.
 
-        `async_`:: Indicates if the import should be performed asynchronously.
+        :param async_: Indicates if the import should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -13938,16 +13754,15 @@ class ImageTransferService(Service):
         Get the image transfer entity.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -14087,15 +13902,14 @@ class ImageTransfersService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `image_transfer`:: The image transfer to add.
+        :param image_transfer: The image transfer to add.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -14117,15 +13931,14 @@ class ImageTransfersService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `image_transfer`:: The image transfer to add.
+        :param image_transfer: The image transfer to add.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -14147,15 +13960,14 @@ class ImageTransfersService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `image_transfer`:: The image transfer to add.
+        :param image_transfer: The image transfer to add.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -14177,15 +13989,14 @@ class ImageTransfersService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `image_transfer`:: The image transfer to add.
+        :param image_transfer: The image transfer to add.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -14212,16 +14023,15 @@ class ImageTransfersService(Service):
         The order of the returned list of image transfers is not guaranteed.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -14286,18 +14096,17 @@ class ImagesService(Service):
         The order of the returned list of images isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of images to return. If not specified all the images are returned.
+        :param max: Sets the maximum number of images to return. If not specified all the images are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -14365,16 +14174,15 @@ class InstanceTypeService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -14407,15 +14215,14 @@ class InstanceTypeService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -14556,16 +14363,15 @@ class InstanceTypeGraphicsConsoleService(Service):
         Gets graphics console configuration of the instance type.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -14592,15 +14398,14 @@ class InstanceTypeGraphicsConsoleService(Service):
         Remove the graphics console from the instance type.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -14678,18 +14483,17 @@ class InstanceTypeGraphicsConsolesService(Service):
         The order of the returned list of graphics consoles isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of consoles to return. If not specified all the consoles are returned.
+        :param max: Sets the maximum number of consoles to return. If not specified all the consoles are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -14752,16 +14556,15 @@ class InstanceTypeNicService(Service):
         Gets network interface configuration of the instance type.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -14788,15 +14591,14 @@ class InstanceTypeNicService(Service):
         Remove the network interface from the instance type.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -14908,20 +14710,19 @@ class InstanceTypeNicsService(Service):
         The order of the returned list of network interfaces isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of NICs to return. If not specified all the NICs are returned.
+        :param max: Sets the maximum number of NICs to return. If not specified all the NICs are returned.
 
-        `search`:: A query string used to restrict the returned templates.
+        :param search: A query string used to restrict the returned templates.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -14985,16 +14786,15 @@ class InstanceTypeWatchdogService(Service):
         Gets watchdog configuration of the instance type.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -15021,15 +14821,14 @@ class InstanceTypeWatchdogService(Service):
         Remove a watchdog from the instance type.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -15141,21 +14940,20 @@ class InstanceTypeWatchdogsService(Service):
         The order of the returned list of watchdogs isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of watchdogs to return. If not specified all the watchdogs are
+        :param max: Sets the maximum number of watchdogs to return. If not specified all the watchdogs are
         returned.
 
-        `search`:: A query string used to restrict the returned templates.
+        :param search: A query string used to restrict the returned templates.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -15326,25 +15124,24 @@ class InstanceTypesService(Service):
         The order of the returned list of instance types isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of instance types to return. If not specified all the instance
+        :param max: Sets the maximum number of instance types to return. If not specified all the instance
         types are returned.
 
-        `search`:: A query string used to restrict the returned templates.
+        :param search: A query string used to restrict the returned templates.
 
-        `case_sensitive`:: Indicates if the search performed using the `search` parameter should be performed
+        :param case_sensitive: Indicates if the search performed using the `search` parameter should be performed
         taking case into account. The default value is `true`, which means that case is taken
         into account. If you want to search ignoring case set it to `false`.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -15411,16 +15208,15 @@ class IscsiBondService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -15452,15 +15248,14 @@ class IscsiBondService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -15507,15 +15302,14 @@ class IscsiBondService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `bond`:: The iSCSI bond to update.
+        :param bond: The iSCSI bond to update.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -15632,18 +15426,17 @@ class IscsiBondsService(Service):
         The order of the returned list of iSCSI bonds isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of bonds to return. If not specified all the bonds are returned.
+        :param max: Sets the maximum number of bonds to return. If not specified all the bonds are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -15717,15 +15510,14 @@ class JobService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the action should be performed asynchronously.
+        :param async_: Indicates if the action should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -15771,20 +15563,19 @@ class JobService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `force`:: Indicates if the job should be forcibly terminated.
+        :param force: Indicates if the job should be forcibly terminated.
 
-        `succeeded`:: Indicates if the job should be marked as successfully finished or as failed.
+        :param succeeded: Indicates if the job should be marked as successfully finished or as failed.
         This parameter is optional, and the default value is `true`.
 
-        `async_`:: Indicates if the action should be performed asynchronously.
+        :param async_: Indicates if the action should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -15842,16 +15633,15 @@ class JobService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -15943,15 +15733,14 @@ class JobsService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `job`:: Job that will be added.
+        :param job: Job that will be added.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -16006,24 +15795,23 @@ class JobsService(Service):
         The order of the returned list of jobs isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `search`:: A query string used to restrict the returned jobs.
+        :param search: A query string used to restrict the returned jobs.
 
-        `case_sensitive`:: Indicates if the search performed using the `search` parameter should be performed taking case into
+        :param case_sensitive: Indicates if the search performed using the `search` parameter should be performed taking case into
         account. The default value is `true`, which means that case is taken into account. If you want to search
         ignoring case set it to `false`.
 
-        `max`:: Sets the maximum number of jobs to return. If not specified all the jobs are returned.
+        :param max: Sets the maximum number of jobs to return. If not specified all the jobs are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -16125,18 +15913,17 @@ class KatelloErrataService(Service):
         The order of the returned list of erratum isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of errata to return. If not specified all the errata are returned.
+        :param max: Sets the maximum number of errata to return. If not specified all the errata are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -16225,16 +16012,15 @@ class KatelloErratumService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -16282,16 +16068,15 @@ class LinkLayerDiscoveryProtocolService(Service):
         Fetches information elements received by LLDP.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -16335,16 +16120,15 @@ class MacPoolService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -16376,15 +16160,14 @@ class MacPoolService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -16553,18 +16336,17 @@ class MacPoolsService(Service):
         The returned list of MAC address pools isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of pools to return. If not specified all the pools are returned.
+        :param max: Sets the maximum number of pools to return. If not specified all the pools are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -16651,15 +16433,14 @@ class MoveableService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the move should be performed asynchronously.
+        :param async_: Indicates if the move should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -16736,16 +16517,15 @@ class NetworkService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -16790,15 +16570,14 @@ class NetworkService(Service):
         otherwise the entity has to be removed using this method.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -16940,16 +16719,15 @@ class NetworkAttachmentService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -16973,15 +16751,14 @@ class NetworkAttachmentService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -17094,18 +16871,17 @@ class NetworkAttachmentsService(Service):
         The order of the returned list of network attachments isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of attachments to return. If not specified all the attachments are returned.
+        :param max: Sets the maximum number of attachments to return. If not specified all the attachments are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -17181,16 +16957,15 @@ class NetworkFilterService(Service):
         Retrieves a representation of the network filter.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -17290,16 +17065,15 @@ class NetworkFiltersService(Service):
         The order of the returned list of network filters isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -17353,16 +17127,15 @@ class NetworkLabelService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -17394,15 +17167,14 @@ class NetworkLabelService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -17494,18 +17266,17 @@ class NetworkLabelsService(Service):
         The order of the returned list of labels isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of labels to return. If not specified all the labels are returned.
+        :param max: Sets the maximum number of labels to return. If not specified all the labels are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -17666,24 +17437,23 @@ class NetworksService(Service):
         `search` parameter.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of networks to return. If not specified all the networks are returned.
+        :param max: Sets the maximum number of networks to return. If not specified all the networks are returned.
 
-        `search`:: A query string used to restrict the returned networks.
+        :param search: A query string used to restrict the returned networks.
 
-        `case_sensitive`:: Indicates if the search performed using the `search` parameter should be performed taking case into
+        :param case_sensitive: Indicates if the search performed using the `search` parameter should be performed taking case into
         account. The default value is `true`, which means that case is taken into account. If you want to search
         ignoring case set it to `false`.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -17755,16 +17525,15 @@ class NicNetworkFilterParameterService(Service):
         Retrieves a representation of the network filter parameter.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -17833,15 +17602,14 @@ class NicNetworkFilterParameterService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `parameter`:: The network filter parameter that is being updated.
+        :param parameter: The network filter parameter that is being updated.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -17902,15 +17670,14 @@ class NicNetworkFilterParametersService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `parameter`:: The network filter parameter that is being added.
+        :param parameter: The network filter parameter that is being added.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -17936,16 +17703,15 @@ class NicNetworkFilterParametersService(Service):
         The order of the returned list of network filters isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -18001,16 +17767,15 @@ class OpenstackImageService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -18060,20 +17825,19 @@ class OpenstackImageService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `import_as_template`:: Indicates whether the image should be imported as a template.
+        :param import_as_template: Indicates whether the image should be imported as a template.
 
-        `cluster`:: This parameter is mandatory in case of using `import_as_template` and indicates which cluster should be used
+        :param cluster: This parameter is mandatory in case of using `import_as_template` and indicates which cluster should be used
         for import glance image as template.
 
-        `async_`:: Indicates if the import should be performed asynchronously.
+        :param async_: Indicates if the import should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -18132,16 +17896,15 @@ class OpenstackImageProviderService(ExternalProviderService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -18191,15 +17954,14 @@ class OpenstackImageProviderService(ExternalProviderService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -18236,15 +17998,14 @@ class OpenstackImageProviderService(ExternalProviderService):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the test should be performed asynchronously.
+        :param async_: Indicates if the test should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -18375,20 +18136,19 @@ class OpenstackImageProvidersService(Service):
         The order of the returned list of providers isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of providers to return. If not specified all the providers are returned.
+        :param max: Sets the maximum number of providers to return. If not specified all the providers are returned.
 
-        `search`:: A query string used to restrict the returned OpenStack image providers.
+        :param search: A query string used to restrict the returned OpenStack image providers.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -18455,18 +18215,17 @@ class OpenstackImagesService(Service):
         The order of the returned list of images isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of images to return. If not specified all the images are returned.
+        :param max: Sets the maximum number of images to return. If not specified all the images are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -18527,16 +18286,15 @@ class OpenstackNetworkService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -18565,9 +18323,8 @@ class OpenstackNetworkService(Service):
         The network will be added to the specified data center.
 
 
-        This method supports the following parameters:
 
-        `data_center`:: The data center into which the network is to be imported.
+        :param data_center: The data center into which the network is to be imported.
         Data center is mandatory, and can be specified
         using the `id` or `name` attributes. The rest of
         the attributes will be ignored.
@@ -18576,13 +18333,13 @@ class OpenstackNetworkService(Service):
         prevent this, automatic import can be disabled by setting the `auto_sync` to false,
         and enabling it again after importing the network.
 
-        `async_`:: Indicates if the import should be performed asynchronously.
+        :param async_: Indicates if the import should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -18652,16 +18409,15 @@ class OpenstackNetworkProviderService(ExternalProviderService):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -18719,15 +18475,14 @@ class OpenstackNetworkProviderService(ExternalProviderService):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -18764,15 +18519,14 @@ class OpenstackNetworkProviderService(ExternalProviderService):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the test should be performed asynchronously.
+        :param async_: Indicates if the test should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -18821,15 +18575,14 @@ class OpenstackNetworkProviderService(ExternalProviderService):
         ----
 
 
-        This method supports the following parameters:
 
-        `provider`:: The provider to update.
+        :param provider: The provider to update.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -18934,20 +18687,19 @@ class OpenstackNetworkProvidersService(Service):
         The order of the returned list of providers isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of providers to return. If not specified all the providers are returned.
+        :param max: Sets the maximum number of providers to return. If not specified all the providers are returned.
 
-        `search`:: A query string used to restrict the returned OpenStack network providers.
+        :param search: A query string used to restrict the returned OpenStack network providers.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -19016,18 +18768,17 @@ class OpenstackNetworksService(Service):
         The order of the returned list of networks isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of networks to return. If not specified all the networks are returned.
+        :param max: Sets the maximum number of networks to return. If not specified all the networks are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -19085,16 +18836,15 @@ class OpenstackSubnetService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -19118,15 +18868,14 @@ class OpenstackSubnetService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -19201,18 +18950,17 @@ class OpenstackSubnetsService(Service):
         The order of the returned list of sub-networks isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of sub-networks to return. If not specified all the sub-networks are returned.
+        :param max: Sets the maximum number of sub-networks to return. If not specified all the sub-networks are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -19272,16 +19020,15 @@ class OpenstackVolumeAuthenticationKeyService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -19305,15 +19052,14 @@ class OpenstackVolumeAuthenticationKeyService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -19417,18 +19163,17 @@ class OpenstackVolumeAuthenticationKeysService(Service):
         The order of the returned list of authentication keys isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of keys to return. If not specified all the keys are returned.
+        :param max: Sets the maximum number of keys to return. If not specified all the keys are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -19491,16 +19236,15 @@ class OpenstackVolumeProviderService(ExternalProviderService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -19551,19 +19295,18 @@ class OpenstackVolumeProviderService(ExternalProviderService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `force`:: Indicates if the operation should succeed, and the provider removed from the database,
+        :param force: Indicates if the operation should succeed, and the provider removed from the database,
         even if something fails during the operation.
         This parameter is optional, and the default value is `false`.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -19604,15 +19347,14 @@ class OpenstackVolumeProviderService(ExternalProviderService):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the test should be performed asynchronously.
+        :param async_: Indicates if the test should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -19774,20 +19516,19 @@ class OpenstackVolumeProvidersService(Service):
         The order of the returned list of volume providers isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of providers to return. If not specified all the providers are returned.
+        :param max: Sets the maximum number of providers to return. If not specified all the providers are returned.
 
-        `search`:: A query string used to restrict the returned volume providers.
+        :param search: A query string used to restrict the returned volume providers.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -19850,16 +19591,15 @@ class OpenstackVolumeTypeService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -19910,18 +19650,17 @@ class OpenstackVolumeTypesService(Service):
         The order of the returned list of volume types isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of volume types to return. If not specified all the volume types are returned.
+        :param max: Sets the maximum number of volume types to return. If not specified all the volume types are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -19979,16 +19718,15 @@ class OperatingSystemService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -20039,18 +19777,17 @@ class OperatingSystemsService(Service):
         The order of the returned list of operating systems isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of networks to return. If not specified all the networks are returned.
+        :param max: Sets the maximum number of networks to return. If not specified all the networks are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -20108,16 +19845,15 @@ class PermissionService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -20141,15 +19877,14 @@ class PermissionService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -20215,16 +19950,15 @@ class PermitService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -20255,15 +19989,14 @@ class PermitService(Service):
         ....
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -20328,15 +20061,14 @@ class PermitsService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `permit`:: The permit to add.
+        :param permit: The permit to add.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -20382,18 +20114,17 @@ class PermitsService(Service):
         The order of the returned list of permits isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of permits to return. If not specified all the permits are returned.
+        :param max: Sets the maximum number of permits to return. If not specified all the permits are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -20472,16 +20203,15 @@ class QosService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -20512,15 +20242,14 @@ class QosService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -20576,15 +20305,14 @@ class QosService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `qos`:: Updated QoS object.
+        :param qos: Updated QoS object.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -20654,15 +20382,14 @@ class QossService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `qos`:: Added QoS object.
+        :param qos: Added QoS object.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -20702,18 +20429,17 @@ class QossService(Service):
         The returned list of quality of service configurations isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of QoS descriptors to return. If not specified all the descriptors are returned.
+        :param max: Sets the maximum number of QoS descriptors to return. If not specified all the descriptors are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -20795,16 +20521,15 @@ class QuotaService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -20839,15 +20564,14 @@ class QuotaService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -20969,16 +20693,15 @@ class QuotaClusterLimitService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -21002,15 +20725,14 @@ class QuotaClusterLimitService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -21090,18 +20812,17 @@ class QuotaClusterLimitsService(Service):
         The returned list of quota limits isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of limits to return. If not specified all the limits are returned.
+        :param max: Sets the maximum number of limits to return. If not specified all the limits are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -21159,16 +20880,15 @@ class QuotaStorageLimitService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -21192,15 +20912,14 @@ class QuotaStorageLimitService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the update should be performed asynchronously.
+        :param async_: Indicates if the update should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -21305,18 +21024,17 @@ class QuotaStorageLimitsService(Service):
         The order of the returned list of storage limits is not guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of limits to return. If not specified, all the limits are returned.
+        :param max: Sets the maximum number of limits to return. If not specified, all the limits are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -21418,18 +21136,17 @@ class QuotasService(Service):
         The order of the returned list of quotas isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of quota descriptors to return. If not specified all the descriptors are returned.
+        :param max: Sets the maximum number of quota descriptors to return. If not specified all the descriptors are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -21506,16 +21223,15 @@ class RoleService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -21547,15 +21263,14 @@ class RoleService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -21604,15 +21319,14 @@ class RoleService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `role`:: Updated role.
+        :param role: Updated role.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -21697,15 +21411,14 @@ class RolesService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `role`:: Role that will be added.
+        :param role: Role that will be added.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -21750,18 +21463,17 @@ class RolesService(Service):
         The order of the returned list of roles isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of roles to return. If not specified all the roles are returned.
+        :param max: Sets the maximum number of roles to return. If not specified all the roles are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -21854,20 +21566,19 @@ class SchedulingPoliciesService(Service):
         The order of the returned list of scheduling policies isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of policies to return. If not specified all the policies are returned.
+        :param max: Sets the maximum number of policies to return. If not specified all the policies are returned.
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -21933,18 +21644,17 @@ class SchedulingPolicyService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -21972,15 +21682,14 @@ class SchedulingPolicyService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -22089,18 +21798,17 @@ class SchedulingPolicyUnitService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -22128,15 +21836,14 @@ class SchedulingPolicyUnitService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -22193,20 +21900,19 @@ class SchedulingPolicyUnitsService(Service):
         The order of the returned list of scheduling policy units isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of policy units to return. If not specified all the policy units are returned.
+        :param max: Sets the maximum number of policy units to return. If not specified all the policy units are returned.
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -22271,16 +21977,15 @@ class SnapshotService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -22305,11 +22010,10 @@ class SnapshotService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `all_content`:: Indicates if all the attributes of the virtual machine snapshot should be included in the response.
+        :param all_content: Indicates if all the attributes of the virtual machine snapshot should be included in the response.
         By default the attribute `initialization.configuration.data` is excluded.
         For example, to retrieve the complete representation of the snapshot with id `456` of the virtual machine
         with id `123` send a request like this:
@@ -22317,11 +22021,11 @@ class SnapshotService(Service):
         GET /ovirt-engine/api/vms/123/snapshots/456?all_content=true
         ....
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -22371,9 +22075,8 @@ class SnapshotService(Service):
         NOTE: Confirm that the commit operation is finished and the virtual machine is down before running the virtual machine.
 
 
-        This method supports the following parameters:
 
-        `disks`:: Specify the disks included in the snapshot's restore.
+        :param disks: Specify the disks included in the snapshot's restore.
         For each disk parameter, it is also required to specify its `image_id`.
         For example, to restore a snapshot with an identifier `456` of a virtual machine with identifier `123`, including
         a disk with identifier `111` and `image_id` of `222`, send a request like this:
@@ -22393,13 +22096,13 @@ class SnapshotService(Service):
         </action>
         ----
 
-        `async_`:: Indicates if the restore should be performed asynchronously.
+        :param async_: Indicates if the restore should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -22477,16 +22180,15 @@ class SnapshotCdromService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -22537,18 +22239,17 @@ class SnapshotCdromsService(Service):
         The order of the returned list of CD-ROM devices isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of CDROMS to return. If not specified all the CDROMS are returned.
+        :param max: Sets the maximum number of CDROMS to return. If not specified all the CDROMS are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -22606,16 +22307,15 @@ class SnapshotDiskService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -22666,18 +22366,17 @@ class SnapshotDisksService(Service):
         The order of the returned list of disks isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of disks to return. If not specified all the disks are returned.
+        :param max: Sets the maximum number of disks to return. If not specified all the disks are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -22735,16 +22434,15 @@ class SnapshotNicService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -22795,18 +22493,17 @@ class SnapshotNicsService(Service):
         The order of the returned list of NICs isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of NICs to return. If not specified all the NICs are returned.
+        :param max: Sets the maximum number of NICs to return. If not specified all the NICs are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -22946,11 +22643,10 @@ class SnapshotsService(Service):
         The order of the returned list of snapshots isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of snapshots to return. If not specified all the snapshots are returned.
+        :param max: Sets the maximum number of snapshots to return. If not specified all the snapshots are returned.
 
-        `all_content`:: Indicates if all the attributes of the virtual machine snapshot should be included in the response.
+        :param all_content: Indicates if all the attributes of the virtual machine snapshot should be included in the response.
         By default the attribute `initialization.configuration.data` is excluded.
         For example, to retrieve the complete representation of the virtual machine with id `123` snapshots send a
         request like this:
@@ -22958,14 +22654,14 @@ class SnapshotsService(Service):
         GET /ovirt-engine/api/vms/123/snapshots?all_content=true
         ....
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -23027,16 +22723,15 @@ class SshPublicKeyService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -23060,15 +22755,14 @@ class SshPublicKeyService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -23211,18 +22905,17 @@ class SshPublicKeysService(Service):
         The order of the returned list of keys is not guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of keys to return. If not specified all the keys are returned.
+        :param max: Sets the maximum number of keys to return. If not specified all the keys are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -23280,16 +22973,15 @@ class StatisticService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -23386,18 +23078,17 @@ class StatisticsService(Service):
         The order of the returned list of statistics isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of statistics to return. If not specified all the statistics are returned.
+        :param max: Sets the maximum number of statistics to return. If not specified all the statistics are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -23477,20 +23168,19 @@ class StepService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `force`:: Indicates if the step should be forcibly terminated.
+        :param force: Indicates if the step should be forcibly terminated.
 
-        `succeeded`:: Indicates if the step should be marked as successfully finished or as failed.
+        :param succeeded: Indicates if the step should be marked as successfully finished or as failed.
         This parameter is optional, and the default value is `true`.
 
-        `async_`:: Indicates if the action should be performed asynchronously.
+        :param async_: Indicates if the action should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -23546,16 +23236,15 @@ class StepService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -23646,15 +23335,14 @@ class StepsService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `step`:: Step that will be added.
+        :param step: Step that will be added.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -23705,18 +23393,17 @@ class StepsService(Service):
         The order of the returned list of steps isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of steps to return. If not specified all the steps are returned.
+        :param max: Sets the maximum number of steps to return. If not specified all the steps are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -23777,9 +23464,8 @@ class StorageService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `report_status`:: Indicates if the status of the LUNs in the storage should be checked.
+        :param report_status: Indicates if the status of the LUNs in the storage should be checked.
         Checking the status of the LUN is an heavy weight operation and
         this data is not always needed by the user.
         This parameter will give the option to not perform the status check of the LUNs.
@@ -23824,14 +23510,14 @@ class StorageService(Service):
         </host_storage>
         ----
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -23891,18 +23577,17 @@ class StorageDomainService(Service):
         Retrieves the description of the storage domain.
 
 
-        This method supports the following parameters:
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -23936,17 +23621,16 @@ class StorageDomainService(Service):
         Executing this API will cause the host to disconnect from the storage domain.
 
 
-        This method supports the following parameters:
 
-        `host`:: Indicates the data center's host.
+        :param host: Indicates the data center's host.
 
-        `async_`:: Indicates if the action should be performed asynchronously.
+        :param async_: Indicates if the action should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -23998,15 +23682,14 @@ class StorageDomainService(Service):
          xref:types-storage_type[storage type] of iSCSI or FCP).
 
 
-        This method supports the following parameters:
 
-        `logical_units`:: The logical units that need to be reduced from the storage domain.
+        :param logical_units: The logical units that need to be reduced from the storage domain.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -24053,17 +23736,16 @@ class StorageDomainService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `logical_units`:: The LUNs that need to be refreshed.
+        :param logical_units: The LUNs that need to be refreshed.
 
-        `async_`:: Indicates if the refresh should be performed asynchronously.
+        :param async_: Indicates if the refresh should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -24106,9 +23788,8 @@ class StorageDomainService(Service):
         LUN or directory, so it can no longer be imported to the same or to a different setup.
 
 
-        This method supports the following parameters:
 
-        `host`:: Indicates which host should be used to remove the storage domain.
+        :param host: Indicates which host should be used to remove the storage domain.
         This parameter is mandatory, except if the `destroy` parameter is included and its value is `true`, in that
         case the `host` parameter will be ignored.
         The value should contain the name or the identifier of the host. For example, to use the host named `myhost`
@@ -24118,7 +23799,7 @@ class StorageDomainService(Service):
         DELETE /ovirt-engine/api/storageDomains/123?host=myhost
         ----
 
-        `format`:: Indicates if the actual storage should be formatted, removing all the metadata from the underlying LUN or
+        :param format: Indicates if the actual storage should be formatted, removing all the metadata from the underlying LUN or
         directory:
         [source]
         ----
@@ -24126,7 +23807,7 @@ class StorageDomainService(Service):
         ----
         This parameter is optional, and the default value is `false`.
 
-        `destroy`:: Indicates if the operation should succeed, and the storage domain removed from the database, even if the
+        :param destroy: Indicates if the operation should succeed, and the storage domain removed from the database, even if the
         storage is not accessible.
         [source]
         ----
@@ -24135,13 +23816,13 @@ class StorageDomainService(Service):
         This parameter is optional, and the default value is `false`.
         When the value of `destroy` is `true` the `host` parameter will be ignored.
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -24203,15 +23884,14 @@ class StorageDomainService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `storage_domain`:: The updated storage domain.
+        :param storage_domain: The updated storage domain.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -24256,15 +23936,14 @@ class StorageDomainService(Service):
         an update is needed or not.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the `OVF_STORE` update should be performed asynchronously.
+        :param async_: Indicates if the `OVF_STORE` update should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -24399,18 +24078,17 @@ class StorageDomainContentDiskService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -24468,24 +24146,23 @@ class StorageDomainContentDisksService(Service):
         the `search` parameter.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of disks to return. If not specified all the disks are returned.
+        :param max: Sets the maximum number of disks to return. If not specified all the disks are returned.
 
-        `search`:: A query string used to restrict the returned disks.
+        :param search: A query string used to restrict the returned disks.
 
-        `case_sensitive`:: Indicates if the search performed using the `search` parameter should be performed taking case into
+        :param case_sensitive: Indicates if the search performed using the `search` parameter should be performed taking case into
         account. The default value is `true`, which means that case is taken into account. If you want to search
         ignoring case set it to `false`.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -24566,17 +24243,16 @@ class StorageDomainDiskService(MeasurableService):
         operation of the service that manages that disk.
 
 
-        This method supports the following parameters:
 
-        `disk`:: Description of the resulting disk.
+        :param disk: Description of the resulting disk.
 
-        `storage_domain`:: The storage domain where the new disk will be created.
+        :param storage_domain: The storage domain where the new disk will be created.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -24608,15 +24284,14 @@ class StorageDomainDiskService(MeasurableService):
         operation of the service that manages that disk.
 
 
-        This method supports the following parameters:
 
-        `storage_domain`:: The export storage domain where the disk should be exported to.
+        :param storage_domain: The export storage domain where the disk should be exported to.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -24643,16 +24318,15 @@ class StorageDomainDiskService(MeasurableService):
         Retrieves the description of the disk.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -24684,19 +24358,18 @@ class StorageDomainDiskService(MeasurableService):
         operation of the service that manages that disk.
 
 
-        This method supports the following parameters:
 
-        `storage_domain`:: The storage domain where the disk will be moved to.
+        :param storage_domain: The storage domain where the disk will be moved to.
 
-        `async_`:: Indicates if the move should be performed asynchronously.
+        :param async_: Indicates if the move should be performed asynchronously.
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -24734,15 +24407,14 @@ class StorageDomainDiskService(MeasurableService):
         There is no need to specify the size as the optimal size is calculated automatically.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -24827,15 +24499,14 @@ class StorageDomainDiskService(MeasurableService):
         xref:services-disk-methods-update[update] operation of the service that manages that disk.
 
 
-        This method supports the following parameters:
 
-        `disk`:: The update to apply to the disk.
+        :param disk: The update to apply to the disk.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -24908,15 +24579,14 @@ class StorageDomainDisksService(Service):
         that disk.
 
 
-        This method supports the following parameters:
 
-        `disk`:: The disk to add or register.
+        :param disk: The disk to add or register.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -24948,11 +24618,10 @@ class StorageDomainDisksService(Service):
         The order of the returned list of disks is not guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of disks to return. If not specified, all the disks are returned.
+        :param max: Sets the maximum number of disks to return. If not specified, all the disks are returned.
 
-        `unregistered`:: Indicates whether to retrieve a list of registered or unregistered disks in the storage domain.
+        :param unregistered: Indicates whether to retrieve a list of registered or unregistered disks in the storage domain.
         To get a list of unregistered disks in the storage domain the call should indicate the unregistered flag.
         For example, to get a list of unregistered disks the REST API call should look like this:
         ....
@@ -24961,14 +24630,14 @@ class StorageDomainDisksService(Service):
         The default value of the unregistered flag is `false`.
         The request only applies to storage domains that are attached.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -25032,16 +24701,15 @@ class StorageDomainServerConnectionService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -25068,15 +24736,14 @@ class StorageDomainServerConnectionService(Service):
         Detaches a storage connection from storage.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the action should be performed asynchronously.
+        :param async_: Indicates if the action should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -25153,18 +24820,17 @@ class StorageDomainServerConnectionsService(Service):
         The order of the returned list of connections isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of connections to return. If not specified all the connections are returned.
+        :param max: Sets the maximum number of connections to return. If not specified all the connections are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -25223,16 +24889,15 @@ class StorageDomainTemplateService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -25285,19 +24950,18 @@ class StorageDomainTemplateService(Service):
         cluster mapping).
 
 
-        This method supports the following parameters:
 
-        `clone`:: Use the optional `clone` parameter to generate new UUIDs for the imported template and its entities.
+        :param clone: Use the optional `clone` parameter to generate new UUIDs for the imported template and its entities.
         You can import a template with the `clone` parameter set to `false` when importing a template
         from an export domain, with templates that were exported by a different {product-name} environment.
 
-        `async_`:: Indicates if the import should be performed asynchronously.
+        :param async_: Indicates if the import should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -25348,31 +25012,30 @@ class StorageDomainTemplateService(Service):
         Template and disks into the database without the copy process.
 
 
-        This method supports the following parameters:
 
-        `allow_partial_import`:: Indicates whether a template is allowed to be registered with only some of its disks.
+        :param allow_partial_import: Indicates whether a template is allowed to be registered with only some of its disks.
         If this flag is `true`, the system will not fail in the validation process if an image is not found, but
         instead it will allow the template to be registered without the missing disks. This is mainly used during
         registration of a template when some of the storage domains are not available. The default value is `false`.
 
-        `vnic_profile_mappings`:: Deprecated attribute describing mapping rules for virtual NIC profiles that will be applied during the import\register process.
+        :param vnic_profile_mappings: Deprecated attribute describing mapping rules for virtual NIC profiles that will be applied during the import\register process.
         WARNING: Please note that this attribute has been deprecated since version 4.2.1 of the engine, and preserved only for backward
         compatibility. It will be removed in the future. To specify `vnic_profile_mappings` use the `vnic_profile_mappings`
         attribute inside the xref:types-registration_configuration[RegistrationConfiguration] type.
 
-        `registration_configuration`:: This parameter describes how the template should be
+        :param registration_configuration: This parameter describes how the template should be
         registered.
         This parameter is optional. If the parameter is not specified, the template
         will be registered with the same configuration that
         it had in the original environment where it was created.
 
-        `async_`:: Indicates if the registration should be performed asynchronously.
+        :param async_: Indicates if the registration should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -25414,15 +25077,14 @@ class StorageDomainTemplateService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -25488,11 +25150,10 @@ class StorageDomainTemplatesService(Service):
         The order of the returned list of templates isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of templates to return. If not specified all the templates are returned.
+        :param max: Sets the maximum number of templates to return. If not specified all the templates are returned.
 
-        `unregistered`:: Indicates whether to retrieve a list of registered or unregistered templates which contain disks on the storage domain.
+        :param unregistered: Indicates whether to retrieve a list of registered or unregistered templates which contain disks on the storage domain.
         To get a list of unregistered templates the call should indicate the unregistered flag.
         For example, to get a list of unregistered templates the REST API call should look like this:
         ....
@@ -25501,14 +25162,14 @@ class StorageDomainTemplatesService(Service):
         The default value of the unregisterd flag is `false`.
         The request only apply to storage domains that are attached.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -25572,16 +25233,15 @@ class StorageDomainVmService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -25667,9 +25327,8 @@ class StorageDomainVmService(Service):
         cluster mapping).
 
 
-        This method supports the following parameters:
 
-        `clone`:: Indicates if the identifiers of the imported virtual machine
+        :param clone: Indicates if the identifiers of the imported virtual machine
         should be regenerated.
         By default when a virtual machine is imported the identifiers
         are preserved. This means that the same virtual machine can't
@@ -25677,19 +25336,19 @@ class StorageDomainVmService(Service):
         unique. To allow importing the same machine multiple times set
         this parameter to `true`, as the default is `false`.
 
-        `collapse_snapshots`:: Indicates of the snapshots of the virtual machine that is imported
+        :param collapse_snapshots: Indicates of the snapshots of the virtual machine that is imported
         should be collapsed, so that the result will be a virtual machine
         without snapshots.
         This parameter is optional, and if it isn't explicitly specified the
         default value is `false`.
 
-        `async_`:: Indicates if the import should be performed asynchronously.
+        :param async_: Indicates if the import should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -25736,37 +25395,36 @@ class StorageDomainVmService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `allow_partial_import`:: Indicates whether a virtual machine is allowed to be registered with only some of its disks.
+        :param allow_partial_import: Indicates whether a virtual machine is allowed to be registered with only some of its disks.
         If this flag is `true`, the engine will not fail in the validation process if an image is not found, but
         instead it will allow the virtual machine to be registered without the missing disks. This is mainly used
         during registration of a virtual machine when some of the storage domains are not available. The default
         value is `false`.
 
-        `vnic_profile_mappings`:: Deprecated attribute describing mapping rules for virtual NIC profiles that will be applied during the import\register process.
+        :param vnic_profile_mappings: Deprecated attribute describing mapping rules for virtual NIC profiles that will be applied during the import\register process.
         WARNING: Please note that this attribute has been deprecated since version 4.2.1 of the engine, and preserved only for backward
         compatibility. It will be removed in the future. To specify `vnic_profile_mappings` use the `vnic_profile_mappings`
         attribute inside the xref:types-registration_configuration[RegistrationConfiguration] type.
 
-        `reassign_bad_macs`:: Indicates if the problematic MAC addresses should be re-assigned during the import process by the engine.
+        :param reassign_bad_macs: Indicates if the problematic MAC addresses should be re-assigned during the import process by the engine.
         A MAC address would be considered as a problematic one if one of the following is true:
         - It conflicts with a MAC address that is already allocated to a virtual machine in the target environment.
         - It's out of the range of the target MAC address pool.
 
-        `registration_configuration`:: This parameter describes how the virtual machine should be
+        :param registration_configuration: This parameter describes how the virtual machine should be
         registered.
         This parameter is optional. If the parameter is not specified, the virtual
         machine will be registered with the same configuration that
         it had in the original environment where it was created.
 
-        `async_`:: Indicates if the registration should be performed asynchronously.
+        :param async_: Indicates if the registration should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -25816,15 +25474,14 @@ class StorageDomainVmService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -25897,16 +25554,15 @@ class StorageDomainVmDiskAttachmentService(Service):
         Returns the details of the attachment with all its properties and a link to the disk.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -25956,16 +25612,15 @@ class StorageDomainVmDiskAttachmentsService(Service):
         The order of the returned list of disk attachments isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -26054,12 +25709,11 @@ class StorageDomainVmsService(Service):
         The order of the returned list of virtual machines isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of virtual machines to return. If not specified all the virtual machines are
+        :param max: Sets the maximum number of virtual machines to return. If not specified all the virtual machines are
         returned.
 
-        `unregistered`:: Indicates whether to retrieve a list of registered or unregistered virtual machines which
+        :param unregistered: Indicates whether to retrieve a list of registered or unregistered virtual machines which
         contain disks on the storage domain.
         To get a list of unregistered virtual machines the call should indicate the unregistered flag.
         For example, to get a list of unregistered virtual machines the REST API call should look like this:
@@ -26069,14 +25723,14 @@ class StorageDomainVmsService(Service):
         The default value of the unregisterd flag is `false`.
         The request only apply to storage domains that are attached.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -26205,15 +25859,14 @@ class StorageDomainsService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `storage_domain`:: The storage domain to add.
+        :param storage_domain: The storage domain to add.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -26238,15 +25891,14 @@ class StorageDomainsService(Service):
         Import an existing block storage domain to the system using the targets already connected to the host.
 
 
-        This method supports the following parameters:
 
-        `storage_domain`:: The storage domain to add.
+        :param storage_domain: The storage domain to add.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -26271,15 +25923,14 @@ class StorageDomainsService(Service):
         Add a new storage domain to the system using the storage on the given host and path.
 
 
-        This method supports the following parameters:
 
-        `storage_domain`:: The storage domain to add.
+        :param storage_domain: The storage domain to add.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -26304,15 +25955,14 @@ class StorageDomainsService(Service):
         Add a new storage domain to the system using a direct LUN.
 
 
-        This method supports the following parameters:
 
-        `storage_domain`:: The storage domain to add.
+        :param storage_domain: The storage domain to add.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -26337,15 +25987,14 @@ class StorageDomainsService(Service):
         Add a new storage domain to the system using Gluster or POSIX FS storage.
 
 
-        This method supports the following parameters:
 
-        `storage_domain`:: The storage domain to add.
+        :param storage_domain: The storage domain to add.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -26376,26 +26025,25 @@ class StorageDomainsService(Service):
         in the `search` parameter.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of storage domains to return. If not specified, all the storage domains are returned.
+        :param max: Sets the maximum number of storage domains to return. If not specified, all the storage domains are returned.
 
-        `search`:: A query string used to restrict the returned storage domains.
+        :param search: A query string used to restrict the returned storage domains.
 
-        `case_sensitive`:: Indicates if the search should be performed taking case into account.
+        :param case_sensitive: Indicates if the search should be performed taking case into account.
         The default value is `true`, which means that case is taken into account. If you want to search
         ignoring case, set it to `false`.
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -26437,15 +26085,14 @@ class StorageDomainsService(Service):
         Add a new storage domain to the system using the storage on the local host at the given path.
 
 
-        This method supports the following parameters:
 
-        `storage_domain`:: The storage domain to add.
+        :param storage_domain: The storage domain to add.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -26497,16 +26144,15 @@ class StorageServerConnectionService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -26688,9 +26334,8 @@ class StorageServerConnectionService(Service):
         id is optional; providing it disconnects (unmounts) the connection from that host.
 
 
-        This method supports the following parameters:
 
-        `host`:: The name or identifier of the host from which the connection would be unmounted (disconnected). If not
+        :param host: The name or identifier of the host from which the connection would be unmounted (disconnected). If not
         provided, no host will be disconnected.
         For example, to use the host with identifier `456` to delete the storage connection with identifier `123`
         send a request like this:
@@ -26699,13 +26344,13 @@ class StorageServerConnectionService(Service):
         DELETE /ovirt-engine/api/storageconnections/123?host=456
         ----
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -26857,16 +26502,15 @@ class StorageServerConnectionExtensionService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -26890,15 +26534,14 @@ class StorageServerConnectionExtensionService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -27039,18 +26682,17 @@ class StorageServerConnectionExtensionsService(Service):
         The order of the returned list of storage connections isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of extensions to return. If not specified all the extensions are returned.
+        :param max: Sets the maximum number of extensions to return. If not specified all the extensions are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -27204,18 +26846,17 @@ class StorageServerConnectionsService(Service):
         The order of the returned list of connections isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of connections to return. If not specified all the connections are returned.
+        :param max: Sets the maximum number of connections to return. If not specified all the connections are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -27461,16 +27102,15 @@ class SystemService(Service):
         `special_objects` and `summary`.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -27494,15 +27134,14 @@ class SystemService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the reload should be performed asynchronously.
+        :param async_: Indicates if the reload should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -27982,9 +27621,8 @@ class SystemOptionService(Service):
         ====
 
 
-        This method supports the following parameters:
 
-        `version`:: Optional version parameter that specifies that only particular version of the configuration option
+        :param version: Optional version parameter that specifies that only particular version of the configuration option
         should be returned.
         If this parameter isn't used then all the versions will be returned.
         For example, to get the value of the `MigrationPolicies` option but only for version `4.2` send
@@ -28007,11 +27645,11 @@ class SystemOptionService(Service):
         </system_option>
         ----
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -28141,15 +27779,14 @@ class SystemPermissionsService(AssignedPermissionsService):
         ----
 
 
-        This method supports the following parameters:
 
-        `permission`:: The permission.
+        :param permission: The permission.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -28174,15 +27811,14 @@ class SystemPermissionsService(AssignedPermissionsService):
         Add a new permission on the cluster to the group in the system.
 
 
-        This method supports the following parameters:
 
-        `permission`:: The permission.
+        :param permission: The permission.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -28207,15 +27843,14 @@ class SystemPermissionsService(AssignedPermissionsService):
         Add a new permission on the data center to the group in the system.
 
 
-        This method supports the following parameters:
 
-        `permission`:: The permission.
+        :param permission: The permission.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -28240,15 +27875,14 @@ class SystemPermissionsService(AssignedPermissionsService):
         Add a new group level permission for a given virtual machine.
 
 
-        This method supports the following parameters:
 
-        `permission`:: The permission.
+        :param permission: The permission.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -28273,15 +27907,14 @@ class SystemPermissionsService(AssignedPermissionsService):
         Add a new permission on the host to the group in the system.
 
 
-        This method supports the following parameters:
 
-        `permission`:: The permission.
+        :param permission: The permission.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -28326,16 +27959,15 @@ class SystemPermissionsService(AssignedPermissionsService):
         The order of the returned permissions isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -28362,15 +27994,14 @@ class SystemPermissionsService(AssignedPermissionsService):
         Add a new permission on the storage domain to the group in the system.
 
 
-        This method supports the following parameters:
 
-        `permission`:: The permission.
+        :param permission: The permission.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -28395,15 +28026,14 @@ class SystemPermissionsService(AssignedPermissionsService):
         Add a new permission on the template to the group in the system.
 
 
-        This method supports the following parameters:
 
-        `permission`:: The permission.
+        :param permission: The permission.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -28428,15 +28058,14 @@ class SystemPermissionsService(AssignedPermissionsService):
         Add a new user level permission for a given virtual machine.
 
 
-        This method supports the following parameters:
 
-        `permission`:: The permission.
+        :param permission: The permission.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -28461,15 +28090,14 @@ class SystemPermissionsService(AssignedPermissionsService):
         Add a new permission on the vm to the group in the system.
 
 
-        This method supports the following parameters:
 
-        `permission`:: The permission.
+        :param permission: The permission.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -28494,15 +28122,14 @@ class SystemPermissionsService(AssignedPermissionsService):
         Add a new permission on the vm pool to the group in the system.
 
 
-        This method supports the following parameters:
 
-        `permission`:: The permission.
+        :param permission: The permission.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -28573,16 +28200,15 @@ class TagService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -28613,15 +28239,14 @@ class TagService(Service):
         ....
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -28675,15 +28300,14 @@ class TagService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `tag`:: The updated tag.
+        :param tag: The updated tag.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -28761,15 +28385,14 @@ class TagsService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `tag`:: The added tag.
+        :param tag: The added tag.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -28825,18 +28448,17 @@ class TagsService(Service):
         The order of the returned list of tags isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of tags to return. If not specified all the tags are returned.
+        :param max: Sets the maximum number of tags to return. If not specified all the tags are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -28940,19 +28562,18 @@ class TemplateService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `exclusive`:: Indicates if the existing templates with the same name should be overwritten.
+        :param exclusive: Indicates if the existing templates with the same name should be overwritten.
         The export action reports a failed action if a template of the same name exists in the destination domain.
         Set this parameter to `true` to change this behavior and overwrite any existing template.
 
-        `storage_domain`:: Specifies the destination export storage domain.
+        :param storage_domain: Specifies the destination export storage domain.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -28982,18 +28603,17 @@ class TemplateService(Service):
         Returns the information about this template or template version.
 
 
-        This method supports the following parameters:
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -29028,15 +28648,14 @@ class TemplateService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the removal should be performed asynchronously.
+        :param async_: Indicates if the removal should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -29069,19 +28688,18 @@ class TemplateService(Service):
         Exports a template to an export domain.
 
 
-        This method supports the following parameters:
 
-        `exclusive`:: Indicates if the existing templates with the same name should be overwritten.
+        :param exclusive: Indicates if the existing templates with the same name should be overwritten.
         The export action reports a failed action if a template of the same name exists in the destination domain.
         Set this parameter to `true` to change this behavior and overwrite any existing template.
 
-        `storage_domain`:: Specifies the destination export storage domain.
+        :param storage_domain: Specifies the destination export storage domain.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -29114,27 +28732,26 @@ class TemplateService(Service):
         Exports a template as an OVA file to a given path on a specified host.
 
 
-        This method supports the following parameters:
 
-        `host`:: The host to generate the OVA file on.
+        :param host: The host to generate the OVA file on.
 
-        `directory`:: An absolute path of a directory on the host to generate the OVA file in.
+        :param directory: An absolute path of a directory on the host to generate the OVA file in.
 
-        `filename`:: The name of the OVA file.
+        :param filename: The name of the OVA file.
         This is an optional parameter. If it is not specified, the name of the OVA file is determined according
         to the name of the template. It will conform to the following pattern: "<template name>.ova".
 
-        `exclusive`:: Indicates if the existing templates with the same name should be overwritten.
+        :param exclusive: Indicates if the existing templates with the same name should be overwritten.
         The export action reports a failed action if a template of the same name exists in the destination domain.
         Set this parameter to `true` to change this behavior and overwrite any existing template.
 
-        `storage_domain`:: Specifies the destination export storage domain.
+        :param storage_domain: Specifies the destination export storage domain.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -29341,16 +28958,15 @@ class TemplateCdromService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -29401,18 +29017,17 @@ class TemplateCdromsService(Service):
         The order of the returned list of CD-ROM devices isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of CD-ROMs to return. If not specified all the CD-ROMs are returned.
+        :param max: Sets the maximum number of CD-ROMs to return. If not specified all the CD-ROMs are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -29477,17 +29092,16 @@ class TemplateDiskService(Service):
         Copy the specified disk attached to the template to a specific storage domain.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the copy should be performed asynchronously.
+        :param async_: Indicates if the copy should be performed asynchronously.
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -29521,17 +29135,16 @@ class TemplateDiskService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the export should be performed asynchronously.
+        :param async_: Indicates if the export should be performed asynchronously.
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -29563,16 +29176,15 @@ class TemplateDiskService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -29596,15 +29208,14 @@ class TemplateDiskService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -29657,16 +29268,15 @@ class TemplateDiskAttachmentService(Service):
         Returns the details of the attachment.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -29701,15 +29311,14 @@ class TemplateDiskAttachmentService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `storage_domain`:: Specifies the identifier of the storage domain the image to be removed resides on.
+        :param storage_domain: Specifies the identifier of the storage domain the image to be removed resides on.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -29764,16 +29373,15 @@ class TemplateDiskAttachmentsService(Service):
         The order of the returned list of attachments isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -29835,18 +29443,17 @@ class TemplateDisksService(Service):
         The order of the returned list of disks isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of disks to return. If not specified all the disks are returned.
+        :param max: Sets the maximum number of disks to return. If not specified all the disks are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -29907,16 +29514,15 @@ class TemplateGraphicsConsoleService(Service):
         Gets graphics console configuration of the template.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -29943,15 +29549,14 @@ class TemplateGraphicsConsoleService(Service):
         Remove the graphics console from the template.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -30029,18 +29634,17 @@ class TemplateGraphicsConsolesService(Service):
         The order of the returned list of graphics consoles isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of consoles to return. If not specified all the consoles are returned.
+        :param max: Sets the maximum number of consoles to return. If not specified all the consoles are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -30103,16 +29707,15 @@ class TemplateMediatedDeviceService(Service):
         Gets mediated device configuration of the template.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -30139,15 +29742,14 @@ class TemplateMediatedDeviceService(Service):
         Remove the mediated device from the template.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -30207,18 +29809,17 @@ class TemplateMediatedDeviceService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `devices`:: The information about the mediated device.
+        :param devices: The information about the mediated device.
         The request data must contain `specParams` properties.
         The response data contains complete information about the
         updated mediated device.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -30299,19 +29900,18 @@ class TemplateMediatedDevicesService(Service):
         The order of the returned list of mediated devices isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of mediated devices to return.
+        :param max: Sets the maximum number of mediated devices to return.
         If not specified all the mediated devices are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -30371,16 +29971,15 @@ class TemplateNicService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -30404,15 +30003,14 @@ class TemplateNicService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -30523,18 +30121,17 @@ class TemplateNicsService(Service):
         The order of the returned list of NICs isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of NICs to return. If not specified all the NICs are returned.
+        :param max: Sets the maximum number of NICs to return. If not specified all the NICs are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -30592,16 +30189,15 @@ class TemplateWatchdogService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -30625,15 +30221,14 @@ class TemplateWatchdogService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -30744,18 +30339,17 @@ class TemplateWatchdogsService(Service):
         The order of the returned list of watchdogs isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of watchdogs to return. If not specified all the watchdogs are returned.
+        :param max: Sets the maximum number of watchdogs to return. If not specified all the watchdogs are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -30929,15 +30523,14 @@ class TemplatesService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `template`:: The information about the template or template version.
+        :param template: The information about the template or template version.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -30972,15 +30565,14 @@ class TemplatesService(Service):
         Add a virtual machine template to the system from a configuration. Requires the configuration type, the configuration data, and the target cluster.
 
 
-        This method supports the following parameters:
 
-        `template`:: The information about the template or template version.
+        :param template: The information about the template or template version.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -31015,15 +30607,14 @@ class TemplatesService(Service):
         Add a virtual machine template to the system from an existing virtual machine.
 
 
-        This method supports the following parameters:
 
-        `template`:: The information about the template or template version.
+        :param template: The information about the template or template version.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -31058,15 +30649,14 @@ class TemplatesService(Service):
         Add a virtual machine template to the system from a snapshot.
 
 
-        This method supports the following parameters:
 
-        `template`:: The information about the template or template version.
+        :param template: The information about the template or template version.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -31110,26 +30700,25 @@ class TemplatesService(Service):
         The order of the returned list of templates is not guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of templates to return. If not specified, all the templates are returned.
+        :param max: Sets the maximum number of templates to return. If not specified, all the templates are returned.
 
-        `search`:: A query string used to restrict the returned templates.
+        :param search: A query string used to restrict the returned templates.
 
-        `case_sensitive`:: Indicates if the search performed using the `search` parameter should be performed taking case into
+        :param case_sensitive: Indicates if the search performed using the `search` parameter should be performed taking case into
         account. The default value is `true`, which means that case is taken into account. If you want to search
         ignoring case set it to `false`.
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -31200,16 +30789,15 @@ class UnmanagedNetworkService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -31233,15 +30821,14 @@ class UnmanagedNetworkService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -31295,18 +30882,17 @@ class UnmanagedNetworksService(Service):
         The order of the returned list of networks isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of networks to return. If not specified all the networks are returned.
+        :param max: Sets the maximum number of networks to return. If not specified all the networks are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -31404,16 +30990,15 @@ class UserService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -31444,15 +31029,14 @@ class UserService(Service):
         ....
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -31887,24 +31471,23 @@ class UsersService(Service):
         The order of the returned list of users isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of users to return. If not specified all the users are returned.
+        :param max: Sets the maximum number of users to return. If not specified all the users are returned.
 
-        `search`:: A query string used to restrict the returned users.
+        :param search: A query string used to restrict the returned users.
 
-        `case_sensitive`:: Indicates if the search performed using the `search` parameter should be performed taking case into
+        :param case_sensitive: Indicates if the search performed using the `search` parameter should be performed taking case into
         account. The default value is `true`, which means that case is taken into account. If you want to search
         ignoring case set it to `false`.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -31969,16 +31552,15 @@ class VirtualFunctionAllowedNetworkService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -32002,15 +31584,14 @@ class VirtualFunctionAllowedNetworkService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -32085,18 +31666,17 @@ class VirtualFunctionAllowedNetworksService(Service):
         The order of the returned list of networks isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of networks to return. If not specified all the networks are returned.
+        :param max: Sets the maximum number of networks to return. If not specified all the networks are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -32191,19 +31771,18 @@ class VmService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `optimize_cpu_settings`:: Specifies how the auto CPU and NUMA configuration is applied.
+        :param optimize_cpu_settings: Specifies how the auto CPU and NUMA configuration is applied.
         If set to true, will adjust the CPU topology to fit the VM pinned host hardware.
         Otherwise, it will use the VM CPU topology.
 
-        `async_`:: Indicates if the detach action should be performed asynchronously.
+        :param async_: Indicates if the detach action should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -32246,15 +31825,14 @@ class VmService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the migration should cancelled asynchronously.
+        :param async_: Indicates if the migration should cancelled asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -32285,20 +31863,19 @@ class VmService(MeasurableService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the clone should be performed asynchronously.
+        :param async_: Indicates if the clone should be performed asynchronously.
 
-        `discard_snapshots`:: Use the `discard_snapshots` parameter when the virtual machine should be clone with its
+        :param discard_snapshots: Use the `discard_snapshots` parameter when the virtual machine should be clone with its
         snapshots collapsed. Default is true.
 
-        `storage_domain`:: The storage domain on which the virtual machines disks will be copied to.
+        :param storage_domain: The storage domain on which the virtual machines disks will be copied to.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -32336,15 +31913,14 @@ class VmService(MeasurableService):
         See the xref:services-vm-methods-preview_snapshot[preview_snapshot] operation for details.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the snapshots should be committed asynchronously.
+        :param async_: Indicates if the snapshots should be committed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -32385,15 +31961,14 @@ class VmService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the detach action should be performed asynchronously.
+        :param async_: Indicates if the detach action should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -32462,23 +32037,22 @@ class VmService(MeasurableService):
         NOTE: Confirm that the export operation has completed before attempting any actions on the export domain.
 
 
-        This method supports the following parameters:
 
-        `discard_snapshots`:: Use the `discard_snapshots` parameter when the virtual machine should be exported with all of its
+        :param discard_snapshots: Use the `discard_snapshots` parameter when the virtual machine should be exported with all of its
         snapshots collapsed.
 
-        `exclusive`:: Use the `exclusive` parameter when the virtual machine should be exported even if another copy of
+        :param exclusive: Use the `exclusive` parameter when the virtual machine should be exported even if another copy of
         it already exists in the export domain (override).
 
-        `storage_domain`:: The (export) storage domain to export the virtual machine to.
+        :param storage_domain: The (export) storage domain to export the virtual machine to.
 
-        `async_`:: Indicates if the export should be performed asynchronously.
+        :param async_: Indicates if the export should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -32527,15 +32101,14 @@ class VmService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the freeze should be performed asynchronously.
+        :param async_: Indicates if the freeze should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -32570,9 +32143,8 @@ class VmService(MeasurableService):
         Retrieves the description of the virtual machine.
 
 
-        This method supports the following parameters:
 
-        `next_run`:: Indicates if the returned result describes the virtual machine as it is currently running or if describes
+        :param next_run: Indicates if the returned result describes the virtual machine as it is currently running or if describes
         the virtual machine with the modifications that have already been performed but that will only come into
         effect when the virtual machine is restarted. By default the value is `false`.
         If the parameter is included in the request, but without a value, it is assumed that the value is `true`. The
@@ -32587,7 +32159,7 @@ class VmService(MeasurableService):
         GET /vms/{vm:id};next_run=true
         ----
 
-        `all_content`:: Indicates if all of the attributes of the virtual machine should be included in the response.
+        :param all_content: Indicates if all of the attributes of the virtual machine should be included in the response.
         By default the following attributes are excluded:
         - `console`
         - `initialization.configuration.data` - The OVF document describing the virtual machine.
@@ -32601,9 +32173,9 @@ class VmService(MeasurableService):
         NOTE: These attributes are not included by default as they reduce performance. These attributes are seldom used
         and require additional queries to the database. Only use this parameter when required as it will reduce performance.
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `ovf_as_ova`:: Indicates if the results should expose the OVF as it appears in OVA files of that VM. The OVF document
+        :param ovf_as_ova: Indicates if the results should expose the OVF as it appears in OVA files of that VM. The OVF document
         describing the virtual machine. This parameter will work only when all_content=True is set.
         The OVF will be presented in `initialization.configuration.data`.
         For example:
@@ -32612,14 +32184,14 @@ class VmService(MeasurableService):
         GET /vms/{vm:id}?all_content=true&ovf_as_ova=true
         ----
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -32676,15 +32248,14 @@ class VmService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the logon should be performed asynchronously.
+        :param async_: Indicates if the logon should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -32728,17 +32299,16 @@ class VmService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `maintenance_enabled`:: Indicates if global maintenance should be enabled or disabled.
+        :param maintenance_enabled: Indicates if global maintenance should be enabled or disabled.
 
-        `async_`:: Indicates if the global maintenance action should be performed asynchronously.
+        :param async_: Indicates if the global maintenance action should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -32787,31 +32357,30 @@ class VmService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `cluster`:: Specifies the cluster the virtual machine should migrate to. This is an optional parameter. By default, the
+        :param cluster: Specifies the cluster the virtual machine should migrate to. This is an optional parameter. By default, the
         virtual machine is migrated to another host within the same cluster.
         WARNING: Live migration to another cluster is not supported. Strongly consider the target cluster's hardware
         architecture and network architecture before attempting a migration.
 
-        `force`:: Specifies that the virtual machine should migrate even if the virtual machine is defined as non-migratable.
+        :param force: Specifies that the virtual machine should migrate even if the virtual machine is defined as non-migratable.
         This is an optional parameter. By default, it is set to `false`.
 
-        `host`:: Specifies a specific host that the virtual machine should migrate to. This is an optional parameter. By default,
+        :param host: Specifies a specific host that the virtual machine should migrate to. This is an optional parameter. By default,
         the {engine-name} automatically selects a default host for migration within the same cluster. If an API user
         requires a specific host, the user can specify the host with either an `id` or `name` parameter.
 
-        `migrate_vms_in_affinity_closure`:: Migrate also all other virtual machines in positive enforcing affinity groups with this virtual machine,
+        :param migrate_vms_in_affinity_closure: Migrate also all other virtual machines in positive enforcing affinity groups with this virtual machine,
         that are running on the same host.
         The default value is `false`.
 
-        `async_`:: Indicates if the migration should be performed asynchronously.
+        :param async_: Indicates if the migration should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -32859,9 +32428,8 @@ class VmService(MeasurableService):
         xref:services-vm-methods-undo_snapshot[undo_snapshot] method.
 
 
-        This method supports the following parameters:
 
-        `disks`:: Specify the disks included in the snapshot's preview.
+        :param disks: Specify the disks included in the snapshot's preview.
         For each disk parameter, it is also required to specify its `image_id`.
         For example, to preview a snapshot with identifier `456` which includes a disk with identifier `111` and its
         `image_id` as `222`, send a request like this:
@@ -32882,7 +32450,7 @@ class VmService(MeasurableService):
         </action>
         ----
 
-        `lease`:: Specify the lease storage domain ID to use in the preview of the snapshot.
+        :param lease: Specify the lease storage domain ID to use in the preview of the snapshot.
         If lease parameter is not passed, then the previewed snapshot lease storage domain will be used.
         If lease parameter is passed with empty storage domain parameter, then no lease will be used
         for the snapshot preview.
@@ -32890,13 +32458,13 @@ class VmService(MeasurableService):
         only one of the leases domain IDs that belongs to one of the virtual machine snapshots.
         This is an optional parameter, set by default to `null`
 
-        `async_`:: Indicates if the preview should be performed asynchronously.
+        :param async_: Indicates if the preview should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -32961,18 +32529,17 @@ class VmService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `force`:: Indicates if the VM should be forcibly rebooted even
+        :param force: Indicates if the VM should be forcibly rebooted even
         if a backup is running for it.
 
-        `async_`:: Indicates if the reboot should be performed asynchronously.
+        :param async_: Indicates if the reboot should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -33012,21 +32579,20 @@ class VmService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `detach_only`:: Indicates if the attached virtual disks should be detached first and preserved instead of being removed.
+        :param detach_only: Indicates if the attached virtual disks should be detached first and preserved instead of being removed.
 
-        `force`:: Indicates if the virtual machine should be forcibly removed.
+        :param force: Indicates if the virtual machine should be forcibly removed.
         Locked virtual machines and virtual machines with locked disk images
         cannot be removed without this flag set to true.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -33063,15 +32629,14 @@ class VmService(MeasurableService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the action should be performed asynchronously.
+        :param async_: Indicates if the action should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -33113,15 +32678,14 @@ class VmService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the reset should be performed asynchronously.
+        :param async_: Indicates if the reset should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -33211,21 +32775,20 @@ class VmService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `force`:: Indicates if the VM should be forcibly shutdown even
+        :param force: Indicates if the VM should be forcibly shutdown even
         if a backup is running for it.
 
-        `async_`:: Indicates if the shutdown should be performed asynchronously.
+        :param async_: Indicates if the shutdown should be performed asynchronously.
 
-        `reason`:: The reason the virtual machine was stopped.
+        :param reason: The reason the virtual machine was stopped.
         Optionally set by user when shutting down the virtual machine.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -33281,11 +32844,10 @@ class VmService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `pause`:: If set to `true`, start the virtual machine in paused mode. The default is `false`.
+        :param pause: If set to `true`, start the virtual machine in paused mode. The default is `false`.
 
-        `vm`:: The definition of the virtual machine for this specific run.
+        :param vm: The definition of the virtual machine for this specific run.
         For example:
         [source,xml]
         ----
@@ -33304,33 +32866,33 @@ class VmService(MeasurableService):
         This will set the boot device to the CDROM only for this specific start. After the virtual machine is
         powered off, this definition will be reverted.
 
-        `use_cloud_init`:: If set to `true`, the initialization type is set to _cloud-init_. The default value is `false`.
+        :param use_cloud_init: If set to `true`, the initialization type is set to _cloud-init_. The default value is `false`.
         See link:https://cloudinit.readthedocs.io/en/latest[cloud-init documentation] for details.
 
-        `use_sysprep`:: If set to `true`, the initialization type is set to _Sysprep_. The default value is `false`.
+        :param use_sysprep: If set to `true`, the initialization type is set to _Sysprep_. The default value is `false`.
         See link:https://en.wikipedia.org/wiki/Sysprep[Sysprep] for details.
 
-        `use_ignition`:: If set to `true`, the initialization type is set to _Ignition_. The default value is `false`.
+        :param use_ignition: If set to `true`, the initialization type is set to _Ignition_. The default value is `false`.
         See link:https://coreos.com/ignition/docs/latest/[Ignition documentation] for details.
 
-        `use_initialization`:: If set to `true`, the initialization type is set by the VM's OS.
+        :param use_initialization: If set to `true`, the initialization type is set by the VM's OS.
         Windows will set to _Sysprep_, Linux to _cloud-init_ and RedHat CoreOS to _Ignition_.
         If any of the initialization-types are explicitly set (useCloudInit, useSysprep or useIgnition),
         they will be prioritized and this flag will be ignored.
         The default value is `false`.
 
-        `async_`:: Indicates if the start action should be performed asynchronously.
+        :param async_: Indicates if the start action should be performed asynchronously.
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `volatile`:: Indicates that this run configuration will be discarded even in the case of guest-initiated reboot.
+        :param volatile: Indicates that this run configuration will be discarded even in the case of guest-initiated reboot.
         The default value is `false`.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -33404,21 +32966,20 @@ class VmService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `force`:: Indicates if the VM should be forcibly stop even
+        :param force: Indicates if the VM should be forcibly stop even
         if a backup is running for it.
 
-        `async_`:: Indicates if the stop action should be performed asynchronously.
+        :param async_: Indicates if the stop action should be performed asynchronously.
 
-        `reason`:: The reason the virtual machine was stopped.
+        :param reason: The reason the virtual machine was stopped.
         Optionally set by user when shutting down the virtual machine.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -33465,15 +33026,14 @@ class VmService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the suspend action should be performed asynchronously.
+        :param async_: Indicates if the suspend action should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -33516,15 +33076,14 @@ class VmService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the thaw file systems action should be performed asynchronously.
+        :param async_: Indicates if the thaw file systems action should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -33588,15 +33147,14 @@ class VmService(MeasurableService):
         ====
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the generation of the ticket should be performed asynchronously.
+        :param async_: Indicates if the generation of the ticket should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -33632,23 +33190,22 @@ class VmService(MeasurableService):
         Exports a virtual machine to an export domain.
 
 
-        This method supports the following parameters:
 
-        `discard_snapshots`:: Use the `discard_snapshots` parameter when the virtual machine should be exported with all of its
+        :param discard_snapshots: Use the `discard_snapshots` parameter when the virtual machine should be exported with all of its
         snapshots collapsed.
 
-        `exclusive`:: Use the `exclusive` parameter when the virtual machine should be exported even if another copy of
+        :param exclusive: Use the `exclusive` parameter when the virtual machine should be exported even if another copy of
         it already exists in the export domain (override).
 
-        `storage_domain`:: The (export) storage domain to export the virtual machine to.
+        :param storage_domain: The (export) storage domain to export the virtual machine to.
 
-        `async_`:: Indicates if the export should be performed asynchronously.
+        :param async_: Indicates if the export should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -33691,31 +33248,30 @@ class VmService(MeasurableService):
         Exports a virtual machine as an OVA file to a given path on a specified host.
 
 
-        This method supports the following parameters:
 
-        `host`:: The host to generate the OVA file on.
+        :param host: The host to generate the OVA file on.
 
-        `directory`:: An absolute path of a directory on the host to generate the OVA file in.
+        :param directory: An absolute path of a directory on the host to generate the OVA file in.
 
-        `filename`:: The name of the OVA file.
+        :param filename: The name of the OVA file.
         This is an optional parameter, if it is not specified then the name of OVA file is determined according
         to the name of the virtual machine. It will conform the following pattern: "<virtual machine name>.ova".
 
-        `discard_snapshots`:: Use the `discard_snapshots` parameter when the virtual machine should be exported with all of its
+        :param discard_snapshots: Use the `discard_snapshots` parameter when the virtual machine should be exported with all of its
         snapshots collapsed.
 
-        `exclusive`:: Use the `exclusive` parameter when the virtual machine should be exported even if another copy of
+        :param exclusive: Use the `exclusive` parameter when the virtual machine should be exported even if another copy of
         it already exists in the export domain (override).
 
-        `storage_domain`:: The (export) storage domain to export the virtual machine to.
+        :param storage_domain: The (export) storage domain to export the virtual machine to.
 
-        `async_`:: Indicates if the export should be performed asynchronously.
+        :param async_: Indicates if the export should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -33759,15 +33315,14 @@ class VmService(MeasurableService):
         See the xref:services-vm-methods-preview_snapshot[preview_snapshot] operation for details.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the undo snapshot action should be performed asynchronously.
+        :param async_: Indicates if the undo snapshot action should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -34044,18 +33599,17 @@ class VmApplicationService(Service):
         Returns the information about the application.
 
 
-        This method supports the following parameters:
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -34111,20 +33665,19 @@ class VmApplicationsService(Service):
         The order of the returned list of applications isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of applications to return. If not specified all the applications are returned.
+        :param max: Sets the maximum number of applications to return. If not specified all the applications are returned.
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -34229,16 +33782,15 @@ class VmBackupService(Service):
         Returns information about the virtual machine backup.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -34295,16 +33847,15 @@ class VmBackupDiskService(Service):
         Retrieves the description of the disk.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -34352,18 +33903,17 @@ class VmBackupDisksService(Service):
         Returns the list of disks in backup.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of disks to return. If not specified, all the disks are returned.
+        :param max: Sets the maximum number of disks to return. If not specified, all the disks are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -34479,15 +34029,14 @@ class VmBackupsService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `backup`:: The information about the virtual machine backup entity.
+        :param backup: The information about the virtual machine backup entity.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -34521,18 +34070,17 @@ class VmBackupsService(Service):
         The list of virtual machine backups.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of virtual machine backups to return. If not specified, all the virtual machine backups are returned.
+        :param max: Sets the maximum number of virtual machine backups to return. If not specified, all the virtual machine backups are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -34617,19 +34165,18 @@ class VmCdromService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `current`:: Indicates if the operation should return the information for the currently running virtual machine. This
+        :param current: Indicates if the operation should return the information for the currently running virtual machine. This
         parameter is optional, and the default value is `false`.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -34700,15 +34247,14 @@ class VmCdromService(Service):
         effect after the virtual machine is rebooted.
 
 
-        This method supports the following parameters:
 
-        `cdrom`:: The information about the CDROM device.
+        :param cdrom: The information about the CDROM device.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -34789,18 +34335,17 @@ class VmCdromsService(Service):
         The order of the returned list of CD-ROM devices isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of CDROMs to return. If not specified all the CDROMs are returned.
+        :param max: Sets the maximum number of CDROMs to return. If not specified all the CDROMs are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -34866,16 +34411,15 @@ class VmCheckpointService(Service):
         Returns information about the virtual machine checkpoint.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -34903,15 +34447,14 @@ class VmCheckpointService(Service):
         Remove the checkpoint from libvirt and the database.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -34973,16 +34516,15 @@ class VmCheckpointDiskService(Service):
         Retrieves the description of the disk.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -35030,18 +34572,17 @@ class VmCheckpointDisksService(Service):
         Returns the list of disks in checkpoint.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of disks to return. If not specified, all the disks are returned.
+        :param max: Sets the maximum number of disks to return. If not specified, all the disks are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -35113,19 +34654,18 @@ class VmCheckpointsService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of virtual machine checkpoints to return.
+        :param max: Sets the maximum number of virtual machine checkpoints to return.
         If not specified, all the virtual machine checkpoints are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -35187,15 +34727,14 @@ class VmDiskService(MeasurableService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the activation should be performed asynchronously.
+        :param async_: Indicates if the activation should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -35223,15 +34762,14 @@ class VmDiskService(MeasurableService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the deactivation should be performed asynchronously.
+        :param async_: Indicates if the deactivation should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -35260,17 +34798,16 @@ class VmDiskService(MeasurableService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the export should be performed asynchronously.
+        :param async_: Indicates if the export should be performed asynchronously.
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -35300,16 +34837,15 @@ class VmDiskService(MeasurableService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -35334,17 +34870,16 @@ class VmDiskService(MeasurableService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the move should be performed asynchronously.
+        :param async_: Indicates if the move should be performed asynchronously.
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -35380,15 +34915,14 @@ class VmDiskService(MeasurableService):
         There is no need to specify the size as the optimal size is calculated automatically.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -35421,15 +34955,14 @@ class VmDiskService(MeasurableService):
         version 4 it doesn't. If you need to remove it completely use the xref:services-disk-methods-remove[remove method of the top level disk service].
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -35552,18 +35085,17 @@ class VmDisksService(Service):
         The order of the returned list of disks isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of disks to return. If not specified all the disks are returned.
+        :param max: Sets the maximum number of disks to return. If not specified all the disks are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -35631,9 +35163,8 @@ class VmGraphicsConsoleService(Service):
         `current` parameter with the value `true`.
 
 
-        This method supports the following parameters:
 
-        `current`:: Specifies if the data returned should correspond to the next execution of
+        :param current: Specifies if the data returned should correspond to the next execution of
         the virtual machine, or to the current execution.
         IMPORTANT: The `address` and `port` attributes will not be populated unless the value is
         `true`.
@@ -35645,14 +35176,14 @@ class VmGraphicsConsoleService(Service):
         ----
         The default value is `false`.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -35680,15 +35211,14 @@ class VmGraphicsConsoleService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the generation of the ticket should be performed asynchronously.
+        :param async_: Indicates if the generation of the ticket should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -35806,15 +35336,14 @@ class VmGraphicsConsoleService(Service):
         Remove the graphics console from the virtual machine.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -35861,15 +35390,14 @@ class VmGraphicsConsoleService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `ticket`:: The generated ticket that can be used to access this console.
+        :param ticket: The generated ticket that can be used to access this console.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -35949,11 +35477,10 @@ class VmGraphicsConsolesService(Service):
         The order of the returned list of graphics consoles is not guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of consoles to return. If not specified all the consoles are returned.
+        :param max: Sets the maximum number of consoles to return. If not specified all the consoles are returned.
 
-        `current`:: Specifies if the data returned should correspond to the next execution of
+        :param current: Specifies if the data returned should correspond to the next execution of
         the virtual machine, or to the current execution.
         IMPORTANT: The `address` and `port` attributes will not be populated unless the value is
         `true`.
@@ -35965,14 +35492,14 @@ class VmGraphicsConsolesService(Service):
         ----
         The default value is `false`.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -36066,16 +35593,15 @@ class VmHostDeviceService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -36110,15 +35636,14 @@ class VmHostDeviceService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -36189,15 +35714,14 @@ class VmHostDevicesService(Service):
         for it, and its `placeholder` flag will be cleared, and the device will be accessible to the virtual machine.
 
 
-        This method supports the following parameters:
 
-        `device`:: The host device to be attached to given virtual machine.
+        :param device: The host device to be attached to given virtual machine.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -36224,18 +35748,17 @@ class VmHostDevicesService(Service):
         The order of the returned list of devices isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of devices to return. If not specified all the devices are returned.
+        :param max: Sets the maximum number of devices to return. If not specified all the devices are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -36298,16 +35821,15 @@ class VmMediatedDeviceService(Service):
         Retrieves the configuration of mediated devices in the virtual machine.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -36334,15 +35856,14 @@ class VmMediatedDeviceService(Service):
         Remove the mediated device from the virtual machine.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -36402,18 +35923,17 @@ class VmMediatedDeviceService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `device`:: The information about the mediated device.
+        :param device: The information about the mediated device.
         The request data must contain `specParams` properties.
         The response data contains complete information about the
         updated mediated device.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -36494,19 +36014,18 @@ class VmMediatedDevicesService(Service):
         The order of the returned list of mediated devices is not guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of mediated devices to return.
+        :param max: Sets the maximum number of mediated devices to return.
         If not specified all the mediated devices are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -36569,15 +36088,14 @@ class VmNicService(MeasurableService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the activation should be performed asynchronously.
+        :param async_: Indicates if the activation should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -36605,15 +36123,14 @@ class VmNicService(MeasurableService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the deactivation should be performed asynchronously.
+        :param async_: Indicates if the deactivation should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -36641,16 +36158,15 @@ class VmNicService(MeasurableService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -36691,15 +36207,14 @@ class VmNicService(MeasurableService):
         ====
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -36906,18 +36421,17 @@ class VmNicsService(Service):
         The order of the returned list of NICs isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of NICs to return. If not specified all the NICs are returned.
+        :param max: Sets the maximum number of NICs to return. If not specified all the NICs are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -36975,16 +36489,15 @@ class VmNumaNodeService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -37018,15 +36531,14 @@ class VmNumaNodeService(Service):
         first.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -37176,18 +36688,17 @@ class VmNumaNodesService(Service):
         The order of the returned list of NUMA nodes isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of nodes to return. If not specified all the nodes are returned.
+        :param max: Sets the maximum number of nodes to return. If not specified all the nodes are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -37261,15 +36772,14 @@ class VmPoolService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the allocation should be performed asynchronously.
+        :param async_: Indicates if the allocation should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -37325,18 +36835,17 @@ class VmPoolService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -37371,15 +36880,14 @@ class VmPoolService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -37430,15 +36938,14 @@ class VmPoolService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `pool`:: The virtual machine pool that is being updated.
+        :param pool: The virtual machine pool that is being updated.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -37524,15 +37031,14 @@ class VmPoolsService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `pool`:: Pool to add.
+        :param pool: Pool to add.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -37581,26 +37087,25 @@ class VmPoolsService(Service):
         `search` parameter.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of pools to return. If this value is not specified, all of the pools are returned.
+        :param max: Sets the maximum number of pools to return. If this value is not specified, all of the pools are returned.
 
-        `search`:: A query string used to restrict the returned pools.
+        :param search: A query string used to restrict the returned pools.
 
-        `case_sensitive`:: Indicates if the search performed using the `search` parameter should be performed taking case into
+        :param case_sensitive: Indicates if the search performed using the `search` parameter should be performed taking case into
         account. The default value is `true`, which means that case is taken into account. If you want to search
         ignoring case set it to `false`.
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -37671,16 +37176,15 @@ class VmReportedDeviceService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -37729,18 +37233,17 @@ class VmReportedDevicesService(Service):
         The order of the returned list of devices isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of devices to return. If not specified all the devices are returned.
+        :param max: Sets the maximum number of devices to return. If not specified all the devices are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -37798,16 +37301,15 @@ class VmSessionService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -37878,18 +37380,17 @@ class VmSessionsService(Service):
         The order of the returned list of sessions isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of sessions to return. If not specified all the sessions are returned.
+        :param max: Sets the maximum number of sessions to return. If not specified all the sessions are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -37954,16 +37455,15 @@ class VmWatchdogService(Service):
         Returns the information about the watchdog.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -37995,15 +37495,14 @@ class VmWatchdogService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -38054,18 +37553,17 @@ class VmWatchdogService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `watchdog`:: The information about the watchdog.
+        :param watchdog: The information about the watchdog.
         The request data must contain at least one of `model` and `action`
         elements. The response data contains complete information about the
         updated watchdog.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -38138,18 +37636,17 @@ class VmWatchdogsService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `watchdog`:: The information about the watchdog.
+        :param watchdog: The information about the watchdog.
         The request data must contain `model` element (such as `i6300esb`) and `action` element
         (one of `none`, `reset`, `poweroff`, `dump`, `pause`). The response data additionally
         contains references to the added watchdog and to the virtual machine.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -38176,18 +37673,17 @@ class VmWatchdogsService(Service):
         The order of the returned list of watchdogs isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of watchdogs to return. If not specified all the watchdogs are returned.
+        :param max: Sets the maximum number of watchdogs to return. If not specified all the watchdogs are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -38585,19 +38081,18 @@ class VmsService(Service):
         in the `search` parameter.
 
 
-        This method supports the following parameters:
 
-        `search`:: A query string used to restrict the returned virtual machines.
+        :param search: A query string used to restrict the returned virtual machines.
 
-        `max`:: The maximum number of results to return.
+        :param max: The maximum number of results to return.
 
-        `case_sensitive`:: Indicates if the search performed using the `search` parameter should be performed taking case into
+        :param case_sensitive: Indicates if the search performed using the `search` parameter should be performed taking case into
         account. The default value is `true`, which means that case is taken into account. If you want to search
         ignoring case set it to `false`.
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `all_content`:: Indicates if all the attributes of the virtual machines should be included in the response.
+        :param all_content: Indicates if all the attributes of the virtual machines should be included in the response.
         By default the following attributes are excluded:
         - `console`
         - `initialization.configuration.data` - The OVF document describing the virtual machine.
@@ -38611,7 +38106,7 @@ class VmsService(Service):
         NOTE: The reason for not including these attributes is performance: they are seldom used and they require
         additional queries to the database. So try to use the this parameter only when it is really needed.
 
-        `ovf_as_ova`:: Indicates if the results should expose the OVF as it appears in OVA files of that VM. The OVF document
+        :param ovf_as_ova: Indicates if the results should expose the OVF as it appears in OVA files of that VM. The OVF document
         describing the virtual machine. This parameter will work only when all_content=True is set.
         The OVF will be presented in `initialization.configuration.data`.
         For example:
@@ -38620,14 +38115,14 @@ class VmsService(Service):
         GET /vms?all_content=true&ovf_as_ova=true
         ----
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -38710,16 +38205,15 @@ class VnicProfileService(Service):
         Retrieves details about a vNIC profile.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -38746,15 +38240,14 @@ class VnicProfileService(Service):
         Removes the vNIC profile.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -38787,15 +38280,14 @@ class VnicProfileService(Service):
         Updates details of a vNIC profile.
 
 
-        This method supports the following parameters:
 
-        `profile`:: The vNIC profile that is being updated.
+        :param profile: The vNIC profile that is being updated.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -38912,15 +38404,14 @@ class VnicProfilesService(Service):
         ----
 
 
-        This method supports the following parameters:
 
-        `profile`:: The vNIC profile that is being added.
+        :param profile: The vNIC profile that is being added.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -38947,18 +38438,17 @@ class VnicProfilesService(Service):
         The order of the returned list of vNIC profiles isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of profiles to return. If not specified all the profiles are returned.
+        :param max: Sets the maximum number of profiles to return. If not specified all the profiles are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -39017,18 +38507,17 @@ class WeightService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -39056,15 +38545,14 @@ class WeightService(Service):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -39143,20 +38631,19 @@ class WeightsService(Service):
         The order of the returned list of weights isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of weights to return. If not specified all the weights are returned.
+        :param max: Sets the maximum number of weights to return. If not specified all the weights are returned.
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -39233,17 +38720,16 @@ class AttachedStorageDomainDiskService(MeasurableService):
         operation of the service that manages that disk.
 
 
-        This method supports the following parameters:
 
-        `disk`:: Description of the resulting disk.
+        :param disk: Description of the resulting disk.
 
-        `storage_domain`:: The storage domain where the new disk will be created.
+        :param storage_domain: The storage domain where the new disk will be created.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -39275,15 +38761,14 @@ class AttachedStorageDomainDiskService(MeasurableService):
         operation of the service that manages that disk.
 
 
-        This method supports the following parameters:
 
-        `storage_domain`:: The export storage domain where the disk should be exported to.
+        :param storage_domain: The export storage domain where the disk should be exported to.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -39310,16 +38795,15 @@ class AttachedStorageDomainDiskService(MeasurableService):
         Retrieves the description of the disk.
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -39351,19 +38835,18 @@ class AttachedStorageDomainDiskService(MeasurableService):
         operation of the service that manages that disk.
 
 
-        This method supports the following parameters:
 
-        `storage_domain`:: The storage domain where the disk will be moved to.
+        :param storage_domain: The storage domain where the disk will be moved to.
 
-        `async_`:: Indicates if the move should be performed asynchronously.
+        :param async_: Indicates if the move should be performed asynchronously.
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -39475,15 +38958,14 @@ class AttachedStorageDomainDiskService(MeasurableService):
         xref:services-disk-methods-update[update] operation of the service that manages that disk.
 
 
-        This method supports the following parameters:
 
-        `disk`:: The update to apply to the disk.
+        :param disk: The update to apply to the disk.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -39572,18 +39054,17 @@ class DiskService(MeasurableService):
         it is possible to convert the disk again to QCOW and keep the same allocation policy.
 
 
-        This method supports the following parameters:
 
-        `disk`:: The description of the disk.
+        :param disk: The description of the disk.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -39643,9 +39124,8 @@ class DiskService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `storage_domain`:: The storage domain where the new disk is created. This can be specified using the `id` or `name`
+        :param storage_domain: The storage domain where the new disk is created. This can be specified using the `id` or `name`
         attributes. For example, to copy a disk to the storage domain called `mydata`, send a request like this:
         ....
         POST /ovirt-engine/api/storagedomains/123/disks/789
@@ -39660,27 +39140,27 @@ class DiskService(MeasurableService):
         </action>
         ----
 
-        `disk_profile`:: Disk profile for the disk in the new storage domain.
+        :param disk_profile: Disk profile for the disk in the new storage domain.
         Disk profiles are defined for storage domains,
         so the old disk profile will not exist in the new storage domain.
         If this parameter is not used, the first disk profile from the new storage domain
         to which the user has permissions will be assigned to the disk.
 
-        `quota`:: Quota for the disk in the new storage domain.
+        :param quota: Quota for the disk in the new storage domain.
         This optional parameter can be used to specify new quota for the disk,
         because the current quota may not be defined for the new storage domain.
         If this parameter is not used and the old quota is not defined for the new storage domain,
         the default (unlimited) quota will be assigned to the disk.
 
-        `async_`:: Indicates if the copy should be performed asynchronously.
+        :param async_: Indicates if the copy should be performed asynchronously.
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -39723,19 +39203,18 @@ class DiskService(MeasurableService):
         Exports a disk to an export storage domain.
 
 
-        This method supports the following parameters:
 
-        `storage_domain`:: The export storage domain where the disk will be exported to.
+        :param storage_domain: The export storage domain where the disk will be exported to.
 
-        `async_`:: Indicates if the export should be performed asynchronously.
+        :param async_: Indicates if the export should be performed asynchronously.
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -39771,9 +39250,8 @@ class DiskService(MeasurableService):
         Retrieves the description of the disk.
 
 
-        This method supports the following parameters:
 
-        `all_content`:: Indicates if all of the attributes of the disk should be included in the response.
+        :param all_content: Indicates if all of the attributes of the disk should be included in the response.
         By default the following disk attributes are excluded:
         - `vms`
         For example, to retrieve the complete representation of disk '123':
@@ -39781,14 +39259,14 @@ class DiskService(MeasurableService):
         GET /ovirt-engine/api/disks/123?all_content=true
         ....
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -39851,31 +39329,30 @@ class DiskService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `storage_domain`:: The storage domain where the disk will be moved to.
+        :param storage_domain: The storage domain where the disk will be moved to.
 
-        `disk_profile`:: Disk profile for the disk in the new storage domain.
+        :param disk_profile: Disk profile for the disk in the new storage domain.
         Disk profiles are defined for storage domains,
         so the old disk profile will not exist in the new storage domain.
         If this parameter is not used, the first disk profile from the new storage domain
         to which the user has permissions will be assigned to the disk.
 
-        `quota`:: Quota for the disk in the new storage domain.
+        :param quota: Quota for the disk in the new storage domain.
         This optional parameter can be used to specify new quota for the disk,
         because the current quota may not be defined for the new storage domain.
         If this parameter is not used and the old quota is not defined for the new storage domain,
         the default (unlimited) quota will be assigned to the disk.
 
-        `async_`:: Indicates if the move should be performed asynchronously.
+        :param async_: Indicates if the move should be performed asynchronously.
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -39917,15 +39394,14 @@ class DiskService(MeasurableService):
         There is no need to specify the size as the optimal size is calculated automatically.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -39972,15 +39448,14 @@ class DiskService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `host`:: The host that will be used to refresh the direct LUN disk.
+        :param host: The host that will be used to refresh the direct LUN disk.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -40007,15 +39482,14 @@ class DiskService(MeasurableService):
         Removes a disk.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -40096,15 +39570,14 @@ class DiskService(MeasurableService):
         to the user might not be synced with the changed properties.
 
 
-        This method supports the following parameters:
 
-        `disk`:: The update to apply to the disk.
+        :param disk: The update to apply to the disk.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -40219,18 +39692,17 @@ class EngineKatelloErrataService(KatelloErrataService):
         The order of the returned list of erratum isn't guaranteed.
 
 
-        This method supports the following parameters:
 
-        `max`:: Sets the maximum number of errata to return. If not specified all the errata are returned.
+        :param max: Sets the maximum number of errata to return. If not specified all the errata are returned.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -40319,16 +39791,15 @@ class ExternalHostProviderService(ExternalProviderService):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -40378,15 +39849,14 @@ class ExternalHostProviderService(ExternalProviderService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -40423,15 +39893,14 @@ class ExternalHostProviderService(ExternalProviderService):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the test should be performed asynchronously.
+        :param async_: Indicates if the test should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -40606,16 +40075,15 @@ class GlusterBrickService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -40650,15 +40118,14 @@ class GlusterBrickService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -40694,15 +40161,14 @@ class GlusterBrickService(MeasurableService):
         xref:services-gluster_bricks-methods-migrate[migrate brick(s)] instead.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the replacement should be performed asynchronously.
+        :param async_: Indicates if the replacement should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -40803,16 +40269,15 @@ class GlusterVolumeService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -40879,22 +40344,21 @@ class GlusterVolumeService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `fix_layout`:: If set to true, rebalance will only fix the layout so that new data added to the volume is distributed
+        :param fix_layout: If set to true, rebalance will only fix the layout so that new data added to the volume is distributed
         across all the hosts. But it will not migrate/rebalance the existing data. Default is `false`.
 
-        `force`:: Indicates if the rebalance should be force started. The rebalance command can be executed with the force
+        :param force: Indicates if the rebalance should be force started. The rebalance command can be executed with the force
         option even when the older clients are connected to the cluster. However, this could lead to a data loss
         situation. Default is `false`.
 
-        `async_`:: Indicates if the rebalance should be performed asynchronously.
+        :param async_: Indicates if the rebalance should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -40934,15 +40398,14 @@ class GlusterVolumeService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -40980,15 +40443,14 @@ class GlusterVolumeService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the reset should be performed asynchronously.
+        :param async_: Indicates if the reset should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -41034,17 +40496,16 @@ class GlusterVolumeService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `option`:: Option to reset.
+        :param option: Option to reset.
 
-        `async_`:: Indicates if the reset should be performed asynchronously.
+        :param async_: Indicates if the reset should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -41093,17 +40554,16 @@ class GlusterVolumeService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `option`:: Option to set.
+        :param option: Option to set.
 
-        `async_`:: Indicates if the action should be performed asynchronously.
+        :param async_: Indicates if the action should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -41143,18 +40603,17 @@ class GlusterVolumeService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `force`:: Indicates if the volume should be force started. If a gluster volume is started already but few/all bricks
+        :param force: Indicates if the volume should be force started. If a gluster volume is started already but few/all bricks
         are down then force start can be used to bring all the bricks up. Default is `false`.
 
-        `async_`:: Indicates if the action should be performed asynchronously.
+        :param async_: Indicates if the action should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -41192,15 +40651,14 @@ class GlusterVolumeService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the action should be performed asynchronously.
+        :param async_: Indicates if the action should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -41238,15 +40696,14 @@ class GlusterVolumeService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the action should be performed asynchronously.
+        :param async_: Indicates if the action should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -41284,15 +40741,14 @@ class GlusterVolumeService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the action should be performed asynchronously.
+        :param async_: Indicates if the action should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -41329,15 +40785,14 @@ class GlusterVolumeService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the action should be performed asynchronously.
+        :param async_: Indicates if the action should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -41425,15 +40880,14 @@ class HostService(MeasurableService):
         Activates the host for use, for example to run virtual machines.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the activation should be performed asynchronously.
+        :param async_: Indicates if the activation should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -41469,25 +40923,24 @@ class HostService(MeasurableService):
         This action also accepts an optional cluster element to define the target cluster for this host.
 
 
-        This method supports the following parameters:
 
-        `host`:: The host to approve.
+        :param host: The host to approve.
 
-        `cluster`:: The cluster where the host will be added after it is approved.
+        :param cluster: The cluster where the host will be added after it is approved.
 
-        `async_`:: Indicates if the approval should be performed asynchronously.
+        :param async_: Indicates if the approval should be performed asynchronously.
 
-        `activate`:: When set to 'true', this host will be activated after its approval completes. When set to 'false'
+        :param activate: When set to 'true', this host will be activated after its approval completes. When set to 'false'
         the host will remain in 'maintenance' status after its approval. Absence of this parameter will be
         interpreted as 'true', since the desired default behavior is activating the host after approval.
 
-        `reboot`:: Indicates if the host should be rebooted after successful installation. The default value is `true`.
+        :param reboot: Indicates if the host should be rebooted after successful installation. The default value is `true`.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -41546,15 +40999,14 @@ class HostService(MeasurableService):
         waiting for a separate xref:services-host-methods-commit_net_config[commitnetconfig] request.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the action should be performed asynchronously.
+        :param async_: Indicates if the action should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -41600,17 +41052,16 @@ class HostService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `source_host`:: The host to copy networks from.
+        :param source_host: The host to copy networks from.
 
-        `async_`:: Indicates if the action should be performed asynchronously.
+        :param async_: Indicates if the action should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -41645,18 +41096,17 @@ class HostService(MeasurableService):
         Deactivates the host to perform maintenance tasks.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the deactivation should be performed asynchronously.
+        :param async_: Indicates if the deactivation should be performed asynchronously.
 
-        `stop_gluster_service`:: Indicates if the gluster service should be stopped as part of deactivating the host. It can be used while
+        :param stop_gluster_service: Indicates if the gluster service should be stopped as part of deactivating the host. It can be used while
         performing maintenance operations on the gluster host. Default value for this variable is `false`.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -41723,17 +41173,16 @@ class HostService(MeasurableService):
         using the  iscsilogin method.
 
 
-        This method supports the following parameters:
 
-        `iscsi`:: The target iSCSI device.
+        :param iscsi: The target iSCSI device.
 
-        `async_`:: Indicates if the discovery should be performed asynchronously.
+        :param async_: Indicates if the discovery should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -41767,15 +41216,14 @@ class HostService(MeasurableService):
         expired.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the enrollment should be performed asynchronously.
+        :param async_: Indicates if the enrollment should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -41830,17 +41278,16 @@ class HostService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the fencing should be performed asynchronously.
+        :param async_: Indicates if the fencing should be performed asynchronously.
 
-        `maintenance_after_restart`:: Indicates if host should be put into maintenance after restart.
+        :param maintenance_after_restart: Indicates if host should be put into maintenance after restart.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -41884,15 +41331,14 @@ class HostService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the action should be performed asynchronously.
+        :param async_: Indicates if the action should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -41929,11 +41375,10 @@ class HostService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `filter`:: Indicates if the results should be filtered according to the permissions of the user.
+        :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
-        `all_content`:: Indicates if all of the attributes of the host should be included in the response.
+        :param all_content: Indicates if all of the attributes of the host should be included in the response.
         By default the following attributes are excluded:
         - `hosted_engine`
         For example, to retrieve the complete representation of host '123':
@@ -41944,14 +41389,14 @@ class HostService(MeasurableService):
         seldom used and require additional queries to the database. Use this parameter with caution and only when
         specifically required.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -42037,38 +41482,37 @@ class HostService(MeasurableService):
         definitions by default.
 
 
-        This method supports the following parameters:
 
-        `activate`:: When set to 'true', this host will be activated after its installation completes. When set to 'false'
+        :param activate: When set to 'true', this host will be activated after its installation completes. When set to 'false'
         the host will remain in 'maintenance' status after its installation. Absence of this parameter will be
         interpreted as 'true', since the desired default behavior is activating the host after install.
 
-        `root_password`:: The password of the `root` user used to connect to the host via SSH.
+        :param root_password: The password of the `root` user used to connect to the host via SSH.
 
-        `ssh`:: The SSH details used to connect to the host.
+        :param ssh: The SSH details used to connect to the host.
 
-        `host`:: The `override_iptables` property is used to indicate if the firewall configuration should be replaced by the
+        :param host: The `override_iptables` property is used to indicate if the firewall configuration should be replaced by the
         default one.
 
-        `image`:: When installing {hypervisor-name}, an ISO image file is required.
+        :param image: When installing {hypervisor-name}, an ISO image file is required.
 
-        `async_`:: Indicates if the installation should be performed asynchronously.
+        :param async_: Indicates if the installation should be performed asynchronously.
 
-        `deploy_hosted_engine`:: When set to `true` this host will also deploy the self-hosted engine components. A missing value
+        :param deploy_hosted_engine: When set to `true` this host will also deploy the self-hosted engine components. A missing value
         is treated as `true` i.e deploy. Omitting this parameter means `false` and will not perform any operation in the
         self-hosted engine area.
 
-        `undeploy_hosted_engine`:: When set to `true` this host will un-deploy the self-hosted engine components, and this host will
+        :param undeploy_hosted_engine: When set to `true` this host will un-deploy the self-hosted engine components, and this host will
         not function as part of the High Availability cluster. A missing value is treated as `true` i.e un-deploy.
         Omitting this parameter means `false` and will not perform any operation in the self-hosted engine area.
 
-        `reboot`:: Indicates if the host should be rebooted after successful installation. The default value is `true`.
+        :param reboot: Indicates if the host should be rebooted after successful installation. The default value is `true`.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -42134,17 +41578,16 @@ class HostService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `iscsi`:: The target iSCSI device.
+        :param iscsi: The target iSCSI device.
 
-        `async_`:: Indicates if the discovery should be performed asynchronously.
+        :param async_: Indicates if the discovery should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -42180,17 +41623,16 @@ class HostService(MeasurableService):
         discovered targets results in the discoveriscsi method.
 
 
-        This method supports the following parameters:
 
-        `iscsi`:: The target iSCSI device.
+        :param iscsi: The target iSCSI device.
 
-        `async_`:: Indicates if the login should be performed asynchronously.
+        :param async_: Indicates if the login should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -42223,15 +41665,14 @@ class HostService(MeasurableService):
         Refresh the host devices and capabilities.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the refresh should be performed asynchronously.
+        :param async_: Indicates if the refresh should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -42277,18 +41718,17 @@ class HostService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `force`:: Indicates that the host should be removed even if it is non-responsive,
+        :param force: Indicates that the host should be removed even if it is non-responsive,
         or if it is part of a Gluster Storage cluster and has volume bricks on it.
 
-        `async_`:: Indicates if the remove should be performed asynchronously.
+        :param async_: Indicates if the remove should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -42489,24 +41929,23 @@ class HostService(MeasurableService):
         waiting for a separate xref:services-host-methods-commit_net_config[commitnetconfig] request.
 
 
-        This method supports the following parameters:
 
-        `synchronized_network_attachments`:: A list of network attachments that will be synchronized.
+        :param synchronized_network_attachments: A list of network attachments that will be synchronized.
 
-        `commit_on_success`:: Specifies whether to automatically save the configuration in the {hypervisor-name} upon completing
+        :param commit_on_success: Specifies whether to automatically save the configuration in the {hypervisor-name} upon completing
         the setup and re-establishing connectivity between the {hypervisor-name} and {engine-name},
         and without waiting for a separate xref:services-host-methods-commit_net_config[commitnetconfig]
         request.
         The default value is `false`, which means that the configuration will not be
         saved automatically.
 
-        `async_`:: Indicates if the action should be performed asynchronously.
+        :param async_: Indicates if the action should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -42566,15 +42005,14 @@ class HostService(MeasurableService):
         ----
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the action should be performed asynchronously.
+        :param async_: Indicates if the action should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -42607,15 +42045,14 @@ class HostService(MeasurableService):
         required.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the discovery should be performed asynchronously.
+        :param async_: Indicates if the discovery should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -42698,25 +42135,24 @@ class HostService(MeasurableService):
         Upgrades VDSM and selected software on the host.
 
 
-        This method supports the following parameters:
 
-        `image`:: This property is no longer relevant, since Vintage Node is no longer supported, and has been deprecated.
+        :param image: This property is no longer relevant, since Vintage Node is no longer supported, and has been deprecated.
 
-        `reboot`:: Indicates if the host should be rebooted after the upgrade.
+        :param reboot: Indicates if the host should be rebooted after the upgrade.
         By default the host is rebooted.
         NOTE: This parameter is ignored for {hypervisor-name}, which is always rebooted after the upgrade.
 
-        `async_`:: Indicates if the upgrade should be performed asynchronously.
+        :param async_: Indicates if the upgrade should be performed asynchronously.
 
-        `timeout`:: Upgrade timeout.
+        :param timeout: Upgrade timeout.
         The maximum time to wait for upgrade to finish in minutes.
         Default value is specified by `ANSIBLE_PLAYBOOK_EXEC_DEFAULT_TIMEOUT` configration option.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -42780,25 +42216,24 @@ class HostService(MeasurableService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `host`:: The host to approve.
+        :param host: The host to approve.
 
-        `cluster`:: The cluster where the host will be added after it is approved.
+        :param cluster: The cluster where the host will be added after it is approved.
 
-        `async_`:: Indicates if the approval should be performed asynchronously.
+        :param async_: Indicates if the approval should be performed asynchronously.
 
-        `activate`:: When set to 'true', this host will be activated after its approval completes. When set to 'false'
+        :param activate: When set to 'true', this host will be activated after its approval completes. When set to 'false'
         the host will remain in 'maintenance' status after its approval. Absence of this parameter will be
         interpreted as 'true', since the desired default behavior is activating the host after approval.
 
-        `reboot`:: Indicates if the host should be rebooted after successful installation. The default value is `true`.
+        :param reboot: Indicates if the host should be rebooted after successful installation. The default value is `true`.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -42846,38 +42281,37 @@ class HostService(MeasurableService):
         password. This has been deprecated.
 
 
-        This method supports the following parameters:
 
-        `activate`:: When set to 'true', this host will be activated after its installation completes. When set to 'false'
+        :param activate: When set to 'true', this host will be activated after its installation completes. When set to 'false'
         the host will remain in 'maintenance' status after its installation. Absence of this parameter will be
         interpreted as 'true', since the desired default behavior is activating the host after install.
 
-        `root_password`:: The password of the `root` user used to connect to the host via SSH.
+        :param root_password: The password of the `root` user used to connect to the host via SSH.
 
-        `ssh`:: The SSH details used to connect to the host.
+        :param ssh: The SSH details used to connect to the host.
 
-        `host`:: The `override_iptables` property is used to indicate if the firewall configuration should be replaced by the
+        :param host: The `override_iptables` property is used to indicate if the firewall configuration should be replaced by the
         default one.
 
-        `image`:: When installing {hypervisor-name}, an ISO image file is required.
+        :param image: When installing {hypervisor-name}, an ISO image file is required.
 
-        `async_`:: Indicates if the installation should be performed asynchronously.
+        :param async_: Indicates if the installation should be performed asynchronously.
 
-        `deploy_hosted_engine`:: When set to `true` this host will also deploy the self-hosted engine components. A missing value
+        :param deploy_hosted_engine: When set to `true` this host will also deploy the self-hosted engine components. A missing value
         is treated as `true` i.e deploy. Omitting this parameter means `false` and will not perform any operation in the
         self-hosted engine area.
 
-        `undeploy_hosted_engine`:: When set to `true` this host will un-deploy the self-hosted engine components, and this host will
+        :param undeploy_hosted_engine: When set to `true` this host will un-deploy the self-hosted engine components, and this host will
         not function as part of the High Availability cluster. A missing value is treated as `true` i.e un-deploy.
         Omitting this parameter means `false` and will not perform any operation in the self-hosted engine area.
 
-        `reboot`:: Indicates if the host should be rebooted after successful installation. The default value is `true`.
+        :param reboot: Indicates if the host should be rebooted after successful installation. The default value is `true`.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -42962,25 +42396,24 @@ class HostService(MeasurableService):
         registers itself with the engine.
 
 
-        This method supports the following parameters:
 
-        `host`:: The host to approve.
+        :param host: The host to approve.
 
-        `cluster`:: The cluster where the host will be added after it is approved.
+        :param cluster: The cluster where the host will be added after it is approved.
 
-        `async_`:: Indicates if the approval should be performed asynchronously.
+        :param async_: Indicates if the approval should be performed asynchronously.
 
-        `activate`:: When set to 'true', this host will be activated after its approval completes. When set to 'false'
+        :param activate: When set to 'true', this host will be activated after its approval completes. When set to 'false'
         the host will remain in 'maintenance' status after its approval. Absence of this parameter will be
         interpreted as 'true', since the desired default behavior is activating the host after approval.
 
-        `reboot`:: Indicates if the host should be rebooted after successful installation. The default value is `true`.
+        :param reboot: Indicates if the host should be rebooted after successful installation. The default value is `true`.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -43028,38 +42461,37 @@ class HostService(MeasurableService):
         password.
 
 
-        This method supports the following parameters:
 
-        `activate`:: When set to 'true', this host will be activated after its installation completes. When set to 'false'
+        :param activate: When set to 'true', this host will be activated after its installation completes. When set to 'false'
         the host will remain in 'maintenance' status after its installation. Absence of this parameter will be
         interpreted as 'true', since the desired default behavior is activating the host after install.
 
-        `root_password`:: The password of the `root` user used to connect to the host via SSH.
+        :param root_password: The password of the `root` user used to connect to the host via SSH.
 
-        `ssh`:: The SSH details used to connect to the host.
+        :param ssh: The SSH details used to connect to the host.
 
-        `host`:: The `override_iptables` property is used to indicate if the firewall configuration should be replaced by the
+        :param host: The `override_iptables` property is used to indicate if the firewall configuration should be replaced by the
         default one.
 
-        `image`:: When installing {hypervisor-name}, an ISO image file is required.
+        :param image: When installing {hypervisor-name}, an ISO image file is required.
 
-        `async_`:: Indicates if the installation should be performed asynchronously.
+        :param async_: Indicates if the installation should be performed asynchronously.
 
-        `deploy_hosted_engine`:: When set to `true` this host will also deploy the self-hosted engine components. A missing value
+        :param deploy_hosted_engine: When set to `true` this host will also deploy the self-hosted engine components. A missing value
         is treated as `true` i.e deploy. Omitting this parameter means `false` and will not perform any operation in the
         self-hosted engine area.
 
-        `undeploy_hosted_engine`:: When set to `true` this host will un-deploy the self-hosted engine components, and this host will
+        :param undeploy_hosted_engine: When set to `true` this host will un-deploy the self-hosted engine components, and this host will
         not function as part of the High Availability cluster. A missing value is treated as `true` i.e un-deploy.
         Omitting this parameter means `false` and will not perform any operation in the self-hosted engine area.
 
-        `reboot`:: Indicates if the host should be rebooted after successful installation. The default value is `true`.
+        :param reboot: Indicates if the host should be rebooted after successful installation. The default value is `true`.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -43344,9 +42776,8 @@ class HostNicService(MeasurableService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `all_content`:: Indicates if all of the attributes of the host network interface should be included in the response.
+        :param all_content: Indicates if all of the attributes of the host network interface should be included in the response.
         By default the following attributes are excluded:
         - `virtual_functions_configuration`
         For example, to retrieve the complete representation network interface '456' of host '123':
@@ -43357,14 +42788,14 @@ class HostNicService(MeasurableService):
         seldom used and require additional queries to the database. Use this parameter with caution and only when
         specifically required.
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -43400,15 +42831,14 @@ class HostNicService(MeasurableService):
         Please see the `HostNicVirtualFunctionsConfiguration` type for the meaning of the properties.
 
 
-        This method supports the following parameters:
 
-        `async_`:: Indicates if the update should be performed asynchronously.
+        :param async_: Indicates if the update should be performed asynchronously.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
@@ -43524,16 +42954,15 @@ class HostNumaNodeService(MeasurableService):
         **kwargs
     ):
         """
-        This method supports the following parameters:
 
-        `follow`:: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
+        :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
         of the current request. See <<documents/003_common_concepts/follow, here>> for details.
 
-        `headers`:: Additional HTTP headers.
+        :param headers: Additional HTTP headers.
 
-        `query`:: Additional URL query parameters.
+        :param query: Additional URL query parameters.
 
-        `wait`:: If `True` wait for the response.
+        :param wait: If `True` wait for the response.
         """
         # Check the types of the parameters:
         Service._check_types([
