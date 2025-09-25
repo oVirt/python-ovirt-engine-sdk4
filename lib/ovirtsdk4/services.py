@@ -58,7 +58,7 @@ class AffinityGroupService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -416,7 +416,7 @@ class AffinityGroupHostLabelsService(Service):
         If not specified, all the labels are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -536,7 +536,7 @@ class AffinityGroupHostsService(Service):
         returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -776,7 +776,7 @@ class AffinityGroupVmLabelsService(Service):
         If not specified, all the labels are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -888,7 +888,7 @@ class AffinityGroupVmsService(Service):
         returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -1015,7 +1015,7 @@ class AffinityGroupsService(Service):
         :param max: Sets the maximum number of affinity groups to return. If not specified all the affinity groups are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -1090,7 +1090,7 @@ class AffinityLabelService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -1218,7 +1218,7 @@ class AffinityLabelHostService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -1324,7 +1324,7 @@ class AffinityLabelHostsService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -1396,7 +1396,7 @@ class AffinityLabelVmService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -1502,7 +1502,7 @@ class AffinityLabelVmsService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -1602,7 +1602,7 @@ class AffinityLabelsService(Service):
         :param max: Sets the maximum number of labels to return. If not specified all the labels are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -1706,7 +1706,7 @@ class AssignedAffinityLabelService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -1811,7 +1811,7 @@ class AssignedAffinityLabelsService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -1876,7 +1876,7 @@ class AssignedCpuProfileService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -1995,7 +1995,7 @@ class AssignedCpuProfilesService(Service):
         :param max: Sets the maximum number of profiles to return. If not specified all the profiles are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -2061,7 +2061,7 @@ class AssignedDiskProfileService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -2180,7 +2180,7 @@ class AssignedDiskProfilesService(Service):
         :param max: Sets the maximum number of profiles to return. If not specified all the profiles are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -2473,7 +2473,7 @@ class AssignedPermissionsService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -2708,7 +2708,7 @@ class AssignedRolesService(Service):
         :param max: Sets the maximum number of roles to return. If not specified all the roles are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -2793,7 +2793,7 @@ class AssignedTagService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -2952,7 +2952,7 @@ class AssignedTagsService(Service):
         :param max: Sets the maximum number of tags to return. If not specified all the tags are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -3021,7 +3021,7 @@ class AssignedVnicProfileService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -3149,7 +3149,7 @@ class AssignedVnicProfilesService(Service):
         :param max: Sets the maximum number of profiles to return. If not specified all the profiles are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -3330,7 +3330,7 @@ class AttachedStorageDomainService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -3477,7 +3477,7 @@ class AttachedStorageDomainDisksService(Service):
         :param max: Sets the maximum number of disks to return. If not specified all the disks are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -3587,7 +3587,7 @@ class AttachedStorageDomainsService(Service):
         :param max: Sets the maximum number of storage domains to return. If not specified all the storage domains are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -3656,7 +3656,7 @@ class BalanceService(Service):
         :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -3782,7 +3782,7 @@ class BalancesService(Service):
         :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -3867,7 +3867,7 @@ class BookmarkService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -4081,7 +4081,7 @@ class BookmarksService(Service):
         :param max: Sets the maximum number of bookmarks to return. If not specified all the bookmarks are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -4237,7 +4237,7 @@ class ClusterService(Service):
         :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -4681,7 +4681,7 @@ class ClusterEnabledFeatureService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -4810,7 +4810,7 @@ class ClusterEnabledFeaturesService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -4881,7 +4881,7 @@ class ClusterExternalProvidersService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -4947,7 +4947,7 @@ class ClusterFeatureService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -5016,7 +5016,7 @@ class ClusterFeaturesService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -5112,7 +5112,7 @@ class ClusterLevelService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -5195,7 +5195,7 @@ class ClusterLevelsService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -5264,7 +5264,7 @@ class ClusterNetworkService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -5419,7 +5419,7 @@ class ClusterNetworksService(Service):
         :param max: Sets the maximum number of networks to return. If not specified, all the networks are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -5566,7 +5566,7 @@ class ClustersService(Service):
         :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -5700,7 +5700,7 @@ class CpuProfileService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -5861,7 +5861,7 @@ class CpuProfilesService(Service):
         :param max: Sets the maximum number of profiles to return. If not specified, all the profiles are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -6022,7 +6022,7 @@ class DataCenterService(Service):
         :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -6336,7 +6336,7 @@ class DataCenterNetworkService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -6493,7 +6493,7 @@ class DataCenterNetworksService(Service):
         :param max: Sets the maximum number of networks to return. If not specified, all the networks are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -6672,7 +6672,7 @@ class DataCentersService(Service):
         :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -6769,7 +6769,7 @@ class DiskAttachmentService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -6973,7 +6973,7 @@ class DiskAttachmentsService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -7096,7 +7096,7 @@ class DiskProfileService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -7257,7 +7257,7 @@ class DiskProfilesService(Service):
         :param max: Sets the maximum number of profiles to return. If not specified all the profiles are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -7323,7 +7323,7 @@ class DiskSnapshotService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -7426,7 +7426,7 @@ class DiskSnapshotsService(Service):
         :param include_template: If true return also template snapshots. If not specified template snapshots are not returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -7671,7 +7671,7 @@ class DisksService(Service):
         ignoring case set it to `false`.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -7831,7 +7831,7 @@ class DomainService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -7904,7 +7904,7 @@ class DomainGroupService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -7971,7 +7971,7 @@ class DomainGroupsService(Service):
         ignoring case set it to `false`.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -8066,7 +8066,7 @@ class DomainUserService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -8122,7 +8122,7 @@ class DomainUserGroupsService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -8210,7 +8210,7 @@ class DomainUsersService(Service):
         ignoring case set it to `false`.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -8311,7 +8311,7 @@ class DomainsService(Service):
         :param max: Sets the maximum number of domains to return. If not specified all the domains are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -8406,7 +8406,7 @@ class EventService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -8680,7 +8680,7 @@ class EventSubscriptionsService(Service):
         If not specified all the event-subscriptions are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -8917,7 +8917,7 @@ class EventsService(Service):
         ignoring case set it to `false`.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -9053,7 +9053,7 @@ class ExternalComputeResourceService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -9134,7 +9134,7 @@ class ExternalComputeResourcesService(Service):
         :param max: Sets the maximum number of resources to return. If not specified all the resources are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -9224,7 +9224,7 @@ class ExternalDiscoveredHostService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -9311,7 +9311,7 @@ class ExternalDiscoveredHostsService(Service):
         :param max: Sets the maximum number of hosts to return. If not specified all the hosts are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -9377,7 +9377,7 @@ class ExternalHostService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -9450,7 +9450,7 @@ class ExternalHostGroupService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -9531,7 +9531,7 @@ class ExternalHostGroupsService(Service):
         :param max: Sets the maximum number of groups to return. If not specified all the groups are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -9634,7 +9634,7 @@ class ExternalHostProvidersService(Service):
         :param search: A query string used to restrict the returned external host providers.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -9711,7 +9711,7 @@ class ExternalHostsService(Service):
         :param max: Sets the maximum number of hosts to return. If not specified all the hosts are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -9782,7 +9782,7 @@ class ExternalNetworkProviderConfigurationService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -9840,7 +9840,7 @@ class ExternalNetworkProviderConfigurationsService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -10019,7 +10019,7 @@ class ExternalProviderCertificateService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -10091,7 +10091,7 @@ class ExternalProviderCertificatesService(Service):
         :param max: Sets the maximum number of certificates to return. If not specified all the certificates are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -10308,7 +10308,7 @@ class FenceAgentService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -10547,7 +10547,7 @@ class FenceAgentsService(Service):
         :param max: Sets the maximum number of agents to return. If not specified all the agents are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -10616,7 +10616,7 @@ class FileService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -10702,7 +10702,7 @@ class FilesService(Service):
         results that are updated at certain intervals.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -10782,7 +10782,7 @@ class FilterService(Service):
         :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -10910,7 +10910,7 @@ class FiltersService(Service):
         :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -11148,7 +11148,7 @@ class GlusterBricksService(Service):
         :param max: Sets the maximum number of bricks to return. If not specified all the bricks are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -11483,7 +11483,7 @@ class GlusterHookService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -11631,7 +11631,7 @@ class GlusterHooksService(Service):
         :param max: Sets the maximum number of hooks to return. If not specified all the hooks are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -11781,7 +11781,7 @@ class GlusterVolumesService(Service):
         ignoring case set it to `false`.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -11883,7 +11883,7 @@ class GroupService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -12095,7 +12095,7 @@ class GroupsService(Service):
         ignoring case set it to `false`.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -12175,7 +12175,7 @@ class HostCpuUnitsService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -12245,7 +12245,7 @@ class HostDeviceService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -12306,7 +12306,7 @@ class HostDevicesService(Service):
         :param max: Sets the maximum number of devices to return. If not specified all the devices are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -12374,7 +12374,7 @@ class HostHookService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -12433,7 +12433,7 @@ class HostHooksService(Service):
         :param max: Sets the maximum number of hooks to return. If not specified, all the hooks are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -12521,7 +12521,7 @@ class HostNicsService(Service):
         specifically required.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -12601,7 +12601,7 @@ class HostNumaNodesService(Service):
         :param max: Sets the maximum number of nodes to return. If not specified all the nodes are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -12730,7 +12730,7 @@ class HostStorageService(Service):
         ```
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -12966,7 +12966,7 @@ class HostsService(Service):
         ```
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -13177,7 +13177,7 @@ class IconService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -13251,7 +13251,7 @@ class IconsService(Service):
         :param max: Sets the maximum number of icons to return. If not specified all the icons are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -13319,7 +13319,7 @@ class ImageService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -13585,7 +13585,7 @@ class ImageTransferService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -13849,7 +13849,7 @@ class ImageTransfersService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -13924,7 +13924,7 @@ class ImagesService(Service):
         :param max: Sets the maximum number of images to return. If not specified all the images are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -13999,7 +13999,7 @@ class InstanceTypeService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -14181,11 +14181,14 @@ class InstanceTypeGraphicsConsoleService(Service):
     ):
         """
         Gets graphics console configuration of the instance type.
+        ```http
+        GET /ovirt-engine/api/instancetypes/123/graphicsconsoles HTTP/1.1
+        ```
 
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -14307,7 +14310,7 @@ class InstanceTypeGraphicsConsolesService(Service):
         :param max: Sets the maximum number of consoles to return. If not specified all the consoles are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -14378,7 +14381,7 @@ class InstanceTypeNicService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -14536,7 +14539,7 @@ class InstanceTypeNicsService(Service):
         :param search: A query string used to restrict the returned templates.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -14608,7 +14611,7 @@ class InstanceTypeWatchdogService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -14767,7 +14770,7 @@ class InstanceTypeWatchdogsService(Service):
         :param search: A query string used to restrict the returned templates.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -14952,7 +14955,7 @@ class InstanceTypesService(Service):
         into account. If you want to search ignoring case set it to `false`.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -15027,7 +15030,7 @@ class IscsiBondService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -15242,7 +15245,7 @@ class IscsiBondsService(Service):
         :param max: Sets the maximum number of bonds to return. If not specified all the bonds are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -15441,7 +15444,7 @@ class JobService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -15606,7 +15609,7 @@ class JobsService(Service):
         :param max: Sets the maximum number of jobs to return. If not specified all the jobs are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -15716,7 +15719,7 @@ class KatelloErrataService(Service):
         :param max: Sets the maximum number of errata to return. If not specified all the errata are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -15811,7 +15814,7 @@ class KatelloErratumService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -15867,7 +15870,7 @@ class LinkLayerDiscoveryProtocolService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -15919,7 +15922,7 @@ class MacPoolService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -16132,7 +16135,7 @@ class MacPoolsService(Service):
         :param max: Sets the maximum number of pools to return. If not specified all the pools are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -16309,7 +16312,7 @@ class NetworkService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -16505,7 +16508,7 @@ class NetworkAttachmentService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -16659,7 +16662,7 @@ class NetworkAttachmentsService(Service):
         :param max: Sets the maximum number of attachments to return. If not specified all the attachments are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -16742,7 +16745,7 @@ class NetworkFilterService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -16848,7 +16851,7 @@ class NetworkFiltersService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -16910,7 +16913,7 @@ class NetworkLabelService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -17048,7 +17051,7 @@ class NetworkLabelsService(Service):
         :param max: Sets the maximum number of labels to return. If not specified all the labels are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -17217,7 +17220,7 @@ class NetworksService(Service):
         ignoring case set it to `false`.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -17297,7 +17300,7 @@ class NicNetworkFilterParameterService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -17470,7 +17473,7 @@ class NicNetworkFilterParametersService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -17534,7 +17537,7 @@ class OpenstackImageService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -17661,7 +17664,7 @@ class OpenstackImageProviderService(ExternalProviderService):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -17904,7 +17907,7 @@ class OpenstackImageProvidersService(Service):
         :param search: A query string used to restrict the returned OpenStack image providers.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -17981,7 +17984,7 @@ class OpenstackImagesService(Service):
         :param max: Sets the maximum number of images to return. If not specified all the images are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -18050,7 +18053,7 @@ class OpenstackNetworkService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -18172,7 +18175,7 @@ class OpenstackNetworkProviderService(ExternalProviderService):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -18450,7 +18453,7 @@ class OpenstackNetworkProvidersService(Service):
         :param search: A query string used to restrict the returned OpenStack network providers.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -18529,7 +18532,7 @@ class OpenstackNetworksService(Service):
         :param max: Sets the maximum number of networks to return. If not specified all the networks are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -18595,7 +18598,7 @@ class OpenstackSubnetService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -18711,7 +18714,7 @@ class OpenstackSubnetsService(Service):
         :param max: Sets the maximum number of sub-networks to return. If not specified all the sub-networks are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -18779,7 +18782,7 @@ class OpenstackVolumeAuthenticationKeyService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -18924,7 +18927,7 @@ class OpenstackVolumeAuthenticationKeysService(Service):
         :param max: Sets the maximum number of keys to return. If not specified all the keys are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -18995,7 +18998,7 @@ class OpenstackVolumeProviderService(ExternalProviderService):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -19276,7 +19279,7 @@ class OpenstackVolumeProvidersService(Service):
         :param search: A query string used to restrict the returned volume providers.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -19347,7 +19350,7 @@ class OpenstackVolumeTypeService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -19408,7 +19411,7 @@ class OpenstackVolumeTypesService(Service):
         :param max: Sets the maximum number of volume types to return. If not specified all the volume types are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -19474,7 +19477,7 @@ class OperatingSystemService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -19535,7 +19538,7 @@ class OperatingSystemsService(Service):
         :param max: Sets the maximum number of networks to return. If not specified all the networks are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -19601,7 +19604,7 @@ class PermissionService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -19705,7 +19708,7 @@ class PermitService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -19869,7 +19872,7 @@ class PermitsService(Service):
         :param max: Sets the maximum number of permits to return. If not specified all the permits are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -19954,7 +19957,7 @@ class QosService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -20174,7 +20177,7 @@ class QossService(Service):
         :param max: Sets the maximum number of QoS descriptors to return. If not specified all the descriptors are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -20262,7 +20265,7 @@ class QuotaService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -20430,7 +20433,7 @@ class QuotaClusterLimitService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -20551,7 +20554,7 @@ class QuotaClusterLimitsService(Service):
         :param max: Sets the maximum number of limits to return. If not specified all the limits are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -20617,7 +20620,7 @@ class QuotaStorageLimitService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -20759,7 +20762,7 @@ class QuotaStorageLimitsService(Service):
         :param max: Sets the maximum number of limits to return. If not specified, all the limits are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -20869,7 +20872,7 @@ class QuotasService(Service):
         :param max: Sets the maximum number of quota descriptors to return. If not specified all the descriptors are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -20952,7 +20955,7 @@ class RoleService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -21187,7 +21190,7 @@ class RolesService(Service):
         :param max: Sets the maximum number of roles to return. If not specified all the roles are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -21292,7 +21295,7 @@ class SchedulingPoliciesService(Service):
         :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -21368,7 +21371,7 @@ class SchedulingPolicyService(Service):
         :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -21522,7 +21525,7 @@ class SchedulingPolicyUnitService(Service):
         :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -21626,7 +21629,7 @@ class SchedulingPolicyUnitsService(Service):
         :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -21699,7 +21702,7 @@ class SnapshotService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -21898,7 +21901,7 @@ class SnapshotCdromService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -21959,7 +21962,7 @@ class SnapshotCdromsService(Service):
         :param max: Sets the maximum number of CDROMS to return. If not specified all the CDROMS are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -22025,7 +22028,7 @@ class SnapshotDiskService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -22086,7 +22089,7 @@ class SnapshotDisksService(Service):
         :param max: Sets the maximum number of disks to return. If not specified all the disks are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -22152,7 +22155,7 @@ class SnapshotNicService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -22213,7 +22216,7 @@ class SnapshotNicsService(Service):
         :param max: Sets the maximum number of NICs to return. If not specified all the NICs are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -22367,7 +22370,7 @@ class SnapshotsService(Service):
         ```
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -22437,7 +22440,7 @@ class SshPublicKeyService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -22618,7 +22621,7 @@ class SshPublicKeysService(Service):
         :param max: Sets the maximum number of keys to return. If not specified all the keys are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -22684,7 +22687,7 @@ class StatisticService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -22787,7 +22790,7 @@ class StatisticsService(Service):
         :param max: Sets the maximum number of statistics to return. If not specified all the statistics are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -22939,7 +22942,7 @@ class StepService(MeasurableService):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -23093,7 +23096,7 @@ class StepsService(Service):
         :param max: Sets the maximum number of steps to return. If not specified all the steps are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -23205,7 +23208,7 @@ class StorageService(Service):
         ```
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -23275,7 +23278,7 @@ class StorageDomainService(Service):
         :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -23767,7 +23770,7 @@ class StorageDomainContentDiskService(Service):
         :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -23841,7 +23844,7 @@ class StorageDomainContentDisksService(Service):
         ignoring case set it to `false`.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -24005,7 +24008,7 @@ class StorageDomainDiskService(MeasurableService):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -24316,7 +24319,7 @@ class StorageDomainDisksService(Service):
         The request only applies to storage domains that are attached.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -24388,7 +24391,7 @@ class StorageDomainServerConnectionService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -24509,7 +24512,7 @@ class StorageDomainServerConnectionsService(Service):
         :param max: Sets the maximum number of connections to return. If not specified all the connections are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -24576,7 +24579,7 @@ class StorageDomainTemplateService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -24846,7 +24849,7 @@ class StorageDomainTemplatesService(Service):
         The request only apply to storage domains that are attached.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -24918,7 +24921,7 @@ class StorageDomainVmService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -25234,7 +25237,7 @@ class StorageDomainVmDiskAttachmentService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -25292,7 +25295,7 @@ class StorageDomainVmDiskAttachmentsService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -25400,7 +25403,7 @@ class StorageDomainVmsService(Service):
         The request only apply to storage domains that are attached.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -25709,7 +25712,7 @@ class StorageDomainsService(Service):
         :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -25818,7 +25821,7 @@ class StorageServerConnectionService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -26171,7 +26174,7 @@ class StorageServerConnectionExtensionService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -26349,7 +26352,7 @@ class StorageServerConnectionExtensionsService(Service):
         :param max: Sets the maximum number of extensions to return. If not specified all the extensions are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -26511,7 +26514,7 @@ class StorageServerConnectionsService(Service):
         :param max: Sets the maximum number of connections to return. If not specified all the connections are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -26763,7 +26766,7 @@ class SystemService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -27612,7 +27615,7 @@ class SystemPermissionsService(AssignedPermissionsService):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -27852,7 +27855,7 @@ class TagService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -28097,7 +28100,7 @@ class TagsService(Service):
         :param max: Sets the maximum number of tags to return. If not specified all the tags are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -28248,7 +28251,7 @@ class TemplateService(Service):
         :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -28596,7 +28599,7 @@ class TemplateCdromService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -28657,7 +28660,7 @@ class TemplateCdromsService(Service):
         :param max: Sets the maximum number of CD-ROMs to return. If not specified all the CD-ROMs are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -28814,7 +28817,7 @@ class TemplateDiskService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -28906,7 +28909,7 @@ class TemplateDiskAttachmentService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -29010,7 +29013,7 @@ class TemplateDiskAttachmentsService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -29082,7 +29085,7 @@ class TemplateDisksService(Service):
         :param max: Sets the maximum number of disks to return. If not specified all the disks are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -29151,7 +29154,7 @@ class TemplateGraphicsConsoleService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -29273,7 +29276,7 @@ class TemplateGraphicsConsolesService(Service):
         :param max: Sets the maximum number of consoles to return. If not specified all the consoles are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -29344,7 +29347,7 @@ class TemplateMediatedDeviceService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -29540,7 +29543,7 @@ class TemplateMediatedDevicesService(Service):
         If not specified all the mediated devices are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -29608,7 +29611,7 @@ class TemplateNicService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -29760,7 +29763,7 @@ class TemplateNicsService(Service):
         :param max: Sets the maximum number of NICs to return. If not specified all the NICs are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -29826,7 +29829,7 @@ class TemplateWatchdogService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -29978,7 +29981,7 @@ class TemplateWatchdogsService(Service):
         :param max: Sets the maximum number of watchdogs to return. If not specified all the watchdogs are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -30339,7 +30342,7 @@ class TemplatesService(Service):
         :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -30418,7 +30421,7 @@ class UnmanagedNetworkService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -30513,7 +30516,7 @@ class UnmanagedNetworksService(Service):
         :param max: Sets the maximum number of networks to return. If not specified all the networks are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -30618,7 +30621,7 @@ class UserService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -31094,7 +31097,7 @@ class UsersService(Service):
         ignoring case set it to `false`.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -31167,7 +31170,7 @@ class VirtualFunctionAllowedNetworkService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -31283,7 +31286,7 @@ class VirtualFunctionAllowedNetworksService(Service):
         :param max: Sets the maximum number of networks to return. If not specified all the networks are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -31783,7 +31786,7 @@ class VmService(MeasurableService):
         ```
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -33174,7 +33177,7 @@ class VmApplicationService(Service):
         :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -33242,7 +33245,7 @@ class VmApplicationsService(Service):
         :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -33353,7 +33356,7 @@ class VmBackupService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -33418,7 +33421,7 @@ class VmBackupDiskService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -33476,7 +33479,7 @@ class VmBackupDisksService(Service):
         :param max: Sets the maximum number of disks to return. If not specified, all the disks are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -33638,7 +33641,7 @@ class VmBackupsService(Service):
         :param max: Sets the maximum number of virtual machine backups to return. If not specified, all the virtual machine backups are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -33732,7 +33735,7 @@ class VmCdromService(Service):
         parameter is optional, and the default value is `false`.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -33896,7 +33899,7 @@ class VmCdromsService(Service):
         :param max: Sets the maximum number of CDROMs to return. If not specified all the CDROMs are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -33970,7 +33973,7 @@ class VmCheckpointService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -34075,7 +34078,7 @@ class VmCheckpointDiskService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -34133,7 +34136,7 @@ class VmCheckpointDisksService(Service):
         :param max: Sets the maximum number of disks to return. If not specified, all the disks are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -34215,7 +34218,7 @@ class VmCheckpointsService(Service):
         If not specified, all the virtual machine checkpoints are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -34395,7 +34398,7 @@ class VmDiskService(MeasurableService):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -34645,7 +34648,7 @@ class VmDisksService(Service):
         :param max: Sets the maximum number of disks to return. If not specified all the disks are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -34732,7 +34735,7 @@ class VmGraphicsConsoleService(Service):
         The default value is `false`.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -34990,6 +34993,16 @@ class VmGraphicsConsolesService(Service):
     ):
         """
         Add new graphics console to the virtual machine.
+        For example, to add a new graphics console to the virtual machine `123` send a request as follows:
+        ```http
+        POST /ovirt-engine/api/vms/123/graphicsconsoles HTTP/1.1
+        ```
+        With a request body as follows:
+        ```xml
+        <graphics_console> <protocol>type</protocol> </graphics_console>
+        ```
+        Where `type` can be spice or vnc.
+        IMPORTANT: Currently there is no check if the protocol is supported by the operating system the engine is running on.
 
 
         """
@@ -35040,7 +35053,7 @@ class VmGraphicsConsolesService(Service):
         The default value is `false`.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -35140,7 +35153,7 @@ class VmHostDeviceService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -35294,7 +35307,7 @@ class VmHostDevicesService(Service):
         :param max: Sets the maximum number of devices to return. If not specified all the devices are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -35365,7 +35378,7 @@ class VmMediatedDeviceService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -35561,7 +35574,7 @@ class VmMediatedDevicesService(Service):
         If not specified all the mediated devices are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -35702,7 +35715,7 @@ class VmNicService(MeasurableService):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -35961,7 +35974,7 @@ class VmNicsService(Service):
         :param max: Sets the maximum number of NICs to return. If not specified all the NICs are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -36027,7 +36040,7 @@ class VmNumaNodeService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -36223,7 +36236,7 @@ class VmNumaNodesService(Service):
         :param max: Sets the maximum number of nodes to return. If not specified all the nodes are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -36366,7 +36379,7 @@ class VmPoolService(Service):
         :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -36619,7 +36632,7 @@ class VmPoolsService(Service):
         :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -36698,7 +36711,7 @@ class VmReportedDeviceService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -36757,7 +36770,7 @@ class VmReportedDevicesService(Service):
         :param max: Sets the maximum number of devices to return. If not specified all the devices are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -36823,7 +36836,7 @@ class VmSessionService(Service):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -36902,7 +36915,7 @@ class VmSessionsService(Service):
         :param max: Sets the maximum number of sessions to return. If not specified all the sessions are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -36975,7 +36988,7 @@ class VmWatchdogService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -37194,7 +37207,7 @@ class VmWatchdogsService(Service):
         :param max: Sets the maximum number of watchdogs to return. If not specified all the watchdogs are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -37625,7 +37638,7 @@ class VmsService(Service):
         ```
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -37716,7 +37729,7 @@ class VnicProfileService(Service):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -37946,7 +37959,7 @@ class VnicProfilesService(Service):
         :param max: Sets the maximum number of profiles to return. If not specified all the profiles are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -38015,7 +38028,7 @@ class WeightService(Service):
         :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -38141,7 +38154,7 @@ class WeightsService(Service):
         :param filter: Indicates if the results should be filtered according to the permissions of the user.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -38301,7 +38314,7 @@ class AttachedStorageDomainDiskService(MeasurableService):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -38560,7 +38573,7 @@ class DiskService(MeasurableService):
         :param disk: The description of the disk.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -38758,7 +38771,7 @@ class DiskService(MeasurableService):
         ```
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -39185,7 +39198,7 @@ class EngineKatelloErrataService(KatelloErrataService):
         :param max: Sets the maximum number of errata to return. If not specified all the errata are returned.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -39281,7 +39294,7 @@ class ExternalHostProviderService(ExternalProviderService):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -39562,7 +39575,7 @@ class GlusterBrickService(MeasurableService):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -39753,7 +39766,7 @@ class GlusterVolumeService(MeasurableService):
 
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -40848,7 +40861,7 @@ class HostService(MeasurableService):
         specifically required.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -42235,7 +42248,7 @@ class HostNicService(MeasurableService):
         specifically required.
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 
@@ -42402,7 +42415,7 @@ class HostNumaNodeService(MeasurableService):
         """
 
         :param follow: Indicates which inner links should be _followed_. The objects referenced by these links will be fetched as part
-        of the current request. See <<documents/003_common_concepts/follow, here>> for details.
+        of the current request. See [here](https://ovirt.github.io/ovirt-engine-api-model/master/#documents/003_common_concepts/follow) for details.
 
         :param headers: Additional HTTP headers.
 

@@ -2303,6 +2303,8 @@ class DisplayWriter(Writer):
             Writer.write_boolean(writer, 'smartcard_enabled', obj.smartcard_enabled)
         if obj.type is not None:
             Writer.write_string(writer, 'type', obj.type.value)
+        if obj.video_type is not None:
+            Writer.write_string(writer, 'video_type', obj.video_type.value)
         writer.write_end()
 
     @staticmethod

@@ -3996,6 +3996,8 @@ class DisplayReader(Reader):
                 obj.smartcard_enabled = Reader.read_boolean(reader)
             elif tag == 'type':
                 obj.type = Reader.read_enum(types.DisplayType, reader)
+            elif tag == 'video_type':
+                obj.video_type = Reader.read_enum(types.VideoType, reader)
             else:
                 reader.next_element()
         for link in links:

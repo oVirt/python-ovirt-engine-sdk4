@@ -1226,6 +1226,7 @@ class Display(Struct):
         single_qxl_pci=None,
         smartcard_enabled=None,
         type=None,
+        video_type=None,
     ):
         super(Display, self).__init__(
         )
@@ -1244,6 +1245,7 @@ class Display(Struct):
         self.single_qxl_pci = single_qxl_pci
         self.smartcard_enabled = smartcard_enabled
         self.type = type
+        self.video_type = video_type
 
     @property
     def address(self):
@@ -1328,6 +1330,21 @@ class Display(Struct):
         Sets the value of the `file_transfer_enabled` property.
         """
         self._file_transfer_enabled = value
+
+    @property
+    def video_type(self):
+        """
+        Returns the value of the `video_type` property.
+        """
+        return self._video_type
+
+    @video_type.setter
+    def video_type(self, value):
+        """
+        Sets the value of the `video_type` property.
+        """
+        Struct._check_type('video_type', value, VideoType)
+        self._video_type = value
 
     @property
     def certificate(self):
@@ -27095,6 +27112,20 @@ class ValueType(Enum):
 class VgpuPlacement(Enum):
     CONSOLIDATED = 'consolidated'
     SEPARATED = 'separated'
+
+    def __init__(self, image):
+        self._image = image
+
+    def __str__(self):
+        return self._image
+
+
+@unique
+class VideoType(Enum):
+    BOCHS = 'bochs'
+    CIRRUS = 'cirrus'
+    QXL = 'qxl'
+    VGA = 'vga'
 
     def __init__(self, image):
         self._image = image
