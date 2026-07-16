@@ -14,5 +14,6 @@ ARTIFACTS_DIR=${1:-exported-artifacts}
 [[ -d rpmbuild ]] || mkdir -p rpmbuild
 
 rpmbuild \
-    -D "_topdir rpmbuild" \
+    -D "_topdir ${PWD}/rpmbuild" \
+    -D "release_suffix ${RELEASE_SUFFIX:-}" \
     -ts ${TARBALL}

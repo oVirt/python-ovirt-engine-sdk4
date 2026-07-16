@@ -1,16 +1,17 @@
 #!/bin/sh -e
 
-VERSION="4.6.4"
-MILESTONE=master
-# MILESTONE=
-RPM_RELEASE="0.1.$MILESTONE.$(date -u +%Y%m%d%H%M%S)"
-# RPM_RELEASE=1
+# Default version - can be overridden via RPM_VERSION env var
+DEFAULT_VERSION="4.6.4"
 
 PACKAGE_NAME="python-ovirt-engine-sdk4"
 
-RPM_VERSION=${VERSION}
-PACKAGE_VERSION=${VERSION}
-[ -n "${MILESTONE}" ] && PACKAGE_VERSION+="_${MILESTONE}"
+# Use RPM_VERSION from environment if set (e.g., from git tag), otherwise use default
+RPM_VERSION="${RPM_VERSION:-${DEFAULT_VERSION}}"
+
+# Use PACKAGE_RPM_RELEASE from environment if set (e.g., from git tag), otherwise default
+RPM_RELEASE="${PACKAGE_RPM_RELEASE:-0.master}"
+
+PACKAGE_VERSION="${RPM_VERSION}"
 
 GENERATED_FILES="
  lib/ovirtsdk4/version.py
