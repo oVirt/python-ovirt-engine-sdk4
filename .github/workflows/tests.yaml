@@ -10,13 +10,16 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     strategy:
+      fail-fast: false
       matrix:
         include:
-          - name: centos-stream-9
-            shortcut: c9s
-            container-name: el9stream
-            packages:
+          - name: almalinux-9
+            shortcut: el9
+            container-name: almalinux9
+            python-packages:
               - gcc
               - libxml2-devel
               - python3
@@ -26,15 +29,39 @@ jobs:
               - python3.11
               - python3.11-pip
               - python3.11-devel
-              - python3.11-setuptools
               - python3.12
               - python3.12-pip
               - python3.12-devel
-              - python3.12-setuptools
+          - name: almalinux-10
+            shortcut: el10
+            container-name: almalinux10
+            python-packages:
+              - gcc
+              - libxml2-devel
+              - python3
+              - python3-pip
+              - python3-devel
+              - python3-setuptools
+          - name: centos-stream-9
+            shortcut: el9s
+            container-name: el9stream
+            python-packages:
+              - gcc
+              - libxml2-devel
+              - python3
+              - python3-pip
+              - python3-devel
+              - python3-setuptools
+              - python3.11
+              - python3.11-pip
+              - python3.11-devel
+              - python3.12
+              - python3.12-pip
+              - python3.12-devel
           - name: centos-stream-10
-            shortcut: c10s
+            shortcut: el10s
             container-name: el10stream
-            packages:
+            python-packages:
               - gcc
               - libxml2-devel
               - python3
@@ -42,18 +69,21 @@ jobs:
               - python3-devel
               - python3-setuptools
 
-    name: ${{ matrix.name }}
+    name: Test on ${{ matrix.name }}
 
     container:
       image: quay.io/ovirt/buildcontainer:${{ matrix.container-name }}
 
     steps:
       - name: Checkout sources
-        uses: ovirt/checkout-action@main
+        uses: actions/checkout@v7
+
+      - name: Mark repository as safe
+        run: git config --global --add safe.directory "$(pwd)"
 
       - name: Install dependencies
         run: |
-          dnf install -y ${{ join(matrix.packages, ' ') }}
+          dnf install -y ${{ join(matrix.python-packages, ' ') }}
           python3 -m venv /venv
           source /venv/bin/activate
           python3 -m pip install tox
